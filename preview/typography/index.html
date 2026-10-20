@@ -43,10 +43,11 @@
     .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,12px);opacity:0;pointer-events:none;padding:8px 14px;border-radius:8px;background:var(--ds-text-primary);color:var(--ds-text-reversal);font-size:13px;transition:.18s}.toast.show{opacity:1;transform:translate(-50%,0)}
     @media(max-width:1050px){.num-scenarios{grid-template-columns:repeat(2,1fr)}.family-grid{grid-template-columns:1fr}.weight-groups{grid-template-columns:1fr}.type-table{overflow-x:auto}.type-head,.type-row,.type-group{min-width:900px}}
     @media(max-width:760px){.shell{padding:var(--docs-page-padding-compact)}.section{padding:20px}.intro h1{font-size:28px}.title-group{display:block}.section-heading{align-items:flex-start}.section-heading h2{font-size:22px}.weight-item{grid-template-columns:60px 1fr}.weight-rule{grid-column:1 / -1}.copyright{display:block}.num-scenarios{grid-template-columns:1fr}}
+    .ty-dl{display:inline-flex;align-items:center;gap:8px;margin-top:20px;min-height:48px;padding:12px 28px;border-radius:10px;background:var(--ds-brand-gj-blue);color:#fff;text-decoration:none;font:600 16px/24px var(--ds-font-family-ui);box-shadow:0 6px 16px rgba(23,92,255,.25)}.ty-dl:hover{opacity:.92}.ty-dl .ic{width:20px;height:20px;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
   </style>
 <script src="../_data/tokens.js?v=20261020-data1"></script></head>
 <body><main class="shell">
-  <header class="intro"><div class="eyebrow">基础规范 · Foundations</div><h1>字体 Typography</h1><p>H5 中西文跟随运行设备的系统字体，数字样式使用 GJType。文字样式按整套使用，字号、行高、字重与字间距不拆开套用。示例按 375 基准显示（1rem = 100px），点击样式名或类名可复制。</p></header>
+  <header class="intro"><div class="eyebrow">基础规范 · Foundations</div><h1>字体 Typography</h1><p>H5 中西文跟随运行设备的系统字体，数字样式使用 GJType。文字样式按整套使用，字号、行高、字重与字间距不拆开套用。示例按 375 基准显示（1rem = 100px），点击样式名或类名可复制。</p><a class="ty-dl" href="https://gjzq-ux-team.netlify.app/reports/font-downloads.html" target="_blank" rel="noopener"><span class="ic" style="--i:url('../../assets/icons/iconfont/icf_file_download.svg')" aria-hidden="true"></span>下载国金字体</a></header>
 
   <section class="section"><div class="section-heading"><div class="title-group"><h2>字体家族</h2><span class="sub">Font families</span></div></div>
     <div class="policy-note"><b>字体策略</b>H5 字体栈不写死 PingFang SC、Arial 等具体字体名，使用 <code>system-ui</code> 跟随设备系统字体。Figma 文字样式中的 PingFang SC 仅作为视觉参考。</div>
