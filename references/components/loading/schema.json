@@ -1,0 +1,25 @@
+{
+  "id": "loading",
+  "name": "加载态 Loading",
+  "category": "操作反馈组件",
+  "source": {
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "161:7821",
+    "set": "229:3484",
+    "readOnly": true
+  },
+  "prototypeOnly": true,
+  "states": [
+    "pull",
+    "release",
+    "loading"
+  ],
+  "icon": 20,
+  "gap": 4,
+  "text": "P3 14/22 Text/Tiatery",
+  "demo": {
+    "threshold": 64,
+    "waitMs": 2000,
+    "note": "仅原型参数"
+  }
+}

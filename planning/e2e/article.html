@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>知识库文章</title>
+<!-- 端到端验证：仅依据 skill（SKILL.md / page-rules.md / markdown、listbar、tag、button 组件 rules）生成。原型，非生产代码。 -->
+<link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+<link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-components.css">
+<script src="../../assets/scripts/gj-m-ai-markdown.js"></script>
+<style>
+html{font-size:min(calc(100vw / 3.75),120px)}
+:root{--safe-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+body{margin:0;font-size:.14rem;line-height:.22rem;font-family:var(--ds-font-family-ui);color:var(--ds-text-primary);background:var(--ds-background-background)}
+.top{position:sticky;top:0;z-index:10;background:var(--ds-background-container)}
+.page{display:flex;flex-direction:column;gap:var(--space-card-l1-gap);padding:0 0 calc(.64rem + var(--space-24) + var(--safe-bottom))}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:var(--space-12) var(--space-page-margin-x) calc(var(--space-12) + var(--safe-bottom));background:var(--ds-background-container);box-shadow:0 -1px 0 var(--ds-border-default)}
+</style>
+</head>
+<body>
+<div class="top"><header class="gj-m-navbar" aria-label="页面导航"><div class="gj-m-navbar-left"><button class="gj-m-navbar-action gj-m-navbar-back" type="button" aria-label="返回上一页"><span class="gj-icon gj-icon-24" style="--gj-icon:url('../../assets/icons/iconfont/icf_Arrow_left.svg')" aria-hidden="true"></span></button></div><div class="gj-m-navbar-center"><span class="gj-m-navbar-title">知识库</span></div><div class="gj-m-navbar-right"></div></header></div>
+<main class="page">
+<article class="gj-m-markdown gj-m-markdown-article gj-m-card-l0 gj-m-card-l0-top" id="art"></article>
+<section class="gj-m-card gj-m-card-l0" aria-labelledby="relT">
+  <div class="gj-m-card-head"><div class="gj-m-card-header"><h2 class="gj-m-card-title" id="relT">相关案例</h2></div></div>
+  <div class="gj-m-card-body"><div class="gj-m-list" id="rel"></div></div>
+</section>
+</main>
+<div class="bar"><div class="gj-m-form-actions"><button type="button" class="gj-m-button gj-m-button-large gj-m-button-tertiary" id="fav" aria-pressed="false">收藏</button><button type="button" class="gj-m-button gj-m-button-large gj-m-button-primary" id="ask">AI 问这篇</button></div></div>
+<div id="toast"></div>
+<script>
+(()=>{
+const MD=`# 小红书图文创作六部曲
+
+**适用对象：** 渠道经理、理财经理
+
+从选题、标题、封面、正文、互动到复盘，六个步骤帮助新账号在 3 个月内完成私域沉淀。
+
+## 一、选题
+
+- 从客户高频问题出发，优先选择“存款利率”“养老金”等确定性话题
+- 每周固定 3 个选题，提前一周排期
+
+## 二、标题与封面
+
+> 标题控制在 20 字以内，数字 + 结果的组合点击率更高。
+
+| 封面类型 | 适用内容 | 平均点击率 |
+| --- | --- | --- |
+| 大字报 | 政策解读 | 8.2% |
+| 对比图 | 产品比较 | 6.5% |
+
+## 三、合规提示
+
+1. 不承诺收益，不使用“保本”“稳赚”等用语
+2. 涉及产品介绍需附风险提示`;
+const art=document.getElementById('art');art.innerHTML=GJAIMarkdown.render(MD);GJAIMarkdown.bind(document);
+art.querySelector('h1').insertAdjacentHTML('afterend','<p class="gj-m-markdown-meta"><span class="gj-m-tag gj-m-tag-small gj-m-tag-blue">展业资料</span><span>更新于 2026-10-12</span><span>阅读 1,286</span></p>');
+const rel=[['从 0 到 1：新账号 3 个月私域沉淀 500+ 客户','私域转化 · 标杆案例'],['内容引流 → 企微承接 → 入金：完整转化闭环','转化策略 · 入金']];
+document.getElementById('rel').innerHTML=rel.map(([t,d])=>`<a class="gj-m-list-item" href="javascript:void 0" data-go="${t}"><span class="gj-m-list-item-content"><span class="gj-m-list-item-main"><span class="gj-m-list-item-text">${t}</span><span class="gj-m-list-item-desc">${d}</span></span><span class="gj-m-list-item-arrow"><span class="gj-icon" aria-hidden="true" style="--gj-icon:url('../../assets/icons/iconfont/icf_Arrow_right.svg')"></span></span></span></a>`).join('');
+const toast=t=>{const h=document.getElementById('toast');h.innerHTML=`<div class="gj-m-toast-layer" role="status" style="position:fixed"><div class="gj-m-notice" data-tone="default"><span class="gj-m-notice-text">${t}</span></div></div>`;clearTimeout(toast.t);toast.t=setTimeout(()=>h.innerHTML='',3000)};
+const fav=document.getElementById('fav');fav.addEventListener('click',()=>{const on=fav.getAttribute('aria-pressed')!=='true';fav.setAttribute('aria-pressed',on);fav.textContent=on?'已收藏':'收藏';fav.classList.toggle('gj-m-button-secondary',on);fav.classList.toggle('is-pressed',on);fav.classList.toggle('gj-m-button-tertiary',!on);toast(on?'已收藏':'已取消收藏')});
+document.getElementById('ask').addEventListener('click',()=>toast('打开 AI 对话，并带入本文（原型）'));
+document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=>toast('进入「'+a.dataset.go+'」')));
+})();
+</script>
+</body>
+</html>

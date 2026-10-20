@@ -1,0 +1,16 @@
+/* 页面模式文档页公共样式（只用于规范站，不进入产出） */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.panel{min-width:0;padding:20px;background:var(--ds-background-background);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+.panel>.docs-stage-label{flex:none}
+.anatomy{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:24px;align-items:start}
+.regions{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.regions li{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:12px 16px;background:var(--ds-background-background);border-radius:8px;font-size:13px;line-height:20px;color:var(--ds-text-secondary)}
+.regions b{display:block;color:var(--ds-text-primary);font-size:14px;line-height:22px;font-weight:600}
+.regions .n{display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--ds-brand-gj-blue);color:#fff;font-size:12px;font-weight:600}
+.ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+.field-full{grid-column:1/-1}
+.feedback{margin:0;font-size:13px;line-height:22px;color:var(--ds-text-secondary)}
+.source{margin-top:8px;font-size:13px;line-height:20px;color:var(--ds-text-tiatery)}
+@media(max-width:1100px){.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:960px){.grid2,.grid3,.anatomy{grid-template-columns:1fr}}

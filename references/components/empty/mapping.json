@@ -1,0 +1,75 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "empty",
+  "figmaComponent": "空状态 Empty（161:5438；无图表插图 1063:160）",
+  "prototypeClass": "gj-m-empty",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "base": "div.gj-m-empty",
+    "image": "img.gj-m-empty-image（alt=\"\"）",
+    "copy": ".gj-m-empty-copy > p.gj-m-empty-title + p.gj-m-empty-description",
+    "action": "最多一个 .gj-m-button.gj-m-button-primary（Medium）",
+    "type": "text（无图）| empty | chart | search | network | permission | error"
+  },
+  "valueMap": {
+    "image": "宽 100",
+    "gap": "组间距 12，文字间距 4",
+    "title": "H5 14/22",
+    "description": "P4 13/20"
+  },
+  "tokenMap": {
+    "title": "Text/Primary",
+    "description": "Text/Tiatery"
+  },
+  "assetMap": {
+    "empty": "{ROOT}assets/images/empty/empty.svg（暂无内容）",
+    "chart": "chart.svg（无图表数据）",
+    "search": "search.svg（搜索无结果）",
+    "network": "network.svg（网络异常）",
+    "permission": "permission.svg（无权限）",
+    "error": "error.svg（加载错误）"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-empty",
+    "image": ".gj-m-empty-image",
+    "title": ".gj-m-empty-title",
+    "description": ".gj-m-empty-description"
+  },
+  "markup": {
+    "empty": "<div class=\"gj-m-empty\"><img class=\"gj-m-empty-image\" alt=\"\" src=\"{ROOT}assets/images/empty/search.svg\"><div class=\"gj-m-empty-copy\"><p class=\"gj-m-empty-title\">未找到相关内容</p><p class=\"gj-m-empty-description\">请调整搜索条件后重试</p></div></div>",
+    "search": "<div class=\"gj-m-empty\"><img class=\"gj-m-empty-image\" alt=\"\" src=\"{ROOT}assets/images/empty/search.svg\"><div class=\"gj-m-empty-copy\"><p class=\"gj-m-empty-title\">未找到相关文件</p><p class=\"gj-m-empty-description\">请检查文件名称或编号后重试</p></div></div>",
+    "network": "<div class=\"gj-m-empty\"><img class=\"gj-m-empty-image\" alt=\"\" src=\"{ROOT}assets/images/empty/network.svg\"><div class=\"gj-m-empty-copy\"><p class=\"gj-m-empty-title\">网络连接异常</p><p class=\"gj-m-empty-description\">请检查网络后重新加载</p></div><button type=\"button\" class=\"gj-m-button gj-m-button-primary\">重新加载</button></div>",
+    "permission": "<div class=\"gj-m-empty\"><img class=\"gj-m-empty-image\" alt=\"\" src=\"{ROOT}assets/images/empty/permission.svg\"><div class=\"gj-m-empty-copy\"><p class=\"gj-m-empty-title\">暂无访问权限</p><p class=\"gj-m-empty-description\">请联系管理员申请权限</p></div></div>",
+    "text": "<div class=\"gj-m-empty\"><div class=\"gj-m-empty-copy\"><p class=\"gj-m-empty-title\">暂无记录</p></div></div>",
+    "centered": "<div style=\"flex:1 0 auto;display:flex;align-items:center;justify-content:center;padding:var(--space-24) 0\">（放上面任一空状态）</div>"
+  },
+  "interactionMap": {
+    "retry": "网络异常 / 加载错误给“重新加载”，成功后替换为内容",
+    "clearFilter": "筛选无结果时主操作“清除筛选”，只在筛选生效时显示"
+  },
+  "accessibility": {
+    "image": "插图 alt=\"\"，含义由标题说明"
+  },
+  "composition": {
+    "type": "按实际原因选类型，不混用",
+    "action": "最多一个主操作",
+    "scope": "只替换受影响区域；搜索区、筛选栏保留",
+    "position": "在受影响区域内垂直居中（父容器 flex:1 并居中）"
+  },
+  "pageRules": {
+    "PR-015": "空状态在受影响区域内垂直居中"
+  },
+  "pending": {},
+  "templates": {
+    "empty": {
+      "tpl": "<div class=\"gj-m-empty\"><img class=\"gj-m-empty-image\" alt=\"\" src=\"{ROOT}assets/images/empty/{{type}}.svg\"><div class=\"gj-m-empty-copy\"><p class=\"gj-m-empty-title\">{{title}}</p><p class=\"gj-m-empty-description\">{{desc}}</p></div>{{{action}}}</div>",
+      "example": {
+        "type": "search",
+        "title": "未找到相关内容",
+        "desc": "请调整搜索条件后重试",
+        "action": ""
+      },
+      "params": "type：search / empty / network / error / permission；action：主操作按钮 HTML（Medium）"
+    }
+  }
+}

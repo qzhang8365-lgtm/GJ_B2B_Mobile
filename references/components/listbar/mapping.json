@@ -1,0 +1,137 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "listbar",
+  "figmaComponent": "列表导航 ListBar（58:1953）：list-item/*、list",
+  "prototypeClass": "gj-m-list / gj-m-list-item",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "list": "div.gj-m-list（通栏）",
+    "list CardMode=true": "div.gj-m-list.gj-m-list-card（左右 16、圆角 12）",
+    "list Title=true": "div.gj-m-list-title（分组标题）",
+    "list-item": "可进入下一层用 a.gj-m-list-item；有按钮行为用 button；仅展示用 div",
+    "content": ".gj-m-list-item-content",
+    "main": ".gj-m-list-item-main",
+    "title": ".gj-m-list-item-label（主文案上方小标题）",
+    "text": ".gj-m-list-item-text（主文案）",
+    "description": ".gj-m-list-item-desc",
+    "Prefix=true": ".gj-m-list-item-prefix > .gj-icon（24）| 头像（36）",
+    "Extra=true": ".gj-m-list-item-extra（右侧灰字或状态）",
+    "Arrow=true": ".gj-m-list-item-arrow > icf_Arrow_right",
+    "Action": ".gj-m-list-item-action（开关等）",
+    "Disabled=true": ".is-disabled + aria-disabled=\"true\"",
+    "inCard=true": ".gj-m-list-in-card：左右留白由外层卡片提供"
+  },
+  "valueMap": {
+    "height.single": "48",
+    "height.withLabelOrDesc": "68",
+    "height.both": "88",
+    "text": "主文案 16/24；标题与描述 13/20；额外内容 13/20 灰字",
+    "prefix": "图标 24 / 头像 36",
+    "divider": "1px Border/default，从前缀之后起算，末项不显示"
+  },
+  "tokenMap": {
+    "background": "Background/Container（--ds-background-container）",
+    "divider": "Border/default（--ds-border-default）",
+    "text": "Text/Primary",
+    "label/desc": "Text/Secondary / Text/Tiatery",
+    "extra": "Text/Tiatery",
+    "arrow": "Text/Tiatery",
+    "disabled": "整项 opacity 0.4",
+    "cardRadius": "--Radius-LG（12）"
+  },
+  "assetMap": {
+    "arrow": "{ROOT}assets/icons/iconfont/icf_Arrow_right.svg",
+    "prefixIcon": "按业务从图标库选取，24",
+    "avatar": "见 avatar 组件"
+  },
+  "runtimeMap": {
+    "list": ".gj-m-list",
+    "item": ".gj-m-list-item",
+    "prefix": ".gj-m-list-item-prefix",
+    "content": ".gj-m-list-item-content",
+    "main": ".gj-m-list-item-main",
+    "text": ".gj-m-list-item-text",
+    "desc": ".gj-m-list-item-desc",
+    "extra": ".gj-m-list-item-extra",
+    "arrow": ".gj-m-list-item-arrow",
+    "action": ".gj-m-list-item-action",
+    "title": ".gj-m-list-title"
+  },
+  "markup": {
+    "nav": "<div class=\"gj-m-list\"><a class=\"gj-m-list-item\" href=\"javascript:void 0\"><span class=\"gj-m-list-item-content\"><span class=\"gj-m-list-item-main\"><span class=\"gj-m-list-item-text\">我的签名</span></span><span class=\"gj-m-list-item-extra\">3 个</span><span class=\"gj-m-list-item-arrow\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span></span></span></a><a class=\"gj-m-list-item\" href=\"javascript:void 0\"><span class=\"gj-m-list-item-content\"><span class=\"gj-m-list-item-main\"><span class=\"gj-m-list-item-text\">切换至企业账号</span></span><span class=\"gj-m-list-item-arrow\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span></span></span></a></div>",
+    "info": "<div class=\"gj-m-list\"><div class=\"gj-m-list-item\"><span class=\"gj-m-list-item-content\"><span class=\"gj-m-list-item-main\"><span class=\"gj-m-list-item-text\">实名认证</span></span><span class=\"gj-m-list-item-extra\">已实名</span></span></div></div>",
+    "iconPrefix": "<div class=\"gj-m-list\"><a class=\"gj-m-list-item\" href=\"javascript:void 0\"><span class=\"gj-m-list-item-prefix\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_bell.svg')\" aria-hidden=\"true\"></span></span><span class=\"gj-m-list-item-content\"><span class=\"gj-m-list-item-main\"><span class=\"gj-m-list-item-text\">消息通知</span></span><span class=\"gj-m-list-item-arrow\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span></span></span></a></div>",
+    "desc": "<div class=\"gj-m-list\"><a class=\"gj-m-list-item\" href=\"javascript:void 0\"><span class=\"gj-m-list-item-content\"><span class=\"gj-m-list-item-main\"><span class=\"gj-m-list-item-text\">小红书图文创作六部曲</span><span class=\"gj-m-list-item-desc\">展业资料 · 2026-10-12</span></span><span class=\"gj-m-list-item-arrow\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span></span></span></a></div>",
+    "avatar": "<img class=\"gj-m-list-item-avatar\" src=\"{ROOT}assets/images/avatar/person-1.svg\" alt=\"\">",
+    "switch": "<div class=\"gj-m-list\"><div class=\"gj-m-list-item\"><span class=\"gj-m-list-item-content\"><span class=\"gj-m-list-item-main\"><span class=\"gj-m-list-item-text\">消息提醒</span><span class=\"gj-m-list-item-desc\">关闭后不再推送待签署提醒</span></span><span class=\"gj-m-list-item-action\"><button type=\"button\" class=\"gj-m-switch\" role=\"switch\" aria-checked=\"true\" aria-label=\"消息提醒\"></button></span></span></div></div>",
+    "disabled": "<div class=\"gj-m-list\"><div class=\"gj-m-list-item is-disabled\" aria-disabled=\"true\"><span class=\"gj-m-list-item-content\"><span class=\"gj-m-list-item-main\"><span class=\"gj-m-list-item-text\">导出数据</span><span class=\"gj-m-list-item-desc\">仅管理员可用</span></span></span></div></div>",
+    "cardMode": "<div class=\"gj-m-list-title\">账户</div><div class=\"gj-m-list gj-m-list-card\"><div class=\"gj-m-list-item\"><span class=\"gj-m-list-item-content\"><span class=\"gj-m-list-item-main\"><span class=\"gj-m-list-item-text\">实名认证</span></span><span class=\"gj-m-list-item-extra\">已实名</span></span></div><a class=\"gj-m-list-item\" href=\"javascript:void 0\"><span class=\"gj-m-list-item-content\"><span class=\"gj-m-list-item-main\"><span class=\"gj-m-list-item-text\">我的签名</span></span><span class=\"gj-m-list-item-extra\">3 个</span><span class=\"gj-m-list-item-arrow\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span></span></span></a></div>",
+    "fromPreview_list_item_avatar": "<div class=\"gj-m-list\"><a class=\"gj-m-list-item\" href=\"javascript:void 0\"><span class=\"gj-m-list-item-prefix\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_settings.svg')\" aria-hidden=\"true\"></span></span><span class=\"gj-m-list-item-content\"><span class=\"gj-m-list-item-main\"><span class=\"gj-m-list-item-text\">通用设置</span></span><span class=\"gj-m-list-item-arrow\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span></span></span></a><a class=\"gj-m-list-item\" href=\"javascript:void 0\"><span class=\"gj-m-list-item-prefix\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_bell.svg')\" aria-hidden=\"true\"></span></span><span class=\"gj-m-list-item-content\"><span class=\"gj-m-list-item-main\"><span class=\"gj-m-list-item-text\">消息提醒</span></span><span class=\"gj-m-list-item-arrow\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span></span></span></a><a class=\"gj-m-list-item\" href=\"javascript:void 0\"><span class=\"gj-m-list-item-prefix\"><span class=\"gj-m-list-item-avatar av\" style=\"background:var(--ds-primitive-blue-b06)\" aria-hidden=\"true\">张</span></span><span class=\"gj-m-list-item-content\"><span class=\"gj-m-list-item-main\"><span class=\"gj-m-list-item-label\">机构客户</span><span class=\"gj-m-list-item-text\">张一鸣</span><span class=\"gj-m-list-item-desc\">上海分公司 · 客户经理</span></span><span class=\"gj-m-list-item-arrow\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span></span></span></a></div>",
+    "item": "<a class=\"gj-m-list-item\" href=\"javascript:void 0\"><span class=\"gj-m-list-item-prefix\"><img class=\"gj-m-list-item-avatar\" src=\"{ROOT}assets/images/avatar/person-1.svg\" alt=\"\"></span><span class=\"gj-m-list-item-content\"><span class=\"gj-m-list-item-main\"><span class=\"gj-m-list-item-text\">张一鸣</span><span class=\"gj-m-list-item-desc\">KH20231000 · 个人客户 · R1</span></span><span class=\"gj-m-list-item-extra\"><span class=\"gj-m-tag gj-m-tag-small gj-m-tag-green\">正常</span></span><span class=\"gj-m-list-item-arrow\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span></span></span></a>",
+    "list": "<div class=\"gj-m-list\">…</div>",
+    "inCardList": "<div class=\"gj-m-list gj-m-list-in-card\">…</div>"
+  },
+  "interactionMap": {
+    "navigate": "a 整行可点，进入下一层级",
+    "switch": "开关立即生效；禁用时说明原因",
+    "disabled": "整项 40% 并说明原因，不可点"
+  },
+  "accessibility": {
+    "element": "进入下一层用 a，按钮行为用 button，展示用 div",
+    "arrow": "箭头 aria-hidden；行内容即名称",
+    "switch": "button role=\"switch\" + aria-checked + aria-label",
+    "disabled": "aria-disabled=\"true\""
+  },
+  "composition": {
+    "intent": "一行只承载一个主要意图：导航、查看状态或切换设置",
+    "arrow": "右侧箭头只表示进入下一层，避免与普通状态文案同时强调",
+    "text": "主文案单行，说明最多两行，超长截断",
+    "group": "同组行高与分割方式一致；超过 8–10 项提供搜索、筛选或分组",
+    "cardMode": "卡片模式与一级卡片同一层级时左右边距由页面容器提供（页面 padding 已 16 时设 margin-inline:0）",
+    "inCard": "卡片已提供左右16时，使用list模板inCard:true（即使中间有页签/stack组合层），不与card同时使用；不在页面写负边距。"
+  },
+  "pageRules": {
+    "PR-007": "卡片内列表用inCard:true，水平留白只由卡片提供；既有直接正文通栏组合仍按基座处理。",
+    "PR-008": "卡片模式列表圆角 12",
+    "PR-016": "0 级卡片内用通栏列表"
+  },
+  "pending": {},
+  "markupNote": "markup 中 fromPreview_* 片段由 scripts/check-mapping.cjs 从预览页实际渲染补录（2026-10-19），与预览页一致；其余为手写的常用写法。",
+  "templates": {
+    "item": {
+      "tpl": "{{#link}}<a class=\"gj-m-list-item{{#disabled}} is-disabled{{/disabled}}\" href=\"javascript:void 0\"{{{attrs}}}>{{/link}}{{^link}}<div class=\"gj-m-list-item{{#disabled}} is-disabled{{/disabled}}\"{{#disabled}} aria-disabled=\"true\"{{/disabled}}{{{attrs}}}>{{/link}}{{#prefix}}<span class=\"gj-m-list-item-prefix\">{{{prefix}}}</span>{{/prefix}}<span class=\"gj-m-list-item-content\"><span class=\"gj-m-list-item-main\">{{#label}}<span class=\"gj-m-list-item-label\">{{label}}</span>{{/label}}<span class=\"gj-m-list-item-text\">{{{text}}}</span>{{#desc}}<span class=\"gj-m-list-item-desc\">{{{desc}}}</span>{{/desc}}</span>{{#extra}}<span class=\"gj-m-list-item-extra\">{{{extra}}}</span>{{/extra}}{{#action}}<span class=\"gj-m-list-item-action\">{{{action}}}</span>{{/action}}{{#link}}<span class=\"gj-m-list-item-arrow\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span></span>{{/link}}</span>{{#link}}</a>{{/link}}{{^link}}</div>{{/link}}",
+      "params": "单行：link（可点，带右箭头，<a>）/ 否则 <div>；prefix：前缀 HTML（图标或 listbar.avatar）；label：上方小标签；text、desc、extra：HTML（调用方转义）；action：右侧控件 HTML（开关等）；disabled；attrs：附加属性",
+      "example": {
+        "link": true,
+        "prefix": "<img class=\"gj-m-list-item-avatar\" src=\"{ROOT}assets/images/avatar/person-1.svg\" alt=\"\">",
+        "text": "张一鸣",
+        "desc": "KH20231000 · 个人客户 · R1",
+        "extra": "<span class=\"gj-m-tag gj-m-tag-small gj-m-tag-green\">正常</span>",
+        "attrs": ""
+      }
+    },
+    "list": {
+      "tpl": "<div class=\"gj-m-list{{#inCard}} gj-m-list-in-card{{/inCard}}{{#card}} gj-m-list-card{{/card}}{{#cls}} {{cls}}{{/cls}}\">{{{items}}}</div>",
+      "params": "列表容器：items 为 listbar.item 拼接；card：卡片式分组；cls：页面附加类；inCard：容器已提供左右16时设true，列表不重复增加水平留白，不与card同时使用",
+      "example": {
+        "items": "…"
+      },
+      "examples": {
+        "list": {
+          "items": "…"
+        },
+        "inCardList": {
+          "inCard": true,
+          "items": "…"
+        }
+      }
+    },
+    "avatar": {
+      "tpl": "<img class=\"gj-m-list-item-avatar\" src=\"{{src}}\" alt=\"\">",
+      "params": "前缀头像图片（36，圆形）",
+      "example": {
+        "src": "{ROOT}assets/images/avatar/person-1.svg"
+      }
+    }
+  }
+}

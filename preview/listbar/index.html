@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 列表导航 ListBar</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid2+.grid2{margin-top:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    .checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px}
+    .checks label{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ds-text-secondary)}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">导航组件 · Navigation</div>
+    <h1>列表导航 ListBar</h1>
+    <p>承载移动端 B 端中的信息入口、设置项与对象摘要，帮助用户快速浏览状态并进入下一层级。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>基础分类</h2><p>列表项由前缀、主体（标题 / 主文案 / 描述）、额外内容和箭头组成，按需显示。根据内容密度和操作方式选择列表类型；同一业务区块内保持行高、前缀和尾部操作一致。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">主体 · 单行 48 / 加标题或描述 68 / 都有 88</span><div data-demo="cBody"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">前缀 · 图标 24 / 头像 36</span><div data-demo="cPrefix"></div></div>
+      </div>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">尾部 · 额外内容 / 箭头</span><div data-demo="cTail"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">禁用 · Disabled</span><div data-demo="cDisabled"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用方法</h2><p>四种常见列表，均为 375 宽。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">基础导航列表 · 页面入口与单层信息导航</span><div data-demo="uBasic"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">卡片 / 分组列表 · 首页或详情页中的独立业务分组</span><div data-demo="uCard"></div></div>
+      </div>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">开关设置列表 · 立即生效的二元设置</span><div data-demo="uSwitch"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">用户信息列表 · 客户、联系人或经办人摘要</span><div data-demo="uUser"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>组合列表项的各部分，并切换通栏 / 卡片模式。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pMode">列表模式</label><select id="pMode"><option value="plain">通栏</option><option value="card" selected>卡片（带分组标题）</option></select></div>
+          <div class="field"><label for="pPrefix">前缀</label><select id="pPrefix"><option value="none">无</option><option value="icon" selected>图标</option><option value="avatar">头像</option></select></div>
+          <div class="field"><span>显示内容</span><div class="checks">
+            <label><input type="checkbox" id="pTitle">标题</label>
+            <label><input type="checkbox" id="pDesc">描述</label>
+            <label><input type="checkbox" id="pExtra" checked>额外内容</label>
+            <label><input type="checkbox" id="pArrow" checked>箭头</label>
+            <label><input type="checkbox" id="pDisabled">第 3 项禁用</label>
+          </div></div>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>单一意图</td><td>一行只承载一个主要意图：导航、查看状态或切换设置。</td><td>不在同一行混合多个可点击操作。</td></tr>
+        <tr><td>文案</td><td>主文案优先单行，说明文案最多两行；超长内容截断，在详情页完整展示。</td><td>不用描述承载关键信息。</td></tr>
+        <tr><td>前缀与尾部</td><td>前缀用于识别对象类型，尾部用于状态或操作。右侧箭头只表示可进入下一层级。</td><td>避免两端同时堆叠多个高权重元素；箭头不与普通状态文案同时强调。</td></tr>
+        <tr><td>分组</td><td>同组列表保持一致行高与分割方式；卡片模式配合清晰的分组标题。</td><td>避免连续堆叠过多卡片；列表超过 8–10 项时提供搜索、筛选或分组。</td></tr>
+        <tr><td>开关与禁用</td><td>开关用于立即生效的二元设置，标题说明设置对象，描述补充影响范围。</td><td>禁用时同步说明原因。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const icon=n=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${n}.svg')" aria-hidden="true"></span>`;
+  const AV_COLORS=['var(--ds-primitive-blue-b06)','var(--ds-primitive-green-g06)','var(--ds-primitive-orange-o06)'];
+  const avatar=(name,i=0)=>`<span class="gj-m-list-item-avatar av" style="background:${AV_COLORS[i%3]}" aria-hidden="true">${name.slice(0,1)}</span>`;
+  /* o: {text,label,desc,extra,arrow,prefix:'icon'|'avatar',icon,name,disabled,action} */
+  const item=o=>{const tag=o.arrow?'a':'div';const pre=o.prefix==='icon'?`<span class="gj-m-list-item-prefix">${icon(o.icon||'icf_system_settings')}</span>`:o.prefix==='avatar'?`<span class="gj-m-list-item-prefix">${avatar(o.name||o.text,o.i)}</span>`:'';
+    return `<${tag} class="gj-m-list-item${o.disabled?' is-disabled':''}"${o.arrow?' href="javascript:void 0"':''}${o.disabled?' aria-disabled="true"':''}>${pre}<span class="gj-m-list-item-content"><span class="gj-m-list-item-main">${o.label?`<span class="gj-m-list-item-label">${o.label}</span>`:''}<span class="gj-m-list-item-text">${o.text}</span>${o.desc?`<span class="gj-m-list-item-desc">${o.desc}</span>`:''}</span>${o.extra?`<span class="gj-m-list-item-extra">${o.extra}</span>`:''}${o.action||''}${o.arrow?`<span class="gj-m-list-item-arrow">${icon('icf_Arrow_right')}</span>`:''}</span></${tag}>`};
+  const list=(items,card,title)=>`${title?`<div class="gj-m-list-title">${title}</div>`:''}<div class="gj-m-list${card?' gj-m-list-card':''}">${items.map(item).join('')}</div>`;
+  const sw=(on,label)=>`<span class="gj-m-list-item-action"><button type="button" class="gj-m-switch" role="switch" aria-checked="${on}" aria-label="${label}"></button></span>`;
+  const CSS='html,body{overflow-y:hidden}'+
+    '.scr{width:100%;max-width:3.75rem;margin:0 auto;padding:.12rem 0;background:var(--ds-background-background)}.scr.w{background:var(--ds-background-container);padding:0}.stack{display:flex;flex-direction:column;gap:.08rem}'+
+    '.av{display:flex;align-items:center;justify-content:center;color:var(--ds-text-reversal);font-size:.16rem;line-height:1;font-weight:600}';
+  const show=(k,html)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS,height:'auto'});
+  show('cBody',`<div class="scr w">${list([{text:'账户与安全',arrow:1},{label:'登录方式',text:'手机号 + 短信验证码',arrow:1},{text:'消息通知',desc:'审批、客户动态与系统公告',arrow:1},{label:'所属机构',text:'国金证券 上海分公司',desc:'华东区域 · 财富管理部',arrow:1}])}</div>`);
+  show('cPrefix',`<div class="scr w">${list([{prefix:'icon',icon:'icf_system_settings',text:'通用设置',arrow:1},{prefix:'icon',icon:'icf_system_bell',text:'消息提醒',arrow:1},{prefix:'avatar',name:'张一鸣',i:0,label:'机构客户',text:'张一鸣',desc:'上海分公司 · 客户经理',arrow:1}])}</div>`);
+  show('cTail',`<div class="scr w">${list([{text:'我的客户',extra:'128 位',arrow:1},{text:'待办审批',extra:'12 条',arrow:1},{text:'当前版本',extra:'v3.2.0'},{text:'风险测评',extra:'稳健型 C3',arrow:1}])}</div>`);
+  show('cDisabled',`<div class="scr w">${list([{prefix:'icon',icon:'icf_system_settings',text:'通用设置',arrow:1},{prefix:'icon',icon:'icf_file_task',text:'批量导出',desc:'当前角色无导出权限',extra:'不可用',arrow:1,disabled:1}])}</div>`);
+  show('uBasic',`<div class="scr w">${list(['账户与安全','消息通知','隐私设置','帮助与反馈','关于我们'].map(t=>({text:t,arrow:1})))}</div>`);
+  show('uCard',`<div class="scr">${list([{prefix:'icon',icon:'icf_user_group',text:'我的客户',extra:'128 位',arrow:1},{prefix:'icon',icon:'icf_file_task',text:'待办审批',extra:'12 条',arrow:1},{prefix:'icon',icon:'icf_data_chart',text:'业绩看板',arrow:1},{prefix:'icon',icon:'icf_system_calendar',text:'日程安排',arrow:1},{prefix:'icon',icon:'icf_business_wallet',text:'产品中心',arrow:1}],true,'客户服务')}</div>`);
+  show('uSwitch',`<div class="scr w">${list([{label:'消息推送',text:'审批提醒',desc:'开启后，新的审批事项将即时推送',action:sw(true,'审批提醒')},{text:'夜间免打扰',action:sw(false,'夜间免打扰')}])}</div>`);
+  show('uUser',`<div class="scr w">${list([{prefix:'avatar',name:'张一鸣',i:0,label:'机构客户',text:'张一鸣',desc:'上海分公司 · 客户经理'},{prefix:'avatar',name:'李明轩',i:1,label:'个人客户',text:'李明轩',desc:'杭州营业部 · 理财顾问'}])}</div>`);
+
+  const $=id=>document.getElementById(id);
+  const DATA=[['我的客户','机构与个人客户','128 位','icf_user_group','张一鸣'],['待办审批','合同与开户审批','12 条','icf_file_task','李明轩'],['业绩看板','本月数据已更新','已更新','icf_data_chart','王浩然'],['日程安排','今日 3 项日程','3 项','icf_system_calendar','陈思远']];
+  /* 头像前缀对应用户数据：姓名 / 客户类型 / 机构与角色 / 状态 */
+  const USERS=[['张一鸣','机构客户','上海分公司 · 客户经理','已开户'],['李明轩','个人客户','杭州营业部 · 理财顾问','待回访'],['王浩然','个人客户','北京分公司 · 投资顾问','风测到期'],['陈思远','机构客户','深圳分公司 · 机构业务部','已开户']];
+  function render(){const card=$('pMode').value==='card',pre=$('pPrefix').value,user=pre==='avatar';
+    const items=(user?USERS:DATA).map((d,i)=>user
+      ?{text:d[0],name:d[0],label:$('pTitle').checked?d[1]:'',desc:$('pDesc').checked?d[2]:'',extra:$('pExtra').checked?d[3]:'',arrow:$('pArrow').checked,prefix:'avatar',i,disabled:$('pDisabled').checked&&i===2}
+      :{text:d[0],label:$('pTitle').checked?'业务入口':'',desc:$('pDesc').checked?d[1]:'',extra:$('pExtra').checked?d[2]:'',arrow:$('pArrow').checked,prefix:pre==='none'?'':pre,icon:d[3],i,disabled:$('pDisabled').checked&&i===2});
+    GJPhone.swatch($('lab'),{html:`<div class="scr${card?'':' w'}">${list(items,card,card?(user?'我的客户':'客户服务'):'')}</div>`,css:CSS,height:'auto'});}
+  ['pMode','pPrefix','pTitle','pDesc','pExtra','pArrow','pDisabled'].forEach(id=>$(id).addEventListener('change',render));render();
+  document.addEventListener('click',()=>{});
+  /* 开关可点（示例） */
+  document.querySelectorAll('[data-demo="uSwitch"] iframe').forEach(f=>f.addEventListener('load',()=>f.contentDocument.querySelectorAll('.gj-m-switch').forEach(b=>b.addEventListener('click',()=>{b.setAttribute('aria-checked',b.getAttribute('aria-checked')!=='true')}))));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "text-button",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "figmaComponent": "Text_Button（1158:2359）",
+  "prototypeClass": "gj-m-text-button",
+  "propertyMap": {
+    "Label#1158:1": "按钮文字",
+    "Size": "gj-m-text-button-large | （Medium 为基础类）| gj-m-text-button-small",
+    "Style": "grey（基础类）| gj-m-text-button-blue",
+    "State=pressed": ":active（展示用 .is-pressed）",
+    "State=disabled": "disabled 或 .is-disabled",
+    "Icon=Left_Icon / Right_Icon": "span.gj-icon 放在文字前 / 后",
+    "iconOnlyToolbar": "只放图标 + aria-label（PR-014 工具栏场景）"
+  },
+  "valueMap": {
+    "Large": "高 24、P2 16/24、图标 20",
+    "Medium": "高 22、P3 14/22、图标 16",
+    "Small": "高 18、P5 12/18、图标 12",
+    "gap": "图标与文字 4；无内边距、无背景"
+  },
+  "tokenMap": {
+    "grey.default": "Text/Secondary",
+    "grey.pressed": "Text/Primary",
+    "blue.default": "Button/Primary/Bg-default",
+    "blue.pressed": "Button/Primary/Bg-pressed",
+    "blue.disabled": "Button/Primary/Bg-disable",
+    "disabled": "Text/disable",
+    "colorVar": "--gj-m-tbtn-fg 可覆盖（如工具栏用 Text/Tiatery）"
+  },
+  "assetMap": {
+    "icon": "图标库 General，颜色跟随文字"
+  },
+  "runtimeMap": {
+    "root": "button.gj-m-text-button",
+    "icon": ".gj-m-text-button > .gj-icon"
+  },
+  "markup": {
+    "grey": "<button type=\"button\" class=\"gj-m-text-button\">取消</button>",
+    "blue": "<button type=\"button\" class=\"gj-m-text-button gj-m-text-button-blue\">获取验证码</button>",
+    "moreSmall": "<button type=\"button\" class=\"gj-m-text-button gj-m-text-button-small gj-m-text-button-blue\">查看更多</button>",
+    "rightArrow": "<button type=\"button\" class=\"gj-m-text-button gj-m-text-button-small gj-m-text-button-blue\">查看全部 12 条<span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span></button>",
+    "leftIcon": "<button type=\"button\" class=\"gj-m-text-button gj-m-text-button-small\" style=\"--gj-m-tbtn-fg:var(--ds-text-tiatery)\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_delete.svg')\" aria-hidden=\"true\"></span><span>删除</span></button>",
+    "toolbarIcon": "<button type=\"button\" class=\"gj-m-text-button gj-m-text-button-large\" style=\"--gj-m-tbtn-fg:var(--ds-text-tiatery)\" aria-label=\"按超时天数排序\"><span class=\"gj-icon\" style=\"transform:rotate(90deg);--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_transfer1.svg')\" aria-hidden=\"true\"></span></button>",
+    "disabled": "<button type=\"button\" class=\"gj-m-text-button gj-m-text-button-blue\" disabled>重新获取（42s）</button>",
+    "textButton": "<button type=\"button\" class=\"gj-m-text-button gj-m-text-button-small gj-m-text-button-blue\">查看全部<span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span></button>",
+    "tertiary 三级文字色辅助图标按钮（PR-014）": "<button type=\"button\" class=\"gj-m-text-button gj-m-text-button-large gj-m-text-button-tertiary\" aria-label=\"排序\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_transfer1.svg')\" aria-hidden=\"true\"></span></button>"
+  },
+  "interactionMap": {
+    "pressed": "按下变 Text/Primary（grey）或 Bg-pressed（blue）",
+    "disabled": "倒计时等不可点状态用 disabled"
+  },
+  "accessibility": {
+    "element": "button；纯图标时 aria-label",
+    "hitArea": "≥ 44×44，伪元素扩展，不撑大布局（PR-010）"
+  },
+  "composition": {
+    "use": "次要、轻量操作：查看更多、取消、获取验证码、行内操作",
+    "wrap": "文字不换行",
+    "toolbar": "页签行 / 筛选行右侧辅助图标用 Large 纯图标、Text/Tiatery、右缘 16"
+  },
+  "pageRules": {
+    "PR-010": "热区由组件扩展",
+    "PR-013": "间距量视觉边缘，不量热区",
+    "PR-014": "工具栏辅助图标：20、Text/Tiatery、右缘 16；排序用上下箭头（transfer1 旋转 90°）"
+  },
+  "pending": {},
+  "templates": {
+    "textButton": {
+      "tpl": "<button type=\"button\" class=\"gj-m-text-button{{#size}} gj-m-text-button-{{size}}{{/size}}{{#blue}} gj-m-text-button-blue{{/blue}}{{#cls}} {{cls}}{{/cls}}\"{{{attrs}}}{{#disabled}} disabled{{/disabled}}>{{{lead}}}{{text}}{{#arrow}}<span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span>{{/arrow}}{{#tail}}<span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/{{tail}}.svg')\" aria-hidden=\"true\"></span>{{/tail}}</button>",
+      "params": "size：small / large（Medium 不写）；blue：蓝色；arrow：尾部箭头；lead：前置图标 HTML（纯图标时 text 留空、attrs 带 aria-label）；disabled；cls / attrs：附加类与属性；tail：尾部图标名（如展开 / 收起用 icf_Arrow_caret-down / -up）",
+      "examples": {
+        "grey": {
+          "text": "取消"
+        },
+        "blue": {
+          "text": "获取验证码",
+          "blue": true
+        },
+        "moreSmall": {
+          "text": "查看更多",
+          "size": "small",
+          "blue": true
+        },
+        "rightArrow": {
+          "text": "查看全部 12 条",
+          "size": "small",
+          "blue": true,
+          "arrow": true
+        },
+        "disabled": {
+          "text": "重新获取（42s）",
+          "blue": true,
+          "disabled": true
+        },
+        "textButton": {
+          "text": "查看全部",
+          "size": "small",
+          "blue": true,
+          "arrow": true,
+          "attrs": ""
+        }
+      }
+    }
+  }
+}

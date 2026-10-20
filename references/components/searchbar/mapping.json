@@ -1,0 +1,104 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "searchbar",
+  "figmaComponent": "SearchBar（158:2572，页面 158:2569）",
+  "prototypeClass": "gj-m-search",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "SearchBar": "label.gj-m-search > 搜索图标 + input[type=search] + button.gj-m-search-clear",
+    "Size=M": "gj-m-search-m",
+    "style=lined": "gj-m-search-line",
+    "state=active": ":focus-within（展示用 .is-focused）",
+    "SearchButton=Inside": "+ span.gj-m-search-divider + span.gj-m-search-action > button.gj-m-text-button",
+    "SearchButton=outside": "div.gj-m-search-row > .gj-m-search + button.gj-m-button.gj-m-button-primary（L 时加 gj-m-button-large）",
+    "关键词高亮": "mark.gj-m-search-highlight"
+  },
+  "valueMap": {
+    "L": "高 40、左右 12、圆角 8、P2 16/24、图标 20",
+    "M": "高 32（--control-M）、左右 8、圆角 6、P3 14/22、图标 16",
+    "area": "列表页搜索区白底，上下 8、左右 16"
+  },
+  "tokenMap": {
+    "fill.background": "Background/Background",
+    "fill.border": "Border/default",
+    "line.background": "Background/Container",
+    "line.border": "Border/secondary",
+    "focused.border": "Border/focused",
+    "icon": "Text/Tiatery",
+    "clear": "Text/disable",
+    "placeholder": "Text/Tiatery",
+    "highlight": "Text/blue，无底色、不改字重"
+  },
+  "assetMap": {
+    "search": "{ROOT}assets/icons/iconfont/icf_system_search.svg",
+    "clear": "{ROOT}assets/icons/iconfont/icf_system_close-circle-fill.svg"
+  },
+  "runtimeMap": {
+    "root": "label.gj-m-search",
+    "input": ".gj-m-search > input",
+    "clear": ".gj-m-search-clear",
+    "divider": ".gj-m-search-divider",
+    "action": ".gj-m-search-action",
+    "row": ".gj-m-search-row",
+    "highlight": "mark.gj-m-search-highlight"
+  },
+  "markup": {
+    "default": "<label class=\"gj-m-search\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_search.svg')\" aria-hidden=\"true\"></span><input type=\"search\" enterkeyhint=\"search\" placeholder=\"搜索客户名称或编号\" aria-label=\"搜索客户名称或编号\"><button type=\"button\" class=\"gj-m-search-clear\" aria-label=\"清除\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_close-circle-fill.svg')\" aria-hidden=\"true\"></span></button></label>",
+    "m": "<label class=\"gj-m-search gj-m-search-m\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_search.svg')\" aria-hidden=\"true\"></span><input type=\"search\" enterkeyhint=\"search\" placeholder=\"搜索文件名称或编号\" aria-label=\"搜索文件名称或编号\"><button type=\"button\" class=\"gj-m-search-clear\" aria-label=\"清除\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_close-circle-fill.svg')\" aria-hidden=\"true\"></span></button></label>",
+    "line": "<label class=\"gj-m-search gj-m-search-line\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_search.svg')\" aria-hidden=\"true\"></span><input type=\"search\" enterkeyhint=\"search\" placeholder=\"搜索客户名称或编号\" aria-label=\"搜索客户名称或编号\"><button type=\"button\" class=\"gj-m-search-clear\" aria-label=\"清除\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_close-circle-fill.svg')\" aria-hidden=\"true\"></span></button></label>",
+    "insideButton": "<label class=\"gj-m-search\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_search.svg')\" aria-hidden=\"true\"></span><input type=\"search\" enterkeyhint=\"search\" placeholder=\"搜索客户名称或编号\" aria-label=\"搜索客户名称或编号\"><button type=\"button\" class=\"gj-m-search-clear\" aria-label=\"清除\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_close-circle-fill.svg')\" aria-hidden=\"true\"></span></button><span class=\"gj-m-search-divider\" aria-hidden=\"true\"></span><span class=\"gj-m-search-action\"><button type=\"button\" class=\"gj-m-text-button\">搜索</button></span></label>",
+    "outsideButton": "<div class=\"gj-m-search-row\"><label class=\"gj-m-search\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_search.svg')\" aria-hidden=\"true\"></span><input type=\"search\" enterkeyhint=\"search\" placeholder=\"搜索产品名称\" aria-label=\"搜索产品名称\"><button type=\"button\" class=\"gj-m-search-clear\" aria-label=\"清除\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_close-circle-fill.svg')\" aria-hidden=\"true\"></span></button></label><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary\" disabled>搜索</button></div>",
+    "highlight": "<mark class=\"gj-m-search-highlight\">建设</mark>",
+    "area": "<div style=\"padding:var(--space-8) var(--space-page-margin-x);background:var(--ds-background-container)\">（放搜索栏）</div>",
+    "fromPreview_search_row_search_m": "<div class=\"gj-m-search-row\"><label class=\"gj-m-search gj-m-search-m is-focused\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_search.svg')\" aria-hidden=\"true\"></span><input type=\"search\" enterkeyhint=\"search\" placeholder=\"搜索客户名称或编号\" value=\"稳健增利\" aria-label=\"搜索客户名称或编号\"><button type=\"button\" class=\"gj-m-search-clear\" aria-label=\"清除\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_close-circle-fill.svg')\" aria-hidden=\"true\"></span></button></label><button type=\"button\" class=\"gj-m-button gj-m-button-primary\">搜索</button></div>"
+  },
+  "interactionMap": {
+    "realtime": "短列表输入即搜索；大数据量提交后搜索并给加载反馈",
+    "clear": "有内容时显示；清除后保留焦点并恢复默认结果",
+    "highlight": "只高亮第一处匹配",
+    "empty": "无结果显示空状态「搜索无结果」，搜索区保留",
+    "outsideButton": "无内容时禁用"
+  },
+  "accessibility": {
+    "input": "type=\"search\" + aria-label（同占位）+ enterkeyhint=\"search\"",
+    "clear": "button + aria-label=\"清除\"，热区 44"
+  },
+  "composition": {
+    "placeholder": "写“搜索 + 对象 / 字段”，不只写“请输入”；放不下时缩短",
+    "style": "填充式默认；描边式用于表单或灰底筛选，同一区域不混用",
+    "navbar": "页内有搜索栏时导航右侧不再放搜索图标",
+    "filterArea": "顶部筛选区堆叠时用 M",
+    "iosZoom": "H5 / web-view 用 M（14）时 viewport 加 maximum-scale=1"
+  },
+  "pageRules": {
+    "PR-018": "顶部筛选区堆叠时搜索栏改用 M"
+  },
+  "pending": {},
+  "markupNote": "markup 中 fromPreview_* 片段由 scripts/check-mapping.cjs 从预览页实际渲染补录（2026-10-19），与预览页一致；其余为手写的常用写法。",
+  "templates": {
+    "search": {
+      "tpl": "<label class=\"gj-m-search{{#size}} gj-m-search-{{size}}{{/size}}{{#line}} gj-m-search-line{{/line}}{{#focused}} is-focused{{/focused}}\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_search.svg')\" aria-hidden=\"true\"></span><input type=\"search\" enterkeyhint=\"search\" placeholder=\"{{placeholder}}\"{{#value}} value=\"{{value}}\"{{/value}} aria-label=\"{{placeholder}}\"><button type=\"button\" class=\"gj-m-search-clear\" aria-label=\"清除\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_close-circle-fill.svg')\" aria-hidden=\"true\"></span></button></label>",
+      "params": "size：m（筛选区紧凑，PR-018）或不写（L）；line：线框；focused：聚焦态；placeholder；value：已输入内容",
+      "examples": {
+        "default": {
+          "placeholder": "搜索客户名称或编号"
+        },
+        "m": {
+          "size": "m",
+          "placeholder": "搜索文件名称或编号"
+        },
+        "line": {
+          "line": true,
+          "placeholder": "搜索客户名称或编号"
+        }
+      }
+    },
+    "highlight": {
+      "tpl": "<mark class=\"gj-m-search-highlight\">{{text}}</mark>",
+      "params": "搜索结果中的命中文字（放在列表文字内）",
+      "example": {
+        "text": "建设"
+      }
+    }
+  }
+}

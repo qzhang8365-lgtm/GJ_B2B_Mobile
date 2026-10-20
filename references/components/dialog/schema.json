@@ -1,0 +1,42 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "dialog",
+  "name": "弹窗 Dialog",
+  "category": "操作反馈组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "弹窗Dialog（58:5100）",
+    "nodes": {
+      "Dialog_center": "161:4250（Buttons=1|2，Slot；宽 343）",
+      "Dialog_bottom": "1037:12071（Title=False|True，button 布尔，Slot）",
+      "Dialog_item/Header": "161:4104（Icon × Title × Message × Status=Default|Success|Error|Warning，13 变体）",
+      "Dialog_item/Panel_header": "58:4611（Title × Line）",
+      "Dialog_item/Panel_bar": "313:8560",
+      "Modal_buttonset": "161:4011（按钮页）",
+      "usage": "1043:47"
+    },
+    "extractedAt": "2026-10-14",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-dialog > .gj-m-dialog-panel > .gj-m-dialog-header(.gj-m-dialog-icon / -title / -message) + .gj-m-dialog-body + .gj-m-dialog-footer；底部 .gj-m-popup > .gj-m-popup-panel.gj-m-popup-dialog > .gj-m-popup-header(-line) | .gj-m-popup-bar + .gj-m-popup-body + .gj-m-popup-footer"
+  },
+  "mask": "Background/MK_60，铺满容器",
+  "center": {
+    "panel": "Background/Container，圆角 16（Radius-XL），上内边距 28，宽 343（左右页面边距 16）",
+    "header": "内边距 16 / 32，间距 8，居中",
+    "icon": "52（2026-10-14 由 60 调整）；Default 蓝 check-circle-fill Text/blue / Success 绿 check-circle-fill Feedback/success&decline / Error 红 close-circle-fill Feedback/error&rise / Warning 橙 warning-fill Feedback/warning",
+    "title": "H2-CN-S 20/30 Text/Primary",
+    "message": "P2_CN-R 16/24 Text/Secondary",
+    "footer": "Modal_buttonset：内边距 16，间距 12，Large 按钮等分；一个按钮撑满"
+  },
+  "bottom": {
+    "panel": "Background/Container，顶部圆角 16，贴底，最高 90%，底部留安全区",
+    "bar": "无标题时：高 20，32×4 圆角 2 Border/secondary；正文上间距 10、左右 16",
+    "header": "Title/Line/Align(center|left)/Subtitle；单行52、双行74；padding10/12；主行32；主标题P2 16/24、副标题P3 14/22 Text/Tiatery；关闭在主行右侧",
+    "body": "有标题时上下 8、左右 16；内容超长只滚动正文",
+    "footer": "取消（Tertiary）+ 确认（Primary），内边距 16，间距 12"
+  }
+}

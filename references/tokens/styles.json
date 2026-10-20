@@ -1,0 +1,1065 @@
+{
+  "source": {
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "referencePage": "201:196",
+    "publication": "not verified"
+  },
+  "paintStyles": [
+    {
+      "name": "蓝色渐变背景",
+      "figmaId": "S:46dfe3068cb5506cde744f1ba0f13095ab9f369a,",
+      "figmaKey": "46dfe3068cb5506cde744f1ba0f13095ab9f369a",
+      "paints": [
+        {
+          "type": "GRADIENT_LINEAR",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "gradientStops": [
+            {
+              "color": {
+                "r": 0.9306640625,
+                "g": 0.96533203125,
+                "b": 1,
+                "a": 1
+              },
+              "position": 0,
+              "boundVariables": {}
+            },
+            {
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 1
+              },
+              "position": 1,
+              "boundVariables": {}
+            }
+          ],
+          "gradientTransform": [
+            [
+              6.123234262925839e-17,
+              1,
+              0
+            ],
+            [
+              -1,
+              6.123234262925839e-17,
+              1
+            ]
+          ]
+        }
+      ],
+      "unit": "Figma paint",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Paint Style / 蓝色渐变背景",
+        "styleId": "S:46dfe3068cb5506cde744f1ba0f13095ab9f369a,",
+        "referencePage": "201:196"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "橙色渐变背景",
+      "figmaId": "S:8748773d10a0794f6424a347aed3a8e08d10d15b,",
+      "figmaKey": "8748773d10a0794f6424a347aed3a8e08d10d15b",
+      "paints": [
+        {
+          "type": "GRADIENT_LINEAR",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "gradientStops": [
+            {
+              "color": {
+                "r": 1,
+                "g": 0.9686274528503418,
+                "b": 0.9372549057006836,
+                "a": 1
+              },
+              "position": 0,
+              "boundVariables": {}
+            },
+            {
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 1
+              },
+              "position": 1,
+              "boundVariables": {}
+            }
+          ],
+          "gradientTransform": [
+            [
+              6.123234262925839e-17,
+              1,
+              0
+            ],
+            [
+              -1,
+              6.123234262925839e-17,
+              1
+            ]
+          ]
+        }
+      ],
+      "unit": "Figma paint",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Paint Style / 橙色渐变背景",
+        "styleId": "S:8748773d10a0794f6424a347aed3a8e08d10d15b,",
+        "referencePage": "201:196"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "white_gradint_up",
+      "figmaId": "S:24889726445468a76cd114a9e26ea59b95a786b1,",
+      "figmaKey": "24889726445468a76cd114a9e26ea59b95a786b1",
+      "paints": [
+        {
+          "type": "GRADIENT_LINEAR",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "gradientStops": [
+            {
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 1
+              },
+              "position": 0,
+              "boundVariables": {}
+            },
+            {
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 0
+              },
+              "position": 1,
+              "boundVariables": {}
+            }
+          ],
+          "gradientTransform": [
+            [
+              6.123234262925839e-17,
+              1,
+              0
+            ],
+            [
+              -1,
+              6.123234262925839e-17,
+              1
+            ]
+          ]
+        }
+      ],
+      "unit": "Figma paint",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Paint Style / white_gradint_up",
+        "styleId": "S:24889726445468a76cd114a9e26ea59b95a786b1,",
+        "referencePage": "201:196"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "white_gradient_bottom",
+      "figmaId": "S:eee1ad73706cce6005283ce19015af51ba1703a6,",
+      "figmaKey": "eee1ad73706cce6005283ce19015af51ba1703a6",
+      "paints": [
+        {
+          "type": "GRADIENT_LINEAR",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "gradientStops": [
+            {
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 0
+              },
+              "position": 0,
+              "boundVariables": {}
+            },
+            {
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 1
+              },
+              "position": 1,
+              "boundVariables": {}
+            }
+          ],
+          "gradientTransform": [
+            [
+              6.123234262925839e-17,
+              1,
+              0
+            ],
+            [
+              -1,
+              6.123234262925839e-17,
+              1
+            ]
+          ]
+        }
+      ],
+      "unit": "Figma paint",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Paint Style / white_gradient_bottom",
+        "styleId": "S:eee1ad73706cce6005283ce19015af51ba1703a6,",
+        "referencePage": "201:196"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "科技蓝渐变",
+      "figmaId": "S:5ebed530b75a70adc8d4534850aaf46c8071e227,",
+      "figmaKey": "5ebed530b75a70adc8d4534850aaf46c8071e227",
+      "paints": [
+        {
+          "type": "GRADIENT_LINEAR",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "gradientStops": [
+            {
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1,
+                "a": 1
+              },
+              "position": 0,
+              "boundVariables": {}
+            },
+            {
+              "color": {
+                "r": 0.29839617013931274,
+                "g": 0.7544387578964233,
+                "b": 1,
+                "a": 1
+              },
+              "position": 1,
+              "boundVariables": {}
+            }
+          ],
+          "gradientTransform": [
+            [
+              6.123234262925839e-17,
+              1,
+              0
+            ],
+            [
+              -1,
+              6.123234262925839e-17,
+              1
+            ]
+          ]
+        }
+      ],
+      "unit": "Figma paint",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Paint Style / 科技蓝渐变",
+        "styleId": "S:5ebed530b75a70adc8d4534850aaf46c8071e227,",
+        "referencePage": "201:196"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "极客蓝渐变",
+      "figmaId": "S:f689524a0624d4cdc78c37e7518cd3ccf1fa3dae,",
+      "figmaKey": "f689524a0624d4cdc78c37e7518cd3ccf1fa3dae",
+      "paints": [
+        {
+          "type": "GRADIENT_LINEAR",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "gradientStops": [
+            {
+              "color": {
+                "r": 0,
+                "g": 0.5199999809265137,
+                "b": 1,
+                "a": 1
+              },
+              "position": 0,
+              "boundVariables": {}
+            },
+            {
+              "color": {
+                "r": 0.12586387991905212,
+                "g": 0.37353578209877014,
+                "b": 1,
+                "a": 1
+              },
+              "position": 1,
+              "boundVariables": {}
+            }
+          ],
+          "gradientTransform": [
+            [
+              -1.1137079000473022,
+              0.1060674712061882,
+              1.043146014213562
+            ],
+            [
+              -0.10606745630502701,
+              -1.1137076616287231,
+              0.8469662666320801
+            ]
+          ]
+        }
+      ],
+      "unit": "Figma paint",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Paint Style / 极客蓝渐变",
+        "styleId": "S:f689524a0624d4cdc78c37e7518cd3ccf1fa3dae,",
+        "referencePage": "201:196"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "国金红渐变",
+      "figmaId": "S:e6957da9728b2c05d5f485843186e06e17de9233,",
+      "figmaKey": "e6957da9728b2c05d5f485843186e06e17de9233",
+      "paints": [
+        {
+          "type": "GRADIENT_LINEAR",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "gradientStops": [
+            {
+              "color": {
+                "r": 0.9764705896377563,
+                "g": 0.21960784494876862,
+                "b": 0.21960784494876862,
+                "a": 1
+              },
+              "position": 0,
+              "boundVariables": {}
+            },
+            {
+              "color": {
+                "r": 1,
+                "g": 0.43821942806243896,
+                "b": 0.40236103534698486,
+                "a": 1
+              },
+              "position": 1,
+              "boundVariables": {}
+            }
+          ],
+          "gradientTransform": [
+            [
+              0.9997028112411499,
+              -0.005943531636148691,
+              0.003863293444737792
+            ],
+            [
+              0.0059435321018099785,
+              0.11887072771787643,
+              0.42273402214050293
+            ]
+          ]
+        }
+      ],
+      "unit": "Figma paint",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Paint Style / 国金红渐变",
+        "styleId": "S:e6957da9728b2c05d5f485843186e06e17de9233,",
+        "referencePage": "201:196"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "国金紫渐变",
+      "figmaId": "S:4735d2588eea0a9006bdc712d3855df36aca7dd5,",
+      "figmaKey": "4735d2588eea0a9006bdc712d3855df36aca7dd5",
+      "paints": [
+        {
+          "type": "GRADIENT_LINEAR",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "gradientStops": [
+            {
+              "color": {
+                "r": 0.545098066329956,
+                "g": 0.32156863808631897,
+                "b": 1,
+                "a": 1
+              },
+              "position": 0,
+              "boundVariables": {}
+            },
+            {
+              "color": {
+                "r": 0.6275545954704285,
+                "g": 0.4445425271987915,
+                "b": 1,
+                "a": 1
+              },
+              "position": 1,
+              "boundVariables": {}
+            }
+          ],
+          "gradientTransform": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "unit": "Figma paint",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Paint Style / 国金紫渐变",
+        "styleId": "S:4735d2588eea0a9006bdc712d3855df36aca7dd5,",
+        "referencePage": "201:196"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "高端金渐变",
+      "figmaId": "S:cebca2d1036135efcd885698afc17e390601fdf4,",
+      "figmaKey": "cebca2d1036135efcd885698afc17e390601fdf4",
+      "paints": [
+        {
+          "type": "GRADIENT_LINEAR",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "gradientStops": [
+            {
+              "color": {
+                "r": 0.8117647171020508,
+                "g": 0.545098066329956,
+                "b": 0.25882354378700256,
+                "a": 1
+              },
+              "position": 0,
+              "boundVariables": {}
+            },
+            {
+              "color": {
+                "r": 0.8588235378265381,
+                "g": 0.658823549747467,
+                "b": 0.4117647111415863,
+                "a": 1
+              },
+              "position": 1,
+              "boundVariables": {}
+            }
+          ],
+          "gradientTransform": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "unit": "Figma paint",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Paint Style / 高端金渐变",
+        "styleId": "S:cebca2d1036135efcd885698afc17e390601fdf4,",
+        "referencePage": "201:196",
+        "extractedAt": "2026-10-09"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "活力橙渐变",
+      "figmaId": "S:30f60c515c01a34b3f8777f23d1fd637bb20cfab,",
+      "figmaKey": "30f60c515c01a34b3f8777f23d1fd637bb20cfab",
+      "paints": [
+        {
+          "type": "GRADIENT_LINEAR",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "gradientStops": [
+            {
+              "color": {
+                "r": 1,
+                "g": 0.4901960790157318,
+                "b": 0,
+                "a": 1
+              },
+              "position": 0,
+              "boundVariables": {}
+            },
+            {
+              "color": {
+                "r": 1,
+                "g": 0.6087048053741455,
+                "b": 0.2324594408273697,
+                "a": 1
+              },
+              "position": 1,
+              "boundVariables": {}
+            }
+          ],
+          "gradientTransform": [
+            [
+              0.9997028112411499,
+              -0.005943531636148691,
+              0.003863293444737792
+            ],
+            [
+              0.0059435321018099785,
+              0.11887072771787643,
+              0.42273402214050293
+            ]
+          ]
+        }
+      ],
+      "unit": "Figma paint",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Paint Style / 活力橙渐变",
+        "styleId": "S:30f60c515c01a34b3f8777f23d1fd637bb20cfab,",
+        "referencePage": "201:196"
+      },
+      "publication": "not verified"
+    }
+  ],
+  "effectStyles": [
+    {
+      "name": "Shadow_center",
+      "figmaId": "S:c2e0b3976344a436a85f5d5f25ea1c8eaee1ef7b,",
+      "figmaKey": "c2e0b3976344a436a85f5d5f25ea1c8eaee1ef7b",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 15,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.10000000149011612
+          },
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": false
+        }
+      ],
+      "unit": "Figma effect; radius/offset/spread in px, color opacity 0–1",
+      "mode": null,
+      "scope": "当前移动端文件的命名效果样式；具体使用场景未在 description 中定义。",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "File / Local Effect Styles / Shadow_center",
+        "styleId": "S:c2e0b3976344a436a85f5d5f25ea1c8eaee1ef7b,"
+      },
+      "publication": "not verified",
+      "description": "",
+      "classification": "A",
+      "remote": false,
+      "theme": null,
+      "modeNote": "Effect Style 本身没有变量模式；当前效果无变量绑定。",
+      "extractedAt": "2026-09-30",
+      "verifiedReferences": [
+        {
+          "nodeId": "211:189",
+          "nodeName": "Rectangle 3",
+          "pageId": "192:8826",
+          "pageName": "【业务组件】220移动端"
+        },
+        {
+          "nodeId": "211:193",
+          "nodeName": "Rectangle 4",
+          "pageId": "192:8826",
+          "pageName": "【业务组件】220移动端"
+        },
+        {
+          "nodeId": "218:6440",
+          "nodeName": "Rectangle 5",
+          "pageId": "192:8826",
+          "pageName": "【业务组件】220移动端"
+        },
+        {
+          "nodeId": "218:6442",
+          "nodeName": "Rectangle 6",
+          "pageId": "192:8826",
+          "pageName": "【业务组件】220移动端"
+        },
+        {
+          "nodeId": "279:4577",
+          "nodeName": "Rectangle 34630406",
+          "pageId": "192:8826",
+          "pageName": "【业务组件】220移动端"
+        }
+      ]
+    },
+    {
+      "name": "Shadow_down",
+      "figmaId": "S:d3f90c0c1e6cf19683abcdcafd0d2d07aec2035b,",
+      "figmaKey": "d3f90c0c1e6cf19683abcdcafd0d2d07aec2035b",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 20,
+          "boundVariables": {},
+          "color": {
+            "r": 0.48224523663520813,
+            "g": 0.5304371118545532,
+            "b": 0.6239858269691467,
+            "a": 0.10000000149011612
+          },
+          "offset": {
+            "x": 0,
+            "y": 8
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": false
+        }
+      ],
+      "unit": "Figma effect; radius/offset/spread in px, color opacity 0–1",
+      "mode": null,
+      "scope": "当前移动端文件的命名效果样式；具体使用场景未在 description 中定义。",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "File / Local Effect Styles / Shadow_down",
+        "styleId": "S:d3f90c0c1e6cf19683abcdcafd0d2d07aec2035b,"
+      },
+      "publication": "not verified",
+      "description": "",
+      "classification": "A",
+      "remote": false,
+      "theme": null,
+      "modeNote": "Effect Style 本身没有变量模式；当前效果无变量绑定。",
+      "extractedAt": "2026-09-30",
+      "verifiedReferences": [
+        {
+          "nodeId": "192:8828",
+          "nodeName": "Rectangle 1",
+          "pageId": "192:8826",
+          "pageName": "【业务组件】220移动端"
+        },
+        {
+          "nodeId": "192:9086",
+          "nodeName": "Rectangle 2",
+          "pageId": "192:8826",
+          "pageName": "【业务组件】220移动端"
+        }
+      ]
+    },
+    {
+      "name": "glass",
+      "figmaId": "S:9e8a2b10660f17eb0d86c1e08f2f16654782d8c7,",
+      "figmaKey": "9e8a2b10660f17eb0d86c1e08f2f16654782d8c7",
+      "effects": [
+        {
+          "type": "BACKGROUND_BLUR",
+          "visible": true,
+          "radius": 40,
+          "boundVariables": {},
+          "blurType": "NORMAL"
+        },
+        {
+          "type": "INNER_SHADOW",
+          "visible": true,
+          "radius": 1,
+          "boundVariables": {},
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 0.6000000238418579
+          },
+          "offset": {
+            "x": 0.20000000298023224,
+            "y": 0.10000000149011612
+          },
+          "spread": 0,
+          "blendMode": "NORMAL"
+        }
+      ],
+      "unit": "Figma effect; radius/offset/spread in px, color opacity 0–1",
+      "mode": null,
+      "scope": "当前移动端文件的命名效果样式；具体使用场景未在 description 中定义。",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "File / Local Effect Styles / glass",
+        "styleId": "S:9e8a2b10660f17eb0d86c1e08f2f16654782d8c7,"
+      },
+      "publication": "not verified",
+      "description": "",
+      "classification": "A",
+      "remote": false,
+      "theme": null,
+      "modeNote": "Effect Style 本身没有变量模式；当前效果无变量绑定。",
+      "extractedAt": "2026-09-30",
+      "verifiedReferences": [],
+      "updatedAt": "2026-10-08",
+      "changeLog": [
+        {
+          "date": "2026-10-08",
+          "change": "BACKGROUND_BLUR radius 4 → 40",
+          "source": "Figma 只读核对（getLocalEffectStylesAsync），其余参数未变"
+        }
+      ]
+    },
+    {
+      "name": "bottom border",
+      "figmaId": "S:dd3ffcc877616021840437ac663384e7e837fafc,",
+      "figmaKey": "dd3ffcc877616021840437ac663384e7e837fafc",
+      "effects": [
+        {
+          "type": "INNER_SHADOW",
+          "visible": true,
+          "radius": 0,
+          "boundVariables": {},
+          "color": {
+            "r": 0.9333333373069763,
+            "g": 0.9333333373069763,
+            "b": 0.9333333373069763,
+            "a": 1
+          },
+          "offset": {
+            "x": 0,
+            "y": -1
+          },
+          "spread": 0,
+          "blendMode": "NORMAL"
+        }
+      ],
+      "unit": "Figma effect; radius/offset/spread in px, color opacity 0–1",
+      "mode": null,
+      "scope": "当前移动端文件的命名效果样式；具体使用场景未在 description 中定义。",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "File / Local Effect Styles / bottom border",
+        "styleId": "S:dd3ffcc877616021840437ac663384e7e837fafc,"
+      },
+      "publication": "not verified",
+      "description": "",
+      "classification": "A",
+      "remote": false,
+      "theme": null,
+      "modeNote": "Effect Style 本身没有变量模式；当前效果无变量绑定。",
+      "extractedAt": "2026-09-30",
+      "verifiedReferences": []
+    },
+    {
+      "name": "shadow_small",
+      "figmaId": "S:447695c346602a755d6057788591f22a087c03db,",
+      "figmaKey": "447695c346602a755d6057788591f22a087c03db",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 8,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.10000000149011612
+          },
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": false
+        }
+      ],
+      "unit": "Figma effect; radius/offset/spread in px, color opacity 0–1",
+      "mode": null,
+      "scope": "当前移动端文件的命名效果样式；具体使用场景未在 description 中定义。",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "File / Local Effect Styles / shadow_small",
+        "styleId": "S:447695c346602a755d6057788591f22a087c03db,"
+      },
+      "publication": "not verified",
+      "description": "",
+      "classification": "A",
+      "remote": false,
+      "theme": null,
+      "modeNote": "Effect Style 本身没有变量模式；当前效果无变量绑定。",
+      "extractedAt": "2026-09-30",
+      "verifiedReferences": []
+    },
+    {
+      "name": "Innershadow_small",
+      "figmaId": "S:7cf9500ecdcbcb5a417985e75440af750dc19e0a,",
+      "figmaKey": "7cf9500ecdcbcb5a417985e75440af750dc19e0a",
+      "effects": [
+        {
+          "type": "INNER_SHADOW",
+          "visible": true,
+          "radius": 2,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.05000000074505806
+          },
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "spread": 0,
+          "blendMode": "NORMAL"
+        }
+      ],
+      "unit": "Figma effect; radius/offset/spread in px, color opacity 0–1",
+      "mode": null,
+      "scope": "当前移动端文件的命名效果样式；具体使用场景未在 description 中定义。",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "File / Local Effect Styles / Innershadow_small",
+        "styleId": "S:7cf9500ecdcbcb5a417985e75440af750dc19e0a,"
+      },
+      "publication": "not verified",
+      "description": "",
+      "classification": "A",
+      "remote": false,
+      "theme": null,
+      "modeNote": "Effect Style 本身没有变量模式；当前效果无变量绑定。",
+      "extractedAt": "2026-09-30",
+      "verifiedReferences": []
+    }
+  ],
+  "gridStyles": [
+    {
+      "name": "Grid 2",
+      "figmaId": "S:3b9197b760ae918c6279089a2f4d7a8360aeb70e,",
+      "figmaKey": "3b9197b760ae918c6279089a2f4d7a8360aeb70e",
+      "layoutGrids": [
+        {
+          "pattern": "COLUMNS",
+          "visible": true,
+          "color": {
+            "r": 1,
+            "g": 0,
+            "b": 0,
+            "a": 0.10000000149011612
+          },
+          "gutterSize": 16,
+          "alignment": "STRETCH",
+          "count": 2,
+          "offset": 16,
+          "boundVariables": {}
+        }
+      ],
+      "description": "",
+      "unit": "Figma layout grid; gutter/offset in px",
+      "mode": null,
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Grid Style / Grid 2",
+        "styleId": "S:3b9197b760ae918c6279089a2f4d7a8360aeb70e,"
+      },
+      "publication": "not verified",
+      "extractedAt": "2026-10-08",
+      "updatedAt": "2026-10-08",
+      "changeLog": [
+        {
+          "date": "2026-10-08",
+          "change": "count 4 → 2",
+          "source": "设计方确认原设置有误，Figma 已改为 2 列（只读核对）"
+        }
+      ]
+    },
+    {
+      "name": "Grid 3",
+      "figmaId": "S:0f3a55b190df3006473d610f09d0c0e7dbe3d0d6,",
+      "figmaKey": "0f3a55b190df3006473d610f09d0c0e7dbe3d0d6",
+      "layoutGrids": [
+        {
+          "pattern": "COLUMNS",
+          "visible": true,
+          "color": {
+            "r": 1,
+            "g": 0,
+            "b": 0,
+            "a": 0.10000000149011612
+          },
+          "gutterSize": 12,
+          "alignment": "STRETCH",
+          "count": 3,
+          "offset": 16,
+          "boundVariables": {}
+        }
+      ],
+      "description": "",
+      "unit": "Figma layout grid; gutter/offset in px",
+      "mode": null,
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Grid Style / Grid 3",
+        "styleId": "S:0f3a55b190df3006473d610f09d0c0e7dbe3d0d6,"
+      },
+      "publication": "not verified",
+      "extractedAt": "2026-10-08"
+    },
+    {
+      "name": "Grid 4",
+      "figmaId": "S:bb06bdd843666e216b5b030f9ad40adcc31888fc,",
+      "figmaKey": "bb06bdd843666e216b5b030f9ad40adcc31888fc",
+      "layoutGrids": [
+        {
+          "pattern": "COLUMNS",
+          "visible": true,
+          "color": {
+            "r": 1,
+            "g": 0,
+            "b": 0,
+            "a": 0.10000000149011612
+          },
+          "gutterSize": 12,
+          "alignment": "STRETCH",
+          "count": 4,
+          "offset": 16,
+          "boundVariables": {}
+        }
+      ],
+      "description": "",
+      "unit": "Figma layout grid; gutter/offset in px",
+      "mode": null,
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Grid Style / Grid 4",
+        "styleId": "S:bb06bdd843666e216b5b030f9ad40adcc31888fc,"
+      },
+      "publication": "not verified",
+      "extractedAt": "2026-10-08"
+    },
+    {
+      "name": "Grid 5",
+      "figmaId": "S:1a6638d3bd87a36fefef0b0975b41c0927f80015,",
+      "figmaKey": "1a6638d3bd87a36fefef0b0975b41c0927f80015",
+      "layoutGrids": [
+        {
+          "pattern": "COLUMNS",
+          "visible": true,
+          "color": {
+            "r": 1,
+            "g": 0,
+            "b": 0,
+            "a": 0.10000000149011612
+          },
+          "gutterSize": 12,
+          "alignment": "STRETCH",
+          "count": 5,
+          "offset": 16,
+          "boundVariables": {}
+        }
+      ],
+      "description": "",
+      "unit": "Figma layout grid; gutter/offset in px",
+      "mode": null,
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Grid Style / Grid 5",
+        "styleId": "S:1a6638d3bd87a36fefef0b0975b41c0927f80015,"
+      },
+      "publication": "not verified",
+      "extractedAt": "2026-10-08"
+    },
+    {
+      "name": "Grid 6",
+      "figmaId": "S:a5d425e9eb983ce5a8c7ed7b87865fd939d633e1,",
+      "figmaKey": "a5d425e9eb983ce5a8c7ed7b87865fd939d633e1",
+      "layoutGrids": [
+        {
+          "pattern": "COLUMNS",
+          "visible": true,
+          "color": {
+            "r": 1,
+            "g": 0,
+            "b": 0,
+            "a": 0.10000000149011612
+          },
+          "gutterSize": 8,
+          "alignment": "STRETCH",
+          "count": 6,
+          "offset": 16,
+          "boundVariables": {}
+        }
+      ],
+      "description": "",
+      "unit": "Figma layout grid; gutter/offset in px",
+      "mode": null,
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Grid Style / Grid 6",
+        "styleId": "S:a5d425e9eb983ce5a8c7ed7b87865fd939d633e1,"
+      },
+      "publication": "not verified",
+      "extractedAt": "2026-10-08"
+    }
+  ]
+}

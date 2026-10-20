@@ -1,0 +1,26 @@
+{
+  "results": [
+    {
+      "width": 375,
+      "combinations": 16,
+      "failed": [],
+      "long": {
+        "ellipsis": true,
+        "fullTitle": true
+      }
+    },
+    {
+      "width": 320,
+      "combinations": 16,
+      "failed": [],
+      "long": {
+        "ellipsis": true,
+        "fullTitle": true
+      }
+    }
+  ],
+  "feedback": "已触发「搜索」——仅演示反馈，不跳转业务页面。",
+  "hidden": true,
+  "subtitleHidden": true,
+  "errors": []
+}

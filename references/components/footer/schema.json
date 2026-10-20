@@ -1,0 +1,68 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "footer",
+  "name": "页脚 Footer",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "node": "138:1363",
+    "page": "页脚Footer（58:4516）",
+    "usageFrame": "948:6031",
+    "extractedAt": "2026-10-09（复核：label 改名、改用本地 Divider / Text_Button、左右边距 16）",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-footer",
+    "note": "原型基座，不代表真实前端组件库 API"
+  },
+  "variants": {
+    "count": 4,
+    "Class": [
+      "label",
+      "content",
+      "links",
+      "chips-link"
+    ]
+  },
+  "layout": {
+    "width": "撑满容器",
+    "paddingX": "16（页面边距）",
+    "align": "水平居中",
+    "gap": 8,
+    "background": null
+  },
+  "classes": {
+    "content": {
+      "name": "带内容的页脚 · 版权等信息",
+      "paddingY": 8,
+      "height": 36,
+      "text": "P4_CN-R 13/20 Text/Tiatery"
+    },
+    "links": {
+      "name": "带链接的页脚 · 单个链接",
+      "paddingY": 8,
+      "height": 36,
+      "text": "P4_CN-R 13/20 Text/blue"
+    },
+    "chips-link": {
+      "name": "带链接的页脚 · 多个链接",
+      "paddingY": 8,
+      "height": 34,
+      "text": "P5_CN-R 12/18 Button/Primary/Bg-default（本地 Text_Button Small · Style=blue）",
+      "separator": "本地 Divider vertical 1×16，垂直居中，两侧各 16"
+    },
+    "label": {
+      "name": "基础页脚 · 内容结束告知",
+      "paddingY": 16,
+      "height": 52,
+      "text": "P4_CN-R 13/20 Text/Tiatery",
+      "line": "本地 Divider 423:3707（1px Border/default），线与文字间距 8",
+      "defaultText": "没有更多了"
+    }
+  },
+  "interaction": {
+    "link": "点击跳转；无按下态（设计方 2026-10-09 确认）；热区 ≥ 44×44"
+  },
+  "note": "单个链接 13/20 与多个链接 12/18 字号不同，为设计方确认（2026-10-09）"
+}

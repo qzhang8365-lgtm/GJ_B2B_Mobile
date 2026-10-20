@@ -1,0 +1,161 @@
+{
+  "pass": true,
+  "results": [
+    {
+      "width": 375,
+      "checks": 50,
+      "geometry": {
+        "titleOneLine": true,
+        "sameLine": true,
+        "fieldGap": 4,
+        "actionGap": 8,
+        "rem": 100
+      },
+      "insets": {
+        "title": 16,
+        "list": 16,
+        "button": 16,
+        "right": 16
+      },
+      "member": {
+        "headGap": 8,
+        "rowGap": 4,
+        "actionGap": 12,
+        "right": 0,
+        "medium": true,
+        "rem": 100
+      },
+      "structure": {
+        "order": [
+          "summary",
+          "divider",
+          "task",
+          "divider",
+          "task"
+        ],
+        "entries": [
+          "enter-equity",
+          "enter-accounts"
+        ],
+        "contentAligned": true,
+        "padding": [
+          [
+            12,
+            12
+          ],
+          [
+            12,
+            12
+          ]
+        ],
+        "rem": 100
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "width": 320,
+      "checks": 50,
+      "geometry": {
+        "titleOneLine": true,
+        "sameLine": true,
+        "fieldGap": 3.40625,
+        "actionGap": 6.8125,
+        "rem": 85.3333
+      },
+      "insets": {
+        "title": 13.640625,
+        "list": 13.640625,
+        "button": 13.640625,
+        "right": 13.640625
+      },
+      "member": {
+        "headGap": 6.8125,
+        "rowGap": 3.40625,
+        "actionGap": 10.234375,
+        "right": 0,
+        "medium": true,
+        "rem": 85.3333
+      },
+      "structure": {
+        "order": [
+          "summary",
+          "divider",
+          "task",
+          "divider",
+          "task"
+        ],
+        "entries": [
+          "enter-equity",
+          "enter-accounts"
+        ],
+        "contentAligned": true,
+        "padding": [
+          [
+            10.24,
+            10.24
+          ],
+          [
+            10.24,
+            10.24
+          ]
+        ],
+        "rem": 85.3333
+      },
+      "errors": [],
+      "pass": true
+    },
+    {
+      "width": 768,
+      "checks": 50,
+      "geometry": {
+        "titleOneLine": true,
+        "sameLine": true,
+        "fieldGap": 4.796875,
+        "actionGap": 9.59375,
+        "rem": 120
+      },
+      "insets": {
+        "title": 19.1875,
+        "list": 19.1875,
+        "button": 19.1875,
+        "right": 19.1875
+      },
+      "member": {
+        "headGap": 9.59375,
+        "rowGap": 4.796875,
+        "actionGap": 14.390625,
+        "right": 0,
+        "medium": true,
+        "rem": 120
+      },
+      "structure": {
+        "order": [
+          "summary",
+          "divider",
+          "task",
+          "divider",
+          "task"
+        ],
+        "entries": [
+          "enter-equity",
+          "enter-accounts"
+        ],
+        "contentAligned": true,
+        "padding": [
+          [
+            14.4,
+            14.4
+          ],
+          [
+            14.4,
+            14.4
+          ]
+        ],
+        "rem": 120
+      },
+      "errors": [],
+      "pass": true
+    }
+  ]
+}

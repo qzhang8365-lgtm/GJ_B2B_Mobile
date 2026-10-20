@@ -1,0 +1,28 @@
+{
+  "id": "file-list",
+  "name": "文件展示列表 File List",
+  "source": {
+    "node": "1807:15986（File_list_item）",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "readOnly": true
+  },
+  "variants": [
+    "Icon",
+    "FileInfo",
+    "Actions"
+  ],
+  "layout": {
+    "listGap": 0,
+    "padding": 8,
+    "gap": 8,
+    "icon": 20,
+    "title": "P3 14/22（2026-10-15 设计方由 P2 改为 14）",
+    "info": "P5 12/18",
+    "contentGap": 4,
+    "actionIcon": 20,
+    "actionIconGap": 8,
+    "actionHitArea": "宽28rem换算、高44px；不叠加横向44热区，以避免相邻操作重叠"
+  },
+  "prototypeOnly": true,
+  "category": "数据展示组件"
+}

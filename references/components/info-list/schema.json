@@ -1,0 +1,40 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "info-list",
+  "name": "信息列表 Info List",
+  "category": "数据展示组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "信息列表List（1871:20013）",
+    "nodes": {
+      "itemHorizontal": "209:1376 info_list_item/horizontal（Align=justify|start × Nodata=false|true；infoicon 布尔）",
+      "itemVertical": "209:1564 info_list_item/vertical（Nodata=false|true；infoicon 布尔）",
+      "list": "210:2333 Info_List（343 宽）",
+      "grid": "209:1647 Info_Grid（375 通栏，两列）"
+    },
+    "extractedAt": "2026-10-15",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": "dl.gj-m-info-list > .gj-m-info-item > dt.gj-m-info-label + dd.gj-m-info-value（-inline / -vertical / .gj-m-info-grid）"
+  },
+  "item": {
+    "padding": "上下 12（无分割线时 4）；宫格分割线两侧 12",
+    "divider": "底部 1px Border/default",
+    "background": "Background/Container",
+    "label": "P3_CN-R Text/Secondary，不换行；信息图标 icf_system_info 16 Text/Tiatery，间距 4",
+    "value": "P3_CN-R Text/Primary，可换行",
+    "empty": "「--」Text/Primary"
+  },
+  "layouts": {
+    "justify": "默认：标签左、内容右对齐（Figma Align=justify）",
+    "inline": ".gj-m-info-list-inline：标签带冒号、最小宽 92，间距 12，内容左对齐（Figma Align=start）",
+    "vertical": ".gj-m-info-list-vertical：标签 P4_CN-R 13/20（行高 22）在上，内容在下，间距 4",
+    "grid": ".gj-m-info-grid：两列，放在卡片内（卡片左右 16），左列右侧 1px 分割线，分割线两侧各 12、外侧不留；单行，超出 … 省略（设计方 2026-10-15；Figma Info_Grid 为 375 通栏、每格四周 12）",
+    "plain": ".gj-m-info-list-plain：无分割线，行上下内边距 4（设计方 2026-10-15）；可与其他排列组合"
+  },
+  "a11y": "用 dl / dt / dd 表达名称与内容；信息图标 aria-label“××说明”，热区 44",
+  "multiline": "列表允许内容换行，名称与内容顶部对齐；宫格不换行、省略"
+}

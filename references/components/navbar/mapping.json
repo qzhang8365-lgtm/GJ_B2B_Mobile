@@ -1,0 +1,91 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "navbar",
+  "figmaComponent": "navBar（31:696，页面 31:679，说明 953:1155）",
+  "prototypeClass": "gj-m-navbar",
+  "note": "原型基座类名，不代表真实前端组件库 API。App WebView、小程序原生页面默认由容器提供导航，仅容器不提供时自绘。",
+  "propertyMap": {
+    "base": "header.gj-m-navbar（左 / 中 / 右三槽）",
+    "BackArrow": ".gj-m-navbar-left > button.gj-m-navbar-back > 箭头图标",
+    "Back": "返回按钮内 span.gj-m-navbar-back-text",
+    "Children": ".gj-m-navbar-center 内 span.gj-m-navbar-subtitle",
+    "Right": ".gj-m-navbar-right > button.gj-m-navbar-action（最多两个）",
+    "center": ".gj-m-navbar-center > span.gj-m-navbar-title",
+    "safeArea": "沉浸式 H5 外层或自身加 .gj-m-navbar-safe"
+  },
+  "valueMap": {
+    "height": "44（不缩放）",
+    "padding": "左右 12",
+    "icon": "24",
+    "slot": "左右槽等宽，标题居中",
+    "title": "H4 16/24，单行省略",
+    "subtitle": "P5 12/18",
+    "backText": "P3 14/22"
+  },
+  "tokenMap": {
+    "background": "Background/Container（--ds-background-container）",
+    "title/backText": "Text/Primary（--ds-text-primary）",
+    "subtitle/backIcon": "Text/Secondary（--ds-text-secondary）"
+  },
+  "assetMap": {
+    "back": "{ROOT}assets/icons/iconfont/icf_Arrow_left.svg",
+    "actions": "图标库 General 资源，如 icf_system_search、icf_system_more、icf_system_bell"
+  },
+  "runtimeMap": {
+    "root": "header.gj-m-navbar",
+    "left": ".gj-m-navbar-left",
+    "back": ".gj-m-navbar-back",
+    "center": ".gj-m-navbar-center",
+    "title": ".gj-m-navbar-title",
+    "subtitle": ".gj-m-navbar-subtitle",
+    "right": ".gj-m-navbar-right",
+    "action": ".gj-m-navbar-action"
+  },
+  "markup": {
+    "back": "<header class=\"gj-m-navbar\" aria-label=\"页面导航\"><div class=\"gj-m-navbar-left\"><button class=\"gj-m-navbar-action gj-m-navbar-back\" type=\"button\" aria-label=\"返回上一页\"><span class=\"gj-icon gj-icon-24\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_left.svg')\" aria-hidden=\"true\"></span></button></div><div class=\"gj-m-navbar-center\"><span class=\"gj-m-navbar-title\">报销审批</span></div><div class=\"gj-m-navbar-right\"></div></header>",
+    "root": "<header class=\"gj-m-navbar\" aria-label=\"页面导航\"><div class=\"gj-m-navbar-left\"></div><div class=\"gj-m-navbar-center\"><span class=\"gj-m-navbar-title\">文件</span></div><div class=\"gj-m-navbar-right\"></div></header>",
+    "subtitle": "<header class=\"gj-m-navbar\" aria-label=\"页面导航\"><div class=\"gj-m-navbar-left\"><button class=\"gj-m-navbar-action gj-m-navbar-back\" type=\"button\" aria-label=\"返回上一页\"><span class=\"gj-icon gj-icon-24\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_left.svg')\" aria-hidden=\"true\"></span></button></div><div class=\"gj-m-navbar-center\"><span class=\"gj-m-navbar-title\">渠道详情</span><span class=\"gj-m-navbar-subtitle\">中国银行东城根支行</span></div><div class=\"gj-m-navbar-right\"></div></header>",
+    "rightAction": "<header class=\"gj-m-navbar\" aria-label=\"页面导航\"><div class=\"gj-m-navbar-left\"><button class=\"gj-m-navbar-action gj-m-navbar-back\" type=\"button\" aria-label=\"返回上一页\"><span class=\"gj-icon gj-icon-24\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_left.svg')\" aria-hidden=\"true\"></span></button></div><div class=\"gj-m-navbar-center\"><span class=\"gj-m-navbar-title\">拜访记录</span></div><div class=\"gj-m-navbar-right\"><button class=\"gj-m-navbar-action\" type=\"button\" aria-label=\"筛选员工\"><span class=\"gj-icon gj-icon-24\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_filter.svg')\" aria-hidden=\"true\"></span></button></div></header>",
+    "backText": "<button class=\"gj-m-navbar-action gj-m-navbar-back\" type=\"button\" aria-label=\"返回\"><span class=\"gj-icon gj-icon-24\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_left.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-navbar-back-text\">返回</span></button>",
+    "sticky": "<div style=\"position:sticky;top:0;z-index:10;background:var(--ds-background-container)\"><header class=\"gj-m-navbar\" …>…</header><!-- 吸顶的页签 / 搜索 / 筛选放这里 --></div>",
+    "navbar": "<header class=\"gj-m-navbar\" aria-label=\"页面导航\"><div class=\"gj-m-navbar-left\"><button class=\"gj-m-navbar-action gj-m-navbar-back\" type=\"button\" aria-label=\"返回上一页\"><span class=\"gj-icon gj-icon-24\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_left.svg')\" aria-hidden=\"true\"></span></button></div><div class=\"gj-m-navbar-center\"><span class=\"gj-m-navbar-title\">需求详情</span></div><div class=\"gj-m-navbar-right\"></div></header>",
+    "action": "<button class=\"gj-m-navbar-action\" type=\"button\" aria-label=\"消息通知\"><span class=\"gj-icon gj-icon-24\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_bell.svg')\" aria-hidden=\"true\"></span></button>"
+  },
+  "interactionMap": {
+    "back": "返回上一页或上一层视图",
+    "actions": "右侧动作最多两个，原型只反馈动作名称"
+  },
+  "accessibility": {
+    "root": "header + aria-label",
+    "actions": "图标按钮必须 aria-label；热区 ≥ 44 且不重叠",
+    "title": "长标题单行省略，完整文本保留在 DOM（可加 title）"
+  },
+  "composition": {
+    "container": "小程序原生页面、App 原生导航时不自绘；H5 / web-view 自绘",
+    "statusBar": "状态栏不在 Navbar 内",
+    "search": "有页内搜索栏时右侧不再放搜索图标",
+    "sticky": "与页签、搜索、筛选一起作为整体吸顶"
+  },
+  "pageRules": {},
+  "pending": {},
+  "templates": {
+    "navbar": {
+      "tpl": "<header class=\"gj-m-navbar\" aria-label=\"页面导航\"><div class=\"gj-m-navbar-left\">{{#back}}<button class=\"gj-m-navbar-action gj-m-navbar-back\" type=\"button\" aria-label=\"返回上一页\"><span class=\"gj-icon gj-icon-24\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_left.svg')\" aria-hidden=\"true\"></span></button>{{/back}}</div><div class=\"gj-m-navbar-center\"><span class=\"gj-m-navbar-title\">{{title}}</span></div><div class=\"gj-m-navbar-right\">{{{right}}}</div></header>",
+      "example": {
+        "back": true,
+        "title": "需求详情",
+        "right": ""
+      },
+      "params": "back：是否显示返回；title：标题；right：右侧动作 HTML（navbar.action）"
+    },
+    "action": {
+      "tpl": "<button class=\"gj-m-navbar-action\" type=\"button\" aria-label=\"{{label}}\"{{{attrs}}}><span class=\"gj-icon gj-icon-24\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/{{icon}}.svg')\" aria-hidden=\"true\"></span></button>",
+      "example": {
+        "label": "消息通知",
+        "icon": "icf_system_bell",
+        "attrs": ""
+      },
+      "params": "右侧图标动作；attrs 为附加属性（含前导空格）"
+    }
+  }
+}

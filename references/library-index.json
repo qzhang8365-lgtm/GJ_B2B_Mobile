@@ -1,0 +1,91 @@
+{
+  "$schema": "gj-design-skill/mobile-library-index/v1",
+  "name": "国金 B 端设计 Skill（移动端）资料索引",
+  "pathBase": "相对 Skill 根目录",
+  "sourceOfTruth": "Figma（只读）",
+  "audiencePolicy": {
+    "ai-readable": "AI 选模式、规则、组件、Token 与图标时按需读取",
+    "output-asset": "生成原型时加载或复用的样式、图标、字体与图片；不是指令文档，也不是真实前端组件库 API",
+    "maintenance-script": "只在源数据更新、校验、验收或发布时运行，不作为规则来源",
+    "human-preview-only": "规范站与示例页，供人工浏览与验收；不是设计真值，也不是 AI 默认参考入口"
+  },
+  "aiWorkflow": {
+    "entry": "SKILL.md",
+    "order": [
+      "references/quick-reference.md",
+      "references/patterns/page-pattern-metadata.json",
+      "references/page-rules.md",
+      "references/components/inventory.json",
+      "references/components/<id>/mapping.json",
+      "references/generation-verification.md"
+    ],
+    "core": {
+      "quickReference": "references/quick-reference.md",
+      "pageRules": "references/page-rules.md",
+      "patternMetadata": "references/patterns/page-pattern-metadata.json",
+      "patterns": "references/patterns/<id>.md",
+      "componentIndex": "references/components/inventory.json",
+      "componentMappingGuide": "references/components/MAPPING.md",
+      "generationVerification": "references/generation-verification.md"
+    },
+    "onDemand": {
+      "component": {
+        "mapping": "references/components/<id>/mapping.json",
+        "rules": "references/components/<id>/rules.md",
+        "schema": "references/components/<id>/schema.json",
+        "audit": "references/components/<id>/audit.md"
+      },
+      "sizing": [
+        "references/h5-sizing-and-adaptation.md",
+        "references/h5-control-sizing.md",
+        "references/h5-radius-and-containers.md",
+        "references/h5-small-screen.md"
+      ],
+      "tokens": [
+        "references/tokens/token-contract.md",
+        "references/tokens/USAGE.md",
+        "references/tokens/colors.json",
+        "references/tokens/typography.json",
+        "references/tokens/dimensions.json",
+        "references/tokens/styles.json",
+        "references/tokens/effects.md"
+      ],
+      "icons": [
+        "references/icons/index.json",
+        "references/icons/manifest.json",
+        "references/icons/glass-manifest.json",
+        "references/icons/file-manifest.json",
+        "references/icons/motion-manifest.json"
+      ],
+      "naming": "references/figma-naming.md"
+    }
+  },
+  "outputAssets": {
+    "styles": [
+      "assets/styles/gj-b2b-mobile-tokens.css",
+      "assets/styles/gj-b2b-mobile-components.css"
+    ],
+    "icons": "assets/icons/",
+    "images": "assets/images/",
+    "fonts": "assets/fonts/",
+    "scripts": "assets/scripts/",
+    "markupRuntime": [
+      "assets/scripts/gj-m-markup.js",
+      "assets/scripts/gj-m-templates.js"
+    ]
+  },
+  "maintenanceScripts": {
+    "verifyPage": "node scripts/verify-page.cjs <页面> [--widths 375,320,768] [--container h5|webview|miniprogram]",
+    "buildTokens": "python3 scripts/build-tokens.py",
+    "validateTokens": "python3 scripts/validate-tokens.py",
+    "syncInventory": "python3 scripts/sync-inventory.py",
+    "buildRelease": "python3 scripts/build-release.py <版本>",
+    "checkMapping": "node scripts/check-mapping.cjs [--verbose]（组件写法一致性：mapping 为唯一来源）",
+    "buildMarkup": "node scripts/build-markup.cjs [--check]（由 mapping templates 生成 markup 与 assets/scripts/gj-m-templates.js）"
+  },
+  "humanPreviewOnly": {
+    "site": "preview/index.html",
+    "patternKit": "preview/patterns/kit.js（预览站拼装函数，不用于生成）",
+    "examples": "planning/e2e/index.html（仓库与规范网站上，不在 Skill 包内）"
+  }
+}

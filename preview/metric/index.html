@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 数据指标 Metric</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .docs-sheet+.docs-sheet{margin-top:28px}
+    .sheet-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-bottom:16px;margin-bottom:24px;border-bottom:1px solid var(--ds-border-default)}
+    .sheet-head h2{margin:0;font-size:24px;line-height:32px;font-weight:600}
+    .sheet-head .sub{margin-left:8px;font-size:14px;color:var(--ds-text-tiatery);font-weight:400}
+    .sheet-head p{margin:6px 0 0;max-width:760px;color:var(--ds-text-secondary);font-size:14px;line-height:22px}
+    .sheet-head+.docs-section{padding-top:0;border-top:0}
+    @media(max-width:650px){.sheet-head h2{font-size:22px;line-height:30px}}
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">数据展示组件 · Data Display</div>
+    <h1>数据指标 Metric</h1>
+    <p>突出关键数值、变化趋势和业务含义，方便快速识别核心结果并做横向或纵向比较。</p>
+  </header>
+
+  <article class="docs-sheet" id="metric-stat">
+    <header class="sheet-head"><div><h2>单个指标<span class="sub">Metric Stat</span></h2><p>数值 + 标签，可加单位和信息图标；数字字号 16–24，默认 20。</p></div></header>
+    <section class="docs-section" id="metric-stat-basic">
+      <header class="docs-section-head"><div><h2>结构与对齐</h2><p>数值 + 标签；可加单位、信息图标。数字字号按信息层级在 16–24 之间选择。普通数值用中性色，红绿只用于有明确涨跌方向的数据。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">居中 · 标签在下 / 在上</span><div data-demo="statC"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">左对齐 · 单位与信息图标</span><div data-demo="statL"></div></div>
+      </div>
+      <div class="panel gray" style="margin-top:16px"><span class="docs-stage-label">数字字号 · 24 / 20 / 18 / 16（N3–N6，默认 20）</span><div data-demo="size"></div></div>
+    </section>
+    <section class="docs-section" id="metric-state">
+      <header class="docs-section-head"><div><h2>数值与无数据</h2><p>数据暂不可用时统一显示“--”，不要用 0 代替缺失值；整体为空或加载失败时用空状态组件。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">默认 / 上涨 / 下跌</span><div data-demo="tone"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">无数据</span><div data-demo="empty"></div></div>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="metric-grid">
+    <header class="sheet-head"><div><h2>组合指标<span class="sub">Metric Grid</span></h2><p>同层级指标成组并列，用于概览和对比。</p></div></header>
+    <section class="docs-section" id="metric-grid-basic">
+      <header class="docs-section-head"><div><h2>列数与对齐</h2><p>3–4 项等分，列间距 8；居中或左对齐。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">居中 · 4 列 / 3 列</span><div data-demo="gridC"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">左对齐 · 4 列 / 3 列</span><div data-demo="gridL"></div></div>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="metric-card">
+    <header class="sheet-head"><div><h2>指标卡片<span class="sub">Metric Card</span></h2><p>标题、说明和指标组构成完整的数据概览模块。</p></div></header>
+    <section class="docs-section" id="metric-card-basic">
+      <header class="docs-section-head"><div><h2>对齐方式</h2><p>内边距 16、圆角 12；标题与说明间距 4，与指标组间距 16。指标组居中或左对齐。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">居中</span><div data-demo="cardC"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">左对齐</span><div data-demo="cardL"></div></div>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="metric-tile">
+    <header class="sheet-head"><div><h2>绩效卡<span class="sub">Performance Card</span></h2><p>单个指标 + 趋势的小卡片，常两列排布；白色卡片内可用灰色背景分割。</p></div></header>
+    <section class="docs-section" id="metric-tile-basic">
+      <header class="docs-section-head"><div><h2>结构与趋势</h2><p>趋势用箭头 + 百分比表示变化方向；绩效卡把指标名、数值、单位和趋势放在一张小卡里，数值与趋势同一行，常两列排布。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">趋势 · 上涨 / 下跌 / 持平</span><div data-demo="trend"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">绩效卡</span><div data-demo="tile"></div></div>
+      </div>
+      <div class="panel" style="margin-top:16px"><span class="docs-stage-label">灰色背景指标 · 白色卡片内指标较多时用浅灰底分割</span><div data-demo="tileGray"></div></div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="metric-demo">
+    <header class="sheet-head"><div><h2>综合示例<span class="sub">Dashboard</span></h2><p>业绩看板中组合使用以上指标，并给出使用建议。</p></div></header>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>切换统计周期刷新数据；点信息图标查看口径说明。右侧可调整数字字号、对齐、列数、标签位置等。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pA">对齐</label><select id="pA"><option value="">居中</option><option value="left">左对齐</option></select></div>
+          <div class="field"><label for="pS">数字字号</label><select id="pS"><option value="n3">24（N3）</option><option value="" selected>20（N4，默认）</option><option value="n5">18（N5）</option><option value="n6">16（N6）</option></select></div>
+          <div class="field"><label for="pB">绩效卡背景</label><select id="pB"><option value="">白色（页面灰底上）</option><option value="gray">灰色（白色卡片内）</option></select></div>
+          <div class="field"><label for="pN">列数</label><select id="pN"><option value="4">4 列</option><option value="3">3 列</option></select></div>
+          <div class="field"><label for="pL">标签位置</label><select id="pL"><option value="bottom">下方</option><option value="top">上方</option></select></div>
+          <div class="field"><label for="pD">数据状态</label><select id="pD"><option value="ok">正常</option><option value="empty">部分无数据</option></select></div>
+          <label class="ck"><input type="checkbox" id="pU" checked>显示单位</label>
+          <label class="ck"><input type="checkbox" id="pI" checked>信息图标</label>
+        </div></aside>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>优先支持快速判断和有效比较，避免信息密度、颜色或口径不一致造成误读。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>重点</td><td>优先展示对业务判断最重要的指标。</td><td>避免平均分配视觉权重。</td></tr>
+        <tr><td>口径</td><td>同一组指标保持单位、精度和时间口径一致；口径说明用信息图标补充。</td><td>不在同一组里混用“元”和“万元”。</td></tr>
+        <tr><td>字号</td><td>数字默认 20（N4）；需要突出时用 24（N3），信息密集时用 18 / 16（N5 / N6）；同一组指标字号一致。</td><td>不小于 16，不超过 24；不在同一组里混用字号。</td></tr>
+        <tr><td>数量</td><td>并列比较控制在 3–4 项；数值过长时换大单位（万 / 亿）或减少列数。</td><td>移动端一行不放超过 4 个指标；数值不截断。</td></tr>
+        <tr><td>颜色</td><td>红色表示上涨、绿色表示下跌，仅用于有明确涨跌方向的数据。</td><td>不用红绿做普通强调。</td></tr>
+        <tr><td>缺失值</td><td>暂不可用统一显示“--”。</td><td>不用 0 代替；整体为空或加载失败用空状态组件。</td></tr>
+        <tr><td>读屏</td><td>趋势写完整含义，如“较上期上涨 20%”；信息图标 aria-label 写“××口径说明”。</td><td>不只靠颜色或箭头表达涨跌。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const ic=(n,s=24)=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${n}.svg');width:${s/100}rem;height:${s/100}rem" aria-hidden="true"></span>`;
+  /* M(value,label,{tone,unit,info,top,left}) */
+  const M=(v,l,o={})=>{const empty=v==null||v==='';const tone=empty?'is-empty':o.tone?'is-'+o.tone:'';
+    const val=`<span class="gj-m-metric-value"><span class="gj-m-metric-num">${empty?'--':v}</span>${o.unit&&!empty?`<span class="gj-m-metric-unit">${o.unit}</span>`:''}</span>`;
+    const lab=`<span class="gj-m-metric-label">${l}${o.info?`<button type="button" class="gj-m-metric-info" data-tip="${o.info}" aria-label="${l}口径说明">${ic('icf_system_info',16)}</button>`:''}</span>`;
+    return `<div class="gj-m-metric${o.left?' gj-m-metric-left':''}${tone?' '+tone:''}">${o.top?lab+val:val+lab}</div>`};
+  const G=(items,o={})=>`<div class="gj-m-metric-grid${o.n===3?' gj-m-metric-grid-3':''}${o.left?' gj-m-metric-grid-left':''}">${items.map(([v,l,x])=>M(v,l,Object.assign({},x,{top:o.top}))).join('')}</div>`;
+  const CARD=(t,d,grid)=>`<section class="gj-m-metric-card"><div class="gj-m-metric-card-head"><h3 class="gj-m-metric-card-title">${t}</h3><p class="gj-m-metric-card-desc">${d}</p></div>${grid}</section>`;
+  const TR=(k,t)=>`<span class="gj-m-trend is-${k}" aria-label="较上期${k==='rise'?'上涨 ':k==='decline'?'下跌 ':''}${t}"><span aria-hidden="true">${t}</span></span>`;
+  const TILE=(l,v,u,k,t,info,gray)=>`<div class="gj-m-metric-tile${gray?' gj-m-metric-tile-gray':''}${v==null?' is-empty':''}"><span class="gj-m-metric-label">${l}${info?`<button type="button" class="gj-m-metric-info" data-tip="${info}" aria-label="${l}口径说明">${ic('icf_system_info',16)}</button>`:''}</span><span class="gj-m-metric-value"><span class="gj-m-metric-num">${v==null?'--':v}</span>${u&&v!=null?`<span class="gj-m-metric-unit">${u}</span>`:''}${v==null||!k?'':TR(k,t)}</span></div>`;
+  const CSS='html,body{overflow:hidden;background:transparent}.scr{width:100%;max-width:3.75rem;margin:0 auto;box-sizing:border-box}.row{display:flex;flex-wrap:wrap;justify-content:center;gap:.24rem;padding:.08rem 0}.row>.gj-m-metric{min-width:.72rem}'+
+    '.stack{display:flex;flex-direction:column;gap:.12rem}';
+  const FIX='html,body,.page{height:100%}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+(h?FIX:''),height:h||'auto'});
+  const D4=[['246','指标'],['12','指标'],['240','指标'],['+3.4','指标',{tone:'rise'}]];
+  show('statC',`<div class="scr gj-m-card"><div class="row">${M('246','指标')}${M('+357','指标',{tone:'rise'})}${M('-345','指标',{tone:'decline'})}</div><div class="row">${M('246','指标',{top:1})}${M('+357','指标',{tone:'rise',top:1})}${M('-345','指标',{tone:'decline',top:1})}</div></div>`);
+  show('statL',`<div class="scr gj-m-card"><div class="row" style="justify-content:space-around">${M('52.38','资产规模',{left:1,unit:'亿元',info:'按日终市值统计'})}${M('+8.6','净流入',{left:1,unit:'万元',tone:'rise'})}</div><div class="row" style="justify-content:space-around">${M('1,280','服务客户',{left:1,top:1,unit:'人'})}${M('-2.1','较上月',{left:1,top:1,unit:'%',tone:'decline'})}</div></div>`);
+  show('size',`<div class="scr gj-m-card"><div class="gj-m-metric-grid">${[['n3','24'],['','20'],['n5','18'],['n6','16']].map(([c,t])=>`<div class="${c?'gj-m-metric-'+c:''}">${M('246','字号 '+t,{unit:'万'})}</div>`).join('')}</div></div>`);
+  show('gridC',`<div class="scr stack"><div class="gj-m-card">${G(D4)}</div><div class="gj-m-card">${G(D4.slice(0,3),{n:3})}</div></div>`);
+  show('gridL',`<div class="scr stack"><div class="gj-m-card">${G(D4,{left:1})}</div><div class="gj-m-card">${G(D4.slice(0,3),{n:3,left:1})}</div></div>`);
+  show('cardC',`<div class="scr">${CARD('团队业绩','数据截至 10/14 15:00',G(D4))}</div>`);
+  show('cardL',`<div class="scr">${CARD('团队业绩','数据截至 10/14 15:00',G(D4,{left:1}))}</div>`);
+  show('trend',`<div class="scr gj-m-card"><div class="row" style="gap:.40rem;align-items:center">${TR('rise','20%')}${TR('decline','20%')}${TR('flat','持平')}</div></div>`);
+  show('tile',`<div class="scr gj-m-metric-tiles">${TILE('托管资产','245.0','亿元','rise','20%')}${TILE('佣金收入','86.4','万元','decline','3.2%')}</div>`);
+  show('tileGray',`<div class="scr"><section class="gj-m-metric-card" style="box-shadow:var(--ds-effect-shadow-small)"><div class="gj-m-metric-card-head"><h3 class="gj-m-metric-card-title">我的渠道</h3></div><div class="gj-m-metric-tiles">${[['银行渠道新增资产','246','万元','rise','21%'],['银行渠道新增有效户','42','户','rise','8%'],['银行渠道新增开户数','23','户','flat','持平'],['名下渠道数','8','个'],['银行渠道经营积分','1240','分','rise','8%']].map(([l,v,u,k,t])=>TILE(l,v,u,k,t,'',1)).join('')}</div></section></div>`);
+  show('tone',`<div class="scr gj-m-card"><div class="row" style="gap:.40rem">${M('60%','默认')}${M('+60%','上涨',{tone:'rise'})}${M('-60%','下跌',{tone:'decline'})}</div></div>`);
+  show('empty',`<div class="scr stack"><div class="gj-m-card">${G([['246','新增客户'],[null,'净流入'],['240','交易笔数'],[null,'较上期']])}</div><div class="gj-m-metric-tiles">${TILE('托管资产',null,'亿元')}${TILE('交易量','1,286','万元','flat','持平')}</div></div>`);
+
+  const PER={day:{label:'今日',g:[['36','新增客户',{}],['8','新开户',{}],['+129','净流入',{unit:'万元',tone:'rise',info:'净流入 = 当日转入资产 − 转出资产，T+1 更新'}],['+3.4','较昨日',{unit:'%',tone:'rise'}]],t:[['托管资产','52.38','亿元','rise','0.6%'],['交易量','3,286','万元','decline','12.4%'],['佣金收入','8.62','万元','rise','5.1%'],['产品销量','42','笔','flat','持平']]},
+    week:{label:'本周',g:[['182','新增客户',{}],['37','新开户',{}],['-56','净流入',{unit:'万元',tone:'decline',info:'净流入 = 本周转入资产 − 转出资产，T+1 更新'}],['-1.8','较上周',{unit:'%',tone:'decline'}]],t:[['托管资产','52.10','亿元','decline','0.4%'],['交易量','1.86','亿元','rise','8.2%'],['佣金收入','41.30','万元','rise','2.6%'],['产品销量','196','笔','rise','11.0%']]},
+    month:{label:'本月',g:[['746','新增客户',{}],['152','新开户',{}],['+862','净流入',{unit:'万元',tone:'rise',info:'净流入 = 本月转入资产 − 转出资产，T+1 更新'}],['+6.2','较上月',{unit:'%',tone:'rise'}]],t:[['托管资产','52.38','亿元','rise','3.2%'],['交易量','7.42','亿元','rise','6.9%'],['佣金收入','168.5','万元','flat','持平'],['产品销量','812','笔','decline','4.3%']]}};
+  const TI=(name,active)=>`<span aria-hidden="true" class="gj-icon gj-icon-24 ${active?'gj-icon-active':'gj-icon-default'}" style="--gj-icon:url('${ICON}${name}${active?'-fill':''}.svg')"></span>`;
+  const APPCSS='.app{position:relative;width:100%;max-width:3.75rem;margin:0 auto;height:100%;overflow:hidden;display:flex;flex-direction:column;background:var(--ds-background-background)}'+
+    '.nav{flex:none;position:relative;display:flex;align-items:center;justify-content:center;height:44px;background:var(--ds-background-container);font-size:.17rem;font-weight:600;color:var(--ds-text-primary)}.nav .ib{position:absolute;top:0;display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin:0;padding:0;border:0;background:none;color:inherit;cursor:pointer}.nav .l{left:4px}.nav .r{right:4px}'+
+    '.seg{flex:none;padding:0 var(--space-page-margin-x);background:var(--ds-background-container)}.seg .gj-m-tabs{width:100%;margin:0 auto .04rem}'+
+    '.body{flex:1;min-height:0;overflow-y:auto;padding:.12rem var(--space-page-margin-x);display:flex;flex-direction:column;gap:.12rem}.sec{display:flex;justify-content:space-between;align-items:center;padding:.04rem .04rem 0;font-size:.15rem;line-height:.22rem;font-weight:600;color:var(--ds-text-primary)}.sec small{font-size:.12rem;font-weight:400;color:var(--ds-text-tiatery)}'+
+    '.tb{flex:none;box-shadow:0 -1px 0 var(--ds-border-default)}.toast{position:absolute;inset:0;pointer-events:none}';
+  function render(){const B=$('pB').value,SZ=$('pS').value,A=$('pA').value,N=+$('pN').value,L=$('pL').value,Dt=$('pD').value,U=$('pU').checked,I=$('pI').checked;
+    const TABS=[['首页','icf_system_home'],['业绩','icf_data_chart'],['客户','icf_user_idcard'],['我的','icf_user_user']];
+    const f=GJPhone.swatch($('lab'),{html:`<div class="app"><div class="nav"><button type="button" class="ib l" aria-label="返回">${ic('icf_Arrow_left')}</button>业绩看板<button type="button" class="ib r" aria-label="筛选营业部">${ic('icf_system_filter')}</button></div>
+      <div class="seg"><div class="gj-m-tabs" data-kind="segment" role="tablist" id="seg">${Object.entries(PER).map(([k,p],i)=>`<button type="button" class="gj-m-tab" role="tab" data-k="${k}" aria-selected="${i===0}"><span class="gj-m-tab-face">${p.label}</span></button>`).join('')}</div></div>
+      <div class="body${SZ?' gj-m-metric-'+SZ:''}" id="body"></div><div class="toast" id="toast"></div>
+      <div class="tb"><nav class="gj-m-tabbar" aria-label="底部导航">${TABS.map(([t,i],x)=>`<button type="button" class="gj-m-tabbar-item${x===1?' is-active':''}"${x===1?' aria-current="page"':''}><span class="gj-m-tabbar-icon">${TI(i)}${TI(i,true)}</span><span class="gj-m-tabbar-label">${t}</span></button>`).join('')}</nav><div class="gj-m-tabbar-safe"></div></div></div>`,css:CSS+APPCSS+FIX,height:680});
+    f.addEventListener('load',()=>{const d=f.contentDocument,body=d.getElementById('body'),toast=d.getElementById('toast');
+      const say=t=>{clearTimeout(say.t1);clearTimeout(say.t2);toast.innerHTML=`<div class="gj-m-toast-layer" style="--gj-m-toast-top:calc(44px + 44px + var(--space-12))" role="status"><div class="gj-m-notice" data-tone="default"><span class="gj-m-notice-text">${t}</span></div></div>`;const el=toast.firstElementChild;say.t1=setTimeout(()=>{el.classList.add('is-leaving');say.t2=setTimeout(()=>{if(toast.firstElementChild===el)toast.innerHTML=''},200)},2000)};
+      const draw=k=>{const p=PER[k];let g=p.g.map(([v,l,o])=>[Dt==='empty'&&l==='净流入'?null:v,l,Object.assign({},o,{unit:U?o.unit:'',info:I?o.info:'',left:A==='left'})]);
+        if(N===3)g=g.slice(0,3);
+        const tiles=p.t.map(([l,v,u,tk,t],i)=>TILE(l,Dt==='empty'&&i===2?null:v,U?u:'',tk,t,I&&i===0?'托管资产按日终市值统计，含场外产品':'',B==='gray')).join('');
+        body.innerHTML=CARD('团队业绩 · '+p.label,'上海陆家嘴营业部 · 数据截至 10/14 15:00',G(g,{n:N,left:A==='left',top:L==='top'}))+(B==='gray'?`<section class="gj-m-metric-card"><div class="gj-m-metric-card-head"><h3 class="gj-m-metric-card-title">核心指标</h3><p class="gj-m-metric-card-desc">较上期变化</p></div><div class="gj-m-metric-tiles">${tiles}</div></section>`:`<div class="sec">核心指标<small>较上期</small></div><div class="gj-m-metric-tiles">${tiles}</div>`);
+        body.querySelectorAll('.gj-m-metric-info').forEach(b=>b.addEventListener('click',()=>say(b.dataset.tip)))};
+      const tabs=[...d.querySelectorAll('#seg .gj-m-tab')];
+      tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.setAttribute('aria-selected',x===t));draw(t.dataset.k)}));
+      draw('day')})}
+  ['pB','pS','pA','pN','pL','pD','pU','pI'].forEach(k=>$(k).addEventListener('change',render));render();
+})();
+</script>
+</body>
+</html>

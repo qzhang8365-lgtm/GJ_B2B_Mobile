@@ -1,0 +1,94 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "tag",
+  "figmaComponent": "Tags（948:6243）：Tag_middle / Tag_small、CornerTag、circleTag",
+  "prototypeClass": "gj-m-tag",
+  "note": "原型基座类名，不代表真实前端组件库 API。标签只做展示，不承载操作。",
+  "propertyMap": {
+    "Tag_middle": "span.gj-m-tag（Medium，默认）",
+    "Tag_small": "span.gj-m-tag.gj-m-tag-small",
+    "Color": "gj-m-tag-blue（默认可省略）| -orange | -red | -grey | -yellow | -cyan | -sky | -deepblue | -purple | -pink | -green",
+    "Style": "Default（基础类）| gj-m-tag-filled | gj-m-tag-line",
+    "shape": "rectangle（基础类）| gj-m-tag-round",
+    "icon=true": "gj-m-tag-filled gj-m-tag-icon + span.gj-icon（只配合 filled）",
+    "CornerTag": "span.gj-m-corner-tag（Regular）| gj-m-corner-tag-small；颜色 -red | -purple | -gold | -black；贴左上角加 gj-m-corner-tag-pin（容器 position:relative + overflow:hidden）",
+    "circleTag": "span.gj-m-circle-tag；已开通 is-active"
+  },
+  "valueMap": {
+    "Medium": "高 24、左右 8（带图标 6）、H7 12/18",
+    "Small": "高 20、左右 4、H8 10/14",
+    "radius": "rectangle 4；round 全圆角",
+    "circle": "20×20 单字，组内间距 4",
+    "corner": "Regular 24 / Small 20；左上、右下圆角随容器（默认 8）"
+  },
+  "tokenMap": {
+    "blue": "Text/blue",
+    "red": "Feedback/error&rise",
+    "green": "Feedback/success&decline",
+    "orange": "Feedback/warning",
+    "grey": "Text/Secondary",
+    "others": "同名色系基础色（yellow / cyan / sky / deepblue / purple / pink）",
+    "default.background": "对应色 10% 浅底",
+    "filled": "对应色实底 + 白字",
+    "line": "白底 + 对应色细描边"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-tag",
+    "corner": ".gj-m-corner-tag",
+    "circle": ".gj-m-circle-tag"
+  },
+  "markup": {
+    "default": "<span class=\"gj-m-tag gj-m-tag-blue\">展业资料</span>",
+    "small": "<span class=\"gj-m-tag gj-m-tag-small gj-m-tag-orange\">待审批</span>",
+    "filled": "<span class=\"gj-m-tag gj-m-tag-red gj-m-tag-filled\">紧急</span>",
+    "line": "<span class=\"gj-m-tag gj-m-tag-green gj-m-tag-line\">已满足</span>",
+    "round": "<span class=\"gj-m-tag gj-m-tag-grey gj-m-tag-round\">已归档</span>",
+    "icon": "<span class=\"gj-m-tag gj-m-tag-blue gj-m-tag-filled gj-m-tag-icon\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_check-circle-fill.svg')\" aria-hidden=\"true\"></span>已认证</span>",
+    "group": "<span style=\"display:inline-flex;flex-wrap:wrap;gap:var(--space-inline-tag-gap-max)\"><span class=\"gj-m-tag gj-m-tag-grey\">交通</span><span class=\"gj-m-tag gj-m-tag-grey\">住宿</span><span class=\"gj-m-tag gj-m-tag-grey\">餐补</span></span>",
+    "corner": "<div style=\"position:relative;overflow:hidden;border-radius:8px\"><span class=\"gj-m-corner-tag gj-m-corner-tag-red gj-m-corner-tag-pin\">热销</span>…</div>",
+    "circle": "<span class=\"gj-m-circle-tag is-active\" aria-label=\"港股通 已开通\">港</span><span class=\"gj-m-circle-tag\" aria-label=\"北交所 未开通\">北</span>",
+    "fromPreview_tag_purple": "<span class=\"gj-m-tag gj-m-tag-purple\">基础标签</span>",
+    "fromPreview_tag_yellow": "<span class=\"gj-m-tag gj-m-tag-yellow\">基础标签</span>",
+    "fromPreview_tag_cyan": "<span class=\"gj-m-tag gj-m-tag-cyan\">基础标签</span>",
+    "fromPreview_tag_sky": "<span class=\"gj-m-tag gj-m-tag-sky\">基础标签</span>",
+    "fromPreview_tag_deepblue": "<span class=\"gj-m-tag gj-m-tag-deepblue\">基础标签</span>",
+    "fromPreview_tag_pink": "<span class=\"gj-m-tag gj-m-tag-pink\">基础标签</span>",
+    "fromPreview_corner_tag_purple": "<span class=\"gj-m-corner-tag gj-m-corner-tag-purple\">异形标签</span>",
+    "fromPreview_corner_tag_gold": "<span class=\"gj-m-corner-tag gj-m-corner-tag-gold\">异形标签</span>",
+    "fromPreview_corner_tag_black": "<span class=\"gj-m-corner-tag gj-m-corner-tag-black\">异形标签</span>",
+    "tag": "<span class=\"gj-m-tag gj-m-tag-small gj-m-tag-orange\">待审批</span>"
+  },
+  "accessibility": {
+    "text": "标签文字即含义，不只靠颜色；圆形标签补 aria-label 说明市场与开通状态",
+    "icon": "图标 aria-hidden"
+  },
+  "composition": {
+    "size": "与任何文字同行用 Small；单独成行或作为字段值独占位置用 Medium；一级卡片标题右侧用 Medium、二级用 Small",
+    "style": "按层级数：1 级 default；2 级 filled + default；3 级 filled + default + line；同一场景同一含义统一",
+    "color": "按语义选色，同一列表同一含义同色",
+    "text": "不超过 6 字，不换行、不省略",
+    "operation": "可点击筛选用按钮组合，不用标签",
+    "corner": "容器圆角 ≥ 12 时不用边角标签；不遮挡信息",
+    "background": "PR-030：非白色背景（如灰底二级卡片）必须filled=true，优先于PR-012；白底按层级选风格。"
+  },
+  "pageRules": {
+    "PR-005": "与文字同行用 Small，单独占位用 Medium",
+    "PR-012": "标签风格按层级数选用，default 优先，同场景按语境统一",
+    "PR-030": "非白色背景标签使用filled，保留语义色与尺寸"
+  },
+  "pending": {
+    "TAG-M-007": "Figma 颜色变体绑定图表色变量，色名与色值不对应；原型按色名绑定，不受影响"
+  },
+  "markupNote": "markup 中 fromPreview_* 片段由 scripts/check-mapping.cjs 从预览页实际渲染补录（2026-10-19），与预览页一致；其余为手写的常用写法。",
+  "templates": {
+    "tag": {
+      "tpl": "<span class=\"gj-m-tag{{#small}} gj-m-tag-small{{/small}} gj-m-tag-{{color}}{{#filled}} gj-m-tag-filled{{/filled}}{{#line}} gj-m-tag-line{{/line}}\">{{text}}</span>",
+      "example": {
+        "text": "待审批",
+        "color": "orange",
+        "small": true
+      },
+      "params": "color：blue / orange / red / grey / green / yellow / cyan / sky / deepblue / purple / pink；small / filled / line 为布尔"
+    }
+  }
+}

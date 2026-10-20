@@ -1,0 +1,55 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "listbar",
+  "name": "列表导航 ListBar",
+  "category": "导航组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "列表导航ListBar（58:1953）",
+    "nodes": {
+      "default": "58:2006 list-item/default（64 变体：Title×Description×Prefix×Extra×Arrow×Disabled）",
+      "switch": "58:2470 list-item/switch（8 变体）",
+      "user": "58:2548 list-item/user（8 变体）",
+      "list": "58:2527 list（CardMode×Title×Prefix）",
+      "slot": "58:2455 .slot:\"list-items\"",
+      "prefix": "58:2465 .prefix（icon / avatar）",
+      "extra": "58:2461 .extra / 58:2463 .text",
+      "usage": "983:3414"
+    },
+    "extractedAt": "2026-10-12",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-list / .gj-m-list-card / .gj-m-list-title / .gj-m-list-item(-content|-prefix|-main|-label|-text|-desc|-extra|-arrow|-action|-large)",
+    "note": "原型基座，不代表真实前端组件库 API"
+  },
+  "item": {
+    "bg": "Background/Container",
+    "paddingLeft": 16,
+    "contentPaddingRight": 16,
+    "divider": "内容区底部 1px Border/default（末项由 slot 内阴影遮挡 → 基座末项不显示）",
+    "main": "上下 12",
+    "heights": {
+      "single": 48,
+      "labelOrDesc": 68,
+      "both": 88
+    },
+    "label": "P4_CN-R 13/20 Text/Secondary",
+    "text": "P2_CN-R 16/24 Text/Primary",
+    "desc": "P4_CN-R 13/20 Text/Tiatery",
+    "extra": "P4_CN-R 13/20 Text/Tiatery，左 12",
+    "arrow": "icf_Arrow_right（21:21）20×20，Text/Tiatery，左 4",
+    "prefix": {
+      "icon": "24，Text/Primary，右 12",
+      "avatar": "本地 avatar Size=36（893:2622），右 12"
+    },
+    "disabled": "整项 opacity 0.4"
+  },
+  "list": {
+    "plain": "通栏 375",
+    "card": "343（左右 16），圆角 12，列表项左 16",
+    "title": ".form-title（远程）高 40，上下 8、左 16、右 12，H4-CN-S 16/24 Text/Secondary"
+  }
+}

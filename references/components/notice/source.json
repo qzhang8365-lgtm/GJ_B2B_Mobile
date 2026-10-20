@@ -1,0 +1,611 @@
+{
+  "details": [
+    {
+      "id": "170:8271",
+      "name": "Style=Default, Icon=True",
+      "w": 341,
+      "h": 40,
+      "paddingTop": 10,
+      "paddingRight": 251,
+      "paddingBottom": 8,
+      "paddingLeft": 11,
+      "itemSpacing": 12,
+      "cornerRadius": 8,
+      "fills": [
+        {
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "var": "Background/MK_60"
+        }
+      ],
+      "children": [
+        {
+          "id": "1822:16549",
+          "name": "icf_system_check",
+          "w": 20,
+          "h": 20,
+          "paddingTop": 0,
+          "paddingRight": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "main": "icf_system_check"
+        },
+        {
+          "id": "170:8269",
+          "name": "Default",
+          "w": 47,
+          "h": 22,
+          "fills": [
+            {
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "var": "Text/reversal"
+            }
+          ],
+          "text": "Default",
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "style": "P3_CN-R"
+        }
+      ]
+    },
+    {
+      "id": "170:8273",
+      "name": "Style=Alert, Icon=True",
+      "w": 341,
+      "h": 40,
+      "paddingTop": 10,
+      "paddingRight": 251,
+      "paddingBottom": 8,
+      "paddingLeft": 11,
+      "itemSpacing": 12,
+      "cornerRadius": 8,
+      "fills": [
+        {
+          "color": {
+            "r": 0.9960784316062927,
+            "g": 0.886274516582489,
+            "b": 0.886274516582489
+          },
+          "var": "Background/BG_red"
+        }
+      ],
+      "children": [
+        {
+          "id": "170:8274",
+          "name": "icf_system_warning",
+          "w": 20,
+          "h": 20,
+          "paddingTop": 0,
+          "paddingRight": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "main": "icf_system_warning"
+        },
+        {
+          "id": "170:8275",
+          "name": "Alert",
+          "w": 31,
+          "h": 22,
+          "fills": [
+            {
+              "color": {
+                "r": 0.9764705896377563,
+                "g": 0.21960784494876862,
+                "b": 0.21960784494876862
+              },
+              "var": "Feedback/error&rise"
+            }
+          ],
+          "text": "Alert",
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "style": "P3_CN-R"
+        }
+      ]
+    },
+    {
+      "id": "170:8278",
+      "name": "Style=Message, Icon=True",
+      "w": 341,
+      "h": 40,
+      "paddingTop": 10,
+      "paddingRight": 251,
+      "paddingBottom": 8,
+      "paddingLeft": 11,
+      "itemSpacing": 12,
+      "cornerRadius": 8,
+      "fills": [
+        {
+          "color": {
+            "r": 0.8980392217636108,
+            "g": 0.9411764740943909,
+            "b": 1
+          },
+          "var": "Background/BG_blue"
+        }
+      ],
+      "children": [
+        {
+          "id": "170:8279",
+          "name": "icf_contact_message1",
+          "w": 20,
+          "h": 20,
+          "paddingTop": 0,
+          "paddingRight": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "main": "icf_contact_message1"
+        },
+        {
+          "id": "170:8280",
+          "name": "Message",
+          "w": 59,
+          "h": 22,
+          "fills": [
+            {
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "var": "Feedback/brand"
+            }
+          ],
+          "text": "Message",
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "style": "P3_CN-R"
+        }
+      ]
+    },
+    {
+      "id": "170:8288",
+      "name": "Style=Warning, Icon=True",
+      "w": 341,
+      "h": 40,
+      "paddingTop": 10,
+      "paddingRight": 251,
+      "paddingBottom": 8,
+      "paddingLeft": 11,
+      "itemSpacing": 12,
+      "cornerRadius": 8,
+      "fills": [
+        {
+          "color": {
+            "r": 1,
+            "g": 0.929411768913269,
+            "b": 0.8352941274642944
+          },
+          "var": "Background/BG_orange"
+        }
+      ],
+      "children": [
+        {
+          "id": "170:8289",
+          "name": "icf_system_alert",
+          "w": 20,
+          "h": 20,
+          "paddingTop": 0,
+          "paddingRight": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "main": "icf_system_alert"
+        },
+        {
+          "id": "170:8290",
+          "name": "Warning",
+          "w": 54,
+          "h": 22,
+          "fills": [
+            {
+              "color": {
+                "r": 0.9686274528503418,
+                "g": 0.48640522360801697,
+                "b": 0.03529411926865578
+              },
+              "var": "Feedback/warning"
+            }
+          ],
+          "text": "Warning",
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "style": "P3_CN-R"
+        }
+      ]
+    },
+    {
+      "id": "1822:16502",
+      "name": "Style=success, Icon=True",
+      "w": 341,
+      "h": 40,
+      "paddingTop": 10,
+      "paddingRight": 251,
+      "paddingBottom": 8,
+      "paddingLeft": 11,
+      "itemSpacing": 12,
+      "cornerRadius": 8,
+      "fills": [
+        {
+          "color": {
+            "r": 0.8196078538894653,
+            "g": 0.9803921580314636,
+            "b": 0.8745098114013672
+          },
+          "var": "Background/BG_green"
+        }
+      ],
+      "children": [
+        {
+          "id": "1822:16503",
+          "name": "icf_system_check-circle",
+          "w": 20,
+          "h": 20,
+          "paddingTop": 0,
+          "paddingRight": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "main": "icf_system_check-circle"
+        },
+        {
+          "id": "1822:16504",
+          "name": "Success",
+          "w": 54,
+          "h": 22,
+          "fills": [
+            {
+              "color": {
+                "r": 0.07058823853731155,
+                "g": 0.7176470756530762,
+                "b": 0.4156862795352936
+              },
+              "var": "Feedback/success&decline"
+            }
+          ],
+          "text": "Success",
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "style": "P3_CN-R"
+        }
+      ]
+    },
+    {
+      "id": "173:9638",
+      "name": "red=red, collapse=false, Collapse=False",
+      "w": 311,
+      "h": 34,
+      "paddingTop": 8,
+      "paddingRight": 8,
+      "paddingBottom": 8,
+      "paddingLeft": 8,
+      "itemSpacing": 8,
+      "cornerRadius": 8,
+      "fills": [
+        {
+          "color": {
+            "r": 0.9411764740943909,
+            "g": 0.21960784494876862,
+            "b": 0.21960784494876862
+          },
+          "var": "Background/BT_R10"
+        }
+      ],
+      "children": [
+        {
+          "id": "1595:9256",
+          "name": "icf_system_warning",
+          "w": 16,
+          "h": 16,
+          "paddingTop": 0,
+          "paddingRight": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "main": "icf_system_warning"
+        },
+        {
+          "id": "173:9604",
+          "name": "发送前请仔细核对客户风险承受能力是否匹配哦",
+          "w": 271,
+          "h": 18,
+          "fills": [
+            {
+              "color": {
+                "r": 0.9764705896377563,
+                "g": 0.21960784494876862,
+                "b": 0.21960784494876862
+              },
+              "var": "Feedback/error&rise"
+            }
+          ],
+          "text": "发送前请仔细核对客户风险承受能力是否匹配哦",
+          "size": 12,
+          "line": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "style": "P5_CN-R"
+        }
+      ]
+    },
+    {
+      "id": "173:9636",
+      "name": "red=blue, collapse=false, Collapse=False",
+      "w": 311,
+      "h": 34,
+      "paddingTop": 8,
+      "paddingRight": 8,
+      "paddingBottom": 8,
+      "paddingLeft": 8,
+      "itemSpacing": 8,
+      "cornerRadius": 8,
+      "fills": [
+        {
+          "color": {
+            "r": 0.16862745583057404,
+            "g": 0.45098039507865906,
+            "b": 1
+          },
+          "var": "Background/BT_B10"
+        }
+      ],
+      "children": [
+        {
+          "id": "1595:9265",
+          "name": "icf_system_warning",
+          "w": 16,
+          "h": 16,
+          "paddingTop": 0,
+          "paddingRight": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "main": "icf_system_warning"
+        },
+        {
+          "id": "173:9613",
+          "name": "发送前请仔细核对客户风险承受能力是否匹配哦",
+          "w": 271,
+          "h": 18,
+          "fills": [
+            {
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "var": "Feedback/brand"
+            }
+          ],
+          "text": "发送前请仔细核对客户风险承受能力是否匹配哦",
+          "size": 12,
+          "line": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "style": "P5_CN-R"
+        }
+      ]
+    },
+    {
+      "id": "173:9637",
+      "name": "red=grey, collapse=false, Collapse=False",
+      "w": 311,
+      "h": 34,
+      "paddingTop": 8,
+      "paddingRight": 8,
+      "paddingBottom": 8,
+      "paddingLeft": 8,
+      "itemSpacing": 8,
+      "cornerRadius": 8,
+      "fills": [
+        {
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "var": "Background/MK_5"
+        }
+      ],
+      "children": [
+        {
+          "id": "1595:9259",
+          "name": "icf_system_warning",
+          "w": 16,
+          "h": 16,
+          "paddingTop": 0,
+          "paddingRight": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "main": "icf_system_warning"
+        },
+        {
+          "id": "173:9621",
+          "name": "发送前请仔细核对客户风险承受能力是否匹配哦",
+          "w": 271,
+          "h": 18,
+          "fills": [
+            {
+              "color": {
+                "r": 0.4000000059604645,
+                "g": 0.43921568989753723,
+                "b": 0.5215686559677124
+              },
+              "var": "Feedback/plain"
+            }
+          ],
+          "text": "发送前请仔细核对客户风险承受能力是否匹配哦",
+          "size": 12,
+          "line": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "style": "P5_CN-R"
+        }
+      ]
+    },
+    {
+      "id": "1822:16608",
+      "name": "red=red, collapse=true, Collapse=True",
+      "w": 311,
+      "h": 52,
+      "paddingTop": 8,
+      "paddingRight": 8,
+      "paddingBottom": 8,
+      "paddingLeft": 8,
+      "itemSpacing": 8,
+      "cornerRadius": 8,
+      "fills": [
+        {
+          "color": {
+            "r": 0.9411764740943909,
+            "g": 0.21960784494876862,
+            "b": 0.21960784494876862
+          },
+          "var": "Background/BT_R10"
+        }
+      ],
+      "children": [
+        {
+          "id": "1822:16609",
+          "name": "icf_system_warning",
+          "w": 16,
+          "h": 16,
+          "paddingTop": 0,
+          "paddingRight": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "main": "icf_system_warning"
+        },
+        {
+          "id": "1822:16610",
+          "name": "发送前请仔细核对客户风险承受能力是否匹配哦",
+          "w": 247,
+          "h": 36,
+          "fills": [
+            {
+              "color": {
+                "r": 0.9764705896377563,
+                "g": 0.21960784494876862,
+                "b": 0.21960784494876862
+              },
+              "var": "Feedback/error&rise"
+            }
+          ],
+          "text": "发送前请仔细核对客户风险承受能力是否匹配哦",
+          "size": 12,
+          "line": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "style": "P5_CN-R"
+        },
+        {
+          "id": "1822:16611",
+          "name": "icf_Arrow_caret-up",
+          "w": 16,
+          "h": 16,
+          "paddingTop": 0,
+          "paddingRight": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [
+            {
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              }
+            }
+          ],
+          "main": "icf_Arrow_caret-up"
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    "Notice",
+    "提示组件用于反馈操作结果、状态变化或风险信息；Toast 提供短暂全局反馈，Notice 提供持续的上下文提示。",
+    "基础分类",
+    "按持续时间和影响范围分为 Toast、中型状态提示、小型行内提示和可关闭提示，并通过颜色与图标区分信息级别。",
+    "Toast 短暂提示",
+    "用于操作完成后的轻量全局反馈，短暂出现并自动消失，不打断用户当前任务。",
+    "Toast message",
+    "中型状态提示",
+    "用于页面或模块级状态反馈，可表达默认、信息、警告或错误等不同语义。",
+    "Message",
+    "小型行内提示",
+    "紧邻相关内容展示风险、信息或辅助说明，适合短文本和明确上下文。",
+    "发送前请仔细核对客户风险承受能力是否匹配哦",
+    "可关闭提示",
+    "当信息允许用户自主忽略时提供关闭入口；关闭后不应阻断主要操作。",
+    "发送前请仔细核对客户风险承受能力是否匹配哦",
+    "使用方法",
+    "根据反馈的影响范围、持续时间和紧急程度选择提示形式，并让提示出现、消失和关闭行为可预期。",
+    "1. 操作完成后，如仅需告知结果且无需用户处理，使用 Toast 并在短时间后自动消失。",
+    "2. 与页面、表单项或业务状态持续相关的信息，使用 Notice 放置在对应内容附近。",
+    "3. 根据语义选择默认、信息、警告或错误状态，并通过图标、颜色和文本共同表达。",
+    "4. 允许忽略的信息可提供关闭入口；再次触发同一条件时可按业务规则重新出现。",
+    "使用建议",
+    "控制提示数量、文案长度和停留时间，确保用户能理解反馈但不会被反复干扰。",
+    "• Toast 只用于无需决策的短暂结果反馈；需要确认、撤销或风险决策时使用带操作的提示、弹窗或结果页面。",
+    "• Toast 文案保持单句，优先说明“发生了什么”；建议停留 2–4 秒，文本较长时适当延长。",
+    "• Notice 用于持续存在的上下文信息，问题未解决前不应仅依靠自动消失的 Toast 反馈。",
+    "• 信息、成功、警告和错误颜色必须保持固定语义，并同时使用图标或文字，不以颜色作为唯一依据。",
+    "• 可关闭按钮只用于允许忽略的信息；关键风险、合规提示或阻断性错误不可通过关闭直接绕过。",
+    "• 同一时刻尽量只显示一个 Toast；连续反馈采用队列或合并文案，避免多条遮挡和快速闪烁。",
+    "• 提示放置在安全区域内，不遮挡导航、主要按钮、键盘输入区或正在操作的关键内容。",
+    "• 文案应直接给出结果与下一步，不使用“操作失败”等无法帮助用户恢复的笼统描述。",
+    "• 相同错误连续发生时避免重复堆叠；更新已有提示或在相关内容附近给出持续说明。",
+    "• Toast 和动态 Notice 应支持辅助技术播报，但不应反复抢占焦点或中断用户输入。"
+  ]
+}

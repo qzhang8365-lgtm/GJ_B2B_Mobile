@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 页脚 Footer</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .playground .controls .field select{appearance:auto}
+    .note-line{margin:12px 0 0;font-size:13px;line-height:20px;color:var(--ds-text-secondary)}
+    .showcase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .size-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius)}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.size-groups,.showcase-grid{grid-template-columns:1fr}}
+    .panel .phone-stage{padding:0;background:transparent}
+    .docs-sheet+.docs-sheet{margin-top:28px}
+    .sheet-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-bottom:16px;margin-bottom:24px;border-bottom:1px solid var(--ds-border-default)}
+    .sheet-head h2{margin:0;font-size:24px;line-height:32px;font-weight:600}
+    .sheet-head .sub{margin-left:8px;font-size:14px;color:var(--ds-text-tiatery);font-weight:400}
+    .sheet-head p{margin:6px 0 0;max-width:760px;color:var(--ds-text-secondary);font-size:14px;line-height:22px}
+    .sheet-head+.docs-section{padding-top:0;border-top:0}
+    @media(max-width:650px){.sheet-head h2{font-size:22px;line-height:30px}}
+    .group-title{margin:20px 0 12px;font-size:15px;font-weight:600;line-height:22px;color:var(--ds-text-primary)}
+    .docs-section-head+.group-title{margin-top:0}
+    .note-line a{color:var(--ds-text-blue);text-decoration:none}
+    .panel.gray{display:flex;flex-direction:column}
+    .panel.gray>.docs-stage-label{flex:none}
+    .panel.gray>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .panel{display:flex;flex-direction:column}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">通用组件 · Components</div>
+    <h1>页脚 Footer</h1>
+    <p>页面底部放置补充信息和链接时使用，包括内容结束提示、版权与法律信息、网站导航链接。宽度撑满所在容器，左右留 16 页面边距，内容水平居中。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>类型</h2><p>基础页脚用于告知内容已结束；带内容的页脚承载版权、隐私政策和使用条款等法律所需信息；带链接的页脚承载网站导航，点击后跳转。</p></div></header>
+      <div class="size-groups">
+        <div class="panel gray"><span class="docs-stage-label">基础页脚 · label</span><div data-demo="tLabel"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">带内容的页脚 · content</span><div data-demo="tContent"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">带链接的页脚 · links / chips-link</span><div data-demo="tLinks"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>组合使用</h2><p>多种类型组合时自上而下为：结束提示 → 链接 → 版权信息，类型之间间距 8。</p></div></header>
+      <div class="showcase-grid">
+        <div class="panel gray"><span class="docs-stage-label">列表结束 · 375 宽</span><div data-demo="cbList"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">页面底部完整页脚 · 375 宽</span><div data-demo="cbFull"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>切换页脚类型并修改文字。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pClass">Class</label><select id="pClass"><option value="lable">label 结束提示</option><option value="content">content 版权信息</option><option value="links">links 单个链接</option><option value="chips" selected>chips-link 多个链接</option></select></div>
+          <div class="field"><label for="pText">文字（多个链接用 / 分隔）</label><input id="pText" value="隐私政策/用户协议/联系我们"></div>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>选用规则</h2><p>页脚只放补充信息，不放主要操作。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>结束提示</td><td>列表全部加载完成后显示“没有更多了”。</td><td>还有数据可加载时不显示。</td></tr>
+        <tr><td>版权信息</td><td>承载版权、隐私政策、使用条款等法律所需信息，版权符号用“©”。</td><td>不放与法律无关的营销文案。</td></tr>
+        <tr><td>链接</td><td>文字简短，一行最多 3 个，以竖线分隔；实际点击热区至少 44×44。</td><td>不放页面主要操作，主要操作用按钮。</td></tr>
+        <tr><td>组合顺序</td><td>结束提示 → 链接 → 版权信息，类型之间间距 8。</td><td>不重复放置同类信息。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const F={
+    lable:(t='没有更多了')=>`<div class="gj-m-footer gj-m-footer-end"><span class="gj-m-footer-end-text">${t}</span></div>`,
+    content:(t='© 2004-2026 Sinolink All rights reserved')=>`<div class="gj-m-footer">${t}</div>`,
+    links:(t='Sinolink Inc')=>`<div class="gj-m-footer"><a class="gj-m-footer-link" href="javascript:void 0">${t}</a></div>`,
+    chips:(t='Link/Link')=>`<div class="gj-m-footer"><span class="gj-m-footer-links">${t.split('/').filter(Boolean).slice(0,3).map(x=>`<a class="gj-m-footer-link" href="javascript:void 0">${x}</a>`).join('')}</span></div>`
+  };
+  const CSS='html,body{overflow-y:hidden}.page{padding-block:.08rem}'+
+    '.scr{width:100%;max-width:3.75rem;margin:0 auto;box-sizing:border-box;background:var(--ds-background-container)}'+
+    '.scr.bg{background:var(--ds-background-background)}'+
+    '.stack{display:flex;flex-direction:column;gap:.08rem}'+
+    '.li{padding:.12rem var(--space-page-margin-x);background:var(--ds-background-container)}.li+.li{border-top:1px solid var(--ds-border-default)}'+
+    '.li .t{font-size:.15rem;line-height:.22rem;font-weight:600}.li .d{margin-top:.04rem;font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}'+
+    '.scr>.gj-m-list-card{margin-top:.12rem}'+
+    ''+
+    '.ft{padding:.08rem 0 .16rem}';
+  const show=(key,html)=>GJPhone.swatch(document.querySelector('[data-demo="'+key+'"]'),{html,css:CSS,height:'auto'});
+  show('tLabel',`<div class="scr">${F.lable()}</div>`);
+  show('tContent',`<div class="scr">${F.content()}</div>`);
+  show('tLinks',`<div class="scr stack">${F.links()}${F.chips()}</div>`);
+  show('cbList',`<div class="scr bg">${[['华东区域年度营销方案','截止 2026-10-31'],['合同续签（上海分公司）','提交于 2026-10-08'],['客户资料补录','逾期 3 天']].map(([t,d])=>`<div class="li"><div class="t">${t}</div><div class="d">${d}</div></div>`).join('')}${F.lable()}</div>`);
+  show('cbFull',`<div class="scr bg"><div class="gj-m-list gj-m-list-card">${[['账户与安全','已认证'],['消息通知','开启'],['关于我们','v3.2.0']].map(([a,b])=>`<div class="gj-m-list-item"><span class="gj-m-list-item-content"><span class="gj-m-list-item-main"><span class="gj-m-list-item-text">${a}</span></span><span class="gj-m-list-item-extra">${b}</span></span></div>`).join('')}</div><div class="ft stack">${F.lable('已经到底了')}${F.chips('隐私政策/用户协议/联系我们')}${F.content()}</div></div>`);
+  const $=id=>document.getElementById(id);
+  const update=()=>{const c=$('pClass').value,t=$('pText').value.trim();GJPhone.swatch($('lab'),{html:`<div class="scr">${F[c](t||undefined)}</div>`,css:CSS,height:'auto'});};
+  $('pClass').addEventListener('change',()=>{$('pText').value={lable:'没有更多了',content:'© 2004-2026 Sinolink All rights reserved',links:'Sinolink Inc',chips:'隐私政策/用户协议/联系我们'}[$('pClass').value];update();});
+  $('pText').addEventListener('input',update);update();
+})();
+</script>
+</body>
+</html>

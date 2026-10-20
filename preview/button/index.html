@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 按钮 Button</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .playground .controls .field select{appearance:auto}
+    .note-line{margin:12px 0 0;font-size:13px;line-height:20px;color:var(--ds-text-secondary)}
+    .showcase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .size-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius)}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.size-groups,.showcase-grid{grid-template-columns:1fr}}
+    .panel .phone-stage{padding:0;background:transparent}
+    .docs-sheet+.docs-sheet{margin-top:28px}
+    .sheet-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-bottom:16px;margin-bottom:24px;border-bottom:1px solid var(--ds-border-default)}
+    .sheet-head h2{margin:0;font-size:24px;line-height:32px;font-weight:600}
+    .sheet-head .sub{margin-left:8px;font-size:14px;color:var(--ds-text-tiatery);font-weight:400}
+    .sheet-head p{margin:6px 0 0;max-width:760px;color:var(--ds-text-secondary);font-size:14px;line-height:22px}
+    .sheet-head+.docs-section{padding-top:0;border-top:0}
+    @media(max-width:650px){.sheet-head h2{font-size:22px;line-height:30px}}
+    .group-title{margin:20px 0 12px;font-size:15px;font-weight:600;line-height:22px;color:var(--ds-text-primary)}
+    .docs-section-head+.group-title{margin-top:0}
+    .note-line a{color:var(--ds-text-blue);text-decoration:none}
+    .panel.gray{display:flex;flex-direction:column}
+    .panel.gray>.docs-stage-label{flex:none}
+    .panel.gray>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">通用组件 · Components</div>
+    <h1>按钮 Button</h1>
+    <p>用于触发操作的按钮族，包含按钮、文字按钮与悬浮按钮。图标只从图标库选取，颜色始终与按钮文字（或前景色）一致。</p>
+  </header>
+
+  <article class="docs-sheet" id="button-basic">
+    <header class="sheet-head"><div><h2>按钮<span class="sub">Button</span></h2><p>用于触发即时操作、提交任务或推进流程。层级表达操作权重，尺寸取决于所在容器。</p></div></header>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>操作层级</h2><p>同一操作区域保留一个最明确的主操作，其余按钮依次降低视觉权重。Ghost 为浅灰底、无描边的最轻操作。</p></div></header>
+      <div class="showcase-grid">
+        <div class="panel"><span class="docs-stage-label">Primary / Secondary</span><div data-demo="lv1"></div></div>
+        <div class="panel"><span class="docs-stage-label">Tertiary / Ghost</span><div data-demo="lv2"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>尺寸与图标</h2><p>默认使用 Medium；同一操作组保持相同尺寸。图标尺寸与圆角随档位变化。</p></div></header>
+      <div class="size-groups">
+        <div class="panel"><span class="docs-stage-label">Large · 40 · 图标 20 · 圆角 8</span><div data-demo="szLarge"></div></div>
+        <div class="panel"><span class="docs-stage-label">Medium · 32 · 图标 16 · 圆角 6</span><div data-demo="szMedium"></div></div>
+        <div class="panel"><span class="docs-stage-label">Small · 28 · 图标 12 · 圆角 6</span><div data-demo="szSmall"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>形状</h2><p>Shape 分 regular 与 pill。pill 为全圆角（Radius-full），其余尺寸与 regular 相同。</p></div></header>
+      <div class="showcase-grid">
+        <div class="panel"><span class="docs-stage-label">Large · regular · 圆角 8</span><div data-demo="shRegular"></div></div>
+        <div class="panel"><span class="docs-stage-label">Large · pill · 全圆角</span><div data-demo="shPill"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>移动端包含 default、pressed、disabled，没有 hover。各层级的 disabled 表现不同：Primary 换浅色底，Tertiary 文字变灰，Secondary 与 Ghost 整体透明度 40%。</p></div></header>
+      <div class="panel"><div data-demo="states"></div></div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>组合使用</h2><p>多个按钮组合时，横向、纵向间距通常为 8，大按钮 12，小按钮 4，可按场景调整。通栏按钮宽度依据页面边距撑满容器。</p></div></header>
+      <h3 class="group-title">按钮组合</h3>
+      <div class="size-groups">
+        <div class="panel"><span class="docs-stage-label">Medium · 间距 8</span><div data-demo="cbGap8"></div></div>
+        <div class="panel"><span class="docs-stage-label">多行排列 · 横纵间距 8</span><div data-demo="cbWrap"></div></div>
+        <div class="panel"><span class="docs-stage-label">Large · 间距 12 ／ Small · 间距 4</span><div data-demo="cbLS"></div></div>
+      </div>
+      <h3 class="group-title">通栏按钮</h3>
+      <div class="size-groups">
+        <div class="panel gray"><span class="docs-stage-label">弹窗 · 单按钮</span><div data-demo="fwSingle"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">弹窗 · 双按钮 · 间距 12</span><div data-demo="fwDouble"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">底部面板 · 双按钮竖排 · 间距 12</span><div data-demo="fwSheet"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>多层级组合</h2><p>用不同层级的按钮区分选中与未选中。案例 1 用 Primary 表示选中、Ghost 表示未选中；案例 2 用 Secondary-pressed 表示选中、Tertiary 表示未选中。以下为静态示意，不代表已提取筛选器组件。</p></div></header>
+      <div class="size-groups">
+        <div class="panel gray"><span class="docs-stage-label">案例 1 · 分类筛选 · Small</span><div data-demo="lvA"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">案例 1 · 横滑筛选 · Small pill</span><div data-demo="lvB"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">案例 2 · 选项卡片与多选 · Medium</span><div data-demo="lvC"></div></div>
+      </div>
+      <p class="note-line"><a href="https://www.figma.com/design/KCpwE2Lh1yCGQ86y8ckYFN/?node-id=312-2295" target="_blank" rel="noopener">查看 Figma 组合使用规范</a></p>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>调整层级、尺寸、图标与形状，按住预览中的按钮查看 pressed 反馈。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pLevel">Level</label><select id="pLevel"><option>Primary</option><option>Secondary</option><option>Tertiary</option><option>Ghost</option></select></div>
+          <div class="field"><label for="pSize">Size</label><select id="pSize"><option>Large</option><option selected>Medium</option><option>Small</option></select></div>
+          <div class="field"><label for="pIcon">Icon</label><select id="pIcon"><option value="none">None</option><option value="left" selected>Left_Icon</option><option value="right">Right_Icon</option><option value="only">Icon_Only</option></select></div>
+          <div class="field"><label for="pShape">Shape</label><select id="pShape"><option value="regular">regular</option><option value="pill">pill</option></select></div>
+          <div class="field"><label for="pGlyph">图标（图标库）</label><select id="pGlyph"><option value="icf_system_search">icf_system_search</option><option value="icf_system_add">icf_system_add</option><option value="icf_system_filter">icf_system_filter</option><option value="icf_system_edit">icf_system_edit</option><option value="icf_system_delete">icf_system_delete</option><option value="icf_system_refresh">icf_system_refresh</option><option value="icf_Arrow_right">icf_Arrow_right</option></select></div>
+          <div class="field"><label for="pLabel">Label</label><input id="pLabel" value="按钮"></div>
+          <label class="check"><input type="checkbox" id="pDisabled"> disabled</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>选用规则</h2><p>按钮主要用于操作；规范页明确提供多层级按钮表达选中状态的组合案例。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>层级</td><td>主操作用 Primary，同一区块尽量只出现一个；次操作 Secondary，弱操作 Tertiary 或 Ghost。</td><td>并排按钮避免相同视觉权重。</td></tr>
+        <tr><td>尺寸</td><td>默认 Medium；页面主操作与表单用 Large；卡片或列表内紧凑操作用 Small。同一行按钮同档。</td><td>主操作按钮实际高度不低于 40px。</td></tr>
+        <tr><td>图标</td><td>只从图标库选取，用 <code>.gj-icon</code> 引用；图标颜色跟随按钮文字色。</td><td>不得自绘图标、使用 Emoji，或单独给图标设色。</td></tr>
+        <tr><td>纯图标按钮</td><td>正方形，图标含义明确时使用，并提供 <code>aria-label</code>。</td><td>含义不清时改用图标加文字。</td></tr>
+        <tr><td>文字</td><td>文案简短，说明操作结果。</td><td>按钮文字不省略、不换行；空间不足时调整按钮组排布。</td></tr>
+        <tr><td>热区</td><td>实际点击区域至少 44×44px。</td><td>不为扩大热区改变按钮视觉尺寸。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="text-button">
+    <header class="sheet-head"><div><h2>文字按钮<span class="sub">Text Button</span></h2><p>无背景、无描边的轻量操作，用于查看详情、展开更多或卡片、列表行内的次要操作。</p></div></header>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>基础用法</h2><p>Style 分 grey 与 blue：grey 用于一般轻量操作，blue 用于需要强调的链接式操作。图标可放在文字左侧或右侧，没有纯图标形态。</p></div></header>
+      <div class="showcase-grid">
+        <div class="panel"><span class="docs-stage-label">grey · None / Left_Icon / Right_Icon</span><div data-demo="tb-basic"></div></div>
+        <div class="panel"><span class="docs-stage-label">blue · None / Left_Icon / Right_Icon</span><div data-demo="tb-glyphs"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>尺寸与图标</h2><p>无内边距，高度等于文字行高；图标与文字间距 4。默认使用 Medium，与并排控件保持同档。</p></div></header>
+      <div class="size-groups">
+        <div class="panel"><span class="docs-stage-label">Large · 16/24 · 图标 20</span><div data-demo="tb-szLarge"></div></div>
+        <div class="panel"><span class="docs-stage-label">Medium · 14/22 · 图标 16</span><div data-demo="tb-szMedium"></div></div>
+        <div class="panel"><span class="docs-stage-label">Small · 12/18 · 图标 12</span><div data-demo="tb-szSmall"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>移动端包含 default、pressed、disabled，没有 hover。文字与图标同步变色：grey 依次为 Text/Secondary、Text/Primary、Text/disable；blue 依次为主按钮底色的默认、按下、禁用三色。</p></div></header>
+      <div class="panel"><div data-demo="tb-states"></div></div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>组合使用</h2><p>文字按钮适合放在卡片标题行、列表行尾或 Button 旁作为更弱的操作。</p></div></header>
+      <div class="showcase-grid">
+        <div class="panel gray"><span class="docs-stage-label">卡片标题行 · Medium</span><div data-demo="tb-cbCard"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">与 Button 并排 · Small</span><div data-demo="tb-cbButton"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>调整尺寸、图标位置与图标，按住预览中的文字按钮查看 pressed 反馈。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="tbLab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="tbPStyle">Style</label><select id="tbPStyle"><option value="grey">grey</option><option value="blue">blue</option></select></div>
+          <div class="field"><label for="tbPSize">Size</label><select id="tbPSize"><option>Large</option><option selected>Medium</option><option>Small</option></select></div>
+          <div class="field"><label for="tbPIcon">Icon</label><select id="tbPIcon"><option value="none">None</option><option value="left">Left_Icon</option><option value="right" selected>Right_Icon</option></select></div>
+          <div class="field"><label for="tbPGlyph">图标（图标库）</label><select id="tbPGlyph"><option value="icf_Arrow_right">icf_Arrow_right</option><option value="icf_Arrow_down">icf_Arrow_down</option><option value="icf_system_search">icf_system_search</option><option value="icf_system_add">icf_system_add</option><option value="icf_system_filter">icf_system_filter</option><option value="icf_system_edit">icf_system_edit</option><option value="icf_system_share">icf_system_share</option><option value="icf_system_refresh">icf_system_refresh</option></select></div>
+          <div class="field"><label for="tbPLabel">Label</label><input id="tbPLabel" value="查看详情"></div>
+          <label class="check"><input type="checkbox" id="tbPDisabled"> disabled</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>选用规则</h2><p>文字按钮只承担轻量操作，不替代主操作或导航。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>用途</td><td>查看详情、展开更多、卡片或列表行内的次要操作。</td><td>页面主操作、需要明确权重的操作改用 Button。</td></tr>
+        <tr><td>尺寸</td><td>默认 Medium；与 Button 或其他控件并排时保持同档。</td><td>同一行不混用尺寸。</td></tr>
+        <tr><td>图标</td><td>只从图标库选取；跳转、展开类用右侧箭头，动作类用左侧图标；颜色跟随文字。</td><td>不得自绘图标或单独给图标设色；没有纯图标形态。</td></tr>
+        <tr><td>文字</td><td>文案简短，说明操作结果。</td><td>不省略、不换行。</td></tr>
+        <tr><td>热区</td><td>实际点击区域至少 44×44px；相邻文字按钮留足间距。</td><td>不为扩大热区改变视觉尺寸。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="floating-button">
+    <header class="sheet-head"><div><h2>悬浮按钮<span class="sub">Floating Button</span></h2><p>固定在界面右下方、带投影的圆形按钮。用于页面内容过长时快捷回到顶部或到达底部，也可按需承载新增内容、发帖、下载等页面级操作。</p></div></header>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>配色与方向</h2><p>48×48 圆形，图标 28，投影 Shadow_center。default 白底灰色图标，用于回到顶部等辅助操作；blue 品牌蓝底白色图标，用于页面主推操作。按下时 default 叠加黑 3%，blue 底色加深；无禁用态。</p></div></header>
+      <div class="showcase-grid">
+        <div class="panel"><span class="docs-stage-label">default · to_top / to_bottom / pressed</span><div data-demo="fab-cDefault"></div></div>
+        <div class="panel"><span class="docs-stage-label">blue · to_top / to_bottom / pressed</span><div data-demo="fab-cBlue"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>承载其他操作</h2><p>按需从图标库换用图标承载新增、发帖、下载等操作，图标颜色随配色变化。悬浮按钮只放图标，需提供 <code>aria-label</code>。</p></div></header>
+      <div class="panel"><div data-demo="fab-glyphs"></div></div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>位置</h2><p>固定在右下角，多个按钮纵向排列。有底部 TabBar 或操作栏时上移，不遮挡栏内操作。可在预览中滚动页面，点击按钮回到顶部或到达底部。</p></div></header>
+      <div class="showcase-grid">
+        <div class="panel gray"><span class="docs-stage-label">长列表 · 回到顶部 / 到达底部</span><div id="fabPosList"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">有底部 TabBar · 新增 + 回到顶部</span><div id="fabPosTab"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>切换配色与图标，检查图标颜色随配色变化。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="fabLab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="fabPColor">color</label><select id="fabPColor"><option value="default">default</option><option value="blue">blue</option></select></div>
+          <div class="field"><label for="fabPGlyph">图标（图标库）</label><select id="fabPGlyph"><option value="icf_Arrow_up">icf_Arrow_up（to_top）</option><option value="icf_Arrow_down">icf_Arrow_down（to_bottom）</option><option value="icf_system_add">icf_system_add</option><option value="icf_editor_edit1-fill">icf_editor_edit1-fill</option><option value="icf_file_download">icf_file_download</option></select></div>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>选用规则</h2><p>悬浮按钮只承载页面级的单一高频操作。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>用途</td><td>长页面回到顶部 / 到达底部；按需承载新增、发帖、下载等页面级操作。</td><td>不承载需要文字说明的操作，不用于表单提交。</td></tr>
+        <tr><td>配色</td><td>辅助性的回到顶部、到达底部用 default；页面主推操作用 blue。</td><td>同一页面不出现两个 blue。</td></tr>
+        <tr><td>数量</td><td>同一页面不超过两个，纵向排列。</td><td>不堆叠多个操作代替菜单。</td></tr>
+        <tr><td>位置</td><td>右下角固定；有底部 TabBar 或操作栏时上移，避开安全区。</td><td>不遮挡关键内容与栏内操作；列表末尾留出空白。</td></tr>
+        <tr><td>出现时机</td><td>回到顶部在页面滚动超过一屏左右后出现，回到顶部后隐藏。</td><td>内容不足一屏时不显示。</td></tr>
+        <tr><td>图标</td><td>只从图标库选取；颜色随配色变化，提供 <code>aria-label</code>。</td><td>不自绘图标、不单独给图标设色。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+// 按钮
+(()=>{
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const icon=(name)=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${name}.svg')" aria-hidden="true"></span>`;
+  const LV={Primary:'primary',Secondary:'secondary',Tertiary:'tertiary',Ghost:'ghost'};
+  const SZ={Large:'large',Medium:'',Small:'small'};
+  function btn({level='Primary',size='Medium',iconPos='none',shape='regular',glyph='icf_system_search',label='按钮',state='default',block=false}){
+    const cls=['gj-m-button','gj-m-button-'+LV[level]];
+    if(SZ[size])cls.push('gj-m-button-'+SZ[size]);
+    if(shape==='pill')cls.push('gj-m-button-pill');
+    if(iconPos==='only')cls.push('gj-m-button-icon-only');
+    if(state==='pressed')cls.push('is-pressed');
+    if(block)cls.push('gj-m-button-block');
+    const dis=state==='disabled'?' disabled':'';
+    const aria=iconPos==='only'?` aria-label="${label}"`:'';
+    const inner=iconPos==='only'?icon(glyph):iconPos==='left'?icon(glyph)+label:iconPos==='right'?label+icon(glyph):label;
+    return `<button type="button" class="${cls.join(' ')}"${dis}${aria}>${inner}</button>`;
+  }
+  // 组件页统一按 375 基准（1rem = 100px）把示例直接嵌在文档面板里，不带手机框、不切宽度
+  const CSS='html,body{overflow-y:hidden}.page{padding-block:.08rem}'+
+    '.row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-btn-gap)}'+
+    '.stack{display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-12)}'+
+    '.state-table{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed;border:1px solid var(--ds-border-default);font-size:.12rem;line-height:.18rem}'+
+    '.state-table th,.state-table td{padding:.12rem .08rem;text-align:center;vertical-align:middle;border-right:1px solid var(--ds-border-default);border-bottom:1px solid var(--ds-border-default)}'+
+    '.state-table thead th{background:var(--ds-background-background);color:var(--ds-text-secondary);font-weight:600}'+
+    '.state-table tbody th{background:var(--ds-background-background);color:var(--ds-text-secondary);font-weight:400}'+
+    '.state-table tr>:last-child{border-right:0}.state-table tbody tr:last-child>*{border-bottom:0}'+
+    '.t{font-size:.16rem;line-height:.24rem;font-weight:600}.d{font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)}.ops{display:flex;justify-content:flex-end;gap:var(--space-4)}';
+  const show=(key,html)=>GJPhone.swatch(document.querySelector('[data-demo="'+key+'"]'),{html,css:CSS,height:'auto'});
+  const row=(...b)=>`<div class="row">${b.join('')}</div>`;
+
+  // 操作层级
+  show('lv1',row(btn({label:'主要操作'}),btn({level:'Secondary',label:'次要操作'}),btn({level:'Secondary',iconPos:'left',label:'搜索'})));
+  show('lv2',row(btn({level:'Tertiary',label:'弱操作'}),btn({level:'Ghost',label:'最轻操作'}),btn({level:'Tertiary',iconPos:'only',label:'搜索'})));
+  // 尺寸与图标
+  ['Large','Medium','Small'].forEach(s=>show('sz'+s,`<div class="stack">${row(btn({size:s}),btn({size:s,iconPos:'left'}),btn({size:s,iconPos:'only',label:'搜索'}))}${row(btn({size:s,level:'Secondary',iconPos:'right'}),btn({size:s,level:'Tertiary',iconPos:'only',label:'搜索'}))}</div>`));
+  // 形状
+  ['regular','pill'].forEach(sh=>show('sh'+sh[0].toUpperCase()+sh.slice(1),row(btn({size:'Large',shape:sh}),btn({size:'Large',shape:sh,iconPos:'left',level:'Secondary'}),btn({size:'Large',shape:sh,iconPos:'only',level:'Tertiary',label:'搜索'}))));
+  // 状态矩阵
+  show('states',`<table class="state-table" aria-label="按钮层级与状态矩阵"><colgroup><col style="width:18%"><col><col><col><col></colgroup><thead><tr><th scope="col">状态 / 层级</th>${['Primary','Secondary','Tertiary','Ghost'].map(l=>`<th scope="col">${l}</th>`).join('')}</tr></thead><tbody>`+
+    ['default','pressed','disabled'].map(st=>`<tr><th scope="row">${{default:'默认 Default',pressed:'按下 Pressed',disabled:'禁用 Disabled'}[st]}</th>`+['Primary','Secondary','Tertiary','Ghost'].map(l=>`<td>${btn({level:l,state:st,iconPos:'left'})}</td>`).join('')+'</tr>').join('')+'</tbody></table>');
+  // 组合
+  // 组合使用（Figma 312:2295）
+  const CC=CSS+'.col{display:flex;flex-direction:column;gap:var(--space-btn-gap)}'+
+    '.ls{display:flex;align-items:center;gap:var(--space-24);flex-wrap:wrap}'+
+    '.flt{display:flex;flex-direction:column;gap:var(--space-btn-gap)}'+
+    '.hs{position:relative;display:flex;gap:var(--space-btn-gap);overflow:hidden}'+
+    '.hs .fl{position:absolute;right:0;top:0;bottom:0;display:flex;align-items:center;justify-content:center;width:.48rem;background:linear-gradient(90deg,rgba(255,255,255,0),var(--ds-background-container) 30%);color:var(--ds-text-secondary)}'+
+    '.q{margin-bottom:.12rem;font-size:.14rem;line-height:.22rem;font-weight:600}.q small{font-size:.12rem;font-weight:400;color:var(--ds-text-tiatery)}'+
+    '.opts{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-12)}'+
+    '.stack-12{display:flex;flex-direction:column;gap:var(--space-card-l1-gap)}';
+  const showC=(key,html)=>GJPhone.swatch(document.querySelector('[data-demo="'+key+'"]'),{html,css:CC,height:'auto'});
+  const T=(label,size='Medium')=>btn({level:'Tertiary',size,label});
+  showC('cbGap8',`<div class="gj-m-button-group">${btn({label:'按钮'})}${btn({level:'Secondary',label:'按钮'})}</div>`);
+  showC('cbWrap',`<div class="gj-m-button-group" style="max-width:3.32rem">${Array.from({length:8},()=>T('按钮')).join('')}</div>`);
+  showC('cbLS',`<div class="ls"><div class="gj-m-button-group gj-m-button-group-large">${btn({size:'Large',label:'按钮'})}${btn({size:'Large',label:'按钮'})}</div><div class="gj-m-button-group gj-m-button-group-small">${T('按钮','Small')}${T('按钮','Small')}</div></div>`);
+  const dlg=(ft)=>`<div class="gj-m-popup-panel gj-m-popup-dialog"><div class="gj-m-popup-header"><span class="gj-m-popup-title">弹窗</span><button type="button" class="gj-m-popup-close" aria-label="关闭">${icon('icf_system_close')}</button></div><div class="gj-m-popup-body"><div class="gj-m-card-l2" style="height:.66rem"></div><div class="gj-m-card-l2" style="height:.24rem;margin-top:.12rem"></div></div><div class="gj-m-popup-footer">${ft}</div></div>`;
+  showC('fwSingle',dlg(btn({size:'Large',label:'确认',block:true})));
+  showC('fwDouble',dlg(`${btn({size:'Large',level:'Secondary',label:'取消'})}${btn({size:'Large',label:'确认'})}`));
+  showC('fwSheet',`<div class="gj-m-popup-panel gj-m-popup-dialog"><div class="gj-m-popup-bar"></div><div class="gj-m-popup-body" style="height:1.44rem"></div><div class="gj-m-popup-footer"><div class="gj-m-button-group gj-m-button-group-large gj-m-button-group-vertical" style="flex:1">${btn({size:'Large',level:'Secondary',label:'取消'})}${btn({size:'Large',label:'确认'})}</div></div></div>`);
+  // 多层级组合
+  const P=(label,shape)=>btn({size:'Small',label,shape}), G=(label,shape)=>btn({size:'Small',level:'Ghost',label,shape});
+  const LIST=rows=>`<div class="gj-m-list gj-m-list-in-card">${rows.map(([a,b])=>`<div class="gj-m-list-item"><span class="gj-m-list-item-content"><span class="gj-m-list-item-main"><span class="gj-m-list-item-text">${a}</span><span class="gj-m-list-item-desc">${b}</span></span></span></div>`).join('')}</div>`;
+  showC('lvA',`<section class="gj-m-card"><div class="flt"><div class="row">${P('指数')}${G('ETF')}${G('商品')}</div><div class="row">${P('全部')}${['能化','黑色','贵金属有色','农产品'].map(l=>G(l)).join('')}</div></div>${LIST([['黄金（AU2412）','价格：592.84'],['白银（AG2412）','价格：7491']])}</section>`);
+  showC('lvB',`<section class="gj-m-card"><div class="hs">${P('全部','pill')}${['证监会','上交所','北交所','深交所','投资','国际'].map(l=>G(l,'pill')).join('')}<span class="fl">${icon('icf_system_filter').replace('class="gj-icon"','class="gj-icon gj-icon-16"')}</span></div>${LIST([['关于对某证券公司分公司采取责令改正措施的决定','发布单位：湖南证监局 · 2026-08-17'],['关于对某证券公司分公司采取出具警示函措施的决定','发布单位：湖南证监局 · 2026-08-17']])}</section>`);
+  showC('lvC',`<div class="stack-12"><section class="gj-m-card"><div class="q">要立刻填写拜访记录吗？</div><div class="opts"><button type="button" class="gj-m-button gj-m-button-secondary gj-m-button-option is-pressed">立即填写<small>趁热打铁，一次完成</small></button><button type="button" class="gj-m-button gj-m-button-tertiary gj-m-button-option">稍后填写<small>先保存打卡记录</small></button></div></section>`+
+    `<section class="gj-m-card"><div class="q">拜访对象 <small>（多选）</small></div><div class="row">${btn({level:'Secondary',state:'pressed',label:'行长'})}${['经办','主任','理财经理','大堂经理','其它'].map(l=>T(l)).join('')}</div></section></div>`);
+  // 交互演示
+  const $=id=>document.getElementById(id);
+  function update(){
+    show2(`<div style="display:flex;justify-content:center">${btn({level:$('pLevel').value,size:$('pSize').value,iconPos:$('pIcon').value,shape:$('pShape').value,glyph:$('pGlyph').value,label:$('pLabel').value||'按钮',state:$('pDisabled').checked?'disabled':'default'})}</div>`);
+  }
+  const show2=html=>GJPhone.swatch($('lab'),{html,css:CSS,height:'auto'});
+  ['pLevel','pSize','pIcon','pShape','pGlyph','pDisabled'].forEach(id=>$(id).addEventListener('change',update));
+  $('pLabel').addEventListener('input',update);
+  update();
+})();
+
+// 文字按钮
+(()=>{
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const icon=(name)=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${name}.svg')" aria-hidden="true"></span>`;
+  const SZ={Large:'large',Medium:'',Small:'small'};
+  function tbtn({size='Medium',iconPos='none',glyph='icf_system_search',label='按钮',state='default',style='grey'}={}){
+    const cls=['gj-m-text-button'];
+    if(style==='blue')cls.push('gj-m-text-button-blue');
+    if(SZ[size])cls.push('gj-m-text-button-'+SZ[size]);
+    if(state==='pressed')cls.push('is-pressed');
+    const dis=state==='disabled'?' disabled':'';
+    const inner=iconPos==='left'?icon(glyph)+label:iconPos==='right'?label+icon(glyph):label;
+    return `<button type="button" class="${cls.join(' ')}"${dis}>${inner}</button>`;
+  }
+  const btn=({size='Small',level='primary',label})=>`<button type="button" class="gj-m-button gj-m-button-${level}${size==='Small'?' gj-m-button-small':''}">${label}</button>`;
+  // 组件页统一按 375 基准（1rem = 100px）把示例直接嵌在文档面板里，不带手机框、不切宽度
+  const CSS='html,body{overflow-y:hidden}.page{padding-block:.08rem}'+
+    '.row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-24)}'+
+    '.stack{display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-16)}'+
+    '.state-table{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed;border:1px solid var(--ds-border-default);font-size:.12rem;line-height:.18rem}'+
+    '.state-table th,.state-table td{padding:.12rem .08rem;text-align:center;vertical-align:middle;border-right:1px solid var(--ds-border-default);border-bottom:1px solid var(--ds-border-default)}'+
+    '.state-table thead th{background:var(--ds-background-background);color:var(--ds-text-secondary);font-weight:600}'+
+    '.state-table tbody th{background:var(--ds-background-background);color:var(--ds-text-secondary);font-weight:400}'+
+    '.state-table tr>:last-child{border-right:0}.state-table tbody tr:last-child>*{border-bottom:0}'+
+    '.t{font-size:.16rem;line-height:.24rem;font-weight:600}.d{font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)}.ops{display:flex;align-items:center;justify-content:flex-end;gap:var(--space-btn-gap)}';
+  const show=(key,html)=>GJPhone.swatch(document.querySelector('[data-demo="tb-'+key+'"]'),{html,css:CSS,height:'auto'});
+  const row=(...b)=>`<div class="row">${b.join('')}</div>`;
+
+  // 基础用法
+  show('basic',row(tbtn({label:'按钮'}),tbtn({iconPos:'left',label:'搜索'}),tbtn({iconPos:'right',glyph:'icf_Arrow_right',label:'查看详情'})));
+  show('glyphs',row(tbtn({style:'blue',label:'按钮'}),tbtn({style:'blue',iconPos:'left',glyph:'icf_system_add',label:'新增'}),tbtn({style:'blue',iconPos:'right',glyph:'icf_Arrow_right',label:'查看详情'})));
+  // 尺寸与图标
+  ['Large','Medium','Small'].forEach(s=>show('sz'+s,`<div class="stack">${row(tbtn({size:s}),tbtn({size:s,iconPos:'left'}),tbtn({size:s,iconPos:'right'}))}</div>`));
+  // 状态矩阵
+  const ST={default:'默认 Default',pressed:'按下 Pressed',disabled:'禁用 Disabled'};
+  show('states',`<table class="state-table" aria-label="文字按钮尺寸与状态矩阵"><colgroup><col style="width:22%"><col><col><col></colgroup><thead><tr><th scope="col">Style · 尺寸 / 状态</th>${Object.values(ST).map(s=>`<th scope="col">${s}</th>`).join('')}</tr></thead><tbody>`+
+    ['grey','blue'].map(sy=>['Large','Medium','Small'].map(sz=>`<tr><th scope="row">${sy} · ${sz}</th>`+Object.keys(ST).map(st=>`<td>${tbtn({size:sz,state:st,iconPos:'left',style:sy})}</td>`).join('')+'</tr>').join('')).join('')+'</tbody></table>');
+  // 组合
+  show('cbCard',`<section class="gj-m-card"><div class="gj-m-card-head"><div class="gj-m-card-header"><h3 class="gj-m-card-title">待我审批</h3>${tbtn({iconPos:'right',glyph:'icf_Arrow_right',label:'查看全部'})}</div></div><div class="d">差旅报销 · 上海，申请金额 ¥3,860.00。</div></section>`);
+  show('cbButton',`<section class="gj-m-card"><div class="gj-m-card-head"><div class="gj-m-card-header"><h3 class="gj-m-card-title">合同续签提醒</h3></div></div><div class="d">合同将于 2026-12-31 到期。</div><div class="ops">${tbtn({size:'Small',label:'稍后提醒'})}${btn({level:'tertiary',label:'查看'})}${btn({label:'续签'})}</div></section>`);
+
+  // 交互演示
+  const $=id=>document.getElementById(id);
+  const show2=html=>GJPhone.swatch($('tbLab'),{html,css:CSS,height:'auto'});
+  function update(){
+    show2(`<div style="display:flex;justify-content:center">${tbtn({style:$('tbPStyle').value,size:$('tbPSize').value,iconPos:$('tbPIcon').value,glyph:$('tbPGlyph').value,label:$('tbPLabel').value||'按钮',state:$('tbPDisabled').checked?'disabled':'default'})}</div>`);
+  }
+  ['tbPStyle','tbPSize','tbPIcon','tbPGlyph','tbPDisabled'].forEach(id=>$(id).addEventListener('change',update));
+  $('tbPLabel').addEventListener('input',update);
+  update();
+})();
+
+// 悬浮按钮
+(()=>{
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const icon=(name)=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${name}.svg')" aria-hidden="true"></span>`;
+  const LABEL={icf_Arrow_up:'回到顶部',icf_Arrow_down:'到达底部',icf_system_add:'新增',['icf_editor_edit1-fill']:'发帖',icf_file_download:'下载'};
+  const fab=({color='default',glyph='icf_Arrow_up',attrs='',pressed=false}={})=>`<button type="button" class="gj-m-fab${color==='blue'?' gj-m-fab-blue':''}${pressed?' is-pressed':''}" aria-label="${LABEL[glyph]||'操作'}"${attrs}>${icon(glyph)}</button>`;
+  const CSS='html,body{overflow-y:hidden}.page{padding:.2rem}'+
+    '.row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-24)}'+
+    '.item{display:flex;flex-direction:column;align-items:center;gap:var(--space-8);font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}';
+  const show=(key,html)=>GJPhone.swatch(document.querySelector('[data-demo="fab-'+key+'"]'),{html,css:CSS,height:'auto'});
+  const item=(b,cap)=>`<div class="item">${b}<span>${cap}</span></div>`;
+
+  show('cDefault',`<div class="row">${item(fab({glyph:'icf_Arrow_up'}),'to_top')}${item(fab({glyph:'icf_Arrow_down'}),'to_bottom')}${item(fab({glyph:'icf_Arrow_up',pressed:true}),'pressed')}</div>`);
+  show('cBlue',`<div class="row">${item(fab({color:'blue',glyph:'icf_Arrow_up'}),'to_top')}${item(fab({color:'blue',glyph:'icf_Arrow_down'}),'to_bottom')}${item(fab({color:'blue',glyph:'icf_Arrow_up',pressed:true}),'pressed')}</div>`);
+  show('glyphs',`<div class="row">${[['default','icf_system_add'],['default','icf_editor_edit1-fill'],['default','icf_file_download'],['blue','icf_system_add'],['blue','icf_editor_edit1-fill'],['blue','icf_file_download']].map(([c,g])=>item(fab({color:c,glyph:g}),LABEL[g])).join('')}</div>`);
+
+  // 位置：手机框内真实 fixed 定位，可滚动
+  const listCss='body{background:var(--ds-background-background)}'+
+    '.hd{position:sticky;top:0;z-index:2}'+
+    '.list{display:flex;flex-direction:column;gap:var(--space-card-l1-gap);padding:.12rem var(--space-page-margin-x) .96rem}'+
+    '.d{font-size:.13rem;line-height:.2rem;color:var(--ds-text-secondary)}'+
+    '.tab{position:fixed;left:0;right:0;bottom:0;z-index:3}'+
+    '.with-tab{--gj-m-fab-offset-y:calc(.5rem + var(--space-24))}';
+  const NAV=t=>`<div class="hd"><header class="gj-m-navbar" aria-label="页面导航"><div class="gj-m-navbar-left"></div><div class="gj-m-navbar-center"><span class="gj-m-navbar-title">${t}</span></div><div class="gj-m-navbar-right"></div></header></div>`;
+  const cards=n=>Array.from({length:n},(_,i)=>`<section class="gj-m-card"><div class="gj-m-card-head"><div class="gj-m-card-header"><h3 class="gj-m-card-title">项目周报 · 第 ${n-i} 周</h3></div></div><div class="d">负责人 张明 · 进度 ${60+((i*7)%40)}% · 待审批 ${i%3+1} 项</div></section>`).join('');
+  const go=dir=>` onclick="window.scrollTo({top:${dir==='top'?0:'document.documentElement.scrollHeight'},behavior:'smooth'})"`;
+  GJPhone.mount(document.getElementById('fabPosList'),{widths:[],height:520,css:listCss,html:
+    `${NAV('项目周报')}<div class="list">${cards(14)}</div><div class="gj-m-fab-group">${fab({glyph:'icf_Arrow_up',attrs:go('top')})}${fab({glyph:'icf_Arrow_down',attrs:go('bottom')})}</div>`});
+  const tabs=[['icf_system_home','首页',1],['icf_system_grid','应用',0],['icf_contact_message','消息',0],['icf_user_user','我的',0]];
+  GJPhone.mount(document.getElementById('fabPosTab'),{widths:[],height:520,css:listCss,html:
+    `${NAV('社区动态')}<div class="list" style="padding-bottom:1.6rem">${cards(14)}</div><div class="gj-m-fab-group with-tab">${fab({color:'blue',glyph:'icf_system_add'})}${fab({glyph:'icf_Arrow_up',attrs:go('top')})}</div>`+
+    `<div class="tab"><nav class="gj-m-tabbar" aria-label="底部导航">${tabs.map(([g,l,on])=>`<button type="button" class="gj-m-tabbar-item${on?' is-active':''}"${on?' aria-current="page"':''}><span class="gj-m-tabbar-icon">${[0,1].map(a=>`<span class="gj-icon gj-icon-24 ${a?'gj-icon-active':'gj-icon-default'}" style="--gj-icon:url('${ICON}${g}${a?'-fill':''}.svg')" aria-hidden="true"></span>`).join('')}</span><span class="gj-m-tabbar-label">${l}</span></button>`).join('')}</nav><div class="gj-m-tabbar-safe"></div></div>`});
+
+  // 交互演示
+  const $=id=>document.getElementById(id);
+  function update(){ GJPhone.swatch($('fabLab'),{html:`<div style="display:flex;justify-content:center">${fab({color:$('fabPColor').value,glyph:$('fabPGlyph').value})}</div>`,css:CSS,height:'auto'}); }
+  ['fabPColor','fabPGlyph'].forEach(id=>$(id).addEventListener('change',update));
+  update();
+})();
+</script>
+</body>
+</html>

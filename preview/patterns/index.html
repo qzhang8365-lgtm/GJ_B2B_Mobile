@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 页面模式</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <link rel="stylesheet" href="pattern-doc.css?v=20261016-pat2">
+  <script src="../_data/package.js?v=20261020-pkg1"></script>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+  <script src="../../assets/scripts/gj-m-markup.js?v=20261019-tpl2"></script>
+  <script src="../../assets/scripts/gj-m-templates.js?v=20261020-src1"></script>
+  <script src="kit.js?v=20261020-src1"></script>
+  <script src="workbench/workbench.js?v=20261020-src1"></script>
+  <script src="list-filter/list-filter.js?v=20261020-src1"></script>
+  <script src="detail/detail.js?v=20261020-src1"></script>
+  <script src="form/form.js?v=20261020-src1"></script>
+  <script src="records/records.js?v=20261020-src1"></script>
+  <script src="batch/batch.js?v=20261020-src1"></script>
+  <script src="login/login.js?v=20261020-src1"></script>
+  <style>
+    .pt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    .pt-card{min-width:0;margin:0;padding:16px;background:var(--ds-background-background);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column;gap:12px}
+    .pt-card figcaption{display:flex;flex-direction:column;gap:2px}
+    .pt-card figcaption b{font-size:15px;line-height:22px;color:var(--ds-text-primary)}
+    .pt-card figcaption span{font-size:13px;line-height:20px;color:var(--ds-text-tiatery)}
+    .pt-id{display:block;font-size:12px;line-height:18px;color:var(--ds-text-tiatery);font-weight:400;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    .pt-table td b{display:block}
+    .pt-files{margin:0;padding-left:18px;font-size:13px;line-height:22px;color:var(--ds-text-secondary)}
+    .pt-files code{font-size:12px}
+    .pt-switch{display:inline-flex;gap:4px;padding:4px;margin-bottom:16px;border-radius:10px;background:var(--ds-background-background)}
+    .pt-switch button{min-height:36px;padding:0 16px;border:0;border-radius:8px;background:none;color:var(--ds-text-secondary);font:inherit;font-size:14px;cursor:pointer}
+    .pt-switch button[aria-selected=true]{background:var(--ds-background-container);color:var(--ds-text-primary);font-weight:600;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+    .pt-switch button:focus-visible{outline:2px solid var(--ds-border-focused);outline-offset:1px}
+    .pt-more{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:24px;align-items:start}
+    .pt-info{display:flex;flex-direction:column;gap:16px;font-size:14px;line-height:22px;color:var(--ds-text-secondary)}
+    .pt-info h3{margin:0;font-size:18px;line-height:26px;color:var(--ds-text-primary)}
+    .pt-info h4{margin:0 0 6px;font-size:14px;line-height:22px;color:var(--ds-text-primary)}
+    .pt-info ol,.pt-info ul{margin:0;padding-left:20px}
+    .pt-info p{margin:0}
+    .pt-info a{color:var(--ds-text-blue);text-decoration:none}
+.pt-switch-wrap{display:flex;flex-wrap:wrap;width:fit-content;max-width:100%}
+    .pt-frame{width:375px;max-width:100%;height:764px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 0 0 1px var(--ds-border-default);background:var(--ds-background-background)}
+    .pt-statusbar{display:block;width:375px;height:44px}
+    .pt-frame iframe{display:block;width:375px;height:720px;border:0}
+    @media(max-width:960px){.pt-more{grid-template-columns:1fr}}
+    @media(max-width:1100px){.pt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:640px){.pt-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">页面模式 · Patterns</div>
+    <h1>页面模式</h1>
+    <p>Skill 内置 7 个已确认的页面模式。生成页面时由 AI 读取模式数据（骨架、状态、交互与适用的页面生成规则）组装页面；这里平铺展示全部 7 个模式的示例页面，端到端示例可在下方切换查看。</p>
+  </header>
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>模式示例</h2><p>375 宽示例，可在预览内滚动、操作；示例数据为虚构。</p></div></header>
+      <div class="pt-grid"><figure class="pt-card"><figcaption><b>工作台首页</b><span>一级入口：模块卡片 + 锚点页签</span></figcaption><div class="pt-phone" id="ph-workbench"></div></figure><figure class="pt-card"><figcaption><b>列表 + 搜索 / 筛选</b><span>查找对象：搜索 + 下拉筛选 + 列表</span></figcaption><div class="pt-phone" id="ph-list-filter"></div></figure><figure class="pt-card"><figcaption><b>详情 + 底部操作</b><span>查看与处理单个对象：信息卡片 + 固定底栏</span></figcaption><div class="pt-phone" id="ph-detail"></div></figure><figure class="pt-card"><figcaption><b>分组表单提交</b><span>录入提交：分组表单 + 底部操作</span></figcaption><div class="pt-phone" id="ph-form"></div></figure><figure class="pt-card"><figcaption><b>日历 + 记录时间轴</b><span>按日期浏览：日历 + 当日记录时间轴</span></figcaption><div class="pt-phone" id="ph-records"></div></figure><figure class="pt-card"><figcaption><b>批量处理列表</b><span>待办批量处理：逐条勾选 + 批量底栏</span></figcaption><div class="pt-phone" id="ph-batch"></div></figure><figure class="pt-card"><figcaption><b>登录</b><span>登录入口：快捷登录 + 账号 / 验证码登录</span></figcaption><div class="pt-phone" id="ph-login"></div></figure></div>
+    </section>
+    <section class="docs-section" id="e2e-section">
+      <header class="docs-section-head"><div><h2>端到端示例</h2><p>只依据 Skill 资料从需求生成的完整页面，用来验证模式与规则；可在预览内操作。</p></div></header>
+      <div class="pt-switch pt-switch-wrap" role="tablist" aria-label="端到端示例"><button type="button" role="tab" id="e2e-customer" aria-selected="true" tabindex="0" data-k="customer">客户账户</button><button type="button" role="tab" id="e2e-stock-diagnosis" aria-selected="false" tabindex="-1" data-k="stock-diagnosis">宁德时代 · 个股诊断</button><button type="button" role="tab" id="e2e-approval" aria-selected="false" tabindex="-1" data-k="approval">费用报销审批</button><button type="button" role="tab" id="e2e-article" aria-selected="false" tabindex="-1" data-k="article">知识库文章</button><button type="button" role="tab" id="e2e-esign" aria-selected="false" tabindex="-1" data-k="esign">国金智慧签</button><button type="button" role="tab" id="e2e-esign-login" aria-selected="false" tabindex="-1" data-k="esign-login">国金智慧签 · 登录</button><button type="button" role="tab" id="e2e-leave" aria-selected="false" tabindex="-1" data-k="leave">请假申请</button></div>
+      <div class="pt-more" role="tabpanel" id="e2e-panel" aria-labelledby="e2e-customer">
+        <div class="panel"><div class="pt-frame"><img class="pt-statusbar" src="../../assets/images/navbar-status-bar.svg" alt="手机状态栏（示意）"><iframe id="e2e-frame" title="客户账户" src="../../planning/e2e/customer.html"></iframe></div></div>
+        <div class="pt-info" id="e2e-info"></div>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>全部模式</h2><p>AI 按“需求关键词”匹配模式，再检查“不适用”；一个应用通常由多个模式组合（一级页 + 二级页）。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table pt-table"><colgroup><col style="width:16%"><col style="width:14%"><col style="width:26%"><col style="width:20%"><col></colgroup><thead><tr><th>模式</th><th>页面类型</th><th>用途</th><th>需求关键词</th><th>不适用时</th></tr></thead><tbody><tr><td><b>工作台首页</b><span class="pt-id">workbench</span></td><td>一级入口 / 首页</td><td>汇总待办、经营指标、当日任务与常用功能，从这里进入各业务</td><td>工作台、首页、我的工作、团队长首页、业务首页</td><td>只有单一列表的首页 → list-filter；纯数据大屏 → 不适用</td></tr><tr><td><b>列表 + 搜索 / 筛选</b><span class="pt-id">list-filter</span></td><td>对象列表</td><td>浏览并定位一组同类对象，再进入详情</td><td>列表、客户列表、产品列表、查询、搜索</td><td>少于约 8 项且无需查找 → 直接用 ListBar 或卡片；需要批量勾选处理 → batch；按日期浏览 → records</td></tr><tr><td><b>详情 + 底部操作</b><span class="pt-id">detail</span></td><td>对象详情</td><td>查看单个业务对象并在页内完成状态更新或审批</td><td>详情、审批、工单、需求详情、拜访详情</td><td>纯阅读文章 → markdown 组件的文章页</td></tr><tr><td><b>分组表单提交</b><span class="pt-id">form</span></td><td>录入 / 提交</td><td>一次提交多组信息</td><td>新建、上报、打卡、填写、申请</td><td>只有 1–2 个字段的验证类页面 → login</td></tr><tr><td><b>日历 + 记录时间轴</b><span class="pt-id">records</span></td><td>按日期浏览记录</td><td>按日期查看带时间的记录与分布</td><td>日历、日程、拜访记录、活动排期、按日查看</td><td>只按时间倒序浏览 → list-filter</td></tr><tr><td><b>批量处理列表</b><span class="pt-id">batch</span></td><td>待办批量处理</td><td>逐条勾选后统一处理</td><td>批量、待提醒、待审批、待分配、超时关注</td><td>不需要批量操作 → list-filter</td></tr><tr><td><b>登录</b><span class="pt-id">login</span></td><td>登录入口</td><td>首次进入或退出后重新登录</td><td>登录、验证码、快捷登录、手机号登录</td><td>多租户 / 企业账号选择 → 登录后在“我的”中处理</td></tr></tbody></table></div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>数据在哪里</h2><p>模式的完整定义以数据形式保存在 Skill 中，网页不再逐一展示。</p></div></header>
+      <ul class="pt-files">
+        <li><code>references/patterns/page-pattern-metadata.json</code>：匹配关键词、不适用、骨架、必需组件、状态、交互、关联页面生成规则（AI 选模式时读取）</li>
+        <li><code>references/patterns/&lt;模式&gt;.md</code>：骨架表、状态表与已确认取值</li>
+        <li><code>references/page-rules.md</code>：设计方审查沉淀的页面生成规则，优先于组件规则</li>
+        <li><code>preview/patterns/&lt;模式&gt;/&lt;模式&gt;.js</code>：示例页面脚本（组件写法全部由组件模板渲染）</li>
+      </ul>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const BG='var(--ds-background-background)';
+  [
+    ['ph-workbench',window.GJWorkbench,{}],
+    ['ph-list-filter',window.GJListFilter,{"nav": true, "tab": true, "summary": true, "state": "normal"}],
+    ['ph-detail',window.GJDetail,{"mode": "edit"}],
+    ['ph-form',window.GJForm,{}],
+    ['ph-records',window.GJRecords,{}],
+    ['ph-batch',window.GJBatch,{}],
+    ['ph-login',window.GJLogin,{}]
+  ].forEach(([id,P,o])=>{const el=document.getElementById(id);if(!P){el.textContent='示例脚本未加载';return}
+    el.addEventListener('phone:ready',({detail:{doc}})=>{if(P.wire)try{P.wire(doc,Object.assign({},o),()=>{})}catch(e){}},{once:true});
+    GJPhone.mount(el,{html:P.page(o),css:P.CSS,width:375,widths:[],height:720,fit:true,background:BG})});
+  /* 发布包内不带端到端示例：隐藏该区块，给出说明 */
+  if(((window.GJ_PREVIEW_DATA||{}).package||{}).e2e===false){const sec=document.getElementById('e2e-section');sec.innerHTML='<header class="docs-section-head"><div><h2>端到端示例</h2><p>端到端示例页面不在 Skill 包内，请在规范网站或仓库的 planning/e2e/ 中查看。</p></div></header>';}
+  else{
+  /* 端到端示例：切换查看 */
+  const E2E={"customer": ["客户账户", "无匹配模式时按页面生成规则组合：0 级卡片、对象信息头、资产环形图、收益折线图、持仓与交易"], "stock-diagnosis": ["宁德时代 · 个股诊断", "行情与持仓概要 + 次级页签：策略信号、估值基本面、资金面、近期消息"], "approval": ["费用报销审批", "详情 + 底部操作：信息列表、文件列表、步骤条、驳回弹层与同意确认"], "article": ["知识库文章", "Markdown 文章 + 相关案例列表，0 级卡片承载"], "esign": ["国金智慧签", "列表 + 搜索 / 筛选：文件卡片、签署弹层、验签、签名管理，底部导航 2 项"], "esign-login": ["国金智慧签 · 登录", "登录模式：快捷登录、手机号 / 邮箱 + 验证码"], "leave": ["请假申请", "分组表单提交：选择弹层、日期区间、必填校验"]};
+  const fr=document.getElementById('e2e-frame'),eTabs=[...document.querySelectorAll('#e2e-panel').length?document.querySelectorAll('[aria-label="端到端示例"] [role=tab]'):[]];
+  function showE(k){const [n,t]=E2E[k];eTabs.forEach(b=>{const on=b.dataset.k===k;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1});
+    document.getElementById('e2e-panel').setAttribute('aria-labelledby','e2e-'+k);fr.title=n;if(!fr.src.endsWith(k+'.html'))fr.src='../../planning/e2e/'+k+'.html';
+    document.getElementById('e2e-info').innerHTML='<h3>'+n+'</h3><p>'+t+'</p><p>文件：<code>planning/e2e/'+k+'.html</code>；生成与验收记录见 <code>planning/e2e/README.md</code>。</p><p><a href="../../planning/e2e/'+k+'.html" target="_blank" rel="noopener">在新窗口打开</a></p>'}
+  eTabs.forEach((b,i)=>{b.addEventListener('click',()=>showE(b.dataset.k));b.addEventListener('keydown',ev=>{if(ev.key==='ArrowRight'||ev.key==='ArrowLeft'){ev.preventDefault();const n=eTabs[(i+(ev.key==='ArrowRight'?1:eTabs.length-1))%eTabs.length];showE(n.dataset.k);n.focus()}})});
+  showE('customer');
+  }
+})();
+</script>
+</body>
+</html>

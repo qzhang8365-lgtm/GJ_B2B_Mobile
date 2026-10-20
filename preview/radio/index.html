@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 单选框 Radio</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid2+.grid2{margin-top:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>单选框 Radio</h1>
+    <p>从一组互斥选项中选择唯一结果，适合需要同时浏览、比较全部选项的表单场景。移动端默认展示标签，点击图标或标签都可选中。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>未选、选中、禁用（40%，保留当前选中）。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">未选 / 选中</span><div data-demo="st1"></div></div>
+        <div class="panel"><span class="docs-stage-label">禁用未选 / 禁用选中</span><div data-demo="st2"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>排列</h2><p>横排，放不下时自动换行。选项较长或较多时改用选择器。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">2 / 3 项</span><div data-demo="gH"></div></div>
+        <div class="panel"><span class="docs-stage-label">5 项 · 放不下时换行</span><div data-demo="gV"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用示例</h2><p>均为 375 宽。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">表单 · 横排短选项</span><div data-demo="exForm"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">表单 · 含禁用项与说明</span><div data-demo="exList"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点击图标或标签选中，同组内自动取消原选中项；禁用项不响应。下方显示当前提交值。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+                    <div class="field"><label for="pNum">选项数</label><select id="pNum"><option>2</option><option selected>3</option><option>4</option><option>5</option></select></div>
+          <label class="ck"><input type="checkbox" id="pDef" checked>有默认值</label>
+          <label class="ck"><input type="checkbox" id="pDis">禁用最后一项</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>适用范围</td><td>必须或可以选择唯一结果的互斥选项。</td><td>可多选用复选框；开 / 关设置用开关；即时切换视图或模式用分段控制。</td></tr>
+        <tr><td>数量</td><td>2–5 个，同时可见，横排展示。</td><td>选项较多、文本较长或需要搜索时用选择器 Select。</td></tr>
+        <tr><td>默认值</td><td>仅在存在安全、常用或推荐的选项时设置。</td><td>不替用户做高风险决定（如风险等级、授权范围）。</td></tr>
+        <tr><td>标签</td><td>并列、同维度的表达，完整描述选项含义。</td><td>不混用动作与状态（如“开通”与“已关闭”）。</td></tr>
+        <tr><td>点击区域</td><td>包含图标和完整标签，热区高度不低于 44。</td><td>不只让小圆点可点。</td></tr>
+        <tr><td>禁用</td><td>保留上下文但不可交互；用户可能需要解除限制时，给出原因或入口。</td><td>不直接隐藏。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  let gid=0;
+  const radio=(t,o={})=>`<label class="gj-m-radio"><input type="radio" class="gj-m-radio-input" name="${o.name||'r'}" value="${t}"${o.on?' checked':''}${o.dis?' disabled':''}><span class="gj-m-radio-icon" aria-hidden="true"></span><span class="gj-m-radio-label">${t}</span></label>`;
+  const group=(opts,o={})=>{const name='g'+(++gid);return `<div class="gj-m-radio-group" role="radiogroup"${o.label?` aria-label="${o.label}"`:''}>${opts.map((t,i)=>radio(t,{name,on:i===o.sel,dis:(o.dis||[]).includes(i)})).join('')}</div>`};
+  const CSS='html,body{overflow-y:hidden}.scr{width:100%;max-width:3.75rem;margin:0 auto;padding:.16rem var(--space-page-margin-x);background:var(--ds-background-container);box-sizing:border-box}.g{background:var(--ds-background-background);padding:.12rem 0}'+
+    '.row{display:flex;flex-wrap:wrap;gap:.12rem .24rem}.stack{display:flex;flex-direction:column;gap:.16rem}'+
+    '.card{background:var(--ds-background-container);padding:.04rem var(--space-page-margin-x) .16rem}.card+.card{margin-top:.12rem}.fl{padding:.12rem 0 .08rem;font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)}.fl b{color:var(--ds-feedback-error-rise);font-weight:400;margin-right:.02rem}'+
+    '.tip{margin-top:.04rem;font-size:.13rem;line-height:.2rem;color:var(--ds-text-tiatery)}.val{margin-top:.12rem;font-size:.13rem;line-height:.2rem;color:var(--ds-text-secondary)}'+
+    '';
+  const show=(k,html)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS,height:'auto'});
+  show('st1',`<div class="scr"><div class="row">${radio('未选',{name:'a'})}${radio('选中',{name:'b',on:1})}</div></div>`);
+  show('st2',`<div class="scr"><div class="row">${radio('禁用未选',{name:'c',dis:1})}${radio('禁用选中',{name:'d',on:1,dis:1})}</div></div>`);
+  show('gH',`<div class="scr stack">${group(['是','否'],{sel:0})}${group(['个人','机构','产品'],{sel:1})}</div>`);
+  show('gV',`<div class="scr">${group(['低风险','中低风险','中风险','中高风险','高风险'],{sel:2})}</div>`);
+  show('exForm',`<div class="scr g"><div class="card"><div class="fl"><b>*</b>客户类型</div>${group(['个人','机构','产品'],{sel:0})}<div class="fl"><b>*</b>是否为专业投资者</div>${group(['是','否'])}</div></div>`);
+  show('exList',`<div class="scr g"><div class="card"><div class="fl"><b>*</b>赎回方式</div>${group(['普通赎回','快速赎回','转换'],{sel:0,dis:[1]})}<div class="tip">快速赎回需先完成风险测评</div></div></div>`);
+  const $=id=>document.getElementById(id);const ALL=['低风险 R1','中低风险 R2','中风险 R3','中高风险 R4','高风险 R5'];const SHORT=['R1','R2','R3','R4','R5'];
+  function renderLab(){const v=false,n=+$('pNum').value,opts=ALL.slice(0,n),def=$('pDef').checked,dis=$('pDis').checked;
+    const f=GJPhone.swatch($('lab'),{html:`<div class="scr g"><div class="card"><div class="fl"><b>*</b>可接受的风险等级</div>${group(opts,{v,sel:def?0:-1,dis:dis?[n-1]:[]})}<div class="val" id="val"></div></div></div>`,css:CSS,height:'auto'});
+    f.addEventListener('load',()=>{const d=f.contentDocument,out=d.getElementById('val'),upd=()=>{const c=d.querySelector('.gj-m-radio-input:checked');out.textContent='提交值：'+(c?c.value:'未选择')};d.querySelectorAll('.gj-m-radio-input').forEach(i=>i.addEventListener('change',upd));upd()})}
+  ['pNum','pDef','pDis'].forEach(id=>$(id).addEventListener('change',renderLab));renderLab();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "stepper",
+  "figmaComponent": "步数器 stepper（158:2968）",
+  "prototypeClass": "gj-m-stepper",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "stepper": ".gj-m-stepper[data-min][data-max][data-step] > .gj-m-stepper-row > button.gj-m-stepper-btn[data-dir=-1] + input.gj-m-stepper-input[inputmode=numeric] + button.gj-m-stepper-btn[data-dir=1]",
+    "Style=stroke": ".gj-m-stepper-line",
+    "State=active": "input:focus",
+    "State=limited, Boundary=max|min": ".is-limited + 对应按钮 :disabled + .gj-m-stepper-message",
+    "State=error": ".is-error / input[aria-invalid=true] + .gj-m-stepper-message",
+    "State=disabled": ".is-disabled / [aria-disabled=true]",
+    "数值区 Hug": "input 上 --gj-m-stepper-len = 位数（脚本同步）"
+  },
+  "valueMap": {
+    "size": "{\"height\": \"control-M 32\", \"gap\": 4, \"button\": \"32 × 32，内边距 6，图标 20\", \"input\": \"最小 48、随位数变宽（Hug），内边距 5 / 6\", \"radius\": \"Radius-SM 6\"}",
+    "text": "{\"value\": \"H4-CN-S 16/24 Semibold Text/Primary 居中\", \"message\": \"H6-CN-S 13/20 Semibold，上方间距 8；limited 为 Text/Tiatery，error 为 Feedback/error&rise\"}",
+    "icons": "{\"minus\": \"icf_system_minimize\", \"plus\": \"icf_system_add\", \"color\": \"Text/Secondary\"}",
+    "styles": "{\"default（填充式）\": \"Background/Background\", \"stroke（描边式）\": \"Background/Container + 1px Border/secondary\"}",
+    "states": "{\"active\": \"数值区描边 Border/focused\", \"limited\": \"Boundary=max|min：对应按钮 40%；数值 Text/Primary；提示“最大值 / 最小值 N” Text/Tiatery\", \"error\": \"数值区描边 Border/error，数值与提示 Feedback/error&rise，提示“输入超出范围，请输入 min–max”\", \"disabled\": \"整体 40%（全站统一，2026-10-13）\"}",
+    "hitArea": "按钮向外侧与上下扩到 44，不覆盖数值区"
+  },
+  "tokenMap": {
+    "Background/Background / Container": "--ds-background-background / --ds-background-container",
+    "Text/Primary / Secondary": "--ds-text-primary / --ds-text-secondary",
+    "Feedback/error&rise": "--ds-feedback-error-rise",
+    "H4-CN-S / H6-CN-S": "--ds-type-h4-cn-s-* / --ds-type-h6-cn-s-*",
+    "Border/secondary / focused / error": "--ds-border-secondary / --ds-border-focused / --ds-border-error",
+    "Text/Tiatery": "--ds-text-tiatery"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-stepper",
+    "row": ".gj-m-stepper-row",
+    "btn": ".gj-m-stepper-btn",
+    "input": ".gj-m-stepper-input",
+    "message": ".gj-m-stepper-message"
+  },
+  "markup": {
+    "default": "<div class=\"gj-m-stepper\" data-min=\"1\" data-max=\"999\" data-step=\"1\"><div class=\"gj-m-stepper-row\"><button type=\"button\" class=\"gj-m-stepper-btn\" data-dir=\"-1\" aria-label=\"减少\" disabled=\"\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><input class=\"gj-m-stepper-input\" type=\"text\" inputmode=\"numeric\" pattern=\"[0-9]*\" value=\"1\" style=\"--gj-m-stepper-len:1\" aria-label=\"数量\" aria-valuemin=\"1\" aria-valuemax=\"999\"><button type=\"button\" class=\"gj-m-stepper-btn\" data-dir=\"1\" aria-label=\"增加\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></div></div>",
+    "limitedMessage": "<div class=\"gj-m-stepper-message\" role=\"status\">最大值 5000</div>",
+    "fromPreview_stepper_stepper_message": "<div class=\"gj-m-stepper is-error\" data-min=\"0\" data-max=\"999\" data-step=\"1\"><div class=\"gj-m-stepper-row\"><button type=\"button\" class=\"gj-m-stepper-btn\" data-dir=\"-1\" aria-label=\"减少\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><input class=\"gj-m-stepper-input\" type=\"text\" inputmode=\"numeric\" pattern=\"[0-9]*\" value=\"1000\" style=\"--gj-m-stepper-len:4\" aria-invalid=\"true\" aria-label=\"数量\" aria-valuemin=\"0\" aria-valuemax=\"999\"><button type=\"button\" class=\"gj-m-stepper-btn\" data-dir=\"1\" aria-label=\"增加\" disabled=\"\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></div><div class=\"gj-m-stepper-message\" role=\"alert\">输入超出范围，请输入 0–999</div></div>"
+  },
+  "interactionMap": {
+    "limit": "到边界时对应按钮 40% 并提示“最大值 / 最小值 N”",
+    "error": "手动输入超出范围：描边与提示变红“输入超出范围，请输入 min–max”"
+  },
+  "accessibility": {
+    "buttons": "减少 / 增加按钮 aria-label；到边界 disabled",
+    "input": "inputmode=\"numeric\" + aria-label，可加 aria-valuemin / aria-valuemax"
+  },
+  "composition": {
+    "step": "data-min / data-max / data-step 定义范围与步长；数值区随位数变宽（--gj-m-stepper-len）"
+  },
+  "pageRules": {},
+  "pending": {},
+  "markupNote": "markup 中 fromPreview_* 片段由 scripts/check-mapping.cjs 从预览页实际渲染补录（2026-10-19），与预览页一致；其余为手写的常用写法。"
+}

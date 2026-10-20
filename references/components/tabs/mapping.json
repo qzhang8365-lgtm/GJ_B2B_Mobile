@@ -1,0 +1,112 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "tabs",
+  "figmaComponent": "页签 Tabs（58:680，说明 1049:208）：Primary_tabs / Scondary_tabs / ButtonTab_round / ButtonTab_rectangle / Segmented_Control",
+  "prototypeClass": "gj-m-tabs",
+  "note": "原型基座类名，不代表真实前端组件库 API。键盘与选中切换可用 assets/scripts/gj-m-tabs.js（GJTabs.init(document)，原型用）。",
+  "propertyMap": {
+    "Primary_tabs": "data-kind=\"primary\"（主级，底部指示线）",
+    "Scondary_tabs": "data-kind=\"secondary\"（次级）",
+    "ButtonTab_round": "data-kind=\"round\"（圆角按钮式）",
+    "ButtonTab_rectangle": "data-kind=\"rectangle\"（矩形按钮式）",
+    "Segmented_Control": "data-kind=\"segment\"（分段控制）",
+    "Status=active": "button.gj-m-tab[aria-selected=\"true\"]",
+    "Status=disabled": "button.gj-m-tab[disabled]",
+    "Badge=true": "span.gj-m-tab-badge（放在 .gj-m-tab-label 内）",
+    "ActiveLineMode": "data-line=\"fill\"（默认，撑满）| \"fixed\"（固定 30）| \"none\"",
+    "Size": "data-size=\"small\" | \"medium\"（按钮式、分段控制）",
+    "style": "data-shape=\"card\" | \"pill\"",
+    "overflow": "data-scroll=\"true\"：横向滚动，激活项滚入可见区"
+  },
+  "valueMap": {
+    "round/rectangle.small": "高 28（--control-S）、左右 12、P5 12/18",
+    "round/rectangle.medium": "高 32（--control-M）、左右 16、P3 14/22，与 Button Medium 一致",
+    "segment.medium": "高 32，默认；单独占一行时撑满容器",
+    "segment.small": "高 28；仅用于卡片标题右侧或图表内切换维度",
+    "primary.line": "指示线高 3，贴页签栏底边；fixed 宽 30",
+    "rectangle.radius": "6；选中 0/0/8 黑 10% 阴影（组件局部值）"
+  },
+  "tokenMap": {
+    "text.default": "Text/Secondary（--ds-text-secondary）",
+    "text.active": "Text/blue（--ds-text-blue）或 Text/Primary（按类型）",
+    "text.disabled": "Text/disable（--ds-text-disable）",
+    "line": "Text/blue（--ds-text-blue）",
+    "button.background": "Background/Background（--ds-background-background）",
+    "button.active.background": "Background/Container（--ds-background-container）",
+    "segment.track": "Background/Secondary（--ds-background-secondary）",
+    "badge": "Feedback/error&rise（--ds-feedback-error-rise）",
+    "height": "--control-S / --control-M"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-tabs[role=tablist]",
+    "item": "button.gj-m-tab[role=tab]",
+    "face": ".gj-m-tab-face",
+    "label": ".gj-m-tab-label",
+    "badge": ".gj-m-tab-badge",
+    "panel": ".gj-m-tab-panel[role=tabpanel]"
+  },
+  "markup": {
+    "primary": "<div class=\"gj-m-tabs\" role=\"tablist\" aria-label=\"签署状态\" data-kind=\"primary\" data-line=\"fixed\"><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"true\" tabindex=\"0\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">待我签署 2</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">待他人签署 1</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">已完成</span></span></button></div>",
+    "primaryScroll": "<div class=\"gj-m-tabs\" role=\"tablist\" aria-label=\"工作台模块\" data-kind=\"primary\" data-line=\"fixed\" data-scroll=\"true\"><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"true\" tabindex=\"0\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">重点关注</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">我的渠道</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">渠道拜访</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">常用工具</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">数据看板</span></span></button></div>",
+    "secondary": "<div class=\"gj-m-tabs\" role=\"tablist\" aria-label=\"活动状态\" data-kind=\"secondary\"><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"true\" tabindex=\"0\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">全部</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">进行中</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">已结束</span></span></button></div>",
+    "roundMedium": "<div class=\"gj-m-tabs\" role=\"tablist\" aria-label=\"提醒状态\" data-kind=\"round\" data-size=\"medium\"><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"true\" tabindex=\"0\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">全部</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">待提醒</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">已提醒</span></span></button></div>",
+    "roundSmall": "<div class=\"gj-m-tabs\" role=\"tablist\" aria-label=\"记录类型\" data-kind=\"round\" data-size=\"small\"><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"true\" tabindex=\"0\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">全部</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">拜访</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">活动</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">需求</span></span></button></div>",
+    "segment": "<div class=\"gj-m-tabs\" role=\"tablist\" aria-label=\"统计周期\" data-kind=\"segment\" data-size=\"medium\" style=\"width:100%\"><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"true\" tabindex=\"0\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">本周</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">本月</span></span></button></div>",
+    "segmentSmall": "<div class=\"gj-m-tabs\" role=\"tablist\" aria-label=\"图表维度\" data-kind=\"segment\" data-size=\"small\"><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"true\" tabindex=\"0\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">金额</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">户数</span></span></button></div>",
+    "panel": "<div class=\"gj-m-tab-panel\" role=\"tabpanel\" id=\"panel-1\" aria-labelledby=\"tab-1\">…</div>",
+    "tabs": "<div class=\"gj-m-tabs\" role=\"tablist\" aria-label=\"签署状态\" data-kind=\"primary\" data-line=\"fixed\"><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"true\" tabindex=\"0\" data-i=\"0\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">待我签署</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\" data-i=\"1\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">待他人签署</span></span></button><button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\" data-i=\"2\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">已完成</span></span></button></div>"
+  },
+  "interactionMap": {
+    "select": "点击切换 aria-selected 与内容，不新增导航层级、不自动提交",
+    "keyboard": "左右方向键在页签间移动（roving tabindex）",
+    "scroll": "超出宽度横向滚动，激活项 scrollIntoView",
+    "return": "返回时按业务保留各页签的筛选、滚动位置"
+  },
+  "accessibility": {
+    "root": "role=\"tablist\" + aria-label",
+    "item": "role=\"tab\"、aria-selected、roving tabindex（选中 0，其余 -1）",
+    "panel": "role=\"tabpanel\" + aria-labelledby",
+    "badge": "数量写进标签文字（如“待我签署 2”），不只靠角标"
+  },
+  "composition": {
+    "primary": "页面主要内容分类，撑满宽度；页签栏左右 16",
+    "buttonTabs": "二级页签下的筛选用 Small；单独使用且一行放得下用 Medium；需要横滚用 Small",
+    "segment": "切换同一数据的范围或视图，不做页面导航",
+    "spacing": "按钮式页签上下 8（量视觉边缘）；主级指示线贴底不留白",
+    "badges": "圆角按钮式页签上不放角标，数量写进文字"
+  },
+  "pageRules": {
+    "PR-001": "按钮式页签：单独使用且空间足够用 Medium，二级下筛选或需横滚用 Small",
+    "PR-002": "分段控制默认 Medium 并撑满容器，紧凑位置才用 Small",
+    "PR-013": "间距按视觉边缘；按钮式页签上下 8，主级指示线贴底"
+  },
+  "pending": {},
+  "templates": {
+    "tabs": {
+      "tpl": "<div class=\"gj-m-tabs\" role=\"tablist\" aria-label=\"{{label}}\" data-kind=\"{{kind}}\"{{#line}} data-line=\"{{line}}\"{{/line}}{{#size}} data-size=\"{{size}}\"{{/size}}{{#scroll}} data-scroll=\"true\"{{/scroll}}{{#inset}} data-inset=\"page\"{{/inset}}>{{#items}}<button type=\"button\" class=\"gj-m-tab\" role=\"tab\" aria-selected=\"{{selected}}\" tabindex=\"{{tabindex}}\" data-i=\"{{@index}}\"><span class=\"gj-m-tab-face\"><span class=\"gj-m-tab-label\">{{text}}{{#badge}}<span class=\"gj-m-tab-badge\" aria-label=\"{{badge}}项\">{{badge}}</span>{{/badge}}</span></span></button>{{/items}}</div>",
+      "example": {
+        "label": "签署状态",
+        "kind": "primary",
+        "line": "fixed",
+        "items": [
+          {
+            "text": "待我签署",
+            "selected": true,
+            "tabindex": 0
+          },
+          {
+            "text": "待他人签署",
+            "selected": false,
+            "tabindex": -1
+          },
+          {
+            "text": "已完成",
+            "selected": false,
+            "tabindex": -1
+          }
+        ]
+      },
+      "params": "kind：primary / secondary / round / rectangle / segment；line：fill / fixed / none；size：small / medium；items：[{text, selected, tabindex(0|-1), badge}]"
+    }
+  }
+}

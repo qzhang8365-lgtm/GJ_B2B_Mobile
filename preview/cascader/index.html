@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 级联选择器 Cascader</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid2+.grid2{margin-top:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>级联选择器 Cascader</h1>
+    <p>用于按层级划分的复杂信息筛选（组织、地区、分类），逐层定位到最终结果。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section" id="cascader-path">
+      <header class="docs-section-head"><div><h2>路径栏与选项行</h2><p>一级用路径栏，当前项品牌蓝加粗；二级用胶囊选项。数量多时两行都可横向滑动，右侧可接“筛选”入口。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">一级 · 带 / 不带筛选入口</span><div data-demo="tabs"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">两级 · 路径栏 + 选项行</span><div data-demo="two"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="cascader-inline">
+      <header class="docs-section-head"><div><h2>页面内与底部弹层</h2><p>页面内：选到末级即生效，适合筛选或连续浏览。底部弹层：点“确认”才回填，适合表单。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">页面内级联</span><div data-demo="inline"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">底部弹层级联</span><div data-demo="sheet"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="cascader-columns">
+      <header class="docs-section-head"><div><h2>分栏级联</h2><p>多列并排，选中一级后在右侧展开下一级，适合体系、行业等较深的数据；选到末级即生效。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">两级</span><div data-demo="tree2"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">三级</span><div data-demo="tree3"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>切换上级会清除其下已选的层级。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pMode">形式</label><select id="pMode"><option value="inline" selected>页面内级联</option><option value="sheet">底部弹层级联</option><option value="tree">分栏级联</option></select></div>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>适用范围</td><td>有明确父子关系、需要逐层定位的数据。</td><td>平铺选项用选择器或选择列表。</td></tr>
+        <tr><td>路径</td><td>始终显示已进入的层级和当前层级；点路径中任一级可返回重选。</td><td>修改上级后清除其后已失效的选择。</td></tr>
+        <tr><td>完成选择</td><td>到达末级即完成；底部弹层中点“确认”才生效。</td><td>未到有效节点时不允许提交。</td></tr>
+        <tr><td>父级可选</td><td>父级本身是有效结果时，提供“选择当前层级”。</td><td>不强制用户选到固定深度。</td></tr>
+        <tr><td>加载与空状态</td><td>异步加载时显示加载态，失败可重试；无下级时提示“暂无下级”。</td><td>不进入空白页面。</td></tr>
+        <tr><td>再次打开</td><td>恢复完整路径并滚动到当前选中项。</td><td>不让用户从第一级重新定位。</td></tr>
+        <tr><td>复杂数据</td><td>层级很深或需要搜索时改用独立选择页。</td><td>不在弹层里塞入搜索与多级联动以外的操作。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const DATA={'华东':{'上海':['黄浦','徐汇','浦东新区','静安','长宁','闵行'],'浙江':['杭州','宁波','温州','绍兴','嘉兴'],'江苏':['南京','苏州','无锡','常州'],'山东':['济南','青岛','烟台'],'福建':['福州','厦门','泉州'],'安徽':['合肥','芜湖'],'江西':['南昌','九江','赣州']},
+    '华北':{'北京':['东城','西城','朝阳','海淀'],'天津':['和平','河西','南开'],'河北':['石家庄','唐山','保定']},
+    '华南':{'广东':['广州','深圳','珠海','佛山','东莞'],'广西':['南宁','桂林'],'海南':['海口','三亚']},
+    '华中':{'湖北':['武汉','宜昌'],'湖南':['长沙','株洲'],'河南':['郑州','洛阳']},
+    '西南':{'四川':['成都','绵阳'],'重庆':['渝中','江北'],'云南':['昆明','大理']},
+    '西北':{'陕西':['西安','宝鸡'],'甘肃':['兰州']},'东北':{'辽宁':['沈阳','大连'],'吉林':['长春'],'黑龙江':['哈尔滨']}};
+  const R=Object.keys(DATA);
+  const tabs=(sel,filter)=>`<div class="gj-m-cascader-head"><div class="gj-m-cascader-tabs" role="tablist" aria-label="区域">${R.map(r=>`<button type="button" role="tab" class="gj-m-cascader-tab" aria-selected="${r===sel}" data-r="${r}">${r}</button>`).join('')}</div>${filter?`<button type="button" class="gj-m-filter-item gj-m-filter-item-icon" aria-expanded="false" aria-haspopup="dialog"><span class="gj-m-filter-item-text">筛选</span><span class="gj-icon" aria-hidden="true"></span></button>`:''}</div>`;
+  const opts=(r,sel)=>`<div class="gj-m-cascader-options" role="listbox" aria-label="省份">${Object.keys(DATA[r]).map(p=>`<button type="button" role="option" class="gj-m-cascader-option" aria-selected="${p===sel}" data-p="${p}">${p}</button>`).join('')}</div>`;
+  const item=(t,sel)=>`<button type="button" class="gj-m-selection-item" role="radio" aria-checked="${!!sel}" data-c="${t}"><span class="gj-m-selection-item-content"><span class="gj-m-selection-item-text">${t}</span><span class="gj-m-selection-check"><span class="gj-icon" aria-hidden="true"></span></span></span></button>`;
+  const list=(r,p,sel)=>`<div class="gj-m-selection" role="radiogroup" aria-label="城市">${DATA[r][p].map(c=>item(c,c===sel)).join('')}</div>`;
+  const body=(st,o={})=>`<div class="gj-m-cascader">${tabs(st.r,o.filter)}${opts(st.r,st.p)}${o.list===false?'':list(st.r,st.p,st.c)}</div>`;
+  const header=t=>`<div class="gj-m-popup-header"><span class="gj-m-popup-title">${t}</span><button type="button" class="gj-m-popup-close" aria-label="关闭"><span class="gj-icon" aria-hidden="true"></span></button></div>`;
+  const footer=ok=>`<div class="gj-m-popup-footer"><button type="button" class="gj-m-button gj-m-button-tertiary gj-m-button-large" data-act="cancel">取消</button><button type="button" class="gj-m-button gj-m-button-primary gj-m-button-large" data-act="ok"${ok?'':' disabled'}>确认</button></div>`;
+  const sheet=st=>`<div class="gj-m-popup" role="dialog" aria-modal="true" aria-label="选择营业部所在地"><div class="gj-m-popup-panel">${header('选择营业部所在地')}${body(st)}${footer(!!st.c)}</div></div>`;
+  const T1=['全部','股票型','债券型','混合型','指数型','货币型','QDII'];
+  const T2={'股票型':['全部股票型','普通股票型','行业主题','量化增强','红利策略','ESG 主题','港股通'],'债券型':['全部债券型','纯债','一级债基','二级债基','可转债','短债','同业存单'],'混合型':['全部混合型','偏股混合','偏债混合','平衡混合','灵活配置'],'指数型':['全部指数型','宽基指数','行业指数','策略指数'],'货币型':['全部货币型'],'QDII':['全部 QDII','美股','港股','全球']};
+  const T3={'行业主题':['全部行业','新能源','半导体','医药','消费','金融地产','高端制造'],'宽基指数':['沪深 300','中证 500','中证 1000','创业板指','科创 50']};
+  const tree=cols=>`<div class="gj-m-cascader-columns">${cols.map((c,ci)=>`<div class="gj-m-cascader-column" role="listbox" data-col="${ci}">${c.items.map((t,i)=>`<button type="button" role="option" class="gj-m-cascader-column-item" aria-selected="${i===c.sel}" data-i="${i}">${t}</button>`).join('')}</div>`).join('')}</div>`;
+  const CSS='html,body{overflow:hidden}.scr{position:relative;width:100%;max-width:3.75rem;margin:0 auto;background:var(--ds-background-background);box-sizing:border-box}.pad{padding:.12rem 0}.stack{display:flex;flex-direction:column;gap:.12rem}'+
+    '.ph{position:relative;width:100%;max-width:3.75rem;margin:0 auto;height:100%;display:flex;flex-direction:column;overflow:hidden;background:var(--ds-background-background)}.hd{flex:none;display:flex;align-items:center;justify-content:center;height:44px;background:var(--ds-background-container);font-size:.17rem;font-weight:600}.ct{position:relative;flex:1;min-height:0;overflow:auto}'+
+    '.fm{background:var(--ds-background-container);padding:.04rem var(--space-page-margin-x) .16rem}.fl{padding:.12rem 0 .08rem;font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)}.sum{padding:.12rem var(--space-page-margin-x) .08rem;font-size:.13rem;line-height:.2rem;color:var(--ds-text-tiatery)}';
+  const FIX='html,body,.page{height:100%}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+(h?FIX:''),height:h||'auto'});
+  show('tabs',`<div class="scr pad stack"><div class="gj-m-cascader">${tabs('华南')}</div><div class="gj-m-cascader">${tabs('华南',1)}</div></div>`);
+  show('two',`<div class="scr pad">${body({r:'华东',p:'浙江'},{filter:1,list:false})}</div>`);
+  show('inline',`<div class="ph"><div class="hd">营业部</div><div class="ct">${body({r:'华东',p:'浙江',c:'杭州'},{filter:1})}</div></div>`,560);
+  show('sheet',`<div class="ph"><div class="hd">开户信息</div>${sheet({r:'华东',p:'浙江',c:'杭州'})}</div>`,560);
+  const page=(cols,t)=>`<div class="ph"><div class="hd">基金列表</div><div class="ct">${tree(cols)}</div></div>`;
+  show('tree2',page([{items:T1,sel:1},{items:T2['股票型'],sel:1}]),324);
+  show('tree3',page([{items:T1,sel:1},{items:T2['股票型'],sel:2},{items:T3['行业主题'],sel:2}]),324);
+
+  function renderLab(){const mode=$('pMode').value;
+    const f=GJPhone.swatch($('lab'),{html:`<div class="ph"><div class="hd">${mode==='tree'?'基金列表':mode==='sheet'?'开户信息':'营业部'}</div><div class="ct" id="ct"></div><div id="pop"></div></div>`,css:CSS+FIX,height:600});
+    f.addEventListener('load',()=>{const d=f.contentDocument,ct=d.getElementById('ct'),pop=d.getElementById('pop');
+      const bindBody=(root,st,onChange)=>{root.querySelectorAll('.gj-m-cascader-tab').forEach(b=>b.addEventListener('click',()=>{if(st.r===b.dataset.r)return;st.r=b.dataset.r;st.p=Object.keys(DATA[st.r])[0];st.c=null;onChange('.gj-m-cascader-tab[data-r="'+st.r+'"]')}));
+        root.querySelectorAll('.gj-m-cascader-option').forEach(b=>b.addEventListener('click',()=>{if(st.p===b.dataset.p)return;st.p=b.dataset.p;st.c=null;onChange('.gj-m-cascader-option[data-p="'+st.p+'"]')}));
+        root.querySelectorAll('.gj-m-selection-item').forEach(b=>b.addEventListener('click',()=>{st.c=b.dataset.c;onChange('.gj-m-selection-item[data-c="'+st.c+'"]',true)}))};
+      const keepScroll=(root,fn,focusSel)=>{const a=root.querySelector('.gj-m-cascader-tabs'),b=root.querySelector('.gj-m-cascader-options');const sa=a?a.scrollLeft:0,sb=b?b.scrollLeft:0;fn();const a2=root.querySelector('.gj-m-cascader-tabs'),b2=root.querySelector('.gj-m-cascader-options');if(a2)a2.scrollLeft=sa;if(b2)b2.scrollLeft=sb;const el=focusSel&&root.querySelector(focusSel);if(el){el.focus({preventScroll:true});el.scrollIntoView({block:'nearest',inline:'nearest'})}};
+      if(mode==='inline'){const st={r:'华东',p:'上海',c:null};const draw=fs=>keepScroll(ct,()=>{ct.innerHTML=body(st,{filter:1}).replace('<div class="gj-m-cascader">','<div class="gj-m-cascader">')+`<div class="sum" id="res">${st.c?`当前：${st.r} / ${st.p} / ${st.c}`:'请选择到区县 / 城市'}</div>`;bindBody(ct,st,draw)},fs);draw()}
+      if(mode==='sheet'){let val=null;const fieldHtml=()=>`<div class="fm"><div class="fl">营业部所在地</div><button type="button" class="gj-m-select" aria-haspopup="dialog" aria-expanded="false" id="fld"><span class="gj-m-select-value${val?'':' is-placeholder'}">${val?val.r+' / '+val.p+' / '+val.c:'请选择'}</span><span class="gj-m-select-arrow" aria-hidden="true"><span class="gj-icon"></span></span></button></div>`;
+        const drawField=()=>{ct.innerHTML=fieldHtml();ct.querySelector('#fld').addEventListener('click',open)};
+        function open(){const st=val?Object.assign({},val):{r:'华东',p:'上海',c:null};ct.querySelector('#fld').setAttribute('aria-expanded','true');
+          const draw=fs=>keepScroll(pop,()=>{pop.innerHTML=sheet(st);const p=pop.firstElementChild,close=()=>{pop.innerHTML='';drawField();ct.querySelector('#fld').focus()};
+            p.addEventListener('click',e=>{if(e.target===p)close()});p.querySelector('.gj-m-popup-close').addEventListener('click',close);p.querySelector('[data-act="cancel"]').addEventListener('click',close);
+            p.querySelector('[data-act="ok"]').addEventListener('click',()=>{val=Object.assign({},st);close()});bindBody(p,st,draw)},fs);draw()}
+        drawField()}
+      if(mode==='tree'){const st={a:1,b:-1,c:-1};const lvl2=()=>T2[T1[st.a]]||['全部'];
+        const draw=fs=>{const cols=[{items:T1,sel:st.a}];if(st.a>0)cols.push({items:lvl2(),sel:st.b});const l3=st.b>=0&&T3[lvl2()[st.b]];if(l3)cols.push({items:l3,sel:st.c});
+          const done=st.a===0||(st.b>=0&&(!l3||st.c>=0));ct.innerHTML=tree(cols)+`<div class="sum">${done?'已选：'+[T1[st.a],st.b>=0?lvl2()[st.b]:'',l3&&st.c>=0?l3[st.c]:''].filter(Boolean).join(' / '):'请选择到末级'}</div>`;
+          ct.querySelectorAll('[data-col="0"] .gj-m-cascader-column-item').forEach(x=>x.addEventListener('click',()=>{st.a=+x.dataset.i;st.b=-1;st.c=-1;draw(`[data-col="0"] [data-i="${st.a}"]`)}));
+          ct.querySelectorAll('[data-col="1"] .gj-m-cascader-column-item').forEach(x=>x.addEventListener('click',()=>{st.b=+x.dataset.i;st.c=-1;draw(`[data-col="1"] [data-i="${st.b}"]`)}));
+          ct.querySelectorAll('[data-col="2"] .gj-m-cascader-column-item').forEach(x=>x.addEventListener('click',()=>{st.c=+x.dataset.i;draw(`[data-col="2"] [data-i="${st.c}"]`)}));
+          if(fs){const el=ct.querySelector(fs);if(el)el.focus({preventScroll:true})}};draw()}
+    })}
+  $('pMode').addEventListener('change',renderLab);renderLab();
+})();
+</script>
+</body>
+</html>

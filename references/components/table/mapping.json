@@ -1,0 +1,66 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "table",
+  "figmaComponent": "表格 Table（161:4399）：Table_Regular、Table_Popover、table_item/header、cell",
+  "prototypeClass": "gj-m-table",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "Table_Regular": ".gj-m-table-wrap > .gj-m-table-scroll > table.gj-m-table",
+    "Table_Popover": ".gj-m-table-wrap.gj-m-table-popover > … table.gj-m-table",
+    "table_item/header select=false sort=false icon=false": "th",
+    "table_item/header sort=true": "th[aria-sort] > button.gj-m-table-sort > .gj-m-table-sort-icon",
+    "table_item/header icon=true": "th > .gj-m-table-head > button.gj-m-table-tip",
+    "table_item/header select=true": "th > .gj-m-table-head > label.gj-m-checkbox，或单独勾选列 th.gj-m-table-check；状态用 checkbox 组件的未选 / 选中 / 半选",
+    "table_item/cell text=singleline": "td",
+    "table_item/cell text=Doubleline": "td > .gj-m-table-lines > span × 2",
+    "table_item/cell text=checkbox": "td.gj-m-table-check > label.gj-m-checkbox",
+    "table_item/cell text=manage": "td > button.gj-m-text-button.gj-m-text-button-blue",
+    "操作列（始终固定）": "th.gj-m-table-op / td.gj-m-table-op"
+  },
+  "valueMap": {
+    "header": "{\"height\": 46, \"padding\": \"12 16\", \"background\": \"Table/head_bg\", \"text\": \"P3_CN-R 14/22 Text/Secondary\", \"sort\": \"图标库 icf_Arrow_caret（未排序 Text/Tiatery）/ caret-up（升序）/ caret-down（降序）Text/Secondary，间距 4\", \"tip\": \"icf_system_question 16 Text/Tiatery，间距 4\", \"select\": \"不单独做表头变体，直接用 .gj-m-checkbox 未选 / 选中 / 半选；与文字同格时间距 10\"}",
+    "cell": "{\"height\": \"单行 46 / 双行 68 / 勾选 44（随内容，Figma 2026-10-15）\", \"padding\": \"12 16\", \"background\": \"Table/table_bg1\", \"divider\": \"底部 1px Border/default\", \"text\": \"P3_CN-R 14/22 Text/Primary（双行两行同色）\", \"check\": \"勾选列宽 52，.gj-m-checkbox\", \"action\": \".gj-m-text-button.gj-m-text-button-blue（Button/Primary/Bg-default）\"}",
+    "container": "{\"radius\": \"Radius-MD 8 裁切\", \"scroll\": \"字段多时横向滚动\", \"fixed\": \"操作列 .gj-m-table-op 始终固定右侧；有内容被遮住时（.gj-m-table-wrap.is-covered，脚本切换）出现 Shadow_center\", \"popover\": \".gj-m-table-popover：Shadow_center，放在 60% 蒙层上\"}",
+    "a11y": "th scope=col；排序表头 aria-sort；勾选框 aria-label“选择××”；排序 / 说明 / 操作 / 勾选热区 ≥ 44"
+  },
+  "tokenMap": {
+    "Table/head_bg": "--ds-table-head-bg",
+    "Table/table_bg1": "--ds-table-table-bg1",
+    "Border/default": "--ds-border-default",
+    "Text/Primary": "--ds-text-primary",
+    "Text/Secondary": "--ds-text-secondary",
+    "Text/Tiatery": "--ds-text-tiatery",
+    "Shadow_center": "--ds-effect-shadow-center"
+  },
+  "assetMap": {
+    "排序": "icf_Arrow_caret（未排序）/ icf_Arrow_caret-up（升序）/ icf_Arrow_caret-down（降序）",
+    "说明": "icf_system_question"
+  },
+  "runtimeMap": {
+    "wrap": ".gj-m-table-wrap",
+    "scroll": ".gj-m-table-scroll",
+    "table": "table.gj-m-table",
+    "op": ".gj-m-table-op",
+    "sort": ".gj-m-table-sort",
+    "tip": ".gj-m-table-tip",
+    "check": ".gj-m-table-check"
+  },
+  "markup": {
+    "regular": "<div class=\"gj-m-table-wrap\"><div class=\"gj-m-table-scroll\"><table class=\"gj-m-table\" aria-label=\"资金账户\"><thead><tr><th scope=\"col\">客户姓名</th><th scope=\"col\">资金账号</th><th class=\"gj-m-table-op\" scope=\"col\">操作</th></tr></thead><tbody><tr><td>王**</td><td>8883404579</td><td class=\"gj-m-table-op\"><button type=\"button\" class=\"gj-m-text-button gj-m-text-button-blue\">操作</button></td></tr><tr><td>李**</td><td>8883404612</td><td class=\"gj-m-table-op\"><button type=\"button\" class=\"gj-m-text-button gj-m-text-button-blue\">操作</button></td></tr><tr><td>陈**</td><td>8883405108</td><td class=\"gj-m-table-op\"><button type=\"button\" class=\"gj-m-text-button gj-m-text-button-blue\">操作</button></td></tr><tr><td>周**</td><td>8883405227</td><td class=\"gj-m-table-op\"><button type=\"button\" class=\"gj-m-text-button gj-m-text-button-blue\">操作</button></td></tr></tbody></table></div></div>",
+    "fromPreview_table_num": "<td class=\"gj-m-table-num\">52,380.00</td>",
+    "fromPreview_table_wrap_table": "<div class=\"gj-m-table-wrap\"><table class=\"gj-m-table\"><thead><tr><th scope=\"col\">表头</th></tr></thead></table></div>"
+  },
+  "accessibility": {
+    "table": "table + aria-label；表头 th scope=\"col\"",
+    "sort": "可排序列 th aria-sort + 按钮",
+    "op": "操作列文字按钮写明动作"
+  },
+  "composition": {
+    "scroll": "字段多时在自身容器横向滚动，关键识别列可固定",
+    "radius": "容器圆角 8 裁切",
+    "numbers": "数值列右对齐、等宽数字"
+  },
+  "pageRules": {},
+  "pending": {},
+  "markupNote": "markup 中 fromPreview_* 片段由 scripts/check-mapping.cjs 从预览页实际渲染补录（2026-10-19），与预览页一致；其余为手写的常用写法。"
+}

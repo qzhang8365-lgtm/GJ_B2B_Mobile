@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · Markdown 文章 Markdown Article</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .panel{min-width:0;padding:20px;background:var(--ds-background-background);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    /* 右侧交互区：单列，自上而下 = 示例 / 画框 → 插入语法 → 源文 → 操作 → 语法说明 */
+    .md-ctl .control-fields{grid-template-columns:1fr;gap:16px}
+    .md-ctl .field-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .md-label-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+    .md-count{color:var(--ds-text-tiatery);font-size:12px;line-height:20px;font-variant-numeric:tabular-nums}
+    .md-editor{border:1px solid var(--ds-border-secondary);border-radius:8px;background:var(--ds-background-container);overflow:hidden}
+    .md-editor:focus-within{border-color:var(--ds-brand-gj-blue);outline:3px solid var(--ds-background-bt-b20)}
+    .md-insert{display:flex;flex-wrap:wrap;gap:4px;padding:6px 8px;border-bottom:1px solid var(--ds-border-default);background:var(--ds-background-background)}
+    .md-insert button{height:24px;padding:0 8px;border:0;border-radius:4px;background:transparent;color:var(--ds-text-secondary);font-size:12px;line-height:24px;cursor:pointer}
+    .md-insert button:hover{background:var(--ds-background-container);color:var(--ds-text-primary)}
+    .md-insert button:focus-visible{outline:2px solid var(--ds-border-focused);outline-offset:1px}
+    .md-src{display:block;width:100%;min-height:400px;max-height:70vh;box-sizing:border-box;padding:12px;border:0;outline:0;background:transparent;color:var(--ds-text-primary);font:13px/21px ui-monospace,SFMono-Regular,Menlo,monospace;resize:vertical;tab-size:2}
+    .md-foot{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px}
+    .md-foot .feedback{flex:1 1 160px;margin:0;font-size:12px;line-height:20px;color:var(--ds-text-tiatery)}
+    .md-syntax{border-top:1px solid var(--ds-border-default);padding-top:12px;font-size:12px;line-height:20px;color:var(--ds-text-secondary)}
+    .md-syntax summary{cursor:pointer;color:var(--ds-text-primary);font-size:13px;line-height:22px}
+    .md-syntax ul{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 8px;padding:0;list-style:none}
+    .md-syntax li{padding:0 8px;border-radius:4px;background:var(--ds-background-background);line-height:22px}
+    .md-syntax p{margin:0}
+    @media(max-width:650px){.md-ctl .field-row{grid-template-columns:1fr}.md-src{min-height:280px}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+  <script src="../../assets/scripts/gj-m-ai-markdown.js?v=20261016-md1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">数据展示组件 · Data Display</div>
+    <h1>Markdown 文章 Markdown Article</h1>
+    <p>用于移动端文章、研报、知识库与上传内容的 Markdown 渲染。元素样式与 AI 对话中的 Markdown 共用，文章容器独立成页。</p>
+  </header>
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>文章示例</h2><p>Figma Markdown / Article：容器上下 24、左右 16，块间距 16；正文 16/24，H1 20/30、H2 18/26、H3 16/24。</p></div></header>
+      <div class="playground">
+        <div class="panel"><span id="stageLabel" class="docs-stage-label">H5 · 375 × 720 · 在预览内滚动</span><div id="lab"></div></div>
+        <aside class="controls docs-surface-white md-ctl"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field-row">
+            <div class="field"><label for="pSample">示例内容</label><select id="pSample"><option value="weekly" selected>市场周报</option><option value="all">元素全集</option><option value="wide">宽内容 · 表格 / 代码</option></select></div>
+            <div class="field"><label for="pHeight">预览画框</label><select id="pHeight"><option value="720" selected>375 × 720 · 内部滚动</option><option value="812">375 × 812 · 内部滚动</option><option value="auto">内容全高</option></select></div>
+          </div>
+          <div class="field">
+            <div class="md-label-row"><label for="src">Markdown 源文</label><span id="count" class="md-count" aria-live="off"></span></div>
+            <div class="md-editor">
+              <div class="md-insert" role="toolbar" aria-label="插入 Markdown 语法">
+                <button type="button" data-gj-ctl="1" data-ins="h2">H2</button><button type="button" data-gj-ctl="1" data-ins="bold">加粗</button><button type="button" data-gj-ctl="1" data-ins="link">链接</button><button type="button" data-gj-ctl="1" data-ins="code">行内代码</button><button type="button" data-gj-ctl="1" data-ins="ul">列表</button><button type="button" data-gj-ctl="1" data-ins="task">任务</button><button type="button" data-gj-ctl="1" data-ins="quote">引用</button><button type="button" data-gj-ctl="1" data-ins="table">表格</button><button type="button" data-gj-ctl="1" data-ins="block">代码块</button><button type="button" data-gj-ctl="1" data-ins="img">图片</button><button type="button" data-gj-ctl="1" data-ins="hr">分割线</button>
+              </div>
+              <textarea id="src" class="md-src" data-gj-ctl="1" spellcheck="false" aria-describedby="feedback"></textarea>
+            </div>
+          </div>
+          <div class="md-foot"><button type="button" id="reset">恢复示例</button><button type="button" id="clear">清空</button><p id="feedback" class="feedback" aria-live="polite">输入后自动渲染；本地处理，不上传内容。</p></div>
+          <details class="md-syntax"><summary>支持的语法</summary>
+            <ul><li>标题 H1–H6</li><li>段落</li><li>加粗</li><li>链接</li><li>行内代码</li><li>无序 / 有序列表（两级）</li><li>任务列表</li><li>引用</li><li>代码块</li><li>表格</li><li>分割线</li><li>图片与图注</li></ul>
+            <p>原始 HTML 一律转义；图片只接受 http(s) 地址，失败显示占位。</p>
+          </details>
+        </div></aside>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用规则</h2><p>元素级规格见 AI 对话流的 Markdown 说明；此处只写文章容器的差异。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:46%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>容器</td><td><code>.gj-m-markdown.gj-m-markdown-article</code>：白底，上下 24、左右 16（页面边距）；块与块间距 16。</td><td>不把文章正文放进卡片再叠加卡片内边距；不在文章中嵌套卡片。</td></tr>
+        <tr><td>字号</td><td>正文 16/24；H1 20/30、H2 18/26、H3 及以下 16/24，加粗。标题到下方段落 8。</td><td>对话气泡内正文行高 28（对话场景），文章用 24，不混用。</td></tr>
+        <tr><td>宽内容</td><td>表格、代码块超宽时横向滚动并显示滚动指示条；表格单元格最多 4 行，超出加宽列。</td><td>不缩小字号塞进屏宽；不让整页横向滚动。</td></tr>
+        <tr><td>图片</td><td>图片 16:9 圆角，图注 14/22 二级文字；加载失败显示占位。</td><td>只接受 http(s) 地址；不嵌入原始 HTML。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const MD=`# 标题：市场周报
+
+正文用于承载文章内容，**重点信息使用加粗**，[链接](https://www.gjzq.com.cn)使用品牌蓝色，避免大段连续高亮。
+
+- 关注核心观点与关键结论
+- 补充数据来源及统计口径
+- 明确风险因素与适用范围
+
+> “市场波动并不等同于长期趋势发生变化，仍需结合基本面判断。”
+
+---
+
+\`\`\`json
+{
+  "symbol": "600519",
+  "rating": "buy"
+}
+\`\`\`
+
+---
+
+# 核心观点导读
+
+二季度中国市场黄金需求同比下降 41%，为 2022 年以来最疲软二季度表现；4 连板明新旭腾澄清不涉及人形机器人整机制造；苹果美股盘后一度跌超 8%，预计第四财季…
+
+- 二季度中国市场黄金需求同比下降 41%
+- 4 连板明新旭腾澄清不涉及人形机器人整机制造
+- 苹果美股盘后一度跌超 8%，预计第四财季
+
+## 经济信息
+
+**大商所、郑商所夜盘收盘情况：** 焦煤跌超 2%，纯碱、铁矿石等跌逾 1%，白糖、PVC 等小幅下跌
+
+**硅片价格继续下跌：** 主要原因为终端需求恢复不及预期，产业链需求传导受限，供需错配局面未改善
+
+| 品种 | 收盘涨跌 | 备注 |
+| --- | --- | --- |
+| 焦煤 | -2.1% | 夜盘 |
+| 纯碱 | -1.3% | 夜盘 |
+
+## 公司预警
+
+1. **瑞贝卡股票将被实施其他风险警示：** 7 月 31 日停牌
+2. **明新旭腾澄清人形机器人相关业务：** 主营业务及新拓展的业务方向均不涉及人形机器人整机制造
+
+## 总结
+
+资讯涵盖黄金需求下滑、部分公司风险提示及海外市场动态。`;
+  const ALL=`# 一级标题 H1
+
+## 二级标题 H2
+
+### 三级标题 H3
+
+段落包含 **加粗**、[链接](https://www.gjzq.com.cn) 与行内代码 \`600519.SH\`。
+
+1. 有序列表一
+2. 有序列表二
+   - 二级无序列表
+   - 二级无序列表
+
+- [x] 已完成的任务
+- [ ] 待处理的任务
+
+> 引用用于摘录观点或原文。
+
+![图注：图片 16:9 圆角，加载失败显示占位](https://www.gjzq.com.cn/not-found.png)
+
+---
+
+| 指标 | 数值 |
+| --- | --- |
+| 营收 | 12.3 亿 |
+| 同比 | +8.6% |`;
+  const WIDE=`## 宽内容
+
+表格超宽时在容器内横向滚动，不缩小字号。
+
+| 代码 | 名称 | 最新价 | 涨跌幅 | 成交额 | 换手率 | 市盈率 | 所属行业 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 600519 | 贵州茅台 | 1,688.00 | +1.25% | 52.3 亿 | 0.42% | 24.6 | 白酒 |
+| 300750 | 宁德时代 | 198.40 | -0.86% | 38.1 亿 | 0.91% | 18.2 | 电池 |
+
+\`\`\`sql
+SELECT symbol, name, close, pct_chg, amount FROM daily_quote WHERE trade_date = '2026-10-16' AND pct_chg > 5 ORDER BY amount DESC LIMIT 20;
+\`\`\``;
+  const SAMPLES={weekly:MD,all:ALL,wide:WIDE};
+  const SNIP={h2:['\n## ','标题',''],bold:['**','重点','**'],link:['[','链接文字','](https://)'],code:['`','code','`'],ul:['\n- ','列表项',''],task:['\n- [ ] ','待办事项',''],quote:['\n> ','引用内容',''],table:['\n| 列 1 | 列 2 |\n| --- | --- |\n| ','内容',' | 内容 |\n'],block:['\n```text\n','代码','\n```\n'],img:['\n![','图注','](https://)\n'],hr:['\n---\n','','']};
+  const $=id=>document.getElementById(id);
+  const src=$('src'),host=$('lab'),sample=$('pSample'),hSel=$('pHeight'),count=$('count'),fb=$('feedback'),label=$('stageLabel');
+  let stage;
+  host.addEventListener('phone:ready',({detail:{doc}})=>GJAIMarkdown.bind(doc));
+  const say=t=>{fb.textContent=t};
+  const stat=()=>{const v=src.value;count.textContent=`${v.replace(/\s/g,'').length} 字 · ${v?v.split('\n').length:0} 行`};
+  const render=()=>{stat();const html=`<article class="gj-m-markdown gj-m-markdown-article">${GJAIMarkdown.render(src.value)}</article>`;
+    if(stage){stage.setHTML(html);return}
+    const h=hSel.value==='auto'?'auto':+hSel.value;
+    label.textContent=h==='auto'?'H5 · 375 · 按内容撑高':`H5 · 375 × ${h} · 在预览内滚动`;
+    stage=GJPhone.mount(host,{html,css:'html,body{background:var(--ds-background-container)}',width:375,widths:[],height:h,fit:true,background:'var(--ds-background-container)'})};
+  const remount=()=>{host.innerHTML='';stage=null;render()};
+  const load=k=>{src.value=SAMPLES[k];render()};
+  let t;src.addEventListener('input',()=>{clearTimeout(t);t=setTimeout(render,200)});
+  src.addEventListener('keydown',e=>{if(e.key==='Tab'&&!e.shiftKey){e.preventDefault();src.setRangeText('  ',src.selectionStart,src.selectionEnd,'end');src.dispatchEvent(new Event('input'))}});
+  document.querySelector('.md-insert').addEventListener('click',e=>{const b=e.target.closest('button[data-ins]');if(!b)return;
+    const [pre,ph,post]=SNIP[b.dataset.ins],s0=src.selectionStart,s1=src.selectionEnd,sel=src.value.slice(s0,s1)||ph;
+    src.setRangeText(pre+sel+post,s0,s1,'end');const start=s0+pre.length;src.focus();src.setSelectionRange(start,start+sel.length);render();say(`已插入${b.textContent}。`)});
+  sample.addEventListener('change',()=>{load(sample.value);say(`已切换为「${sample.selectedOptions[0].text}」。`)});
+  hSel.addEventListener('change',remount);
+  $('reset').addEventListener('click',()=>{load(sample.value);say('已恢复当前示例。')});
+  $('clear').addEventListener('click',()=>{src.value='';render();src.focus();say('已清空，可粘贴自己的 Markdown 测试。')});
+  load('weekly');
+})();
+</script>
+</body>
+</html>

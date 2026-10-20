@@ -1,0 +1,41 @@
+{
+  "id": "skeleton",
+  "name": "骨架屏 Skeleton",
+  "category": "操作反馈组件",
+  "source": {
+    "page": "161:7811",
+    "set": "161:7826",
+    "readOnly": true
+  },
+  "prototypeOnly": true,
+  "types": [
+    "text",
+    "image",
+    "avatar"
+  ],
+  "text": {
+    "height": 16,
+    "gap": 16,
+    "radius": 4,
+    "widthRatios": [
+      0.6752411575562701,
+      1,
+      0.7138263665594855,
+      0.2315112540192926
+    ]
+  },
+  "image": {
+    "sourceWidth": 311,
+    "height": 160,
+    "radius": 8
+  },
+  "avatar": {
+    "size": 54
+  },
+  "background": "Background/Background",
+  "animation": {
+    "direction": "left-to-right",
+    "duration": "1.6s，原型选择",
+    "reducedMotion": "关闭"
+  }
+}

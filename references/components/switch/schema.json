@@ -1,0 +1,27 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "switch",
+  "name": "开关 Switch",
+  "category": "信息录入组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "开关switch（58:3153）",
+    "nodes": { "switch": "58:3154（Checked × Disabled × Size，8 变体）", "usage": "1015:2" },
+    "extractedAt": "2026-10-12",
+    "readOnly": true
+  },
+  "foundation": { "file": "assets/styles/gj-b2b-mobile-components.css", "class": ".gj-m-switch / .gj-m-switch-sm", "note": "原型基座" },
+  "sizes": {
+    "Default": { "width": 48, "height": "control-S 28", "padding": 2, "knob": 24, "travel": 20 },
+    "small": { "width": 32, "height": "control-XXS 20", "padding": 2, "knob": 16, "travel": 12 }
+  },
+  "radius": "Radius-full",
+  "states": {
+    "Checked=false": "Background/Secondary + Innershadow_small",
+    "Checked=true": "Feedback/brand",
+    "Disabled=true": "整体 40%"
+  },
+  "knob": { "fill": "Background/Container", "shadow": "shadow_small（--ds-effect-shadow-small）" },
+  "hitArea": "≥ 44 × 44"
+}

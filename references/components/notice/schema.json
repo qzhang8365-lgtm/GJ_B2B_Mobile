@@ -1,0 +1,39 @@
+{
+  "id": "notice",
+  "name": "提示 Notice",
+  "category": "操作反馈组件",
+  "source": {
+    "page": "170:8264",
+    "medium": "170:8272",
+    "small": "173:9639",
+    "readOnly": true
+  },
+  "prototypeOnly": true,
+  "styles": [
+    "default",
+    "alert",
+    "message",
+    "warning",
+    "success"
+  ],
+  "smallStyles": [
+    "alert",
+    "message",
+    "plain"
+  ],
+  "layout": {
+    "medium": "P3 14/22，图标20，gap12，radius8",
+    "small": "P5 12/18，图标16，padding8，gap8"
+  },
+  "note": "源中型左右padding11/251异常，原型对称12、上下9，自适应文本",
+  "stroke": {
+    "width": 1,
+    "align": "inside",
+    "default": "none",
+    "alert": "Border/error",
+    "message": "Feedback/brand",
+    "warning": "Feedback/warning",
+    "success": "Feedback/success&decline",
+    "small": "none"
+  }
+}

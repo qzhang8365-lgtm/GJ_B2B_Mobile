@@ -1,0 +1,75 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "datepicker",
+  "name": "日期选择器 DatePicker",
+  "category": "信息录入组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "日期选择器Datepicker（173:10016）",
+    "nodes": {
+      "Datepicker": "173:10050（Type single|range × Filled × Style default|stroke × Size L|M × State default|active|error|disabled）",
+      "calendar": "176:2315",
+      "calendar_range": "1016:8395",
+      "Datepicker_item/Date_item": "173:10128（State default|selected|disabled|current × Task × Range none|start|middle|end，18 变体）",
+      "usage": "1022:108",
+      "Bottom Dialog（引用）": "1769:9679（弹窗Popover 页 Bottom Dialog，Title=Default，button=true）"
+    },
+    "extractedAt": "2026-10-13",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": "button.gj-m-select.gj-m-datepicker / .gj-m-datepicker-range / .gj-m-calendar / -header / -nav[data-nav] / -title / -week / -days / -day",
+    "note": "原型基座；输入栏复用选择器基座"
+  },
+  "field": {
+    "sizes": "同选择器：L 40（P2，图标 20，内边距 8/12，圆角 8）/ M 32（P3，图标 16，内边距 8，圆角 6）",
+    "icon": "icf_system_calendar Text/Tiatery",
+    "placeholder": "Text/disable",
+    "value": "Text/Primary；范围“至” Text/Tiatery，间距 8",
+    "styles": {
+      "Default": "Background/Background + Border/default",
+      "lined": "Background/Container + Border/secondary"
+    },
+    "states": {
+      "active（展开）": "Border/focused",
+      "error": "Border/error",
+      "disabled": "整体 40%"
+    }
+  },
+  "calendar": {
+    "padding": 12,
+    "bg": "Background/Container",
+    "header": "高 36；按钮 40 × 32、图标 24 Text/Tiatery；标题 H3-CN-S 18/26 Text/Primary",
+    "week": "高 45，7 等分，P3 14/22 Text/Primary，底部 1px Border/default；周日开始",
+    "days": "7 列等分（日期格宽度 Fill，375 屏约 50.14），行高 50，行距 4；行数按当月需要 4–6 行（多数 5 行），首尾只补齐所在周的非本月日期",
+    "day": {
+      "text": "H4-CN-S 16/24 Semibold Text/Primary",
+      "current": "Text/blue",
+      "disabled": "Text/disable（非本月、不可选）",
+      "selected": "50 × 50 圆角 12 Brand/GJ_Blue，Text/reversal（单日与范围端点一致）",
+      "range": "区间整格 Background/BT_B10；开始左圆角 12、结束右圆角 12",
+      "task": "数字下方 6 圆点，间距 4、居中，最多 3 个；颜色为主题蓝以外的颜色（默认 Brand/GJ_red，其余 Chart/CH02–CH10），需配图例"
+    }
+  },
+  "dialog": {
+    "container": "底部对话弹层，顶部圆角 16",
+    "bar": "高 20，拖拽条 32 × 4 圆角 2 Border/secondary",
+    "body": "左右 16，与拖拽条间距 10；日历内边距 0",
+    "footer": "内边距 16、间距 12；Tertiary「取消」+ Primary「确认」Large 等分"
+  },
+  "yearMonth": {
+    "figma": "calendar_year 1781:11326 / calendar_month 1781:11432",
+    "header": "高 36；仅上一页 / 下一页（icf_Arrow_left / right，24，Text/Tiatery）+ 标题 H3-CN-S 18/26",
+    "grid": "3 列 × 4 行，间距 4，上下内边距 8",
+    "cell": "本地 1.Button Ghost / Primary Large：114 × 50（3 列 Fill）、圆角 12、P2_CN-R 16/24 Text/Primary",
+    "year": "一页 12 年，翻页 ±12 年，标题 YYYY；结果 YYYY",
+    "month": "一月…十二月，翻页 ±1 年，标题 YYYY-MM；结果 YYYY-MM",
+    "states": {
+      "selected": "Brand/GJ_Blue 底 + Text/reversal",
+      "current": "Text/blue",
+      "disabled": "整格 40% 不透明度（Figma 实例 opacity 0.4）；整页不可选时翻页按钮同样禁用（网站补充）"
+    }
+  }
+}

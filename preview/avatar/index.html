@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 头像 Avatar</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">数据展示组件 · Data Display</div>
+    <h1>头像 Avatar</h1>
+    <p>展示用户、组织或对象的身份标识，帮助用户快速对应人物与信息。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section" id="avatar-type">
+      <header class="docs-section-head"><div><h2>类型</h2><p>按容器形状和图片状态选择；图片不可用时统一显示默认头像。</p></div></header>
+      <div class="panel gray" style="margin-bottom:16px"><span class="docs-stage-label">方形 / 圆形图片头像 · 裁切填满</span><div data-demo="shape"></div></div>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">适配图片头像 · 完整保留主体</span><div data-demo="contain"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">默认头像 · 缺失 / 失败 / 未设置</span><div data-demo="def"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="avatar-size">
+      <header class="docs-section-head"><div><h2>尺寸</h2><p>44 用于主要身份信息，36 用于紧凑列表或次级信息，32 用于对话流。移动端默认 44。</p></div></header>
+      <div class="panel gray"><span class="docs-stage-label">44 / 36 / 32</span><div data-demo="size"></div></div>
+    </section>
+
+    <section class="docs-section" id="avatar-usage">
+      <header class="docs-section-head"><div><h2>身份信息与兜底</h2><p>头像与姓名、角色对齐展示；图片不可用时保持相同占位尺寸。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">列表</span><div data-demo="list"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">对话流 32</span><div data-demo="chat"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>切换形状、列表尺寸和图片状态；图片加载失败时自动换成默认头像，布局不跳动。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pS">形状</label><select id="pS"><option value="circle">圆形</option><option value="">方形</option></select></div>
+          <div class="field"><label for="pZ">列表尺寸</label><select id="pZ"><option value="">44</option><option value="md" selected>36</option><option value="sm">32</option></select></div>
+          <div class="field"><label for="pI">图片状态</label><select id="pI"><option value="ok">正常</option><option value="err">加载失败</option><option value="none">未设置</option></select></div>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>形状</td><td>同一业务场景保持形状和尺寸一致；人物常用圆形，组织、产品等对象常用方形。</td><td>同一列表里不混用圆形和方形。</td></tr>
+        <tr><td>尺寸</td><td>44 主要身份信息，36 紧凑列表、次级信息，32 对话流。</td><td>不自定义其它尺寸，不拉伸或压缩原图。</td></tr>
+        <tr><td>图片处理</td><td>人物头像裁切填满并保留面部；组织 Logo 用适配方式完整显示。</td><td>避免关键标识被裁掉。</td></tr>
+        <tr><td>兜底</td><td>图片缺失、加载失败或未设置时统一显示默认头像，占位尺寸不变。</td><td>不留空白，不使用破图图标。</td></tr>
+        <tr><td>身份文字</td><td>头像旁保留姓名、角色等文字；有文字时图片 alt 置空，单独出现时 alt 写姓名。</td><td>不只靠图片识别身份。</td></tr>
+        <tr><td>隐私</td><td>使用用户照片需遵循隐私与授权要求。</td><td>不展示无关或敏感图像。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const ic=(n,s=24)=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${n}.svg');width:${s/100}rem;height:${s/100}rem" aria-hidden="true"></span>`;
+  const IMG={p1:'assets/images/avatar/person-1.svg',p2:'assets/images/avatar/person-2.svg',p3:'assets/images/avatar/person-3.svg',logo:'assets/images/gj-logo-mark.png',bad:'assets/images/avatar/__missing__.png'};
+  const ERR=`onerror="this.parentNode.classList.add('is-default')"`;
+  /* o: {size:'md'|'sm', circle, contain, src, alt, none} */
+  const AV=(o={})=>{const c=['gj-m-avatar',o.size?'gj-m-avatar-'+o.size:'',o.circle?'gj-m-avatar-circle':'',o.contain?'gj-m-avatar-contain':'',o.none?'is-default':''].filter(Boolean).join(' ');
+    return o.none?`<span class="${c}"${o.alt?` role="img" aria-label="${o.alt}"`:' aria-hidden="true"'}></span>`:`<span class="${c}"><img src="${o.src}" alt="${o.alt||''}" ${ERR}></span>`};
+  const CSS='html,body{overflow:hidden;background:transparent}.row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;gap:.20rem;padding:.12rem 0}.cap{display:flex;flex-direction:column;align-items:center;gap:.08rem;font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}.sep{width:1px;align-self:stretch;margin:0 .04rem;background:var(--ds-border-default)}'+
+    '.scr{width:100%;max-width:3.75rem;margin:0 auto;box-sizing:border-box}.scr>.gj-m-list-card{margin:0}';
+  const FIX='html,body,.page{height:100%}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+(h?FIX:''),height:h||'auto'});
+  const cap=(a,t)=>`<span class="cap">${a}<span>${t}</span></span>`;
+  /* 示例场景全部用基座组件：列表 ListBar、对话流 AI Chat、卡片 Card、导航 Navbar、标签 Tag、指标 Metric */
+  const LI=(av,name,desc,extra='')=>`<div class="gj-m-list-item"><span class="gj-m-list-item-prefix">${av}</span><span class="gj-m-list-item-content"><span class="gj-m-list-item-main"><span class="gj-m-list-item-text">${name}</span><span class="gj-m-list-item-desc">${desc}</span></span>${extra?`<span class="gj-m-list-item-extra">${extra}</span>`:''}</span></div>`;
+  const TURN=(av,name,text,me)=>me?`<section class="gj-m-ai-turn is-user"><div class="gj-m-ai-identity"><span class="gj-m-ai-name">${name}</span>${av}</div><div class="gj-m-ai-stack"><div class="gj-m-ai-user">${text}</div></div></section>`:`<section class="gj-m-ai-message"><div class="gj-m-ai-identity">${av}<span class="gj-m-ai-name">${name}</span></div><div class="gj-m-ai-stack"><div class="gj-m-ai-bubble">${text}</div></div></section>`;
+
+
+  show('shape',`<div class="row">${['','md','sm'].map((s,i)=>cap(AV({size:s,circle:1,src:IMG.p1}),['44','36','32'][i])).join('')}<span class="sep"></span>${['','md','sm'].map((s,i)=>cap(AV({size:s,src:IMG.p2}),['44','36','32'][i])).join('')}</div>`);
+  show('contain',`<div class="row">${cap(AV({contain:1,src:IMG.logo,alt:'国金证券'}),'方形')}${cap(AV({contain:1,circle:1,src:IMG.logo,alt:'国金证券'}),'圆形')}</div>`);
+  show('def',`<div class="row">${cap(AV({none:1,circle:1}),'圆形')}${cap(AV({none:1}),'方形')}${cap(AV({circle:1,src:IMG.bad}),'加载失败')}</div>`);
+  show('size',`<div class="row" style="gap:.32rem">${cap(AV({circle:1,src:IMG.p3}),'44 · 主要身份')}${cap(AV({size:'md',circle:1,src:IMG.p3}),'36 · 紧凑列表')}${cap(AV({size:'sm',circle:1,src:IMG.p3}),'32 · 对话流')}</div>`);
+  show('list',`<div class="scr"><div class="gj-m-list gj-m-list-card">${[[IMG.p1,'王五','产品经理 · 上海陆家嘴营业部'],[null,'未设置头像','访客用户'],[IMG.logo,'国金证券资管','机构客户',1]].map(([s,n,r,org])=>LI(s?AV({size:'md',circle:!org,contain:org,src:s}):AV({size:'md',none:1,circle:1}),n,r)).join('')}</div></div>`);
+  show('chat',`<div class="gj-m-ai-chat">${[['p2','李敏','您好，国金稳健 3 号本周还能申购吗？'],['p1','王五','可以的，周五 15:00 前提交即可，我把产品说明发您。',1],['p2','李敏','好的，谢谢。']].map(([s,n,t,me])=>TURN(AV({size:'sm',circle:1,src:IMG[s]}),n,t,me)).join('')}</div>`);
+
+  const TI=(name,active)=>`<span aria-hidden="true" class="gj-icon gj-icon-24 ${active?'gj-icon-active':'gj-icon-default'}" style="--gj-icon:url('${ICON}${name}${active?'-fill':''}.svg')"></span>`;
+  const APPCSS='.app{position:relative;width:100%;max-width:3.75rem;margin:0 auto;height:100%;overflow:hidden;display:flex;flex-direction:column;background:var(--ds-background-background)}'+
+    '.body{flex:1;min-height:0;overflow-y:auto;padding:.12rem var(--space-page-margin-x);display:flex;flex-direction:column;gap:var(--space-card-l1-gap)}'+
+    '.me{display:flex;align-items:center;gap:.12rem}.me .m{flex:1;min-width:0}.me b{display:block;font-size:var(--ds-type-h3-cn-s-font-size);line-height:var(--ds-type-h3-cn-s-line-height);font-weight:var(--ds-type-h3-cn-s-font-weight);color:var(--ds-text-primary)}.me small{display:block;font-size:var(--ds-type-p5-cn-r-font-size);line-height:var(--ds-type-p5-cn-r-line-height);color:var(--ds-text-tiatery)}'+
+    '.tb{flex:none}.ext{display:flex;align-items:center;gap:var(--space-8)}';
+  const CL=[['p2','李敏','R3 · 持仓 52.4 万','10:24','VIP'],['p3','陈立','R4 · 持仓 31.2 万','09:12',''],[null,'赵小婷','新开户 · 待完善资料','昨天','新'],['p1','周涛','R2 · 持仓 12.8 万','周一',''],['logo','国金证券资管','机构客户 · 产品合作','10/09','机构']];
+  function render(){const S=$('pS').value,Z=$('pZ').value,I=$('pI').value;
+    const pick=(k,o={})=>{if(k==='logo')return AV(Object.assign({contain:1,src:IMG.logo},o,{circle:S==='circle'}));
+      if(!k||I==='none')return AV(Object.assign({none:1},o,{circle:S==='circle'}));return AV(Object.assign({src:I==='err'?IMG.bad+'?'+k:IMG[k]},o,{circle:S==='circle'}))};
+    const TABS=[['首页','icf_system_home'],['客户','icf_user_idcard'],['消息','icf_contact_message'],['我的','icf_user_user']];
+    const HEAD=(t,sub='')=>`<div class="gj-m-card-head"><div class="gj-m-card-header"><h3 class="gj-m-card-title">${t}</h3></div>${sub?`<p class="gj-m-card-subtitle">${sub}</p>`:''}</div>`;
+    GJPhone.swatch($('lab'),{html:`<div class="app"><header class="gj-m-navbar" aria-label="页面导航"><div class="gj-m-navbar-left"></div><div class="gj-m-navbar-center"><span class="gj-m-navbar-title">我的客户</span></div><div class="gj-m-navbar-right"><button class="gj-m-navbar-action" type="button" aria-label="搜索客户">${ic('icf_system_search')}</button></div></header><div class="body">
+      <section class="gj-m-card"><div class="me">${pick('p1')}<div class="m"><b>王五</b><small>理财经理 · 上海陆家嘴营业部</small></div></div><div class="gj-m-metric-grid gj-m-metric-grid-3">${[['128','服务客户'],['6','今日待办'],['3','到期提醒']].map(([n,l])=>`<div class="gj-m-metric"><span class="gj-m-metric-value"><span class="gj-m-metric-num">${n}</span></span><span class="gj-m-metric-label">${l}</span></div>`).join('')}</div></section>
+      <section class="gj-m-card">${HEAD('重点客户','共 128 位')}<div class="gj-m-card-body"><div class="gj-m-list gj-m-list-in-card">${CL.map(([k,n,r,t,tg])=>LI(pick(k,{size:Z}),n,r,`<span class="ext">${tg?`<span class="gj-m-tag gj-m-tag-small gj-m-tag-grey">${tg}</span>`:''}<span>${t}</span></span>`)).join('')}</div></div></section>
+      <section class="gj-m-card">${HEAD('最近沟通')}<div class="gj-m-card-body"><div class="gj-m-ai-chat">${[['p2','李敏','国金稳健 3 号本周还能申购吗？'],['p1','王五','可以，周五 15:00 前提交即可。',1]].map(([s,n,t,me])=>TURN(pick(s,{size:'sm'}),n,t,me)).join('')}</div></div></section>
+    </div><div class="tb"><nav class="gj-m-tabbar" aria-label="底部导航">${TABS.map(([t,i],x)=>`<button type="button" class="gj-m-tabbar-item${x===1?' is-active':''}"${x===1?' aria-current="page"':''}><span class="gj-m-tabbar-icon">${TI(i)}${TI(i,true)}</span><span class="gj-m-tabbar-label">${t}</span></button>`).join('')}</nav><div class="gj-m-tabbar-safe"></div></div></div>`,css:CSS+APPCSS+FIX,height:680})}
+  ['pS','pZ','pI'].forEach(k=>$(k).addEventListener('change',render));render();
+})();
+</script>
+</body>
+</html>

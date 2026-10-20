@@ -1,0 +1,157 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "input",
+  "figmaComponent": "input（155:2373）/ Input_textarea（161:4842），页面 输入框Input 155:520",
+  "prototypeClass": "gj-m-input / gj-m-textarea",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "Size": "L 为默认 | gj-m-input-m（多行 gj-m-textarea-m）",
+    "Style": "default（填充式）为默认 | gj-m-input-line / gj-m-textarea-line（描边式）",
+    "State=typing": ":focus-within；静态展示用 .is-focused",
+    "State=filled": "input 有值（value）",
+    "State=disabled": "input / textarea 原生 disabled",
+    "State=error": ".is-error 或 input[aria-invalid=\"true\"]，下方紧跟 .gj-m-input-message",
+    "state=over-limit（多行）": ".gj-m-textarea.is-over，计数变红，下方提示",
+    "textlimited（多行）": "maxlength + span.gj-m-textarea-count",
+    "后缀操作（2026-10-19 新增）": "span.gj-m-input-divider + span.gj-m-input-action > button.gj-m-text-button.gj-m-text-button-blue"
+  },
+  "valueMap": {
+    "Size.L": "高 40、内边距 8/12、圆角 8（--Radius-MD）、P2 16/24、清除图标 20",
+    "Size.M": "高 32（--control-M）、内边距 8/8、圆角 6（--Radius-SM）、P3 14/22、清除图标 16",
+    "Textarea.L": "默认总高 80、内边距 8/12、圆角 8、P2 16/24，计数 P5 12/18 右对齐贴底",
+    "Textarea.M": "高 80、内边距 8/12、圆角 6、P3 14/22",
+    "Suffix.L": "竖线 1×16、左距 12；操作左距 12",
+    "Suffix.M": "竖线 1×12、左距 8；操作左距 8"
+  },
+  "tokenMap": {
+    "fill.default.background": "Background/Background（--ds-background-background）",
+    "fill.default.border": "Border/default（--ds-border-default）",
+    "line.default.background": "Background/Container（--ds-background-container）",
+    "line.default.border": "Border/secondary（--ds-border-secondary）",
+    "focused.border": "Border/focused（--ds-border-focused）",
+    "error.border": "Border/error（--ds-border-error）",
+    "error.message": "Feedback/error&rise（--ds-feedback-error-rise），P5 12/18，上距 4",
+    "text": "Text/Primary（--ds-text-primary）",
+    "placeholder": "Text/Tiatery（--ds-text-tiatery）",
+    "caret": "Brand/GJ_Blue（--ds-brand-gj-blue）",
+    "clear": "Text/disable（--ds-text-disable）",
+    "count": "Text/Tiatery；超限 Feedback/error&rise",
+    "divider": "Border/default（--ds-border-default）",
+    "action": "Text/blue（text-button-blue）；倒计时禁用为蓝色禁用态",
+    "disabled": "整体 opacity 0.4"
+  },
+  "assetMap": {
+    "clear": "{ROOT}assets/icons/iconfont/icf_system_close-circle-fill.svg",
+    "colorRule": "图标用 currentColor，颜色由部件 Token 决定"
+  },
+  "runtimeMap": {
+    "root": "label.gj-m-input / label.gj-m-textarea",
+    "field": ".gj-m-input > input / .gj-m-textarea > textarea",
+    "clear": ".gj-m-input-clear",
+    "divider": ".gj-m-input-divider",
+    "action": ".gj-m-input-action > .gj-m-text-button",
+    "count": ".gj-m-textarea-count",
+    "message": ".gj-m-input-message（输入框的下一个兄弟元素）"
+  },
+  "markup": {
+    "default": "<label class=\"gj-m-input\"><input type=\"text\" placeholder=\"与证件姓名一致\" aria-label=\"客户姓名\"><button type=\"button\" class=\"gj-m-input-clear\" aria-label=\"清除\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_close-circle-fill.svg')\" aria-hidden=\"true\"></span></button></label>",
+    "m": "<label class=\"gj-m-input gj-m-input-m\"><input type=\"text\" placeholder=\"客户编号\" aria-label=\"客户编号\"><button type=\"button\" class=\"gj-m-input-clear\" aria-label=\"清除\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_close-circle-fill.svg')\" aria-hidden=\"true\"></span></button></label>",
+    "line": "<label class=\"gj-m-input gj-m-input-line\"><input type=\"text\" placeholder=\"请输入\" aria-label=\"备注名\"><button type=\"button\" class=\"gj-m-input-clear\" aria-label=\"清除\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_close-circle-fill.svg')\" aria-hidden=\"true\"></span></button></label>",
+    "disabled": "<label class=\"gj-m-input\"><input type=\"text\" value=\"A12345678\" aria-label=\"客户编号\" disabled></label>",
+    "error": "<div><label class=\"gj-m-input is-error\"><input type=\"tel\" inputmode=\"numeric\" value=\"138 1234 567\" aria-label=\"手机号\" aria-invalid=\"true\" aria-describedby=\"telErr\"></label><div class=\"gj-m-input-message\" id=\"telErr\" role=\"alert\">请输入 11 位手机号</div></div>",
+    "withLabel": "<div class=\"gj-m-form-item\"><span class=\"gj-m-form-label\"><span class=\"gj-m-form-label-text\">客户姓名</span><span class=\"gj-m-form-required\" aria-label=\"必填\">*</span></span><label class=\"gj-m-input\"><input type=\"text\" placeholder=\"与证件姓名一致\" aria-label=\"客户姓名\"></label></div>",
+    "textarea": "<label class=\"gj-m-textarea\"><textarea rows=\"3\" maxlength=\"200\" placeholder=\"补充处理进展或原因\" aria-label=\"处理说明\"></textarea><span class=\"gj-m-textarea-count\">0/200</span></label>",
+    "suffixAction": "<label class=\"gj-m-input\"><input type=\"text\" inputmode=\"numeric\" autocomplete=\"one-time-code\" maxlength=\"6\" placeholder=\"请输入验证码\" aria-label=\"验证码\"><button type=\"button\" class=\"gj-m-input-clear\" aria-label=\"清除\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_close-circle-fill.svg')\" aria-hidden=\"true\"></span></button><span class=\"gj-m-input-divider\" aria-hidden=\"true\"></span><span class=\"gj-m-input-action\"><button type=\"button\" class=\"gj-m-text-button gj-m-text-button-blue\">获取验证码</button></span></label>",
+    "suffixCountdown": "<span class=\"gj-m-input-action\"><button type=\"button\" class=\"gj-m-text-button gj-m-text-button-blue\" disabled>重新获取（42s）</button></span>",
+    "textareaCount": "<label class=\"gj-m-textarea\"><textarea rows=\"3\" placeholder=\"补充处理进展或原因\" aria-label=\"处理说明\" data-max=\"200\" data-k=\"note\"></textarea><span class=\"gj-m-textarea-count\">0/200</span></label>",
+    "action": "<span class=\"gj-m-input-divider\" aria-hidden=\"true\"></span><span class=\"gj-m-input-action\"><button type=\"button\" class=\"gj-m-text-button gj-m-text-button-blue\">获取验证码</button></span>"
+  },
+  "interactionMap": {
+    "focus": "聚焦时描边 Border/focused",
+    "clear": "聚焦且有内容时自动显示（基座 CSS 控制）；点击清空并保持焦点；清除按钮 pointerdown 时 preventDefault 以免失焦",
+    "error": "校验失败加 .is-error / aria-invalid，并在下方插入 .gj-m-input-message；内容修改后移除",
+    "count": "输入时更新“n/上限”；超出时 .gj-m-textarea.is-over 并提示精简",
+    "suffixAction": "先校验相关字段，不通过时在该字段下提示；发送后 disabled 并倒计时“重新获取（60s）”，结束后恢复为“重新获取”",
+    "format": "手机号分段展示、金额用数字键盘（inputmode），日期优先用日期选择器"
+  },
+  "accessibility": {
+    "label": "字段标签始终可见（Form 标签）；登录、验证这类一两个字段的页面可只用占位，但必须有 aria-label",
+    "error": "aria-invalid=\"true\" + aria-describedby 指向错误提示，提示 role=\"alert\"",
+    "clear": "button + aria-label=\"清除\"，热区 44（向左延伸，不超出输入框）",
+    "suffixAction": "button 文本即名称；倒计时用 disabled",
+    "disabled": "原生 disabled"
+  },
+  "composition": {
+    "style": "同一表单不混用填充式与描边式；描边式用于浅色页面或紧凑表单",
+    "size": "常规表单 L；搜索框、筛选区、紧凑区块 M（h5-control-sizing.md）",
+    "suffix": "只放一个就地操作，不用独立按钮挤在输入框旁边",
+    "iosZoom": "小程序原生页面不处理；H5 / web-view 页面有输入框就加 viewport maximum-scale=1（rem 缩放后 L 在 320 宽约 14，也会触发放大）",
+    "message": "错误提示紧贴输入框下方 4，说明修正方式"
+  },
+  "pageRules": {
+    "PR-010": "热区靠组件自身扩展；标签到控件间距 8，不用 min-height 撑开",
+    "PR-018": "顶部筛选 / 设置区堆叠时输入类控件改用 M"
+  },
+  "pending": {},
+  "templates": {
+    "textareaCount": {
+      "tpl": "<label class=\"gj-m-textarea\"><textarea rows=\"3\" placeholder=\"{{placeholder}}\" aria-label=\"{{label}}\" data-max=\"{{max}}\" data-k=\"{{key}}\">{{value}}</textarea><span class=\"gj-m-textarea-count\">{{count}}/{{max}}</span></label>",
+      "example": {
+        "placeholder": "补充处理进展或原因",
+        "label": "处理说明",
+        "max": 200,
+        "key": "note",
+        "value": "",
+        "count": 0
+      },
+      "params": "多行输入 + 计数（data-max 供脚本计数）"
+    },
+    "input": {
+      "tpl": "<label class=\"gj-m-input{{#size}} gj-m-input-{{size}}{{/size}}{{#line}} gj-m-input-line{{/line}}{{#error}} is-error{{/error}}\"><input type=\"{{type}}\"{{{attrs}}}{{#placeholder}} placeholder=\"{{placeholder}}\"{{/placeholder}}{{#value}} value=\"{{value}}\"{{/value}} aria-label=\"{{label}}\"{{#error}} aria-invalid=\"true\"{{/error}}{{#disabled}} disabled{{/disabled}}>{{#clear}}<button type=\"button\" class=\"gj-m-input-clear\" aria-label=\"清除\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_close-circle-fill.svg')\" aria-hidden=\"true\"></span></button>{{/clear}}{{{suffix}}}</label>{{#error}}<div class=\"gj-m-input-message\" role=\"alert\">{{error}}</div>{{/error}}",
+      "params": "单行输入：size：m（不写为 L）；line：线框；type：text / tel / email 等；attrs：inputmode、maxlength 等附加属性（含前导空格）；label：读屏名称；clear：清除按钮；suffix：后缀操作 HTML（input.action）；error：错误文案（同时加错误态）；disabled",
+      "examples": {
+        "default": {
+          "type": "text",
+          "placeholder": "与证件姓名一致",
+          "label": "客户姓名",
+          "clear": true
+        },
+        "m": {
+          "size": "m",
+          "type": "text",
+          "placeholder": "客户编号",
+          "label": "客户编号",
+          "clear": true
+        },
+        "line": {
+          "line": true,
+          "type": "text",
+          "placeholder": "请输入",
+          "label": "备注名",
+          "clear": true
+        },
+        "disabled": {
+          "type": "text",
+          "value": "A12345678",
+          "label": "客户编号",
+          "disabled": true
+        },
+        "suffixAction": {
+          "type": "text",
+          "attrs": " inputmode=\"numeric\" autocomplete=\"one-time-code\" maxlength=\"6\"",
+          "placeholder": "请输入验证码",
+          "label": "验证码",
+          "clear": true,
+          "suffix": "<span class=\"gj-m-input-divider\" aria-hidden=\"true\"></span><span class=\"gj-m-input-action\"><button type=\"button\" class=\"gj-m-text-button gj-m-text-button-blue\">获取验证码</button></span>"
+        }
+      }
+    },
+    "action": {
+      "tpl": "<span class=\"gj-m-input-divider\" aria-hidden=\"true\"></span><span class=\"gj-m-input-action\">{{{button}}}</span>",
+      "params": "输入框后缀操作：分隔线 + 文字按钮（text-button.textButton，蓝色；倒计时时 disabled）",
+      "example": {
+        "button": "<button type=\"button\" class=\"gj-m-text-button gj-m-text-button-blue\">获取验证码</button>"
+      }
+    }
+  }
+}

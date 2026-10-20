@@ -1,0 +1,44 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "divider",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "figmaComponent": "Divider（页面分割线）",
+  "prototypeClass": "gj-m-divider",
+  "propertyMap": {
+    "Type=horizontal": "div.gj-m-divider（默认）",
+    "Type=vertical": "gj-m-divider-vertical",
+    "Title=false": "gj-m-divider-plain",
+    "Title=true": "内放 span.gj-m-divider-title",
+    "Position": "left → gj-m-divider-left | center（默认）| right → gj-m-divider-right",
+    "Dashed=true": "gj-m-divider-dashed（3/3）"
+  },
+  "valueMap": {
+    "line": "1px",
+    "dash": "3 / 3",
+    "title": "P2 16/24"
+  },
+  "tokenMap": {
+    "line": "Border/default",
+    "title": "Text/Tiatery"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-divider",
+    "title": ".gj-m-divider-title"
+  },
+  "markup": {
+    "plain": "<div class=\"gj-m-divider gj-m-divider-plain\" role=\"separator\"></div>",
+    "title": "<div class=\"gj-m-divider\" role=\"separator\"><span class=\"gj-m-divider-title\">以上为今日记录</span></div>",
+    "titleLeft": "<div class=\"gj-m-divider gj-m-divider-left\" role=\"separator\"><span class=\"gj-m-divider-title\">更早</span></div>",
+    "dashed": "<div class=\"gj-m-divider gj-m-divider-plain gj-m-divider-dashed\" role=\"separator\"></div>",
+    "vertical": "<span class=\"gj-m-divider gj-m-divider-vertical\" role=\"separator\" aria-orientation=\"vertical\"></span>"
+  },
+  "accessibility": {
+    "role": "role=\"separator\"；纯装饰可 aria-hidden"
+  },
+  "composition": {
+    "vertical": "竖向不带标题",
+    "inList": "列表、信息列表自带分割线，不另加分割线"
+  },
+  "pageRules": {},
+  "pending": {}
+}

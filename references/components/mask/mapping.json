@@ -1,0 +1,41 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "mask",
+  "figmaComponent": "遮罩 mask（161:5659）",
+  "prototypeClass": "gj-m-mask",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "Opacity=60（默认使用）": ".gj-m-mask",
+    "Opacity=45": ".gj-m-mask.gj-m-mask-light"
+  },
+  "valueMap": {
+    "types": "{\"default\": \"Background/MK_60：弹窗、底部弹层、筛选面板、图片预览统一使用（设计方 2026-10-14）\", \"light\": \"Background/MK_45：备用较轻遮挡，一般不用\"}",
+    "behavior": "覆盖作用容器并阻止底层点击与滚动；与前景同时渐显 / 渐隐 0.2s；同一时刻只有一层；关闭后焦点回到触发入口",
+    "consumers": ".gj-m-popup / .gj-m-dialog / .gj-m-filter-mask / .gj-m-image-viewer 自带 MK_60，与默认一致"
+  },
+  "tokenMap": {
+    "Background/MK_45": "--ds-background-mk-45",
+    "Background/MK_60": "--ds-background-mk-60"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-mask"
+  },
+  "markup": {
+    "default": "<div class=\"gj-m-mask\" aria-hidden=\"true\"></div>",
+    "light": "<div class=\"gj-m-mask gj-m-mask-light\" aria-hidden=\"true\"></div>"
+  },
+  "interactionMap": {
+    "behavior": "阻止底层点击与滚动；与前景同时渐显 / 渐隐 0.2s；关闭后焦点回到入口"
+  },
+  "accessibility": {
+    "mask": "aria-hidden；焦点管理由前景弹层负责"
+  },
+  "composition": {
+    "default": "弹窗、底部弹层、筛选面板、图片预览统一 MK_60（这些组件自带遮罩）",
+    "single": "同一时刻只有一层遮罩"
+  },
+  "pageRules": {},
+  "pending": {
+    "MK-M-002": "Figma 属性把透明度和颜色混在一起，部分修复"
+  }
+}

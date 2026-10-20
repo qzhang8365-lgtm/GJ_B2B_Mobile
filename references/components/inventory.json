@@ -1,0 +1,1260 @@
+{
+  "$schema": "gj-design-skill/mobile-component-inventory/v1",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "readOnly": true,
+    "figmaIsSourceOfTruth": true
+  },
+  "foundation": "assets/styles/gj-b2b-mobile-components.css",
+  "structure": "每个组件一个目录：mapping.json（写法与用法，生成时先读，结构见 MAPPING.md）、rules.md（使用规则）、schema.json（属性 / 尺寸 / 颜色 Token）、audit.md（Figma 审计与渲染核对）。按 scenes（需求关键词）与 notFor（不适用时改用什么）定位组件；pageRules 为相关页面生成规则编号。",
+  "statusMeaning": {
+    "extracted": "已从 Figma 只读提取并形成 schema/rules",
+    "foundation": "基座 CSS 已写入",
+    "previewVerified": "预览页在 375 / 320 下完成浏览器计算值核对",
+    "published": "已上架规范站导航",
+    "pending": "存在待设计方确认的审计项（不视为通过）"
+  },
+  "components": [
+    {
+      "id": "icon",
+      "name": "图标 Icon",
+      "dir": null,
+      "figma": "页面 15:169（图标icon），资源与 PC 一致",
+      "foundationClass": ".gj-icon",
+      "references": "references/icons/index.json",
+      "preview": "preview/icons/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "图标",
+        "图标按钮内的图形",
+        "状态图标"
+      ],
+      "notFor": "毛玻璃大图标 → 图标库 glassicon PNG；业务插图 → image"
+    },
+    {
+      "id": "button",
+      "name": "按钮 Button",
+      "dir": "button/",
+      "figma": "161:6274",
+      "foundationClass": ".gj-m-button / .gj-m-button-block / .gj-m-button-group",
+      "preview": "preview/button/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": [
+          "BT-M-006（待确认）：旧版 `1.Button`（`13:1720`，Shape=Default / round）已不在画布上，但仍有实例引用"
+        ]
+      },
+      "scenes": [
+        "提交",
+        "确认",
+        "取消",
+        "主操作",
+        "次操作",
+        "底部操作栏",
+        "卡片操作",
+        "多选按钮组",
+        "新建"
+      ],
+      "notFor": "只跳转的轻量链接 → text-button；可点的筛选项不用 tag",
+      "pageRules": [
+        "PR-009",
+        "PR-010",
+        "PR-017"
+      ]
+    },
+    {
+      "id": "text-button",
+      "name": "文字按钮 Text Button",
+      "dir": "text-button/",
+      "figma": "1158:2359",
+      "foundationClass": ".gj-m-text-button",
+      "preview": "preview/button/index.html#text-button",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "parent": "button",
+      "scenes": [
+        "查看更多",
+        "文字链接",
+        "卡片标题右侧操作",
+        "工具栏小图标按钮",
+        "获取验证码"
+      ],
+      "notFor": "主操作 → button",
+      "pageRules": [
+        "PR-010",
+        "PR-013",
+        "PR-014"
+      ]
+    },
+    {
+      "id": "floating-button",
+      "name": "悬浮按钮 Floating Button",
+      "dir": "floating-button/",
+      "figma": "1157:5100",
+      "foundationClass": ".gj-m-fab / .gj-m-fab-group",
+      "preview": "preview/button/index.html#floating-button",
+      "parent": "button",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "回到顶部",
+        "悬浮新建",
+        "快捷入口"
+      ],
+      "notFor": "页面主流程操作 → button / 底部操作栏"
+    },
+    {
+      "id": "divider",
+      "name": "分割线 Divider",
+      "dir": "divider/",
+      "figma": "423:3707",
+      "foundationClass": ".gj-m-divider",
+      "preview": "preview/divider/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "分割线",
+        "分组间隔",
+        "列表分隔"
+      ],
+      "notFor": "卡片之间 → 用间距，不加分割线"
+    },
+    {
+      "id": "tag",
+      "name": "标签 Tag",
+      "dir": "tag/",
+      "figma": "948:6243（Tag_small 948:6308 / Tag_middle 948:6484 / CornerTag 948:6683 / circleTag 948:6441）",
+      "foundationClass": ".gj-m-tag / .gj-m-corner-tag / .gj-m-circle-tag",
+      "preview": "preview/tag/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": [
+          "TAG-M-007（暂不处理）：Figma 标签颜色变体绑定 Chart/CH 变量。图表色顺序调整后，色名与色值不再对应：orange 显示粉（CH0"
+        ]
+      },
+      "scenes": [
+        "状态",
+        "类型",
+        "类别",
+        "标签",
+        "紧急程度",
+        "已开通市场（圆形标签）",
+        "角标"
+      ],
+      "notFor": "可点击筛选 → button 组合 / filter",
+      "pageRules": [
+        "PR-005",
+        "PR-012"
+      ]
+    },
+    {
+      "id": "footer",
+      "name": "页脚 Footer",
+      "dir": "footer/",
+      "figma": "138:1363（页面 58:4516）",
+      "foundationClass": ".gj-m-footer",
+      "preview": "preview/footer/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "页脚",
+        "版权信息",
+        "底部说明"
+      ],
+      "notFor": "固定底部操作 → button + 底栏"
+    },
+    {
+      "id": "index-bar",
+      "name": "索引栏 IndexBar",
+      "category": "导航组件",
+      "dir": "index-bar/",
+      "figma": "31:195（58:9967 / 58:9974 / 58:10609）",
+      "foundationClass": ".gj-m-index-bar / .gj-m-index-bar-item / .gj-m-index-anchor",
+      "preview": "preview/index-bar/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": [],
+        "note": "2026-10-09 IDX-M-001–006 全部关闭；004 按用户确认关闭，只读复核证据见 audit.md。"
+      },
+      "scenes": [
+        "字母索引",
+        "通讯录",
+        "按首字母定位"
+      ],
+      "notFor": "少量列表 → listbar"
+    },
+    {
+      "id": "gridnav",
+      "name": "宫格导航 GridNav",
+      "category": "导航组件",
+      "dir": "gridnav/",
+      "figma": "222:584",
+      "preview": "preview/gridnav/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": [
+          "GN-M-001（待确认）：1680:7538 写“最长标题不超过 6 字，超出省略”；设计方建议 4 字以内、优先精简或减少列数。",
+          "GN-M-002（待确认）：1683:287、1683:373 仍是分割线说明文案。",
+          "GN-M-003（待确认）：未提供按压、禁用、加载状态变体。",
+          "GN-M-004（待确认）：5 列时列宽 75、左右内边距 16，可用宽 43 小于四字 48。"
+        ],
+        "note": "六个变体已提取并提供375预览；320小屏、键盘分页及点击反馈已核对。触屏手势尚需真机验证。"
+      },
+      "scenes": [
+        "宫格",
+        "功能入口",
+        "常用工具",
+        "金刚区"
+      ],
+      "notFor": "少于 4 个入口 → listbar / button"
+    },
+    {
+      "id": "navbar",
+      "name": "顶部导航 Navbar",
+      "category": "导航组件",
+      "dir": "navbar/",
+      "figma": "31:679（31:696）",
+      "foundationClass": ".gj-m-navbar",
+      "preview": "preview/navbar/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": [],
+        "note": "2026-10-09 用户确认当前基座处理，NAV-M-001–004全部关闭。"
+      },
+      "scenes": [
+        "顶部导航",
+        "页面标题",
+        "返回",
+        "标题栏"
+      ],
+      "notFor": "小程序原生页面 → 容器提供，不自绘"
+    },
+    {
+      "id": "tabbar",
+      "name": "底部导航 TabBar",
+      "category": "导航组件",
+      "dir": "tabbar/",
+      "figma": "58:552（58:564 / 58:611）",
+      "foundationClass": ".gj-m-tabbar",
+      "preview": "preview/tabbar/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": [],
+        "note": "2026-10-09 TAB-M-001–003均经用户逐项确认关闭，无待确认项。"
+      },
+      "scenes": [
+        "底部导航",
+        "一级导航",
+        "首页 / 我的"
+      ],
+      "notFor": "二级页面 → 不显示；容器已有原生 TabBar → 不重复绘制"
+    },
+    {
+      "id": "tabs",
+      "name": "页签 Tabs",
+      "category": "导航组件",
+      "dir": "tabs/",
+      "figma": "58:680",
+      "foundationClass": ".gj-m-tabs / .gj-m-tab",
+      "preview": "preview/tabs/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "页签",
+        "切换分类",
+        "状态切换",
+        "分段控制",
+        "周期切换",
+        "锚点页签"
+      ],
+      "notFor": "有先后顺序的流程 → steps；即时设置 → switch",
+      "pageRules": [
+        "PR-001",
+        "PR-002",
+        "PR-013"
+      ]
+    },
+    {
+      "id": "sidebar",
+      "name": "侧边导航栏 SideBar",
+      "category": "导航组件",
+      "dir": "sidebar/",
+      "figma": "31:874（196:9221 / 1118:8267 / 1118:8271 / 1124:8626）",
+      "foundationClass": ".gj-m-sidebar / .gj-m-sidebar-item / .gj-m-sidebar-group / .gj-m-sidebar-push",
+      "preview": "preview/sidebar/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "侧边分类",
+        "左侧导航",
+        "分类筛选"
+      ],
+      "notFor": "2–5 个并列分类 → tabs"
+    },
+    {
+      "id": "listbar",
+      "name": "列表导航 ListBar",
+      "category": "导航组件",
+      "dir": "listbar/",
+      "figma": "58:1953（58:2006 / 58:2470 / 58:2548 / 58:2527）",
+      "foundationClass": ".gj-m-list / .gj-m-list-item / .gj-m-list-title",
+      "preview": "preview/listbar/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "列表",
+        "设置项",
+        "我的页面",
+        "对象列表",
+        "入口列表"
+      ],
+      "notFor": "信息超过 3 行或有多个指标 → card 列表",
+      "pageRules": [
+        "PR-007",
+        "PR-008",
+        "PR-016"
+      ]
+    },
+    {
+      "id": "swiper",
+      "name": "轮播 Swiper",
+      "category": "导航组件",
+      "dir": "swiper/",
+      "figma": "58:4228（58:4247 / 1680:5056 / 1680:5067 / 1719:3227）",
+      "foundationClass": ".gj-m-swiper / .gj-m-swiper-indicator / .gj-m-swiper-dot / .gj-m-swiper-fraction",
+      "preview": "preview/swiper/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "轮播",
+        "Banner",
+        "图片切换"
+      ],
+      "notFor": "关键信息 → 不放轮播"
+    },
+    {
+      "id": "input",
+      "name": "输入框 Input",
+      "category": "信息录入组件",
+      "dir": "input/",
+      "figma": "155:520（155:2373 / 161:4842）",
+      "foundationClass": ".gj-m-input / .gj-m-textarea",
+      "preview": "preview/input/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "输入",
+        "文本框",
+        "多行输入",
+        "备注",
+        "验证码",
+        "手机号",
+        "金额"
+      ],
+      "notFor": "日期 → datepicker；固定选项 → select / radio",
+      "pageRules": [
+        "PR-010",
+        "PR-018"
+      ]
+    },
+    {
+      "id": "keyboard",
+      "name": "键盘 Keyboard",
+      "dir": "keyboard/",
+      "figma": "页面 313:4600，IOS_拼音-全键盘 313:8541",
+      "foundationClass": ".gj-m-keyboard-mock / .gj-m-keyboard-open",
+      "references": "references/components/keyboard/rules.md",
+      "preview": "preview/keyboard/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "键盘",
+        "键盘弹起",
+        "键盘遮挡示意"
+      ]
+    },
+    {
+      "id": "searchbar",
+      "name": "搜索栏 SearchBar",
+      "category": "信息录入组件",
+      "dir": "searchbar/",
+      "figma": "158:2569（158:2572）",
+      "foundationClass": ".gj-m-search / .gj-m-search-row",
+      "preview": "preview/searchbar/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "搜索",
+        "关键词查询",
+        "搜索框"
+      ],
+      "notFor": "精确条件筛选 → filter / select",
+      "pageRules": [
+        "PR-018"
+      ]
+    },
+    {
+      "id": "select",
+      "name": "选择器 Select",
+      "category": "信息录入组件",
+      "dir": "select/",
+      "figma": "155:2402（907:3644 / 158:2359 / 158:2542）",
+      "foundationClass": ".gj-m-select / .gj-m-picker / .gj-m-popup",
+      "preview": "preview/select/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "下拉选择",
+        "选择器",
+        "选项较多的单选"
+      ],
+      "notFor": "2–3 个选项 → radio；日期 → datepicker",
+      "pageRules": [
+        "PR-018"
+      ]
+    },
+    {
+      "id": "selection-list",
+      "name": "选择列表 Selection List",
+      "category": "信息录入组件",
+      "dir": "selection-list/",
+      "figma": "58:4742（58:4766 / 158:1890 / 170:4782 / 158:1520 / 158:2018 / 148:1226）",
+      "foundationClass": ".gj-m-selection / .gj-m-selection-item / .gj-m-chip / .gj-m-chip-group",
+      "preview": "preview/selection-list/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": [
+          "SL-M-009（待确认）：`Selection List`（Type=indicator）里的列表项实例指向的源组件（如 `58:4789`、`5"
+        ]
+      },
+      "scenes": [
+        "选择列表",
+        "底部弹层选项",
+        "选项胶囊",
+        "单选列表",
+        "多选列表"
+      ],
+      "notFor": "卡片内多选 → button 组合（PR-009）",
+      "pageRules": [
+        "PR-009"
+      ]
+    },
+    {
+      "id": "switch",
+      "name": "开关 Switch",
+      "category": "信息录入组件",
+      "dir": "switch/",
+      "figma": "58:3153（58:3154）",
+      "foundationClass": ".gj-m-switch / .gj-m-switch-sm",
+      "preview": "preview/switch/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "开关",
+        "启用 / 停用",
+        "即时生效设置"
+      ],
+      "notFor": "需要提交才生效 → checkbox / radio"
+    },
+    {
+      "id": "radio",
+      "name": "单选框 Radio",
+      "category": "信息录入组件",
+      "dir": "radio/",
+      "figma": "58:10860（216:5181 Radio/Icon / 216:5194 Radio / 216:5339 Radio_Group）",
+      "foundationClass": ".gj-m-radio / .gj-m-radio-group",
+      "preview": "preview/radio/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "单选",
+        "是否",
+        "二选一",
+        "2–3 个互斥选项",
+        "设为默认"
+      ],
+      "notFor": "选项更多 → select；多选 → checkbox / button 组合",
+      "pageRules": [
+        "PR-009",
+        "PR-010"
+      ]
+    },
+    {
+      "id": "checkbox",
+      "name": "多选框 Checkbox",
+      "category": "信息录入组件",
+      "dir": "checkbox/",
+      "figma": "1016:5760（58:11096 / 58:11128 / 58:11264）",
+      "foundationClass": ".gj-m-checkbox / .gj-m-checkbox-group",
+      "preview": "preview/checkbox/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "多选",
+        "勾选",
+        "协议同意",
+        "全选",
+        "批量选择"
+      ],
+      "notFor": "卡片内短选项多选 → button 组合（PR-009）",
+      "pageRules": [
+        "PR-009",
+        "PR-010"
+      ]
+    },
+    {
+      "id": "stepper",
+      "name": "步数器 Stepper",
+      "category": "信息录入组件",
+      "dir": "stepper/",
+      "figma": "158:2963（158:2968）",
+      "foundationClass": ".gj-m-stepper",
+      "preview": "preview/stepper/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "数量加减",
+        "步进器",
+        "份数"
+      ],
+      "notFor": "大范围数值 → input"
+    },
+    {
+      "id": "datepicker",
+      "name": "日期选择器 DatePicker",
+      "category": "信息录入组件",
+      "dir": "datepicker/",
+      "figma": "173:10016（173:10050 / 176:2315 / 1016:8395 / 173:10128 / 1781:11326 / 1781:11432）",
+      "foundationClass": ".gj-m-datepicker / .gj-m-calendar",
+      "preview": "preview/datepicker/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "日期",
+        "日期范围",
+        "起止时间",
+        "日历",
+        "年份",
+        "月份"
+      ],
+      "notFor": "时刻 → 组合时间选择",
+      "pageRules": [
+        "PR-007",
+        "PR-018"
+      ]
+    },
+    {
+      "id": "filter",
+      "name": "筛选 Filter",
+      "category": "信息录入组件",
+      "dir": "filter/",
+      "figma": "170:8294（170:8300 Filter_item/Filter_item / 170:8344 Filter_bar / 1792:14204 Filter_panel / 1792:14452 Filter_sheet）",
+      "foundationClass": ".gj-m-filter / .gj-m-filter-option",
+      "preview": "preview/filter/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "筛选栏",
+        "条件筛选",
+        "排序",
+        "下拉筛选"
+      ],
+      "notFor": "只有关键词 → searchbar",
+      "pageRules": [
+        "PR-006",
+        "PR-018"
+      ]
+    },
+    {
+      "id": "cascader",
+      "name": "级联选择器 Cascader",
+      "category": "信息录入组件",
+      "dir": "cascader/",
+      "figma": "58:4517（58:4532 / 58:4539 / 1027:10681 / 1037:11552 / 1026:9767 / 1792:13371 / 1792:13384）",
+      "foundationClass": ".gj-m-cascader / .gj-m-cascader-columns",
+      "preview": "preview/cascader/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "级联",
+        "省市区",
+        "多级分类"
+      ],
+      "notFor": "单层选项 → select"
+    },
+    {
+      "id": "image",
+      "name": "图片 Image",
+      "category": "信息录入组件",
+      "dir": "image/",
+      "figma": "58:1903（58:1904 / 58:1942 / 201:2578）",
+      "foundationClass": ".gj-m-image / .gj-m-image-viewer / .gj-m-image-upload / .gj-m-image-upload-grid",
+      "preview": "preview/image/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": [
+          "IM-M-002（暂不处理）：失败占位图标是未入库的矢量。"
+        ]
+      },
+      "scenes": [
+        "图片",
+        "缩略图",
+        "图片预览",
+        "签名图"
+      ],
+      "notFor": "图标 → icon"
+    },
+    {
+      "id": "upload",
+      "name": "文件上传 Upload",
+      "category": "信息录入组件",
+      "dir": "upload/",
+      "figma": "1114:815（1114:883 / 1114:890）",
+      "foundationClass": ".gj-m-upload / .gj-m-upload-item / .gj-m-upload-progress",
+      "preview": "preview/upload/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "上传",
+        "附件上传",
+        "文件上传",
+        "图片上传"
+      ],
+      "notFor": "只展示已有附件 → file-list"
+    },
+    {
+      "id": "file-list",
+      "name": "文件展示列表 File List",
+      "category": "数据展示组件",
+      "dir": "file-list/",
+      "preview": "preview/file-list/index.html",
+      "foundationClass": ".gj-m-file-list",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "published": true,
+        "previewVerified": true,
+        "pending": [
+          "FLS-M-001（待确认）：右侧操作图标 20、视觉间距 8，44 热区会重叠；文字 24/18 行高使行自然高度可达 62。"
+        ],
+        "previewVerifiedNote": "2026-10-16：375 / 320 两档逐个示例检查无横向溢出、无脚本错误。"
+      },
+      "scenes": [
+        "附件",
+        "文件列表",
+        "查看文件",
+        "下载文件"
+      ],
+      "notFor": "需要上传 → upload",
+      "pageRules": [
+        "PR-007"
+      ]
+    },
+    {
+      "id": "markdown",
+      "name": "Markdown 文章 Markdown Article",
+      "dir": "markdown/",
+      "figma": "1097:8 Markdown 内容组件，1098:8027 Markdown / Article",
+      "foundationClass": ".gj-m-markdown / .gj-m-markdown-article",
+      "references": "references/components/markdown/rules.md",
+      "preview": "preview/markdown/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "文章",
+        "知识库",
+        "富文本正文",
+        "研报"
+      ],
+      "notFor": "AI 对话中的回答 → ai-chat",
+      "pageRules": [
+        "PR-005",
+        "PR-016"
+      ]
+    },
+    {
+      "id": "form",
+      "name": "表单 Form",
+      "category": "信息录入组件",
+      "dir": "form/",
+      "figma": "155:2401（158:1010 / 158:874 / 1005:4307 / 1005:4328 / 1005:4739 / 1008:5184）",
+      "foundationClass": ".gj-m-form-card / .gj-m-form-item / .gj-m-form-label / .gj-m-form-actions",
+      "preview": "preview/form/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": [
+          "FM-M-009（暂不处理）：`Form_dateselect` 有 12 个变体，含“禁用 + 错误”组合；`Form_select` 只有 8 个"
+        ]
+      },
+      "scenes": [
+        "表单",
+        "字段标签",
+        "必填",
+        "分组表单",
+        "表单底部按钮"
+      ],
+      "pageRules": [
+        "PR-009",
+        "PR-010"
+      ]
+    },
+    {
+      "id": "slider",
+      "name": "滑块 Slider",
+      "category": "信息录入组件",
+      "dir": "slider/",
+      "figma": "1822:16186（1832:49 / 1008:4851 / 1008:4898）",
+      "foundationClass": ".gj-m-slider / .gj-m-slider-step / .gj-m-form-slider",
+      "preview": "preview/slider/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "滑块",
+        "区间调节",
+        "比例选择"
+      ],
+      "notFor": "精确数值 → input / stepper"
+    },
+    {
+      "id": "dialog",
+      "name": "弹窗 Dialog",
+      "category": "操作反馈组件",
+      "dir": "dialog/",
+      "figma": "58:5100 弹窗Dialog（161:4250 / 1037:12071 / 161:4104 / 58:4611 / 313:8560）",
+      "foundationClass": ".gj-m-dialog / .gj-m-popup.gj-m-popup-dialog",
+      "preview": "preview/dialog/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": []
+      },
+      "scenes": [
+        "弹窗",
+        "确认弹窗",
+        "底部弹层",
+        "二次确认",
+        "操作结果"
+      ],
+      "notFor": "轻量结果反馈 → notice（toast）"
+    },
+    {
+      "id": "notice",
+      "name": "提示 Notice",
+      "category": "操作反馈组件",
+      "dir": "notice/",
+      "preview": "preview/notice/index.html",
+      "foundationClass": ".gj-m-notice",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "published": true,
+        "prototypeOnly": true,
+        "pending": [],
+        "previewVerified": true,
+        "previewVerifiedNote": "2026-10-16：375 / 320 两档逐个示例检查无横向溢出、无脚本错误。"
+      },
+      "scenes": [
+        "提示",
+        "轻提示",
+        "Toast",
+        "行内提示",
+        "警示条"
+      ],
+      "notFor": "需要用户决定 → dialog",
+      "pageRules": [
+        "PR-018"
+      ]
+    },
+    {
+      "id": "empty",
+      "name": "空状态 Empty",
+      "category": "操作反馈组件",
+      "dir": "empty/",
+      "preview": "preview/empty/index.html",
+      "foundationClass": ".gj-m-empty",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "published": true,
+        "prototypeOnly": true,
+        "pending": [],
+        "previewVerified": true,
+        "previewVerifiedNote": "2026-10-16：375 / 320 两档逐个示例检查无横向溢出、无脚本错误。"
+      },
+      "scenes": [
+        "空状态",
+        "无数据",
+        "搜索无结果",
+        "网络异常",
+        "无权限"
+      ],
+      "pageRules": [
+        "PR-015"
+      ]
+    },
+    {
+      "id": "badge",
+      "name": "徽标 Badge",
+      "category": "操作反馈组件",
+      "dir": "badge/",
+      "figma": "155:2400（158:1331）",
+      "foundationClass": ".gj-m-badge / .gj-m-badge-anchor",
+      "preview": "preview/badge/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": [
+          "BD-M-003（暂不处理）：只有数字有大号，红点没有大号。"
+        ]
+      },
+      "scenes": [
+        "红点",
+        "数量角标",
+        "未读"
+      ],
+      "notFor": "状态说明 → tag"
+    },
+    {
+      "id": "skeleton",
+      "name": "骨架屏 Skeleton",
+      "category": "操作反馈组件",
+      "dir": "skeleton/",
+      "preview": "preview/skeleton/index.html",
+      "foundationClass": ".gj-m-skeleton",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "published": true,
+        "prototypeOnly": true,
+        "pending": [],
+        "previewVerified": true,
+        "previewVerifiedNote": "2026-10-16：375 / 320 两档逐个示例检查无横向溢出、无脚本错误。"
+      },
+      "scenes": [
+        "骨架屏",
+        "首次加载"
+      ],
+      "notFor": "局部刷新 → loading"
+    },
+    {
+      "id": "loading",
+      "name": "加载态 Loading",
+      "category": "操作反馈组件",
+      "dir": "loading/",
+      "preview": "preview/loading/index.html",
+      "foundationClass": ".gj-m-loading",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "published": true,
+        "prototypeOnly": true,
+        "pending": [],
+        "previewVerified": true,
+        "previewVerifiedNote": "2026-10-16：375 / 320 两档逐个示例检查无横向溢出、无脚本错误。"
+      },
+      "scenes": [
+        "加载中",
+        "下拉刷新",
+        "上拉加载",
+        "加载更多"
+      ],
+      "notFor": "首次整页加载 → skeleton"
+    },
+    {
+      "id": "mask",
+      "name": "蒙层 Mask",
+      "category": "操作反馈组件",
+      "dir": "mask/",
+      "figma": "161:5658（161:5659）",
+      "foundationClass": ".gj-m-mask",
+      "preview": "preview/mask/index.html",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "previewVerified": true,
+        "published": true,
+        "pending": [
+          "MK-M-002（部分修复）：命名：组件集 `mask` 小写；属性 `Opacity=45 / 60 / 80 / white` 把透明度和颜色混在"
+        ]
+      },
+      "scenes": [
+        "蒙层",
+        "遮罩"
+      ]
+    },
+    {
+      "id": "steps",
+      "name": "步骤条 Steps",
+      "category": "数据展示组件",
+      "dir": "steps/",
+      "preview": "preview/steps/index.html",
+      "foundationClass": ".gj-m-steps",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "published": true,
+        "prototypeOnly": true,
+        "pending": [],
+        "previewVerified": true,
+        "previewVerifiedNote": "2026-10-16：375 / 320 两档逐个示例检查无横向溢出、无脚本错误。"
+      },
+      "scenes": [
+        "步骤条",
+        "流程进度",
+        "审批流程",
+        "时间轴",
+        "处理记录"
+      ],
+      "notFor": "并列分类切换 → tabs",
+      "pageRules": [
+        "PR-007",
+        "PR-011"
+      ]
+    },
+    {
+      "id": "avatar",
+      "name": "头像 Avatar",
+      "category": "数据展示组件",
+      "dir": "avatar/",
+      "preview": "preview/avatar/index.html",
+      "foundationClass": ".gj-m-avatar",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "published": true,
+        "prototypeOnly": true,
+        "pending": [],
+        "previewVerified": true,
+        "previewVerifiedNote": "2026-10-16：375 / 320 两档逐个示例检查无横向溢出、无脚本错误。"
+      },
+      "scenes": [
+        "头像",
+        "用户头像",
+        "机构 Logo"
+      ]
+    },
+    {
+      "id": "metric",
+      "name": "数据指标 Metric",
+      "category": "数据展示组件",
+      "dir": "metric/",
+      "preview": "preview/metric/index.html",
+      "foundationClass": ".gj-m-metric",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "published": true,
+        "prototypeOnly": true,
+        "pending": [
+          "MT-M-002（暂不处理）：上涨 / 下跌箭头 `icf_Arrow_rotate_up / rotate_down`（Figma 21:22）不在"
+        ],
+        "previewVerified": true,
+        "previewVerifiedNote": "2026-10-16：375 / 320 两档逐个示例检查无横向溢出、无脚本错误。"
+      },
+      "scenes": [
+        "指标",
+        "数据卡",
+        "金额",
+        "统计数字",
+        "涨跌"
+      ],
+      "notFor": "多组数据趋势 → chart"
+    },
+    {
+      "id": "table",
+      "name": "表格 Table",
+      "category": "数据展示组件",
+      "dir": "table/",
+      "preview": "preview/table/index.html",
+      "foundationClass": ".gj-m-table",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "published": true,
+        "prototypeOnly": true,
+        "pending": [],
+        "previewVerified": true,
+        "previewVerifiedNote": "2026-10-16：375 / 320 两档逐个示例检查无横向溢出、无脚本错误。"
+      },
+      "scenes": [
+        "表格",
+        "多列数据",
+        "对比数据"
+      ],
+      "notFor": "对象列表 → listbar / card"
+    },
+    {
+      "id": "info-list",
+      "name": "信息列表 Info List",
+      "category": "数据展示组件",
+      "dir": "info-list/",
+      "preview": "preview/info-list/index.html",
+      "foundationClass": ".gj-m-info-list",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "published": true,
+        "prototypeOnly": true,
+        "pending": [],
+        "previewVerified": true,
+        "previewVerifiedNote": "2026-10-16：375 / 320 两档逐个示例检查无横向溢出、无脚本错误。"
+      },
+      "scenes": [
+        "信息列表",
+        "字段：值",
+        "详情信息",
+        "键值对"
+      ],
+      "notFor": "混合类型记录列表的字段 → 文本行（PR-011）",
+      "pageRules": [
+        "PR-005",
+        "PR-007",
+        "PR-011"
+      ]
+    },
+    {
+      "id": "card",
+      "name": "卡片 Card",
+      "category": "数据展示组件",
+      "dir": "card/",
+      "preview": "preview/card/index.html",
+      "foundationClass": ".gj-m-card",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "published": true,
+        "prototypeOnly": true,
+        "pending": [],
+        "previewVerified": true,
+        "previewVerifiedNote": "2026-10-16：375 / 320 两档逐个示例检查无横向溢出、无脚本错误。"
+      },
+      "scenes": [
+        "卡片",
+        "模块容器",
+        "信息分组",
+        "卡片列表",
+        "0 级卡片"
+      ],
+      "notFor": "卡片内再分组 → card-group，不嵌套卡片",
+      "pageRules": [
+        "PR-007",
+        "PR-008",
+        "PR-016",
+        "PR-017"
+      ]
+    },
+    {
+      "id": "chart",
+      "name": "图表 Chart",
+      "category": "数据展示组件",
+      "dir": "chart/",
+      "preview": "preview/chart/index.html",
+      "foundationClass": ".gj-m-chart-axes",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "published": true,
+        "prototypeOnly": true,
+        "partial": "坐标轴、图例",
+        "pending": [
+          "CH-M-001（部分修复）：命名：坐标轴单元已改 `chart_item/y_axis`、`chart_item/x_axis`（2026-10-1",
+          "LG-M-003（待确认）：环形图、饼图、分段进度条仍在用旧的 `1.Chart / Legend`（style=block, with data）",
+          "ID-M-001（待确认）：indicator 未做成变体（无 Series=Single/Multiple 属性），固定两个节点；节点用 Fram",
+          "TY-M-001（待确认）：曲线、横向正负柱、柱状百分比、环状进度、词云在移动端 Figma 暂无组件；其余类型只有旧版 `1.Chart / …`"
+        ],
+        "previewVerified": true,
+        "previewVerifiedNote": "2026-10-16：375 / 320 两档逐个示例检查无横向溢出、无脚本错误。"
+      },
+      "scenes": [
+        "图表",
+        "趋势",
+        "分布",
+        "占比",
+        "进度条",
+        "图例"
+      ],
+      "notFor": "单个数值 → metric",
+      "pageRules": [
+        "PR-003",
+        "PR-004"
+      ]
+    },
+    {
+      "id": "ai-chat",
+      "name": "AI 对话流",
+      "category": "业务组件",
+      "dir": "ai-chat/",
+      "preview": "preview/ai-chat/index.html",
+      "foundationClass": ".gj-m-ai-markdown",
+      "sourceNode": "955:474",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "published": true,
+        "prototypeOnly": true,
+        "partial": "Markdown 默认样式与气泡，非完整聊天服务",
+        "pending": [
+          "AI-M-006（暂不处理）：操作栏“朗读”使用 icf_system_sound-on，图标库中没有该图标。"
+        ],
+        "previewVerified": true,
+        "previewVerifiedNote": "2026-10-16：375 / 320 两档逐个示例检查无横向溢出、无脚本错误。"
+      },
+      "scenes": [
+        "AI 对话",
+        "智能助手",
+        "问答",
+        "对话气泡"
+      ],
+      "notFor": "普通文章 → markdown"
+    }
+  ],
+  "syncedAt": "2026-10-16（pending 由各组件 audit.md 未关闭项自动生成）"
+}

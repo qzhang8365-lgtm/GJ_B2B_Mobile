@@ -1,0 +1,206 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "card",
+  "figmaComponent": "卡片Card（58:791），card_item/header_h1、card_item/header_h2",
+  "prototypeClass": "gj-m-card",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "Card": "section.gj-m-card",
+    "Subtitle": "p.gj-m-card-subtitle（放在 .gj-m-card-head 内，标题行之后）",
+    "Slot": ".gj-m-card-body",
+    "card_item/header_h1": ".gj-m-card-header > h3.gj-m-card-title",
+    "card_item/header_h1 Icon=true": ".gj-m-card-header > .gj-icon.gj-m-card-icon（标题前）",
+    "card_item/header_h2": ".gj-m-card-header.gj-m-card-header-h2 > h4.gj-m-card-title",
+    "card_item/header_h2 Bar=true": ".gj-m-card-header-h2 > span.gj-m-card-bar（标题前）",
+    "Action=arrow": "标题行改为 a.gj-m-card-header，末尾 span.gj-m-card-arrow",
+    "Action=more": "标题行末尾 button.gj-m-text-button.gj-m-text-button-small.gj-m-text-button-blue",
+    "Action=tag": "标题行末尾 span.gj-m-tag（一级）/ span.gj-m-tag.gj-m-tag-small（二级）",
+    "卡片内分组（网站补充）": ".gj-m-card-group > .gj-m-card-header-h2 + 内容",
+    "0 级卡片（2026-10-19）": ".gj-m-card-l0（可与 .gj-m-card 合用）",
+    "0 级卡片贴顶（2026-10-19）": ".gj-m-card-l0.gj-m-card-l0-top（页面首个 0 级卡片紧贴导航：上两角直角）"
+  },
+  "valueMap": {
+    "level1": "白底、圆角 12（--Radius-LG）、内边距 16；标题 H4 16/24；头部到内容 16；卡片间距 12；页面左右 16",
+    "level0": "通栏：左右外边距 0、圆角 16（--Radius-XL）、内边距 16；页面首个 0 级卡片贴住导航下沿",
+    "header_h2": "标题 H5 14/22；竖条 3×12 圆角 4；组与组间距 16，标题到内容文字至少 8",
+    "subtitle": "P5 12/18 Text/Tiatery，标题到副标题 4",
+    "icon": "20，Text/blue",
+    "arrow": "icf_Arrow_right 20，Text/Tiatery，占位 24；整行热区高 44"
+  },
+  "tokenMap": {
+    "background": "Background/Container（--ds-background-container）",
+    "radius.level1": "--Radius-LG（12）",
+    "radius.level0": "--Radius-XL（16）",
+    "padding": "--space-card-l1-padding / --space-card-l0-padding（16）",
+    "gap.cards": "--space-card-l1-gap（12）",
+    "gap.section": "--space-card-l1-section-gap（16）",
+    "title": "Text/Primary（--ds-text-primary）",
+    "subtitle": "Text/Tiatery（--ds-text-tiatery）",
+    "icon": "Text/blue（--ds-text-blue）",
+    "bar": "Brand/GJ_Blue（--ds-brand-gj-blue）",
+    "arrow": "Text/Tiatery"
+  },
+  "assetMap": {
+    "arrow": "{ROOT}assets/icons/iconfont/icf_Arrow_right.svg",
+    "titleIcon": "按业务从图标库选取，20，蓝色",
+    "colorRule": "图标用 currentColor"
+  },
+  "runtimeMap": {
+    "root": "section.gj-m-card",
+    "head": ".gj-m-card-head",
+    "header": ".gj-m-card-header",
+    "title": ".gj-m-card-title",
+    "subtitle": ".gj-m-card-subtitle",
+    "body": ".gj-m-card-body",
+    "group": ".gj-m-card-group",
+    "level0": ".gj-m-card-l0",
+    "level2": ".gj-m-card-l2",
+    "record": ".gj-m-card-record",
+    "compact": ".gj-m-card-compact"
+  },
+  "markup": {
+    "basic": "<section class=\"gj-m-card\"><div class=\"gj-m-card-head\"><div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">报销信息</h3></div></div><div class=\"gj-m-card-body\">…</div></section>",
+    "subtitle": "<section class=\"gj-m-card\"><div class=\"gj-m-card-head\"><div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">我的渠道</h3></div><p class=\"gj-m-card-subtitle\">数据截至本周 · 每日 9:00 更新</p></div><div class=\"gj-m-card-body\">…</div></section>",
+    "icon": "<section class=\"gj-m-card\"><div class=\"gj-m-card-head\"><div class=\"gj-m-card-header\"><span class=\"gj-icon gj-m-card-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_file_document-2-line.svg')\" aria-hidden=\"true\"></span><h3 class=\"gj-m-card-title\">用印授权委托书</h3></div></div><div class=\"gj-m-card-body\">…</div></section>",
+    "arrow": "<span class=\"gj-m-card-arrow\" aria-hidden=\"true\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span></span>",
+    "more": "<section class=\"gj-m-card\"><div class=\"gj-m-card-head\"><div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">今日拜访</h3><button type=\"button\" class=\"gj-m-text-button gj-m-text-button-small gj-m-text-button-blue\">查看更多</button></div></div><div class=\"gj-m-card-body\">…</div></section>",
+    "tag": "<section class=\"gj-m-card\"><div class=\"gj-m-card-head\"><div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">客户拜访差旅报销</h3><span class=\"gj-m-tag gj-m-tag-orange gj-m-tag-line\">待我审批</span></div></div><div class=\"gj-m-card-body\">…</div></section>",
+    "group": "<div class=\"gj-m-card-group\"><div class=\"gj-m-card-header gj-m-card-header-h2\"><span class=\"gj-m-card-bar\" aria-hidden=\"true\"></span><h4 class=\"gj-m-card-title\">过程跟进</h4></div>…</div>",
+    "level0": "<section class=\"gj-m-card gj-m-card-l0\"><div class=\"gj-m-card-head\"><div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">相关案例</h3></div></div><div class=\"gj-m-card-body\"><div class=\"gj-m-list\">…</div></div></section>",
+    "pageStack": "<main style=\"display:flex;flex-direction:column;gap:var(--space-card-l1-gap);padding:var(--space-12) var(--space-page-margin-x) var(--space-24)\"><section class=\"gj-m-card\">…</section><section class=\"gj-m-card\">…</section></main>",
+    "fromPreview_card_body_card_group": "<section class=\"gj-m-card\"><div class=\"gj-m-card-head\"><a class=\"gj-m-card-header\" href=\"#\" data-go=\"账户信息\"><span class=\"gj-icon gj-m-card-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_user_idcard-fill.svg')\" aria-hidden=\"true\"></span><h3 class=\"gj-m-card-title\">账户信息</h3><span class=\"gj-m-card-arrow\" aria-hidden=\"true\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg');width:0.2rem;height:0.2rem\" aria-hidden=\"true\"></span></span></a><p class=\"gj-m-card-subtitle\">开户日期 2019-06-18</p></div><div class=\"gj-m-card-body\"><div class=\"gj-m-card-group\"><div class=\"gj-m-card-header gj-m-card-header-h2\"><span class=\"gj-m-card-bar\" aria-hidden=\"true\"></span><h4 class=\"gj-m-card-title\">基本信息</h4></div><dl class=\"gj-m-info-list gj-m-info-list-plain\" style=\"margin:-.04rem 0\"><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">证件类型</dt><dd class=\"gj-m-info-value\">居民身份证</dd></div><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">联系电话</dt><dd class=\"gj-m-info-value\">173****0128</dd></div></dl></div><div class=\"gj-m-card-group\"><div class=\"gj-m-card-header gj-m-card-header-h2\"><span class=\"gj-m-card-bar\" aria-hidden=\"true\"></span><h4 class=\"gj-m-card-title\">风险测评</h4></div><dl class=\"gj-m-info-list gj-m-info-list-plain\" style=\"margin:-.04rem 0\"><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">风险等级</dt><dd class=\"gj-m-info-value\">R3 · 平衡型</dd></div><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">有效期至</dt><dd class=\"gj-m-info-value\">2026-06-17</dd></div></dl></div></div></section>",
+    "card": "<section class=\"gj-m-card\"><div class=\"gj-m-card-head\"><div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">报销信息</h3></div><p class=\"gj-m-card-subtitle\">数据截至本周</p></div><div class=\"gj-m-card-body\">…</div></section>",
+    "header": "<div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">重点关注</h3></div>",
+    "link": "<a class=\"gj-m-card\" href=\"javascript:void 0\"><div class=\"gj-m-card-head\"><div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">张一鸣</h3><span class=\"gj-m-tag gj-m-tag-green\">正常</span></div><p class=\"gj-m-card-subtitle\">KH20231000 · 最近联系 3 天前</p></div><div class=\"gj-m-card-body\">…</div></a>",
+    "card-l2 二级卡片（一级卡片内灰底块）": "<section class=\"gj-m-card\"><div class=\"gj-m-card-head\"><div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">解决方案</h3></div></div><div class=\"gj-m-card-body\"><p class=\"gj-m-card-l2\">提供三方存管专项开户礼包方案。</p></div></section>",
+    "block-l3 三级块（格子、标签块）": "<div class=\"gj-m-block-l3\">发票 3</div>",
+    "level2": "<div class=\"gj-m-card-l2\"><p>企业名称</p><p>持股比例：3.20%</p></div>",
+    "record": "<div class=\"gj-m-card-l2 gj-m-card-record\"><div class=\"gj-m-card-header gj-m-card-header-h2\"><h4 class=\"gj-m-card-title\">企业名称</h4><span class=\"gj-m-tag gj-m-tag-small gj-m-tag-red\">未上市</span></div><div class=\"gj-m-card-record-fields\"><p>持股比例：3.20%</p><p>认缴出资额：36万元</p></div><div class=\"gj-m-card-record-actions\"><button type=\"button\" class=\"gj-m-button gj-m-button-tertiary\">编辑</button></div></div>",
+    "compact": "<section class=\"gj-m-card gj-m-card-compact\"><div class=\"gj-m-card-head\"><div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">本轮申报周期</h3></div></div><div class=\"gj-m-card-body\">周期信息</div></section>",
+    "selectionDialog": "<section class=\"gj-m-card gj-m-card-selection\"><div class=\"gj-m-card-selection-head\"><div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">选择上传对象</h3></div></div><div class=\"gj-m-selection\" role=\"radiogroup\" aria-label=\"上传对象\"></div><div class=\"gj-m-popup-footer\"><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary\">确定</button></div></section>",
+    "sectioned": "<section class=\"gj-m-card gj-m-card-sectioned\" id=\"declaration-cycle\"><div class=\"gj-m-card-summary\"><div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">本轮申报</h3></div><div class=\"gj-m-card-record-fields\"><p>申报周期：2026年第二季度</p></div></div><div class=\"gj-m-card-section-divider\"><div class=\"gj-m-divider gj-m-divider-plain\" role=\"separator\"></div></div><div>股权申报入口</div><div class=\"gj-m-card-section-divider\"><div class=\"gj-m-divider gj-m-divider-plain\" role=\"separator\"></div></div><div>账户申报入口</div></section>"
+  },
+  "interactionMap": {
+    "arrow": "整个标题行可点，进入详情",
+    "more": "只跳到列表全集",
+    "tag": "只表达状态，不可点"
+  },
+  "accessibility": {
+    "title": "一级 h3、二级 h4，保持标题层级",
+    "arrow": "a.gj-m-card-header 需要可读名称（标题文字或 aria-label）",
+    "decoration": "图标、竖条 aria-hidden=\"true\""
+  },
+  "composition": {
+    "rightAction": "箭头 / 查看更多 / 标签三选一，不同时放箭头和查看更多",
+    "nesting": "一级卡片内，包含多字段的独立记录组成卡片列表时，可嵌套二级卡片 gj-m-card-l2；普通字段分组仍用二级标题，不重复嵌套一级卡片。",
+    "sameLevel": "同一页面同一起始层级只用一种承载方式（无卡片 / 0 级 / 一级）",
+    "inner": "卡片内信息列表、文件列表、步骤条、通栏列表由基座抵消多余内边距，头尾留白按 16",
+    "record": "标题与标签不换行，标题收缩省略，标签保留；字段行距4，信息到操作区8，操作靠右。",
+    "compact": "2026-10-20设计方已确认（PR-029）：周期/上下文、简短说明采用gj-m-card-compact，四周16、头部到内容8、相关信息行距4；仅标题+单一操作时用header.right放Small按钮且hasBody=false；不改变复杂标准卡片的16间距。",
+    "selectionDialog": "居中选择弹窗的列表直接放容器内，不再包card-body；标题、选项文字、分割线、底部按钮都只缩进16。",
+    "actionSize": "普通卡片操作Medium（size省略），紧凑同行Small（size=small），通栏/底部重要操作Large（size=large）；不改变多选按钮组规范。",
+    "inlineTypography": "PR-032：同一信息行字段名和值优先同字号/行高，用Text/Tiatery与Text/Primary区分，不只缩小字段名"
+  },
+  "pageRules": {
+    "PR-007": "容器留白只算一次：卡片头尾 16，内部列表不再叠加",
+    "PR-008": "一级卡片与卡片模式列表圆角 12",
+    "PR-016": "同一页面同一层级模块用同一种承载方式；0 级卡片首个贴住导航",
+    "PR-017": "卡片底部操作按钮放右下角",
+    "PR-026": "多字段记录组成列表时，允许一级卡片嵌套二级卡片；内边距12、圆角8、卡片间距8",
+    "PR-027": "标题与同行标签不换行，保留标签并省略标题；特殊业务另行规定",
+    "PR-028": "紧凑二级记录字段行距4、分区8、信息到操作8，留白不重复",
+    "PR-029": "按复杂度选标准16或紧凑8；简单信息行距4；仅标题和操作同行，不建空body，不重复叠加间距",
+    "PR-031": "卡片内操作默认Medium；紧凑同行Small；通栏和底部重点操作Large",
+    "PR-032": "卡片信息列表同一行优先同字号与行高",
+    "PR-034": "先拆解参考图区域边界，再选组件；sectioned保留概要与任务区分隔"
+  },
+  "pending": {},
+  "markupNote": "markup 中 fromPreview_* 片段由 scripts/check-mapping.cjs 从预览页实际渲染补录（2026-10-19），与预览页一致；其余为手写的常用写法。",
+  "templates": {
+    "card": {
+      "tpl": "<section class=\"gj-m-card{{#cls}} {{cls}}{{/cls}}\"{{#id}} id=\"{{id}}\"{{/id}}{{{attrs}}}>{{#head}}<div class=\"gj-m-card-head\">{{{head}}}{{#sub}}<p class=\"gj-m-card-subtitle\">{{sub}}</p>{{/sub}}</div>{{/head}}{{#hasBody}}<div class=\"gj-m-card-body\">{{{body}}}</div>{{/hasBody}}{{{content}}}</section>",
+      "params": "head：card.header 渲染结果；sub：副标题；hasBody / body：内容区 HTML；content：不分头部 / 内容区的自定义内容（如勾选卡片）；cls / attrs：附加类与属性；cls=gj-m-card-compact：已确认紧凑变体（PR-029）；仅标题和操作时hasBody=false，head由header渲染并在right放Small按钮",
+      "example": {
+        "head": "<div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">报销信息</h3></div>",
+        "sub": "数据截至本周",
+        "hasBody": true,
+        "body": "…"
+      }
+    },
+    "header": {
+      "tpl": "<div class=\"gj-m-card-header{{#lv2}} gj-m-card-header-h2{{/lv2}}\">{{#icon}}<span class=\"gj-icon gj-m-card-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/{{icon}}.svg')\" aria-hidden=\"true\"></span>{{/icon}}{{#bar}}<span class=\"gj-m-card-bar\" aria-hidden=\"true\"></span>{{/bar}}{{#lv2}}<h4 class=\"gj-m-card-title\">{{#titleHtml}}{{{titleHtml}}}{{/titleHtml}}{{^titleHtml}}{{title}}{{/titleHtml}}</h4>{{/lv2}}{{^lv2}}<h3 class=\"gj-m-card-title\">{{#titleHtml}}{{{titleHtml}}}{{/titleHtml}}{{^titleHtml}}{{title}}{{/titleHtml}}</h3>{{/lv2}}{{{right}}}</div>",
+      "example": {
+        "title": "重点关注",
+        "icon": "",
+        "right": ""
+      },
+      "params": "lv2：二级标题；icon：一级标题前图标名；bar：二级竖条；right：右侧 HTML（card.arrow / 文字按钮 / 标签）；titleHtml：标题 HTML（含搜索高亮时用，调用方转义），优先于 title"
+    },
+    "arrow": {
+      "tpl": "<span class=\"gj-m-card-arrow\" aria-hidden=\"true\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_right.svg')\" aria-hidden=\"true\"></span></span>",
+      "example": {},
+      "params": "标题行右侧箭头（整行可点时）"
+    },
+    "group": {
+      "tpl": "<div class=\"gj-m-card-group\">{{{header}}}{{{body}}}</div>",
+      "example": {
+        "header": "<div class=\"gj-m-card-header gj-m-card-header-h2\"><span class=\"gj-m-card-bar\" aria-hidden=\"true\"></span><h4 class=\"gj-m-card-title\">过程跟进</h4></div>",
+        "body": "…"
+      },
+      "params": "卡片内分组：header 为 card.header（lv2）"
+    },
+    "link": {
+      "tpl": "<a class=\"gj-m-card{{#cls}} {{cls}}{{/cls}}\" href=\"javascript:void 0\"{{{attrs}}}>{{#head}}<div class=\"gj-m-card-head\">{{{head}}}{{#sub}}<p class=\"gj-m-card-subtitle\">{{{sub}}}</p>{{/sub}}</div>{{/head}}{{#hasBody}}<div class=\"gj-m-card-body\">{{{body}}}</div>{{/hasBody}}</a>",
+      "params": "整卡可点（列表卡片）：同 card.card，外层为 <a>；sub 为 HTML（可含搜索高亮）；cls 为页面附加类",
+      "example": {
+        "head": "<div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">张一鸣</h3><span class=\"gj-m-tag gj-m-tag-green\">正常</span></div>",
+        "sub": "KH20231000 · 最近联系 3 天前",
+        "hasBody": true,
+        "body": "…"
+      }
+    },
+    "level2": {
+      "tpl": "<div class=\"gj-m-card-l2\"{{{attrs}}}>{{{content}}}</div>",
+      "example": {
+        "content": "<p>企业名称</p><p>持股比例：3.20%</p>",
+        "attrs": ""
+      },
+      "params": "一级卡片内的多字段记录；content 为标题、字段与操作 HTML；attrs 为附加可访问属性。外部列表间距使用 space-card-l2-gap。"
+    },
+    "record": {
+      "tpl": "<div class=\"gj-m-card-l2 gj-m-card-record\">{{{header}}}<div class=\"gj-m-card-record-fields\">{{{fields}}}</div>{{#actions}}<div class=\"gj-m-card-record-actions\">{{{actions}}}</div>{{/actions}}</div>",
+      "example": {
+        "header": "<div class=\"gj-m-card-header gj-m-card-header-h2\"><h4 class=\"gj-m-card-title\">企业名称</h4><span class=\"gj-m-tag gj-m-tag-small gj-m-tag-red\">未上市</span></div>",
+        "fields": "<p>持股比例：3.20%</p><p>认缴出资额：36万元</p>",
+        "actions": "<button type=\"button\" class=\"gj-m-button gj-m-button-tertiary\">编辑</button>"
+      },
+      "params": "多字段二级记录卡片：header 使用 card.header（lv2）；同行标签由 right 传入，标题单行省略；fields 为字段行（行间距4）；actions 可选操作区（距信息8，无额外 margin）。"
+    },
+    "selectionDialog": {
+      "tpl": "<section class=\"gj-m-card gj-m-card-selection\"><div class=\"gj-m-card-selection-head\">{{{header}}}</div>{{{list}}}<div class=\"gj-m-popup-footer\">{{{actions}}}</div></section>",
+      "example": {
+        "header": "<div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">选择上传对象</h3></div>",
+        "list": "<div class=\"gj-m-selection\" role=\"radiogroup\" aria-label=\"上传对象\"></div>",
+        "actions": "<button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary\">确定</button>"
+      },
+      "params": "居中选择列表弹窗组合，列表直接作为容器子项；标题和底部操作各自16，列表仅由原列表行提供左右16；不可再包带水平内边距的body。外层负责dialog语义、定位、锁滚动和焦点。"
+    },
+    "sectioned": {
+      "tpl": "<section class=\"gj-m-card gj-m-card-sectioned\"{{#id}} id=\"{{id}}\"{{/id}}><div class=\"gj-m-card-summary\">{{{header}}}<div class=\"gj-m-card-record-fields\">{{{summary}}}</div></div>{{#sections}}<div class=\"gj-m-card-section-divider\"><div class=\"gj-m-divider gj-m-divider-plain\" role=\"separator\"></div></div>{{{content}}}{{/sections}}</section>",
+      "example": {
+        "id": "declaration-cycle",
+        "header": "<div class=\"gj-m-card-header\"><h3 class=\"gj-m-card-title\">本轮申报</h3></div>",
+        "summary": "<p>申报周期：2026年第二季度</p>",
+        "sections": [
+          {
+            "content": "<div>股权申报入口</div>"
+          },
+          {
+            "content": "<div>账户申报入口</div>"
+          }
+        ]
+      },
+      "params": "还原参考稿的概要区+独立任务区：summary为概要字段，sections顺序与参考稿一致，各区前用Divider基座按内容边界左右16缩进分隔，保留分区关系，不照搬旧截图线宽；任务content用ListBar普通容器（非inCard），让任务行自身提供左右16/上下12。不加入card-body的第二次内边距。"
+    }
+  }
+}

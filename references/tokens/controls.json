@@ -1,0 +1,147 @@
+{
+  "source": {
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "collectionId": "VariableCollectionId:7:2",
+    "modeId": "11:0",
+    "modeName": "Mobile",
+    "publication": "not verified"
+  },
+  "controls": [
+    {
+      "name": "Components/control-XXS",
+      "cssVariable": "--control-XXS",
+      "figmaId": "VariableID:1613:11707",
+      "figmaKey": "7c4c7d6419b408ad8f517032bd8c1db460fded58",
+      "value": 20,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Components/control-XXS",
+        "variableId": "VariableID:1613:11707",
+        "referencePage": "11:1610"
+      },
+      "scope": "component control height",
+      "publication": "not verified"
+    },
+    {
+      "name": "Components/control-XS",
+      "cssVariable": "--control-XS",
+      "figmaId": "VariableID:1613:11708",
+      "figmaKey": "4d43c77fd82ce71c9de899f78c8c05f2b253a7e0",
+      "value": 24,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Components/control-XS",
+        "variableId": "VariableID:1613:11708",
+        "referencePage": "11:1610"
+      },
+      "scope": "component control height",
+      "publication": "not verified"
+    },
+    {
+      "name": "Components/control-S",
+      "cssVariable": "--control-S",
+      "figmaId": "VariableID:11:1609",
+      "figmaKey": "c650d1f20473ef135532afb32669486c9f63d881",
+      "value": 28,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Components/control-S",
+        "variableId": "VariableID:11:1609",
+        "referencePage": "11:1610"
+      },
+      "scope": "component control height",
+      "publication": "not verified"
+    },
+    {
+      "name": "Components/control-M",
+      "cssVariable": "--control-M",
+      "figmaId": "VariableID:7:250",
+      "figmaKey": "8b68caaca5bd195c079cf6318d9f9384fa0a8260",
+      "value": 32,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Components/control-M",
+        "variableId": "VariableID:7:250",
+        "referencePage": "11:1610"
+      },
+      "scope": "component control height",
+      "publication": "not verified"
+    },
+    {
+      "name": "Components/control-ML",
+      "cssVariable": "--control-ML",
+      "figmaId": "VariableID:7:251",
+      "figmaKey": "2a9e43cf72177bc6039a734f6f774d52a4151fa4",
+      "value": 36,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Components/control-ML",
+        "variableId": "VariableID:7:251",
+        "referencePage": "11:1610"
+      },
+      "scope": "component control height",
+      "publication": "not verified"
+    },
+    {
+      "name": "Components/control-L",
+      "cssVariable": "--control-L",
+      "figmaId": "VariableID:7:252",
+      "figmaKey": "15db388dad97552194285e49486fbfc846dba023",
+      "value": 40,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Components/control-L",
+        "variableId": "VariableID:7:252",
+        "referencePage": "11:1610"
+      },
+      "scope": "component control height",
+      "publication": "not verified"
+    },
+    {
+      "name": "Components/control-XL",
+      "cssVariable": "--control-XL",
+      "figmaId": "VariableID:7:253",
+      "figmaKey": "6bec2bccb867198bd5284037563a122025eb6cdd",
+      "value": 44,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Components/control-XL",
+        "variableId": "VariableID:7:253",
+        "referencePage": "11:1610"
+      },
+      "scope": "component control height",
+      "publication": "not verified"
+    },
+    {
+      "name": "Components/control-XXL",
+      "cssVariable": "--control-XXL",
+      "figmaId": "VariableID:7:254",
+      "figmaKey": "dd2514d2b07b6bca8f3595988a52b5fd849bc838",
+      "value": 48,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Components/control-XXL",
+        "variableId": "VariableID:7:254",
+        "referencePage": "11:1610"
+      },
+      "scope": "component control height",
+      "publication": "not verified"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "image",
+  "figmaComponent": "Image（58:1904）/ Image_viewer（58:1942）/ Image_upload（201:2578）",
+  "prototypeClass": "gj-m-image",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "image Ratio=4:3": "div.gj-m-image > img",
+    "Ratio=16:9 / 1:1": ".gj-m-image-16x9 / .gj-m-image-1x1",
+    "Fallback=true": ".gj-m-image.is-error",
+    "可预览缩略图": "button.gj-m-image",
+    "imageViewer": ".gj-m-image-viewer[role=dialog] > .gj-m-image-viewer-track > .gj-m-image",
+    "Multiple=true": "+ .gj-m-image-viewer-count",
+    "State=Loading": ".gj-m-image.is-loading",
+    "Image_upload size=Small|Medium|Large": "button.gj-m-image-upload(.gj-m-image-upload-160|-240) > .gj-icon",
+    "上传宫格（组件说明示意）": ".gj-m-image-upload-grid > .gj-m-image-upload-item(img + button.gj-m-image-upload-remove) … + button.gj-m-image-upload",
+    "Image_item/Upload_item State=removable / readonly / add / error / uploading": ".gj-m-image-upload-item(+ .gj-m-image-upload-remove) / .gj-m-image-upload-item（无删除） / .gj-m-image-upload / .gj-m-image-upload-item.is-error / .gj-m-image-upload-item.is-loading"
+  },
+  "valueMap": {
+    "image": "{\"ratios\": \"4:3（默认）/ 16:9 / 1:1，宽度随容器\", \"fit\": \"默认 cover；完整展示 contain\", \"fallback\": \"Background/Background + 图标 48 Text/disable 居中\", \"loading\": \"Background/Background + icf_system_loading 40 Text/disable 居中\", \"radius\": \"8（正常 / 加载中 / 失败一致）\"}",
+    "viewer": "{\"mask\": \"Background/MK_60\", \"image\": \"按宽度居中\", \"count\": \"多图顶部页码 P3 14/22 白色（Figma 未绑定，网站 Text/reversal）\"}",
+    "upload": "{\"sizes\": \"Small 120 / Medium 160 / Large 240，圆角均为 8\", \"style\": \"Background/Background + 1px 虚线（8,8）Border/hover\", \"icon\": \"icf_system_add 48 Text/disable\"}",
+    "uploadGrid": "{\"layout\": \"容器宽度扣除卡片内边距后等分三列，列距 / 行距 8（下限），格子 1:1（设计方确认）\", \"item\": \"占满一列、1:1，图片 cover 圆角 8；删除 icf_system_close-circle-fill 20（Text/Secondary 圆 + Text/reversal 叉）偏移 8，热区 44；上传中 icf_system_loading 36、失败 icf_system_close-md 36，Text/disable，Background/Background\", \"entry\": \"占满一列、1:1 虚线框，加号 36\"}"
+  },
+  "tokenMap": {
+    "Background/Background": "--ds-background-background",
+    "Text/disable": "--ds-text-disable",
+    "Border/hover": "--ds-border-hover",
+    "Text/reversal": "--ds-text-reversal",
+    "Radius-MD / LG / XL": "--Radius-MD / --Radius-LG / --Radius-XL",
+    "Background/MK_60": "--ds-background-mk-60"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-image",
+    "viewer": ".gj-m-image-viewer",
+    "count": ".gj-m-image-viewer-count",
+    "upload": ".gj-m-image-upload"
+  },
+  "markup": {
+    "image": "<div class=\"gj-m-image \"><img src=\"{ROOT}assets/images/samples/sample-a.jpg\" alt=\"示例图片\" loading=\"lazy\"></div>",
+    "ratio169": "<div class=\"gj-m-image gj-m-image-16x9\"><img src=\"{ROOT}assets/images/samples/sample-b.jpg\" alt=\"活动海报\" loading=\"lazy\"></div>",
+    "error": "<div class=\"gj-m-image is-error\" role=\"img\" aria-label=\"图片加载失败\"></div>",
+    "upload": "<button type=\"button\" class=\"gj-m-image-upload\" aria-label=\"上传图片（Small 120）\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button>",
+    "viewerCount": "<div class=\"gj-m-image-viewer-count\" aria-live=\"polite\">1 / 4</div>",
+    "fromPreview_image_contain": "<div class=\"gj-m-image gj-m-image-16x9 gj-m-image-contain\"><img src=\"assets/images/samples/sample-b.jpg\" alt=\"示例图片\" loading=\"lazy\"></div>",
+    "fromPreview_image_upload_240": "<button type=\"button\" class=\"gj-m-image-upload gj-m-image-upload-240\" aria-label=\"上传图片（Large 240）\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button>"
+  },
+  "accessibility": {
+    "img": "有意义的图片写 alt；失败占位 role=\"img\" + aria-label",
+    "upload": "上传按钮 aria-label 说明用途"
+  },
+  "composition": {
+    "ratio": "4:3 默认，16:9 / 1:1 可选，宽度随容器",
+    "grid": "上传网格三列等分，列距 / 行距 8，格子 1:1"
+  },
+  "pageRules": {},
+  "pending": {
+    "IM-M-002": "失败占位图标是未入库矢量，暂不处理"
+  },
+  "markupNote": "markup 中 fromPreview_* 片段由 scripts/check-mapping.cjs 从预览页实际渲染补录（2026-10-19），与预览页一致；其余为手写的常用写法。"
+}

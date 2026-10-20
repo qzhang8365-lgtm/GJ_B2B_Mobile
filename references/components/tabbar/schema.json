@@ -1,0 +1,220 @@
+{
+  "id": "tabbar",
+  "name": "底部导航 TabBar",
+  "source": {
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "58:552",
+    "itemSet": "58:564",
+    "barSet": "58:611",
+    "usage": "997:73",
+    "full": "994:934",
+    "extractedAt": "2026-10-09",
+    "readOnly": true
+  },
+  "prototypeOnly": true,
+  "variants": [
+    {
+      "id": "58:564",
+      "variants": [
+        {
+          "id": "58:565",
+          "properties": {
+            "Active": "true",
+            "Icon": "true",
+            "Badge": "false",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:569",
+          "properties": {
+            "Active": "true",
+            "Icon": "true",
+            "Badge": "true",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:574",
+          "properties": {
+            "Active": "false",
+            "Icon": "true",
+            "Badge": "false",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:578",
+          "properties": {
+            "Active": "false",
+            "Icon": "true",
+            "Badge": "true",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:583",
+          "properties": {
+            "Active": "true",
+            "Icon": "false",
+            "Badge": "false",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:586",
+          "properties": {
+            "Active": "true",
+            "Icon": "false",
+            "Badge": "true",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:590",
+          "properties": {
+            "Active": "false",
+            "Icon": "false",
+            "Badge": "false",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:593",
+          "properties": {
+            "Active": "false",
+            "Icon": "false",
+            "Badge": "true",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:597",
+          "properties": {
+            "Active": "true",
+            "Icon": "false",
+            "Badge": "false",
+            "Title": "false"
+          }
+        },
+        {
+          "id": "58:600",
+          "properties": {
+            "Active": "true",
+            "Icon": "false",
+            "Badge": "true",
+            "Title": "false"
+          }
+        },
+        {
+          "id": "58:604",
+          "properties": {
+            "Active": "false",
+            "Icon": "false",
+            "Badge": "false",
+            "Title": "false"
+          }
+        },
+        {
+          "id": "58:607",
+          "properties": {
+            "Active": "false",
+            "Icon": "false",
+            "Badge": "true",
+            "Title": "false"
+          }
+        }
+      ]
+    },
+    {
+      "id": "58:611",
+      "variants": [
+        {
+          "id": "58:612",
+          "properties": {
+            "Content": "icon+text"
+          }
+        },
+        {
+          "id": "58:617",
+          "properties": {
+            "Content": "text"
+          }
+        },
+        {
+          "id": "58:622",
+          "properties": {
+            "Content": "icon"
+          }
+        }
+      ]
+    }
+  ],
+  "layout": {
+    "height": 56,
+    "padding": 8,
+    "iconSize": 24,
+    "iconTextGap": 0,
+    "items": "等宽，推荐3–5，最多5",
+    "safeAreaDemo": 34,
+    "homeIndicator": {
+      "width": 144,
+      "height": 5,
+      "bottom": 8
+    }
+  },
+  "text": {
+    "iconText": "H8-CN-S 10/14",
+    "textOnly": "H5-CN-S 14/22"
+  },
+  "colors": {
+    "active": "Text/blue",
+    "default": "Text/Secondary",
+    "background": "Background/Container",
+    "badge": "Feedback/error&rise"
+  },
+  "badge": {
+    "type": "dot",
+    "size": 8,
+    "offset": "图标top -4、right -4；纯文字随标签右侧"
+  },
+  "pending": [],
+  "ordering": {
+    "personalEntry": "若存在当前用户个人信息、账户或个人主页入口，必须为最后一项（最右侧）",
+    "examples": [
+      "我的",
+      "账户",
+      "个人中心",
+      "个人主页"
+    ],
+    "basis": "2026-10-09 用户明确确认",
+    "scope": "所有内容形态及入口数量；按业务语义识别；数量或权限变化后仍须保持",
+    "others": "默认主要入口最左，个人入口最右，其余入口按业务优先级稳定排列在中间",
+    "primaryEntry": "若存在代表系统默认进入页面的主要入口，必须为第一项（最左侧）",
+    "primaryExamples": [
+      "主页",
+      "Home",
+      "首页",
+      "工作台"
+    ]
+  },
+  "auditClosure": {
+    "TAB-M-001": {
+      "date": "2026-10-09",
+      "decision": "纯图标语义显示图标；Figma属性应为Icon=true、Title=false",
+      "basis": "用户确认",
+      "figmaVerified": false
+    },
+    "TAB-M-002": {
+      "date": "2026-10-09",
+      "decision": "手势条水平居中，仅在交互预览中展示；真实H5由系统提供",
+      "basis": "用户确认",
+      "figmaVerified": false
+    },
+    "TAB-M-003": {
+      "date": "2026-10-09",
+      "decision": "自绘H5内容高按56设计值换算rem，热区至少44px；原生TabBar使用系统高度，安全区另算",
+      "basis": "用户确认"
+    }
+  }
+}

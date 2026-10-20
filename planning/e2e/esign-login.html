@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<title>国金智慧签 · 登录</title>
+<!-- 端到端验证：国金智慧签小程序登录页（自定义导航）。原型，非生产代码；验证码固定 123456。 -->
+<link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+<link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-components.css">
+<style>
+html{font-size:min(calc(100vw / 3.75),120px)}
+:root{--safe-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;font-size:.14rem;line-height:.22rem;font-family:var(--ds-font-family-ui);color:var(--ds-text-primary);background:var(--ds-background-container)}
+.view{min-height:100vh;display:flex;flex-direction:column}
+/* 小程序自定义导航区：高 44，右侧为胶囊按钮预留，左上角放品牌 */
+.brand{display:flex;align-items:center;gap:var(--space-8);height:44px;padding:0 var(--space-page-margin-x)}
+.brand img{width:.28rem;height:.28rem;object-fit:contain}
+.brand span{font-size:var(--ds-type-h4-cn-s-font-size);line-height:var(--ds-type-h4-cn-s-line-height);font-weight:var(--ds-type-h4-cn-s-font-weight)}
+/* 配图区：中间偏上 */
+.hero{flex:1 1 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-16);padding:var(--space-24) var(--space-page-margin-x) var(--space-48);min-height:3rem} /* 底部多留白，使配图位于中间偏上 */
+.hero-art{display:flex;align-items:center;justify-content:center;width:1.8rem;height:1.8rem;border-radius:50%;background:radial-gradient(circle at 50% 45%,var(--ds-background-bt-b10) 0%,transparent 70%)}
+.hero-art img{width:1.28rem;height:1.28rem;object-fit:contain}
+.hero h1{margin:0;font-size:var(--ds-type-h2-cn-s-font-size);line-height:var(--ds-type-h2-cn-s-line-height);font-weight:var(--ds-type-h2-cn-s-font-weight)}
+.hero p{margin:calc(var(--space-8) - var(--space-16)) 0 0;color:var(--ds-text-tiatery);font-size:var(--ds-type-p3-cn-r-font-size);line-height:var(--ds-type-p3-cn-r-line-height)}
+.actions{display:flex;flex-direction:column;gap:var(--space-12);padding:0 var(--space-page-margin-x)}
+/* 协议勾选：P5 12/18，协议名为蓝色文字链接 */
+.agree{display:flex;justify-content:center;padding:var(--space-16) var(--space-page-margin-x) calc(var(--space-40) + var(--safe-bottom))}
+.agree .gj-m-checkbox-label{font-size:var(--ds-type-p5-cn-r-font-size);line-height:var(--ds-type-p5-cn-r-line-height);color:var(--ds-text-secondary)}
+.agree a{color:var(--ds-text-blue);text-decoration:none}
+/* 账号登录 */
+.form{display:flex;flex-direction:column;padding:var(--space-24) var(--space-page-margin-x) 0}
+.form h1{margin:0 0 var(--space-24);font-size:var(--ds-type-h2-cn-s-font-size);line-height:var(--ds-type-h2-cn-s-line-height);font-weight:var(--ds-type-h2-cn-s-font-weight)}
+.field{display:flex;flex-direction:column;margin-bottom:var(--space-16)}
+.form .gj-m-button{margin-top:var(--space-8)}
+.form + .agree{padding-top:var(--space-16);justify-content:flex-start}
+.layer{position:fixed;inset:0;z-index:30}
+</style>
+</head>
+<body>
+
+<!-- ① 登录入口 -->
+<section class="view" id="vEntry" aria-label="登录">
+  <div class="brand"><img src="../../assets/images/gj-logo-mark.png" alt=""><span>国金智慧签</span></div>
+  <div class="hero">
+    <div class="hero-art"><img src="../../assets/icons/glassicon/png/fileaccess.png" alt=""></div>
+    <h1>国金智慧签</h1>
+    <p>文件在线签署与验签</p>
+  </div>
+  <div class="actions">
+    <button type="button" class="gj-m-button gj-m-button-large gj-m-button-primary gj-m-button-block" id="quick">快捷登录</button>
+    <button type="button" class="gj-m-button gj-m-button-large gj-m-button-tertiary gj-m-button-block" id="toAccount">手机号 / 邮箱登录</button>
+  </div>
+  <div class="agree" data-agree></div>
+</section>
+
+<!-- ② 手机号 / 邮箱登录 -->
+<section class="view" id="vAccount" aria-label="手机号或邮箱登录" hidden>
+  <header class="gj-m-navbar" aria-label="页面导航"><div class="gj-m-navbar-left"><button class="gj-m-navbar-action gj-m-navbar-back" type="button" id="back" aria-label="返回"><span class="gj-icon gj-icon-24" style="--gj-icon:url('../../assets/icons/iconfont/icf_Arrow_left.svg')" aria-hidden="true"></span></button></div><div class="gj-m-navbar-center"></div><div class="gj-m-navbar-right"></div></header>
+  <form class="form" id="form" novalidate>
+    <h1>手机号 / 邮箱登录</h1>
+    <div class="field"><label class="gj-m-input" id="accW"><input id="acc" type="text" inputmode="email" autocomplete="username" placeholder="请输入手机号 / 邮箱" aria-label="手机号或邮箱"><button type="button" class="gj-m-input-clear" aria-label="清除"><span class="gj-icon" aria-hidden="true" style="--gj-icon:url('../../assets/icons/iconfont/icf_system_close-circle-fill.svg')"></span></button></label></div>
+    <div class="field"><label class="gj-m-input" id="codeW"><input id="code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="请输入验证码" aria-label="验证码"><button type="button" class="gj-m-input-clear" aria-label="清除"><span class="gj-icon" aria-hidden="true" style="--gj-icon:url('../../assets/icons/iconfont/icf_system_close-circle-fill.svg')"></span></button><span class="gj-m-input-divider" aria-hidden="true"></span><span class="gj-m-input-action"><button type="button" class="gj-m-text-button gj-m-text-button-blue" id="getCode">获取验证码</button></span></label></div>
+    <button type="submit" class="gj-m-button gj-m-button-large gj-m-button-primary gj-m-button-block" id="login" disabled>登录</button>
+  </form>
+  <div class="agree" data-agree></div>
+</section>
+
+<div id="layer"></div>
+<div id="toast"></div>
+<script>
+(()=>{
+const $=id=>document.getElementById(id);
+let agreed=false,pending=null,timer=null,left=0,opener=null;
+const toast=t=>{const h=$('toast');h.innerHTML=`<div class="gj-m-toast-layer" role="status" style="position:fixed"><div class="gj-m-notice" data-tone="default"><span class="gj-m-notice-text">${t}</span></div></div>`;clearTimeout(toast.t);toast.t=setTimeout(()=>h.innerHTML='',3000)};
+
+/* 协议勾选：两个视图共用同一状态 */
+const drawAgree=()=>document.querySelectorAll('[data-agree]').forEach(h=>{h.innerHTML=`<label class="gj-m-checkbox"><input type="checkbox" class="gj-m-checkbox-input"${agreed?' checked':''}><span class="gj-m-checkbox-icon" aria-hidden="true"></span><span class="gj-m-checkbox-label">我已阅读并同意<a href="javascript:void 0" data-doc="用户协议">《用户协议》</a><a href="javascript:void 0" data-doc="隐私协议">《隐私协议》</a></span></label>`;
+  h.querySelector('input').addEventListener('change',e=>{agreed=e.target.checked;drawAgree();h.querySelector('input').focus()});
+  h.querySelectorAll('[data-doc]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();toast('打开《'+a.dataset.doc+'》（原型不跳转）')}))});
+
+/* 未勾选协议时：弹窗说明，可“同意并继续” */
+const closeLayer=()=>{$('layer').innerHTML='';document.body.style.overflow='';if(opener)opener.focus()};
+function needAgree(then,from){if(agreed){then();return}opener=from;
+  $('layer').innerHTML=`<div class="layer"><div class="gj-m-dialog"><div class="gj-m-dialog-panel" role="dialog" aria-modal="true" aria-labelledby="agT" aria-describedby="agM" tabindex="-1"><div class="gj-m-dialog-header"><h2 class="gj-m-dialog-title" id="agT">请阅读并同意协议</h2><p class="gj-m-dialog-message" id="agM">登录前请阅读并同意《用户协议》《隐私协议》。</p></div><div class="gj-m-dialog-footer"><button type="button" class="gj-m-button gj-m-button-large gj-m-button-tertiary" data-close>不同意</button><button type="button" class="gj-m-button gj-m-button-large gj-m-button-primary" data-ok>同意并继续</button></div></div></div></div>`;
+  document.body.style.overflow='hidden';const L=$('layer');L.querySelector('[role=dialog]').focus();
+  L.querySelector('[data-close]').addEventListener('click',closeLayer);
+  L.querySelector('[data-ok]').addEventListener('click',()=>{agreed=true;drawAgree();opener=null;closeLayer();then()})}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('layer').innerHTML)closeLayer()});
+
+const done=()=>{toast('登录成功');setTimeout(()=>location.href='esign.html',800)};
+/* 快捷登录：小程序授权本机号码（原型直接视为授权成功） */
+$('quick').addEventListener('click',e=>needAgree(()=>{toast('已获取微信绑定手机号');setTimeout(done,600)},e.currentTarget));
+
+/* 视图切换 */
+const show=v=>{$('vEntry').hidden=v!=='entry';$('vAccount').hidden=v!=='account';if(v==='account')$('acc').focus();else $('toAccount').focus()};
+$('toAccount').addEventListener('click',()=>show('account'));
+$('back').addEventListener('click',()=>show('entry'));
+
+/* 账号登录 */
+const acc=$('acc'),code=$('code'),btn=$('login'),gc=$('getCode');
+const kind=v=>/^1\d{10}$/.test(v)?'phone':/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)?'mail':null;
+const mask=v=>kind(v)==='phone'?v.slice(0,3)+'****'+v.slice(7):v.replace(/^(.).*(@.*)$/,'$1***$2');
+const setErr=(w,msg)=>{const f=w.parentElement;let m=f.querySelector('.gj-m-input-message');w.classList.toggle('is-error',!!msg);w.querySelector('input').setAttribute('aria-invalid',!!msg);
+  if(msg){if(!m){m=document.createElement('div');m.className='gj-m-input-message';m.setAttribute('role','alert');f.appendChild(m)}m.textContent=msg}else if(m)m.remove()};
+const sync=()=>{btn.disabled=!(acc.value.trim()&&code.value.trim())};
+acc.addEventListener('input',()=>{setErr($('accW'));sync()});
+code.addEventListener('input',()=>{code.value=code.value.replace(/\D/g,'');setErr($('codeW'));sync()});
+document.querySelectorAll('.gj-m-input-clear').forEach(c=>{c.addEventListener('pointerdown',e=>e.preventDefault());c.addEventListener('click',()=>{const i=c.parentElement.querySelector('input');i.value='';sync();i.focus()})});
+gc.addEventListener('click',()=>{const v=acc.value.trim();if(!v){setErr($('accW'),'请输入手机号或邮箱');acc.focus();return}if(!kind(v)){setErr($('accW'),'请输入正确的手机号或邮箱');acc.focus();return}
+  left=60;gc.disabled=true;const tick=()=>{gc.textContent=`重新获取（${left}s）`;if(left--<=0){clearInterval(timer);gc.disabled=false;gc.textContent='重新获取'}};tick();timer=setInterval(tick,1000);
+  toast('验证码已发送至 '+mask(v));code.focus()});
+$('form').addEventListener('submit',e=>{e.preventDefault();const v=acc.value.trim();
+  if(!kind(v)){setErr($('accW'),'请输入正确的手机号或邮箱');acc.focus();return}
+  if(code.value!=='123456'){setErr($('codeW'),'验证码错误，请重新输入');code.focus();return}
+  needAgree(done,btn)});
+
+drawAgree();
+if(new URLSearchParams(location.search).get('v')==='account')show('account');
+})();
+</script>
+</body>
+</html>

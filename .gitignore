@@ -1,0 +1,18 @@
+# 系统与工具
+.DS_Store
+*/.DS_Store
+.workbuddy/
+.cursor/
+node_modules/
+__pycache__/
+*.pyc
+# 打包产物（发布包手动上传为 GitHub Release 附件，不进仓库）
+dist/
+# 临时目录
+_to_delete/
+# 端到端核对截图（验收记录 .md / .json 保留）
+planning/**/*.png
+planning/**/*.jpg
+planning/**/*-shots/
+# 过程文档
+planning/日报-*.md

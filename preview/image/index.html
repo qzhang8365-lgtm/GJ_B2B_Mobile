@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 图片 Image</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid2+.grid2{margin-top:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    .docs-sheet+.docs-sheet{margin-top:28px}
+    .sheet-head{padding-bottom:16px;margin-bottom:24px;border-bottom:1px solid var(--ds-border-default)}
+    .sheet-head h2{margin:0;font-size:24px;line-height:32px;font-weight:600}
+    .sheet-head .sub{margin-left:8px;font-size:14px;color:var(--ds-text-tiatery);font-weight:400}
+    .sheet-head p{margin:6px 0 0;max-width:760px;color:var(--ds-text-secondary);font-size:14px;line-height:22px}
+    .sheet-head+.docs-section{padding-top:0;border-top:0}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>图片 Image</h1>
+    <p>统一图片的比例、裁切、加载失败占位与全屏预览，以及图片上传。</p>
+  </header>
+
+  <article class="docs-sheet" id="image-display">
+    <div class="sheet-head"><h2>图片展示<span class="sub">Image</span></h2><p>内容图、封面、缩略图的展示与预览。</p></div>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>比例</h2><p>4:3 适合通用内容图，16:9 适合横向封面，1:1 适合头像和方形素材。默认裁切填满；证件、图表等需完整识别的用完整展示。</p></div></header>
+      <div class="panel"><span class="docs-stage-label">比例示意（缩小显示）</span><div data-demo="ratios"></div></div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>加载与失败</h2><p>加载前先占住尺寸并显示加载图标，避免页面跳动；失败时显示统一占位图标。</p></div></header>
+      <div class="panel"><span class="docs-stage-label">加载中 / 加载失败（缩小显示）</span><div data-demo="states"></div></div>
+    </section>
+
+    <section class="docs-section" id="image-viewer">
+      <header class="docs-section-head"><div><h2>图片预览</h2><p>深色背景全屏查看；多图时顶部显示当前序号，左右滑动切换，点击关闭。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">单图</span><div data-demo="v1"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">多图</span><div data-demo="v2"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示 · 预览</h2><p>点击缩略图进入预览。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <label class="ck"><input type="checkbox" id="pFail">第 2 张加载失败</label>
+        </div></aside>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="image-upload">
+    <div class="sheet-head"><h2>图片上传<span class="sub">Image Upload</span></h2><p>添加本地图片，单张用上传入口，多张用三列宫格。</p></div>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>上传入口</h2><p>虚线框加号。按上传数量和页面密度选择尺寸。</p></div></header>
+      <div class="panel"><span class="docs-stage-label">Small 120 / Medium 160 / Large 240</span><div data-demo="upload"></div></div>
+    </section>
+
+    <section class="docs-section" id="image-upload-grid">
+      <header class="docs-section-head"><div><h2>上传宫格</h2><p>扣除卡片内边距后等分三列，间距不小于 8，图片 1:1。已上传可删除；上传中、失败分别显示对应图标；只读展示时不放删除。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">已上传 / 上传中 / 失败 / 添加</span><div data-demo="gEdit"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">只读</span><div data-demo="gRead"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示 · 上传</h2><p>点加号上传，上传中显示加载，完成后出现图片；失败时点击该格重试。达到上限后隐藏加号。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="upLab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="uMax">最多张数</label><select id="uMax"><option>3</option><option>6</option><option selected>9</option></select></div>
+          <label class="ck"><input type="checkbox" id="uFail">下一张上传失败</label>
+        </div></aside>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>比例</td><td>同一列表或同一层级使用统一比例。</td><td>不在同一组里混用多种比例。</td></tr>
+        <tr><td>裁切</td><td>默认裁切填满，保持主体和关键信息可见。</td><td>证件、图表等需完整识别的图片不裁切。</td></tr>
+        <tr><td>占位</td><td>加载前固定尺寸；失败时显示统一占位，必要时提供重新加载。</td><td>失败占位、空内容、上传入口是三种语义，不混用图标。</td></tr>
+        <tr><td>上传</td><td>说明格式、数量和大小限制；上传中、失败、成功都要有反馈，失败可重试或删除。</td><td>不在入口里塞入过多说明文字。</td></tr>
+        <tr><td>预览</td><td>深色背景突出图片，支持关闭、缩放、多图切换并显示序号。</td><td>多图不一次性加载全部原图，先用缩略图。</td></tr>
+        <tr><td>无障碍</td><td>信息类图片提供替代文本；装饰图不重复朗读。</td><td>不用图片承载必须阅读的文字。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const SRC=['assets/images/samples/sample-a.jpg','assets/images/samples/sample-c.jpg','assets/images/samples/sample-b.jpg','assets/images/samples/sample-a.jpg'];
+  const img=(src,cls='',state='')=>`<div class="gj-m-image ${cls}${state?' is-'+state:''}"><img src="${src}" alt="示例图片" loading="lazy"></div>`;
+  const CSS='html,body{overflow:hidden;background:transparent}.scr{width:100%;max-width:3.75rem;margin:0 auto;background:var(--ds-background-background)}.scr.w{background:var(--ds-background-container)}.pad{padding:.12rem 0}.stack{display:flex;flex-direction:column;gap:.12rem}.lbl{padding:0 var(--space-page-margin-x);font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}'+
+    '.row{display:flex;align-items:flex-end;gap:.16rem;padding:.16rem 0}.ph{position:relative;width:100%;max-width:3.75rem;margin:0 auto;height:100%;overflow:hidden;background:var(--ds-background-background);display:flex;flex-direction:column}.hd{flex:none;display:flex;align-items:center;justify-content:center;height:44px;background:var(--ds-background-container);font-size:.17rem;font-weight:600}'+
+    '.card{background:var(--ds-background-container);padding:.04rem var(--space-page-margin-x) .16rem}.tt{padding:.12rem 0 .08rem;font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)}.tip{margin-top:.08rem;font-size:.13rem;line-height:.2rem;color:var(--ds-text-tiatery)}'+
+    '.thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-8)}'+
+    '.rat{display:flex;flex-wrap:wrap;align-items:flex-end;gap:.24rem;padding:.08rem 0}.rat figure{margin:0;width:1.20rem}.rat figcaption{margin-top:.06rem;font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery);text-align:center}';
+  const FIX='html,body,.page{height:100%}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+(h?FIX:''),height:h||'auto'});
+  const rm=i=>`<button type="button" class="gj-m-image-upload-remove" aria-label="删除第 ${i+1} 张" data-i="${i}"><span class="gj-icon" aria-hidden="true"></span></button>`;
+  const tile=(s,i,o={})=>typeof s==='string'?`<div class="gj-m-image-upload-item is-${s}" role="${s==='error'?'button':'img'}" aria-label="${s==='loading'?'上传中':'上传失败，点击重试'}" data-i="${i}"${s==='error'?' tabindex="0"':''}>${o.readonly?'':rm(i)}</div>`:`<div class="gj-m-image-upload-item"><img src="${SRC[s]}" alt="已上传图片 ${i+1}">${o.readonly?'':rm(i)}</div>`;
+  const add='<button type="button" class="gj-m-image-upload" aria-label="上传图片"><span class="gj-icon" aria-hidden="true"></span></button>';
+  const grid=(list,o={})=>`<div class="gj-m-image-upload-grid">${list.map((s,i)=>tile(s,i,o)).join('')}${o.add?add:''}</div>`;
+
+  // 展示
+  show('ratios',`<div class="rat">${[['4:3','',SRC[0]],['16:9','gj-m-image-16x9',SRC[1]],['1:1','gj-m-image-1x1',SRC[0]],['16:9 完整展示','gj-m-image-16x9 gj-m-image-contain',SRC[2]]].map(([t,c,src])=>`<figure>${img(src,c)}<figcaption>${t}</figcaption></figure>`).join('')}</div>`);
+  show('states',`<div class="rat"><figure style="width:1.60rem">${img(SRC[0],'','loading')}<figcaption>加载中</figcaption></figure><figure style="width:1.60rem"><div class="gj-m-image is-error" role="img" aria-label="图片加载失败"></div><figcaption>加载失败</figcaption></figure></div>`);
+  const viewer=(i,n)=>`<div class="gj-m-image-viewer" role="dialog" aria-modal="true" aria-label="图片预览">${n>1?`<div class="gj-m-image-viewer-count" aria-live="polite">${i+1} / ${n}</div>`:''}<div class="gj-m-image-viewer-track">${SRC.slice(0,n).map(s=>img(s)).join('')}</div></div>`;
+  show('v1',`<div class="ph">${viewer(0,1)}</div>`,560);
+  show('v2',`<div class="ph">${viewer(0,4)}</div>`,560);
+
+  function renderLab(){const fail=$('pFail').checked;
+    const f=GJPhone.swatch($('lab'),{html:`<div class="ph"><div class="hd">业务凭证</div><div class="card"><div class="tt">现场照片（4）</div><div class="thumbs">${SRC.map((s,i)=>`<button type="button" class="gj-m-image gj-m-image-1x1${fail&&i===1?' is-error':''}" data-i="${i}" aria-label="查看第 ${i+1} 张">${fail&&i===1?'':`<img src="${s}" alt="">`}</button>`).join('')}</div></div><div id="pop"></div></div>`,css:CSS+FIX,height:560});
+    f.addEventListener('load',()=>{const d=f.contentDocument,pop=d.getElementById('pop');
+      d.querySelectorAll('.thumbs .gj-m-image').forEach(b=>b.addEventListener('click',()=>{const start=+b.dataset.i;
+        pop.innerHTML=viewer(start,SRC.length);const v=pop.firstElementChild,tr=v.querySelector('.gj-m-image-viewer-track'),cnt=v.querySelector('.gj-m-image-viewer-count');
+        if(fail){tr.children[1].classList.add('is-error')}
+        tr.scrollLeft=start*tr.clientWidth;
+        tr.addEventListener('scroll',()=>{const i=Math.round(tr.scrollLeft/tr.clientWidth);cnt.textContent=`${i+1} / ${SRC.length}`});
+        v.addEventListener('click',()=>{const i=Math.round(tr.scrollLeft/tr.clientWidth);pop.innerHTML='';d.querySelector(`.thumbs [data-i="${i}"]`).focus()});
+        d.addEventListener('keydown',function esc(e){if(e.key==='Escape'&&pop.firstElementChild){pop.innerHTML='';b.focus();d.removeEventListener('keydown',esc)}})}))})}
+  $('pFail').addEventListener('change',renderLab);renderLab();
+
+  // 上传
+  show('upload',`<div class="row" style="flex-wrap:nowrap">${[['','Small 120'],[' gj-m-image-upload-160','Medium 160'],[' gj-m-image-upload-240','Large 240']].map(([c,t])=>`<button type="button" class="gj-m-image-upload${c}" aria-label="上传图片（${t}）"><span class="gj-icon" aria-hidden="true"></span></button>`).join('')}</div>`);
+  show('gEdit',`<div class="scr"><div class="card"><div class="tt">现场照片</div>${grid([0,1,'loading','error'],{add:1})}</div></div>`);
+  show('gRead',`<div class="scr"><div class="card"><div class="tt">现场照片</div>${grid([0,1,2,0],{readonly:true})}</div></div>`);
+
+  function renderUp(){const MAX=+$('uMax').value;let list=[0,1];let n=2;
+    const f=GJPhone.swatch($('upLab'),{html:`<div class="ph"><div class="hd">提交凭证</div><div class="card"><div class="tt">现场照片（最多 ${MAX} 张）</div><div id="g"></div><div class="tip">支持 JPG、PNG，单张不超过 10MB</div></div></div>`,css:CSS+FIX,height:560});
+    f.addEventListener('load',()=>{const d=f.contentDocument,g=d.getElementById('g');
+      const finish=(i,ok)=>setTimeout(()=>{if(list[i]!=='loading')return;list[i]=ok?(n++%3):'error';draw()},900);
+      const draw=()=>{g.innerHTML=grid(list,{add:list.length<MAX});
+        g.querySelectorAll('.gj-m-image-upload-remove').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();list.splice(+b.dataset.i,1);draw();const a=g.querySelector('.gj-m-image-upload');if(a)a.focus()}));
+        g.querySelectorAll('.gj-m-image-upload-item.is-error').forEach(t=>{const retry=()=>{const i=+t.dataset.i;list[i]='loading';draw();finish(i,true)};t.addEventListener('click',retry);t.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();retry()}})});
+        const a=g.querySelector('.gj-m-image-upload');if(a)a.addEventListener('click',()=>{const i=list.length;list.push('loading');const ok=!$('uFail').checked;$('uFail').checked=false;draw();finish(i,ok)})};
+      draw()})}
+  $('uMax').addEventListener('change',renderUp);renderUp();
+})();
+</script>
+</body>
+</html>

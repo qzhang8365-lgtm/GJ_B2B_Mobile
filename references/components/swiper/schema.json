@@ -1,0 +1,54 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "swiper",
+  "name": "轮播 Swiper",
+  "category": "展示组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "滑块swiper（58:4228；原走马灯 Carousel 1680:5052 已合并删除）",
+    "nodes": {
+      "swiper": "58:4247（serial indicator=false 58:4248 / true 1719:3523）",
+      "pageIndicator": "1680:5056（Style=Light / Dark）",
+      ".dot": "1680:5067（ture × style）",
+      "serial indicator": "1719:3227",
+      "usage": "948:7482"
+    },
+    "extractedAt": "2026-10-12",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-swiper / -track / -item / -indicator(-dark|-outside) / -dot / -fraction",
+    "note": "原型基座；自动轮播、拖动、循环由页面脚本实现"
+  },
+  "size": {
+    "example": "375×120（内容决定高度）"
+  },
+  "indicator": {
+    "position": "容器内底部居中，距底 8；容器外置于下方 8",
+    "dot": "8×3，圆角 full，间距 3",
+    "active": "16×3",
+    "light": {
+      "dot": "Background/WT_20",
+      "active": "Text/reversal"
+    },
+    "dark": {
+      "dot": "Background/MK_20",
+      "active": "Text/blue"
+    }
+  },
+  "fraction": {
+    "position": "右下，距右 12、距底 12",
+    "padding": "上下 4、左右 8",
+    "radius": 4,
+    "bg": "Background/MK_30",
+    "text": "P5_CN-R 12/18 Text/reversal（高 26）"
+  },
+  "behavior": {
+    "autoplay": "默认 3 秒，可设置",
+    "loop": "默认开启",
+    "drag": "滑动超过 20% 宽度切换"
+  },
+  "direction": "仅横向（纵向已去掉）"
+}

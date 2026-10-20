@@ -1,0 +1,58 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "loading",
+  "figmaComponent": "加载 Loading（下拉刷新 / 加载中）",
+  "prototypeClass": "gj-m-loading",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "base": "gj-m-loading",
+    "state": "data-state=pull/release/loading",
+    "text": "P3 14/22"
+  },
+  "valueMap": {
+    "states": "[\"pull\", \"release\", \"loading\"]",
+    "icon": "20",
+    "gap": "4",
+    "text": "P3 14/22 Text/Tiatery",
+    "demo": "{\"threshold\": 64, \"waitMs\": 2000, \"note\": \"仅原型参数\"}"
+  },
+  "tokenMap": {},
+  "runtimeMap": {
+    "root": ".gj-m-loading"
+  },
+  "markup": {
+    "pull": "<div class=\"gj-m-loading\" data-state=\"pull\" role=\"status\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_arrow-down.svg')\" aria-hidden=\"true\"></span><span>下拉刷新</span></div>",
+    "loading": "<div class=\"gj-m-loading\" data-state=\"loading\" role=\"status\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_loading.svg')\" aria-hidden=\"true\"></span><span>加载数据中...</span></div>",
+    "listEnd": "<p style=\"margin:0;padding:var(--space-16) 0;text-align:center;color:var(--ds-text-tiatery);font-size:var(--ds-type-p5-cn-r-font-size);line-height:var(--ds-type-p5-cn-r-line-height)\">没有更多了</p>"
+  },
+  "interactionMap": {
+    "states": "data-state：pull（下拉刷新）→ release（释放刷新）→ loading（加载数据中...）"
+  },
+  "accessibility": {
+    "role": "role=\"status\" 播报加载状态"
+  },
+  "composition": {
+    "listTail": "上拉到底自动加载，到底显示“没有更多了”（或用 footer 的 label 页脚）",
+    "refreshFail": "下拉刷新失败用 Toast 提示并保留原内容"
+  },
+  "pageRules": {},
+  "pending": {},
+  "templates": {
+    "loading": {
+      "tpl": "<div class=\"gj-m-loading{{#cls}} {{cls}}{{/cls}}\" data-state=\"{{state}}\" role=\"status\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/{{icon}}.svg')\" aria-hidden=\"true\"></span><span>{{text}}</span></div>",
+      "params": "state：pull / loosen / loading / success / fail；icon：图标名；text：文案；cls：页面附加类",
+      "examples": {
+        "pull": {
+          "state": "pull",
+          "icon": "icf_Arrow_arrow-down",
+          "text": "下拉刷新"
+        },
+        "loading": {
+          "state": "loading",
+          "icon": "icf_system_loading",
+          "text": "加载数据中..."
+        }
+      }
+    }
+  }
+}

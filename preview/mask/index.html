@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 蒙层 Mask</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:1200px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:960px){.grid2,.grid4{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">操作反馈组件 · Feedback</div>
+    <h1>蒙层 Mask</h1>
+    <p>模态窗口下方的背景层，遮住页面并阻止操作，让视觉焦点落在前景上。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section" id="mask-type">
+      <header class="docs-section-head"><div><h2>类型</h2><p>弹窗、底部弹层、筛选面板、图片预览统一用 60%；45% 为备用的较轻遮挡，一般不用。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">默认 60%</span><div data-demo="m60"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">浅色 45%（备用）</span><div data-demo="m45"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="mask-usage">
+      <header class="docs-section-head"><div><h2>使用场景</h2><p>模态框时蒙层覆盖整个视口；侧边抽屉时蒙层覆盖抽屉以外区域，抽屉在蒙层之上。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">模态框</span><div data-demo="u1"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">侧边抽屉</span><div data-demo="u2"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>蒙层与前景同时出现、同时消失，出现期间页面不可点击和滚动；关闭后焦点回到触发按钮。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pM">蒙层</label><select id="pM"><option value="">默认 60%</option><option value="light">浅色 45%</option></select></div>
+          <label class="ck"><input type="checkbox" id="pClose" checked>点击蒙层关闭</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>透明度</td><td>所有模态场景统一用 60%。</td><td>不随意改用 45%，避免同类浮层深浅不一。</td></tr>
+        <tr><td>覆盖范围</td><td>全屏模态覆盖整个视口；抽屉或局部浮层按容器范围覆盖。</td><td>不在状态栏、底部安全区或滚动区留出可点击空隙。</td></tr>
+        <tr><td>阻止操作</td><td>蒙层出现时禁止底层点击和滚动。</td><td>避免误操作、焦点穿透或页面位置变化。</td></tr>
+        <tr><td>关闭</td><td>点击蒙层是否关闭由业务风险决定，同类组件保持一致。</td><td>确认、交易等高风险流程通常不允许点蒙层关闭。</td></tr>
+        <tr><td>层级</td><td>同一时刻只保留一层蒙层，多个浮层复用同一背景遮罩。</td><td>不叠加多层蒙层。</td></tr>
+        <tr><td>动效与焦点</td><td>与前景同时渐显、渐隐；关闭后焦点回到触发入口；减少动效时取消过渡。</td><td>—</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const ic=(n,s=20)=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${n}.svg');width:${s/100}rem;height:${s/100}rem" aria-hidden="true"></span>`;
+  const BTN=(t,p,cls='')=>`<button type="button" class="gj-m-button gj-m-button-large ${p?'gj-m-button-primary':'gj-m-button-tertiary'} ${cls}">${t}</button>`;
+  const HOLD=[['国金稳健 3 号','R2 · 中低风险','52,380.00','+1.28%',1],['沪深300指数增强','R4 · 中高风险','31,200.50','-0.86%'],['国金货币 A','R1 · 低风险','20,000.00','+0.01%',1],['科创 50ETF 联接','R5 · 高风险','12,860.20','+2.35%',1],['国金纯债 6 个月持有','R2 · 中低风险','8,500.00','+0.12%',1]];
+  const HEAD=t=>`<div class="gj-m-card-head"><div class="gj-m-card-header"><h3 class="gj-m-card-title">${t}</h3></div></div>`;
+  const LI=(n,r,extra='')=>`<div class="gj-m-list-item"><span class="gj-m-list-item-content"><span class="gj-m-list-item-main"><span class="gj-m-list-item-text">${n}</span><span class="gj-m-list-item-desc">${r}</span></span>${extra?`<span class="gj-m-list-item-extra">${extra}</span>`:''}</span></div>`;
+  const PAGE=()=>`<header class="gj-m-navbar" aria-label="页面导航"><div class="gj-m-navbar-left"><button type="button" class="gj-m-navbar-action" id="menu" aria-label="菜单">${ic('icf_system_menu',24)}</button></div><div class="gj-m-navbar-center"><span class="gj-m-navbar-title">我的持仓</span></div><div class="gj-m-navbar-right"></div></header><div class="sc">
+    <section class="gj-m-card"><div class="gj-m-metric gj-m-metric-left gj-m-metric-n3"><span class="gj-m-metric-value"><span class="gj-m-metric-num">124,940.70</span></span><span class="gj-m-metric-label">总资产（元）</span></div><div class="gj-m-metric-grid gj-m-metric-grid-left">${[['+356.12','昨日收益'],['+4,218.66','持有收益']].map(([n,l])=>`<div class="gj-m-metric gj-m-metric-n5 is-rise"><span class="gj-m-metric-value"><span class="gj-m-metric-num">${n}</span></span><span class="gj-m-metric-label">${l}</span></div>`).join('')}</div></section>
+    <section class="gj-m-card">${HEAD('持仓明细')}<div class="gj-m-card-body"><div class="gj-m-list gj-m-list-in-card">${HOLD.map(([n,r,a,c,up])=>LI(n,r,`<span class="rt"><span class="amt">${a}</span><span class="${up?'up':'dn'}">${c}</span></span>`)).join('')}</div></div></section>
+  </div><div class="ft"><div class="gj-m-form-actions">${BTN('赎回',0,'sell')}${BTN('追加买入',1,'buy')}</div></div>`;
+  const CSS='html,body{overflow:hidden;background:transparent}.ph{position:relative;width:100%;max-width:3.75rem;margin:0 auto;height:100%;overflow:hidden;background:var(--ds-background-background);display:flex;flex-direction:column}.ph>.gj-m-navbar{flex:none}'+
+    '.sc{flex:1;min-height:0;overflow-y:auto;padding:.12rem var(--space-page-margin-x);display:flex;flex-direction:column;gap:var(--space-card-l1-gap)}'+
+    '.rt{display:flex;flex-direction:column;align-items:flex-end}.amt{color:var(--ds-text-primary);font-family:var(--ds-font-family-numeric)}.up{color:var(--ds-feedback-error-rise)}.dn{color:var(--ds-feedback-success-decline)}'+
+    '.ft{flex:none;padding:.12rem var(--space-page-margin-x) calc(.12rem + env(safe-area-inset-bottom,0px));background:var(--ds-background-container);box-shadow:0 -1px 0 var(--ds-border-default)}'+
+    '.fg{position:absolute;inset:0;z-index:10;display:flex;pointer-events:none}.fg>*{pointer-events:auto}.fg-c{align-items:center;justify-content:center;padding:0 var(--space-page-margin-x)}.fg-b{align-items:flex-end}'+
+    '.drawer{animation:dr .2s ease both}@keyframes dr{from{transform:translateX(-100%)}to{transform:none}}@media (prefers-reduced-motion:reduce){.drawer{animation:none}}';
+  const FIX='html,body,.page{height:100%}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+FIX,height:h||420});
+  const dlg=(t,m,btns)=>`<div class="gj-m-dialog-panel" role="dialog" aria-modal="true" aria-labelledby="dT" tabindex="-1"><div class="gj-m-dialog-header"><span class="gj-icon gj-m-dialog-icon is-warning" aria-hidden="true"></span><h2 class="gj-m-dialog-title" id="dT">${t}</h2><p class="gj-m-dialog-message">${m}</p></div><div class="gj-m-dialog-footer">${btns}</div></div>`;
+  const drawer=()=>`<nav class="gj-m-sidebar drawer" role="dialog" aria-modal="true" aria-label="菜单" tabindex="-1"><div class="gj-m-sidebar-brand">张三 · 上海陆家嘴营业部</div><div class="gj-m-sidebar-list">${[['icf_system_home','首页'],['icf_user_idcard','客户管理'],['icf_contact_message','消息中心'],['icf_user_user','个人设置']].map(([i,t],x)=>`<button type="button" class="gj-m-sidebar-item${x?'':' is-active'}">${ic(i,24)}<span class="gj-m-sidebar-item-title">${t}</span></button>`).join('')}</div></nav>`;
+  show('m45',`<div class="ph">${PAGE()}<div class="gj-m-mask gj-m-mask-light"></div></div>`);
+  show('m60',`<div class="ph">${PAGE()}<div class="gj-m-mask"></div></div>`);
+  show('u1',`<div class="ph">${PAGE()}<div class="gj-m-mask"></div><div class="fg fg-c">${dlg('确认赎回国金稳健 3 号？','赎回份额 10,000 份，预计 T+1 到账。',BTN('取消')+BTN('确认赎回',1))}</div></div>`,560);
+  show('u2',`<div class="ph">${PAGE()}<div class="gj-m-mask"></div><div class="fg">${drawer()}</div></div>`,560);
+
+  function render(){const M=$('pM').value,C=$('pClose').checked;
+    const f=GJPhone.swatch($('lab'),{html:`<div class="ph">${PAGE()}<div id="host"></div></div>`,css:CSS+FIX,height:620});
+    f.addEventListener('load',()=>{const d=f.contentDocument,host=d.getElementById('host');let trig=null;
+      const close=()=>{const m=host.querySelector('.gj-m-mask');if(!m)return;m.classList.add('is-leaving');host.querySelector('.fg').style.opacity='0';d.removeEventListener('keydown',key,true);setTimeout(()=>{host.innerHTML='';trig&&trig.focus()},200)};
+      const key=e=>{if(e.key==='Escape'){e.preventDefault();close()}if(e.key==='Tab'){const fs=[...host.querySelectorAll('button')];const a=fs[0],z=fs[fs.length-1];if(e.shiftKey&&d.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&d.activeElement===z){e.preventDefault();a.focus()}}};
+      const open=(fg,cls,from)=>{trig=from;host.innerHTML=`<div class="gj-m-mask${M?' gj-m-mask-'+M:''}"></div><div class="fg ${cls}" style="transition:opacity .2s">${fg}</div>`;
+        const mask=host.querySelector('.gj-m-mask');mask.addEventListener('click',()=>{if(C)close()});host.querySelector('.fg').addEventListener('click',e=>{if(e.target.classList.contains('fg')&&C)close()});
+        host.querySelectorAll('.fg button').forEach(b=>b.addEventListener('click',close));d.addEventListener('keydown',key,true);host.querySelector('[tabindex="-1"]').focus()};
+      d.querySelector('.sell').addEventListener('click',e=>open(dlg('确认赎回国金稳健 3 号？','赎回份额 10,000 份，预计 T+1 到账。',BTN('取消')+BTN('确认赎回',1)),'fg-c',e.currentTarget));
+      d.querySelector('.buy').addEventListener('click',e=>open(`<div class="gj-m-popup-panel gj-m-popup-dialog" role="dialog" aria-modal="true" aria-label="追加买入" tabindex="-1" style="max-height:70%"><div class="gj-m-popup-header gj-m-popup-header-line"><span class="gj-m-popup-title">追加买入</span><button type="button" class="gj-m-popup-close" aria-label="关闭"><span class="gj-icon" aria-hidden="true"></span></button></div><div class="gj-m-popup-body"><div class="gj-m-list gj-m-list-in-card">${HOLD.slice(0,4).map(([n,r])=>LI(n,r)).join('')}</div></div><div class="gj-m-popup-footer">${BTN('取消')}${BTN('下一步',1)}</div></div>`,'fg-b',e.currentTarget));
+      d.getElementById('menu').addEventListener('click',e=>open(drawer(),'',e.currentTarget))})}
+  $('pM').addEventListener('change',render);$('pClose').addEventListener('change',render);render();
+})();
+</script>
+</body>
+</html>

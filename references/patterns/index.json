@@ -1,0 +1,164 @@
+{
+  "description": "移动端页面模式索引。status: derived = 由已确认组件规则组合推导、待设计确认；confirmed = 设计方已确认。",
+  "updated": "2026-10-19",
+  "patterns": [
+    {
+      "id": "list-filter",
+      "name": "列表 + 搜索 / 筛选",
+      "doc": "references/patterns/list-filter.md",
+      "preview": "preview/patterns/list-filter/index.html",
+      "status": "confirmed",
+      "uses": [
+        "navbar",
+        "searchbar",
+        "filter",
+        "listbar",
+        "card",
+        "info-list",
+        "tag",
+        "skeleton",
+        "loading",
+        "empty",
+        "floating-button",
+        "tabbar"
+      ],
+      "pending": [],
+      "reference": "推导",
+      "confirmed": "2026-10-16"
+    },
+    {
+      "id": "workbench",
+      "name": "工作台首页",
+      "doc": "references/patterns/workbench.md",
+      "preview": "preview/patterns/workbench/index.html",
+      "status": "confirmed",
+      "uses": [
+        "navbar",
+        "tabs",
+        "card",
+        "tag",
+        "text-button",
+        "metric",
+        "chart",
+        "steps",
+        "button",
+        "gridnav",
+        "skeleton",
+        "empty"
+      ],
+      "pending": [],
+      "reference": "零售银行渠道经营工作台 01/06",
+      "confirmed": "2026-10-16"
+    },
+    {
+      "id": "detail",
+      "name": "详情 + 底部操作",
+      "doc": "references/patterns/detail.md",
+      "preview": "preview/patterns/detail/index.html",
+      "status": "confirmed",
+      "uses": [
+        "navbar",
+        "card",
+        "info-list",
+        "tag",
+        "text-button",
+        "form",
+        "radio",
+        "input",
+        "steps",
+        "button",
+        "notice",
+        "skeleton",
+        "empty"
+      ],
+      "pending": [],
+      "reference": "03-2/07-2/04-07",
+      "confirmed": "2026-10-16"
+    },
+    {
+      "id": "form",
+      "name": "分组表单提交",
+      "doc": "references/patterns/form.md",
+      "preview": "preview/patterns/form/index.html",
+      "status": "confirmed",
+      "uses": [
+        "navbar",
+        "listbar",
+        "loading",
+        "notice",
+        "card",
+        "form",
+        "select",
+        "datepicker",
+        "selection-list",
+        "radio",
+        "input",
+        "button"
+      ],
+      "pending": [],
+      "reference": "04-02～04-05",
+      "confirmed": "2026-10-16"
+    },
+    {
+      "id": "records",
+      "name": "日历 + 记录时间轴",
+      "doc": "references/patterns/records.md",
+      "preview": "preview/patterns/records/index.html",
+      "status": "confirmed",
+      "uses": [
+        "navbar",
+        "tabs",
+        "datepicker",
+        "chart",
+        "steps",
+        "tag",
+        "card",
+        "button",
+        "skeleton",
+        "empty"
+      ],
+      "pending": [],
+      "reference": "04-06/11",
+      "confirmed": "2026-10-16"
+    },
+    {
+      "id": "batch",
+      "name": "批量处理列表",
+      "doc": "references/patterns/batch.md",
+      "preview": "preview/patterns/batch/index.html",
+      "status": "confirmed",
+      "uses": [
+        "navbar",
+        "tabs",
+        "card",
+        "checkbox",
+        "tag",
+        "button",
+        "skeleton",
+        "empty"
+      ],
+      "pending": [],
+      "reference": "07-3/07-1",
+      "confirmed": "2026-10-16"
+    },
+    {
+      "id": "login",
+      "name": "登录",
+      "doc": "references/patterns/login.md",
+      "preview": "preview/patterns/login/index.html",
+      "status": "confirmed",
+      "uses": [
+        "navbar",
+        "button",
+        "checkbox",
+        "input",
+        "dialog",
+        "notice"
+      ],
+      "pending": [],
+      "reference": "国金智慧签登录页（planning/e2e/esign-login.html）",
+      "confirmed": "2026-10-19"
+    }
+  ],
+  "pageRules": "references/page-rules.md"
+}

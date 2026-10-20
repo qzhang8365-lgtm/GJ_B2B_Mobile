@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 字体 Typography</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css?v=20261014-num1">
+  <link rel="stylesheet" href="../site.css">
+  <style>
+    :root{--font:var(--ds-font-family-ui);--num:var(--ds-font-family-numeric);--tertiary:var(--ds-text-tiatery);--mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:var(--font);color:var(--ds-text-primary);background:transparent}button{font:inherit}
+    .shell{max-width:var(--docs-page-max-width);margin:auto;padding:var(--docs-page-padding)}.intro{margin-bottom:30px;padding:0 4px}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--ds-text-blue);font-size:13px;font-weight:600;letter-spacing:.04em;margin-bottom:10px}.eyebrow:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ds-text-blue);box-shadow:0 0 0 3px var(--ds-background-bt-b10)}.intro h1{font-size:32px;line-height:42px;margin:0 0 8px}.intro p{max-width:900px;margin:0;color:var(--ds-text-secondary);font-size:15px;line-height:1.75}
+    .section{background:var(--ds-background-container);border-radius:20px;padding:24px;margin-bottom:28px}.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--ds-border-default);margin-bottom:24px}.title-group{display:flex;align-items:baseline;gap:12px}.section-heading h2{font-size:24px;line-height:32px;margin:0;font-weight:600}.sub{font-size:14px;color:var(--tertiary)}.count{font:12px/20px var(--mono);color:var(--tertiary);white-space:nowrap}.section-desc{font-size:14px;line-height:22px;color:var(--ds-text-disable);margin:-4px 0 24px}
+    .policy-note{border:1px solid var(--ds-primitive-red-r03);background:var(--ds-primitive-red-r01);border-radius:14px;padding:16px 18px;color:var(--ds-primitive-red-r07);font-size:14px;line-height:24px;margin-bottom:18px}.policy-note b{margin-right:10px}
+    .family-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.family-card{border:1px solid var(--ds-border-secondary);border-radius:14px;padding:18px;background:var(--ds-background-container);min-width:0}.family-title{display:flex;align-items:center;gap:8px;margin-bottom:14px}.family-card h3{font-size:16px;margin:0}.system-badge{padding:2px 8px;border-radius:999px;background:var(--ds-background-selected);color:var(--ds-button-primary-bg-pressed);font:11px/18px var(--mono)}.family-sample{font-size:20px;line-height:30px;margin-bottom:8px;color:var(--ds-text-blue)}.family-meta{font:12px/19px var(--mono);color:var(--tertiary)}
+    .weight-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.weight-group{border:1px solid var(--ds-border-secondary);border-radius:16px;padding:18px}.weight-group-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ds-border-default)}.weight-group h3{font-size:16px;line-height:24px;margin:0}.weight-family{font:12px/18px var(--mono);color:var(--tertiary)}.weight-list{display:grid}.weight-item{display:grid;grid-template-columns:72px minmax(150px,.7fr) minmax(220px,1fr);align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid var(--ds-border-default)}.weight-item:last-child{border-bottom:0;padding-bottom:0}.weight-code{font:600 13px/20px var(--mono);color:var(--ds-text-blue)}.weight-sample{font-size:20px;line-height:30px}.weight-rule{font-size:14px;line-height:22px;color:var(--ds-text-secondary)}.number-weight .weight-sample{font-family:var(--num);font-size:24px;font-variant-numeric:tabular-nums}
+    .type-table{border:1px solid var(--ds-border-secondary);border-radius:16px;overflow:hidden}
+    .type-head,.type-row{display:grid;grid-template-columns:200px 96px 110px minmax(220px,1fr) minmax(240px,1.1fr);align-items:center;gap:16px;padding:0 20px}
+    .type-head{height:54px;background:var(--ds-background-background);color:var(--ds-text-secondary);font-size:13px;font-weight:600}
+    .type-row{min-height:96px;border-top:1px solid var(--ds-border-default)}
+    .type-group{padding:10px 20px;border-top:1px solid var(--ds-border-default);background:var(--ds-background-tiatery);color:var(--ds-text-secondary);font-size:13px;font-weight:600;line-height:20px}
+    .style-level{display:grid;gap:2px;min-width:0}.style-level button{padding:0;border:0;background:transparent;text-align:left;cursor:pointer;overflow-wrap:anywhere}.style-level .name{font:600 13px/21px var(--mono);color:var(--ds-text-primary)}.style-level .cls{font:11px/18px var(--mono);color:var(--tertiary)}.style-level button:hover{color:var(--ds-text-blue)!important}
+    .style-value{font:13px/20px var(--mono);color:var(--ds-text-secondary)}.style-value small{display:block;font-size:11px;color:var(--tertiary)}
+    .style-sample{white-space:nowrap;overflow:hidden;text-overflow:clip}.style-usage{font-size:14px;line-height:22px;color:var(--tertiary)}
+    .numeric .type-head,.numeric .type-row{grid-template-columns:150px 96px 90px minmax(160px,1fr) minmax(160px,1fr) minmax(180px,1fr)}
+    .numeric .style-sample{font-family:var(--num);font-variant-numeric:tabular-nums}.numeric .type-row{min-height:88px}
+    .copyright{display:flex;align-items:center;gap:10px;padding:14px 16px;border-radius:12px;background:var(--ds-primitive-red-r01);color:var(--ds-primitive-red-r07);font-size:14px;line-height:22px;margin-bottom:18px}.copyright strong{white-space:nowrap}
+    .num-scenarios{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}.num-card{border:1px solid var(--ds-border-secondary);border-radius:14px;padding:18px;background:var(--ds-background-container);min-width:0}.num-label{font-size:13px;color:var(--tertiary);margin-bottom:12px}.num-value{font-variant-numeric:tabular-nums;white-space:nowrap}.num-card.market .num-value{display:flex;gap:14px;flex-wrap:wrap}.rise{color:var(--ds-feedback-error-rise)}.fall{color:var(--ds-feedback-success-decline)}.num-style{margin-top:10px;font:11px/18px var(--mono);color:var(--tertiary)}
+    .fallback{font-size:13px;line-height:21px;color:var(--ds-text-secondary);margin-top:14px}
+    .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,12px);opacity:0;pointer-events:none;padding:8px 14px;border-radius:8px;background:var(--ds-text-primary);color:var(--ds-text-reversal);font-size:13px;transition:.18s}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:1050px){.num-scenarios{grid-template-columns:repeat(2,1fr)}.family-grid{grid-template-columns:1fr}.weight-groups{grid-template-columns:1fr}.type-table{overflow-x:auto}.type-head,.type-row,.type-group{min-width:900px}}
+    @media(max-width:760px){.shell{padding:var(--docs-page-padding-compact)}.section{padding:20px}.intro h1{font-size:28px}.title-group{display:block}.section-heading{align-items:flex-start}.section-heading h2{font-size:22px}.weight-item{grid-template-columns:60px 1fr}.weight-rule{grid-column:1 / -1}.copyright{display:block}.num-scenarios{grid-template-columns:1fr}}
+  </style>
+<script src="../_data/tokens.js?v=20261020-data1"></script></head>
+<body><main class="shell">
+  <header class="intro"><div class="eyebrow">基础规范 · Foundations</div><h1>字体 Typography</h1><p>H5 中西文跟随运行设备的系统字体，数字样式使用 GJType。文字样式按整套使用，字号、行高、字重与字间距不拆开套用。示例按 375 基准显示（1rem = 100px），点击样式名或类名可复制。</p></header>
+
+  <section class="section"><div class="section-heading"><div class="title-group"><h2>字体家族</h2><span class="sub">Font families</span></div></div>
+    <div class="policy-note"><b>字体策略</b>H5 字体栈不写死 PingFang SC、Arial 等具体字体名，使用 <code>system-ui</code> 跟随设备系统字体。Figma 文字样式中的 PingFang SC 仅作为视觉参考。</div>
+    <div class="family-grid">
+      <article class="family-card"><div class="family-title"><h3>中西文 · 系统字体</h3><span class="system-badge">SYSTEM</span></div><div class="family-sample" style="font-family:var(--ds-font-family-ui)">国金证券 AaBbCc 证券交易</div><div class="family-meta">--ds-font-family-ui: system-ui → sans-serif</div></article>
+      <article class="family-card"><div class="family-title"><h3>设计稿参考 · 苹方</h3><span class="system-badge">FIGMA</span></div><div class="family-sample" style="font-family:'PingFang SC',var(--ds-font-family-ui)">国金证券 AaBbCc 证券交易</div><div class="family-meta">PingFang SC（Figma Text Style 记录值，不写入 H5 字体栈）</div></article>
+      <article class="family-card"><div class="family-title"><h3>数字 · GJType</h3><span class="system-badge">NUMERIC</span></div><div class="family-sample" style="font-family:var(--ds-font-family-numeric);font-variant-numeric:tabular-nums">0123456789 88,888.88</div><div class="family-meta">GJType → system-ui（assets/fonts，加载失败回退）</div></article>
+    </div>
+  </section>
+
+  <section class="section"><div class="section-heading"><div class="title-group"><h2>字重规范</h2><span class="sub">Font weights</span></div></div>
+    <div class="weight-groups" id="weightGroups"></div>
+  </section>
+
+  <section class="section"><div class="section-heading"><div class="title-group"><h2>中文文字样式</h2><span class="sub">Chinese type scale</span></div><span class="count" id="cnCount"></span></div>
+    <p class="section-desc">逐项展示样式名、字号、行高、字重、实际样例与使用说明。字号同时列出设计 px 与代码 rem。</p>
+    <div class="type-table"><div class="type-head"><span>等级</span><span>字号</span><span>行高 / 字重</span><span>示例</span><span>使用场景</span></div><div id="cnRows"></div></div>
+  </section>
+
+  <section class="section numeric"><div class="section-heading"><div class="title-group"><h2>数字字体 GJType</h2><span class="sub">Financial numerals</span></div><span class="count" id="numCount"></span></div>
+    <div class="copyright"><strong>国金版权字体</strong><span>GJType 已随设计系统提供。数字样式分 S（Bold）与 M（Medium）两套，同一等级字号与行高相同。</span></div>
+    <div class="copyright" style="display:block"><strong>使用场景 · 组件规则优先</strong><p>优先使用：股票代码、基金代码、金融产品代码；独立呈现的重要数据、金额、价格、百分比、涨跌幅等数字字段。</p><p>不优先使用：文章、卡片标题、摘要、标签、“为您找到 x 条信息”等文本内数字，以及日期。数字随所在文本使用系统字体，不单独拆分换字体。</p><p>组件已规定是否使用数字字体时，以组件规则为优先；以上规则用于其它场景的生成。</p></div>
+    <div class="num-scenarios" id="numScenarios"></div>
+    <div class="type-table"><div class="type-head"><span>等级</span><span>字号</span><span>行高</span><span>S · Bold</span><span>M · Medium</span><span>使用场景</span></div><div id="numRows"></div></div>
+    <p class="fallback"><b>使用边界：</b>金额、价格、涨跌幅等需要纵向对齐或连续刷新的数字，在文字样式之外加 <code>font-variant-numeric: tabular-nums</code>（可用 <code>.gj-mobile-tabular-nums</code>）。</p>
+  </section>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+  const $=id=>document.getElementById(id);let toastTimer;
+  function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+  async function copyValue(value){let ok=false;try{await navigator.clipboard.writeText(value);ok=true}catch{const a=document.createElement('textarea');a.value=value;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();try{ok=document.execCommand('copy')}catch{}a.remove()}const text=ok?`已复制 ${value}`:'复制失败，请手动选择';if(window.parent!==window){window.parent.postMessage({type:'gj-copy-feedback',text},location.origin);return}$('toast').textContent=text;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),1500)}
+  const px=s=>s.fontSize.value, lh=s=>s.lineHeight.value, fw=s=>s.cssDeclarations['font-weight'];
+  const rem=v=>(v/100).toString().replace(/^0/,'0')+'rem';
+  // 示例按 375 基准：设计 px 即 375 宽下的实际像素
+  const sampleStyle=s=>`font-family:${s.cssDeclarations['font-family']};font-size:${px(s)}px;line-height:${lh(s)}px;font-weight:${fw(s)}`;
+  const level=s=>`<span class="style-level"><button class="name" data-copy="${esc(s.name)}">${esc(s.name)}</button><button class="cls" data-copy=".${esc(s.cssClass)}">.${esc(s.cssClass)}</button></span>`;
+  const sizeCell=s=>`<span class="style-value">${px(s)}px<small>${rem(px(s))}</small></span>`;
+  const usage=d=>`<span class="style-usage">${esc(d||'暂无说明')}</span>`;
+  const range=list=>{const n=list.map(s=>s.name);return n.length>1?`${n[0]} – ${n[n.length-1]}`:n[0]||''};
+  const order=n=>parseInt((n.match(/\d+/)||[0])[0],10);
+
+  function render(t){
+    const all=Object.values(t.typography.styles);
+    const H=all.filter(s=>/^H\d/.test(s.name)).sort((a,b)=>order(a.name)-order(b.name));
+    const P=all.filter(s=>/^P\d/.test(s.name)).sort((a,b)=>order(a.name)-order(b.name));
+    const N=all.filter(s=>/^N\d/.test(s.name));
+    const NS=N.filter(s=>/-S$/.test(s.name)).sort((a,b)=>order(a.name)-order(b.name));
+    const NM=N.filter(s=>/-M$/.test(s.name)).sort((a,b)=>order(a.name)-order(b.name));
+
+    // 字重：由各组样式的实际字重汇总
+    const weightItem=(w,name,sample,rule,isNum)=>`<div class="weight-item"><span class="weight-code">${w}</span><span class="weight-sample" style="font-weight:${w}">${sample}</span><span class="weight-rule">${rule}</span></div>`;
+    const wName=list=>list[0]?list[0].fontWeightName:'';
+    $('weightGroups').innerHTML=
+      `<article class="weight-group"><header class="weight-group-head"><h3>中文字重</h3><span class="weight-family">system-ui</span></header><div class="weight-list">`+
+        (P.length?weightItem(fw(P[0]),wName(P),`常规 ${wName(P)}`,`正文样式 ${range(P)} 使用 ${wName(P)}。`):'')+
+        (H.length?weightItem(fw(H[0]),wName(H),`强调 ${wName(H)}`,`标题样式 ${range(H)} 使用 ${wName(H)}。`):'')+
+      `</div></article>`+
+      `<article class="weight-group number-weight"><header class="weight-group-head"><h3>数字字重</h3><span class="weight-family">GJType</span></header><div class="weight-list">`+
+        (NM.length?weightItem(fw(NM[0]),wName(NM),'88,888.88',`M 套 ${range(NM)} 使用 ${wName(NM)}。`):'')+
+        (NS.length?weightItem(fw(NS[0]),wName(NS),'88,888.88',`S 套 ${range(NS)} 使用 ${wName(NS)}。`):'')+
+      `</div></article>`;
+
+    const cnRow=s=>`<div class="type-row">${level(s)}${sizeCell(s)}<span class="style-value">${lh(s)}px / ${fw(s)}</span><span class="style-sample" style="${sampleStyle(s)}">国金证券设计系统</span>${usage(s.description)}</div>`;
+    $('cnRows').innerHTML=`<div class="type-group">标题 · ${wName(H)}</div>`+H.map(cnRow).join('')+`<div class="type-group">正文 · ${wName(P)}</div>`+P.map(cnRow).join('');
+    $('cnCount').textContent=`${H.length+P.length} 个 Text Styles`;
+
+    const byLevel={};NS.concat(NM).forEach(s=>{const k='N'+order(s.name);(byLevel[k]??=[]).push(s)});
+    $('numRows').innerHTML=Object.keys(byLevel).sort((a,b)=>order(a)-order(b)).map(k=>{
+      const s=byLevel[k].find(x=>/-S$/.test(x.name)),m=byLevel[k].find(x=>/-M$/.test(x.name)),ref=s||m;
+      const cell=x=>x?`<span style="display:grid;gap:4px;min-width:0"><span class="style-sample" style="${sampleStyle(x)}">88,888.88</span><span class="style-level"><button class="cls" data-copy=".${esc(x.cssClass)}">${esc(x.name)}</button></span></span>`:'<span>—</span>';
+      return `<div class="type-row"><span class="style-level"><span class="name">${k}</span></span>${sizeCell(ref)}<span class="style-value">${lh(ref)}px</span>${cell(s)}${cell(m)}${usage(ref.description)}</div>`;
+    }).join('');
+    $('numCount').textContent=`${NS.length+NM.length} 个 Text Styles`;
+    const card=NS.find(x=>order(x.name)===3)||NS[0];
+    if(card){const st=sampleStyle(card),tag=`<div class="num-style">${esc(card.name)}</div>`;
+      $('numScenarios').innerHTML=
+        `<article class="num-card market"><div class="num-label">指标 · 行情涨跌</div><div class="num-value" style="${st}"><span class="rise">+1.23%</span><span class="fall">-2.32%</span></div>${tag}</article>`+
+        `<article class="num-card"><div class="num-label">指标 · 完成率</div><div class="num-value" style="${st}">86.5%</div>${tag}</article>`+
+        `<article class="num-card"><div class="num-label">指标 · 价格</div><div class="num-value" style="${st}">¥1,244.56</div>${tag}</article>`+
+        `<article class="num-card"><div class="num-label">指标 · 资产</div><div class="num-value" style="${st}">88,888.88</div>${tag}</article>`;}
+  }
+  document.addEventListener('click',e=>{const el=e.target.closest('[data-copy]');if(el)copyValue(el.dataset.copy)});
+  Promise.resolve(GJ_PREVIEW_DATA.tokens).then(render).catch(err=>{$('cnRows').textContent='文字样式读取失败';console.error(err)});
+</script></body></html>

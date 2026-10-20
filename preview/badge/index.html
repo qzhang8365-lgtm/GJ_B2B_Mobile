@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 徽标 Badge</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select,.playground .controls .field input{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">操作反馈组件 · Feedback</div>
+    <h1>徽标 Badge</h1>
+    <p>附在图标、入口或列表项上，提示数量或有新内容。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section" id="badge-type">
+      <header class="docs-section-head"><div><h2>类型与尺寸</h2><p>需要具体数量用数字徽标，只提示有新内容用红点。一位数为圆形，多位数自动加宽，超过 99 显示 99+。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">红点 / 数字（默认 16、大号 20）</span><div data-demo="types"></div></div>
+        <div class="panel"><span class="docs-stage-label">描边：用在有色或复杂背景上</span><div data-demo="stroke"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="badge-usage">
+      <header class="docs-section-head"><div><h2>使用位置</h2><p>徽标中心对齐承载对象右上角：单个图标对齐图标本身，带底色的入口对齐底块；列表项放在行尾。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">图标 / 入口右上角</span><div data-demo="corner"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">列表项行尾</span><div data-demo="list"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>工作台首页：导航栏通知、金刚区入口、消息列表和底部导航都带徽标。调整未读数量；点开消息或入口后徽标减少或消失。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pN">未读总数</label><select id="pN"><option>0</option><option>3</option><option selected>12</option><option>128</option></select></div>
+          <div class="field"><label for="pT">导航栏徽标</label><select id="pT"><option value="num" selected>数字</option><option value="dot">红点</option></select></div>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>选用</td><td>需要数量用数字徽标；只提示“有新内容”用红点。同一含义固定一种形式。</td><td>不承载核心业务数据，能独立阅读的信息用文本或标签。</td></tr>
+        <tr><td>上限</td><td>统一超限规则，超过 99 显示 99+，避免位数增长导致布局抖动。</td><td>—</td></tr>
+        <tr><td>位置</td><td>附在承载对象右上角或列表行尾，同一列表中位置、间距一致。</td><td>不遮挡关键图形或文字，不独立悬浮。</td></tr>
+        <tr><td>颜色</td><td>默认红底白字；有色或复杂背景加描边。</td><td>不只靠颜色区分重要状态。</td></tr>
+        <tr><td>更新</td><td>已读、处理完成后及时减少或隐藏；数量为 0 时不显示。</td><td>—</td></tr>
+        <tr><td>交互与读屏</td><td>点击由承载对象响应；在承载对象上说明含义与数量（如“消息，3 条未读”）。</td><td>徽标本身一般不做独立点击入口。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const ic=(n,s=24)=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${n}.svg');width:${s/100}rem;height:${s/100}rem" aria-hidden="true"></span>`;
+  const txt=n=>n>99?'99+':String(n);
+  const B=(n,o={})=>o.dot?`<span class="gj-m-badge gj-m-badge-dot${o.stroke?' gj-m-badge-stroke':''}" aria-hidden="true"></span>`:`<span class="gj-m-badge${o.lg?' gj-m-badge-lg':''}${o.stroke?' gj-m-badge-stroke':''}" aria-hidden="true"${n>0?'':' hidden'}>${txt(n)}</span>`;
+  const CSS='html,body{overflow:hidden;background:transparent}.row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.24rem;padding:.12rem 0}.cap{display:flex;flex-direction:column;align-items:center;gap:.08rem;font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}.cap>span:first-child{display:flex;align-items:center;height:.24rem}'+
+    '.bg{display:flex;align-items:center;justify-content:center;gap:.32rem;padding:.20rem;background:var(--ds-brand-gj-blue);color:var(--ds-text-reversal)}'+
+    '.scr{width:100%;max-width:3.75rem;margin:0 auto;box-sizing:border-box}.scr>.gj-m-list-card{margin:0}.app-ico{display:block;width:.40rem;height:.40rem}'+
+    '.ext{display:flex;flex-direction:column;align-items:flex-end;gap:.04rem}';
+  const FIX='html,body,.page{height:100%}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+(h?FIX:''),height:h||'auto'});
+
+  show('types',`<div class="row">${[[B(0,{dot:1}),'红点'],[B(8),'1 位'],[B(88),'2 位'],[B(128),'99+'],[B(8,{lg:1}),'大号'],[B(88,{lg:1}),''],[B(128,{lg:1}),'']].map(([b,t])=>`<span class="cap"><span>${b}</span><span>${t||'&nbsp;'}</span></span>`).join('')}</div>`);
+  show('stroke',`<div class="bg">${['icf_system_bell','icf_contact_message','icf_system_bell'].map((n,i)=>`<span class="gj-m-badge-anchor">${ic(n)}${i===0?B(0,{dot:1,stroke:1}):i===1?B(8,{stroke:1}):B(128,{stroke:1})}</span>`).join('')}</div>`);
+  show('corner',`<div class="row" style="gap:.32rem">${[['icf_system_bell',B(0,{dot:1})],['icf_contact_message',B(5)],['icf_system_bell',B(128)]].map(([n,b],i)=>`<span class="gj-m-badge-anchor">${i?`<img class="app-ico" src="${GJPhone.ROOT}assets/icons/glassicon/png/${i===1?'businessProcessing':'data'}.png" alt="">`:ic(n)}${b}</span>`).join('')}</div>`);
+  const MSG=[['系统通知','您有 88 条未读消息','10:24',88],['审批提醒','张三提交的开户申请待您审批','09:12',3],['产品公告','国金稳健 3 号本周开放申购','昨天',0]];
+  const listHtml=(rows,inCard)=>`<div class="gj-m-list ${inCard?'gj-m-list-in-card':'gj-m-list-card'}">${rows.map(([t,s,tm,n],i)=>`<button type="button" class="gj-m-list-item" data-i="${i}" aria-label="${t}${n?'，'+n+' 条未读':''}"><span class="gj-m-list-item-prefix">${ic(i===1?'icf_contact_message':'icf_system_bell')}</span><span class="gj-m-list-item-content"><span class="gj-m-list-item-main"><span class="gj-m-list-item-text">${t}</span><span class="gj-m-list-item-desc">${s}</span></span><span class="gj-m-list-item-extra"><span class="ext"><span>${tm}</span>${B(n)}</span></span></span></button>`).join('')}</div>`;
+  show('list',`<div class="scr">${listHtml(MSG)}</div>`);
+
+  const GLASS=n=>`assets/icons/glassicon/png/${n}.png`;
+  const TI=(name,active)=>`<span aria-hidden="true" class="gj-icon gj-icon-24 ${active?'gj-icon-active':'gj-icon-default'}" style="--gj-icon:url('${ICON}${name}${active?'-fill':''}.svg')"></span>`;
+  const APPCSS='.app{position:relative;width:100%;max-width:3.75rem;margin:0 auto;height:100%;overflow:hidden;display:flex;flex-direction:column;background:var(--ds-background-background)}'+
+    '.body{flex:1;min-height:0;overflow-y:auto;padding:.12rem var(--space-page-margin-x);display:flex;flex-direction:column;gap:var(--space-card-l1-gap)}'+
+    '.hello b{display:block;font-size:var(--ds-type-h3-cn-s-font-size);line-height:var(--ds-type-h3-cn-s-line-height);font-weight:var(--ds-type-h3-cn-s-font-weight);color:var(--ds-text-primary)}.hello small{display:block;margin-top:.04rem;font-size:var(--ds-type-p5-cn-r-font-size);line-height:var(--ds-type-p5-cn-r-line-height);color:var(--ds-text-tiatery)}'+
+    '.tb{flex:none}';
+  const HEAD=(t,right='')=>`<div class="gj-m-card-head"><div class="gj-m-card-header"><h3 class="gj-m-card-title">${t}</h3>${right}</div></div>`;
+  function render(){const N=+$('pN').value,T=$('pT').value;
+    const a=N?Math.ceil(N*0.7):0;const rows=[['系统通知','您的账户于 10:24 在新设备登录','10:24',a],['审批提醒','张三提交的开户申请待您审批','09:12',N-a],['产品公告','国金稳健 3 号本周开放申购','昨天',0]];
+    const GRID=[['审批','businessProcessing',5],['任务','day','dot'],['客户','account',0],['交易','trade',0],['风险预警','risk',128],['产品','investmentManage',0],['数据','data',0],['更多','menu',0]];
+    const total=()=>rows.reduce((s,r)=>s+r[3],0);
+    const f=GJPhone.swatch($('lab'),{html:`<div class="app"><header class="gj-m-navbar" aria-label="页面导航"><div class="gj-m-navbar-left"></div><div class="gj-m-navbar-center"><span class="gj-m-navbar-title">工作台</span></div><div class="gj-m-navbar-right"><button type="button" class="gj-m-navbar-action" id="bell"></button></div></header><div class="body">
+      <section class="gj-m-card"><div class="hello"><b>下午好，张三</b><small>国金证券 · 上海陆家嘴营业部</small></div><div class="gj-m-metric-grid gj-m-metric-grid-3">${[['5','待审批'],['12','今日任务'],['3','到期提醒']].map(([n,l])=>`<div class="gj-m-metric"><span class="gj-m-metric-value"><span class="gj-m-metric-num">${n}</span></span><span class="gj-m-metric-label">${l}</span></div>`).join('')}</div></section>
+      <section class="gj-m-card">${HEAD('常用功能','<button type="button" class="gj-m-text-button gj-m-text-button-small">全部</button>')}<div class="gj-m-card-body"><nav class="gj-m-gridnav" data-columns="4" id="grid" aria-label="功能导航">${GRID.map(([t,g,b],i)=>`<button type="button" class="gj-m-gridnav-item" data-i="${i}" aria-label="${t}${b==='dot'?'，有新内容':b?'，'+b+' 条待处理':''}"><span class="gj-m-badge-anchor"><img src="${GLASS(g)}" alt="" draggable="false">${b==='dot'?B(0,{dot:1}):b?B(b):''}</span><span class="gj-mobile-type-p5-cn-r lb">${t}</span></button>`).join('')}</nav></div></section>
+      <section class="gj-m-card">${HEAD('消息')}<div class="gj-m-card-body" id="msgs"></div></section>
+    </div><div class="tb"><nav class="gj-m-tabbar" id="tabbar" aria-label="底部导航"></nav><div class="gj-m-tabbar-safe"></div></div></div>`,css:CSS+APPCSS+FIX,height:680});
+    f.addEventListener('load',()=>{const d=f.contentDocument,bell=d.getElementById('bell'),msgs=d.getElementById('msgs'),tab=d.getElementById('tabbar');
+      const TABS=[['首页','icf_system_home'],['客户','icf_user_idcard'],['消息','icf_contact_message'],['团队','icf_user_group'],['我的','icf_user_user']];
+      const draw=()=>{const n=total();
+        bell.innerHTML=`<span class="gj-m-badge-anchor">${ic('icf_system_bell')}${n?(T==='dot'?B(0,{dot:1}):B(n)):''}</span>`;bell.setAttribute('aria-label',n?`通知，${T==='dot'?'有未读':n+' 条未读'}`:'通知');
+        tab.innerHTML=TABS.map(([t,ico],i)=>{const badge=i===2&&n?B(n):i===4?B(0,{dot:1}):'';return `<button type="button" class="gj-m-tabbar-item${i===0?' is-active':''}"${i===0?' aria-current="page"':''} aria-label="${t}${i===2&&n?'，'+n+' 条未读':i===4?'，有新内容':''}"><span class="gj-m-tabbar-icon"><span class="gj-m-badge-anchor">${TI(ico)}${TI(ico,true)}${badge}</span></span><span class="gj-m-tabbar-label">${t}</span></button>`}).join('');
+        msgs.innerHTML=listHtml(rows,1);
+        msgs.querySelectorAll('.gj-m-list-item').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.i;rows[i][3]=0;draw();msgs.querySelector(`.gj-m-list-item[data-i="${i}"]`).focus()}))};
+      d.querySelectorAll('#grid .gj-m-gridnav-item').forEach(b=>b.addEventListener('click',()=>{const bd=b.querySelector('.gj-m-badge');if(bd){bd.remove();b.setAttribute('aria-label',b.querySelector('.lb').textContent)}}));
+      draw()})}
+  $('pN').addEventListener('change',render);$('pT').addEventListener('change',render);render();
+})();
+</script>
+</body>
+</html>

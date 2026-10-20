@@ -1,0 +1,42 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "form",
+  "name": "表单 Form",
+  "category": "信息录入组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "表单Form（155:2401）",
+    "nodes": {
+      "Form_input": "158:874（Required × Filled × Disabled × Error，8 变体）",
+      "Form_select": "1005:4307（Required × Filled × Disabled × Error，8 变体）",
+      "Form_dateselect": "1005:4328（Required × Filled × Disabled × Error，12 变体）",
+      "Form_switch": "1005:4739（Size=Default|Small）",
+      "Form_slotcard": "1008:5184",
+      "usage": "1011:209",
+      "Form_item/Title": "158:1010（Asterisk / description / Tooltip）",
+      "滑块": "见 references/components/slider（滑块Slider 页 1822:16186）"
+    },
+    "extractedAt": "2026-10-14",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-form-card(-title) / .gj-m-form-item(-inline) / .gj-m-form-label(-text) / .gj-m-form-required / .gj-m-form-desc / .gj-m-form-tip / .gj-m-form-actions",
+    "controls": "复用 .gj-m-input(-line) / .gj-m-select / .gj-m-select.gj-m-datepicker / .gj-m-switch(-sm)"
+  },
+  "card": "Background/Container（Figma #ffffff 未绑定），内边距 16，标题 H4-CN-S Text/Primary，与内容间距 12",
+  "item": "上内边距 16（2026-10-14 由 12 调整），标题与控件间距 8；控件 L 40；表单项高 86",
+  "label": {
+    "text": "H5-CN-S 14/22 Text/Secondary，间距 4",
+    "required": "* Feedback/error&rise，标题后",
+    "desc": "P3_CN-R Text/Tiatery，括注",
+    "tip": "icf_system_question 16 Text/Tiatery，热区 44"
+  },
+  "controlStyle": {
+    "all": "填充式 Style=default（Background/Background + Border/default），2026-10-14 统一"
+  },
+  "error": "控件下方 4，P5 12/18 Feedback/error&rise（输入框、选择器、日期一致）",
+  "inline": "开关项：顶部留白 16、底部 0（与其他表单项一致），标题与开关两端对齐，间距 12；开关 Default 48×28 / Small 32×20",
+  "actions": "底部按钮组：草稿 / 提交、上一步 / 下一步，大号按钮等分，间距 12"
+}

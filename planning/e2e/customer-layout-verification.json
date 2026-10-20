@@ -1,0 +1,182 @@
+{
+  "pass": true,
+  "results": [
+    {
+      "width": 375,
+      "rows": [
+        {
+          "name": "宁德时代",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 43,
+          "rightHeight": 44,
+          "labelValueOverlap": 18,
+          "overlap": false
+        },
+        {
+          "name": "贵州茅台",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 43,
+          "rightHeight": 44,
+          "labelValueOverlap": 18,
+          "overlap": false
+        },
+        {
+          "name": "中际旭创",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 43,
+          "rightHeight": 44,
+          "labelValueOverlap": 18,
+          "overlap": false
+        },
+        {
+          "name": "长江电力",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 43,
+          "rightHeight": 44,
+          "labelValueOverlap": 18,
+          "overlap": false
+        },
+        {
+          "name": "中国神华",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 43,
+          "rightHeight": 44,
+          "labelValueOverlap": 18,
+          "overlap": false
+        },
+        {
+          "name": "隆基绿能",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 43,
+          "rightHeight": 44,
+          "labelValueOverlap": 18,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "rows": [
+        {
+          "name": "宁德时代",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 36.84375,
+          "rightHeight": 37.546875,
+          "labelValueOverlap": 15.359375,
+          "overlap": false
+        },
+        {
+          "name": "贵州茅台",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 36.84375,
+          "rightHeight": 37.546875,
+          "labelValueOverlap": 15.359375,
+          "overlap": false
+        },
+        {
+          "name": "中际旭创",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 36.84375,
+          "rightHeight": 37.546875,
+          "labelValueOverlap": 15.359375,
+          "overlap": false
+        },
+        {
+          "name": "长江电力",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 36.84375,
+          "rightHeight": 37.546875,
+          "labelValueOverlap": 15.359375,
+          "overlap": false
+        },
+        {
+          "name": "中国神华",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 36.84375,
+          "rightHeight": 37.546875,
+          "labelValueOverlap": 15.359375,
+          "overlap": false
+        },
+        {
+          "name": "隆基绿能",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 36.84375,
+          "rightHeight": 37.546875,
+          "labelValueOverlap": 15.359375,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "rows": [
+        {
+          "name": "宁德时代",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 52.390625,
+          "rightHeight": 52.796875,
+          "labelValueOverlap": 21.59375,
+          "overlap": false
+        },
+        {
+          "name": "贵州茅台",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 52.390625,
+          "rightHeight": 52.796875,
+          "labelValueOverlap": 21.59375,
+          "overlap": false
+        },
+        {
+          "name": "中际旭创",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 52.390625,
+          "rightHeight": 52.796875,
+          "labelValueOverlap": 21.59375,
+          "overlap": false
+        },
+        {
+          "name": "长江电力",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 52.390625,
+          "rightHeight": 52.796875,
+          "labelValueOverlap": 21.59375,
+          "overlap": false
+        },
+        {
+          "name": "中国神华",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 52.390625,
+          "rightHeight": 52.796875,
+          "labelValueOverlap": 21.59375,
+          "overlap": false
+        },
+        {
+          "name": "隆基绿能",
+          "leftLines": 2,
+          "rightLines": 2,
+          "leftHeight": 52.390625,
+          "rightHeight": 52.796875,
+          "labelValueOverlap": 21.59375,
+          "overlap": false
+        }
+      ]
+    }
+  ]
+}

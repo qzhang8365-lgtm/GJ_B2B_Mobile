@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<title>国金智慧签</title>
+<!-- 端到端验证：依据 skill（SKILL.md / page-rules.md / patterns list-filter / 组件 rules）重做「国金智慧签」。原型，非生产代码；数据为虚构。 -->
+<link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+<link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-components.css">
+<style>
+html{font-size:min(calc(100vw / 3.75),120px)}
+:root{--safe-bottom:env(safe-area-inset-bottom,0px);--tabbar-h:max(.56rem,44px)}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;font-size:.14rem;line-height:.22rem;font-family:var(--ds-font-family-ui);color:var(--ds-text-primary);background:var(--ds-background-background)}
+.view{min-height:100vh;display:flex;flex-direction:column}
+.top{position:sticky;top:0;z-index:10;background:var(--ds-background-container)}
+/* 文件页：搜索区上下 8（LF-5），发起时间与提示同在白底筛选区 */
+.query{display:flex;flex-direction:column;gap:var(--space-8);padding:var(--space-8) var(--space-page-margin-x) var(--space-12);background:var(--ds-background-container)}
+.tabs-wrap{position:sticky;top:44px;z-index:9;background:var(--ds-background-container);box-shadow:inset 0 -1px 0 var(--ds-border-default)}
+.tabs-wrap .gj-m-tabs{padding-inline:var(--space-page-margin-x)}
+.body{flex:1 0 auto;display:flex;flex-direction:column;gap:var(--space-card-l1-gap);padding:var(--space-12) var(--space-page-margin-x) calc(var(--tabbar-h) + var(--space-24) + var(--safe-bottom))}
+.note{margin:0;color:var(--ds-text-tiatery);font-size:var(--ds-type-p5-cn-r-font-size);line-height:var(--ds-type-p5-cn-r-line-height)}
+.summary{margin-bottom:calc(var(--space-8) - var(--space-card-l1-gap))}
+.list-end{padding:var(--space-4) 0;text-align:center}
+/* 文件卡片：标题行可进入预览（箭头），字段为统一文本行（PR-011），操作右对齐 */
+.f-line{margin:0;color:var(--ds-text-secondary);font-size:var(--ds-type-p3-cn-r-font-size);line-height:var(--ds-type-p3-cn-r-line-height);font-variant-numeric:tabular-nums}
+.f-line .is-alert{color:var(--ds-feedback-error-rise)}
+.f-lines{display:flex;flex-direction:column;gap:var(--space-4)}
+.f-acts{display:flex;justify-content:flex-end;gap:var(--space-btn-gap);margin-top:var(--space-12)}
+a.gj-m-card-header{color:inherit;text-decoration:none}
+mark.gj-m-search-highlight{background:none}
+.empty-area{flex:1 0 auto;display:flex;align-items:center;justify-content:center;padding:var(--space-24) 0}
+/* 我的 */
+.me{display:flex;align-items:center;gap:var(--space-12)}
+.me-name{margin:0;font-size:var(--ds-type-h3-cn-s-font-size);line-height:var(--ds-type-h3-cn-s-line-height);font-weight:var(--ds-type-h3-cn-s-font-weight)}
+.me-sub{margin:0;color:var(--ds-text-tiatery);font-size:var(--ds-type-p3-cn-r-font-size);line-height:var(--ds-type-p3-cn-r-line-height);font-variant-numeric:tabular-nums}
+.body .gj-m-list-card{margin-inline:0}
+.sub-body{padding-bottom:calc(.64rem + var(--space-24) + var(--safe-bottom))}
+/* 签名卡：签名图在二级底色区内完整显示；底部行为“设为默认”单选 + 删除 */
+.sg-img{display:flex;align-items:center;justify-content:center;height:.96rem;border-radius:var(--Radius-MD);background:var(--ds-background-background)}
+.sg-img img{max-width:70%;max-height:.72rem}
+.sg-foot{display:flex;align-items:center;justify-content:space-between;margin-top:var(--space-12)}
+.sg-del{--gj-m-tbtn-fg:var(--ds-text-tiatery)}
+/* 签署弹层里的签名选项 */
+.sg-opts{display:flex;flex-direction:column;gap:var(--space-12)}
+.sg-opt{display:flex;align-items:center;gap:var(--space-12);padding:var(--space-12);border-radius:var(--Radius-LG);box-shadow:inset 0 0 0 1px var(--ds-border-default);cursor:pointer}
+.sg-opt:has(input:checked){box-shadow:inset 0 0 0 1px var(--ds-brand-gj-blue)}
+.sg-opt .sg-img{flex:1 1 auto;height:.64rem}
+.sg-opt .sg-img img{max-height:.48rem}
+.sg-manage{display:flex;justify-content:center;margin-top:var(--space-12)}
+/* 手写板（无对应组件，见聊天待确认） */
+.pad{position:relative;height:2rem;border-radius:var(--Radius-LG);background:var(--ds-background-background);touch-action:none}
+.pad canvas{display:block;width:100%;height:100%}
+.pad-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--ds-text-tiatery);pointer-events:none}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:var(--space-12) var(--space-page-margin-x) calc(var(--space-12) + var(--safe-bottom));background:var(--ds-background-container);box-shadow:0 -1px 0 var(--ds-border-default)}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;padding-bottom:var(--safe-bottom);background:var(--ds-background-container);box-shadow:0 -1px 0 var(--ds-border-default)}
+.layer{position:fixed;inset:0;z-index:30}
+.lg-tip{margin:var(--space-8) 0 0;color:var(--ds-text-tiatery);font-size:var(--ds-type-p5-cn-r-font-size);line-height:var(--ds-type-p5-cn-r-line-height)}
+</style>
+</head>
+<body>
+
+<!-- ① 文件（默认进入页，底部导航第一项） -->
+<section class="view" id="vFiles" aria-label="文件">
+  <div class="top"><header class="gj-m-navbar" aria-label="页面导航"><div class="gj-m-navbar-left"></div><div class="gj-m-navbar-center"><span class="gj-m-navbar-title">文件</span></div><div class="gj-m-navbar-right"></div></header></div>
+  <div class="query">
+    <label class="gj-m-search gj-m-search-m"><span class="gj-icon" aria-hidden="true" style="--gj-icon:url('../../assets/icons/iconfont/icf_system_search.svg')"></span><input type="search" id="q" enterkeyhint="search" placeholder="搜索文件名称或编号" aria-label="搜索文件名称、用印流程编号或合同编号"><button type="button" class="gj-m-search-clear" id="qClear" aria-label="清除"><span class="gj-icon" aria-hidden="true" style="--gj-icon:url('../../assets/icons/iconfont/icf_system_close-circle-fill.svg')"></span></button></label>
+    <div id="dateField"></div>
+    <div class="gj-m-notice gj-m-notice-small is-collapsed" data-tone="message" role="status" id="tip"><span class="gj-icon" aria-hidden="true" style="--gj-icon:url('../../assets/icons/iconfont/icf_system_info.svg')"></span><span class="gj-m-notice-text">默认展示当前年度发起的文件，如需查看其他年份的数据，请修改上方的发起时间筛选条件</span><button type="button" class="gj-m-notice-toggle" aria-expanded="false" aria-label="展开提示" hidden><span class="gj-icon" aria-hidden="true" style="--gj-icon:url('../../assets/icons/iconfont/icf_Arrow_down.svg')"></span></button></div>
+  </div>
+  <div class="tabs-wrap" id="tabsWrap"></div>
+  <main class="body" id="fileBody"></main>
+</section>
+
+<!-- ② 我的（个人入口，底部导航最后一项） -->
+<section class="view" id="vMine" aria-label="我的" hidden>
+  <div class="top"><header class="gj-m-navbar" aria-label="页面导航"><div class="gj-m-navbar-left"></div><div class="gj-m-navbar-center"><span class="gj-m-navbar-title">我的</span></div><div class="gj-m-navbar-right"></div></header></div>
+  <main class="body">
+    <section class="gj-m-card"><div class="me"><span class="gj-m-avatar gj-m-avatar-circle is-default"><img alt="" src=""></span><div><p class="me-name">李明</p><p class="me-sub">139****2051</p></div></div></section>
+    <div class="gj-m-list gj-m-list-card">
+      <div class="gj-m-list-item"><span class="gj-m-list-item-content"><span class="gj-m-list-item-main"><span class="gj-m-list-item-text">实名认证</span></span><span class="gj-m-list-item-extra">已实名</span></span></div>
+      <a class="gj-m-list-item" href="javascript:void 0" id="goSign"><span class="gj-m-list-item-content"><span class="gj-m-list-item-main"><span class="gj-m-list-item-text">我的签名</span></span><span class="gj-m-list-item-extra" id="sigCount"></span><span class="gj-m-list-item-arrow"><span class="gj-icon" aria-hidden="true" style="--gj-icon:url('../../assets/icons/iconfont/icf_Arrow_right.svg')"></span></span></span></a>
+      <a class="gj-m-list-item" href="javascript:void 0" id="goCorp"><span class="gj-m-list-item-content"><span class="gj-m-list-item-main"><span class="gj-m-list-item-text">切换至企业账号</span></span><span class="gj-m-list-item-arrow"><span class="gj-icon" aria-hidden="true" style="--gj-icon:url('../../assets/icons/iconfont/icf_Arrow_right.svg')"></span></span></span></a>
+    </div>
+    <button type="button" class="gj-m-button gj-m-button-large gj-m-button-tertiary gj-m-button-block" id="logout">退出登录</button>
+  </main>
+</section>
+
+<!-- ③ 签名管理（二级页，不显示底部导航） -->
+<section class="view" id="vSign" aria-label="签名管理" hidden>
+  <div class="top"><header class="gj-m-navbar" aria-label="页面导航"><div class="gj-m-navbar-left"><button class="gj-m-navbar-action gj-m-navbar-back" type="button" id="signBack" aria-label="返回我的"><span class="gj-icon gj-icon-24" style="--gj-icon:url('../../assets/icons/iconfont/icf_Arrow_left.svg')" aria-hidden="true"></span></button></div><div class="gj-m-navbar-center"><span class="gj-m-navbar-title">签名管理</span></div><div class="gj-m-navbar-right"></div></header></div>
+  <main class="body sub-body" id="signBody"></main>
+  <div class="bar"><button type="button" class="gj-m-button gj-m-button-large gj-m-button-primary gj-m-button-block" id="addSig"><span class="gj-icon" aria-hidden="true" style="--gj-icon:url('../../assets/icons/iconfont/icf_system_add.svg')"></span><span>添加签名</span></button></div>
+</section>
+
+<div class="tabbar" id="tabbar"><nav class="gj-m-tabbar" aria-label="一级导航">
+  <button type="button" class="gj-m-tabbar-item is-active" data-view="vFiles" aria-current="page"><span class="gj-m-tabbar-icon"><span aria-hidden="true" class="gj-icon gj-icon-24 gj-icon-default" style="--gj-icon:url('../../assets/icons/iconfont/icf_file_document-2-line.svg')"></span><span aria-hidden="true" class="gj-icon gj-icon-24 gj-icon-active" style="--gj-icon:url('../../assets/icons/iconfont/icf_file_document-2-fill.svg')"></span></span><span class="gj-m-tabbar-label">文件</span></button>
+  <button type="button" class="gj-m-tabbar-item" data-view="vMine" aria-current="false"><span class="gj-m-tabbar-icon"><span aria-hidden="true" class="gj-icon gj-icon-24 gj-icon-default" style="--gj-icon:url('../../assets/icons/iconfont/icf_user_user.svg')"></span><span aria-hidden="true" class="gj-icon gj-icon-24 gj-icon-active" style="--gj-icon:url('../../assets/icons/iconfont/icf_user_user-fill.svg')"></span></span><span class="gj-m-tabbar-label">我的</span></button>
+</nav></div>
+
+<div id="layer"></div>
+<div id="toast"></div>
+
+<script>
+(()=>{
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const I=(n,cls='')=>`<span class="gj-icon${cls?' '+cls:''}" aria-hidden="true" style="--gj-icon:url('../../assets/icons/iconfont/${n}.svg')"></span>`;
+const pad=n=>String(n).padStart(2,'0');
+const D=(y,m,d)=>new Date(y,m,d);
+const fmt=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const same=(a,b)=>a&&b&&+a===+b;
+const TODAY=D(2026,9,19);
+
+/* ---------- 数据（虚构） ---------- */
+const ORG='国金证券股份有限公司';
+let FILES=[
+  {id:1,st:'me',title:'用印授权委托书（2026 年第四季度）',no:'YY20261016-0032',from:ORG,at:'2026-10-16 15:20',due:'2026-10-20',next:['王芳']},
+  {id:2,st:'me',title:'渠道合作补充协议（中国银行东城根支行）',no:'HT-2026-QD-0418',from:ORG+' 零售渠道部',at:'2026-10-12 10:05',due:'2026-10-30',next:[]},
+  {id:3,st:'others',title:'员工保密协议（2026 版）',no:'YY20260930-0107',from:ORG,at:'2026-09-30 09:00',wait:['人力资源部']},
+  {id:4,st:'done',title:'使用正版软件承诺书',no:'YY20260824-0215',from:ORG,at:'2026-08-24 20:26'},
+  {id:5,st:'done',title:'员工网络安全承诺书',no:'YY20260508-0093',from:ORG,at:'2026-05-08 16:33'},
+  {id:6,st:'done',title:'2025 年度绩效确认书',no:'YY20251228-0311',from:ORG,at:'2025-12-28 11:02'}];
+/* 签名图：印章 + 手写体（原型用 SVG 绘制，名称虚构） */
+const svg=s=>'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(s);
+const SEAL=svg(`<svg xmlns="http://www.w3.org/2000/svg" width="200" height="90" viewBox="0 0 200 90"><rect x="40" y="6" width="120" height="78" rx="10" fill="none" stroke="#d81e06" stroke-width="7"/><text x="100" y="62" text-anchor="middle" font-family="STKaiti,KaiTi,serif" font-weight="700" font-size="44" fill="#d81e06">李明</text></svg>`);
+const HAND=(r,k)=>svg(`<svg xmlns="http://www.w3.org/2000/svg" width="200" height="90" viewBox="0 0 200 90"><g transform="rotate(${r} 100 45)"><text x="96" y="58" text-anchor="middle" font-family="STXingkai,STKaiti,KaiTi,cursive" font-style="italic" font-size="46" fill="#1d2129">李明</text><path d="M${60+k} 70 C 100 ${76+k/2}, 130 60, 160 66" stroke="#1d2129" stroke-width="2.4" fill="none" stroke-linecap="round"/></g></svg>`);
+let SIGS=[{id:'s1',img:SEAL,label:'印章'},{id:'s2',img:HAND(-4,0),label:'手写签名 1'},{id:'s3',img:HAND(-2,8),label:'手写签名 2'}];
+let defSig='s2';
+
+/* ---------- 通用：弹层、提示 ---------- */
+let opener=null;
+const toast=t=>{const h=$('toast');h.innerHTML=`<div class="gj-m-toast-layer" role="status" style="position:fixed"><div class="gj-m-notice" data-tone="default"><span class="gj-m-notice-text">${esc(t)}</span></div></div>`;clearTimeout(toast.t);toast.t=setTimeout(()=>h.innerHTML='',3000)};
+const openLayer=(html,from)=>{if(from)opener=from;$('layer').innerHTML=`<div class="layer">${html}</div>`;document.body.style.overflow='hidden';const L=$('layer').firstElementChild;
+  L.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',closeLayer));
+  const mask=L.querySelector('.gj-m-popup,.gj-m-dialog');if(mask)mask.addEventListener('click',e=>{if(e.target===mask)closeLayer()});
+  const p=L.querySelector('[role=dialog]');if(p)p.focus();return L};
+const closeLayer=()=>{$('layer').innerHTML='';document.body.style.overflow='';if(opener&&document.contains(opener))opener.focus();opener=null};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('layer').innerHTML)closeLayer()});
+const dialog=(title,msg,okText,onOk,from,single)=>{const L=openLayer(`<div class="gj-m-dialog"><div class="gj-m-dialog-panel" role="dialog" aria-modal="true" aria-labelledby="dlT" aria-describedby="dlM" tabindex="-1"><div class="gj-m-dialog-header"><h2 class="gj-m-dialog-title" id="dlT">${title}</h2><p class="gj-m-dialog-message" id="dlM">${msg}</p></div><div class="gj-m-dialog-footer">${single?'':'<button type="button" class="gj-m-button gj-m-button-large gj-m-button-tertiary" data-close>取消</button>'}<button type="button" class="gj-m-button gj-m-button-large gj-m-button-primary" data-ok>${okText}</button></div></div></div>`,from);
+  L.querySelector('[data-ok]').addEventListener('click',()=>{closeLayer();onOk&&onOk()})};
+const popupHead=(id,t)=>`<div class="gj-m-popup-header" data-align="center"><div class="gj-m-popup-header-row"><span class="gj-m-popup-title" id="${id}">${t}</span><button type="button" class="gj-m-popup-close" aria-label="关闭" data-close><span class="gj-icon" aria-hidden="true"></span></button></div></div>`;
+
+/* ---------- 文件页 ---------- */
+const TABS=[['me','待我签署'],['others','待他人签署'],['done','已完成']];
+let st={tab:'me',q:'',start:D(2026,0,1),end:D(2026,11,31)};
+const inRange=f=>{const d=new Date(f.at.slice(0,10)+'T00:00');return d>=st.start&&d<=st.end};
+const match=f=>!st.q||[f.title,f.no].some(s=>s.toLowerCase().includes(st.q.toLowerCase()));
+const hl=s=>{if(!st.q)return esc(s);const i=s.toLowerCase().indexOf(st.q.toLowerCase());return i<0?esc(s):esc(s.slice(0,i))+`<mark class="gj-m-search-highlight">${esc(s.slice(i,i+st.q.length))}</mark>`+esc(s.slice(i+st.q.length))};
+const daysLeft=due=>Math.round((new Date(due+'T00:00')-TODAY)/864e5);
+function drawTabs(){const n=k=>FILES.filter(f=>f.st===k&&inRange(f)&&match(f)).length;
+  $('tabsWrap').innerHTML=`<div class="gj-m-tabs" role="tablist" aria-label="签署状态" data-kind="primary" data-line="fixed">${TABS.map(([k,t])=>`<button type="button" class="gj-m-tab" role="tab" aria-selected="${st.tab===k}" tabindex="${st.tab===k?0:-1}" data-k="${k}"><span class="gj-m-tab-face"><span class="gj-m-tab-label">${t}${k!=='done'&&n(k)?' '+n(k):''}</span></span></button>`).join('')}</div>`;
+  const ts=[...$('tabsWrap').querySelectorAll('.gj-m-tab')];
+  ts.forEach((b,i)=>{b.addEventListener('click',()=>{st.tab=b.dataset.k;render();window.scrollTo(0,0)});b.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const j=(i+(e.key==='ArrowRight'?1:ts.length-1))%ts.length;st.tab=ts[j].dataset.k;render();$('tabsWrap').querySelectorAll('.gj-m-tab')[j].focus()}})})}
+function card(f){const lines=[`流程编号：${hl(f.no)}`,`发起方：${esc(f.from)}`,`发起时间：${f.at}`];
+  if(f.st==='me'){const d=daysLeft(f.due);lines.push(`截止时间：<span class="${d<=3?'is-alert':''}">${f.due}${d<=3?`（剩 ${d} 天）`:''}</span>`)}
+  if(f.st==='others')lines.push(`待签署方：${esc(f.wait.join('、'))}`);
+  const acts=f.st==='me'?`<button type="button" class="gj-m-button gj-m-button-primary" data-sign="${f.id}">去签署</button>`
+    :f.st==='others'?`<button type="button" class="gj-m-button gj-m-button-tertiary" data-urge="${f.id}">提醒签署</button>`
+    :`<button type="button" class="gj-m-button gj-m-button-tertiary" data-verify="${f.id}">验签</button><button type="button" class="gj-m-button gj-m-button-primary" data-dl="${f.id}">下载</button>`;
+  return `<article class="gj-m-card"><div class="gj-m-card-head"><a class="gj-m-card-header" href="javascript:void 0" data-view="${f.id}" aria-label="查看文件 ${esc(f.title)}">${I('icf_file_document-2-line','gj-m-card-icon')}<h3 class="gj-m-card-title">${hl(f.title)}</h3><span class="gj-m-card-arrow">${I('icf_Arrow_right')}</span></a></div><div class="gj-m-card-body"><div class="f-lines">${lines.map(l=>`<p class="f-line">${l}</p>`).join('')}</div><div class="f-acts">${acts}</div></div></article>`}
+const EMPTY_TXT={me:['暂无待我签署的文件','修改发起时间可查看其他年份的文件'],others:['暂无待他人签署的文件','修改发起时间可查看其他年份的文件'],done:['暂无已完成的文件','修改发起时间可查看其他年份的文件']};
+function drawList(){const list=FILES.filter(f=>f.st===st.tab&&inRange(f)&&match(f)).sort((a,b)=>b.at.localeCompare(a.at));const B=$('fileBody');
+  if(!list.length){const s=!!st.q;const [t,d]=s?['未找到相关文件','请检查文件名称或编号后重试']:EMPTY_TXT[st.tab];
+    B.innerHTML=`<div class="empty-area"><div class="gj-m-empty"><img class="gj-m-empty-image" alt="" src="../../assets/images/empty/${s?'search':'empty'}.svg"><div class="gj-m-empty-copy"><p class="gj-m-empty-title">${t}</p><p class="gj-m-empty-description">${d}</p></div></div></div>`;return}
+  B.innerHTML=(st.q?`<p class="note summary">共 ${list.length} 个结果</p>`:'')+list.map(card).join('')+`<p class="note list-end">没有更多了</p>`;
+  B.querySelectorAll('[data-view]').forEach(a=>a.addEventListener('click',()=>toast('打开文件预览（原型不跳转）')));
+  B.querySelectorAll('[data-sign]').forEach(b=>b.addEventListener('click',e=>openSign(+b.dataset.sign,e.currentTarget)));
+  B.querySelectorAll('[data-urge]').forEach(b=>b.addEventListener('click',()=>{b.disabled=true;b.textContent='今日已提醒';toast('已提醒待签署方')}));
+  B.querySelectorAll('[data-verify]').forEach(b=>b.addEventListener('click',e=>{const f=FILES.find(x=>x.id==b.dataset.verify);dialog('验签通过',`「${esc(f.title)}」自签署完成后未被修改，全部签名有效。`,'知道了',null,e.currentTarget,true)}));
+  B.querySelectorAll('[data-dl]').forEach(b=>b.addEventListener('click',()=>toast('已开始下载')))}
+function render(){drawTabs();drawList()}
+
+/* 提示：默认单行，文字超出一行时才出现展开 / 收起（PR-018） */
+const tip=$('tip'),tt=tip.querySelector('.gj-m-notice-toggle'),tx=tip.querySelector('.gj-m-notice-text');
+const fitTip=()=>{if(!tip.classList.contains('is-collapsed'))return;tt.hidden=tx.scrollWidth<=tx.clientWidth};
+tt.addEventListener('click',()=>{const open=tip.classList.toggle('is-collapsed')===false;tt.setAttribute('aria-expanded',open);tt.setAttribute('aria-label',open?'收起提示':'展开提示');tt.querySelector('.gj-icon').style.setProperty('--gj-icon',`url('../../assets/icons/iconfont/icf_Arrow_${open?'up':'down'}.svg')`)});
+addEventListener('resize',fitTip);
+/* 搜索：短列表实时搜索，清除后保留焦点 */
+const q=$('q'),qw=q.parentElement;
+q.addEventListener('input',()=>{st.q=q.value.trim();render()});
+q.addEventListener('focus',()=>qw.classList.add('is-focused'));q.addEventListener('blur',()=>qw.classList.remove('is-focused'));
+$('qClear').addEventListener('click',()=>{q.value='';st.q='';render();q.focus()});
+
+/* 发起时间：日期范围选择（datepicker/rules.md） */
+function drawDate(){$('dateField').innerHTML=`<button type="button" class="gj-m-select gj-m-select-m gj-m-datepicker" id="dateBtn" aria-haspopup="dialog" aria-label="发起时间，${fmt(st.start)} 至 ${fmt(st.end)}">${I('icf_system_calendar')}<span class="gj-m-select-value gj-m-datepicker-range"><span>${fmt(st.start)}</span><span class="gj-m-datepicker-sep">至</span><span>${fmt(st.end)}</span></span></button>`;
+  $('dateBtn').addEventListener('click',e=>openDate(e.currentTarget))}
+const WEEK='日一二三四五六'.split('');
+function calendar(y,m,t){const startW=D(y,m,1).getDay(),rows=Math.ceil((startW+D(y,m+1,0).getDate())/7)*7,cells=[];
+  for(let i=0;i<rows;i++){const d=D(y,m,1-startW+i),out=d.getMonth()!==m,c=['gj-m-calendar-day'];if(same(d,TODAY))c.push('is-today');
+    if(!out){if(same(d,t.start))c.push('is-range-start');if(same(d,t.end)||(same(d,t.start)&&!t.end))c.push('is-range-end');if(t.start&&t.end&&d>t.start&&d<t.end)c.push('is-in-range')}
+    cells.push(`<button type="button" class="${c.join(' ')}" data-date="${fmt(d)}"${out?' disabled':''} aria-label="${d.getMonth()+1}月${d.getDate()}日${same(d,TODAY)?'，今天':''}"><span>${d.getDate()}</span></button>`)}
+  const nav=(n,l)=>`<button type="button" class="gj-m-calendar-nav" data-nav="${n}" aria-label="${l}"><span class="gj-icon" aria-hidden="true"></span></button>`;
+  return `<div class="gj-m-calendar"><div class="gj-m-calendar-header">${nav(-12,'上一年')}${nav(-1,'上一月')}<div class="gj-m-calendar-title" aria-live="polite">${y} - ${pad(m+1)}</div>${nav(1,'下一月')}${nav(12,'下一年')}</div><div class="gj-m-calendar-week" aria-hidden="true">${WEEK.map(w=>`<span>${w}</span>`).join('')}</div><div class="gj-m-calendar-days">${cells.join('')}</div></div>`}
+function openDate(btn){let y=st.start.getFullYear(),m=st.start.getMonth(),t={start:st.start,end:st.end};opener=btn;
+  const draw=()=>{const L=openLayer(`<div class="gj-m-popup"><div class="gj-m-popup-panel gj-m-popup-dialog" role="dialog" aria-modal="true" aria-label="选择发起时间" tabindex="-1"><div class="gj-m-popup-bar" aria-hidden="true"></div><div class="gj-m-popup-body">${calendar(y,m,t)}<p class="lg-tip">${t.start&&!t.end?'请选择结束日期':`已选 ${fmt(t.start)} 至 ${fmt(t.end)}`}</p></div><div class="gj-m-popup-footer"><button type="button" class="gj-m-button gj-m-button-tertiary gj-m-button-large" data-close>取消</button><button type="button" class="gj-m-button gj-m-button-primary gj-m-button-large" data-ok${t.start&&t.end?'':' disabled'}>确认</button></div></div></div>`);
+    L.querySelectorAll('.gj-m-calendar-nav').forEach(n=>n.addEventListener('click',()=>{const d=D(y,m+ +n.dataset.nav,1);y=d.getFullYear();m=d.getMonth();draw();L.isConnected||$('layer').querySelector(`[data-nav="${n.dataset.nav}"]`).focus()}));
+    L.querySelectorAll('.gj-m-calendar-day:not(:disabled)').forEach(c=>c.addEventListener('click',()=>{const [a,b,d]=c.dataset.date.split('-').map(Number),dt=D(a,b-1,d);
+      if(!t.start||t.end||dt<t.start)t={start:dt,end:null};else t.end=dt;draw();const nb=$('layer').querySelector(`[data-date="${c.dataset.date}"]`);nb&&nb.focus()}));
+    L.querySelector('[data-ok]').addEventListener('click',()=>{st.start=t.start;st.end=t.end;closeLayer();drawDate();render();$('dateBtn').focus();toast(`已筛选 ${fmt(st.start)} 至 ${fmt(st.end)} 发起的文件`)})};
+  draw()}
+
+/* 签署：选择签名 → 确认签署（默认签名预选） */
+function openSign(id,from){const f=FILES.find(x=>x.id===id);let pick=defSig;
+  const L=openLayer(`<div class="gj-m-popup"><div class="gj-m-popup-panel gj-m-popup-dialog" role="dialog" aria-modal="true" aria-labelledby="sgT" tabindex="-1">${popupHead('sgT','选择签名')}<div class="gj-m-popup-body"><p class="note" style="margin-bottom:var(--space-12)">签署文件：${esc(f.title)}</p><div class="sg-opts" role="radiogroup" aria-label="签名">${SIGS.map(s=>`<label class="sg-opt"><span class="gj-m-radio"><input type="radio" class="gj-m-radio-input" name="pick" value="${s.id}"${s.id===pick?' checked':''} aria-label="${s.label}${s.id===defSig?'（默认）':''}"><span class="gj-m-radio-icon" aria-hidden="true"></span></span><span class="sg-img"><img alt="" src="${s.img}"></span></label>`).join('')}</div><div class="sg-manage"><button type="button" class="gj-m-text-button gj-m-text-button-small gj-m-text-button-blue" data-manage>管理签名</button></div></div><div class="gj-m-popup-footer"><button type="button" class="gj-m-button gj-m-button-large gj-m-button-tertiary" data-close>取消</button><button type="button" class="gj-m-button gj-m-button-large gj-m-button-primary" data-ok>确认签署</button></div></div></div>`,from);
+  L.querySelectorAll('input[name=pick]').forEach(r=>r.addEventListener('change',()=>pick=r.value));
+  L.querySelector('[data-manage]').addEventListener('click',()=>{opener=null;closeLayer();go('vSign')});
+  L.querySelector('[data-ok]').addEventListener('click',()=>{if(f.next.length){f.st='others';f.wait=f.next}else f.st='done';opener=null;closeLayer();render();toast(f.st==='done'?'签署完成，文件已归入「已完成」':'签署完成，已流转至'+f.wait.join('、'))})}
+
+/* ---------- 我的 / 签名管理 ---------- */
+function drawSigs(){$('sigCount').textContent=SIGS.length+' 个';
+  $('signBody').innerHTML=(SIGS.length?SIGS.map(s=>`<section class="gj-m-card" aria-label="${s.label}"><div class="sg-img"><img alt="${s.label}" src="${s.img}"></div><div class="sg-foot"><label class="gj-m-radio"><input type="radio" class="gj-m-radio-input" name="def" value="${s.id}"${s.id===defSig?' checked':''}><span class="gj-m-radio-icon" aria-hidden="true"></span><span class="gj-m-radio-label">${s.id===defSig?'默认签名':'设为默认'}</span></label><button type="button" class="gj-m-text-button gj-m-text-button-small sg-del" data-del="${s.id}" aria-label="删除${s.label}">${I('icf_system_delete')}<span>删除</span></button></div></section>`).join('')
+    :`<div class="empty-area"><div class="gj-m-empty"><img class="gj-m-empty-image" alt="" src="../../assets/images/empty/empty.svg"><div class="gj-m-empty-copy"><p class="gj-m-empty-title">暂无签名</p><p class="gj-m-empty-description">添加签名后才能签署文件</p></div></div></div>`)
+    +`<p class="note">使用签名即表示您已知晓《电子签名法》《民法典》合同编的相关内容，并授权该签名作为您签署文件的电子代表。</p>`;
+  $('signBody').querySelectorAll('input[name=def]').forEach(r=>r.addEventListener('change',()=>{defSig=r.value;drawSigs();$('signBody').querySelector(`input[value="${r.value}"]`).focus();toast('已设为默认签名')}));
+  $('signBody').querySelectorAll('[data-del]').forEach(b=>b.addEventListener('click',e=>{const s=SIGS.find(x=>x.id===b.dataset.del),isDef=s.id===defSig;
+    dialog('删除该签名？',isDef&&SIGS.length>1?'这是默认签名，删除后将把列表第一个签名设为默认。':'删除后不可恢复，已签署的文件不受影响。','删除',()=>{SIGS=SIGS.filter(x=>x!==s);if(isDef)defSig=SIGS[0]?SIGS[0].id:null;drawSigs();$('addSig').focus();toast('已删除')},e.currentTarget)}))}
+$('goSign').addEventListener('click',()=>go('vSign'));
+$('signBack').addEventListener('click',()=>go('vMine'));
+$('goCorp').addEventListener('click',()=>toast('进入企业账号选择（原型不跳转）'));
+$('logout').addEventListener('click',e=>dialog('退出登录？','退出后需重新验证身份才能查看和签署文件。','退出',()=>{location.href='esign-login.html'},e.currentTarget));
+
+/* 手写签名（无对应组件：底部弹层 + 画布，见待确认） */
+$('addSig').addEventListener('click',e=>{const L=openLayer(`<div class="gj-m-popup"><div class="gj-m-popup-panel gj-m-popup-dialog" role="dialog" aria-modal="true" aria-labelledby="pdT" tabindex="-1">${popupHead('pdT','手写签名')}<div class="gj-m-popup-body"><div class="pad"><canvas aria-label="签名书写区"></canvas><span class="pad-hint">请在此区域用正楷书写姓名</span></div></div><div class="gj-m-popup-footer"><button type="button" class="gj-m-button gj-m-button-large gj-m-button-tertiary" data-clear>清除</button><button type="button" class="gj-m-button gj-m-button-large gj-m-button-primary" data-ok disabled>保存</button></div></div></div>`,e.currentTarget);
+  const cv=L.querySelector('canvas'),r=cv.getBoundingClientRect(),dpr=window.devicePixelRatio||1;cv.width=r.width*dpr;cv.height=r.height*dpr;const c=cv.getContext('2d');c.scale(dpr,dpr);c.lineWidth=3;c.lineCap='round';c.lineJoin='round';c.strokeStyle='#1d2129';
+  let down=false,drawn=false;const ok=L.querySelector('[data-ok]'),hint=L.querySelector('.pad-hint');const pt=ev=>{const b=cv.getBoundingClientRect();return [ev.clientX-b.left,ev.clientY-b.top]};
+  cv.addEventListener('pointerdown',ev=>{down=true;cv.setPointerCapture(ev.pointerId);c.beginPath();c.moveTo(...pt(ev))});
+  cv.addEventListener('pointermove',ev=>{if(!down)return;c.lineTo(...pt(ev));c.stroke();if(!drawn){drawn=true;ok.disabled=false;hint.hidden=true}});
+  cv.addEventListener('pointerup',()=>down=false);
+  L.querySelector('[data-clear]').addEventListener('click',()=>{c.clearRect(0,0,cv.width,cv.height);drawn=false;ok.disabled=true;hint.hidden=false});
+  ok.addEventListener('click',()=>{const n=SIGS.length+1,id='s'+Date.now();SIGS.push({id,img:cv.toDataURL('image/png'),label:'手写签名 '+n});if(!defSig)defSig=id;closeLayer();drawSigs();toast('签名已保存')})});
+
+/* ---------- 视图切换：底部导航（文件最左、我的最右） ---------- */
+const scrollY={};let cur='vFiles';
+function go(v){scrollY[cur]=window.scrollY;['vFiles','vMine','vSign'].forEach(k=>$(k).hidden=k!==v);cur=v;
+  $('tabbar').hidden=v==='vSign';
+  document.querySelectorAll('.gj-m-tabbar-item').forEach(b=>{const on=b.dataset.view===v||(v==='vSign'&&b.dataset.view==='vMine');b.classList.toggle('is-active',on);b.setAttribute('aria-current',on?'page':'false')});
+  if(v==='vSign')drawSigs();window.scrollTo(0,v==='vSign'?0:(scrollY[v]||0));
+  const h=$(v).querySelector('.gj-m-navbar-title');h.tabIndex=-1;h.focus({preventScroll:true})}
+document.querySelectorAll('.gj-m-tabbar-item').forEach(b=>b.addEventListener('click',()=>{if(cur!==b.dataset.view)go(b.dataset.view)}));
+const init=new URLSearchParams(location.search).get('v');
+drawDate();render();drawSigs();fitTip();if(init)go(init);
+})();
+</script>
+</body>
+</html>

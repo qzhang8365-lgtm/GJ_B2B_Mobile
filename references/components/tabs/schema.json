@@ -1,0 +1,600 @@
+{
+  "name": "Tabs",
+  "page": "58:680",
+  "prototypeOnly": true,
+  "source": "source.json",
+  "latestBindings": "resolved.json",
+  "allVariantLayouts": "variants.json",
+  "sets": [
+    {
+      "id": "58:682",
+      "name": "tabs_item/primary_tab",
+      "properties": {
+        "Text#911:285": {
+          "type": "TEXT",
+          "defaultValue": "Tab"
+        },
+        "Badge": {
+          "type": "VARIANT",
+          "defaultValue": "false",
+          "variantOptions": [
+            "true",
+            "false"
+          ]
+        },
+        "ActiveLineMode": {
+          "type": "VARIANT",
+          "defaultValue": "none",
+          "variantOptions": [
+            "none",
+            "fill",
+            "fixed"
+          ]
+        },
+        "Status": {
+          "type": "VARIANT",
+          "defaultValue": "default",
+          "variantOptions": [
+            "default",
+            "active",
+            "disabled"
+          ]
+        }
+      },
+      "variants": [
+        {
+          "id": "58:683",
+          "name": "Badge=false, ActiveLineMode=none, Status=default",
+          "width": 29,
+          "height": 34
+        },
+        {
+          "id": "58:685",
+          "name": "Badge=false, ActiveLineMode=none, Status=disabled",
+          "width": 29,
+          "height": 34
+        },
+        {
+          "id": "58:687",
+          "name": "Badge=false, ActiveLineMode=fill, Status=active",
+          "width": 29,
+          "height": 35
+        },
+        {
+          "id": "58:690",
+          "name": "Badge=false, ActiveLineMode=fill, Status=disabled",
+          "width": 29,
+          "height": 35
+        },
+        {
+          "id": "58:693",
+          "name": "Badge=false, ActiveLineMode=fixed, Status=active",
+          "width": 30,
+          "height": 35
+        },
+        {
+          "id": "58:696",
+          "name": "Badge=false, ActiveLineMode=fixed, Status=disabled",
+          "width": 30,
+          "height": 35
+        },
+        {
+          "id": "58:699",
+          "name": "Badge=true, ActiveLineMode=none, Status=default",
+          "width": 46,
+          "height": 34
+        },
+        {
+          "id": "58:702",
+          "name": "Badge=true, ActiveLineMode=none, Status=disabled",
+          "width": 46,
+          "height": 34
+        },
+        {
+          "id": "58:705",
+          "name": "Badge=true, ActiveLineMode=fill, Status=active",
+          "width": 29,
+          "height": 35
+        },
+        {
+          "id": "58:709",
+          "name": "Badge=true, ActiveLineMode=fill, Status=disabled",
+          "width": 29,
+          "height": 35
+        },
+        {
+          "id": "58:713",
+          "name": "Badge=true, ActiveLineMode=fixed, Status=active",
+          "width": 30,
+          "height": 35
+        },
+        {
+          "id": "58:717",
+          "name": "Badge=true, ActiveLineMode=fixed, Status=disabled",
+          "width": 30,
+          "height": 35
+        }
+      ]
+    },
+    {
+      "id": "58:722",
+      "name": "Primary_tabs",
+      "properties": {
+        "Count": {
+          "type": "VARIANT",
+          "defaultValue": "3",
+          "variantOptions": [
+            "3",
+            "2",
+            "4",
+            "more"
+          ]
+        }
+      },
+      "variants": [
+        {
+          "id": "58:723",
+          "name": "Count=3",
+          "width": 375,
+          "height": 35
+        },
+        {
+          "id": "58:727",
+          "name": "Count=4",
+          "width": 375,
+          "height": 35
+        },
+        {
+          "id": "58:732",
+          "name": "Count=more",
+          "width": 375,
+          "height": 44
+        },
+        {
+          "id": "58:741",
+          "name": "Count=2",
+          "width": 375,
+          "height": 35
+        }
+      ]
+    },
+    {
+      "id": "161:7863",
+      "name": "tabs_item/secondary_tab",
+      "properties": {
+        "Tab#911:282": {
+          "type": "TEXT",
+          "defaultValue": "Tab"
+        },
+        "state": {
+          "type": "VARIANT",
+          "defaultValue": "selected",
+          "variantOptions": [
+            "selected",
+            "default"
+          ]
+        }
+      },
+      "variants": [
+        {
+          "id": "161:7862",
+          "name": "state=selected",
+          "width": 26,
+          "height": 30
+        },
+        {
+          "id": "161:7867",
+          "name": "state=default",
+          "width": 26,
+          "height": 30
+        }
+      ]
+    },
+    {
+      "id": "161:7882",
+      "name": "Scondary_tabs",
+      "properties": {
+        "count": {
+          "type": "VARIANT",
+          "defaultValue": "2",
+          "variantOptions": [
+            "2",
+            "3",
+            "4",
+            "more",
+            "5"
+          ]
+        }
+      },
+      "variants": [
+        {
+          "id": "161:7877",
+          "name": "count=2",
+          "width": 108,
+          "height": 30
+        },
+        {
+          "id": "1544:8676",
+          "name": "count=3",
+          "width": 158,
+          "height": 30
+        },
+        {
+          "id": "161:7883",
+          "name": "count=4",
+          "width": 365,
+          "height": 30
+        },
+        {
+          "id": "161:7897",
+          "name": "count=5",
+          "width": 365,
+          "height": 30
+        },
+        {
+          "id": "161:7915",
+          "name": "count=more",
+          "width": 365,
+          "height": 30
+        }
+      ]
+    },
+    {
+      "id": "161:7956",
+      "name": "ButtonTab_round",
+      "properties": {
+        "Property 1": {
+          "type": "VARIANT",
+          "defaultValue": "2",
+          "variantOptions": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "more"
+          ]
+        }
+      },
+      "variants": [
+        {
+          "id": "161:7939",
+          "name": "Property 1=2",
+          "width": 104,
+          "height": 28
+        },
+        {
+          "id": "161:7957",
+          "name": "Property 1=3",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:7965",
+          "name": "Property 1=4",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:7973",
+          "name": "Property 1=5",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:7990",
+          "name": "Property 1=6",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:8005",
+          "name": "Property 1=more",
+          "width": 328,
+          "height": 28
+        }
+      ]
+    },
+    {
+      "id": "161:8141",
+      "name": "ButtonTab_rectangle",
+      "properties": {
+        "Property 1": {
+          "type": "VARIANT",
+          "defaultValue": "2",
+          "variantOptions": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "more"
+          ]
+        }
+      },
+      "variants": [
+        {
+          "id": "161:8142",
+          "name": "Property 1=2",
+          "width": 104,
+          "height": 28
+        },
+        {
+          "id": "161:8145",
+          "name": "Property 1=3",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:8149",
+          "name": "Property 1=4",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:8154",
+          "name": "Property 1=5",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:8160",
+          "name": "Property 1=6",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:8167",
+          "name": "Property 1=more",
+          "width": 328,
+          "height": 28
+        }
+      ]
+    },
+    {
+      "id": "179:1417",
+      "name": "Segmented_Control",
+      "properties": {
+        "Tab1#911:298": {
+          "type": "TEXT",
+          "defaultValue": "Tab1"
+        },
+        "Tab2#911:305": {
+          "type": "TEXT",
+          "defaultValue": "Tab2"
+        },
+        "Tab3#911:312": {
+          "type": "TEXT",
+          "defaultValue": "Tab3"
+        },
+        "Size": {
+          "type": "VARIANT",
+          "defaultValue": "medium",
+          "variantOptions": [
+            "medium",
+            "small",
+            "Large"
+          ]
+        },
+        "count": {
+          "type": "VARIANT",
+          "defaultValue": "3",
+          "variantOptions": [
+            "3",
+            "2"
+          ]
+        },
+        "Selected": {
+          "type": "VARIANT",
+          "defaultValue": "first",
+          "variantOptions": [
+            "first",
+            "second",
+            "third"
+          ]
+        },
+        "style": {
+          "type": "VARIANT",
+          "defaultValue": "card",
+          "variantOptions": [
+            "card",
+            "pill"
+          ]
+        }
+      },
+      "variants": [
+        {
+          "id": "179:1416",
+          "name": "Size=small, count=3, Selected=first, style=card",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "1014:5662",
+          "name": "Size=small, count=3, Selected=first, style=pill",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "911:4392",
+          "name": "Size=small, count=3, Selected=second, style=card",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "1014:5669",
+          "name": "Size=small, count=3, Selected=second, style=pill",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "911:4464",
+          "name": "Size=small, count=3, Selected=third, style=card",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "1014:5676",
+          "name": "Size=small, count=3, Selected=third, style=pill",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "866:2431",
+          "name": "Size=small, count=2, Selected=first, style=card",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "1014:5683",
+          "name": "Size=small, count=2, Selected=first, style=pill",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "911:4399",
+          "name": "Size=small, count=2, Selected=second, style=card",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "1014:5688",
+          "name": "Size=small, count=2, Selected=second, style=pill",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "179:1415",
+          "name": "Size=medium, count=3, Selected=first, style=card",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "1014:5693",
+          "name": "Size=medium, count=3, Selected=first, style=pill",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "911:4404",
+          "name": "Size=medium, count=3, Selected=second, style=card",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "1014:5700",
+          "name": "Size=medium, count=3, Selected=second, style=pill",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "911:4476",
+          "name": "Size=medium, count=3, Selected=third, style=card",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "1014:5707",
+          "name": "Size=medium, count=3, Selected=third, style=pill",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "866:2438",
+          "name": "Size=Large, count=3, Selected=first, style=card",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "1014:5714",
+          "name": "Size=Large, count=3, Selected=first, style=pill",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "911:4411",
+          "name": "Size=Large, count=3, Selected=second, style=card",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "1014:5721",
+          "name": "Size=Large, count=3, Selected=second, style=pill",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "911:4483",
+          "name": "Size=Large, count=3, Selected=third, style=card",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "1014:5728",
+          "name": "Size=Large, count=3, Selected=third, style=pill",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "866:2445",
+          "name": "Size=Large, count=2, Selected=first, style=card",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "1014:5735",
+          "name": "Size=Large, count=2, Selected=first, style=pill",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "911:4418",
+          "name": "Size=Large, count=2, Selected=second, style=card",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "1014:5740",
+          "name": "Size=Large, count=2, Selected=second, style=pill",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "866:2424",
+          "name": "Size=medium, count=2, Selected=first, style=card",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "1014:5745",
+          "name": "Size=medium, count=2, Selected=first, style=pill",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "911:4423",
+          "name": "Size=medium, count=2, Selected=second, style=card",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "1014:5750",
+          "name": "Size=medium, count=2, Selected=second, style=pill",
+          "width": 301,
+          "height": 32
+        }
+      ]
+    }
+  ],
+  "units": "Figma px at 375 baseline; CSS dimensions divided by100",
+  "adaptation": {
+    "minHitArea": "44×44 CSS px",
+    "text": "system font; preserve style size/weight/lineHeight",
+    "overflow": "content-width horizontal scroll; selected item visible"
+  },
+  "pending": [
+    "TABS-M-001",
+    "TABS-M-002",
+    "TABS-M-003"
+  ]
+}

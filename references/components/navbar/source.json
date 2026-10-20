@@ -1,0 +1,1160 @@
+{
+  "set": {
+    "id": "31:696",
+    "description": "",
+    "properties": {
+      "NavBackIcon#111:0": {
+        "type": "INSTANCE_SWAP",
+        "defaultValue": "21:23",
+        "preferredValues": []
+      },
+      "NavMoreIcon#111:34": {
+        "type": "INSTANCE_SWAP",
+        "defaultValue": "1595:6939",
+        "preferredValues": []
+      },
+      "Back": {
+        "type": "VARIANT",
+        "defaultValue": "false",
+        "variantOptions": [
+          "false",
+          "true"
+        ]
+      },
+      "BackArrow": {
+        "type": "VARIANT",
+        "defaultValue": "true",
+        "variantOptions": [
+          "true",
+          "false"
+        ]
+      },
+      "Children": {
+        "type": "VARIANT",
+        "defaultValue": "false",
+        "variantOptions": [
+          "false",
+          "true"
+        ]
+      },
+      "Right": {
+        "type": "VARIANT",
+        "defaultValue": "false",
+        "variantOptions": [
+          "false",
+          "true"
+        ]
+      }
+    }
+  },
+  "variants": [
+    {
+      "id": "31:697",
+      "name": "Back=false, BackArrow=true, Children=false, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "true",
+        "Children": "false",
+        "Right": "false"
+      }
+    },
+    {
+      "id": "31:703",
+      "name": "Back=true, BackArrow=true, Children=true, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "true",
+        "Children": "true",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:713",
+      "name": "Back=true, BackArrow=true, Children=true, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "true",
+        "Children": "true",
+        "Right": "false"
+      }
+    },
+    {
+      "id": "31:721",
+      "name": "Back=false, BackArrow=true, Children=true, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "true",
+        "Children": "true",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:730",
+      "name": "Back=false, BackArrow=true, Children=true, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "true",
+        "Children": "true",
+        "Right": "false"
+      }
+    },
+    {
+      "id": "31:739",
+      "name": "Back=false, BackArrow=false, Children=true, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "false",
+        "Children": "true",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:747",
+      "name": "Back=false, BackArrow=false, Children=true, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "false",
+        "Children": "true",
+        "Right": "false"
+      }
+    },
+    {
+      "id": "31:753",
+      "name": "Back=true, BackArrow=false, Children=true, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "false",
+        "Children": "true",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:762",
+      "name": "Back=true, BackArrow=false, Children=true, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "false",
+        "Children": "true",
+        "Right": "false"
+      }
+    },
+    {
+      "id": "31:769",
+      "name": "Back=true, BackArrow=true, Children=false, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "true",
+        "Children": "false",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:778",
+      "name": "Back=true, BackArrow=true, Children=false, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "true",
+        "Children": "false",
+        "Right": "false"
+      }
+    },
+    {
+      "id": "31:785",
+      "name": "Back=false, BackArrow=true, Children=false, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "true",
+        "Children": "false",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:793",
+      "name": "Back=false, BackArrow=false, Children=false, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "false",
+        "Children": "false",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:800",
+      "name": "Back=false, BackArrow=false, Children=false, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "false",
+        "Children": "false",
+        "Right": "false"
+      }
+    },
+    {
+      "id": "31:805",
+      "name": "Back=true, BackArrow=false, Children=false, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "false",
+        "Children": "false",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:813",
+      "name": "Back=true, BackArrow=false, Children=false, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "false",
+        "Children": "false",
+        "Right": "false"
+      }
+    }
+  ],
+  "details": [
+    {
+      "id": "31:703",
+      "name": "Back=true, BackArrow=true, Children=true, Right=true",
+      "type": "COMPONENT",
+      "x": 16,
+      "y": 84,
+      "w": 375,
+      "h": 44,
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "CENTER",
+      "itemSpacing": 0,
+      "paddingLeft": 12,
+      "paddingRight": 12,
+      "layoutPositioning": "AUTO",
+      "visible": true,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:47"
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "31:704",
+          "name": "left",
+          "type": "FRAME",
+          "x": 12,
+          "y": 4,
+          "w": 97,
+          "h": 36,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 4,
+          "paddingLeft": 0,
+          "paddingRight": 16,
+          "layoutPositioning": "AUTO",
+          "visible": true,
+          "fills": [],
+          "children": [
+            {
+              "id": "111:107",
+              "name": "back-icon",
+              "type": "INSTANCE",
+              "x": 0,
+              "y": 6,
+              "w": 24,
+              "h": 24,
+              "layoutMode": "NONE",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "itemSpacing": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "layoutPositioning": "AUTO",
+              "visible": true,
+              "fills": [],
+              "main": {
+                "id": "21:23",
+                "name": "icf_Arrow_caret_left",
+                "remote": false
+              }
+            },
+            {
+              "id": "31:706",
+              "name": "Back",
+              "type": "TEXT",
+              "x": 28,
+              "y": 7,
+              "w": 33,
+              "h": 22,
+              "layoutPositioning": "AUTO",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.062745101749897,
+                    "g": 0.0941176488995552,
+                    "b": 0.1568627506494522
+                  },
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:3"
+                    }
+                  }
+                }
+              ],
+              "text": "Back",
+              "fontSize": 14,
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "style": {
+                "name": "P3_CN-R",
+                "remote": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "31:707",
+          "name": "center",
+          "type": "FRAME",
+          "x": 109,
+          "y": 1,
+          "w": 157,
+          "h": 42,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "layoutPositioning": "AUTO",
+          "visible": true,
+          "fills": [],
+          "children": [
+            {
+              "id": "31:708",
+              "name": "title",
+              "type": "TEXT",
+              "x": 24,
+              "y": 0,
+              "w": 109,
+              "h": 24,
+              "layoutPositioning": "AUTO",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.062745101749897,
+                    "g": 0.0941176488995552,
+                    "b": 0.1568627506494522
+                  },
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:3"
+                    }
+                  }
+                }
+              ],
+              "text": "NavBar Title",
+              "fontSize": 16,
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 24
+              },
+              "style": {
+                "name": "H4-CN-S",
+                "remote": false
+              }
+            },
+            {
+              "id": "31:709",
+              "name": "subtitle",
+              "type": "TEXT",
+              "x": 24,
+              "y": 24,
+              "w": 109,
+              "h": 18,
+              "layoutPositioning": "AUTO",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ],
+              "text": "NavBar Subtitle",
+              "fontSize": 12,
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "style": {
+                "name": "P5_CN-R",
+                "remote": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "31:710",
+          "name": "right",
+          "type": "FRAME",
+          "x": 266,
+          "y": 10,
+          "w": 97,
+          "h": 24,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MAX",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 16,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "layoutPositioning": "AUTO",
+          "visible": true,
+          "fills": [],
+          "children": [
+            {
+              "id": "111:109",
+              "name": "search-icon",
+              "type": "INSTANCE",
+              "x": 33,
+              "y": 0,
+              "w": 24,
+              "h": 24,
+              "layoutMode": "NONE",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "itemSpacing": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "layoutPositioning": "AUTO",
+              "visible": true,
+              "fills": [],
+              "main": {
+                "id": "1595:6897",
+                "name": "icf_system_search",
+                "remote": false
+              }
+            },
+            {
+              "id": "111:59",
+              "name": "more-icon",
+              "type": "INSTANCE",
+              "x": 73,
+              "y": 0,
+              "w": 24,
+              "h": 24,
+              "layoutMode": "NONE",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "itemSpacing": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "layoutPositioning": "AUTO",
+              "visible": true,
+              "fills": [],
+              "main": {
+                "id": "1595:6939",
+                "name": "icf_system_more",
+                "remote": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "31:739",
+      "name": "Back=false, BackArrow=false, Children=true, Right=true",
+      "type": "COMPONENT",
+      "x": 16,
+      "y": 356,
+      "w": 375,
+      "h": 44,
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "CENTER",
+      "itemSpacing": 0,
+      "paddingLeft": 12,
+      "paddingRight": 12,
+      "layoutPositioning": "AUTO",
+      "visible": true,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:47"
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "31:740",
+          "name": "left",
+          "type": "FRAME",
+          "x": 12,
+          "y": 10,
+          "w": 97,
+          "h": 24,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 4,
+          "paddingLeft": 0,
+          "paddingRight": 16,
+          "layoutPositioning": "AUTO",
+          "visible": true,
+          "fills": [],
+          "children": []
+        },
+        {
+          "id": "31:741",
+          "name": "center",
+          "type": "FRAME",
+          "x": 109,
+          "y": 1,
+          "w": 157,
+          "h": 42,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "layoutPositioning": "AUTO",
+          "visible": true,
+          "fills": [],
+          "children": [
+            {
+              "id": "31:742",
+              "name": "title",
+              "type": "TEXT",
+              "x": 12,
+              "y": 0,
+              "w": 133,
+              "h": 24,
+              "layoutPositioning": "AUTO",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.062745101749897,
+                    "g": 0.0941176488995552,
+                    "b": 0.1568627506494522
+                  },
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:3"
+                    }
+                  }
+                }
+              ],
+              "text": "NavBar Title",
+              "fontSize": 16,
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 24
+              },
+              "style": {
+                "name": "H4-CN-S",
+                "remote": false
+              }
+            },
+            {
+              "id": "31:743",
+              "name": "subtitle",
+              "type": "TEXT",
+              "x": 12,
+              "y": 24,
+              "w": 133,
+              "h": 18,
+              "layoutPositioning": "AUTO",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ],
+              "text": "NavBar Subtitle",
+              "fontSize": 12,
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "style": {
+                "name": "P5_CN-R",
+                "remote": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "31:744",
+          "name": "right",
+          "type": "FRAME",
+          "x": 266,
+          "y": 10,
+          "w": 97,
+          "h": 24,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MAX",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 16,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "layoutPositioning": "AUTO",
+          "visible": true,
+          "fills": [],
+          "children": [
+            {
+              "id": "111:75",
+              "name": "search-icon",
+              "type": "INSTANCE",
+              "x": 33,
+              "y": 0,
+              "w": 24,
+              "h": 24,
+              "layoutMode": "NONE",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "itemSpacing": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "layoutPositioning": "AUTO",
+              "visible": true,
+              "fills": [],
+              "main": {
+                "id": "1595:6897",
+                "name": "icf_system_search",
+                "remote": false
+              }
+            },
+            {
+              "id": "111:77",
+              "name": "more-icon",
+              "type": "INSTANCE",
+              "x": 73,
+              "y": 0,
+              "w": 24,
+              "h": 24,
+              "layoutMode": "NONE",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "itemSpacing": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "layoutPositioning": "AUTO",
+              "visible": true,
+              "fills": [],
+              "main": {
+                "id": "1595:6939",
+                "name": "icf_system_more",
+                "remote": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "31:697",
+      "name": "Back=false, BackArrow=true, Children=false, Right=false",
+      "type": "COMPONENT",
+      "x": 16,
+      "y": 16,
+      "w": 375,
+      "h": 44,
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "CENTER",
+      "itemSpacing": 0,
+      "paddingLeft": 12,
+      "paddingRight": 12,
+      "layoutPositioning": "AUTO",
+      "visible": true,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:47"
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "31:698",
+          "name": "left",
+          "type": "FRAME",
+          "x": 12,
+          "y": 4,
+          "w": 97,
+          "h": 36,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 4,
+          "paddingLeft": 0,
+          "paddingRight": 16,
+          "layoutPositioning": "AUTO",
+          "visible": true,
+          "fills": [],
+          "children": [
+            {
+              "id": "111:105",
+              "name": "back-icon",
+              "type": "INSTANCE",
+              "x": 0,
+              "y": 6,
+              "w": 24,
+              "h": 24,
+              "layoutMode": "NONE",
+              "primaryAxisAlignItems": "MIN",
+              "counterAxisAlignItems": "MIN",
+              "itemSpacing": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "layoutPositioning": "AUTO",
+              "visible": true,
+              "fills": [],
+              "main": {
+                "id": "21:23",
+                "name": "icf_Arrow_caret_left",
+                "remote": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "31:700",
+          "name": "center",
+          "type": "FRAME",
+          "x": 109,
+          "y": 10,
+          "w": 157,
+          "h": 24,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "layoutPositioning": "AUTO",
+          "visible": true,
+          "fills": [],
+          "children": [
+            {
+              "id": "31:701",
+              "name": "title",
+              "type": "TEXT",
+              "x": 12,
+              "y": 0,
+              "w": 133,
+              "h": 24,
+              "layoutPositioning": "AUTO",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.062745101749897,
+                    "g": 0.0941176488995552,
+                    "b": 0.1568627506494522
+                  },
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:3"
+                    }
+                  }
+                }
+              ],
+              "text": "NavBar Title",
+              "fontSize": 16,
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 24
+              },
+              "style": {
+                "name": "H4-CN-S",
+                "remote": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "31:702",
+          "name": "right",
+          "type": "FRAME",
+          "x": 266,
+          "y": 10,
+          "w": 97,
+          "h": 24,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MAX",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 16,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "layoutPositioning": "AUTO",
+          "visible": true,
+          "fills": [],
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "31:813",
+      "name": "Back=true, BackArrow=false, Children=false, Right=false",
+      "type": "COMPONENT",
+      "x": 16,
+      "y": 1036,
+      "w": 375,
+      "h": 44,
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisAlignItems": "MIN",
+      "counterAxisAlignItems": "CENTER",
+      "itemSpacing": 0,
+      "paddingLeft": 12,
+      "paddingRight": 12,
+      "layoutPositioning": "AUTO",
+      "visible": true,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:47"
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "31:814",
+          "name": "left",
+          "type": "FRAME",
+          "x": 12,
+          "y": 5,
+          "w": 97,
+          "h": 34,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 4,
+          "paddingLeft": 0,
+          "paddingRight": 16,
+          "layoutPositioning": "AUTO",
+          "visible": true,
+          "fills": [],
+          "children": [
+            {
+              "id": "31:815",
+              "name": "Back",
+              "type": "TEXT",
+              "x": 0,
+              "y": 6,
+              "w": 33,
+              "h": 22,
+              "layoutPositioning": "AUTO",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.062745101749897,
+                    "g": 0.0941176488995552,
+                    "b": 0.1568627506494522
+                  },
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:3"
+                    }
+                  }
+                }
+              ],
+              "text": "Back",
+              "fontSize": 14,
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "style": {
+                "name": "P3_CN-R",
+                "remote": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "31:816",
+          "name": "center",
+          "type": "FRAME",
+          "x": 109,
+          "y": 10,
+          "w": 157,
+          "h": 24,
+          "layoutMode": "VERTICAL",
+          "primaryAxisAlignItems": "MIN",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "layoutPositioning": "AUTO",
+          "visible": true,
+          "fills": [],
+          "children": [
+            {
+              "id": "31:817",
+              "name": "title",
+              "type": "TEXT",
+              "x": 12,
+              "y": 0,
+              "w": 133,
+              "h": 24,
+              "layoutPositioning": "AUTO",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.062745101749897,
+                    "g": 0.0941176488995552,
+                    "b": 0.1568627506494522
+                  },
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:3"
+                    }
+                  }
+                }
+              ],
+              "text": "NavBar Title",
+              "fontSize": 16,
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 24
+              },
+              "style": {
+                "name": "H4-CN-S",
+                "remote": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "31:818",
+          "name": "right",
+          "type": "FRAME",
+          "x": 266,
+          "y": 10,
+          "w": 97,
+          "h": 24,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "MAX",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 16,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "layoutPositioning": "AUTO",
+          "visible": true,
+          "fills": [],
+          "children": []
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "VariableID:7:47": "Background/Container",
+    "VariableID:7:3": "Text/Primary",
+    "VariableID:7:4": "Text/Secondary"
+  },
+  "instructions": [
+    {
+      "id": "953:1158",
+      "text": "用于不同页面之间切换或者跳转，位于内容区的上方，系统状态栏的下方。"
+    },
+    {
+      "id": "953:1159",
+      "text": "顶部导航栏 Navbar"
+    },
+    {
+      "id": "953:1162",
+      "text": "何时使用"
+    },
+    {
+      "id": "953:1163",
+      "text": "需要在页面间跳转、返回，或需承载少量辅助功能时使用。"
+    },
+    {
+      "id": "953:1166",
+      "text": "通常用来承载页面标题和返回操作，点击跳转回到上一个打开的页面。"
+    },
+    {
+      "id": "953:1167",
+      "text": "基础状态"
+    },
+    {
+      "id": "966:61",
+      "text": "文字返回"
+    },
+    {
+      "id": "966:248",
+      "text": "按钮与说明文案返回"
+    },
+    {
+      "id": "966:152",
+      "text": "无需返回"
+    },
+    {
+      "id": "966:60",
+      "text": "名称扩展"
+    },
+    {
+      "id": "953:1170",
+      "text": "常见用法"
+    },
+    {
+      "id": "I953:1297;31:701",
+      "text": "NavBar Title"
+    },
+    {
+      "id": "I966:47;31:734",
+      "text": "NavBar Title"
+    },
+    {
+      "id": "I966:47;31:735",
+      "text": "NavBar Subtitle"
+    },
+    {
+      "id": "I966:82;31:815",
+      "text": "Back"
+    },
+    {
+      "id": "I966:82;31:817",
+      "text": "NavBar Title"
+    },
+    {
+      "id": "I966:146;31:803",
+      "text": "NavBar Title"
+    },
+    {
+      "id": "I966:281;31:781",
+      "text": "Back"
+    },
+    {
+      "id": "I966:281;31:783",
+      "text": "NavBar Title"
+    },
+    {
+      "id": "966:91",
+      "text": "在导航栏的右侧区域，进行自定义功能按钮"
+    },
+    {
+      "id": "966:95",
+      "text": "右侧按钮扩展"
+    },
+    {
+      "id": "I966:173;31:789",
+      "text": "NavBar Title"
+    },
+    {
+      "id": "I966:269;966:222",
+      "text": "NavBar Title"
+    },
+    {
+      "id": "I966:269;966:223",
+      "text": "NavBar Subtitle"
+    }
+  ]
+}

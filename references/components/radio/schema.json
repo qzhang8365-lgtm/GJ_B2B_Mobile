@@ -1,0 +1,29 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "radio",
+  "name": "单选框 Radio",
+  "category": "信息录入组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "单选框radiobutton（58:10860）",
+    "nodes": {
+      "Radio/Icon": "216:5181（Checked × Disabled）",
+      "Radio": "216:5194（图标 + 标签）",
+      "Radio/Group": "216:5339（number 1–6，横排）",
+      "usage": "1017:73"
+    },
+    "extractedAt": "2026-10-12",
+    "readOnly": true
+  },
+  "foundation": { "file": "assets/styles/gj-b2b-mobile-components.css", "class": ".gj-m-radio / .gj-m-radio-input / .gj-m-radio-icon / .gj-m-radio-label / .gj-m-radio-group(-vertical)", "note": "原型基座" },
+  "icon": {
+    "size": 20,
+    "unchecked": "Background/Container（Figma 为外部库变量 按钮色/Secondary/Bg-default = 白）+ 1px Border/secondary",
+    "checked": "Brand/GJ_Blue 实心圆 + 白色勾（icf_system_check-circle-fill）"
+  },
+  "label": { "text": "P3 14/22 Text/Primary", "gap": 8 },
+  "states": { "disabled": "整项 40%", "hover": "移动端不实现" },
+  "group": { "horizontal": "间距 24，放不下换行（行距 12）", "vertical": "暂不提供" },
+  "hitArea": "高度 ≥ 44，包含图标与标签"
+}

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 选择器 Select</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid2+.grid2{margin-top:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    .docs-sheet+.docs-sheet{margin-top:28px}
+    .sheet-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-bottom:16px;margin-bottom:24px;border-bottom:1px solid var(--ds-border-default)}
+    .sheet-head h2{margin:0;font-size:24px;line-height:32px;font-weight:600}
+    .sheet-head .sub{margin-left:8px;font-size:14px;color:var(--ds-text-tiatery);font-weight:400}
+    .sheet-head p{margin:6px 0 0;max-width:760px;color:var(--ds-text-secondary);font-size:14px;line-height:22px}
+    .sheet-head+.docs-section{padding-top:0;border-top:0}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+    @media(max-width:650px){.sheet-head h2{font-size:22px;line-height:30px}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>选择器 Select</h1>
+    <p>从预设选项中选择结果。选择器只展示结果，选项在底部弹层中用滚轮或<a href="../selection-list/index.html" style="color:var(--ds-text-blue);text-decoration:none">选择列表</a>完成。</p>
+  </header>
+
+  <article class="docs-sheet" id="select-basic">
+    <header class="sheet-head"><div><h2>选择器<span class="sub">Select</span></h2><p>点击后打开底部弹层，选择结果回填到框内。外观与输入框保持同一套尺寸和填充式 / 描边式。</p></div></header>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>尺寸与样式</h2><p>L 与 M 两档，与同行输入框、按钮同档；描边式用于灰色背景，同一区域不混用。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">填充式 · L / M</span><div data-demo="sFill"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">描边式 · L / M（灰色背景上）</span><div data-demo="sLine"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>未选显示占位；展开时品牌色描边、箭头朝上；必填未选时为错误态；禁用 40%。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">未选 / 已选</span><div data-demo="st1"></div></div>
+        <div class="panel"><span class="docs-stage-label">展开 / 禁用</span><div data-demo="st2"></div></div>
+      </div>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">错误 · 填充式 L / M</span><div data-demo="st3"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">错误 · 描边式（灰色背景上）</span><div data-demo="st4"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>前缀图标</h2><p>可在左侧加一个图标提示选择对象，如地点、日期；图标从图标库选取，颜色与箭头相同（Text/Tiatery）。默认不显示。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">带前缀图标 · L / M</span><div data-demo="icon"></div></div>
+        <div class="panel"><span class="docs-stage-label">长结果省略</span><div data-demo="long"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用示例</h2><p>均为 375 宽。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">筛选区 · M 并排</span><div data-demo="exFilter"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">表单录入 · 打开滚轮弹层</span><div data-demo="exForm"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点击打开底部弹层；未选时点“提交”显示错误态，选择后清除。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pMode">选择方式</label><select id="pMode"><option value="picker" selected>滚轮 Picker</option><option value="list">选择列表</option></select></div>
+          <div class="field"><label for="pStyle">样式</label><select id="pStyle"><option value="fill" selected>填充式</option><option value="line">描边式</option></select></div>
+          <div class="field"><label for="pSize">尺寸</label><select id="pSize"><option value="L" selected>L · 40</option><option value="M">M · 32</option></select></div>
+          <label class="ck"><input type="checkbox" id="pIcon">前缀图标</label>
+          <label class="ck"><input type="checkbox" id="pDis">禁用</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>占位文案</td><td>说明选择对象，如“选择客户类型”“选择开户日期”。</td><td>不使用含糊的“请选择”。</td></tr>
+        <tr><td>选择方式</td><td>选项少于 5 个且需直接比较时，用单选按钮直接平铺；选项较多或需节省空间时用选择器。日期、时间等顺序稳定的短选项用滚轮 Picker，其余用选择列表。</td><td>Picker 不用于无序长名单。</td></tr>
+        <tr><td>选项较多</td><td>超过 10–15 个时提供搜索、首字母定位或分组。</td><td>避免在长列表中反复滚动查找。</td></tr>
+        <tr><td>提交方式</td><td>单选提交后立即关闭弹层；多选显示已选数量，用“完成”按钮统一确认。</td><td>确认前的临时选择不回填，取消不提交更改。</td></tr>
+        <tr><td>结果展示</td><td>选择后显示明确结果，过长省略，允许再次打开查看完整内容。</td><td>不把多个结果拼成难以辨认的长串。</td></tr>
+        <tr><td>错误提示</td><td>必填未选或校验不通过时显示错误态，提示写在框下方，说明原因或下一步（“请选择客户类型”）；重新选择后立即清除。</td><td>不只变红不给文字；展开弹层时不显示错误描边。</td></tr>
+        <tr><td>禁用项</td><td>禁用项保持可识别但不可点击；原因影响决策时，在选项旁说明。</td><td>不直接隐藏，避免用户以为数据缺失。</td></tr>
+        <tr><td>级联选择</td><td>按上游到下游逐级加载；上游变化后清空失效的下游值并给出提示。</td><td>不保留已失效的下游结果。</td></tr>
+        <tr><td>日期时间</td><td>限制可选范围，必要时标明时区。</td><td>不允许选出业务上无效的日期。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="picker">
+    <header class="sheet-head"><div><h2>滚轮选择<span class="sub">Picker</span></h2><p>在底部弹层中上下滑动选择，适合日期、时间或有稳定顺序的短选项。中间带内的选项为当前值，上下渐隐。顶部为「取消 / 保存」，滑动只改临时值，点保存才提交。</p></div></header>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>列数</h2><p>单列用于单一维度；双列用于组合值（如年 + 月）。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">单列 · Columns=1</span><div data-demo="pk1"></div></div>
+        <div class="panel"><span class="docs-stage-label">双列 · Columns=2</span><div data-demo="pk2"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>弹层</h2><p>遮罩 + 贴底面板，头部标题居中，右侧关闭。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">Picker_popup · 375 × 640</span><div data-demo="pkPop"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">双列弹层 · 选择年月</span><div data-demo="pkPop2"></div></div>
+      </div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const icon=n=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${n}.svg')" aria-hidden="true"></span>`;
+  /* o: {style:'fill'|'line', size:'L'|'M', value, ph, active, disabled, icon, error} */
+  const sel=o=>`<button type="button" class="gj-m-select${o.style==='line'?' gj-m-select-line':''}${o.size==='M'?' gj-m-select-m':''}" aria-haspopup="dialog" aria-expanded="${o.active?'true':'false'}"${o.disabled?' disabled':''}${o.error?' aria-invalid="true"':''}>${o.icon?icon(o.icon):''}<span class="gj-m-select-value${o.value?'':' is-placeholder'}">${o.value||o.ph||'选择客户类型'}</span><span class="gj-m-select-arrow"><span class="gj-icon" aria-hidden="true"></span></span></button>`;
+  const col=(arr,sel)=>`<ul class="gj-m-picker-column" role="listbox">${arr.map((v,i)=>`<li class="gj-m-picker-item" role="option" aria-selected="${i===sel}">${v}</li>`).join('')}</ul>`;
+  const picker=(cols)=>`<div class="gj-m-picker">${cols.map(c=>col(c[0],c[1])).join('')}</div>`;
+  const header=t=>`<div class="gj-m-popup-header"><span class="gj-m-popup-title">${t}</span><button type="button" class="gj-m-popup-close" aria-label="关闭"><span class="gj-icon" aria-hidden="true"></span></button></div>`;
+  /* Picker 弹层用「取消 / 保存」头部（SE-M-007，2026-10-16）；选择列表弹层沿用关闭按钮 */
+  const actHeader=t=>`<div class="gj-m-popup-header gj-m-popup-header-action"><button type="button" class="gj-m-popup-cancel">取消</button><span class="gj-m-popup-title">${t}</span><button type="button" class="gj-m-popup-save">保存</button></div>`;
+  const popup=(t,body,pk)=>`<div class="gj-m-popup" role="dialog" aria-modal="true" aria-label="${t}"><div class="gj-m-popup-panel">${pk?actHeader(t):header(t)}${body}</div></div>`;
+  const TYPES=['个人客户','机构客户','产品客户','私募基金','公募基金','信托计划','QFII'];
+  const YEARS=['2020 年','2021 年','2022 年','2023 年','2024 年','2025 年','2026 年','2027 年'];
+  const MONTHS=Array.from({length:12},(_,i)=>(i+1)+' 月');
+  const CSS='html,body{overflow-y:hidden}.scr{position:relative;width:100%;max-width:3.75rem;margin:0 auto;padding:.12rem var(--space-page-margin-x);background:var(--ds-background-container);box-sizing:border-box}.scr.g{background:var(--ds-background-background)}.stack{display:flex;flex-direction:column;gap:.12rem}.row{display:flex;gap:.08rem}.row>*{flex:1 1 0}'+
+    '.full{padding:0;max-width:3.75rem;overflow:hidden}.ph{height:100%;display:flex;flex-direction:column;background:var(--ds-background-background)}.hd{flex:none;display:flex;align-items:center;justify-content:center;height:44px;background:var(--ds-background-container);font-size:.17rem;font-weight:600}'+
+    '.fm{background:var(--ds-background-container);padding:.04rem var(--space-page-margin-x) .16rem}.fl{padding:.12rem 0 .08rem;font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)}'+
+    '.li{display:flex;align-items:center;justify-content:space-between;padding:.12rem var(--space-page-margin-x);background:var(--ds-background-container);box-shadow:inset 0 -1px 0 var(--ds-border-default)}.li .t{font-size:.16rem;line-height:.24rem}.li .d{font-size:.13rem;line-height:.2rem;color:var(--ds-text-tiatery)}.tg{font-size:.12rem;color:var(--ds-text-secondary)}'+
+    '.bar{display:flex;gap:.08rem;padding:.08rem var(--space-page-margin-x);background:var(--ds-background-container)}.bar>*{flex:1 1 0}';
+  const FIX='html,body,.page{height:100%}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+(h?FIX:''),height:h||'auto'});
+  const seat=f=>f.addEventListener('load',()=>f.contentDocument.querySelectorAll('.gj-m-picker-column').forEach(c=>{const s=c.querySelector('[aria-selected="true"]');if(s)c.scrollTop=s.offsetTop-c.querySelector('.gj-m-picker-item').offsetTop}));
+  show('sFill',`<div class="scr stack">${sel({})}${sel({size:'M',value:'机构客户'})}</div>`);
+  show('sLine',`<div class="scr g stack">${sel({style:'line'})}${sel({style:'line',size:'M',value:'机构客户'})}</div>`);
+  show('st1',`<div class="scr stack">${sel({})}${sel({value:'机构客户'})}</div>`);
+  show('st2',`<div class="scr stack">${sel({value:'机构客户',active:1})}${sel({value:'机构客户',disabled:1})}</div>`);
+  const msg=t=>`<div class="gj-m-select-message" role="alert">${t}</div>`;
+  show('st3',`<div class="scr stack"><div>${sel({error:1})}${msg('请选择客户类型')}</div><div>${sel({size:'M',value:'个人客户',error:1})}${msg('该客户类型不支持开通此业务')}</div></div>`);
+  show('st4',`<div class="scr g stack"><div>${sel({style:'line',error:1})}${msg('请选择客户类型')}</div><div>${sel({style:'line',size:'M',value:'个人客户',error:1})}${msg('该客户类型不支持开通此业务')}</div></div>`);
+  show('icon',`<div class="scr stack">${sel({icon:'icf_map_location',ph:'选择所在城市'})}${sel({size:'M',icon:'icf_system_calendar',value:'2026-10-12'})}</div>`);
+  show('long',`<div class="scr stack">${sel({value:'国金证券股份有限公司上海浦东新区世纪大道证券营业部'})}${sel({size:'M',value:'沪深 300 指数增强、稳健增利 3 号、国金货币'})}</div>`);
+  show('exFilter',`<div class="scr g" style="padding:0"><div class="bar">${sel({size:'M',value:'机构客户'})}${sel({size:'M',ph:'风险等级'})}${sel({size:'M',ph:'开户年份'})}</div>${[['上海国泰投资有限公司','KH20230001 · R3'],['深圳华信资产管理','KH20230017 · R4'],['北京中科创投','KH20230102 · R2']].map(c=>`<div class="li"><div><div class="t">${c[0]}</div><div class="d">${c[1]}</div></div><span class="tg">机构客户</span></div>`).join('')}</div>`);
+  seat(show('exForm',`<div class="scr full" style="height:100%"><div class="ph"><div class="hd">新建客户</div><div class="fm"><div class="fl">客户类型</div>${sel({value:'机构客户',active:1})}<div class="fl">风险等级</div>${sel({ph:'选择风险等级'})}</div></div>${popup('客户类型',picker([[TYPES,1]]),1)}</div>`,640));
+  seat(show('pk1',`<div class="scr full">${picker([[TYPES,1]])}</div>`));
+  seat(show('pk2',`<div class="scr full">${picker([[YEARS,6],[MONTHS,9]])}</div>`));
+  seat(show('pkPop',`<div class="scr full" style="height:100%"><div class="ph"></div>${popup('客户类型',picker([[TYPES,1]]),1)}</div>`,640));
+  seat(show('pkPop2',`<div class="scr full" style="height:100%"><div class="ph"></div>${popup('开户年月',picker([[YEARS,6],[MONTHS,9]]),1)}</div>`,640));
+
+  /* 交互演示 */
+  const $=id=>document.getElementById(id);
+  const LIST=(arr,cur)=>`<div class="gj-m-selection" role="listbox">${arr.map(v=>`<button type="button" class="gj-m-selection-item" role="option" aria-selected="${v===cur}"><span class="gj-m-selection-item-content"><span class="gj-m-selection-item-text">${v}</span><span class="gj-m-selection-check"><span class="gj-icon" aria-hidden="true"></span></span></span></button>`).join('')}</div>`;
+  let value='';
+  function renderLab(){
+    const o={style:$('pStyle').value,size:$('pSize').value,icon:$('pIcon').checked?'icf_system_classify':'',disabled:$('pDis').checked,value,ph:'选择客户类型'};
+    const f=GJPhone.swatch($('lab'),{html:`<div class="scr full" style="height:100%"><div class="ph"><div class="hd">新建客户</div><div class="fm${o.style==='line'?' g':''}" style="${o.style==='line'?'background:var(--ds-background-background)':''}"><div class="fl">客户类型</div><div id="f">${sel(o)}</div><div style="margin-top:.24rem"><button type="button" class="gj-m-button gj-m-button-primary gj-m-button-large" style="width:100%" id="sub"${o.disabled?' disabled':''}>提交</button></div></div></div><div id="pop"></div></div>`,css:CSS+FIX,height:640});
+    f.addEventListener('load',()=>{const d=f.contentDocument,btn=d.querySelector('.gj-m-select'),slot=d.getElementById('pop');
+      const close=()=>{slot.innerHTML='';btn.setAttribute('aria-expanded','false');btn.focus()};
+      const field=d.getElementById('f');
+      const setErr=on=>{btn.toggleAttribute('aria-invalid',on);if(on)btn.setAttribute('aria-invalid','true');const m=field.querySelector('.gj-m-select-message');if(on&&!m)field.insertAdjacentHTML('beforeend','<div class="gj-m-select-message" role="alert">请选择客户类型</div>');if(!on&&m)m.remove()};
+      d.getElementById('sub').addEventListener('click',()=>setErr(!value));
+      const commit=v=>{value=v;const s=btn.querySelector('.gj-m-select-value');s.textContent=v;s.classList.remove('is-placeholder');setErr(false)};
+      btn.addEventListener('click',()=>{
+        const mode=$('pMode').value;btn.setAttribute('aria-expanded','true');
+        slot.innerHTML=popup('客户类型',mode==='picker'?picker([[TYPES,Math.max(0,TYPES.indexOf(value))]]):LIST(TYPES,value),mode==='picker');
+        const pop=slot.firstElementChild;
+        pop.addEventListener('click',e=>{if(e.target===pop)close()});
+        if(mode==='picker'){const c=pop.querySelector('.gj-m-picker-column'),items=[...c.children],h=items[0].offsetHeight;
+          c.scrollTop=Math.max(0,TYPES.indexOf(value))*h;
+          /* 滑动只改临时值；点“保存”才提交，“取消”或点遮罩放弃 */
+          let temp=TYPES[Math.max(0,TYPES.indexOf(value))];
+          const mark=()=>{const i=Math.min(items.length-1,Math.max(0,Math.round(c.scrollTop/h)));items.forEach((x,k)=>x.setAttribute('aria-selected',k===i));temp=TYPES[i]};
+          let t;c.addEventListener('scroll',()=>{clearTimeout(t);t=setTimeout(mark,120)});
+          items.forEach((x,k)=>x.addEventListener('click',()=>c.scrollTo({top:k*h,behavior:'smooth'})));
+          pop.querySelector('.gj-m-popup-cancel').addEventListener('click',close);
+          pop.querySelector('.gj-m-popup-save').addEventListener('click',()=>{commit(temp);close()});
+        }else{pop.querySelector('.gj-m-popup-close').addEventListener('click',close);pop.querySelectorAll('.gj-m-selection-item').forEach(x=>x.addEventListener('click',()=>{commit(x.textContent.trim());close()}))}
+      });
+    });
+  }
+  ['pMode','pStyle','pSize','pIcon','pDis'].forEach(id=>$(id).addEventListener('change',renderLab));renderLab();
+})();
+</script>
+</body>
+</html>

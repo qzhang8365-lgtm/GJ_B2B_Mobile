@@ -1,0 +1,68 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "skeleton",
+  "figmaComponent": "骨架屏 Skeleton（text / image / avatar）",
+  "prototypeClass": "gj-m-skeleton",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "base": "gj-m-skeleton",
+    "block": "gj-m-skeleton-block",
+    "text": "gj-m-skeleton-text",
+    "image": "gj-m-skeleton-image",
+    "avatar": "gj-m-skeleton-avatar",
+    "animated": "is-animated"
+  },
+  "valueMap": {
+    "types": "[\"text\", \"image\", \"avatar\"]",
+    "text": "{\"height\": 16, \"gap\": 16, \"radius\": 4, \"widthRatios\": [0.6752411575562701, 1, 0.7138263665594855, 0.2315112540192926]}",
+    "image": "{\"sourceWidth\": 311, \"height\": 160, \"radius\": 8}",
+    "avatar": "{\"size\": 54}",
+    "background": "Background/Background",
+    "animation": "{\"direction\": \"left-to-right\", \"duration\": \"1.6s，原型选择\", \"reducedMotion\": \"关闭\"}"
+  },
+  "tokenMap": {},
+  "runtimeMap": {
+    "root": ".gj-m-skeleton",
+    "block": ".gj-m-skeleton-block",
+    "text": ".gj-m-skeleton-text",
+    "image": ".gj-m-skeleton-image",
+    "avatar": ".gj-m-skeleton-avatar"
+  },
+  "markup": {
+    "text": "<div class=\"gj-m-skeleton\" aria-hidden=\"true\"><div class=\"gj-m-skeleton-block gj-m-skeleton-text\" style=\"--gj-m-skeleton-width:67.52411575562701%\"></div><div class=\"gj-m-skeleton-block gj-m-skeleton-text\" style=\"--gj-m-skeleton-width:100%\"></div><div class=\"gj-m-skeleton-block gj-m-skeleton-text\" style=\"--gj-m-skeleton-width:71.38263665594855%\"></div><div class=\"gj-m-skeleton-block gj-m-skeleton-text gj-m-skeleton-tail\" style=\"--gj-m-skeleton-width:23.15112540192926%\"></div></div>",
+    "card": "<section class=\"gj-m-card\" aria-busy=\"true\"><div class=\"gj-m-skeleton is-animated\" aria-hidden=\"true\"><div class=\"gj-m-skeleton-block gj-m-skeleton-text\" style=\"--gj-m-skeleton-width:40%\"></div><div class=\"gj-m-skeleton-block gj-m-skeleton-text\" style=\"--gj-m-skeleton-width:100%\"></div><div class=\"gj-m-skeleton-block gj-m-skeleton-text gj-m-skeleton-tail\" style=\"--gj-m-skeleton-width:60%\"></div></div></section>",
+    "lines": "<div class=\"gj-m-skeleton is-animated\" aria-hidden=\"true\"><div class=\"gj-m-skeleton-block gj-m-skeleton-text\" style=\"--gj-m-skeleton-width:40%\"></div><div class=\"gj-m-skeleton-block gj-m-skeleton-text\" style=\"--gj-m-skeleton-width:100%\"></div><div class=\"gj-m-skeleton-block gj-m-skeleton-text\" style=\"--gj-m-skeleton-width:85%\"></div><div class=\"gj-m-skeleton-block gj-m-skeleton-text gj-m-skeleton-tail\" style=\"--gj-m-skeleton-width:60%\"></div></div>"
+  },
+  "accessibility": {
+    "skeleton": "骨架 aria-hidden，容器 aria-busy=\"true\""
+  },
+  "composition": {
+    "use": "首次加载用骨架屏，结构接近真实内容；数据就绪后替换",
+    "motion": "减少动效时关闭动画"
+  },
+  "pageRules": {},
+  "pending": {},
+  "templates": {
+    "lines": {
+      "tpl": "<div class=\"gj-m-skeleton is-animated\"{{#layout}} data-layout=\"{{layout}}\"{{/layout}} aria-hidden=\"true\">{{#avatar}}<div class=\"gj-m-skeleton-block gj-m-skeleton-avatar\"></div>{{/avatar}}{{#lines}}<div class=\"gj-m-skeleton-block gj-m-skeleton-text{{#tail}} gj-m-skeleton-tail{{/tail}}\" style=\"--gj-m-skeleton-width:{{w}}%\"></div>{{/lines}}</div>",
+      "params": "文本骨架：avatar：前置头像块（列表行）；lines：[{w(宽度%), tail(末行)}]",
+      "example": {
+        "lines": [
+          {
+            "w": 40
+          },
+          {
+            "w": 100
+          },
+          {
+            "w": 85
+          },
+          {
+            "w": 60,
+            "tail": true
+          }
+        ]
+      }
+    }
+  }
+}

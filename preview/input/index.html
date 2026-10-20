@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 输入框 Input</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    .grid2+.grid2,.grid4+.grid2{margin-top:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel.white{background:var(--ds-background-container)}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:1100px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:960px){.grid2,.grid4{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>输入框 Input</h1>
+    <p>录入、编辑和校验文本，按内容长度选择单行或多行。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>样式与尺寸</h2><p>填充式为默认，描边式用于浅色页面或紧凑表单，同一表单不混用。</p></div></header>
+      <div class="grid2">
+        <div class="panel white"><span class="docs-stage-label">填充式（默认）· L / M</span><div data-demo="sFill"></div></div>
+        <div class="panel white"><span class="docs-stage-label">描边式 · L / M</span><div data-demo="sLine"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>输入中品牌色描边；错误时描边变红并在下方提示修正方式；禁用 40%。</p></div></header>
+      <div class="grid4">
+        <div class="panel white"><span class="docs-stage-label">默认 default</span><div data-demo="stDefault"></div></div>
+        <div class="panel white"><span class="docs-stage-label">输入中 typing</span><div data-demo="stTyping"></div></div>
+        <div class="panel white"><span class="docs-stage-label">已填写 filled</span><div data-demo="stFilled"></div></div>
+        <div class="panel white"><span class="docs-stage-label">禁用 disabled</span><div data-demo="stDisabled"></div></div>
+      </div>
+      <div class="grid2">
+        <div class="panel white"><span class="docs-stage-label">错误 error · 单行</span><div data-demo="stError"></div></div>
+        <div class="panel white"><span class="docs-stage-label">错误 / 超出字数 · 多行</span><div data-demo="stOver"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>多行与字数限制</h2><p>用于备注、原因等长文本；有上限时右下角显示字数。</p></div></header>
+      <div class="grid2">
+        <div class="panel white"><span class="docs-stage-label">填充式 · L 无字数 / L 有字数 / M</span><div data-demo="tFill"></div></div>
+        <div class="panel white"><span class="docs-stage-label">描边式 · 输入中 / 已填写</span><div data-demo="tLine"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>后缀操作</h2><p>输入框右侧的就地操作（如获取验证码）：竖线分隔 + 蓝色文字按钮，只放一个。发送后倒计时，期间不可点。</p></div></header>
+      <div class="grid2">
+        <div class="panel white"><span class="docs-stage-label">L / M · 默认与倒计时</span><div data-demo="sfx"></div></div>
+        <div class="panel white"><span class="docs-stage-label">登录验证 · 可操作（先校验账号）</span><div data-demo="sfxLab"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用示例</h2><p>字段标签始终在输入框上方；占位文案只补充格式或示例。均为 375 宽。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">客户信息录入 · 填充式 L</span><div data-demo="exForm"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">紧凑筛选区 · 描边式 M</span><div data-demo="exCompact"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点击输入，体验聚焦边框、清除按钮和字数统计。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pStyle">样式</label><select id="pStyle"><option value="fill" selected>填充式</option><option value="line">描边式</option></select></div>
+          <div class="field"><label for="pSize">尺寸</label><select id="pSize"><option value="L" selected>L · 40</option><option value="M">M · 32</option></select></div>
+          <div class="field"><label for="pType">数据类型</label><select id="pType"><option value="text" selected>文本</option><option value="amount">金额（数字键盘）</option><option value="tel">手机号</option></select></div>
+          <div class="field"><label for="pDis">禁用</label><select id="pDis"><option value="0" selected>否</option><option value="1">是</option></select></div>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>标签与占位</td><td>字段标签必须持续可见；占位文案只补充格式或示例。</td><td>输入后占位文案消失，不能成为唯一说明。</td></tr>
+        <tr><td>状态反馈</td><td>默认、聚焦、已填写、禁用和错误状态需稳定区分；错误信息紧邻输入框并说明修正方式。</td><td>不只靠颜色表达错误。</td></tr>
+        <tr><td>键盘与格式</td><td>按数据类型调用正确键盘：金额用数字键盘，手机号分段展示；日期优先用选择器。</td><td>不让用户手输可选择的内容。</td></tr>
+        <tr><td>必填与禁用</td><td>必填项统一标识；禁用仅用于不可编辑信息，需要时补充原因。</td><td>不用禁用代替“暂不可用”的提示。</td></tr>
+        <tr><td>清除与敏感信息</td><td>支持清除、粘贴和合理的自动填充；敏感信息提供显隐控制。</td><td>敏感信息不默认明文展示。</td></tr>
+        <tr><td>多行输入</td><td>设置合理默认高度与最大字数，内容增长时在内部扩展。</td><td>避免遮挡底部操作。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const icon=n=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${n}.svg')" aria-hidden="true"></span>`;
+  /* o: {style:'fill'|'line', size:'L'|'M', value, ph, focus, disabled, type, label} */
+  const input=o=>`${o.err?'<div>':''}<label class="gj-m-input${o.style==='line'?' gj-m-input-line':''}${o.size==='M'?' gj-m-input-m':''}${o.focus?' is-focused':''}${o.err?' is-error':''}"><input ${o.type?`type="${o.type}"`:''} ${o.mode?`inputmode="${o.mode}"`:''} placeholder="${o.ph||'请输入'}" value="${o.value||''}"${o.disabled?' disabled':''} aria-label="${o.label||o.ph||'输入框'}"><button type="button" class="gj-m-input-clear" aria-label="清除">${icon('icf_system_close-circle-fill')}</button></label>${o.err?`<div class="gj-m-input-message" role="alert">${o.err}</div></div>`:''}`;
+  const textarea=o=>`${o.err?'<div>':''}<label class="gj-m-textarea${o.style==='line'?' gj-m-textarea-line':''}${o.size==='M'?' gj-m-textarea-m':''}${o.focus?' is-focused':''}${o.over?' is-over':''}${o.err&&!o.over?' is-error':''}"><textarea rows="2" placeholder="${o.ph||'请输入'}"${o.max?` maxlength="${o.max}"`:''} aria-label="${o.label||'多行输入'}"${o.disabled?' disabled':''}>${o.value||''}</textarea>${o.max?`<span class="gj-m-textarea-count">${o.count||(o.value||'').length}/${o.max}</span>`:''}</label>${o.err?`<div class="gj-m-input-message" role="alert">${o.err}</div></div>`:''}`;
+  const sfx=(t,o={})=>`<label class="gj-m-input${o.size==='M'?' gj-m-input-m':''}${o.err?' is-error':''}"><input type="text" inputmode="numeric" maxlength="6" placeholder="${o.ph||'请输入验证码'}" value="${o.value||''}" aria-label="验证码"><button type="button" class="gj-m-input-clear" aria-label="清除">${icon('icf_system_close-circle-fill')}</button><span class="gj-m-input-divider" aria-hidden="true"></span><span class="gj-m-input-action"><button type="button" class="gj-m-text-button gj-m-text-button-blue"${o.dis?' disabled':''} data-code>${t}</button></span></label>${o.err?`<div class="gj-m-input-message" role="alert">${o.err}</div>`:''}`;
+  const field=(label,ctl,req,tip)=>`<div class="fd"><div class="lb">${req?'<i>*</i>':''}${label}</div>${ctl}${tip?`<div class="tp">${tip}</div>`:''}</div>`;
+  const CSS='html,body{overflow-y:hidden}.scr{width:100%;max-width:3.75rem;margin:0 auto;padding:.16rem var(--space-page-margin-x);background:var(--ds-background-container)}.scr.g{background:var(--ds-background-background)}.stack{display:flex;flex-direction:column;gap:.12rem}'+
+    ''+
+    '.fd{display:flex;flex-direction:column;gap:.08rem}.lb{font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)}.lb i{font-style:normal;color:var(--ds-feedback-error-rise);margin-right:.02rem}.tp{font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}'+
+    '.row{display:flex;gap:.08rem}.row>*{flex:1;min-width:0}';
+  const show=(k,html)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS,height:'auto'});
+  show('sFill',`<div class="scr stack">${input({ph:'请输入客户姓名'})}${input({value:'张一鸣'})}${input({size:'M',ph:'请输入客户姓名'})}${input({size:'M',value:'张一鸣'})}</div>`);
+  show('sLine',`<div class="scr stack">${input({style:'line',ph:'请输入客户姓名'})}${input({style:'line',value:'张一鸣'})}${input({style:'line',size:'M',ph:'请输入客户姓名'})}${input({style:'line',size:'M',value:'张一鸣'})}</div>`);
+  show('stDefault',`<div class="scr stack">${input({ph:'请输入'})}${input({style:'line',ph:'请输入'})}</div>`);
+  show('stTyping',`<div class="scr stack">${input({value:'张一',focus:1})}${input({style:'line',value:'张一',focus:1})}</div>`);
+  show('stFilled',`<div class="scr stack">${input({value:'张一鸣'})}${input({style:'line',value:'张一鸣'})}</div>`);
+  show('stDisabled',`<div class="scr stack">${input({value:'A12345678',disabled:1})}${input({style:'line',value:'A12345678',disabled:1})}</div>`);
+  show('stError',`<div class="scr stack">${input({value:'138 1234 567',err:'请输入 11 位手机号',label:'手机号'})}${input({style:'line',size:'M',value:'abc',err:'客户编号仅支持数字',label:'客户编号'})}</div>`);
+  show('stOver',`<div class="scr stack">${textarea({value:'',err:'请填写申请原因',max:200})}${textarea({value:'客户要求调整定投金额，已电话确认。',count:201,max:200,over:1,err:'字数已超出 200 字上限，请精简内容'})}</div>`);
+  show('tFill',`<div class="scr stack">${textarea({ph:'请输入备注'})}${textarea({ph:'请输入申请原因',max:500})}${textarea({size:'M',ph:'请输入申请原因（M）',max:500})}</div>`);
+  show('tLine',`<div class="scr stack">${textarea({style:'line',value:'客户要求调整',focus:1,max:500})}${textarea({style:'line',value:'客户要求调整定投金额，已电话确认。',max:500})}</div>`);
+  show('exForm',`<div class="scr g"><div class="gj-m-card">${field('客户姓名',input({ph:'与证件姓名一致',label:'客户姓名'}),1)}${field('手机号',input({type:'tel',mode:'numeric',ph:'11 位手机号',value:'138 1234 5678',label:'手机号'}),1)}${field('认购金额（元）',input({mode:'decimal',ph:'起投 1,000.00',label:'认购金额'}),1,'可用余额 52,380.00 元')}${field('备注',textarea({ph:'选填，如客户特殊要求',max:200,label:'备注'}))}</div></div>`);
+  show('exCompact',`<div class="scr"><div class="stack"><div class="row">${input({style:'line',size:'M',ph:'客户编号',label:'客户编号'})}${input({style:'line',size:'M',ph:'经办人',label:'经办人'})}</div>${input({style:'line',size:'M',ph:'产品名称或代码',label:'产品名称或代码'})}</div></div>`);
+
+  show('sfx',`<div class="scr stack">${sfx('获取验证码')}${sfx('重新获取（42s）',{dis:1,value:'1234'})}${sfx('获取验证码',{size:'M'})}${sfx('重新获取（42s）',{size:'M',dis:1})}</div>`);
+  { const f=show('sfxLab',`<div class="scr"><div class="stack"><div><label class="gj-m-input"><input type="text" inputmode="email" placeholder="请输入手机号 / 邮箱" aria-label="手机号或邮箱" data-acc><button type="button" class="gj-m-input-clear" aria-label="清除">${icon('icf_system_close-circle-fill')}</button></label></div><div>${sfx('获取验证码')}</div></div></div>`);
+    f.addEventListener('load',()=>{const d=f.contentDocument,acc=d.querySelector('[data-acc]'),b=d.querySelector('[data-code]');let t;
+      const err=(w,msg)=>{const box=w.parentElement;let m=box.querySelector('.gj-m-input-message');w.classList.toggle('is-error',!!msg);if(msg){if(!m){m=d.createElement('div');m.className='gj-m-input-message';m.setAttribute('role','alert');box.appendChild(m)}m.textContent=msg}else if(m)m.remove()};
+      acc.addEventListener('input',()=>err(acc.parentElement));
+      b.addEventListener('click',()=>{const v=acc.value.trim();if(!/^1\d{10}$/.test(v)&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){err(acc.parentElement,v?'请输入正确的手机号或邮箱':'请输入手机号或邮箱');acc.focus();return}
+        let n=60;b.disabled=true;const k=()=>{b.textContent=`重新获取（${n}s）`;if(n--<=0){clearInterval(t);b.disabled=false;b.textContent='重新获取'}};k();t=setInterval(k,1000);b.closest('label').querySelector('input').focus()})}) }
+  /* 交互：清除按钮、字数、格式 */
+  function wire(f,type){const d=f.contentDocument;
+    d.querySelectorAll('.gj-m-input').forEach(w=>{const i=w.querySelector('input'),c=w.querySelector('.gj-m-input-clear');
+      c.addEventListener('pointerdown',e=>e.preventDefault());c.addEventListener('click',()=>{i.value='';i.focus();i.dispatchEvent(new Event('input'))});
+      if(type==='tel')i.addEventListener('input',()=>{const v=i.value.replace(/\D/g,'').slice(0,11);i.value=[v.slice(0,3),v.slice(3,7),v.slice(7)].filter(Boolean).join(' ')});
+      if(type==='amount')i.addEventListener('input',()=>{let v=i.value.replace(/[^\d.]/g,'');const p=v.split('.');i.value=p[0]+(p.length>1?'.'+p.slice(1).join('').slice(0,2):'')})});
+    d.querySelectorAll('.gj-m-textarea').forEach(w=>{const t=w.querySelector('textarea'),c=w.querySelector('.gj-m-textarea-count');if(!c)return;const max=+t.dataset.max||t.maxLength;t.removeAttribute('maxlength');t.dataset.max=max;t.addEventListener('input',()=>{const n=t.value.length;c.textContent=n+'/'+max;w.classList.toggle('is-over',n>max);let m=w.nextElementSibling&&w.nextElementSibling.classList.contains('gj-m-input-message')?w.nextElementSibling:null;if(n>max&&!m){m=d.createElement('div');m.className='gj-m-input-message';m.setAttribute('role','alert');w.after(m)}if(m){if(n>max)m.textContent='字数已超出 '+max+' 字上限，请精简内容';else m.remove()}})})}
+  const $=id=>document.getElementById(id);
+  function renderLab(){const st=$('pStyle').value,sz=$('pSize').value,tp=$('pType').value,dis=$('pDis').value==='1';
+    const cfg={text:{label:'客户姓名',ph:'与证件姓名一致'},amount:{label:'认购金额（元）',ph:'起投 1,000.00',mode:'decimal'},tel:{label:'手机号',ph:'11 位手机号',type:'tel',mode:'numeric'}}[tp];
+    const f=GJPhone.swatch($('lab'),{html:`<div class="scr"><div class="stack">${field(cfg.label,input(Object.assign({style:st,size:sz,disabled:dis},cfg)),1)}${field('备注（上限 20 字，可输入超出体验超限）',textarea({style:st,size:sz,ph:'选填',max:20,disabled:dis}))}</div></div>`,css:CSS,height:'auto'});
+    f.addEventListener('load',()=>wire(f,tp))}
+  ['pStyle','pSize','pType','pDis'].forEach(id=>$(id).addEventListener('change',renderLab));renderLab();
+  document.querySelectorAll('[data-demo] iframe').forEach(f=>f.addEventListener('load',()=>wire(f,'')));
+})();
+</script>
+</body>
+</html>

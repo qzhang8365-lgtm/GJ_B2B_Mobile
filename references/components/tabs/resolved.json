@@ -1,0 +1,208 @@
+{
+  "vars": [
+    {
+      "id": "VariableID:7:3",
+      "name": "Text/Primary"
+    },
+    {
+      "id": "VariableID:7:4",
+      "name": "Text/Secondary"
+    },
+    {
+      "id": "VariableID:7:5",
+      "name": "Text/Tiatery"
+    },
+    {
+      "id": "VariableID:7:6",
+      "name": "Text/disable"
+    },
+    {
+      "id": "VariableID:7:8",
+      "name": "Text/blue"
+    },
+    {
+      "id": "VariableID:7:9",
+      "name": "Button/Primary/Bg-default"
+    },
+    {
+      "id": "VariableID:7:27",
+      "name": "Feedback/error&rise"
+    },
+    {
+      "id": "VariableID:7:46",
+      "name": "Background/Background"
+    },
+    {
+      "id": "VariableID:7:47",
+      "name": "Background/Container"
+    },
+    {
+      "id": "VariableID:7:48",
+      "name": "Background/Secondary"
+    },
+    {
+      "id": "VariableID:11:1609",
+      "name": "Components/control-S"
+    }
+  ],
+  "styles": [
+    {
+      "id": "S:26765cf268c92bd89de8d47a43c2ecdadaf782aa,",
+      "name": "H4-CN-S"
+    },
+    {
+      "id": "S:1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2,",
+      "name": "H5-CN-S"
+    },
+    {
+      "id": "S:aec2f397199f7b2cf955d9807f2f7c5a1c3f4f44,",
+      "name": "H7-CN-S"
+    },
+    {
+      "id": "S:d729da08e5135f43be1f20e8acdfee8b10f4a928,",
+      "name": "P4_CN-R"
+    },
+    {
+      "id": "S:c81d62da465fece323efaaf30c8389cc327e599d,",
+      "name": "P3_CN-R"
+    },
+    {
+      "id": "S:08e7c51f87d6e5b3f1335d71a6edcca97dae2158,",
+      "name": "P2_CN-R"
+    }
+  ],
+  "line": {
+    "width": 24,
+    "height": 3,
+    "paths": [
+      {
+        "windingRule": "EVENODD",
+        "data": "M 24 3 L 0 3 L 0 0 L 24 0 L 24 3 Z"
+      }
+    ]
+  },
+  "badge": {
+    "x": 29,
+    "y": 8,
+    "texts": [
+      {
+        "text": "8",
+        "size": 10,
+        "line": {
+          "unit": "PIXELS",
+          "value": 16
+        },
+        "style": "S:17ed64b43b00fad2f510509694dd61453acde31b,"
+      }
+    ]
+  },
+  "rectangle": [
+    {
+      "name": "1.Button",
+      "radius": 6,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 0.10000000149011612,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.16862745583057404,
+            "g": 0.45098039507865906,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:62b013667b552f82c7d2024b651d5ef789fe42ec/2441:214"
+            }
+          }
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.16862745583057404,
+            "g": 0.45098039507865906,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:84d50752b72d40d247fa0a16628dddf9b844c0f2/2441:211"
+            }
+          }
+        }
+      ],
+      "strokeWeight": 1
+    },
+    {
+      "name": "1.Button",
+      "radius": 6,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:47"
+            }
+          }
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.843137264251709,
+            "g": 0.8627451062202454,
+            "b": 0.8901960849761963
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:0bf2b28dfc427c276a9d6df5ddf27dbb2d417f38/2441:208"
+            }
+          }
+        }
+      ],
+      "strokeWeight": 1
+    }
+  ],
+  "effects": [
+    {
+      "type": "DROP_SHADOW",
+      "visible": true,
+      "radius": 8,
+      "boundVariables": {},
+      "color": {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 0.10000000149011612
+      },
+      "offset": {
+        "x": 0,
+        "y": 0
+      },
+      "spread": 0,
+      "blendMode": "NORMAL",
+      "showShadowBehindNode": false
+    }
+  ]
+}

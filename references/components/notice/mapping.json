@@ -1,0 +1,93 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "notice",
+  "figmaComponent": "提示 Notice（中型、小型行内、Toast）",
+  "prototypeClass": "gj-m-notice / gj-m-toast-layer",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "base": "div.gj-m-notice（中型）",
+    "small": "gj-m-notice-small（小型行内）",
+    "tone": "data-tone=\"default\" | \"alert\" | \"message\" | \"warning\" | \"success\"；小型只用 alert / message / plain",
+    "icon": "首个子元素 span.gj-icon（可省略）",
+    "text": "span.gj-m-notice-text",
+    "collapse": "小型可加 is-collapsed + button.gj-m-notice-toggle（aria-expanded）",
+    "toast": "div.gj-m-toast-layer > .gj-m-notice[data-tone=default]"
+  },
+  "valueMap": {
+    "small": "内边距 8、间距 8、P5 12/18、图标 16",
+    "toggle": "箭头 16；收起 icf_Arrow_down、展开 icf_Arrow_up",
+    "toast": "导航 44 下方 12 出现，渐显 + 下移 8，0.2s；2–4 秒消失（离开加 .is-leaving）",
+    "medium": "P3 14/22，图标 20，间距 12，圆角 8，左右 12、上下 9"
+  },
+  "tokenMap": {
+    "small.alert": "背景 Background/BT_R10（--ds-background-bt-r10）",
+    "small.message": "背景 Background/BT_B10（--ds-background-bt-b10）",
+    "small.plain": "背景 Background/MK_5，文字 Feedback/plain",
+    "medium": "非 default 语义带 1px 描边：alert Border/error、message Feedback/brand、warning Feedback/warning、success Feedback/success&decline",
+    "toastTop": "--gj-m-toast-top 可调"
+  },
+  "assetMap": {
+    "default": "icf_system_check",
+    "alert": "icf_system_warning",
+    "message": "icf_contact_message1",
+    "warning": "icf_system_alert",
+    "success": "icf_system_check-circle",
+    "info": "icf_system_info（小型说明提示常用）",
+    "toggle": "icf_Arrow_down / icf_Arrow_up"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-notice",
+    "text": ".gj-m-notice-text",
+    "toggle": ".gj-m-notice-toggle",
+    "toast": ".gj-m-toast-layer"
+  },
+  "markup": {
+    "message": "<div class=\"gj-m-notice\" data-tone=\"message\" role=\"status\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_contact_message1.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-notice-text\">资料已更新，请查看最新内容</span></div>",
+    "alert": "<div class=\"gj-m-notice\" data-tone=\"alert\" role=\"alert\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_warning.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-notice-text\">提交失败，请检查网络后重试</span></div>",
+    "success": "<div class=\"gj-m-notice\" data-tone=\"success\" role=\"status\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_check-circle.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-notice-text\">保存成功</span></div>",
+    "smallInfo": "<div class=\"gj-m-notice gj-m-notice-small\" data-tone=\"message\" role=\"status\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_info.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-notice-text\">默认展示本年度文件，可修改发起时间查看往年</span></div>",
+    "smallPlain": "<div class=\"gj-m-notice gj-m-notice-small\" data-tone=\"plain\" role=\"status\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_info.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-notice-text\">该需求已于 07-02 归档，仅可查看。</span></div>",
+    "smallCollapsible": "<div class=\"gj-m-notice gj-m-notice-small is-collapsed\" data-tone=\"message\" role=\"status\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_info.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-notice-text\">默认展示当前年度发起的文件，如需查看其他年份的数据，请修改上方的发起时间筛选条件</span><button type=\"button\" class=\"gj-m-notice-toggle\" aria-expanded=\"false\" aria-label=\"展开提示\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_down.svg')\" aria-hidden=\"true\"></span></button></div>",
+    "toast": "<div class=\"gj-m-toast-layer\" role=\"status\"><div class=\"gj-m-notice\" data-tone=\"default\"><span class=\"gj-m-notice-text\">已保存</span></div></div>",
+    "notice": "<div class=\"gj-m-notice gj-m-notice-small\" data-tone=\"plain\" role=\"status\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_info.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-notice-text\">该需求已于 07-02 归档，仅可查看。</span></div>"
+  },
+  "interactionMap": {
+    "toast": "操作结果轻反馈，2–4 秒自动消失，不抢焦点",
+    "inline": "持续问题用行内提示，保留到问题处理",
+    "collapse": "仅文字超出一行时显示展开按钮；切换 is-collapsed、aria-expanded、箭头方向",
+    "risk": "关键风险不能关闭绕过"
+  },
+  "accessibility": {
+    "role": "错误用 role=\"alert\"，其余 role=\"status\"",
+    "toggle": "button + aria-expanded + aria-label（展开 / 收起提示）",
+    "icon": "aria-hidden；含义靠文字"
+  },
+  "composition": {
+    "semantic": "语义固定颜色，配合图标与文案",
+    "singleLine": "顶部筛选区里的提示默认一行；放不下用展开 / 收起，不收字距、不小于 12",
+    "toastVsDialog": "无需决策的结果用 Toast，不用弹窗"
+  },
+  "pageRules": {
+    "PR-018": "顶部筛选 / 设置区的提示默认单行，超出用展开 / 收起"
+  },
+  "pending": {},
+  "templates": {
+    "notice": {
+      "tpl": "<div class=\"gj-m-notice{{#small}} gj-m-notice-small{{/small}}\" data-tone=\"{{tone}}\" role=\"status\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/{{icon}}.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-notice-text\">{{{text}}}</span></div>",
+      "example": {
+        "tone": "plain",
+        "icon": "icf_system_info",
+        "small": true,
+        "text": "该需求已于 07-02 归档，仅可查看。"
+      },
+      "params": "tone：alert / message / plain / warning / success / default；small：小型行内"
+    },
+    "toast": {
+      "tpl": "<div class=\"gj-m-toast-layer\" role=\"status\"><div class=\"gj-m-notice\" data-tone=\"default\"><span class=\"gj-m-notice-text\">{{text}}</span></div></div>",
+      "example": {
+        "text": "已保存"
+      },
+      "params": "轻提示（顶部出现，3 秒消失，离场加 .is-leaving）"
+    }
+  }
+}

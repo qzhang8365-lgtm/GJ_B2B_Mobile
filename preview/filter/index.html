@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 筛选 Filter</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid2+.grid2{margin-top:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>筛选 Filter</h1>
+    <p>在结果页切换筛选或排序条件，结果即时刷新。条件多时用全部筛选弹层；有层级的条件用级联选择器。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>触发项</h2><p>箭头型用于具体维度，图标型作为全部筛选入口。展开时变蓝、箭头朝上；生效后显示已选值并变蓝。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">箭头型 · 收起 / 展开 / 已选</span><div data-demo="trigA"></div></div>
+        <div class="panel"><span class="docs-stage-label">图标型 · 收起 / 展开 / 已选</span><div data-demo="trigB"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>筛选栏</h2><p>放 1–4 个条件，均分或左对齐。均分与左对齐都留左右 16 页边距，均分在内容区内等分。均分 4 个条件时每项约 4 个字。超过 4 个时，把第 4 项换成“筛选”，或在右侧加筛选图标，其余条件放进全部筛选弹层。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">均分 · 1–4 个条件</span><div data-demo="barC"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">左对齐 · 1–4 个条件</span><div data-demo="barL"></div></div>
+      </div>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">超过 4 个 · 末项为“筛选”</span><div data-demo="barM1"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">超过 4 个 · 左对齐 4 个条件 + 右侧筛选图标</span><div data-demo="barM2"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="filter-panel">
+      <header class="docs-section-head"><div><h2>展开面板</h2><p>单选选中即生效；多选（列表或分组标签）点“确认”生效。点遮罩收起。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">单选列表 · 选中即生效</span><div data-demo="pList"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">多选列表 · 确认后生效</span><div data-demo="pMulti"></div></div>
+      </div>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">分组标签 · 确认后生效</span><div data-demo="pChip"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">生效后 · 触发项显示已选</span><div data-demo="pDone"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="filter-sheet">
+      <header class="docs-section-head"><div><h2>全部筛选弹层</h2><p>条件多、需要分组时使用，点“确认”生效，生效后入口文字变蓝。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">全部筛选</span><div data-demo="sheet"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">生效后 · 入口为已选</span><div data-demo="sheetDone"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>同一时刻只展开一个面板，点其他触发项会先收起当前面板。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pAlign">对齐</label><select id="pAlign"><option value="center" selected>均分</option><option value="left">左对齐</option></select></div>
+          <div class="field"><label for="pNum">条件数</label><select id="pNum"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5a" selected>超过 4 个 · 末项为“筛选”</option><option value="5b">超过 4 个 · 右侧筛选图标</option></select></div>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>适用范围</td><td>结果页上切换筛选或排序条件，即时作用于当前内容。</td><td>需要占位、已选值和校验的表单字段用选择器 Select；有层级的条件用级联选择器。</td></tr>
+        <tr><td>条件数量</td><td>筛选栏放 1–4 个高频条件。</td><td>条件更多时用全部筛选弹层或独立筛选页。</td></tr>
+        <tr><td>触发项文案</td><td>简短、维度一致，如“排序”“类型”“风险等级”；仅排序时用“综合排序、最新发布”等明确结果。</td><td>不用笼统的“筛选”代替具体维度；图标型“筛选”只作为全部筛选入口。</td></tr>
+        <tr><td>展开</td><td>同一时刻只展开一个面板；点其他触发项时先收起当前面板再打开新的；点遮罩或返回收起。</td><td>面板不要遮住用户判断选项所需的关键信息。</td></tr>
+        <tr><td>生效方式</td><td>单选选中即生效并收起；多选保留选择，点“确认”生效。</td><td>同一层级不混用即时生效与确认生效。</td></tr>
+        <tr><td>选中反馈</td><td>触发项变品牌蓝（单选可显示已选值，多选不显示数量）；面板内选中项用颜色加勾选两种方式表达。</td><td>不只靠箭头方向或颜色表示状态。</td></tr>
+        <tr><td>修改与清除</td><td>已选条件可快速修改或清除；返回页面时按业务需要保留筛选结果。</td><td>清除后结果为空时，给出空状态并提示调整条件。</td></tr>
+        <tr><td>复杂条件</td><td>选项多、需要搜索或分组时，用底部弹层或独立选择页。</td><td>不在紧凑下拉面板里放搜索框。</td></tr>
+        <tr><td>触控与焦点</td><td>触发项高 46、列表行高 46，热区不小于 44；面板收起后焦点回到原触发项。</td><td>不把多个触发项压到小于 44 的宽度。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const trig=(t,o={})=>`<button type="button" class="gj-m-filter-item${o.icon?' gj-m-filter-item-icon':''}${o.active?' is-active':''}" aria-expanded="${!!o.open}"${o.icon?' aria-haspopup="dialog"':''} data-k="${o.k||''}"><span class="gj-m-filter-item-text">${t}</span><span class="gj-icon" aria-hidden="true"></span></button>`;
+  const more=(o={})=>`<button type="button" class="gj-m-filter-more${o.active?' is-active':''}" aria-label="全部筛选" aria-haspopup="dialog" aria-expanded="false" data-k="adv"><span class="gj-icon" aria-hidden="true"></span></button>`;
+  const bar=(items,o={})=>`<div class="gj-m-filter"><div class="gj-m-filter-bar${o.left?' gj-m-filter-bar-left':''}" role="toolbar" aria-label="筛选条件">${items.join('')}${o.more?more({active:o.moreActive}):''}</div>${o.panel?`<div class="gj-m-filter-mask"></div><div class="gj-m-filter-panel">${o.panel}</div>`:''}</div>`;
+  const item=(t,sel,multi)=>`<button type="button" class="gj-m-selection-item" role="${multi?'checkbox':'radio'}" aria-checked="${!!sel}" data-v="${t}"><span class="gj-m-selection-item-content"><span class="gj-m-selection-item-text">${t}</span><span class="gj-m-selection-check"><span class="gj-icon" aria-hidden="true"></span></span></span></button>`;
+  const list=(opts,sel,multi)=>`<div class="gj-m-selection" role="${multi?'group':'radiogroup'}">${opts.map(t=>item(t,multi?sel.includes(t):sel===t,multi)).join('')}</div>`;
+  const footer=(a,b)=>`<div class="gj-m-popup-footer"><button type="button" class="gj-m-button gj-m-button-tertiary gj-m-button-large" data-act="reset">${a}</button><button type="button" class="gj-m-button gj-m-button-primary gj-m-button-large" data-act="ok">${b}</button></div>`;
+  const GROUPS=[{t:'产品类型（可多选）',k:'type',multi:1,o:['股票型','债券型','混合型','货币型','指数型','QDII']},{t:'风险等级',k:'risk',o:['R1 低风险','R2 中低风险','R3 中风险','R4 中高风险','R5 高风险']},{t:'投资期限',k:'term',o:['7 天以内','7–30 天','1–3 个月','3–12 个月','1 年以上']},{t:'起购金额',k:'min',o:['1 元起','100 元起','1000 元起','1 万元起']}];
+  const sheet=st=>`<div class="gj-m-popup" role="dialog" aria-modal="true" aria-label="全部筛选"><div class="gj-m-popup-panel"><div class="gj-m-popup-header"><span class="gj-m-popup-title">全部筛选</span><button type="button" class="gj-m-popup-close" aria-label="关闭"><span class="gj-icon" aria-hidden="true"></span></button></div><div class="gj-m-filter-sheet-body">${GROUPS.map(g=>`<div class="gj-m-filter-group" role="group" aria-label="${g.t}" data-g="${g.k}" data-multi="${g.multi?1:0}"><div class="gj-m-filter-group-title">${g.t}</div><div class="gj-m-filter-options">${g.o.map(x=>`<button type="button" class="gj-m-filter-option" aria-pressed="${(st[g.k]||[]).includes(x)}" data-v="${x}"><span class="gj-m-filter-option-text">${x}</span></button>`).join('')}</div></div>`).join('')}</div>${footer('清空','确认')}</div></div>`;
+  const CSS='html,body{overflow:hidden}.scr{position:relative;width:100%;max-width:3.75rem;margin:0 auto;background:var(--ds-background-background);box-sizing:border-box}.pad{padding:.12rem 0}.stack{display:flex;flex-direction:column;gap:.12rem}.w{background:var(--ds-background-container)}'+
+    '.ph{position:relative;width:100%;max-width:3.75rem;margin:0 auto;height:100%;display:flex;flex-direction:column;overflow:hidden;background:var(--ds-background-background)}.hd{flex:none;display:flex;align-items:center;justify-content:center;height:44px;background:var(--ds-background-container);font-size:.17rem;font-weight:600}.ct{position:relative;flex:1;min-height:0;overflow:hidden}'+
+    '.sum{padding:.12rem var(--space-page-margin-x) .08rem;font-size:.13rem;line-height:.2rem;color:var(--ds-text-tiatery)}.row{display:flex;justify-content:space-between;gap:.12rem;padding:.12rem var(--space-page-margin-x);background:var(--ds-background-container);box-shadow:inset 0 -1px 0 var(--ds-border-default)}.row b{font-weight:500;font-size:.15rem;line-height:.22rem;color:var(--ds-text-primary)}.row small{display:block;margin-top:.02rem;font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}.row em{font-style:normal;font-size:.16rem;line-height:.22rem;color:var(--ds-feedback-error-rise);white-space:nowrap}';
+  const FIX='html,body,.page{height:100%}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+(h?FIX:''),height:h||'auto'});
+  const FUNDS=[['国金量化多因子','混合型 · R3','+18.62%'],['国金惠盈纯债','债券型 · R2','+4.15%'],['国金沪深 300 指数增强','指数型 · R4','+12.07%'],['国金鑫日享货币','货币型 · R1','+1.86%'],['国金核心资产精选','股票型 · R4','+9.33%'],['国金稳健回报','混合型 · R3','+6.51%']];
+  const rows=n=>FUNDS.slice(0,n).map(f=>`<div class="row"><div><b>${f[0]}</b><small>${f[1]}</small></div><em>${f[2]}</em></div>`).join('');
+  const SORT=['综合排序','近一年收益','近三月收益','最新净值','成立时间'];
+  const TYPES=['全部类型','股票型','债券型','混合型','指数型','货币型','QDII'];
+  const TERMS=['全部期限','7 天以内','7–30 天','1–3 个月','3–12 个月','1 年以上'];
+  const RISK=['R1 低风险','R2 中低风险','R3 中风险','R4 中高风险','R5 高风险'];
+  const page=(barHtml,sum)=>`<div class="ph"><div class="hd">基金列表</div><div class="ct">${barHtml}<div class="sum">${sum||'共 128 只'}</div>${rows(6)}</div></div>`;
+
+  show('trigA',`<div class="scr w">${bar([trig('排序'),trig('排序',{open:1}),trig('近一年收益',{active:1})],{left:1})}</div>`);
+  show('trigB',`<div class="scr w">${bar([trig('筛选',{icon:1}),trig('筛选',{icon:1,open:1}),trig('筛选',{icon:1,active:1})],{left:1})}</div>`);
+  const F4=['排序','类型','风险等级','期限'];
+  show('barC',`<div class="scr pad stack">${[1,2,3,4].map(n=>bar(F4.slice(0,n).map(t=>trig(t)))).join('')}</div>`);
+  show('barL',`<div class="scr pad stack">${[1,2,3,4].map(n=>bar(F4.slice(0,n).map(t=>trig(t)),{left:1})).join('')}</div>`);
+  show('barM1',`<div class="scr pad stack">${bar(['排序','类型','风险等级'].map(t=>trig(t)).concat(trig('筛选',{icon:1})))}${bar(['排序','类型','风险等级'].map(t=>trig(t)).concat(trig('筛选',{icon:1,active:1})))}</div>`);
+  show('barM2',`<div class="scr pad stack">${bar(F4.map(t=>trig(t)),{left:1,more:1})}${bar(F4.map(t=>trig(t)),{left:1,more:1,moreActive:1})}</div>`);
+  show('pList',page(bar([trig('排序',{open:1}),trig('类型'),trig('风险等级'),trig('筛选',{icon:1})],{panel:list(SORT,'近一年收益')})),520);
+  show('pMulti',page(bar([trig('排序'),trig('类型'),trig('风险等级',{open:1}),trig('筛选',{icon:1})],{panel:list(RISK,['R2 中低风险','R3 中风险'],1)+footer('清空','确认（2）')})),520);
+  const groups=(gs,st)=>`<div class="gj-m-filter-sheet-body">${gs.map(g=>`<div class="gj-m-filter-group" role="group" aria-label="${g.t}"><div class="gj-m-filter-group-title">${g.t}</div><div class="gj-m-filter-options">${g.o.map(x=>`<button type="button" class="gj-m-filter-option" aria-pressed="${(st[g.k]||[]).includes(x)}"><span class="gj-m-filter-option-text">${x}</span></button>`).join('')}</div></div>`).join('')}</div>`;
+  show('pChip',page(bar([trig('排序'),trig('类型',{open:1}),trig('风险等级'),trig('筛选',{icon:1})],{panel:groups(GROUPS.slice(0,2),{type:['混合型'],risk:['R3 中风险']})+footer('清空','确认（2）')})),620);
+  show('pDone',page(bar([trig('最新净值',{active:1}),trig('混合型',{active:1}),trig('风险等级',{active:1}),trig('筛选',{icon:1})]),'共 18 只'),620);
+  show('sheet',`<div class="ph">${sheet({type:['混合型','指数型'],risk:['R3 中风险'],term:['1 年以上']})}</div>`,640);
+  show('sheetDone',page(bar([trig('排序'),trig('类型'),trig('风险等级'),trig('筛选',{icon:1,active:1})]),'共 12 只'),640);
+
+  let S={sort:'综合排序',type:'全部类型',term:'全部期限',risk:[],adv:{}};
+  function renderLab(){const left=$('pAlign').value==='left',nv=$('pNum').value,n=parseInt(nv,10),withMore=nv==='5b';
+    const f=GJPhone.swatch($('lab'),{html:`<div class="ph"><div class="hd">基金列表</div><div class="ct" id="ct"></div><div id="pop"></div></div>`,css:CSS+FIX,height:600});
+    f.addEventListener('load',()=>{const d=f.contentDocument,ct=d.getElementById('ct'),pop=d.getElementById('pop');let open=null,draftRisk=[];
+      const keys=nv==='5a'?['sort','type','risk','adv']:['sort','type','risk','term'].slice(0,Math.min(n,4));
+      const advCount=()=>Object.values(S.adv).reduce((a,b)=>a+b.length,0);
+      const label=k=>k==='sort'?(S.sort==='综合排序'?'排序':S.sort):k==='type'?(S.type==='全部类型'?'类型':S.type):k==='risk'?'风险等级':k==='term'?(S.term==='全部期限'?'期限':S.term):'筛选';
+      const active=k=>k==='sort'?S.sort!=='综合排序':k==='type'?S.type!=='全部类型':k==='risk'?S.risk.length>0:k==='term'?S.term!=='全部期限':advCount()>0;
+      const fin=k=>{open=null;draw();ct.querySelector(`[data-k="${k}"]`).focus()};
+      function panel(k){if(k==='sort')return list(SORT,S.sort);if(k==='type')return list(TYPES,S.type);if(k==='term')return list(TERMS,S.term);return list(RISK,draftRisk,1)+footer('清空',`确认${draftRisk.length?'（'+draftRisk.length+'）':''}`)}
+      function draw(){const items=keys.map(k=>trig(label(k),{k,open:open===k,active:active(k),icon:k==='adv'}));
+        const cnt=Math.max(3,128-S.risk.length*17-(S.type!=='全部类型'?61:0)-(S.term!=='全部期限'?23:0)-advCount()*9);
+        ct.innerHTML=bar(items,{left,more:withMore,moreActive:advCount()>0,panel:open?panel(open):''})+`<div class="sum">共 ${cnt} 只</div>`+rows(6);
+        ct.querySelectorAll('.gj-m-filter-item,.gj-m-filter-more').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.k;if(k==='adv'){open=null;draw();openSheet();return}
+          if(open===k){fin(k);return}open=k;draftRisk=S.risk.slice();draw()}));
+        const m=ct.querySelector('.gj-m-filter-mask');if(m)m.addEventListener('click',()=>fin(open));
+        if(open==='sort'||open==='type'||open==='term')ct.querySelectorAll('.gj-m-selection-item').forEach(x=>x.addEventListener('click',()=>{S[open]=x.dataset.v;fin(open)}));
+        if(open==='risk'){ct.querySelectorAll('.gj-m-selection-item').forEach(x=>x.addEventListener('click',()=>{const v=x.dataset.v;draftRisk=draftRisk.includes(v)?draftRisk.filter(y=>y!==v):draftRisk.concat(v);draw()}));
+          ct.querySelector('[data-act="reset"]').addEventListener('click',()=>{draftRisk=[];draw()});ct.querySelector('[data-act="ok"]').addEventListener('click',()=>{S.risk=RISK.filter(r=>draftRisk.includes(r));fin('risk')})}}
+      function openSheet(){let draft=JSON.parse(JSON.stringify(S.adv));const back=()=>ct.querySelector('[data-k="adv"]').focus();
+        const r=()=>{pop.innerHTML=sheet(draft);const p=pop.firstElementChild,close=()=>{pop.innerHTML='';back()};
+          p.addEventListener('click',e=>{if(e.target===p)close()});p.querySelector('.gj-m-popup-close').addEventListener('click',close);
+          p.querySelectorAll('.gj-m-filter-option').forEach(o=>o.addEventListener('click',()=>{const g=o.closest('[data-g]'),k=g.dataset.g,v=o.dataset.v,cur=draft[k]||[];draft[k]=g.dataset.multi==='1'?(cur.includes(v)?cur.filter(x=>x!==v):cur.concat(v)):(cur.includes(v)?[]:[v]);r()}));
+          p.querySelector('[data-act="reset"]').addEventListener('click',()=>{draft={};r()});p.querySelector('[data-act="ok"]').addEventListener('click',()=>{S.adv=draft;pop.innerHTML='';draw();back()})};r()}
+      draw()})}
+  ['pAlign','pNum'].forEach(id=>$(id).addEventListener('change',renderLab));renderLab();
+})();
+</script>
+</body>
+</html>

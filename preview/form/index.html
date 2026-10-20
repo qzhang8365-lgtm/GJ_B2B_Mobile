@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 表单 Form</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:1100px){.grid3{grid-template-columns:1fr}}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>表单 Form</h1>
+    <p>组织结构化信息的录入、校验与提交。表单项由标题和输入框、选择器、日期选择器、开关等控件组成。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section" id="form-structure">
+      <header class="docs-section-head"><div><h2>表单结构</h2><p>表单标题、填写区、操作区。内容过长时拆成分步表单。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">单页表单</span><div data-demo="single"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">分步表单</span><div data-demo="step"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="form-label">
+      <header class="docs-section-head"><div><h2>表单标题</h2><p>必填在标题后加星号；补充说明用浅色括注；需要解释时加提示图标。</p></div></header>
+      <div class="panel"><span class="docs-stage-label">普通 / 必填 / 说明 / 提示</span><div data-demo="labels"></div></div>
+    </section>
+
+    <section class="docs-section" id="form-item">
+      <header class="docs-section-head"><div><h2>表单项</h2><p>标题与控件间距 8，表单项顶部留白 16。错误提示放在控件下方 4。</p></div></header>
+      <div class="grid3">
+        <div class="panel gray"><span class="docs-stage-label">输入</span><div data-demo="fInput"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">选择</span><div data-demo="fSelect"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">日期</span><div data-demo="fDate"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="form-switch">
+      <header class="docs-section-head"><div><h2>开关项</h2><p>立即生效的二元设置，标题与开关左右对齐。</p></div></header>
+      <div class="panel gray"><span class="docs-stage-label">默认 / 小号</span><div data-demo="fSwitch"></div></div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>提交时校验必填项，定位到第一个错误；修改后错误消失。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <label class="ck"><input type="checkbox" id="pDesc" checked>显示说明与提示</label>
+          <label class="ck"><input type="checkbox" id="pStep">分步表单</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>顺序</td><td>按用户的业务决策顺序排列字段。</td><td>不按数据库字段或后台模块排列。</td></tr>
+        <tr><td>长度</td><td>单页 8–12 个核心字段；更多时按语义分组或分步。</td><td>避免无止境滚动。</td></tr>
+        <tr><td>必填</td><td>全表规则一致，用星号标注。</td><td>不同时用星号、“必填”文字和颜色重复提示。</td></tr>
+        <tr><td>校验</td><td>提交时定位到第一个错误，保留已填内容，汇总未完成项。</td><td>不清空已填内容。</td></tr>
+        <tr><td>按钮</td><td>主操作用明确动词，如“提交审批”“保存客户”。</td><td>避免只写含义模糊的“确定”。</td></tr>
+        <tr><td>草稿</td><td>长流程支持草稿与恢复；离开未保存页面时确认保存或放弃。</td><td>—</td></tr>
+        <tr><td>键盘与安全区</td><td>底部操作区避开安全区；键盘弹出时当前输入与错误提示可见。</td><td>—</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const icon=n=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${n}.svg')" aria-hidden="true"></span>`;
+  let uid=0;
+  const label=(t,o={})=>`<span class="gj-m-form-label"${o.id?` id="${o.id}"`:''}><span class="gj-m-form-label-text">${t}</span>${o.req?'<span class="gj-m-form-required" aria-label="必填">*</span>':''}${o.desc?`<span class="gj-m-form-desc">(${o.desc})</span>`:''}${o.tip?`<button type="button" class="gj-m-form-tip" aria-label="${t}说明"><span class="gj-icon" aria-hidden="true"></span></button>`:''}</span>`;
+  const input=o=>`<label class="gj-m-input${o.err?' is-error':''}"><input placeholder="${o.ph||'请输入'}" value="${o.value||''}"${o.dis?' disabled':''}${o.err?' aria-invalid="true"':''} aria-label="${o.t}"><button type="button" class="gj-m-input-clear" aria-label="清除">${icon('icf_system_close-circle-fill')}</button></label>${o.err?`<div class="gj-m-input-message" role="alert">${o.err}</div>`:''}`;
+  const select=o=>`<button type="button" class="gj-m-select${o.date?' gj-m-datepicker':''}" aria-haspopup="dialog" aria-expanded="false"${o.dis?' disabled':''}${o.err?' aria-invalid="true"':''} aria-label="${o.t}">${o.date?icon('icf_system_calendar'):''}<span class="gj-m-select-value${o.value?'':' is-placeholder'}">${o.value||o.ph}</span>${o.date?'':'<span class="gj-m-select-arrow"><span class="gj-icon" aria-hidden="true"></span></span>'}</button>${o.err?`<div class="gj-m-select-message" role="alert">${o.err}</div>`:''}`;
+  const item=(o,ctl)=>`<div class="gj-m-form-item" data-k="${o.k||''}">${label(o.t,o)}${ctl}</div>`;
+  const sw=(t,on,sm)=>`<div class="gj-m-form-item gj-m-form-item-inline">${label(t)}<button type="button" class="gj-m-switch${sm?' gj-m-switch-sm':''}" role="switch" aria-checked="${!!on}" aria-label="${t}"></button></div>`;
+  const CSS='html,body{overflow:hidden;background:transparent}.scr{width:100%;max-width:3.75rem;margin:0 auto;background:var(--ds-background-background)}.w{background:var(--ds-background-container);padding:0 var(--space-page-margin-x) .12rem}'+
+    '.ph{position:relative;width:100%;max-width:3.75rem;margin:0 auto;height:100%;overflow:hidden;background:var(--ds-background-background);display:flex;flex-direction:column}.hd{flex:none;display:flex;align-items:center;justify-content:center;height:44px;background:var(--ds-background-container);font-size:.17rem;font-weight:600}'+
+    '.body{flex:1;overflow-y:auto;padding-top:.12rem}.ft{flex:none;padding:.12rem var(--space-page-margin-x) calc(.12rem + env(safe-area-inset-bottom,0px));background:var(--ds-background-container);box-shadow:0 -1px 0 var(--ds-border-default)}'+
+    '.area{display:grid;place-items:center;height:1.40rem;color:var(--ds-text-tiatery);font-size:.13rem}.steps{margin:0 0 .12rem;color:var(--ds-text-tiatery);font-size:.13rem;line-height:.2rem}'+
+    '';
+  const FIX='html,body,.page{height:100%}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+(h?FIX:''),height:h||'auto'});
+  const BTN=(t,p)=>`<button type="button" class="gj-m-button gj-m-button-large ${p?'gj-m-button-primary':'gj-m-button-tertiary'}">${t}</button>`;
+
+  // 结构
+  const shell=(btns,step)=>`<div class="ph"><div class="hd">新建客户</div><div class="body"><div class="gj-m-form-card">${step?'<p class="steps">第 1 步 / 共 3 步 · 基本信息</p>':''}<h2 class="gj-m-form-card-title">表单标题</h2><div class="gj-m-card-l2 area">表单填写区域</div></div></div><div class="ft"><div class="gj-m-form-actions">${btns}</div></div></div>`;
+  show('single',shell(BTN('草稿')+BTN('提交',1)),400);
+  show('step',shell(BTN('上一步')+BTN('下一步',1),1),400);
+
+  // 标题
+  show('labels',`<div class="scr"><div class="w">${[label('客户名称'),label('客户名称',{req:1}),label('联系电话',{desc:'选填'}),label('风险等级',{req:1,tip:1})].map(l=>`<div class="gj-m-form-item">${l}</div>`).join('')}</div></div>`);
+
+  // 表单项
+  show('fInput',`<div class="scr"><div class="w">${item({t:'客户名称'},input({t:'客户名称'}))}${item({t:'客户名称',req:1},input({t:'客户名称',value:'国金证券'}))}${item({t:'客户名称',req:1},input({t:'客户名称',err:'请输入客户名称'}))}${item({t:'客户名称'},input({t:'客户名称',dis:1}))}</div></div>`);
+  show('fSelect',`<div class="scr"><div class="w">${item({t:'客户类型'},select({t:'客户类型',ph:'选择内容'}))}${item({t:'客户类型',req:1},select({t:'客户类型',value:'机构客户'}))}${item({t:'客户类型',req:1},select({t:'客户类型',ph:'选择内容',err:'请选择客户类型'}))}${item({t:'客户类型'},select({t:'客户类型',ph:'选择内容',dis:1}))}</div></div>`);
+  show('fDate',`<div class="scr"><div class="w">${item({t:'开户日期'},select({t:'开户日期',ph:'选择日期',date:1}))}${item({t:'开户日期',req:1},select({t:'开户日期',value:'2026-12-27',date:1}))}${item({t:'开户日期',req:1},select({t:'开户日期',ph:'选择日期',date:1,err:'请选择开户日期'}))}${item({t:'开户日期'},select({t:'开户日期',ph:'选择日期',date:1,dis:1}))}</div></div>`);
+  show('fSwitch',`<div class="scr"><div class="w">${sw('接收审批通知',1)}${sw('接收审批通知',1,1)}</div></div>`);
+
+  // 交互演示
+  const TYPES=['个人客户','机构客户','产品客户'];
+  function render(){const D=$('pDesc').checked,S=$('pStep').checked;
+    const st={name:'',type:'',date:'',phone:'',notify:true,err:{}};
+    const f=GJPhone.swatch($('lab'),{html:`<div class="ph"><div class="hd">新建客户</div><div class="body" id="body"></div><div class="ft"><div class="gj-m-form-actions">${S?BTN('上一步')+BTN('下一步',1):BTN('草稿')+BTN('提交',1)}</div></div><div id="toast"></div></div>`,css:CSS+FIX,height:620});
+    f.addEventListener('load',()=>{const d=f.contentDocument,body=d.getElementById('body'),toast=d.getElementById('toast');
+      const draw=()=>{const e=st.err;
+        body.innerHTML=`<div class="gj-m-form-card">${S?'<p class="steps">第 1 步 / 共 3 步 · 基本信息</p>':''}<h2 class="gj-m-form-card-title">基本信息</h2>
+          ${item({t:'客户名称',req:1,k:'name'},input({t:'客户名称',value:st.name,err:e.name}))}
+          ${item({t:'客户类型',req:1,tip:D,k:'type'},select({t:'客户类型',ph:'选择内容',value:st.type,err:e.type}))}
+          ${item({t:'开户日期',req:1,k:'date'},select({t:'开户日期',ph:'选择日期',value:st.date,date:1,err:e.date}))}
+          ${item({t:'联系电话',desc:D?'选填':'',k:'phone'},input({t:'联系电话',value:st.phone}))}
+          ${sw('接收审批通知',st.notify)}</div>`;
+        const ni=body.querySelector('[data-k="name"] input');ni.addEventListener('input',()=>{st.name=ni.value;if(st.err.name&&st.name.trim()){delete st.err.name;draw();const n=body.querySelector('[data-k="name"] input');n.focus();n.setSelectionRange(n.value.length,n.value.length)}});
+        const pi=body.querySelector('[data-k="phone"] input');pi.addEventListener('input',()=>{st.phone=pi.value});
+        body.querySelector('[data-k="type"] .gj-m-select').addEventListener('click',()=>{st.type=TYPES[(TYPES.indexOf(st.type)+1)%TYPES.length];delete st.err.type;draw();body.querySelector('[data-k="type"] .gj-m-select').focus()});
+        body.querySelector('[data-k="date"] .gj-m-select').addEventListener('click',()=>{st.date='2026-10-14';delete st.err.date;draw();body.querySelector('[data-k="date"] .gj-m-select').focus()});
+        body.querySelector('.gj-m-switch').addEventListener('click',ev=>{st.notify=!st.notify;ev.currentTarget.setAttribute('aria-checked',st.notify)});
+        const tip=body.querySelector('.gj-m-form-tip');if(tip)tip.addEventListener('click',()=>say('机构客户需上传营业执照'));
+      };
+      const say=t=>{clearTimeout(say.t1);clearTimeout(say.t2);toast.innerHTML=`<div class="gj-m-toast-layer" role="status"><div class="gj-m-notice" data-tone="default"><span class="gj-m-notice-text">${t}</span></div></div>`;const el=toast.firstElementChild;say.t1=setTimeout(()=>{el.classList.add('is-leaving');say.t2=setTimeout(()=>{if(toast.firstElementChild===el)toast.innerHTML=''},200)},1400)};
+      const btns=d.querySelectorAll('.gj-m-form-actions .gj-m-button');
+      btns[1].addEventListener('click',()=>{st.err={};if(!st.name.trim())st.err.name='请输入客户名称';if(!st.type)st.err.type='请选择客户类型';if(!st.date)st.err.date='请选择开户日期';draw();
+        const first=body.querySelector('[aria-invalid="true"]');if(first){first.scrollIntoView({block:'center'});first.focus();say(`还有 ${Object.keys(st.err).length} 项未完成`)}else say(S?'进入下一步':'已提交')});
+      btns[0].addEventListener('click',()=>say(S?'已是第一步':'已存为草稿'));
+      draw()})}
+  $('pDesc').addEventListener('change',render);$('pStep').addEventListener('change',render);render();
+})();
+</script>
+</body>
+</html>

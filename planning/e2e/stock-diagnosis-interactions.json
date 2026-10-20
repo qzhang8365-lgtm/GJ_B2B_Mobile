@@ -1,0 +1,68 @@
+{
+  "results": [
+    {
+      "width": 375,
+      "states": [
+        "initial",
+        "product-change",
+        "period-change",
+        "history-marker",
+        "candle-details",
+        "chart-navigation",
+        "clear-marker",
+        "ai-loading",
+        "ai-complete",
+        "ai-regenerate",
+        "news-complete",
+        "stock-reports",
+        "industry-reports",
+        "tab-state-retained",
+        "sticky-tabs"
+      ],
+      "errors": []
+    },
+    {
+      "width": 320,
+      "states": [
+        "initial",
+        "product-change",
+        "period-change",
+        "history-marker",
+        "candle-details",
+        "chart-navigation",
+        "clear-marker",
+        "ai-loading",
+        "ai-complete",
+        "ai-regenerate",
+        "news-complete",
+        "stock-reports",
+        "industry-reports",
+        "tab-state-retained",
+        "sticky-tabs"
+      ],
+      "errors": []
+    },
+    {
+      "width": 768,
+      "states": [
+        "initial",
+        "product-change",
+        "period-change",
+        "history-marker",
+        "candle-details",
+        "chart-navigation",
+        "clear-marker",
+        "ai-loading",
+        "ai-complete",
+        "ai-regenerate",
+        "news-complete",
+        "stock-reports",
+        "industry-reports",
+        "tab-state-retained",
+        "sticky-tabs"
+      ],
+      "errors": []
+    }
+  ],
+  "pass": true
+}

@@ -1,0 +1,115 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "selection-list",
+  "figmaComponent": "Selection List（58:4766 / 158:1890）、Choice Chip（158:1520 / 158:2018）、Selection Sheet（148:1226）",
+  "prototypeClass": "gj-m-selection / gj-m-chip",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "Selection List": ".gj-m-selection[role=radiogroup|group]",
+    "Align=center": ".gj-m-selection-center",
+    "Item Type=plain": "button.gj-m-selection-item[role=radio] > .gj-m-selection-item-content > .gj-m-selection-item-text + .gj-m-selection-check > .gj-icon",
+    "State=selected": "[aria-checked=true]（或 aria-selected=true / .is-selected）",
+    "State=disabled": "[aria-disabled=true]（或 :disabled / .is-disabled）",
+    "Indicator": ".gj-m-selection-indicator（现只用于 Choice Chip）",
+    "Choice Chip/Item": "button.gj-m-chip[aria-pressed] > .gj-m-chip-text + .gj-m-selection-indicator",
+    "Choice Chip/Group Layout=grid|list": ".gj-m-chip-group / .gj-m-chip-group.gj-m-chip-group-list",
+    "Selection Sheet/Confirmable": ".gj-m-popup > .gj-m-popup-panel > .gj-m-popup-header + .gj-m-selection + .gj-m-popup-footer > .gj-m-button-tertiary + .gj-m-button-primary",
+    "单选 / 多选（同一样式）": "单选 role=radio（容器 role=radiogroup），多选 role=checkbox（容器 role=group）；选中 [aria-checked=true]"
+  },
+  "valueMap": {
+    "item": "{\"height\": \"46（上下 12），小屏不低于 44\", \"paddingX\": 16, \"text\": \"P3_CN-R 14/22 Text/Primary\", \"divider\": \"1px Border/default，左右各缩进 16，末项不显示\", \"selected\": \"Text/blue + 尾部 icf_system_check 20（左 12）\", \"disabled\": \"整行 40%\", \"selection\": \"单选、多选同一样式：文字 Text/blue + 尾部勾选（2026-10-12 设计方确定，取消 indicator 类型）\"}",
+    "indicator": "{\"size\": 20, \"unchecked\": \"2px Border/default 描边 + Background/Container\", \"checked\": \"icf_system_check-circle-fill，Brand/GJ_Blue\", \"usage\": \"只用于 Choice Chip 内\"}",
+    "chip": "{\"height\": 40, \"padding\": \"6 / 10\", \"radius\": \"全圆角\", \"bg\": \"Background/Background\", \"text\": \"P3_CN-R 14/22 Text/Primary 居中\", \"indicator\": \"20，距右 10\", \"selected\": \"1px Border/focused + 指示器选中\"}",
+    "chipGroup": "{\"padding\": \"12 / 16\", \"gap\": 12, \"layout\": \"grid 两列 | list 单列\", \"bg\": \"Background/Container\"}",
+    "sheet": "{\"radius\": \"顶部 16\", \"header\": \"panel-header 52\", \"footer\": \"内边距 16，间距 12；Tertiary「取消」+ Primary「确定」，Large 等分\"}"
+  },
+  "tokenMap": {
+    "Background/Container / Background": "--ds-background-container / --ds-background-background",
+    "Border/default / focused": "--ds-border-default / --ds-border-focused",
+    "Text/Primary / blue": "--ds-text-primary / --ds-text-blue",
+    "Brand/GJ_Blue（指示器）": "--ds-brand-gj-blue"
+  },
+  "runtimeMap": {
+    "list": ".gj-m-selection",
+    "item": ".gj-m-selection-item",
+    "text": ".gj-m-selection-item-text",
+    "check": ".gj-m-selection-check",
+    "chipGroup": ".gj-m-chip-group",
+    "chip": ".gj-m-chip"
+  },
+  "markup": {
+    "single": "<div class=\"gj-m-selection\" role=\"radiogroup\"><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"false\" data-v=\"个人客户\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">个人客户</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"true\" data-v=\"机构客户\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">机构客户</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"false\" data-v=\"产品客户\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">产品客户</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"false\" data-v=\"私募基金\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">私募基金</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"false\" data-v=\"公募基金\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">公募基金</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button></div>",
+    "chips": "<div class=\"gj-m-chip-group\" role=\"group\" aria-label=\"关注行业\" data-chips=\"ind\"><button type=\"button\" class=\"gj-m-chip\" aria-pressed=\"true\" data-v=\"证券\"><span class=\"gj-m-chip-text\">证券</span><span class=\"gj-m-selection-indicator\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></button><button type=\"button\" class=\"gj-m-chip\" aria-pressed=\"false\" data-v=\"银行\"><span class=\"gj-m-chip-text\">银行</span><span class=\"gj-m-selection-indicator\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></button></div>",
+    "popupSingle": "<div style=\"position:fixed;inset:0;z-index:30\"><div class=\"gj-m-popup\"><div class=\"gj-m-popup-panel\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"slT\" tabindex=\"-1\"><div class=\"gj-m-popup-header\"><span class=\"gj-m-popup-title\" id=\"slT\">请假类型</span><button type=\"button\" class=\"gj-m-popup-close\" aria-label=\"关闭\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></div><div class=\"gj-m-selection\" role=\"radiogroup\" aria-label=\"请假类型\"><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"false\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">年假</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"true\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">事假</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button></div><div class=\"gj-m-popup-footer\"><button type=\"button\" class=\"gj-m-button gj-m-button-tertiary gj-m-button-large\">取消</button><button type=\"button\" class=\"gj-m-button gj-m-button-primary gj-m-button-large\">确定</button></div></div></div></div>"
+  },
+  "interactionMap": {
+    "single": "选中即生效或确认后生效（Selection Sheet / Confirmable 带取消 / 确认）",
+    "disabled": "整行 40%"
+  },
+  "accessibility": {
+    "single": "容器 role=\"radiogroup\"，项 role=\"radio\" + aria-checked",
+    "multi": "容器 role=\"group\"，项 role=\"checkbox\" + aria-checked",
+    "chip": "button + aria-pressed"
+  },
+  "composition": {
+    "where": "选择列表用于底部弹层 / 筛选面板；选项胶囊只用于底部弹层，不作为卡片内默认多选（PR-009）",
+    "style": "单选、多选同一样式：选中文字 Text/blue + 尾部勾",
+    "inPopup": "放进底部弹层时，列表直接作为 .gj-m-popup-panel 的子元素（标题栏 → 列表 → 操作区），不要包 .gj-m-popup-body：列表项自带左右 16，再包一层会变成 32 缩进、分割线错位（2026-10-19 请假申请发现）。见 markup.popupSingle",
+    "inCenteredDialog": "居中选择弹窗采用card.selectionDialog模板，列表直接放入list插槽，不包带水平内边距的card-body；标题/列表文字/按钮边缘距离面板均16。"
+  },
+  "pageRules": {
+    "PR-009": "卡片内多选不用选项胶囊，用按钮组合"
+  },
+  "pending": {
+    "SL-M-009": "Selection List indicator 类型的列表项实例指向旧源组件；原型不受影响"
+  },
+  "templates": {
+    "chips": {
+      "tpl": "<div class=\"gj-m-chip-group\" role=\"{{role}}\" aria-label=\"{{label}}\" data-chips=\"{{key}}\">{{#items}}<button type=\"button\" class=\"gj-m-chip\" {{{state}}} data-v=\"{{text}}\"><span class=\"gj-m-chip-text\">{{text}}</span><span class=\"gj-m-selection-indicator\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></button>{{/items}}</div>",
+      "example": {
+        "role": "group",
+        "label": "关注行业",
+        "key": "ind",
+        "items": [
+          {
+            "text": "证券",
+            "state": "aria-pressed=\"true\""
+          },
+          {
+            "text": "银行",
+            "state": "aria-pressed=\"false\""
+          }
+        ]
+      },
+      "params": "选项胶囊（只用于底部弹层）；state：aria-pressed=\"…\" 或 role=\"radio\" aria-checked=\"…\""
+    },
+    "single": {
+      "tpl": "<div class=\"gj-m-selection\" role=\"radiogroup\"{{#label}} aria-label=\"{{label}}\"{{/label}}>{{#items}}<button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"{{on}}\" data-v=\"{{text}}\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">{{text}}</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button>{{/items}}</div>",
+      "params": "单选列表：label：读屏名称；items：[{text, on(true/false)}]",
+      "example": {
+        "items": [
+          {
+            "text": "个人客户",
+            "on": false
+          },
+          {
+            "text": "机构客户",
+            "on": true
+          },
+          {
+            "text": "产品客户",
+            "on": false
+          },
+          {
+            "text": "私募基金",
+            "on": false
+          },
+          {
+            "text": "公募基金",
+            "on": false
+          }
+        ]
+      }
+    }
+  }
+}

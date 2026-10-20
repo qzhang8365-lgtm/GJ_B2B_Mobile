@@ -1,0 +1,51 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "swiper",
+  "figmaComponent": "滑块 swiper（58:4228）",
+  "prototypeClass": "gj-m-swiper",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "swiper": ".gj-m-swiper > .gj-m-swiper-track > .gj-m-swiper-item × n",
+    "pageIndicator Style=Light": ".gj-m-swiper-indicator > .gj-m-swiper-dot(.is-active)",
+    "pageIndicator Style=Dark": ".gj-m-swiper-indicator.gj-m-swiper-indicator-dark",
+    "容器外（用法示例）": ".gj-m-swiper-indicator.gj-m-swiper-indicator-dark.gj-m-swiper-indicator-outside（放在 .gj-m-swiper 之后）",
+    "serial indicator=true": ".gj-m-swiper-fraction"
+  },
+  "valueMap": {
+    "size": "{\"example\": \"375×120（内容决定高度）\"}",
+    "indicator": "{\"position\": \"容器内底部居中，距底 8；容器外置于下方 8\", \"dot\": \"8×3，圆角 full，间距 3\", \"active\": \"16×3\", \"light\": {\"dot\": \"Background/WT_20\", \"active\": \"Text/reversal\"}, \"dark\": {\"dot\": \"Background/MK_20\", \"active\": \"Text/blue\"}}",
+    "fraction": "{\"position\": \"右下，距右 12、距底 12\", \"padding\": \"上下 4、左右 8\", \"radius\": 4, \"bg\": \"Background/MK_30\", \"text\": \"P5_CN-R 12/18 Text/reversal（高 26）\"}",
+    "behavior": "{\"autoplay\": \"默认 3 秒，可设置\", \"loop\": \"默认开启\", \"drag\": \"滑动超过 20% 宽度切换\"}",
+    "direction": "仅横向（纵向已去掉）"
+  },
+  "tokenMap": {
+    "Background/WT_20": "--ds-background-wt-20（2026-10-12 新增入 Token）",
+    "Background/MK_20 / MK_30": "--ds-background-mk-20 / --ds-background-mk-30",
+    "Text/reversal": "--ds-text-reversal",
+    "Text/blue": "--ds-text-blue"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-swiper",
+    "track": ".gj-m-swiper-track",
+    "item": ".gj-m-swiper-item",
+    "indicator": ".gj-m-swiper-indicator",
+    "dot": ".gj-m-swiper-dot",
+    "fraction": ".gj-m-swiper-fraction"
+  },
+  "markup": {
+    "swiper": "<div class=\"gj-m-swiper\" role=\"region\" aria-roledescription=\"carousel\" aria-label=\"活动轮播\"><div class=\"gj-m-swiper-track\" style=\"transform: translateX(0%);\"><div class=\"gj-m-swiper-item\">（轮播内容）</div><div class=\"gj-m-swiper-item\">（轮播内容）</div><div class=\"gj-m-swiper-item\">（轮播内容）</div><div class=\"gj-m-swiper-item\">（轮播内容）</div></div><div class=\"gj-m-swiper-indicator \" aria-hidden=\"true\"><span class=\"gj-m-swiper-dot is-active\"></span><span class=\"gj-m-swiper-dot\"></span><span class=\"gj-m-swiper-dot\"></span><span class=\"gj-m-swiper-dot\"></span></div></div>"
+  },
+  "interactionMap": {
+    "autoplay": "默认 3 秒、循环；滑动超过 20% 宽度切换"
+  },
+  "accessibility": {
+    "root": "role=\"region\" + aria-roledescription=\"carousel\" + aria-label",
+    "indicator": "指示点可读当前页（或配 .gj-m-swiper-fraction）",
+    "autoplay": "自动播放时提供暂停或在聚焦时暂停"
+  },
+  "composition": {
+    "indicator": "容器内底部居中距底 8；浅色内容用 dark 指示器或放到容器外"
+  },
+  "pageRules": {},
+  "pending": {}
+}

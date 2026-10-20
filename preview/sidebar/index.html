@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 侧边导航栏 SideBar</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .playground .controls .field select{appearance:auto}
+    .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid3+.grid2{margin-top:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .step{padding:16px;border-radius:var(--docs-panel-radius);background:var(--ds-background-background)}
+    .step b{display:block;font-size:14px;line-height:22px;color:var(--ds-text-primary)}
+    .step b span{color:var(--ds-text-blue);margin-right:6px}
+    .step p{margin:6px 0 0;font-size:13px;line-height:20px;color:var(--ds-text-secondary)}
+    @media(max-width:960px){.grid3,.grid2,.steps{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">导航组件 · Navigation</div>
+    <h1>侧边导航栏 SideBar</h1>
+    <p>承载移动端跨模块导航。点击页面顶部左侧的菜单入口展开：导航层在下，主页面整体向右推出，保留圆角与阴影。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>基础分类</h2><p>导航项高 56、圆角 12，图标 24，标题 16/24 中粗，放在白色导航层内。根据层级与状态选择导航项形式；图标颜色跟随标题文字。</p></div></header>
+      <div class="grid3">
+        <div class="panel gray"><span class="docs-stage-label">默认状态 · 普通导航项</span><div data-demo="sDefault"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">按下状态 · pressed</span><div data-demo="sPressed"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">选中状态 · 当前栏目</span><div data-demo="sActive"></div></div>
+      </div>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">红点提示 · 存在未读或新内容</span><div data-demo="sDot"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">数字提示 · 可量化的待处理数量</span><div data-demo="sCount"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>展开方式</h2><p>侧边导航保持在下层，不以浮层覆盖主页面；主页面作为上层整体向右推出，至少露出完整的导航图标与标题。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">导航层 · 375 宽</span><div data-demo="exNav"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">展开态 · 375 宽</span><div data-demo="exOpen"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点击左上角菜单展开；点击导航项更新选中态并收起；点击主页面露出部分或再次点击菜单收起。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pWidth">导航宽度</label><select id="pWidth"><option value="2.4">240（64%）</option><option value="2.64" selected>264（70%）</option><option value="2.7">270（72%）</option></select></div>
+          <div class="field"><label for="pCount">待办数量</label><select id="pCount"><option value="12" selected>12</option><option value="99">99</option><option value="120">120（显示 99+）</option><option value="0">0（不显示）</option></select></div>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用方法</h2><p>通过菜单按钮触发导航，在导航选择与页面关闭之间保持明确反馈。</p></div></header>
+      <div class="steps">
+        <div class="step"><b><span>1</span>触发展开</b><p>点击页面顶部左侧的菜单入口，主页面向右推出。</p></div>
+        <div class="step"><b><span>2</span>浏览导航</b><p>导航区域独立纵向滚动，主页面保持当前位置。</p></div>
+        <div class="step"><b><span>3</span>选择栏目</b><p>点击导航项后更新选中态，并进入对应模块。</p></div>
+        <div class="step"><b><span>4</span>关闭导航</b><p>点击主页面可见区域、关闭入口或再次点击菜单按钮收起。</p></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>选用规则</h2><p>控制信息密度、层级和触控行为，保证移动端导航效率。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>何时使用</td><td>跨模块或高频入口。</td><td>不用于替代单页内的标签切换，单页切换用页签。</td></tr>
+        <tr><td>宽度</td><td>保证图标和标题完整显示，占屏幕宽度 64%–72%（375 下默认 264）。</td><td>主页面推出后仍需留出足够可点击区域，用于关闭导航。</td></tr>
+        <tr><td>选中态</td><td>当前栏目必须有清晰选中态，同一时刻只保留一个一级导航项选中。</td><td>不同时高亮多个导航项。</td></tr>
+        <tr><td>滚动</td><td>导航项较多时只滚动导航层，可用分类标题分组。</td><td>避免与上层主页面产生双重滚动。</td></tr>
+        <tr><td>徽标</td><td>红点表示未读或新内容；数字表示待处理数量，超过 99 显示 99+。</td><td>不用徽标做营销提示，避免挤压标题。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const LOGO=new URL('../../assets/images/gj-logo-mark.png',location.href).href;
+  const STATUS=new URL('../../assets/images/status-bar-transparent.svg?v=20261012-1',location.href).href;
+  const statusbar=()=>`<img class="sbar" src="${STATUS}" alt="手机状态栏（静态示意）">`;
+  const icon=n=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${n}.svg')" aria-hidden="true"></span>`;
+  const cnt=n=>n>99?'99+':String(n);
+  const item=(o)=>`<a class="gj-m-sidebar-item${o.active?' is-active':''}${o.pressed?' is-pressed':''}" href="javascript:void 0"${o.key?` data-key="${o.key}"`:''}${o.active?' aria-current="page"':''}>${icon(o.icon||'icf_AI_classify-2-ai-line')}<span class="gj-m-sidebar-item-title">${o.title||'侧边栏标题'}</span>${o.dot?'<span class="gj-m-sidebar-dot" aria-label="有新内容"></span>':''}${o.count?`<span class="gj-m-sidebar-count">${cnt(o.count)}</span>`:''}</a>`;
+  const NAV=(count,active)=>[
+    {key:'home',icon:'icf_system_home',title:'工作台'},
+    {key:'cust',icon:'icf_user_group',title:'客户管理'},
+    {key:'msg',icon:'icf_contact_message',title:'消息中心',dot:1},
+    {key:'task',icon:'icf_file_task',title:'待办审批',count},
+    {group:'业务'},
+    {key:'perf',icon:'icf_data_chart',title:'业绩看板'},
+    {key:'prod',icon:'icf_business_wallet',title:'产品中心'},
+    {key:'cal',icon:'icf_system_calendar',title:'日程安排'},
+    {group:'其他'},
+    {key:'set',icon:'icf_system_settings',title:'设置'}
+  ].map(o=>o.group?`<div class="gj-m-sidebar-group">${o.group}</div>`:item(Object.assign(o,{active:o.key===active}))).join('');
+  const TITLES={home:'工作台',cust:'客户管理',msg:'消息中心',task:'待办审批',perf:'业绩看板',prod:'产品中心',cal:'日程安排',set:'设置'};
+  const sidebar=(count,active)=>`<nav class="gj-m-sidebar" aria-label="侧边导航"><div class="gj-m-sidebar-brand"><img src="${LOGO}" alt="">国金证券</div><div class="gj-m-sidebar-list">${NAV(count,active)}</div></nav>`;
+  const main=(title)=>`<div class="gj-m-sidebar-main"><div class="bar"><button type="button" class="gj-m-navbar-action menu" aria-label="打开导航">${icon('icf_system_menu')}</button><span class="ttl">${title}</span></div><div class="body">${['今日待跟进客户 8 位','华东区域本月新增开户 126 户','待审批事项 12 条','产品路演：稳健增利 3 号'].map(t=>`<div class="gj-m-card-l2"><div class="t">${t}</div><div class="gj-m-skeleton"><div class="gj-m-skeleton-block gj-m-skeleton-text"></div><div class="gj-m-skeleton-block gj-m-skeleton-text" style="--gj-m-skeleton-width:60%"></div></div></div>`).join('')}</div></div>`;
+  const CSS='html,body{overflow-y:hidden}'+
+    '.one,.stack{width:2.36rem;margin:0 auto}'+
+    '.frame{width:100%;max-width:3.75rem;height:8.12rem;margin:0 auto;overflow:hidden;background:var(--ds-background-container)}'+
+    
+    '.bar{display:flex;align-items:center;gap:var(--space-8);height:44px;padding:0 var(--space-4)}'+
+    
+    '.ttl{font-size:var(--ds-type-h4-cn-s-font-size);font-weight:var(--ds-type-h4-cn-s-font-weight);line-height:var(--ds-type-h4-cn-s-line-height)}'+
+    '.body{display:flex;flex-direction:column;gap:var(--space-12);padding:var(--space-12) var(--space-page-margin-x)}'+
+    '.t{font-size:.15rem;line-height:.22rem;font-weight:600}'+
+    '.frame-sb{position:relative;--safe-top:44px}.sbar{position:absolute;top:0;left:0;right:0;z-index:5;display:block;width:100%;height:44px;pointer-events:none}';
+  const show=(k,html)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS,height:'auto'});
+  show('sDefault',`<div class="gj-m-sidebar-list one">${item({})}</div>`);
+  show('sPressed',`<div class="gj-m-sidebar-list stack">${item({pressed:1})}</div>`);
+  show('sActive',`<div class="gj-m-sidebar-list one">${item({active:1})}</div>`);
+  show('sDot',`<div class="gj-m-sidebar-list stack">${item({dot:1})}${item({dot:1,active:1})}</div>`);
+  show('sCount',`<div class="gj-m-sidebar-list stack">${item({count:88})}${item({count:88,active:1})}</div>`);
+  show('exNav',`<div class="frame frame-sb">${statusbar()}${sidebar(12,'home')}</div>`);
+  show('exOpen',`<div class="frame frame-sb">${statusbar()}<div class="gj-m-sidebar-push is-open">${sidebar(12,'home')}${main('工作台')}</div></div>`);
+
+  const $=id=>document.getElementById(id);let active='home',open=false;
+  function render(){
+    const w=$('pWidth').value,c=+$('pCount').value;
+    const f=GJPhone.swatch($('lab'),{html:`<div class="frame frame-sb">${statusbar()}<div class="gj-m-sidebar-push${open?' is-open':''}" style="--gj-m-sidebar-width:${w}rem">${sidebar(c,active)}${main(TITLES[active])}</div></div>`,css:CSS,height:'auto'});
+    f.addEventListener('load',()=>{const d=f.contentDocument,push=d.querySelector('.gj-m-sidebar-push'),m=d.querySelector('.gj-m-sidebar-main');
+      const setOpen=v=>{open=v;push.classList.toggle('is-open',v);d.querySelector('.menu').setAttribute('aria-expanded',String(v))};
+      d.querySelector('.menu').addEventListener('click',e=>{e.stopPropagation();setOpen(!open)});
+      m.addEventListener('click',()=>{if(open)setOpen(false)});
+      d.querySelectorAll('.gj-m-sidebar-item').forEach(a=>a.addEventListener('click',()=>{active=a.dataset.key;d.querySelectorAll('.gj-m-sidebar-item').forEach(x=>{x.classList.toggle('is-active',x===a);x.toggleAttribute('aria-current',x===a)});d.querySelector('.ttl').textContent=TITLES[active];setOpen(false)}));
+    });
+  }
+  $('pWidth').addEventListener('change',render);$('pCount').addEventListener('change',render);render();
+})();
+</script>
+</body>
+</html>

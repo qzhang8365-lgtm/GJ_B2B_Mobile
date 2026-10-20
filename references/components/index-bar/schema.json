@@ -1,0 +1,66 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "index-bar",
+  "name": "索引栏 IndexBar",
+  "category": "导航组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "索引栏Index（31:195）",
+    "nodes": {
+      "row": "58:9967 3.index-bar-row（State=default 58:9968 / active 58:9971）",
+      "sidebar": "58:9974 .index-bar-2.sidebar",
+      "page": "58:10609 1.indexBar"
+    },
+    "usageFrame": "948:6019",
+    "extractedAt": "2026-10-09",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-index-bar / .gj-m-index-bar-item / .gj-m-index-anchor",
+    "note": "原型基座，不代表真实前端组件库 API"
+  },
+  "variants": {
+    "State": [
+      "default",
+      "active"
+    ]
+  },
+  "sidebar": {
+    "width": 48,
+    "layout": "纵向，贴列表容器右侧、垂直居中",
+    "itemSize": "48×16，左右内边距 16",
+    "circle": "16，Radius full"
+  },
+  "states": {
+    "default": {
+      "text": "P5_CN-R 12/18 Text/Tiatery",
+      "bg": null
+    },
+    "active": {
+      "text": "P5_CN-R 12/18 Text/reversal",
+      "bg": "Brand/GJ_Blue #2B73FF"
+    }
+  },
+  "anchor": {
+    "height": 38,
+    "padding": "8 16",
+    "bg": "Background/Background",
+    "text": "P3_CN-R 14/22 Text/Tiatery",
+    "note": "设计方确认左右边距 16；IDX-M-004 已按用户确认关闭，Figma 只读读数留存于 audit.md"
+  },
+  "listItemInFigmaExample": {
+    "height": 48,
+    "paddingLeft": 16,
+    "text": "P2_CN-R 16/24 Text/Primary",
+    "separator": "Border/default #EBEEF2，示例缩进 16",
+    "note": "字体及分隔线变量已复核；Figma 与网站列表行左边距均为 16，IDX-M-004 已关闭"
+  },
+  "interaction": {
+    "tap": "点按字母跳到对应分组并高亮",
+    "drag": "按住索引栏上下滑动连续切换",
+    "scroll": "滚动列表时同步高亮当前分组",
+    "hitArea": "单项 16 高，整条索引栏响应点按与滑动；左右热区 44"
+  }
+}

@@ -1,0 +1,2719 @@
+{
+  "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+  "page": "955:474",
+  "readOnly": true,
+  "extractedAt": "2026-10-15",
+  "overview": {
+    "notes": [
+      {
+        "id": "1136:31",
+        "name": "Markdown / AI 对话输出",
+        "text": "Markdown / AI 对话输出",
+        "texts": []
+      },
+      {
+        "id": "1136:32",
+        "name": "面向 AI 对话流的 Markdown 内容展示。正文统一使用 16px.",
+        "text": "面向 AI 对话流的 Markdown 内容展示。正文统一使用 16px.",
+        "texts": []
+      },
+      {
+        "id": "1135:10953",
+        "name": "Group 1",
+        "texts": [
+          {
+            "id": "1135:10733",
+            "text": "根据业务需求，可选是否展示思考过程和思考状态标签"
+          }
+        ]
+      },
+      {
+        "id": "1135:10954",
+        "name": "Group 2",
+        "texts": [
+          {
+            "id": "1135:10738",
+            "text": "链接样式，可以点击进入关联关键词页面"
+          }
+        ]
+      },
+      {
+        "id": "1135:10958",
+        "name": "Group 6",
+        "texts": [
+          {
+            "id": "1135:10744",
+            "text": "数据链接样式，（根据具体设置）可以点击进入链接详情。"
+          }
+        ]
+      },
+      {
+        "id": "1135:10959",
+        "name": "Group 7",
+        "texts": [
+          {
+            "id": "1135:10874",
+            "text": "分割线"
+          }
+        ]
+      },
+      {
+        "id": "1135:10955",
+        "name": "Group 3",
+        "texts": [
+          {
+            "id": "1135:10741",
+            "text": "表格样式，可左右滑动展示全部表格，纵向默认全部展示"
+          }
+        ]
+      },
+      {
+        "id": "1135:10960",
+        "name": "Group 8",
+        "texts": [
+          {
+            "id": "1135:10861",
+            "text": "AI输出提示标识，默认隐藏，可点击展示全文。"
+          }
+        ]
+      },
+      {
+        "id": "1135:10961",
+        "name": "Group 9",
+        "texts": [
+          {
+            "id": "1135:10864",
+            "text": "操作区，含有各种操作按钮，根据需求设置"
+          }
+        ]
+      },
+      {
+        "id": "1135:10957",
+        "name": "Group 5",
+        "texts": [
+          {
+            "id": "1135:10747",
+            "text": "无序列表项标题，左侧带圆点"
+          }
+        ]
+      },
+      {
+        "id": "1135:10956",
+        "name": "Group 4",
+        "texts": [
+          {
+            "id": "1135:10750",
+            "text": "有序列表项标题，带序号"
+          }
+        ]
+      }
+    ],
+    "sample": [
+      {
+        "id": "1135:10408",
+        "name": "Chat_bubble_user",
+        "type": "INSTANCE",
+        "width": 343,
+        "height": 142
+      },
+      {
+        "id": "1135:10419",
+        "name": "Chat_bubble_Agent",
+        "type": "FRAME",
+        "width": 343,
+        "height": 1440
+      }
+    ]
+  },
+  "layout": [
+    {
+      "id": "1135:10464",
+      "name": "Frame 1321316800",
+      "type": "FRAME",
+      "w": 375,
+      "h": 1662,
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 24,
+      "paddingTop": 28,
+      "paddingBottom": 28,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "cornerRadius": 24,
+      "boundVariables": {
+        "fills": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:7:46"
+          }
+        ]
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9607843160629272,
+            "g": 0.9686274528503418,
+            "b": 0.9803921580314636
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:46"
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "1135:10408",
+          "name": "Chat_bubble_user",
+          "type": "INSTANCE",
+          "w": 343,
+          "h": 142,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 12,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "fills": [],
+          "children": [
+            {
+              "id": "I1135:10408;955:514",
+              "name": "Frame 1321316703",
+              "type": "FRAME",
+              "w": 283,
+              "h": 142,
+              "layoutMode": "VERTICAL",
+              "itemSpacing": 12,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            }
+          ]
+        },
+        {
+          "id": "1135:10419",
+          "name": "Chat_bubble_Agent",
+          "type": "FRAME",
+          "w": 343,
+          "h": 1440,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 12,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "fills": [],
+          "children": [
+            {
+              "id": "1135:10420",
+              "name": "AI_chat_item/avatar",
+              "type": "INSTANCE",
+              "w": 80,
+              "h": 32,
+              "layoutMode": "HORIZONTAL",
+              "itemSpacing": 8,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            },
+            {
+              "id": "1135:10465",
+              "name": "Frame 1321316799",
+              "type": "FRAME",
+              "w": 343,
+              "h": 1344,
+              "layoutMode": "VERTICAL",
+              "itemSpacing": 16,
+              "paddingTop": 16,
+              "paddingBottom": 16,
+              "paddingLeft": 16,
+              "paddingRight": 16,
+              "cornerRadius": 12,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:47"
+                  }
+                ]
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "visible": true,
+                  "opacity": 1,
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                  },
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:47"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "1135:10785",
+              "name": "AI_chat_item/avatar/Chat_icon_set",
+              "type": "INSTANCE",
+              "w": 266,
+              "h": 40,
+              "layoutMode": "HORIZONTAL",
+              "itemSpacing": 8,
+              "paddingTop": 10,
+              "paddingBottom": 10,
+              "paddingLeft": 12,
+              "paddingRight": 12,
+              "cornerRadius": 20,
+              "boundVariables": {},
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "visible": true,
+                  "opacity": 0.800000011920929,
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                  },
+                  "boundVariables": {}
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1135:10419",
+      "name": "Chat_bubble_Agent",
+      "type": "FRAME",
+      "w": 343,
+      "h": 1440,
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 12,
+      "paddingTop": 0,
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "fills": [],
+      "children": [
+        {
+          "id": "1135:10420",
+          "name": "AI_chat_item/avatar",
+          "type": "INSTANCE",
+          "w": 80,
+          "h": 32,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 8,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "fills": [],
+          "children": [
+            {
+              "id": "I1135:10420;955:631",
+              "name": "Avatar",
+              "type": "INSTANCE",
+              "w": 32,
+              "h": 32,
+              "layoutMode": "NONE",
+              "itemSpacing": 0,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 44,
+              "boundVariables": {
+                "strokes": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:7"
+                  }
+                ]
+              },
+              "fills": [
+                {
+                  "type": "IMAGE",
+                  "visible": true,
+                  "opacity": 1,
+                  "blendMode": "NORMAL",
+                  "scaleMode": "FILL",
+                  "scalingFactor": 0.5,
+                  "rotation": 0,
+                  "filters": {
+                    "exposure": 0,
+                    "contrast": 0,
+                    "saturation": 0,
+                    "temperature": 0,
+                    "tint": 0,
+                    "highlights": 0,
+                    "shadows": 0
+                  },
+                  "imageTransform": [
+                    [
+                      1,
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      1,
+                      0
+                    ]
+                  ],
+                  "imageHash": "1e21296993d7010e84f7b74036413ca8f8c8c515"
+                }
+              ]
+            },
+            {
+              "id": "I1135:10420;955:632",
+              "name": "Agent",
+              "type": "TEXT",
+              "w": 40,
+              "h": 22,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:3"
+                  }
+                ]
+              },
+              "characters": "Agent",
+              "fontSize": 14,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Semibold"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "textStyleId": "S:1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2,",
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "visible": true,
+                  "opacity": 1,
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 0.062745101749897,
+                    "g": 0.0941176488995552,
+                    "b": 0.1568627506494522
+                  },
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:3"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1135:10465",
+          "name": "Frame 1321316799",
+          "type": "FRAME",
+          "w": 343,
+          "h": 1344,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 16,
+          "paddingTop": 16,
+          "paddingBottom": 16,
+          "paddingLeft": 16,
+          "paddingRight": 16,
+          "cornerRadius": 12,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:47"
+              }
+            ]
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:47"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "1135:10640",
+              "name": "Frame 1321316805",
+              "type": "FRAME",
+              "w": 311,
+              "h": 374,
+              "layoutMode": "VERTICAL",
+              "itemSpacing": 12,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            },
+            {
+              "id": "1135:10604",
+              "name": "紫金矿业未来几年的盈利增长点主要集中在锂资源开发、铜金产量持续增长、成本控制能力以及海外项目拓展等方面。以下从核心业务、资源布局、成本控制及财务表现四个维度展开分析：",
+              "type": "TEXT",
+              "w": 313,
+              "h": 140,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:3"
+                  }
+                ],
+                "textRangeFills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:3"
+                  },
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:8"
+                  }
+                ]
+              },
+              "characters": "紫金矿业未来几年的盈利增长点主要集中在锂资源开发、铜金产量持续增长、成本控制能力以及海外项目拓展等方面。以下从核心业务、资源布局、成本控制及财务表现四个维度展开分析：",
+              "fontSize": 16,
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 28
+              },
+              "textStyleId": ""
+            },
+            {
+              "id": "1135:10701",
+              "name": "Frame 1321316806",
+              "type": "FRAME",
+              "w": 311,
+              "h": 176,
+              "layoutMode": "NONE",
+              "itemSpacing": 0,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            },
+            {
+              "id": "1135:10639",
+              "name": "Frame 1321316804",
+              "type": "FRAME",
+              "w": 311,
+              "h": 172,
+              "layoutMode": "VERTICAL",
+              "itemSpacing": 8,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            },
+            {
+              "id": "1135:10607",
+              "name": "Frame 1321316801",
+              "type": "FRAME",
+              "w": 313,
+              "h": 256,
+              "layoutMode": "VERTICAL",
+              "itemSpacing": 8,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            },
+            {
+              "id": "1135:10869",
+              "name": "Markdown/Divider — Reused",
+              "type": "INSTANCE",
+              "w": 311,
+              "h": 8,
+              "layoutMode": "VERTICAL",
+              "itemSpacing": 0,
+              "paddingTop": 4,
+              "paddingBottom": 4,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            },
+            {
+              "id": "1135:10614",
+              "name": "Frame 1321316802",
+              "type": "FRAME",
+              "w": 313,
+              "h": 56,
+              "layoutMode": "VERTICAL",
+              "itemSpacing": 12,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            },
+            {
+              "id": "1135:10824",
+              "name": "Frame 1321316813",
+              "type": "FRAME",
+              "w": 311,
+              "h": 18,
+              "layoutMode": "HORIZONTAL",
+              "itemSpacing": 0,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            }
+          ]
+        },
+        {
+          "id": "1135:10785",
+          "name": "AI_chat_item/avatar/Chat_icon_set",
+          "type": "INSTANCE",
+          "w": 266,
+          "h": 40,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 8,
+          "paddingTop": 10,
+          "paddingBottom": 10,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 20,
+          "boundVariables": {},
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 0.800000011920929,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "boundVariables": {}
+            }
+          ],
+          "children": [
+            {
+              "id": "I1135:10785;957:389",
+              "name": "icf_system_thumbup",
+              "type": "INSTANCE",
+              "w": 20,
+              "h": 20,
+              "layoutMode": "NONE",
+              "itemSpacing": 0,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            },
+            {
+              "id": "I1135:10785;957:390",
+              "name": "icf_system_thumbdown",
+              "type": "INSTANCE",
+              "w": 20,
+              "h": 20,
+              "layoutMode": "NONE",
+              "itemSpacing": 0,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            },
+            {
+              "id": "I1135:10785;957:373",
+              "name": "icf_system_copy",
+              "type": "INSTANCE",
+              "w": 20,
+              "h": 20,
+              "layoutMode": "NONE",
+              "itemSpacing": 0,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            },
+            {
+              "id": "I1135:10785;957:374",
+              "name": "icf_system_share",
+              "type": "INSTANCE",
+              "w": 20,
+              "h": 20,
+              "layoutMode": "NONE",
+              "itemSpacing": 0,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            },
+            {
+              "id": "I1135:10785;957:399",
+              "name": "icf_system_refresh",
+              "type": "INSTANCE",
+              "w": 20,
+              "h": 20,
+              "layoutMode": "NONE",
+              "itemSpacing": 0,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            },
+            {
+              "id": "I1135:10785;957:395",
+              "name": "icf_system_more",
+              "type": "INSTANCE",
+              "w": 20,
+              "h": 20,
+              "layoutMode": "NONE",
+              "itemSpacing": 0,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            },
+            {
+              "id": "I1135:10785;960:693",
+              "name": "AI_chat_item/source",
+              "type": "INSTANCE",
+              "w": 72,
+              "h": 20,
+              "layoutMode": "HORIZONTAL",
+              "itemSpacing": 4,
+              "paddingTop": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "fills": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "text": [
+    {
+      "id": "I1135:10466;960:629",
+      "text": "思考完成",
+      "size": 14,
+      "line": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "style": "S:1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2,",
+      "segments": [
+        {
+          "text": "思考完成",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:4"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10919;1135:10472",
+      "text": "好的，我现在需要回答用户关于紫金矿业未来几年盈利增长点的问题。首先，我得仔细看看用户提供的检索信息，找出相关的数据和资讯。",
+      "size": 13,
+      "line": {
+        "unit": "PIXELS",
+        "value": 20
+      },
+      "style": "S:d729da08e5135f43be1f20e8acdfee8b10f4a928,",
+      "segments": [
+        {
+          "text": "好的，我现在需要回答用户关于紫金矿业未来几年盈利增长点的问题。首先，我得仔细看看用户提供的检索信息，找出相关的数据和资讯。",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 13,
+          "line": {
+            "unit": "PIXELS",
+            "value": 20
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.5529412031173706,
+                "g": 0.5882353186607361,
+                "b": 0.6392157077789307
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:5"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10919;1135:10477",
+      "text": "首先，用户提供的专业数据库数据中，紫金矿业的财务数据 shows 净利润和营业收入在2025年和2026年一季度都有显著增长，尤其是归属于母公司股东的净利润同比增长率高达97.5%。这说明公司目前的盈利能力很强，可能为未来的增长打下基础。",
+      "size": 13,
+      "line": {
+        "unit": "PIXELS",
+        "value": 20
+      },
+      "style": "S:d729da08e5135f43be1f20e8acdfee8b10f4a928,",
+      "segments": [
+        {
+          "text": "首先，用户提供的专业数据库数据中，紫金矿业的财务数据 shows 净利润和营业收入在2025年和2026年一季度都有显著增长，尤其是归属于母公司股东的净利润同比增长率高达97.5%。这说明公司目前的盈利能力很强，可能为未来的增长打下基础。",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 13,
+          "line": {
+            "unit": "PIXELS",
+            "value": 20
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.5529412031173706,
+                "g": 0.5882353186607361,
+                "b": 0.6392157077789307
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:5"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10919;1135:10482",
+      "text": "接下来，查看公司公告和研报。公告中提到，\n2025年一季度矿产金、铜产量增加，毛利率提升，尤其是矿山企业毛利率达到59.94%，同比增长5.44个百分点。这可能意味着公司在资源开采和成本控制方面有优势，未来可能继续通过扩大产量和提升毛利率来增加盈利。",
+      "size": 13,
+      "line": {
+        "unit": "PIXELS",
+        "value": 20
+      },
+      "style": "S:d729da08e5135f43be1f20e8acdfee8b10f4a928,",
+      "segments": [
+        {
+          "text": "接下来，查看公司公告和研报。公告中提到，\n2025年一季度矿产金、铜产量增加，毛利率提升，尤其是矿山企业毛利率达到59.94%，同比增长5.44个百分点。这可能意味着公司在资源开采和成本控制方面有优势，未来可能继续通过扩大产量和提升毛利率来增加盈利。",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 13,
+          "line": {
+            "unit": "PIXELS",
+            "value": 20
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.5529412031173706,
+                "g": 0.5882353186607361,
+                "b": 0.6392157077789307
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:5"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1135:10604",
+      "text": "紫金矿业未来几年的盈利增长点主要集中在锂资源开发、铜金产量持续增长、成本控制能力以及海外项目拓展等方面。以下从核心业务、资源布局、成本控制及财务表现四个维度展开分析：",
+      "size": 16,
+      "line": {
+        "unit": "PIXELS",
+        "value": 28
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "紫金矿业",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "size": 16,
+          "line": {
+            "unit": "PIXELS",
+            "value": 28
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:8"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "text": "未来几年的盈利增长点主要集中在锂资源开发、铜金产量持续增长、成本控制能力以及海外项目拓展等方面。以下从核心业务、资源布局、成本控制及财务表现四个维度展开分析：",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 16,
+          "line": {
+            "unit": "PIXELS",
+            "value": 28
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10671;1098:7988",
+      "text": "指标",
+      "size": 14,
+      "line": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "指标",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:4"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10671;1098:7990",
+      "text": "本期",
+      "size": 14,
+      "line": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "本期",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:4"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10671;1098:7992",
+      "text": "同比",
+      "size": 14,
+      "line": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "同比",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:4"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10671;1098:7995",
+      "text": "营业收入",
+      "size": 14,
+      "line": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "营业收入",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10671;1098:7997",
+      "text": "128.6亿",
+      "size": 14,
+      "line": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "128.6亿",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10671;1098:7999",
+      "text": "+12.4%",
+      "size": 14,
+      "line": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "+12.4%",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10671;1098:8002",
+      "text": "净利润",
+      "size": 14,
+      "line": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "净利润",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10671;1098:8004",
+      "text": "32.1亿",
+      "size": 14,
+      "line": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "32.1亿",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10671;1098:8006",
+      "text": "+8.7%",
+      "size": 14,
+      "line": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "+8.7%",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10671;1098:8009",
+      "text": "毛利率",
+      "size": 14,
+      "line": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "毛利率",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10671;1098:8011",
+      "text": "42.8%",
+      "size": 14,
+      "line": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "42.8%",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10671;1098:8013",
+      "text": "+1.6pct",
+      "size": 14,
+      "line": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "+1.6pct",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1135:10605",
+      "text": "一、锂资源开发成为第三增长极",
+      "size": 16,
+      "line": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "style": "S:26765cf268c92bd89de8d47a43c2ecdadaf782aa,",
+      "segments": [
+        {
+          "text": "一、锂资源开发成为第三增长极",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "size": 16,
+          "line": {
+            "unit": "PIXELS",
+            "value": 24
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1135:10606",
+      "text": "紫金矿业未来几年的盈利增长点主要集中在锂资源开发、铜金产量持续增长、成本控制能力以及海外项目拓展等方面。以下从核心业务、资源布局、成本控制及财务表现四个维度展开分析：",
+      "size": 16,
+      "line": {
+        "unit": "PIXELS",
+        "value": 28
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "紫金矿业未来几年的盈利增长点主要集中在锂资源开发、铜金产量持续增长、成本控制能力以及海外项目拓展等方面。以下从核心业务、资源布局、成本控制及财务表现四个维度展开分析：",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 16,
+          "line": {
+            "unit": "PIXELS",
+            "value": 28
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1135:10608",
+      "text": "• 产能加速释放",
+      "size": 16,
+      "line": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "style": "S:08e7c51f87d6e5b3f1335d71a6edcca97dae2158,",
+      "segments": [
+        {
+          "text": "﻿",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "size": 16,
+          "line": {
+            "unit": "PIXELS",
+            "value": 24
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "text": "• ",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 16,
+          "line": {
+            "unit": "PIXELS",
+            "value": 24
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "text": "产能加速释放",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "size": 16,
+          "line": {
+            "unit": "PIXELS",
+            "value": 24
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1135:10609",
+      "text": "根据中金公司研报，紫金矿业锂资源产量  预计从2025年的2.5万吨LCE增长至2028年的29.0万吨LCE，年复合增长率达123%。主要增量来自阿根廷3Q盐湖、西藏拉果错盐湖、湖南湘源锂矿一期及刚果（金）马诺诺锂矿项目，其中马诺诺锂矿预计2026年6月投产，2028年当量碳酸锂产量将达27-32万吨。",
+      "size": 16,
+      "line": {
+        "unit": "PIXELS",
+        "value": 28
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "根据",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 16,
+          "line": {
+            "unit": "PIXELS",
+            "value": 28
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "text": "中金公司",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "size": 16,
+          "line": {
+            "unit": "PIXELS",
+            "value": 28
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:8"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "text": "研报，紫金矿业锂资源产量  预计从2025年的2.5万吨LCE增长至2028年的29.0万吨LCE，年复合增长率达123%。主要增量来自阿根廷3Q盐湖、西藏拉果错盐湖、湖南湘源锂矿一期及刚果（金）马诺诺锂矿项目，其中马诺诺锂矿预计2026年6月投产，2028年当量碳酸锂产量将达27-32万吨。",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 16,
+          "line": {
+            "unit": "PIXELS",
+            "value": 28
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10611;1135:10548",
+      "text": "1",
+      "size": 12,
+      "line": {
+        "unit": "PIXELS",
+        "value": 18
+      },
+      "style": "S:aec2f397199f7b2cf955d9807f2f7c5a1c3f4f44,",
+      "segments": [
+        {
+          "text": "1",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "size": 12,
+          "line": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.5529412031173706,
+                "g": 0.5882353186607361,
+                "b": 0.6392157077789307
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:5"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10612;1135:10548",
+      "text": "2",
+      "size": 12,
+      "line": {
+        "unit": "PIXELS",
+        "value": 18
+      },
+      "style": "S:aec2f397199f7b2cf955d9807f2f7c5a1c3f4f44,",
+      "segments": [
+        {
+          "text": "2",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "size": 12,
+          "line": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.5529412031173706,
+                "g": 0.5882353186607361,
+                "b": 0.6392157077789307
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:5"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1135:10615",
+      "text": "免责声明：以上信息仅供参考，不构成投资建议。投资有风险，入市需谨慎。",
+      "size": 16,
+      "line": {
+        "unit": "PIXELS",
+        "value": 28
+      },
+      "style": "",
+      "segments": [
+        {
+          "text": "免责声明：",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "size": 16,
+          "line": {
+            "unit": "PIXELS",
+            "value": 28
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "text": "以上信息仅供参考，不构成投资建议。投资有风险，入市需谨慎。",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 16,
+          "line": {
+            "unit": "PIXELS",
+            "value": 28
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10617;1135:10548",
+      "text": "1",
+      "size": 12,
+      "line": {
+        "unit": "PIXELS",
+        "value": 18
+      },
+      "style": "S:aec2f397199f7b2cf955d9807f2f7c5a1c3f4f44,",
+      "segments": [
+        {
+          "text": "1",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "size": 12,
+          "line": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.5529412031173706,
+                "g": 0.5882353186607361,
+                "b": 0.6392157077789307
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:5"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "I1135:10618;1135:10548",
+      "text": "2",
+      "size": 12,
+      "line": {
+        "unit": "PIXELS",
+        "value": 18
+      },
+      "style": "S:aec2f397199f7b2cf955d9807f2f7c5a1c3f4f44,",
+      "segments": [
+        {
+          "text": "2",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "size": 12,
+          "line": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.5529412031173706,
+                "g": 0.5882353186607361,
+                "b": 0.6392157077789307
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:5"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1135:10825",
+      "text": "本页面所输出的内容均基于人工智能大模型的深度思考逻辑生成，相关内容或数据来源于公开信息或第三方人工智能大模型，可能出现错误或遗漏，国金证券无法保证所生成内容的真实性、准确性和可靠性。页面内容仅供参考，不构成您采取任何行动或投资决策的依据，请理性认识和使用人工智能技术。",
+      "size": 12,
+      "line": {
+        "unit": "PIXELS",
+        "value": 18
+      },
+      "style": "S:ccf9d5e80bd5848e0841588c812c507cab7e23e6,",
+      "segments": [
+        {
+          "text": "本页面所输出的内容均基于人工智能大模型的深度思考逻辑生成，相关内容或数据来源于公开信息或第三方人工智能大模型，可能出现错误或遗漏，国金证券无法保证所生成内容的真实性、准确性和可靠性。页面内容仅供参考，不构成您采取任何行动或投资决策的依据，请理性认识和使用人工智能技术。",
+          "font": {
+            "family": "PingFang SC",
+            "style": "Regular"
+          },
+          "size": 12,
+          "line": {
+            "unit": "PIXELS",
+            "value": 18
+          },
+          "fills": [
+            {
+              "color": {
+                "r": 0.5529412031173706,
+                "g": 0.5882353186607361,
+                "b": 0.6392157077789307
+              },
+              "opacity": 1,
+              "bind": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:5"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "details": [
+    {
+      "id": "1135:10465",
+      "name": "Frame 1321316799",
+      "w": 343,
+      "h": 1344,
+      "gap": 16,
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "radius": 12,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:47"
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "1135:10640",
+          "name": "Frame 1321316805",
+          "w": 311,
+          "h": 374,
+          "gap": 12,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [],
+          "strokes": []
+        },
+        {
+          "id": "1135:10604",
+          "name": "紫金矿业未来几年的盈利增长点主要集中在锂资源开发、铜金产量持续增长、成本控制能力以及海外项目拓展等方面。以下从核心业务、资源布局、成本控制及财务表现四个维度展开分析：",
+          "w": 313,
+          "h": 140,
+          "padding": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "strokes": []
+        },
+        {
+          "id": "1135:10701",
+          "name": "Frame 1321316806",
+          "w": 311,
+          "h": 176,
+          "gap": 0,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [],
+          "strokes": []
+        },
+        {
+          "id": "1135:10639",
+          "name": "Frame 1321316804",
+          "w": 311,
+          "h": 172,
+          "gap": 8,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [],
+          "strokes": []
+        },
+        {
+          "id": "1135:10607",
+          "name": "Frame 1321316801",
+          "w": 313,
+          "h": 256,
+          "gap": 8,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [],
+          "strokes": []
+        },
+        {
+          "id": "1135:10869",
+          "name": "Markdown/Divider — Reused",
+          "w": 311,
+          "h": 8,
+          "gap": 0,
+          "padding": [
+            4,
+            0,
+            4,
+            0
+          ],
+          "radius": 0,
+          "fills": [],
+          "strokes": []
+        },
+        {
+          "id": "1135:10614",
+          "name": "Frame 1321316802",
+          "w": 313,
+          "h": 56,
+          "gap": 12,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [],
+          "strokes": []
+        },
+        {
+          "id": "1135:10824",
+          "name": "Frame 1321316813",
+          "w": 311,
+          "h": 18,
+          "gap": 0,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [],
+          "strokes": []
+        }
+      ]
+    },
+    {
+      "id": "1135:10918",
+      "name": "Chat_bubble_user/think_window",
+      "w": 315,
+      "h": 340,
+      "gap": 8,
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "radius": 8,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9607843160629272,
+            "g": 0.9686274528503418,
+            "b": 0.9803921580314636
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:46"
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "1135:10468",
+          "name": "Frame 1321316796",
+          "w": 291,
+          "h": 60,
+          "gap": 8,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [],
+          "strokes": []
+        },
+        {
+          "id": "1135:10473",
+          "name": "Frame 1321316797",
+          "w": 291,
+          "h": 120,
+          "gap": 8,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [],
+          "strokes": []
+        },
+        {
+          "id": "1135:10478",
+          "name": "Frame 1321316798",
+          "w": 291,
+          "h": 120,
+          "gap": 8,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [],
+          "strokes": []
+        }
+      ]
+    },
+    {
+      "id": "1135:10671",
+      "name": "Markdown / Table",
+      "w": 315,
+      "h": 176,
+      "gap": 0,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "radius": 0,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {}
+        }
+      ],
+      "children": [
+        {
+          "id": "I1135:10671;1098:7986",
+          "name": "Table Header",
+          "w": 315,
+          "h": 44,
+          "gap": 0,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 0.9399999976158142,
+                "g": 0.9700000286102295,
+                "b": 1
+              },
+              "boundVariables": {}
+            }
+          ],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 0.8799999952316284,
+                "g": 0.8999999761581421,
+                "b": 0.9300000071525574
+              },
+              "boundVariables": {}
+            }
+          ]
+        },
+        {
+          "id": "I1135:10671;1098:7993",
+          "name": "Table Row",
+          "w": 315,
+          "h": 44,
+          "gap": 0,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "boundVariables": {}
+            }
+          ],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 0.8799999952316284,
+                "g": 0.8999999761581421,
+                "b": 0.9300000071525574
+              },
+              "boundVariables": {}
+            }
+          ]
+        },
+        {
+          "id": "I1135:10671;1098:8000",
+          "name": "Table Row",
+          "w": 315,
+          "h": 44,
+          "gap": 0,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "boundVariables": {}
+            }
+          ],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 0.8799999952316284,
+                "g": 0.8999999761581421,
+                "b": 0.9300000071525574
+              },
+              "boundVariables": {}
+            }
+          ]
+        },
+        {
+          "id": "I1135:10671;1098:8007",
+          "name": "Table Row",
+          "w": 315,
+          "h": 44,
+          "gap": 0,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "boundVariables": {}
+            }
+          ],
+          "strokes": []
+        }
+      ]
+    },
+    {
+      "id": "1135:10550",
+      "name": "Property 1=Default",
+      "w": 20,
+      "h": 20,
+      "gap": 10,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "radius": 12.5,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9215686321258545,
+            "g": 0.9333333373069763,
+            "b": 0.9490196108818054
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:48"
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "1135:10548",
+          "name": "1",
+          "w": 5,
+          "h": 18,
+          "padding": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 0.5529412031173706,
+                "g": 0.5882353186607361,
+                "b": 0.6392157077789307
+              },
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:5"
+                }
+              }
+            }
+          ],
+          "strokes": []
+        }
+      ]
+    },
+    {
+      "id": "1135:10577",
+      "name": "Property 1=Variant2",
+      "w": 20,
+      "h": 20,
+      "gap": 10,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "radius": 12.5,
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9215686321258545,
+            "g": 0.9333333373069763,
+            "b": 0.9490196108818054
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:48"
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "1135:10579",
+          "name": "icf_file_link-line",
+          "w": 12,
+          "h": 12,
+          "gap": 0,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": false,
+              "opacity": 1,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "boundVariables": {}
+            }
+          ],
+          "strokes": []
+        }
+      ]
+    },
+    {
+      "id": "956:87",
+      "name": "Avatar=true, Time=true",
+      "w": 343,
+      "h": 166,
+      "gap": 12,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "radius": 0,
+      "fills": [],
+      "children": [
+        {
+          "id": "955:514",
+          "name": "Frame 1321316703",
+          "w": 283,
+          "h": 166,
+          "gap": 12,
+          "padding": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "radius": 0,
+          "fills": [],
+          "strokes": []
+        }
+      ]
+    }
+  ],
+  "extra": {
+    "user": [
+      {
+        "id": "956:82",
+        "name": "AI_chat_item/avatar",
+        "w": 68,
+        "h": 32,
+        "r": 0,
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fills": [],
+        "texts": [
+          {
+            "text": "用户",
+            "size": 14,
+            "line": {
+              "unit": "PIXELS",
+              "value": 22
+            }
+          }
+        ]
+      },
+      {
+        "id": "956:86",
+        "name": "Frame 1321316789",
+        "w": 283,
+        "h": 122,
+        "r": 0,
+        "padding": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fills": [],
+        "texts": [
+          {
+            "text": "明天下午3点开一场自讲研报会议，主题是锂矿板块重点推荐，张峰主讲，需要海报。",
+            "size": 16,
+            "line": {
+              "unit": "PIXELS",
+              "value": 24
+            }
+          },
+          {
+            "text": "10:23",
+            "size": 12,
+            "line": {
+              "unit": "PIXELS",
+              "value": 18
+            }
+          }
+        ]
+      }
+    ],
+    "cells": [
+      {
+        "w": 121,
+        "h": 44,
+        "padding": [
+          0,
+          10,
+          0,
+          10
+        ],
+        "strokes": [],
+        "strokeWeight": 1
+      },
+      {
+        "w": 111,
+        "h": 44,
+        "padding": [
+          0,
+          10,
+          0,
+          10
+        ],
+        "strokes": [],
+        "strokeWeight": 1
+      },
+      {
+        "w": 111,
+        "h": 44,
+        "padding": [
+          0,
+          10,
+          0,
+          10
+        ],
+        "strokes": [],
+        "strokeWeight": 1
+      }
+    ]
+  }
+}

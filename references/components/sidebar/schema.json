@@ -1,0 +1,92 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "sidebar",
+  "name": "侧边导航栏 SideBar",
+  "category": "导航组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "侧边导航栏SideBar（31:874）",
+    "nodes": {
+      "item": "196:9221 sidebar-item/item_button（12 变体）",
+      "list": "1118:8267 sidebar-item/list",
+      "brand": "1118:8271 sidebar-item/system_Logo",
+      "page": "1124:8626 Sidebar",
+      "usage": "974:1066"
+    },
+    "extractedAt": "2026-10-12（同日复核：间距调整）",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-sidebar / .gj-m-sidebar-item / .gj-m-sidebar-group / .gj-m-sidebar-push",
+    "note": "原型基座，不代表真实前端组件库 API"
+  },
+  "variants": {
+    "active": [
+      "true",
+      "false"
+    ],
+    "badge": [
+      "true",
+      "false"
+    ],
+    "count": [
+      "true",
+      "false"
+    ],
+    "state": [
+      "Default",
+      "pressed"
+    ],
+    "props": [
+      "icon",
+      "title"
+    ]
+  },
+  "nav": {
+    "width": "264（375 下约 70%，建议 64%–72%）",
+    "listPadding": 8,
+    "bg": "Background/Container",
+    "scroll": "独立纵向滚动",
+    "topInset": "--safe-top（状态栏透明覆盖）"
+  },
+  "brand": {
+    "size": "264×44（上下 4、左右 16，间距 12）",
+    "logo": "36×36 位图（网站用 assets/images/gj-logo-mark.png），左距 16",
+    "text": "H4-CN-S 16/24 Text/Primary"
+  },
+  "item": {
+    "size": "高 56（列表内宽 248，图标左距 24）",
+    "padding": 16,
+    "gap": 12,
+    "radius": 12,
+    "icon": 24,
+    "title": "H4-CN-S 16/24（Semibold）",
+    "default": {
+      "bg": "Background/Container",
+      "text": "Text/Secondary"
+    },
+    "active": {
+      "bg": "Background/Background",
+      "text": "Text/Primary"
+    },
+    "pressed": {
+      "bg": "Background/Background"
+    },
+    "iconColor": "网站：跟随标题文字；Figma：固定 Text/Primary（见 SB-M-001）"
+  },
+  "badge": {
+    "dot": "badge-dot 8 圆 Feedback/error&rise",
+    "count": "badge-content Size=S：高 16，最小宽 18（hug 20），左右 4，Radius full，P6_CN-R 10 号，Feedback/error&rise 底、Text/reversal 字；>99 显示 99+"
+  },
+  "group": {
+    "padding": "16 16 8 16",
+    "height": 46,
+    "text": "H5-CN-S 14/22 Text/Secondary",
+    "component": "1704:1090 sidebar-item/item_button_title"
+  },
+  "push": {
+    "main": "主页面整体右移导航宽度，圆角 24，Shadow_center（--ds-effect-shadow-center）"
+  }
+}

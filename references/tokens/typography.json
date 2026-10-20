@@ -1,0 +1,1179 @@
+{
+  "source": {
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "referencePage": "181:1092",
+    "publication": "not verified",
+    "numericUpdatedAt": "2026-10-14（N1–N8 字号 / 行高按 Figma 最新 Text Style 更新）"
+  },
+  "textStyles": [
+    {
+      "name": "H1-CN-S",
+      "figmaId": "S:392a6222eaaea090bba7d90a4ae00a477ac2dcc2,",
+      "figmaKey": "392a6222eaaea090bba7d90a4ae00a477ac2dcc2",
+      "fontFamily": "PingFang SC",
+      "fontWeightName": "Semibold",
+      "fontSize": {
+        "value": 24,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 32
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "关键数据、管理层概览",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / H1-CN-S",
+        "styleId": "S:392a6222eaaea090bba7d90a4ae00a477ac2dcc2,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "H2-CN-S",
+      "figmaId": "S:245ac12998fc64b66fd1ed299dac8bd200894747,",
+      "figmaKey": "245ac12998fc64b66fd1ed299dac8bd200894747",
+      "fontFamily": "PingFang SC",
+      "fontWeightName": "Semibold",
+      "fontSize": {
+        "value": 20,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 30
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "页面主标题、小型看板标题",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / H2-CN-S",
+        "styleId": "S:245ac12998fc64b66fd1ed299dac8bd200894747,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "H3-CN-S",
+      "figmaId": "S:668e47eb1aac7850c8cb61f8bebf0ffea2b4bee3,",
+      "figmaKey": "668e47eb1aac7850c8cb61f8bebf0ffea2b4bee3",
+      "fontFamily": "PingFang SC",
+      "fontWeightName": "Semibold",
+      "fontSize": {
+        "value": 18,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 26
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "模块标题、表单分组标题",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / H3-CN-S",
+        "styleId": "S:668e47eb1aac7850c8cb61f8bebf0ffea2b4bee3,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "H4-CN-S",
+      "figmaId": "S:26765cf268c92bd89de8d47a43c2ecdadaf782aa,",
+      "figmaKey": "26765cf268c92bd89de8d47a43c2ecdadaf782aa",
+      "fontFamily": "PingFang SC",
+      "fontWeightName": "Semibold",
+      "fontSize": {
+        "value": 16,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "模块标题、表单分组标题",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / H4-CN-S",
+        "styleId": "S:26765cf268c92bd89de8d47a43c2ecdadaf782aa,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "H5-CN-S",
+      "figmaId": "S:1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2,",
+      "figmaKey": "1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2",
+      "fontFamily": "PingFang SC",
+      "fontWeightName": "Semibold",
+      "fontSize": {
+        "value": 14,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "正文强调、表单标签、按钮",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / H5-CN-S",
+        "styleId": "S:1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "H6-CN-S",
+      "figmaId": "S:33d5cf1d31245edcb57ed1470230f86700f843f4,",
+      "figmaKey": "33d5cf1d31245edcb57ed1470230f86700f843f4",
+      "fontFamily": "PingFang SC",
+      "fontWeightName": "Semibold",
+      "fontSize": {
+        "value": 13,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 20
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "正文强调、表单标签、按钮",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / H6-CN-S",
+        "styleId": "S:33d5cf1d31245edcb57ed1470230f86700f843f4,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "H7-CN-S",
+      "figmaId": "S:aec2f397199f7b2cf955d9807f2f7c5a1c3f4f44,",
+      "figmaKey": "aec2f397199f7b2cf955d9807f2f7c5a1c3f4f44",
+      "fontFamily": "PingFang SC",
+      "fontWeightName": "Semibold",
+      "fontSize": {
+        "value": 12,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 18
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "正文强调、表单标签、按钮",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / H7-CN-S",
+        "styleId": "S:aec2f397199f7b2cf955d9807f2f7c5a1c3f4f44,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "H8-CN-S",
+      "figmaId": "S:df5511773fec5bb2dcfceffaa8904164d3958cfa,",
+      "figmaKey": "df5511773fec5bb2dcfceffaa8904164d3958cfa",
+      "fontFamily": "PingFang SC",
+      "fontWeightName": "Semibold",
+      "fontSize": {
+        "value": 10,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 14
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / H8-CN-S",
+        "styleId": "S:df5511773fec5bb2dcfceffaa8904164d3958cfa,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "P1-CN-R",
+      "figmaId": "S:233a5866e328e0d6ba117fcd980b58bb976ac5ca,",
+      "figmaKey": "233a5866e328e0d6ba117fcd980b58bb976ac5ca",
+      "fontFamily": "PingFang SC",
+      "fontWeightName": "Regular",
+      "fontSize": {
+        "value": 18,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 28
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "页面二级标题、数据卡标题",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / P1-CN-R",
+        "styleId": "S:233a5866e328e0d6ba117fcd980b58bb976ac5ca,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "P2_CN-R",
+      "figmaId": "S:08e7c51f87d6e5b3f1335d71a6edcca97dae2158,",
+      "figmaKey": "08e7c51f87d6e5b3f1335d71a6edcca97dae2158",
+      "fontFamily": "PingFang SC",
+      "fontWeightName": "Regular",
+      "fontSize": {
+        "value": 16,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "标题文字、大按钮文字、tab栏文字、模块标题、重要正文",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / P2_CN-R",
+        "styleId": "S:08e7c51f87d6e5b3f1335d71a6edcca97dae2158,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "P3_CN-R",
+      "figmaId": "S:c81d62da465fece323efaaf30c8389cc327e599d,",
+      "figmaKey": "c81d62da465fece323efaaf30c8389cc327e599d",
+      "fontFamily": "PingFang SC",
+      "fontWeightName": "Regular",
+      "fontSize": {
+        "value": 14,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "默认正文、按钮、菜单、表单",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / P3_CN-R",
+        "styleId": "S:c81d62da465fece323efaaf30c8389cc327e599d,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "P4_CN-R",
+      "figmaId": "S:d729da08e5135f43be1f20e8acdfee8b10f4a928,",
+      "figmaKey": "d729da08e5135f43be1f20e8acdfee8b10f4a928",
+      "fontFamily": "PingFang SC",
+      "fontWeightName": "Regular",
+      "fontSize": {
+        "value": 13,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 20
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "高密度表格、紧凑表单",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / P4_CN-R",
+        "styleId": "S:d729da08e5135f43be1f20e8acdfee8b10f4a928,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "P5_CN-R",
+      "figmaId": "S:ccf9d5e80bd5848e0841588c812c507cab7e23e6,",
+      "figmaKey": "ccf9d5e80bd5848e0841588c812c507cab7e23e6",
+      "fontFamily": "PingFang SC",
+      "fontWeightName": "Regular",
+      "fontSize": {
+        "value": 12,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 18
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "辅助信息、标签、小型提示",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / P5_CN-R",
+        "styleId": "S:ccf9d5e80bd5848e0841588c812c507cab7e23e6,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "P6_CN-R",
+      "figmaId": "S:17ed64b43b00fad2f510509694dd61453acde31b,",
+      "figmaKey": "17ed64b43b00fad2f510509694dd61453acde31b",
+      "fontFamily": "PingFang SC",
+      "fontWeightName": "Regular",
+      "fontSize": {
+        "value": 10,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 16
+      },
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "辅助信息、标签、小型提示",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / P6_CN-R",
+        "styleId": "S:17ed64b43b00fad2f510509694dd61453acde31b,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N1_NUM-S",
+      "figmaId": "S:2ae66282206fc20a9c420394accd1eeb516c6af5,",
+      "figmaKey": "2ae66282206fc20a9c420394accd1eeb516c6af5",
+      "fontFamily": "GJType",
+      "fontWeightName": "Bold",
+      "fontSize": {
+        "value": 36,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 52
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "超大指标，谨慎使用",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N1_NUM-S",
+        "styleId": "S:2ae66282206fc20a9c420394accd1eeb516c6af5,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N2_NUM-S",
+      "figmaId": "S:0225525a76c001805aa6e9c34b9cf785bfc5351a,",
+      "figmaKey": "0225525a76c001805aa6e9c34b9cf785bfc5351a",
+      "fontFamily": "GJType",
+      "fontWeightName": "Bold",
+      "fontSize": {
+        "value": 32,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 48
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "大号指标",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N2_NUM-S",
+        "styleId": "S:0225525a76c001805aa6e9c34b9cf785bfc5351a,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N3_NUM-S",
+      "figmaId": "S:cdc2105558bed9d0cd25e73d4aa7d09228352833,",
+      "figmaKey": "cdc2105558bed9d0cd25e73d4aa7d09228352833",
+      "fontFamily": "GJType",
+      "fontWeightName": "Bold",
+      "fontSize": {
+        "value": 24,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 36
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "关键指标，数据看板",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N3_NUM-S",
+        "styleId": "S:cdc2105558bed9d0cd25e73d4aa7d09228352833,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N4_NUM-S",
+      "figmaId": "S:60facc866d2e639bc5556fcac32d7a74738ac2fb,",
+      "figmaKey": "60facc866d2e639bc5556fcac32d7a74738ac2fb",
+      "fontFamily": "GJType",
+      "fontWeightName": "Bold",
+      "fontSize": {
+        "value": 20,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 30
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "关键指标，数据看板",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N4_NUM-S",
+        "styleId": "S:60facc866d2e639bc5556fcac32d7a74738ac2fb,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N5_NUM-S",
+      "figmaId": "S:149fe784b238eb51efa009421863a70a0adc4055,",
+      "figmaKey": "149fe784b238eb51efa009421863a70a0adc4055",
+      "fontFamily": "GJType",
+      "fontWeightName": "Bold",
+      "fontSize": {
+        "value": 18,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 26
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "关键指标，数据看板",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N5_NUM-S",
+        "styleId": "S:149fe784b238eb51efa009421863a70a0adc4055,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N6_NUM-S",
+      "figmaId": "S:18ebfcbc1b1fc1c9e3a0226420a980c53413d256,",
+      "figmaKey": "18ebfcbc1b1fc1c9e3a0226420a980c53413d256",
+      "fontFamily": "GJType",
+      "fontWeightName": "Bold",
+      "fontSize": {
+        "value": 16,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "关键指标，数据看板",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N6_NUM-S",
+        "styleId": "S:18ebfcbc1b1fc1c9e3a0226420a980c53413d256,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N8_NUM-S",
+      "figmaId": "S:393f62491edf2e4593f1e5898bd30161a2393fc7,",
+      "figmaKey": "393f62491edf2e4593f1e5898bd30161a2393fc7",
+      "fontFamily": "GJType",
+      "fontWeightName": "Bold",
+      "fontSize": {
+        "value": 12,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 18
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "关键指标，数据看板",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N8_NUM-S",
+        "styleId": "S:393f62491edf2e4593f1e5898bd30161a2393fc7,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N7_NUM-S",
+      "figmaId": "S:f91048a7844d0bf5ae5f075bd9a8e4c7d6ca2949,",
+      "figmaKey": "f91048a7844d0bf5ae5f075bd9a8e4c7d6ca2949",
+      "fontFamily": "GJType",
+      "fontWeightName": "Bold",
+      "fontSize": {
+        "value": 14,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "关键指标，数据看板",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N7_NUM-S",
+        "styleId": "S:f91048a7844d0bf5ae5f075bd9a8e4c7d6ca2949,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N1_NUM-M",
+      "figmaId": "S:927735b84ded7f3bc43265560e00b25bf7dab946,",
+      "figmaKey": "927735b84ded7f3bc43265560e00b25bf7dab946",
+      "fontFamily": "GJType",
+      "fontWeightName": "Medium",
+      "fontSize": {
+        "value": 36,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 52
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "超大指标，谨慎使用",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N1_NUM-M",
+        "styleId": "S:927735b84ded7f3bc43265560e00b25bf7dab946,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N2_NUM-M",
+      "figmaId": "S:74181f33d4cdcb0f345ec1fba07f4646d3137d6c,",
+      "figmaKey": "74181f33d4cdcb0f345ec1fba07f4646d3137d6c",
+      "fontFamily": "GJType",
+      "fontWeightName": "Medium",
+      "fontSize": {
+        "value": 32,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 48
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "大号指标",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N2_NUM-M",
+        "styleId": "S:74181f33d4cdcb0f345ec1fba07f4646d3137d6c,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N3_NUM-M",
+      "figmaId": "S:9cc143c920bf85345763f652e9138a2d07fe133e,",
+      "figmaKey": "9cc143c920bf85345763f652e9138a2d07fe133e",
+      "fontFamily": "GJType",
+      "fontWeightName": "Medium",
+      "fontSize": {
+        "value": 24,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 36
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "关键指标，数据看板",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N3_NUM-M",
+        "styleId": "S:9cc143c920bf85345763f652e9138a2d07fe133e,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N4_NUM-M",
+      "figmaId": "S:cda22cb40f4a3b917ad7f8c9543539eb0f2cc4f7,",
+      "figmaKey": "cda22cb40f4a3b917ad7f8c9543539eb0f2cc4f7",
+      "fontFamily": "GJType",
+      "fontWeightName": "Medium",
+      "fontSize": {
+        "value": 20,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 30
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "关键指标，数据看板",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N4_NUM-M",
+        "styleId": "S:cda22cb40f4a3b917ad7f8c9543539eb0f2cc4f7,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N5_NUM-M",
+      "figmaId": "S:c659777052d5ce54fedb2bf759417ff7ea72345c,",
+      "figmaKey": "c659777052d5ce54fedb2bf759417ff7ea72345c",
+      "fontFamily": "GJType",
+      "fontWeightName": "Medium",
+      "fontSize": {
+        "value": 18,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 26
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "关键指标，数据看板",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N5_NUM-M",
+        "styleId": "S:c659777052d5ce54fedb2bf759417ff7ea72345c,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N6_NUM-M",
+      "figmaId": "S:19fb48d86312f094e369605bd5174f93e2009436,",
+      "figmaKey": "19fb48d86312f094e369605bd5174f93e2009436",
+      "fontFamily": "GJType",
+      "fontWeightName": "Medium",
+      "fontSize": {
+        "value": 16,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 24
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "关键指标，数据看板",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N6_NUM-M",
+        "styleId": "S:19fb48d86312f094e369605bd5174f93e2009436,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N7_NUM-M",
+      "figmaId": "S:fc235ce1d729c638e3fe21a21561eb152045c9a8,",
+      "figmaKey": "fc235ce1d729c638e3fe21a21561eb152045c9a8",
+      "fontFamily": "GJType",
+      "fontWeightName": "Medium",
+      "fontSize": {
+        "value": 14,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 22
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "关键指标，数据看板",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N7_NUM-M",
+        "styleId": "S:fc235ce1d729c638e3fe21a21561eb152045c9a8,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    },
+    {
+      "name": "N8_NUM-M",
+      "figmaId": "S:47a9b205d5211c6293731f5cfce2958e2bf504fb,",
+      "figmaKey": "47a9b205d5211c6293731f5cfce2958e2bf504fb",
+      "fontFamily": "GJType",
+      "fontWeightName": "Medium",
+      "fontSize": {
+        "value": 12,
+        "unit": "px"
+      },
+      "lineHeight": {
+        "unit": "PIXELS",
+        "value": 18
+      },
+      "letterSpacing": {
+        "unit": "PERCENT",
+        "value": 0
+      },
+      "paragraphSpacing": {
+        "value": 0,
+        "unit": "px"
+      },
+      "paragraphIndent": {
+        "value": 0,
+        "unit": "px"
+      },
+      "textCase": "ORIGINAL",
+      "textDecoration": "NONE",
+      "description": "关键指标，数据看板",
+      "mode": "Mobile",
+      "scope": "mobile design system",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Local Text Style / N8_NUM-M",
+        "styleId": "S:47a9b205d5211c6293731f5cfce2958e2bf504fb,",
+        "referencePage": "181:1092"
+      },
+      "publication": "not verified"
+    }
+  ]
+}

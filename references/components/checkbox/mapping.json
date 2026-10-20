@@ -1,0 +1,90 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "checkbox",
+  "figmaComponent": "Checkbox/Icon（58:11096）/ checkbox（58:11128）/ Checkbox/Group（58:11264）",
+  "prototypeClass": "gj-m-checkbox",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "checkbox": "label.gj-m-checkbox > input[type=checkbox].gj-m-checkbox-input + span.gj-m-checkbox-icon + span.gj-m-checkbox-label",
+    "Checked=True": "input checked（展示用 .is-checked）",
+    "Indeterminate=on": "JS 设置 input.indeterminate = true（展示用 .is-indeterminate）",
+    "Disabled=true": "input disabled（展示用 .is-disabled）",
+    "Checkbox/Group": "div.gj-m-checkbox-group[role=group]",
+    "iconOnly": "不写 .gj-m-checkbox-label，input 加 aria-label"
+  },
+  "valueMap": {
+    "icon": "20（圆角 4）",
+    "group": "横排间距 24，换行行距 12",
+    "hitArea": "44（组件自身扩展）",
+    "label": "P3 14/22，图标到文字 8"
+  },
+  "tokenMap": {
+    "box.default": "Background/Container + Border/secondary",
+    "box.checked": "Brand/GJ_Blue（--ds-brand-gj-blue）+ Text/reversal 勾",
+    "disabled": "Background/Background + Text/disable",
+    "label": "Text/Primary"
+  },
+  "runtimeMap": {
+    "root": "label.gj-m-checkbox",
+    "input": ".gj-m-checkbox-input",
+    "icon": ".gj-m-checkbox-icon",
+    "label": ".gj-m-checkbox-label",
+    "group": ".gj-m-checkbox-group"
+  },
+  "markup": {
+    "default": "<label class=\"gj-m-checkbox\"><input type=\"checkbox\" class=\"gj-m-checkbox-input\"><span class=\"gj-m-checkbox-icon\" aria-hidden=\"true\"></span><span class=\"gj-m-checkbox-label\">全选</span></label>",
+    "checked": "<label class=\"gj-m-checkbox\"><input type=\"checkbox\" class=\"gj-m-checkbox-input\" checked><span class=\"gj-m-checkbox-icon\" aria-hidden=\"true\"></span><span class=\"gj-m-checkbox-label\">已阅读</span></label>",
+    "disabled": "<label class=\"gj-m-checkbox\"><input type=\"checkbox\" class=\"gj-m-checkbox-input\" checked disabled><span class=\"gj-m-checkbox-icon\" aria-hidden=\"true\"></span><span class=\"gj-m-checkbox-label\">今日已提醒</span></label>",
+    "iconOnly": "<label class=\"gj-m-checkbox\"><input type=\"checkbox\" class=\"gj-m-checkbox-input\" aria-label=\"选择 中国银行武侯支行\"><span class=\"gj-m-checkbox-icon\" aria-hidden=\"true\"></span></label>",
+    "group": "<div class=\"gj-m-checkbox-group\" role=\"group\" aria-label=\"费用项目\"><label class=\"gj-m-checkbox\"><input type=\"checkbox\" class=\"gj-m-checkbox-input\" checked><span class=\"gj-m-checkbox-icon\" aria-hidden=\"true\"></span><span class=\"gj-m-checkbox-label\">交通</span></label><label class=\"gj-m-checkbox\"><input type=\"checkbox\" class=\"gj-m-checkbox-input\"><span class=\"gj-m-checkbox-icon\" aria-hidden=\"true\"></span><span class=\"gj-m-checkbox-label\">住宿</span></label><label class=\"gj-m-checkbox\"><input type=\"checkbox\" class=\"gj-m-checkbox-input\"><span class=\"gj-m-checkbox-icon\" aria-hidden=\"true\"></span><span class=\"gj-m-checkbox-label\">餐补</span></label></div>",
+    "agreement": "<label class=\"gj-m-checkbox\"><input type=\"checkbox\" class=\"gj-m-checkbox-input\"><span class=\"gj-m-checkbox-icon\" aria-hidden=\"true\"></span><span class=\"gj-m-checkbox-label\" style=\"font-size:var(--ds-type-p5-cn-r-font-size);line-height:var(--ds-type-p5-cn-r-line-height)\">我已阅读并同意<a href=\"javascript:void 0\" style=\"color:var(--ds-text-blue);text-decoration:none\">《用户协议》</a></span></label>",
+    "checkbox": "<label class=\"gj-m-checkbox\"><input type=\"checkbox\" class=\"gj-m-checkbox-input\" checked aria-label=\"全选\"><span class=\"gj-m-checkbox-icon\" aria-hidden=\"true\"></span><span class=\"gj-m-checkbox-label\">全选</span></label>",
+    "agree 协议勾选": "<label class=\"gj-m-checkbox gj-m-checkbox-agree\"><input type=\"checkbox\" class=\"gj-m-checkbox-input\"><span class=\"gj-m-checkbox-icon\" aria-hidden=\"true\"></span><span class=\"gj-m-checkbox-label\">我已阅读并同意<a href=\"javascript:void 0\">《用户协议》</a></span></label>"
+  },
+  "interactionMap": {
+    "toggle": "点击整个 label 切换",
+    "selectAll": "全选：部分选中时 indeterminate；全选 / 取消全选同步列表",
+    "link": "label 内的链接点击时 preventDefault，避免误勾"
+  },
+  "accessibility": {
+    "input": "原生 checkbox；无可见文字时 aria-label",
+    "group": "role=\"group\" + aria-label"
+  },
+  "composition": {
+    "multi": "卡片内多选首选按钮组合（PR-009），其次多选框组合",
+    "agreement": "协议勾选默认不勾"
+  },
+  "pageRules": {
+    "PR-009": "卡片内多选首选按钮组合，其次多选框（横排间距 24、行距 12）",
+    "PR-010": "热区由组件扩展，标签到控件间距 8"
+  },
+  "pending": {},
+  "templates": {
+    "checkbox": {
+      "tpl": "<label class=\"gj-m-checkbox{{#cls}} {{cls}}{{/cls}}\"><input type=\"checkbox\" class=\"gj-m-checkbox-input\"{{#checked}} checked{{/checked}}{{#disabled}} disabled{{/disabled}}{{{attrs}}}{{#aria}} aria-label=\"{{aria}}\"{{/aria}}><span class=\"gj-m-checkbox-icon\" aria-hidden=\"true\"></span>{{#text}}<span class=\"gj-m-checkbox-label\">{{text}}</span>{{/text}}{{#labelHtml}}<span class=\"gj-m-checkbox-label\">{{{labelHtml}}}</span>{{/labelHtml}}</label>",
+      "params": "checked / disabled；attrs：附加属性；aria：无可见文字时的读屏名称；text：文字；labelHtml：含链接的文字（协议勾选）",
+      "examples": {
+        "default": {
+          "text": "全选"
+        },
+        "checked": {
+          "checked": true,
+          "text": "已阅读"
+        },
+        "disabled": {
+          "checked": true,
+          "disabled": true,
+          "text": "今日已提醒"
+        },
+        "iconOnly": {
+          "aria": "选择 中国银行武侯支行"
+        },
+        "checkbox": {
+          "checked": true,
+          "aria": "全选",
+          "text": "全选"
+        }
+      }
+    }
+  }
+}

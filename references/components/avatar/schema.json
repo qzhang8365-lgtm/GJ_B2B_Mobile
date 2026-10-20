@@ -1,0 +1,41 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "avatar",
+  "name": "头像 Avatar",
+  "category": "数据展示组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "头像Avatar（58:776）",
+    "nodes": {
+      "avatar": "58:779 Avatar（Fill=image|default × circle=false|true × Size=44|36|32，12 变体；2026-10-14 设计方按审计改名）",
+      "usage": "1108:6"
+    },
+    "extractedAt": "2026-10-14",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-avatar(-md / -sm / -circle / -contain / .is-default)"
+  },
+  "sizes": {
+    "44": "默认，主要身份信息",
+    "36": ".gj-m-avatar-md，紧凑列表、次级信息",
+    "32": ".gj-m-avatar-sm，对话流"
+  },
+  "shape": {
+    "square": "Radius-MD 8（circle=false）",
+    "circle": ".gj-m-avatar-circle 全圆（circle=true）"
+  },
+  "image": {
+    "cover": "<img> object-fit: cover，对应 Figma 图片填充 FILL",
+    "contain": ".gj-m-avatar-contain：白底 + Border/default 描边，图片完整显示（网站补充，Figma 无变体）"
+  },
+  "default": {
+    "class": ".is-default",
+    "background": "Background/Secondary",
+    "icon": "icf_user_user-fill，Text/disable，28 / 24 / 20",
+    "when": "图片缺失、加载失败（img onerror 加 .is-default）、用户未设置"
+  },
+  "a11y": "旁边有姓名时 img alt=\"\"；单独出现时 alt / aria-label 写姓名或组织名"
+}

@@ -1,0 +1,32 @@
+{
+  "pass": true,
+  "results": [
+    {
+      "width": 375,
+      "collapsedHeight": 210,
+      "height": 773,
+      "overflow": false,
+      "serviceHeight": 176,
+      "progressWidth": 147.265625,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "collapsedHeight": 179.09375,
+      "height": 678.09375,
+      "overflow": false,
+      "serviceHeight": 168.890625,
+      "progressWidth": 121.609375,
+      "pass": true
+    },
+    {
+      "width": 768,
+      "collapsedHeight": 213.546875,
+      "height": 694.484375,
+      "overflow": false,
+      "serviceHeight": 132.03125,
+      "progressWidth": 447.890625,
+      "pass": true
+    }
+  ]
+}

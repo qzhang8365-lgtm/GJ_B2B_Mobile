@@ -1,0 +1,243 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "navbar",
+  "name": "顶部导航 Navbar",
+  "category": "导航组件",
+  "source": {
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "31:679",
+    "set": "31:696",
+    "usageFrame": "953:1155",
+    "extractedAt": "2026-10-09",
+    "readOnly": true
+  },
+  "prototypeOnly": true,
+  "variants": [
+    {
+      "id": "31:697",
+      "name": "Back=false, BackArrow=true, Children=false, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "true",
+        "Children": "false",
+        "Right": "false"
+      }
+    },
+    {
+      "id": "31:703",
+      "name": "Back=true, BackArrow=true, Children=true, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "true",
+        "Children": "true",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:713",
+      "name": "Back=true, BackArrow=true, Children=true, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "true",
+        "Children": "true",
+        "Right": "false"
+      }
+    },
+    {
+      "id": "31:721",
+      "name": "Back=false, BackArrow=true, Children=true, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "true",
+        "Children": "true",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:730",
+      "name": "Back=false, BackArrow=true, Children=true, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "true",
+        "Children": "true",
+        "Right": "false"
+      }
+    },
+    {
+      "id": "31:739",
+      "name": "Back=false, BackArrow=false, Children=true, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "false",
+        "Children": "true",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:747",
+      "name": "Back=false, BackArrow=false, Children=true, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "false",
+        "Children": "true",
+        "Right": "false"
+      }
+    },
+    {
+      "id": "31:753",
+      "name": "Back=true, BackArrow=false, Children=true, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "false",
+        "Children": "true",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:762",
+      "name": "Back=true, BackArrow=false, Children=true, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "false",
+        "Children": "true",
+        "Right": "false"
+      }
+    },
+    {
+      "id": "31:769",
+      "name": "Back=true, BackArrow=true, Children=false, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "true",
+        "Children": "false",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:778",
+      "name": "Back=true, BackArrow=true, Children=false, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "true",
+        "Children": "false",
+        "Right": "false"
+      }
+    },
+    {
+      "id": "31:785",
+      "name": "Back=false, BackArrow=true, Children=false, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "true",
+        "Children": "false",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:793",
+      "name": "Back=false, BackArrow=false, Children=false, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "false",
+        "Children": "false",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:800",
+      "name": "Back=false, BackArrow=false, Children=false, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "false",
+        "BackArrow": "false",
+        "Children": "false",
+        "Right": "false"
+      }
+    },
+    {
+      "id": "31:805",
+      "name": "Back=true, BackArrow=false, Children=false, Right=true",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "false",
+        "Children": "false",
+        "Right": "true"
+      }
+    },
+    {
+      "id": "31:813",
+      "name": "Back=true, BackArrow=false, Children=false, Right=false",
+      "w": 375,
+      "h": 44,
+      "properties": {
+        "Back": "true",
+        "BackArrow": "false",
+        "Children": "false",
+        "Right": "false"
+      }
+    }
+  ],
+  "layout": {
+    "height": 44,
+    "h5Height": "44px，不随根字号缩放",
+    "paddingX": 12,
+    "sideSlots": 97,
+    "centerPaddingX": 12,
+    "backGap": 4,
+    "rightIconGapInFigma": 16,
+    "rightHitWidthInPrototype": 44
+  },
+  "text": {
+    "title": "H4-CN-S 16/24 Text/Primary",
+    "subtitle": "P5_CN-R 12/18 Text/Secondary",
+    "back": "P3_CN-R 14/22 Text/Primary"
+  },
+  "icons": {
+    "size": 24,
+    "back": "icf_Arrow_left，几何核对等同 Figma icf_Arrow_caret_left",
+    "search": "icf_system_search",
+    "more": "icf_system_more",
+    "backColor": "Text/Secondary",
+    "rightColor": "Text/Primary"
+  },
+  "pending": [],
+  "auditClosure": {
+    "date": "2026-10-09",
+    "basis": "用户确认采用当前基座方案并要求依次关闭四项确认项",
+    "closed": [
+      "NAV-M-001",
+      "NAV-M-002",
+      "NAV-M-003",
+      "NAV-M-004"
+    ]
+  }
+}

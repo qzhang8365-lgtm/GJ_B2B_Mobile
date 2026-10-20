@@ -1,0 +1,144 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "datepicker",
+  "figmaComponent": "Datepicker（173:10050）/ calendar（176:2315）/ calendar_range（1016:8395）/ Datepicker_item/Date_item（173:10128）",
+  "prototypeClass": "gj-m-datepicker（基于 gj-m-select）/ gj-m-calendar",
+  "note": "原型基座类名，不代表真实前端组件库 API。日历放在底部弹层（dialog 组件 bottomBar 写法）内。",
+  "propertyMap": {
+    "Datepicker Type=single": "button.gj-m-select.gj-m-datepicker > 日历图标 + span.gj-m-select-value",
+    "Type=range": "span.gj-m-select-value.gj-m-datepicker-range > span + span.gj-m-datepicker-sep（至）+ span",
+    "Filled=false": "值 span 加 .is-placeholder",
+    "Size=M / Style=stroke": "gj-m-select-m / gj-m-select-line",
+    "State=active": "aria-expanded=\"true\"",
+    "State=error": "aria-invalid=\"true\" + 其后 .gj-m-select-message",
+    "State=disabled": "disabled",
+    "calendar": ".gj-m-calendar > .gj-m-calendar-header + .gj-m-calendar-week + .gj-m-calendar-days",
+    "Date_item": "button.gj-m-calendar-day[data-date] > span（日期）",
+    "State=current": ".is-today",
+    "State=selected": ".is-selected",
+    "State=disabled（日期）": "disabled（非本月日期也 disabled）",
+    "Range=start / middle / end": ".is-range-start / .is-in-range / .is-range-end（只选了开始时同时加 is-range-start is-range-end）",
+    "Task=true": "span.gj-m-calendar-dots > i（style=\"--gj-m-dot:颜色\"，最多 3 个）",
+    "calendar_year / month": ".gj-m-calendar-grid > button.gj-m-calendar-cell[data-v]"
+  },
+  "valueMap": {
+    "field": "同选择器：L 40 / M 32；前缀日历图标，无箭头",
+    "format": "YYYY-MM-DD，不省略年份；范围“开始 至 结束”",
+    "day": "格高 50，行距 4，周日开始，行数按当月需要（不补满 6 行）",
+    "nav": "切换按钮热区 44",
+    "yearPage": "一页 12 年；月份一页 12 个月"
+  },
+  "tokenMap": {
+    "today": "Text/blue",
+    "selected": "Brand/GJ_Blue 方块 + Text/reversal",
+    "inRange": "Background/BT_B10 连续浅蓝",
+    "disabled": "Text/disable（年月格 opacity 0.4）",
+    "dots": "主题蓝以外的颜色区分类型，并给图例",
+    "day": "H4 16/24 Semibold Text/Primary",
+    "title": "H3 年月标题"
+  },
+  "assetMap": {
+    "field": "{ROOT}assets/icons/iconfont/icf_system_calendar.svg",
+    "nav": "基座内置箭头"
+  },
+  "runtimeMap": {
+    "field": "button.gj-m-datepicker",
+    "value": ".gj-m-select-value",
+    "range": ".gj-m-datepicker-range",
+    "calendar": ".gj-m-calendar",
+    "header": ".gj-m-calendar-header",
+    "nav": ".gj-m-calendar-nav",
+    "title": ".gj-m-calendar-title",
+    "week": ".gj-m-calendar-week",
+    "days": ".gj-m-calendar-days",
+    "day": ".gj-m-calendar-day",
+    "cell": ".gj-m-calendar-cell"
+  },
+  "markup": {
+    "single": "<button type=\"button\" class=\"gj-m-select gj-m-datepicker\" aria-haspopup=\"dialog\" aria-expanded=\"false\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_calendar.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-select-value is-placeholder\">选择日期</span></button>",
+    "singleFilled": "<button type=\"button\" class=\"gj-m-select gj-m-datepicker\" aria-haspopup=\"dialog\" aria-expanded=\"false\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_calendar.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-select-value\">2026-10-19</span></button>",
+    "rangeM": "<button type=\"button\" class=\"gj-m-select gj-m-datepicker gj-m-select-m\" aria-haspopup=\"dialog\" aria-expanded=\"false\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_calendar.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-select-value gj-m-datepicker-range\"><span>2026-01-01</span><span class=\"gj-m-datepicker-sep\">至</span><span>2026-12-31</span></span></button>",
+    "error": "<div><button type=\"button\" class=\"gj-m-select gj-m-datepicker gj-m-select-line\" aria-haspopup=\"dialog\" aria-expanded=\"false\" aria-invalid=\"true\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_calendar.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-select-value gj-m-datepicker-range\"><span>2026-12-30</span><span class=\"gj-m-datepicker-sep\">至</span><span>2026-12-27</span></span></button><div class=\"gj-m-select-message\" role=\"alert\">结束日期不能早于开始日期</div></div>",
+    "calendar": "<div class=\"gj-m-calendar\"><div class=\"gj-m-calendar-header\"><button type=\"button\" class=\"gj-m-calendar-nav\" data-nav=\"-12\" aria-label=\"上一年\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><button type=\"button\" class=\"gj-m-calendar-nav\" data-nav=\"-1\" aria-label=\"上一月\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><div class=\"gj-m-calendar-title\" aria-live=\"polite\">2026 - 10</div><button type=\"button\" class=\"gj-m-calendar-nav\" data-nav=\"1\" aria-label=\"下一月\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><button type=\"button\" class=\"gj-m-calendar-nav\" data-nav=\"12\" aria-label=\"下一年\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></div><div class=\"gj-m-calendar-week\" aria-hidden=\"true\"><span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span></div><div class=\"gj-m-calendar-days\"><button type=\"button\" class=\"gj-m-calendar-day\" data-date=\"2026-09-27\" disabled aria-label=\"9月27日\"><span>27</span></button><button type=\"button\" class=\"gj-m-calendar-day is-today\" data-date=\"2026-10-19\" aria-label=\"10月19日，今天\"><span>19</span></button><button type=\"button\" class=\"gj-m-calendar-day is-selected\" data-date=\"2026-10-20\" aria-label=\"10月20日\"><span>20</span></button><button type=\"button\" class=\"gj-m-calendar-day\" data-date=\"2026-10-21\" aria-label=\"10月21日，1条记录\"><span>21</span><span class=\"gj-m-calendar-dots\" aria-hidden=\"true\"><i style=\"--gj-m-dot:var(--ds-feedback-warning)\"></i></span></button></div></div>",
+    "rangeDays": "<button type=\"button\" class=\"gj-m-calendar-day is-range-start\" …><span>4</span></button><button type=\"button\" class=\"gj-m-calendar-day is-in-range\" …><span>5</span></button><button type=\"button\" class=\"gj-m-calendar-day is-range-end\" …><span>13</span></button>",
+    "monthGrid": "<div class=\"gj-m-calendar\"><div class=\"gj-m-calendar-header\"><button type=\"button\" class=\"gj-m-calendar-nav\" data-nav=\"-1\" aria-label=\"上一年\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><div class=\"gj-m-calendar-title\">2026</div><button type=\"button\" class=\"gj-m-calendar-nav\" data-nav=\"1\" aria-label=\"下一年\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></div><div class=\"gj-m-calendar-grid\"><button type=\"button\" class=\"gj-m-calendar-cell is-selected\" data-v=\"2026-06\">六月</button><button type=\"button\" class=\"gj-m-calendar-cell is-today\" data-v=\"2026-10\">十月</button><button type=\"button\" class=\"gj-m-calendar-cell\" data-v=\"2026-11\" disabled>十一月</button></div></div>"
+  },
+  "interactionMap": {
+    "open": "点击字段在底部弹层（拖拽条 + 日历 + 取消 / 确认）打开，定位到已选日期所在月",
+    "single": "点击选中，确认回填",
+    "range": "依次选开始与结束，结束早于开始时作为新开始；选齐两端才可确认",
+    "cancel": "取消或点遮罩不提交",
+    "reopen": "保留已有结果，可修改",
+    "limits": "不可选日期 disabled，并在字段下方说明限制"
+  },
+  "accessibility": {
+    "field": "button + aria-haspopup=\"dialog\" + aria-expanded；无可见标签时 aria-label 含当前值",
+    "day": "每个日期 aria-label 写完整日期（含“今天”、记录数）",
+    "title": "aria-live=\"polite\" 播报月份变化",
+    "nav": "aria-label：上一月 / 下一月 / 上一年 / 下一年"
+  },
+  "composition": {
+    "dots": "有事项圆点时在日历下方给图例",
+    "filterArea": "顶部筛选区里的日期字段用 M",
+    "quick": "可提供“今天 / 近 7 天”等快捷项，不替代完整日历"
+  },
+  "pageRules": {
+    "PR-007": "日历放进卡片时由基座抵消内边距，留白只算一次",
+    "PR-018": "顶部筛选区堆叠时日期字段改用 M"
+  },
+  "pending": {},
+  "templates": {
+    "calendar": {
+      "tpl": "<div class=\"gj-m-calendar\"><div class=\"gj-m-calendar-header\">{{#year}}<button type=\"button\" class=\"gj-m-calendar-nav\" data-nav=\"-12\" aria-label=\"上一年\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button>{{/year}}<button type=\"button\" class=\"gj-m-calendar-nav\" data-nav=\"-1\" aria-label=\"上一月\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><div class=\"gj-m-calendar-title\" aria-live=\"polite\">{{title}}</div><button type=\"button\" class=\"gj-m-calendar-nav\" data-nav=\"1\" aria-label=\"下一月\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button>{{#year}}<button type=\"button\" class=\"gj-m-calendar-nav\" data-nav=\"12\" aria-label=\"下一年\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button>{{/year}}</div><div class=\"gj-m-calendar-week\" aria-hidden=\"true\"><span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span></div><div class=\"gj-m-calendar-days\">{{#days}}<button type=\"button\" class=\"gj-m-calendar-day{{#today}} is-today{{/today}}{{#selected}} is-selected{{/selected}}{{#range}} {{range}}{{/range}}\" data-date=\"{{date}}\"{{#disabled}} disabled{{/disabled}} aria-label=\"{{label}}\"{{#pressed}} aria-pressed=\"true\"{{/pressed}}><span>{{num}}</span>{{#dots.length}}<span class=\"gj-m-calendar-dots\" aria-hidden=\"true\">{{#dots}}<i style=\"--gj-m-dot:{{.}}\"></i>{{/dots}}</span>{{/dots.length}}</button>{{/days}}</div></div>",
+      "params": "月历：year：显示上一年 / 下一年；title：“2026 - 10”；days：[{num, date, label(读屏，含“今天”“n条记录”), today, selected, pressed, disabled(非本月), range(is-range-start / is-in-range / is-range-end), dots(记录颜色数组)}]；每项字段都要给（缺省会继承外层）",
+      "example": {
+        "year": true,
+        "title": "2026 - 10",
+        "days": [
+          {
+            "num": 27,
+            "date": "2026-09-27",
+            "disabled": true,
+            "label": "9月27日",
+            "today": false,
+            "selected": false,
+            "pressed": false,
+            "dots": []
+          },
+          {
+            "num": 19,
+            "date": "2026-10-19",
+            "disabled": false,
+            "label": "10月19日，今天",
+            "today": true,
+            "selected": false,
+            "pressed": false,
+            "dots": []
+          },
+          {
+            "num": 20,
+            "date": "2026-10-20",
+            "disabled": false,
+            "label": "10月20日",
+            "today": false,
+            "selected": true,
+            "pressed": false,
+            "dots": []
+          },
+          {
+            "num": 21,
+            "date": "2026-10-21",
+            "disabled": false,
+            "label": "10月21日，1条记录",
+            "today": false,
+            "selected": false,
+            "pressed": false,
+            "dots": [
+              "var(--ds-feedback-warning)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

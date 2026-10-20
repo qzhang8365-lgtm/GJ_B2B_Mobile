@@ -1,0 +1,59 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "searchbar",
+  "name": "搜索栏 SearchBar",
+  "category": "信息录入组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "搜索栏Searchbar（158:2569）",
+    "nodes": {
+      "SearchBar": "158:2572（SearchButton × style × state × Size，16 变体）",
+      "usage": "1001:26"
+    },
+    "extractedAt": "2026-10-12",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-search(-m|-line) / .gj-m-search-clear / .gj-m-search-divider / .gj-m-search-action / .gj-m-search-row",
+    "note": "原型基座"
+  },
+  "sizes": {
+    "L": {
+      "height": 40,
+      "paddingX": 12,
+      "radius": "Radius-MD 8",
+      "text": "P2_CN-R 16/24",
+      "icon": 20
+    },
+    "M": {
+      "height": "control-M 32",
+      "paddingX": 8,
+      "radius": "Radius-SM 6",
+      "text": "P3_CN-R 14/22",
+      "icon": 16
+    }
+  },
+  "styles": {
+    "Default（填充式）": {
+      "bg": "Background/Background",
+      "border": "Border/default"
+    },
+    "lined（描边式）": {
+      "bg": "Background/Container",
+      "border": "Border/secondary"
+    }
+  },
+  "states": {
+    "Default": "占位 Text/Tiatery",
+    "active": "Border/focused，内容 Text/Primary，清除图标 Text/disable"
+  },
+  "parts": {
+    "searchIcon": "icf_system_search Text/Tiatery",
+    "gap": 4,
+    "textPadding": "左 4、右 8",
+    "inside": "竖线 Divider vertical 1×16 Border/default + Text_Button Medium grey「搜索」（左 8、右 4）",
+    "outside": "右侧 1.Button Primary（L→Large 40，M→Medium 32），间距 8；无内容时 disabled"
+  }
+}

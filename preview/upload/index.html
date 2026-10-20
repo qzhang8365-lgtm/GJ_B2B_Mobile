@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 文件上传 Upload</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>文件上传 Upload</h1>
+    <p>从本地选择文件上传，并反馈进度、结果和可执行的操作。图片上传见「图片 Image」。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section" id="upload-button">
+      <header class="docs-section-head"><div><h2>上传按钮</h2><p>次要按钮加上传图标。移动端默认大号，空间紧张时用中号。</p></div></header>
+      <div class="panel"><span class="docs-stage-label">大号 40 / 中号 32</span><div data-demo="btn"></div></div>
+    </section>
+
+    <section class="docs-section" id="upload-file">
+      <header class="docs-section-head"><div><h2>文件状态</h2><p>完成、上传中、失败；需要判断容量时补充文件大小。文件名过长时保留扩展名。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">不含文件大小</span><div data-demo="s1"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">含文件大小</span><div data-demo="s2"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点上传选择文件，立即显示进度；上传中可取消，失败后删除重传。达到上限后按钮不可用。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pMax">最多文件数</label><select id="pMax"><option>1</option><option selected>3</option><option>5</option></select></div>
+          <label class="ck"><input type="checkbox" id="pSize">显示文件大小</label>
+          <label class="ck"><input type="checkbox" id="pFail">下一个上传失败</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>限制说明</td><td>上传前写明可接受的类型、数量和大小。</td><td>不等上传失败后才告知限制。</td></tr>
+        <tr><td>即时反馈</td><td>选择文件后立即出现上传中，显示进度。</td><td>不让按钮无响应，避免重复上传。</td></tr>
+        <tr><td>取消</td><td>耗时较长时允许取消，不阻塞其他操作。</td><td>—</td></tr>
+        <tr><td>失败</td><td>说明失败原因，可删除后重新上传。</td><td>不只显示“失败”而不给原因。</td></tr>
+        <tr><td>文件名</td><td>单行截断，保留扩展名。</td><td>不换行撑高列表项。</td></tr>
+        <tr><td>删除</td><td>删除已提交的文件属于高影响操作，必要时二次确认或提供撤销。</td><td>删除按钮热区不小于 44。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const ICON={pdf:'pdf',doc:'word',docx:'word',xls:'excel',xlsx:'excel',ppt:'ppt',pptx:'ppt',jpg:'img',png:'img'};
+  const icon=n=>`assets/icons/fileicon/24px-${ICON[(n.split('.').pop()||'').toLowerCase()]||'text'}.svg`;
+  const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const name=n=>{const i=n.lastIndexOf('.');const b=i>0?n.slice(0,i):n,e=i>0?n.slice(i):'';return `<span class="gj-m-upload-item-name"><span class="gj-m-upload-item-base">${esc(b)}</span><span class="gj-m-upload-item-ext">${esc(e)}</span></span>`};
+  const rm=(label,i)=>`<button type="button" class="gj-m-upload-item-remove" aria-label="${label}" data-i="${i}"><span class="gj-icon" aria-hidden="true"></span></button>`;
+  // f: {n, size, st:'done'|'uploading'|'error', p, msg}
+  const item=(f,i,o={})=>{
+    if(f.st==='uploading'){const done=(f.size*f.p/100).toFixed(1);
+      return `<li class="gj-m-upload-item is-uploading"><span class="gj-m-upload-item-icon-slot"><img class="gj-m-upload-item-icon" src="assets/icons/fileicon/24px-text.svg" alt=""></span><span class="gj-m-upload-item-name">上传中...</span><span class="gj-m-upload-progress" role="progressbar" aria-label="${esc(f.n)} 上传进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${f.p}"><span style="--gj-m-upload-progress:${f.p}%"></span></span>${o.size?`<span class="gj-m-upload-item-size">${done}MB/${f.size}MB</span>`:`<span class="gj-m-upload-item-percent">${f.p}%</span>`}${rm('取消上传 '+esc(f.n),i)}</li>`}
+    if(f.st==='error') return `<li class="gj-m-upload-item is-error"><span class="gj-m-upload-item-icon-slot"><span class="gj-m-upload-item-icon gj-icon" aria-hidden="true"></span></span><span class="gj-m-upload-item-detail">${name(f.n)}<span class="gj-m-upload-item-error">${esc(f.msg||'上传失败')}</span></span>${o.size?`<span class="gj-m-upload-item-size">${f.size}MB</span>`:''}${rm('删除 '+esc(f.n),i)}</li>`;
+    return `<li class="gj-m-upload-item"><span class="gj-m-upload-item-icon-slot"><img class="gj-m-upload-item-icon" src="${icon(f.n)}" alt=""></span>${name(f.n)}${o.size?`<span class="gj-m-upload-item-size">${f.size}MB</span>`:''}${rm('删除 '+esc(f.n),i)}</li>`};
+  const list=(fs,o)=>`<ul class="gj-m-upload-list">${fs.map((f,i)=>item(f,i,o)).join('')}</ul>`;
+  const BTN=(size,dis)=>`<button type="button" class="gj-m-button gj-m-button-tertiary${size==='large'?' gj-m-button-large':''}"${dis?' disabled':''}><span class="gj-icon" aria-hidden="true" style="--gj-icon:url('${new URL('../../assets/icons/iconfont/icf_file_upload.svg',location.href).href}')"></span>上传</button>`;
+  const CSS='html,body{overflow:hidden;background:transparent}.scr{width:100%;max-width:3.75rem;margin:0 auto;background:var(--ds-background-container);padding:.12rem var(--space-page-margin-x);box-sizing:border-box}'+
+    '.row{display:flex;align-items:center;justify-content:center;gap:.32rem;padding:.08rem 0}.row figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:.08rem}.row figcaption{font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}'+
+    '.ph{position:relative;width:100%;max-width:3.75rem;margin:0 auto;height:100%;overflow:hidden;background:var(--ds-background-background);display:flex;flex-direction:column}.hd{flex:none;display:flex;align-items:center;justify-content:center;height:44px;background:var(--ds-background-container);font-size:.17rem;font-weight:600}'+
+    '.card{margin-top:.12rem;background:var(--ds-background-container);padding:.04rem var(--space-page-margin-x) .16rem}.tt{padding:.12rem 0 .12rem;font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)}';
+  const FIX='html,body,.page{height:100%}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+(h?FIX:''),height:h||'auto'});
+
+  show('btn',`<div class="row"><figure>${BTN('large')}<figcaption>大号 40</figcaption></figure><figure>${BTN('medium')}<figcaption>中号 32</figcaption></figure></div>`);
+  const S=[{n:'示例文件.pdf',size:13.2,st:'done'},{n:'客户尽职调查报告-2026年第三季度-最终版.docx',size:4.8,st:'done'},{n:'示例文件.pdf',size:13.2,st:'uploading',p:48},{n:'示例文件.pdf',size:13.2,st:'error',msg:'上传失败'}];
+  show('s1',`<div class="scr">${list(S,{})}</div>`);
+  show('s2',`<div class="scr">${list(S.map(f=>f.st==='error'?{...f,msg:'上传失败，文件超过 20MB'}:f),{size:1})}</div>`);
+
+  const POOL=[['2026年度经营报告.pdf',13.2],['客户资料清单.xlsx',2.4],['业务合同扫描件-甲乙双方签字盖章-最终版.docx',6.1],['项目汇报.pptx',18.6],['现场照片.jpg',3.3]];
+  function render(){const MAX=+$('pMax').value;let fs=[],k=0,timers=[];
+    const f=GJPhone.swatch($('lab'),{html:`<div class="ph"><div class="hd">提交材料</div><div class="card"><div class="tt">附件（最多 ${MAX} 个）</div><div class="gj-m-upload"><div class="gj-m-upload-head">${BTN('large')}<p class="gj-m-upload-tip">支持 PDF、Word、Excel、PPT，单个不超过 20MB</p></div><div id="l"></div></div></div></div>`,css:CSS+'.ph{height:auto;padding-bottom:.16rem}',height:'auto'});
+    f.addEventListener('load',()=>{const d=f.contentDocument,l=d.getElementById('l'),btn=d.querySelector('.gj-m-upload-head .gj-m-button');
+      const o=()=>({size:$('pSize').checked});
+      const draw=()=>{l.innerHTML=list(fs,o());btn.disabled=fs.length>=MAX;
+        l.querySelectorAll('.gj-m-upload-item-remove').forEach(b=>b.addEventListener('click',()=>{const x=fs[+b.dataset.i];clearInterval(x.t);fs.splice(+b.dataset.i,1);draw();btn.focus()}))};
+      const tick=x=>{x.t=setInterval(()=>{x.p=Math.min(100,x.p+12);if(x.fail&&x.p>=60){clearInterval(x.t);x.st='error';x.msg='上传失败，网络异常';}else if(x.p>=100){clearInterval(x.t);x.st='done'}draw()},220)};
+      btn.addEventListener('click',()=>{if(fs.length>=MAX)return;const [n,size]=POOL[k++%POOL.length];const x={n,size,st:'uploading',p:0,fail:$('pFail').checked};$('pFail').checked=false;fs.push(x);draw();tick(x)});
+      $('pSize').onchange=draw;draw()})}
+  $('pMax').addEventListener('change',render);render();
+})();
+</script>
+</body>
+</html>

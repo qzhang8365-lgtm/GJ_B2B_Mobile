@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 多选框 Checkbox</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid2+.grid2{margin-top:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>多选框 Checkbox</h1>
+    <p>从相互独立的选项中选择零到多个，也用于全选和条款确认；即时生效的设置用开关。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>未选、选中、半选、禁用；半选只用于“全选”这类父级汇总。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">未选 / 选中 / 半选</span><div data-demo="st1"></div></div>
+        <div class="panel"><span class="docs-stage-label">禁用未选 / 禁用选中 / 禁用半选</span><div data-demo="st2"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>排列</h2><p>横排，放不下时自动换行。建议 2–6 个选项，更多时用多选列表。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">3 项</span><div data-demo="g3"></div></div>
+        <div class="panel"><span class="docs-stage-label">6 项 · 放不下时换行</span><div data-demo="g6"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用示例</h2><p>均为 375 宽。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">表单 · 多选结果</span><div data-demo="exForm"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">协议确认 · 默认不勾选，链接单独可点</span><div data-demo="exAgree"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点击图标或标签切换。“全选”是父级：子项部分选中时显示半选，点击后切换为全选或全不选；禁用项保持原状态，不参与全选。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pNum">子项数</label><select id="pNum"><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option></select></div>
+          <label class="ck"><input type="checkbox" id="pAll" checked>显示“全选”</label>
+          <label class="ck"><input type="checkbox" id="pDis">禁用最后一项（已选）</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>保持选择逻辑清晰、标签可理解，状态反馈符合移动端触控习惯。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>适用范围</td><td>选择多个相互独立的结果，提交或确认后生效。</td><td>只能选一个用单选框；操作后立即生效的设置用开关。</td></tr>
+        <tr><td>数量</td><td>直接展示 2–6 个选项。</td><td>选项很多时改用支持多选的选择列表或独立选择页。</td></tr>
+        <tr><td>标签</td><td>同组标签用同一表达维度；过长时自然换行。</td><td>不把动作、状态和对象混在一组。</td></tr>
+        <tr><td>点击区域</td><td>覆盖图标与标签，热区高度不低于 44。</td><td>不只让小方框可点。</td></tr>
+        <tr><td>半选</td><td>只用于父子层级的汇总反馈；再次点击切换为全选或全不选。</td><td>不作为可直接提交的第三种状态。</td></tr>
+        <tr><td>禁用</td><td>保留当前选择结果，必要时说明不可操作原因。</td><td>禁用项不参与全选。</td></tr>
+        <tr><td>协议确认</td><td>协议、隐私或授权确认默认不勾选；协议链接单独可点。</td><td>点击链接不改变勾选状态。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  let gid=0;
+  const cb=(t,o={})=>`<label class="gj-m-checkbox"><input type="checkbox" class="gj-m-checkbox-input" name="${o.name||'c'}" value="${t}"${o.on?' checked':''}${o.dis?' disabled':''}${o.ind?' data-ind="1"':''}${o.all?' data-all="1"':''}><span class="gj-m-checkbox-icon" aria-hidden="true"></span><span class="gj-m-checkbox-label">${t}</span></label>`;
+  const group=(opts,o={})=>{const name='g'+(++gid);return `<div class="gj-m-checkbox-group" role="group"${o.label?` aria-label="${o.label}"`:''}>${opts.map((t,i)=>cb(t,{name,on:(o.sel||[]).includes(i),dis:(o.dis||[]).includes(i)})).join('')}</div>`};
+  const CSS='html,body{overflow-y:hidden}.scr{width:100%;max-width:3.75rem;margin:0 auto;padding:.16rem var(--space-page-margin-x);background:var(--ds-background-container);box-sizing:border-box}.g{background:var(--ds-background-background);padding:.12rem 0}'+
+    '.row{display:flex;flex-wrap:wrap;gap:.12rem .24rem}.card{background:var(--ds-background-container);padding:.04rem var(--space-page-margin-x) .16rem}.fl{padding:.12rem 0 .08rem;font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)}.fl b{color:var(--ds-feedback-error-rise);font-weight:400;margin-right:.02rem}'+
+    '.val{margin-top:.12rem;font-size:.13rem;line-height:.2rem;color:var(--ds-text-secondary)}.all{padding-bottom:.12rem;margin-bottom:.12rem;box-shadow:inset 0 -1px 0 var(--ds-border-default)}'+
+    '.agree{display:flex;align-items:flex-start;gap:.08rem;font-size:.13rem;line-height:.2rem;color:var(--ds-text-secondary)}.agree .gj-m-checkbox{flex:none;margin-top:0}.agree a{color:var(--ds-text-blue);text-decoration:none;position:relative}.agree a::after{content:"";position:absolute;inset:-.12rem -.02rem}'+
+    '.btn{margin-top:.16rem}.btn .gj-m-button{width:100%}';
+  const show=(k,html)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS,height:'auto'});
+  const IND=f=>f.addEventListener('load',()=>f.contentDocument.querySelectorAll('[data-ind]').forEach(i=>i.indeterminate=true));
+  IND(show('st1',`<div class="scr"><div class="row">${cb('未选',{name:'a'})}${cb('选中',{name:'b',on:1})}${cb('半选',{name:'c',ind:1})}</div></div>`));
+  IND(show('st2',`<div class="scr"><div class="row">${cb('禁用未选',{name:'d',dis:1})}${cb('禁用选中',{name:'e',on:1,dis:1})}${cb('禁用半选',{name:'f',ind:1,dis:1})}</div></div>`));
+  show('g3',`<div class="scr">${group(['股票','债券','基金'],{sel:[0,2]})}</div>`);
+  show('g6',`<div class="scr">${group(['银行','证券','保险','新能源','半导体','医药生物'],{sel:[1,4]})}</div>`);
+  show('exForm',`<div class="scr g"><div class="card"><div class="fl"><b>*</b>投资品种（可多选）</div>${group(['股票','债券','公募基金','私募基金','理财'],{sel:[0,2]})}<div class="fl">接收通知方式</div>${group(['短信','邮件','App 推送'],{sel:[2]})}</div></div>`);
+  const agreeHTML=`<div class="scr g"><div class="card" style="padding-top:.16rem"><div class="agree"><label class="gj-m-checkbox"><input type="checkbox" class="gj-m-checkbox-input" id="ag" aria-label="同意协议"><span class="gj-m-checkbox-icon" aria-hidden="true"></span></label><span>我已阅读并同意<a href="javascript:void 0">《电子签名约定书》</a>和<a href="javascript:void 0">《隐私政策》</a></span></div><div class="btn"><button type="button" class="gj-m-button gj-m-button-primary gj-m-button-large" id="go" disabled>下一步</button></div></div></div>`;
+  const ag=show('exAgree',agreeHTML);ag.addEventListener('load',()=>{const d=ag.contentDocument,c=d.getElementById('ag');c.addEventListener('change',()=>d.getElementById('go').disabled=!c.checked)});
+  const $=id=>document.getElementById(id);const ALL=['股票','债券','公募基金','私募基金','理财','期货'];
+  function renderLab(){const n=+$('pNum').value,showAll=$('pAll').checked,dis=$('pDis').checked;const name='lab';
+    const kids=ALL.slice(0,n).map((t,i)=>cb(t,{name,on:i===0||(dis&&i===n-1),dis:dis&&i===n-1})).join('');
+    const f=GJPhone.swatch($('lab'),{html:`<div class="scr g"><div class="card"><div class="fl">投资品种</div>${showAll?`<div class="all">${cb('全选',{name:'all',all:1})}</div>`:''}<div class="gj-m-checkbox-group" role="group" aria-label="投资品种">${kids}</div><div class="val" id="val"></div></div></div>`,css:CSS,height:'auto'});
+    f.addEventListener('load',()=>{const d=f.contentDocument,all=d.querySelector('[data-all]'),items=[...d.querySelectorAll('.gj-m-checkbox-group .gj-m-checkbox-input')],en=items.filter(i=>!i.disabled);
+      const sync=()=>{if(all){const k=en.filter(i=>i.checked).length;all.checked=k===en.length&&k>0;all.indeterminate=k>0&&k<en.length}d.getElementById('val').textContent='已选 '+items.filter(i=>i.checked).length+' 项：'+(items.filter(i=>i.checked).map(i=>i.value).join('、')||'无')};
+      items.forEach(i=>i.addEventListener('change',sync));if(all)all.addEventListener('change',()=>{en.forEach(i=>i.checked=all.checked);sync()});sync()})}
+  ['pNum','pAll','pDis'].forEach(id=>$(id).addEventListener('change',renderLab));renderLab();
+})();
+</script>
+</body>
+</html>

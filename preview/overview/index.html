@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>总览 · 国金移动端设计规范</title>
+<link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../start.css?v=20261019-start5">
+<link rel="stylesheet" href="overview.css?v=20261019-bg8">
+<script src="../_data/release.js?v=20261020-data1"></script><script src="../phone-stage.js?v=20261020-src1"></script></head>
+<body>
+<main class="start">
+  <header class="hero hero-img">
+    <div class="hero-main">
+    <div class="eyebrow">GJ B2B MOBILE DESIGN SYSTEM · 移动端</div>
+    <h1>统一移动端设计依据，<em>从组件到业务原型</em></h1>
+    <p class="lead">把颜色、字体、布局、图标、组件规则、页面模式和设计审查沉淀下来的页面生成规则组织成一个 Skill，让 AI 按同一套依据生成和检查国金内部员工使用的 B 端移动页面（H5 / 小程序）。</p>
+    <div class="actions">
+      <a class="action primary" href="../index.html#guide" target="_parent">开始使用 Skill</a>
+      <a class="action" href="https://www.figma.com/design/KCpwE2Lh1yCGQ86y8ckYFN" target="_blank" rel="noopener noreferrer">查看 Figma 规范</a>
+    </div>
+    </div>
+    <div class="stats" aria-label="本地资源覆盖数据">
+      <div class="stat"><strong>48</strong><span>已提取组件</span></div>
+      <div class="stat"><strong>7</strong><span>已确认页面模式</span></div>
+      <div class="stat"><strong>19</strong><span>页面生成规则</span></div>
+      <div class="stat"><strong>375</strong><span>设计基准逻辑宽度</span></div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="sec-head">
+      <div><div class="eyebrow">01 · SYSTEM OVERVIEW</div><h2>设计系统包含什么</h2></div>
+      <p class="desc">预览站帮助理解，规则、结构化 JSON 与基座保证生成准确。</p>
+    </div>
+    <div class="grid four">
+      <a class="tile link card-ic" href="../index.html#color" target="_parent"><span class="wm" aria-hidden="true">01</span><span class="ic" style="--i:url('../../assets/icons/iconfont/icf_system_settings-fill.svg')" aria-hidden="true"></span><h3>基础规范</h3><p>颜色、字体、间距、圆角与效果 Token，按 375 基准换算 rem，是组件和页面的共同底座。</p></a>
+      <a class="tile link card-ic" href="../index.html#button" target="_parent"><span class="wm" aria-hidden="true">02</span><span class="ic" style="--i:url('../../assets/icons/iconfont/icf_system_grid-fill.svg')" aria-hidden="true"></span><h3>组件规范</h3><p>48 个组件的结构、状态、规则、映射与审计，原型统一复用 gj-m-* 基座，生成前按名称查询。</p></a>
+      <a class="tile link card-ic" href="../index.html#pattern-workbench" target="_parent"><span class="wm" aria-hidden="true">03</span><span class="ic" style="--i:url('../../assets/icons/iconfont/icf_device_cellphone-fill.svg')" aria-hidden="true"></span><h3>页面模式与规则</h3><p>工作台、列表筛选、详情、表单、日历记录、批量处理、登录 7 种结构，以及 19 条页面生成规则。</p></a>
+      <a class="tile link card-ic" href="../index.html#guide" target="_parent"><span class="wm" aria-hidden="true">04</span><span class="ic" style="--i:url('../../assets/icons/iconfont/icf_system_check-circle-fill.svg')" aria-hidden="true"></span><h3>资源与校验</h3><p>统一图标、毛玻璃 PNG、插图、构建与校验脚本、生成后自检和端到端示例，避免凭经验猜测。</p></a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head">
+      <div><div class="eyebrow">02 · AI-READY PACKAGE</div><h2>设计系统 Skill</h2></div>
+      <p class="desc">发布包不含过程文档和临时文件，只保留 AI 执行与人工验收所需的正式资产。</p>
+    </div>
+    <div class="grid pkg-grid">
+      <div class="tile pkg">
+        <div class="eyebrow">SKILL PACKAGE</div>
+        <h3 class="pkg-title">国金 B 端设计 Skill（移动端）</h3>
+        <p>包含 SKILL.md、Token、48 个组件资料与 gj-m-* 基座、图标与插图、7 个页面模式、页面生成规则、规范站与校验脚本、端到端示例。</p>
+        <div class="pkg-file"><span class="ic sm" style="--i:url('../../assets/icons/iconfont/icf_file_download.svg')" aria-hidden="true"></span><code id="pkgName">gj-b2b-mobile-design-skill-v1.0.0.zip</code><span class="badge">最新版</span></div>
+        <a class="action primary" id="pkgLink" href="https://github.com/qzhang8365-lgtm/GJ_B2B_Mobile/releases/download/v1.0.0/gj-b2b-mobile-design-skill-v1.0.0.zip"><span class="ic sm" style="--i:url('../../assets/icons/iconfont/icf_file_download.svg')" aria-hidden="true"></span><span id="pkgBtn">下载 Skill 包 · v1.0.0</span></a>
+        <p class="note" id="pkgMeta">打包：<code>python3 scripts/build-release.py &lt;版本&gt;</code></p>
+      </div>
+      <div class="tile">
+        <div class="eyebrow">HOW TO USE</div>
+        <h3 class="pkg-title">接入方式</h3>
+        <ol class="howto">
+          <li><span class="n">01</span><p>下载并解压发布包，保持目录结构不变。</p></li>
+          <li><span class="n">02</span><p>放到 AI 可读取的位置，入口为 <code>SKILL.md</code>。</p></li>
+          <li><span class="n">03</span><p>说明运行容器、角色、任务与交付形式。</p></li>
+          <li><span class="n">04</span><p>在 375 / 320 / 768 宽度实测，按自检核对。</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head">
+      <div><div class="eyebrow">03 · UPDATES</div><h2>最近建设内容</h2></div>
+      <p class="desc">按日期倒序。</p>
+    </div>
+    <div class="log"><span class="eyebrow">2026-10-19</span><p>端到端验证 4 个页面（费用报销审批、知识库文章、国金智慧签、登录）；新增登录页面模式、0 级卡片、输入框后缀操作（获取验证码）；新增 PR-016 卡片层级统一、PR-017 操作按钮位置、PR-018 顶部筛选区高度；iOS 输入放大改为按容器处理；提供 Skill 发布包。</p></div>
+    <div class="log"><span class="eyebrow">2026-10-16～19</span><p>新增键盘（系统键盘示意）与 Markdown 文章组件，组件总数 48。</p></div>
+    <div class="log"><span class="eyebrow">2026-10-16</span><p>6 个页面模式经设计方逐页审查后确认；审查意见沉淀为页面生成规则 PR-001～PR-015。</p></div>
+    <div class="log"><span class="eyebrow">2026-10-08 起</span><p>从 Figma 提取基础 Token 与组件，建立 gj-m-* 原型基座、组件审计与交互预览。</p></div>
+  </section>
+
+  <footer class="foot">面向内部员工的 B 端移动产品；gj-m-* 基座用于高保真原型，真实工程的组件 API 以项目组件库为准。</footer>
+</main>
+<script>
+/* 发布包信息来自 preview/_data/release.js（scripts/build-release.py 生成，与 dist/release.json 同内容）；下载链到 GitHub Release 附件。没有时保留页面上的默认值 */
+Promise.resolve((window.GJ_PREVIEW_DATA||{}).release||null).then(d=>{if(!d)return;
+  document.getElementById('pkgName').textContent=d.file;const a=document.getElementById('pkgLink');a.href=d.url||('https://github.com/qzhang8365-lgtm/GJ_B2B_Mobile/releases/download/v'+d.version+'/'+d.file);
+  document.getElementById('pkgBtn').textContent='下载 Skill 包 · v'+d.version;
+  document.getElementById('pkgMeta').textContent=[d.files&&d.files+' 个文件',d.bytes&&(d.bytes/1048576).toFixed(1)+' MB',d.built+' 打包'].filter(Boolean).join(' · ')}).catch(()=>{});
+</script>
+</body>
+</html>

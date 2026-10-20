@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 登录</title>
+  <link rel="stylesheet" href="../../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../../site.css">
+  <link rel="stylesheet" href="../../docs.css">
+  <link rel="stylesheet" href="../pattern-doc.css?v=20261019-login">
+  <script src="../../phone-stage.js?v=20261020-src1"></script>
+  <script src="../../../assets/scripts/gj-m-markup.js?v=20261019-tpl2"></script>
+  <script src="../../../assets/scripts/gj-m-templates.js?v=20261020-src1"></script>
+  <script src="../kit.js?v=20261020-src1"></script>
+  <script src="login.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">页面模式 · Patterns</div>
+    <h1>登录</h1>
+    <p>小程序或 H5 的登录入口：品牌、配图、快捷登录与账号验证码登录两条路径，以及协议勾选。适用于内部工具首次进入或退出后重新登录。</p>
+  </header>
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>页面骨架</h2><p>自上而下的区域顺序；组件内部规格以各组件规范为准。</p></div></header>
+      <div class="anatomy">
+        <div class="panel"><span class="docs-stage-label">国金智慧签 · 登录入口 · 375 × 760</span><div id="anatomy"></div></div>
+        <ol class="regions"><li><span class="n">1</span><div><b>品牌区</b>小程序自定义导航区高 44：左上角 logo 28 + 产品名 H4 16/24，右侧为小程序胶囊按钮留空；H5 同样只放品牌，不放返回。</div></li><li><span class="n">2</span><div><b>配图 + 产品名</b>配图位于中间偏上（下方多留 48）；配图下产品名 H2，再下一行一句说明 P3 三级文字。配图无专用插画时用毛玻璃图标放大。</div></li><li><span class="n">3</span><div><b>主次登录按钮</b>通栏 L 按钮，间距 12：快捷登录（主按钮，小程序授权本机号码）在上，手机号 / 邮箱登录（次按钮）在下。</div></li><li><span class="n">4</span><div><b>协议勾选</b>按钮下方 16，复选框 + P5 12/18 文案，协议名为蓝色文字链接；距底 40 + 安全区。</div></li><li><span class="n">5</span><div><b>账号登录页</b>返回 + 页面标题 H2；输入框 L：账号、验证码（后缀操作“获取验证码”）；通栏主按钮“登录”，两项都填后可点；协议勾选状态与入口页共用。</div></li></ol>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>未勾选协议时登录先弹窗确认；获取验证码前校验账号，发送后 60 秒倒计时；错误提示紧贴对应输入框。</p></div></header>
+      <div class="grid3"><div class="panel"><span class="docs-stage-label">入口 · 未勾选协议</span><div id="s0"></div></div><div class="panel"><span class="docs-stage-label">未勾选时点击登录 · 协议确认弹窗</span><div id="s1"></div></div><div class="panel"><span class="docs-stage-label">账号登录 · 已发送验证码（倒计时）</span><div id="s2"></div></div><div class="panel"><span class="docs-stage-label">账号登录 · 校验错误</span><div id="s3"></div></div><div class="panel"><span class="docs-stage-label">账号登录 · 验证码错误</span><div id="s4"></div></div></div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点击快捷登录或进入账号登录；未勾选协议会弹出确认。账号可用 11 位手机号或邮箱，验证码 123456。</p></div></header>
+      <div class="playground">
+        <div class="panel"><span class="docs-stage-label">H5 · 375 × 640 · 在预览内操作</span><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields"><div class="field"><label for="c0">起始页</label><select id="c0" data-k="view"><option value='"entry"' selected>登录入口</option><option value='"account"'>手机号 / 邮箱登录</option></select></div><div class="field"><label for="c1">协议</label><select id="c1" data-k="agreed"><option value='false' selected>未勾选</option><option value='true'>已勾选</option></select></div>
+          <p class="feedback field-full">示例数据为虚构；跳转类操作只给轻提示。切换控件会重置预览。</p>
+        </div></aside>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用规则</h2><p>模式由已确认的组件规则组合；页面级取值按语义间距。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:46%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody><tr><td>登录路径</td><td>主路径只给两条：快捷登录（主按钮）+ 账号验证码登录（次按钮）；其他方式（如企业账号）放到登录后的“我的”中切换。</td><td>不在入口页堆三个以上通栏按钮；不把次要方式做成同等主按钮。</td></tr><tr><td>协议</td><td>默认不勾选；未勾选时点击任一登录，弹窗说明并提供“同意并继续”，同意后直接继续原操作。</td><td>不用 Toast 提示后让用户自己回去勾选；不默认勾选。</td></tr><tr><td>输入框</td><td>登录页字段含义由标题说明，可只用占位文案（须有 aria-label）；L 尺寸；账号支持手机号或邮箱，按内容判断格式。</td><td>H5 / web-view 页面 viewport 加 maximum-scale=1（输入字号见 input/rules.md）。</td></tr><tr><td>验证码</td><td>输入框后缀操作“获取验证码”：先校验账号，发送后 Toast 告知打码后的号码，60 秒倒计时期间不可点，结束后变为“重新获取”。</td><td>不用独立按钮挤在输入框旁边；倒计时数字用等宽字体。</td></tr><tr><td>登录按钮</td><td>两项都填后才可点；提交时再校验，错误提示在对应输入框下方 4，并把焦点移到该输入框。</td><td>不把错误集中放在按钮上方或只用 Toast。</td></tr><tr><td>品牌与导航</td><td>小程序用自定义导航：只放品牌，不画标题栏；账号登录页用返回回到入口。</td><td>不在品牌区放其他操作，右侧留给胶囊按钮。</td></tr></tbody></table></div>
+      <p class="source">来源：端到端验证「国金智慧签」登录页（planning/e2e/esign-login.html），设计方 2026-10-19 确认为页面模式。</p>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const P=window.GJLogin;const BG='var(--ds-background-background)';
+  const mk=(id,o,h)=>GJPhone.mount(document.getElementById(id),{html:P.page(o),css:P.CSS,width:375,widths:[],height:h,fit:true,background:BG});
+  mk('anatomy',{},760);
+  [[{}, 620], [{"prompt": true}, 620], [{"view": "account", "acc": "13812345678", "sent": 42, "agreed": true}, 620], [{"view": "account", "acc": "1381234", "code": "111111", "accErr": "请输入正确的手机号或邮箱"}, 620], [{"view": "account", "acc": "13812345678", "code": "111111", "codeErr": "验证码错误，请重新输入", "sent": 28}, 620]].forEach(([o,h],i)=>{const el=document.getElementById('s'+i);el.addEventListener('phone:ready',({detail:{doc}})=>{P.wire(doc,Object.assign({},o),()=>{});if(o._y)doc.defaultView.scrollTo(0,o._y)},{once:true});mk('s'+i,o,h)});
+  const host=document.getElementById('lab'),sels=[...document.querySelectorAll('.controls select')];let stage,st,keepY=null;
+  function reset(){st={};sels.forEach(s=>Object.assign(st,{[s.dataset.k]:JSON.parse(s.value)}));keepY=null;render()}
+  function render(){const html=P.page(st);if(stage)stage.setHTML(html);else stage=GJPhone.mount(host,{html,css:P.CSS,width:375,widths:[],height:640,fit:true,background:BG})}
+  host.addEventListener('phone:ready',({detail:{doc}})=>{const W=doc.defaultView;if(keepY!=null){W.scrollTo(0,keepY);keepY=null}
+    P.wire(doc,st,patch=>{keepY=W.scrollY;Object.assign(st,patch);render()})});
+  sels.forEach(s=>s.addEventListener('change',reset));reset();
+})();
+</script>
+</body>
+</html>

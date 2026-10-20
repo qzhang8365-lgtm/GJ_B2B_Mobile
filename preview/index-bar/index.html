@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 索引栏 IndexBar</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .playground .controls .field select{appearance:auto}
+    .showcase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.showcase-grid{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">导航组件 · Navigation</div>
+    <h1>索引栏 IndexBar</h1>
+    <p>用于长列表的快速检索：列表按首字母分组，右侧索引栏列出分组字母，点按或上下滑动即可跳到对应分组。数据项较多、且有明确排序依据（如拼音首字母）时使用。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>索引项每项 48×16，字母 12/18。default 为灰字；active 表示当前所在分组，16 圆形蓝底白字。下方为 2 倍图。</p></div></header>
+      <div class="showcase-grid">
+        <div class="panel gray"><span class="docs-stage-label">default / active · 2x</span><div data-demo="sStates"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">分组标题 anchor · 375 宽</span><div data-demo="sAnchor"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用示例</h2><p>列表按 A～Z 分组，索引项与分组标题保持一致：只列出有数据的字母。索引栏贴列表右侧、垂直居中，当前分组高亮。</p></div></header>
+      <div class="showcase-grid">
+        <div class="panel gray"><span class="docs-stage-label">自选股 · 375 宽</span><div data-demo="exStock"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">客户通讯录 · 375 宽</span><div data-demo="exContact"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点按字母或在索引栏上下滑动，列表跳到对应分组；滚动列表时，当前分组的字母随之高亮。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pSticky">分组标题吸顶</label><select id="pSticky"><option value="1" selected>开启</option><option value="0">关闭</option></select></div>
+          <div class="field"><label for="pData">数据</label><select id="pData"><option value="stock" selected>自选股（22 组）</option><option value="contact">客户通讯录（7 组）</option></select></div>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>选用规则</h2><p>索引栏只做检索跳转，不承载筛选或其他操作。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>何时使用</td><td>数据项较多、按首字母排序的长列表，如股票、客户、机构、城市列表。</td><td>数据少于一屏或没有明确排序依据时不用。</td></tr>
+        <tr><td>索引项</td><td>与分组标题一一对应，只列出有数据的字母；中文按拼音首字母归组。</td><td>不列出没有数据的字母，避免点了没反应。</td></tr>
+        <tr><td>位置</td><td>贴列表容器右侧、垂直居中；列表内容右侧给索引栏让出空间，不被遮挡。</td><td>不放在左侧，不随列表滚动。</td></tr>
+        <tr><td>边距</td><td>分组标题、列表文字与分隔线左侧统一为 16；索引项左右内边距 16，宽 48。</td><td>按 375 基准换算 rem，小屏随屏宽适配。</td></tr>
+        <tr><td>交互</td><td>点按字母跳到对应分组；按住上下滑动可连续切换；滚动列表时同步高亮当前分组。</td><td>单项只有 16 高，不要求逐项 44 热区，整条索引栏响应点按和滑动。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const STOCK={A:['爱尔眼科','安井食品'],B:['比亚迪','宝钢股份','北方华创'],C:['长江电力','长城汽车'],D:['东方财富','大族激光'],E:['鄂尔多斯'],F:['福耀玻璃','复星医药'],G:['贵州茅台','格力电器','国电南瑞'],H:['海天味业','恒瑞医药','海康威视'],J:['京东方A','江苏银行'],K:['科大讯飞','康龙化成'],L:['隆基绿能','立讯精密'],M:['美的集团','牧原股份'],N:['宁德时代','南京银行'],O:['欧派家居'],P:['平安银行','浦发银行'],Q:['青岛啤酒'],S:['三一重工','顺丰控股'],T:['通威股份','天齐锂业'],W:['五粮液','万华化学','闻泰科技'],X:['兴业银行','新希望'],Y:['伊利股份','药明康德','云南白药'],Z:['招商银行','中国平安','中信证券']};
+  const CONTACT={C:['陈思远','程雨桐'],H:['黄嘉怡','何俊杰','胡晓雯'],L:['李明轩','刘雅琪','林子涵'],W:['王浩然','吴静怡'],X:['徐子墨','许诺'],Y:['杨帆','叶清'],Z:['张一鸣','赵欣然','周子豪','郑可']};
+  const bar=(letters,active)=>`<div class="gj-m-index-bar">${letters.map(l=>`<button type="button" class="gj-m-index-bar-item${l===active?' is-active':''}" data-letter="${l}"><span>${l}</span></button>`).join('')}</div>`;
+  const list=(data,sticky)=>Object.entries(data).map(([l,items])=>`<section data-anchor="${l}"><div class="gj-m-index-anchor${sticky?' gj-m-index-anchor-sticky':''}">${l}</div>${items.map(t=>`<div class="li">${t}</div>`).join('')}</section>`).join('');
+  const screen=(data,h,sticky,active)=>`<div class="scr" style="height:${h}rem"><div class="scroll">${list(data,sticky)}</div>${bar(Object.keys(data),active||Object.keys(data)[0])}</div>`;
+  const CSS='html,body{overflow-y:hidden}'+
+    '.scr{position:relative;width:100%;max-width:3.75rem;margin:0 auto;overflow:hidden;background:var(--ds-background-container)}'+
+    '.scroll{height:100%;overflow-y:auto;scrollbar-width:none}.scroll::-webkit-scrollbar{display:none}'+
+    /* 列表行：示例用（列表组件待上传），高 48，左 16，P2 16/24，底部 1px 分隔线缩进 16 */
+    '.li{position:relative;display:flex;align-items:center;height:.48rem;padding:0 .48rem 0 .16rem;margin-left:0;background:var(--ds-background-container);font-size:var(--ds-type-p2-cn-r-font-size);line-height:var(--ds-type-p2-cn-r-line-height);color:var(--ds-text-primary)}'+
+    '.li::after{content:"";position:absolute;left:.16rem;right:0;bottom:0;height:1px;background:var(--ds-border-default)}section .li:last-child::after{display:none}'+
+    '.x2wrap{display:flex;justify-content:center;gap:.48rem;padding-block:.24rem}.x2{transform:scale(2);transform-origin:center}.x2 .gj-m-index-bar{position:static;transform:none}'+
+    '.cap{margin-top:.08rem;text-align:center;font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}.col{display:flex;flex-direction:column;align-items:center}';
+  const show=(key,html)=>GJPhone.swatch(document.querySelector('[data-demo="'+key+'"]'),{html,css:CSS,height:'auto'});
+  show('sStates',`<div class="x2wrap"><div class="col"><div class="x2">${bar(['A'],'')}</div><div class="cap" style="margin-top:.16rem">default</div></div><div class="col"><div class="x2">${bar(['A'],'A')}</div><div class="cap" style="margin-top:.16rem">active</div></div></div>`);
+  show('sAnchor',`<div class="scr">${list({A:['A-title','A-title'],B:['B-title']},false)}</div>`);
+  show('exStock',screen(STOCK,5.6,false,'A'));
+  show('exContact',screen(CONTACT,5.6,false,'C'));
+
+  /* 交互：点按 / 滑动选字母，滚动同步高亮 */
+  function wire(frame){
+    const d=frame.contentDocument,sc=d.querySelector('.scroll'),b=d.querySelector('.gj-m-index-bar');if(!sc||!b)return;
+    const items=[...b.querySelectorAll('.gj-m-index-bar-item')];
+    const setActive=l=>items.forEach(i=>i.classList.toggle('is-active',i.dataset.letter===l));
+    const jump=l=>{const s=d.querySelector('[data-anchor="'+l+'"]');if(s){sc.scrollTop=s.offsetTop;setActive(l)}};
+    const pick=y=>{let best=items[0];for(const i of items){const r=i.getBoundingClientRect();if(y>=r.top)best=i}jump(best.dataset.letter)};
+    let drag=false;
+    b.addEventListener('pointerdown',e=>{drag=true;b.setPointerCapture(e.pointerId);pick(e.clientY);e.preventDefault()});
+    b.addEventListener('pointermove',e=>{if(drag)pick(e.clientY)});
+    const end=()=>{drag=false};b.addEventListener('pointerup',end);b.addEventListener('pointercancel',end);
+    sc.addEventListener('scroll',()=>{if(drag)return;let cur=items[0].dataset.letter;for(const s of d.querySelectorAll('[data-anchor]')){if(s.offsetTop<=sc.scrollTop+1)cur=s.dataset.anchor}setActive(cur)});
+  }
+  const $=id=>document.getElementById(id);
+  const update=()=>{const data=$('pData').value==='stock'?STOCK:CONTACT;const f=GJPhone.swatch($('lab'),{html:screen(data,5.6,$('pSticky').value==='1'),css:CSS,height:'auto'});f.addEventListener('load',()=>wire(f));};
+  $('pSticky').addEventListener('change',update);$('pData').addEventListener('change',update);update();
+  document.querySelectorAll('[data-demo^="ex"] iframe').forEach(f=>f.addEventListener('load',()=>wire(f)));
+})();
+</script>
+</body>
+</html>

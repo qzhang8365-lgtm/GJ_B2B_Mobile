@@ -1,0 +1,49 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "table",
+  "name": "表格 Table",
+  "category": "数据展示组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "表格Table（161:4399）",
+    "nodes": {
+      "regular": "161:4723 Table_Regular（351 宽，圆角 8 裁切）",
+      "popover": "161:4532 Table_Popover（375 宽，Shadow_center，操作列 Shadow_center）",
+      "cell": "161:4459 table_item/cell（text=singleline|Doubleline|checkbox|manage）",
+      "header": "161:4405 table_item/header（select × sort × icon）",
+      "usage": "1109:53"
+    },
+    "extractedAt": "2026-10-14",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-table-wrap > .gj-m-table-scroll > table.gj-m-table（操作列 th/td.gj-m-table-op；.gj-m-table-popover）"
+  },
+  "header": {
+    "height": 46,
+    "padding": "12 16",
+    "background": "Table/head_bg",
+    "text": "P3_CN-R 14/22 Text/Secondary",
+    "sort": "图标库 icf_Arrow_caret（未排序 Text/Tiatery）/ caret-up（升序）/ caret-down（降序）Text/Secondary，间距 4",
+    "tip": "icf_system_question 16 Text/Tiatery，间距 4",
+    "select": "不单独做表头变体，直接用 .gj-m-checkbox 未选 / 选中 / 半选；与文字同格时间距 10"
+  },
+  "cell": {
+    "height": "单行 46 / 双行 68 / 勾选 44（随内容，Figma 2026-10-15）",
+    "padding": "12 16",
+    "background": "Table/table_bg1",
+    "divider": "底部 1px Border/default",
+    "text": "P3_CN-R 14/22 Text/Primary（双行两行同色）",
+    "check": "勾选列宽 52，.gj-m-checkbox",
+    "action": ".gj-m-text-button.gj-m-text-button-blue（Button/Primary/Bg-default）"
+  },
+  "container": {
+    "radius": "Radius-MD 8 裁切",
+    "scroll": "字段多时横向滚动",
+    "fixed": "操作列 .gj-m-table-op 始终固定右侧；有内容被遮住时（.gj-m-table-wrap.is-covered，脚本切换）出现 Shadow_center",
+    "popover": ".gj-m-table-popover：Shadow_center，放在 60% 蒙层上"
+  },
+  "a11y": "th scope=col；排序表头 aria-sort；勾选框 aria-label“选择××”；排序 / 说明 / 操作 / 勾选热区 ≥ 44"
+}

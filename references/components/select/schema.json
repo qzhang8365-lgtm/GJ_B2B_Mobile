@@ -1,0 +1,56 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "select",
+  "name": "选择器 Select",
+  "category": "信息录入组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "选择器Select（155:2402）",
+    "nodes": {
+      "Select": "907:3644（State × Size × Style，20 变体；Text / Icon / Show Icon 属性）",
+      "Picker_view": "158:2359（Columns=1|2）",
+      "Picker_popup": "158:2542",
+      "panel-header": "58:4611 modal_item/panel-header（弹窗Popover 页）",
+      "usage": "1004:42"
+    },
+    "extractedAt": "2026-10-12",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-select(-m|-line) / .gj-m-select-value / .gj-m-select-arrow / .gj-m-picker / .gj-m-picker-column / .gj-m-picker-item / .gj-m-popup(-panel|-panel-sm|-header|-title|-close|-footer)",
+    "note": "原型基座"
+  },
+  "sizes": {
+    "L": { "height": 40, "padding": "8 / 12", "gap": 4, "radius": "Radius-MD 8", "text": "P2_CN-R 16/24", "icon": 20, "arrowGap": 12 },
+    "M": { "height": "control-M 32", "padding": 8, "gap": 4, "radius": "Radius-SM 6", "text": "P3_CN-R 14/22", "icon": 16, "arrowGap": 12 }
+  },
+  "styles": {
+    "default（填充式）": { "bg": "Background/Background", "border": "Border/default" },
+    "stroke（描边式）": { "bg": "Background/Container", "border": "Border/secondary" }
+  },
+  "states": {
+    "default": "占位 Text/disable",
+    "filled": "Text/Primary",
+    "active": "Border/focused，箭头朝上",
+    "disabled": "整体 40%",
+    "error": "Border/error（2026-10-12 新增）；错误提示 Error message：下方 4，P5_CN-R 12/18 Feedback/error&rise（2026-10-14 统一）"
+  },
+  "parts": {
+    "prefixIcon": "可选（Show Icon），Text/Tiatery",
+    "arrow": "Text/Tiatery；基座用 icf_Arrow_down / icf_Arrow_up（矢量与 Figma 一致，见 SE-M-003）"
+  },
+  "picker": {
+    "viewport": 284,
+    "row": "42（内边距 9/6），P2 16/24 Text/Primary 居中",
+    "band": "top 126，上下 1px Border/default",
+    "fade": "上 120 / 下 124 渐隐",
+    "columns": "1 或 2，等分"
+  },
+  "popup": {
+    "mask": "Figma 黑 55%（未绑定）→ 基座 Background/MK_60",
+    "panel": "Background/Container，Picker 顶部圆角 8；Selection Sheet 16",
+    "header": "高 52，内边距 10/12，标题 P2 16/24 Text/Primary 居中，关闭 icf_system_close-md 24 Text/Tiatery"
+  }
+}

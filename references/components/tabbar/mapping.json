@@ -1,0 +1,126 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "tabbar",
+  "figmaComponent": "tabBar（58:552，组件 58:564 / 58:611，说明 997:73）",
+  "prototypeClass": "gj-m-tabbar",
+  "note": "原型基座类名，不代表真实前端组件库 API。App 或小程序已有原生 TabBar 时不重复绘制。",
+  "propertyMap": {
+    "base": "nav.gj-m-tabbar",
+    "Content": "data-content=\"icon+text\"（默认）| \"text\" | \"icon\"",
+    "item": "button.gj-m-tabbar-item",
+    "Active=true": ".is-active + aria-current=\"page\"",
+    "icon": "span.gj-m-tabbar-icon 内放线性（gj-icon-default）与填充（gj-icon-active）两个图标",
+    "Badge=true": "i.gj-m-tabbar-dot（放在 .gj-m-tabbar-icon 内）",
+    "safeArea": "外层 .gj-m-tabbar-safe（底部安全区）",
+    "demoHomeIndicator": ".gj-m-tabbar-home-preview（只用于演示，业务页不画）"
+  },
+  "valueMap": {
+    "height": "内容高 56（max(.56rem,44px)），不含安全区",
+    "padding": "8",
+    "icon": "24",
+    "label.icon+text": "H8 10/14",
+    "label.text": "H5 14/22",
+    "dot": "8",
+    "items": "3–5 个，最多 5 个；标签 2–4 字"
+  },
+  "tokenMap": {
+    "background": "Background/Container（--ds-background-container）",
+    "item.default": "Text/Secondary（--ds-text-secondary）+ 线性图标",
+    "item.active": "Text/blue（--ds-text-blue）+ 填充图标",
+    "dot": "Feedback/error&rise（--ds-feedback-error-rise）",
+    "topLine": "页面自定：0 -1px 0 Border/default"
+  },
+  "assetMap": {
+    "icons": "图标库线性 / 填充成对资源，如 icf_file_document-2-line / -fill、icf_user_user / -fill",
+    "colorRule": "图标用 currentColor，随选中态变色"
+  },
+  "runtimeMap": {
+    "root": "nav.gj-m-tabbar",
+    "item": ".gj-m-tabbar-item",
+    "icon": ".gj-m-tabbar-icon",
+    "label": ".gj-m-tabbar-label",
+    "dot": ".gj-m-tabbar-dot",
+    "safe": ".gj-m-tabbar-safe"
+  },
+  "markup": {
+    "twoItems": "<div class=\"gj-m-tabbar-safe\"><nav class=\"gj-m-tabbar\" data-content=\"icon+text\" aria-label=\"一级导航\"><button type=\"button\" class=\"gj-m-tabbar-item is-active\" aria-current=\"page\"><span class=\"gj-m-tabbar-icon\"><span class=\"gj-icon gj-icon-24 gj-icon-default\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_file_document-2-line.svg')\" aria-hidden=\"true\"></span><span class=\"gj-icon gj-icon-24 gj-icon-active\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_file_document-2-fill.svg')\" aria-hidden=\"true\"></span></span><span class=\"gj-m-tabbar-label\">文件</span></button><button type=\"button\" class=\"gj-m-tabbar-item\" aria-current=\"false\"><span class=\"gj-m-tabbar-icon\"><span class=\"gj-icon gj-icon-24 gj-icon-default\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_user_user.svg')\" aria-hidden=\"true\"></span><span class=\"gj-icon gj-icon-24 gj-icon-active\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_user_user-fill.svg')\" aria-hidden=\"true\"></span></span><span class=\"gj-m-tabbar-label\">我的</span></button></nav></div>",
+    "fourItems": "<div class=\"gj-m-tabbar-safe\"><nav class=\"gj-m-tabbar\" data-content=\"icon+text\" aria-label=\"一级导航\"><button type=\"button\" class=\"gj-m-tabbar-item is-active\" aria-current=\"page\"><span class=\"gj-m-tabbar-icon\"><span class=\"gj-icon gj-icon-24 gj-icon-default\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_home.svg')\" aria-hidden=\"true\"></span><span class=\"gj-icon gj-icon-24 gj-icon-active\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_home-fill.svg')\" aria-hidden=\"true\"></span></span><span class=\"gj-m-tabbar-label\">首页</span></button><button type=\"button\" class=\"gj-m-tabbar-item\" aria-current=\"false\"><span class=\"gj-m-tabbar-icon\"><span class=\"gj-icon gj-icon-24 gj-icon-default\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_user_idcard.svg')\" aria-hidden=\"true\"></span><span class=\"gj-icon gj-icon-24 gj-icon-active\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_user_idcard-fill.svg')\" aria-hidden=\"true\"></span></span><span class=\"gj-m-tabbar-label\">客户</span></button><button type=\"button\" class=\"gj-m-tabbar-item\" aria-current=\"false\"><span class=\"gj-m-tabbar-icon\"><span class=\"gj-icon gj-icon-24 gj-icon-default\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_contact_message.svg')\" aria-hidden=\"true\"></span><span class=\"gj-icon gj-icon-24 gj-icon-active\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_contact_message-fill.svg')\" aria-hidden=\"true\"></span></span><span class=\"gj-m-tabbar-label\">消息</span></button><button type=\"button\" class=\"gj-m-tabbar-item\" aria-current=\"false\"><span class=\"gj-m-tabbar-icon\"><span class=\"gj-icon gj-icon-24 gj-icon-default\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_user_user.svg')\" aria-hidden=\"true\"></span><span class=\"gj-icon gj-icon-24 gj-icon-active\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_user_user-fill.svg')\" aria-hidden=\"true\"></span></span><span class=\"gj-m-tabbar-label\">我的</span></button></nav></div>",
+    "dot": "<span class=\"gj-m-tabbar-icon\">…<i class=\"gj-m-tabbar-dot\" aria-hidden=\"true\"></i></span>（按钮 aria-label 补“，有新信息”）",
+    "fixed": "<div class=\"gj-m-tabbar-safe\" style=\"position:fixed;left:0;right:0;bottom:0;z-index:20;box-shadow:0 -1px 0 var(--ds-border-default)\"><nav class=\"gj-m-tabbar\" …>…</nav></div>",
+    "fromPreview_tabbar_label_tabbar_dot": "<nav class=\"gj-m-tabbar\" data-content=\"text\" aria-label=\"一级导航\"><button type=\"button\" class=\"gj-m-tabbar-item is-active\" data-index=\"0\" aria-current=\"page\" aria-label=\"首页\"><span class=\"gj-m-tabbar-label\">首页</span></button><button type=\"button\" class=\"gj-m-tabbar-item\" data-index=\"1\" aria-current=\"false\" aria-label=\"客户\"><span class=\"gj-m-tabbar-label\">客户</span></button><button type=\"button\" class=\"gj-m-tabbar-item\" data-index=\"2\" aria-current=\"false\" aria-label=\"消息，有新信息\"><span class=\"gj-m-tabbar-label\">消息<i class=\"gj-m-tabbar-dot\" aria-hidden=\"true\"></i></span></button><button type=\"button\" class=\"gj-m-tabbar-item\" data-index=\"3\" aria-current=\"false\" aria-label=\"我的\"><span class=\"gj-m-tabbar-label\">我的</span></button></nav>"
+  },
+  "interactionMap": {
+    "switch": "点击切换选中项与页面；保留各模块浏览位置与筛选状态",
+    "secondLevel": "进入二级页面时隐藏底部导航",
+    "dot": "只提示真实的新信息"
+  },
+  "accessibility": {
+    "root": "nav + aria-label",
+    "item": "button + aria-current=\"page\"",
+    "iconOnly": "纯图标入口必须有 aria-label",
+    "dot": "在可访问名称中说明有新信息"
+  },
+  "composition": {
+    "order": "默认首页入口最左，个人入口（我的、账户）最右，其余按业务优先级",
+    "safe": "固定底栏时正文预留 栏高 + 安全区",
+    "conflict": "不与底部主操作栏同时出现",
+    "native": "容器已有原生 TabBar 时不重复绘制"
+  },
+  "pageRules": {},
+  "pending": {},
+  "markupNote": "markup 中 fromPreview_* 片段由 scripts/check-mapping.cjs 从预览页实际渲染补录（2026-10-19），与预览页一致；其余为手写的常用写法。",
+  "templates": {
+    "tabbar": {
+      "tpl": "{{#safe}}<div class=\"gj-m-tabbar-safe\">{{/safe}}<nav class=\"gj-m-tabbar\" data-content=\"icon+text\" aria-label=\"一级导航\">{{#items}}<button type=\"button\" class=\"gj-m-tabbar-item{{#active}} is-active{{/active}}\" aria-current=\"{{#active}}page{{/active}}{{^active}}false{{/active}}\"><span class=\"gj-m-tabbar-icon\"><span class=\"gj-icon gj-icon-24 gj-icon-default\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/{{icon}}.svg')\" aria-hidden=\"true\"></span><span class=\"gj-icon gj-icon-24 gj-icon-active\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/{{iconOn}}.svg')\" aria-hidden=\"true\"></span>{{#dot}}<i class=\"gj-m-tabbar-dot\" aria-hidden=\"true\"></i>{{/dot}}</span><span class=\"gj-m-tabbar-label\">{{label}}</span></button>{{/items}}</nav>{{#safe}}</div>{{/safe}}",
+      "params": "底部一级导航（图标 + 文字）：safe：外包安全区容器；items：[{label, icon(默认线性), iconOn(选中面性), active, dot(新消息点)}]",
+      "examples": {
+        "twoItems": {
+          "safe": true,
+          "items": [
+            {
+              "label": "文件",
+              "icon": "icf_file_document-2-line",
+              "iconOn": "icf_file_document-2-fill",
+              "active": true
+            },
+            {
+              "label": "我的",
+              "icon": "icf_user_user",
+              "iconOn": "icf_user_user-fill",
+              "active": false
+            }
+          ]
+        },
+        "fourItems": {
+          "safe": true,
+          "items": [
+            {
+              "label": "首页",
+              "icon": "icf_system_home",
+              "iconOn": "icf_system_home-fill",
+              "active": true
+            },
+            {
+              "label": "客户",
+              "icon": "icf_user_idcard",
+              "iconOn": "icf_user_idcard-fill",
+              "active": false
+            },
+            {
+              "label": "消息",
+              "icon": "icf_contact_message",
+              "iconOn": "icf_contact_message-fill",
+              "active": false
+            },
+            {
+              "label": "我的",
+              "icon": "icf_user_user",
+              "iconOn": "icf_user_user-fill",
+              "active": false
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "slider",
+  "name": "滑块 Slider",
+  "category": "信息录入组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "滑块Slider（1822:16186）",
+    "nodes": {
+      "Slider": "1832:49（Type=Continuous|Step × State=Default|Disabled；2026-10-14 经设计方授权由表单页 Form-item/slider、Form-item/slider_rule 合并而来）",
+      "Form_slider": "1008:4851（标题 + 数值 + 连续滑块）",
+      "Form_slider_rule": "1008:4898（标题 + 刻度滑块）"
+    },
+    "extractedAt": "2026-10-14",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": "input[type=range].gj-m-slider / .gj-m-slider-step > .gj-m-slider-labels + .gj-m-slider-rail > .gj-m-slider / .gj-m-form-slider(-head / -value)"
+  },
+  "continuous": {
+    "track": "高 8，圆角 4，Background/Secondary；已选段 Brand/GJ_Blue",
+    "thumb": "28 圆，Background/Container + shadow_small",
+    "hitArea": "控件高 44，外边距抵消后版面高度 8"
+  },
+  "step": {
+    "labels": "P3_CN-R 14/22 Text/Tiatery，当前档 Text/Primary；首末标签贴边，中间标签对准刻度",
+    "gap": "标签与刻度 12",
+    "rail": "刻度线 2×15、横线高 2，Border/secondary；首末刻度中心距两侧 13",
+    "thumb": "28，中心落在刻度上"
+  },
+  "disabled": "整体 40%",
+  "form": "上 8 下 12，标题行与滑块间距 12；数值 N4_NUM-S 20/30 Text/Primary"
+}

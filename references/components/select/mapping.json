@@ -1,0 +1,82 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "select",
+  "figmaComponent": "Select（907:3644）/ Picker_view（158:2359）/ Picker_popup（158:2542）",
+  "prototypeClass": "gj-m-select / gj-m-picker",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "Select": "button.gj-m-select[aria-haspopup=dialog] > [图标] + span.gj-m-select-value + span.gj-m-select-arrow",
+    "Size=M": "gj-m-select-m",
+    "Style=stroke": "gj-m-select-line",
+    "State=default": ".gj-m-select-value.is-placeholder",
+    "State=active": "aria-expanded=\"true\"（展示用 .is-active）",
+    "State=disabled": "disabled（展示用 .is-disabled）",
+    "State=error": "aria-invalid=\"true\"（展示用 .is-error）+ 其后 div.gj-m-select-message",
+    "Picker_view": ".gj-m-picker > ul.gj-m-picker-column[role=listbox] > li.gj-m-picker-item[role=option]",
+    "Picker_popup": ".gj-m-popup > .gj-m-popup-panel.gj-m-popup-panel-sm > .gj-m-popup-header + .gj-m-picker"
+  },
+  "valueMap": {
+    "L": "高 40、内边距 8/12、间距 4、圆角 8、P2 16/24、图标 20",
+    "M": "高 32、内边距 8、圆角 6、P3 14/22、图标 16",
+    "message": "框下方 4，P5 12/18 Feedback/error&rise"
+  },
+  "tokenMap": {
+    "fill": "Background/Background + Border/default",
+    "line": "Background/Container + Border/secondary",
+    "active": "Border/focused",
+    "error": "Border/error",
+    "value": "Text/Primary",
+    "placeholder": "Text/Tiatery",
+    "disabled": "Text/disable"
+  },
+  "assetMap": {
+    "arrow": "{ROOT}assets/icons/iconfont/icf_Arrow_down.svg"
+  },
+  "runtimeMap": {
+    "root": "button.gj-m-select",
+    "value": ".gj-m-select-value",
+    "arrow": ".gj-m-select-arrow",
+    "message": ".gj-m-select-message",
+    "picker": ".gj-m-picker",
+    "column": ".gj-m-picker-column",
+    "item": ".gj-m-picker-item"
+  },
+  "markup": {
+    "placeholder": "<button type=\"button\" class=\"gj-m-select\" aria-haspopup=\"dialog\" aria-expanded=\"false\"><span class=\"gj-m-select-value is-placeholder\">请选择客户类型</span><span class=\"gj-m-select-arrow\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_down.svg')\" aria-hidden=\"true\"></span></span></button>",
+    "filled": "<button type=\"button\" class=\"gj-m-select\" aria-haspopup=\"dialog\" aria-expanded=\"false\"><span class=\"gj-m-select-value\">机构客户</span><span class=\"gj-m-select-arrow\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_down.svg')\" aria-hidden=\"true\"></span></span></button>",
+    "m": "<button type=\"button\" class=\"gj-m-select gj-m-select-m\" aria-haspopup=\"dialog\" aria-expanded=\"false\"><span class=\"gj-m-select-value is-placeholder\">风险等级</span><span class=\"gj-m-select-arrow\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_down.svg')\" aria-hidden=\"true\"></span></span></button>",
+    "error": "<div><button type=\"button\" class=\"gj-m-select gj-m-select-line\" aria-haspopup=\"dialog\" aria-expanded=\"false\" aria-invalid=\"true\"><span class=\"gj-m-select-value is-placeholder\">请选择客户类型</span><span class=\"gj-m-select-arrow\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_down.svg')\" aria-hidden=\"true\"></span></span></button><div class=\"gj-m-select-message\" role=\"alert\">请选择客户类型</div></div>",
+    "picker": "<div class=\"gj-m-picker\"><ul class=\"gj-m-picker-column\" role=\"listbox\" aria-label=\"客户类型\"><li class=\"gj-m-picker-item\" role=\"option\" aria-selected=\"false\">个人客户</li><li class=\"gj-m-picker-item\" role=\"option\" aria-selected=\"true\">机构客户</li><li class=\"gj-m-picker-item\" role=\"option\" aria-selected=\"false\">产品客户</li></ul></div>",
+    "select": "<button type=\"button\" class=\"gj-m-select\" aria-haspopup=\"dialog\" aria-expanded=\"false\" aria-label=\"拜访网点\" data-sel=\"site\"><span class=\"gj-m-select-value is-placeholder\">请选择网点</span><span class=\"gj-m-select-arrow\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></button>"
+  },
+  "interactionMap": {
+    "open": "点击在底部弹层打开选择器（Picker_popup），aria-expanded=true",
+    "confirm": "选择后确认回填；取消或点遮罩不提交",
+    "error": "必填未选时 aria-invalid + 下方提示"
+  },
+  "accessibility": {
+    "trigger": "button + aria-haspopup=\"dialog\" + aria-expanded；无可见标签时 aria-label",
+    "picker": "role=\"listbox\" / role=\"option\" + aria-selected"
+  },
+  "composition": {
+    "choose": "选项 > 3 或需要滚动选择用选择器；2–3 项单选用单选框",
+    "size": "常规表单 L；筛选区、紧凑区 M",
+    "style": "同一表单不混用填充式与描边式"
+  },
+  "pageRules": {
+    "PR-018": "顶部筛选区堆叠时选择器改用 M"
+  },
+  "pending": {},
+  "templates": {
+    "select": {
+      "tpl": "<button type=\"button\" class=\"gj-m-select{{#date}} gj-m-datepicker{{/date}}{{#size}} gj-m-select-{{size}}{{/size}}\" aria-haspopup=\"dialog\" aria-expanded=\"false\"{{#error}} aria-invalid=\"true\"{{/error}} aria-label=\"{{label}}\" data-sel=\"{{key}}\">{{#date}}<span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_calendar.svg')\" aria-hidden=\"true\"></span>{{/date}}<span class=\"gj-m-select-value{{^value}} is-placeholder{{/value}}\">{{#value}}{{value}}{{/value}}{{^value}}{{placeholder}}{{/value}}</span>{{^date}}<span class=\"gj-m-select-arrow\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span>{{/date}}</button>",
+      "example": {
+        "label": "拜访网点",
+        "key": "site",
+        "value": "",
+        "placeholder": "请选择网点"
+      },
+      "params": "选择器触发器；date：日期选择（前缀日历图标、无箭头）；error：错误态；size：m（卡片头部、筛选区等紧凑位置，PR-018）"
+    }
+  }
+}

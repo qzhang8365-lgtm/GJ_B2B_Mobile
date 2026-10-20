@@ -1,0 +1,72 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "gridnav",
+  "figmaComponent": "宫格导航 GridNav（1680:5729；item 1680:6397）",
+  "prototypeClass": "gj-m-gridnav",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "grid": "nav.gj-m-gridnav[data-columns=\"3|4|5\"]",
+    "item": ".gj-m-gridnav-item > img + span",
+    "Medium": "3/4 columns, icon .40rem",
+    "Small": "5 columns, icon .36rem",
+    "Text/Secondary": "--ds-text-secondary",
+    "P5_CN-R": ".gj-mobile-type-p5-cn-r",
+    "pagination": ".gj-m-gridnav-pages + .gj-m-gridnav-indicators"
+  },
+  "valueMap": {
+    "figmaSet": "1680:5729",
+    "unit": "design px at 375",
+    "item": "{\"set\": \"1680:6397\", \"sizes\": {\"Medium\": {\"node\": \"224:391\", \"icon\": 40, \"height\": 70}, \"Small\": {\"node\": \"1680:6398\", \"icon\": 36, \"height\": 62}}, \"iconLabelGap\": 4, \"horizontalPadding\": 16, \"rowGap\": 12, \"textStyle\": \"P5_CN-R\", \"color\": \"Text/Secondary\"}",
+    "pagination": "{\"node\": \"1680:5473\", \"active\": {\"width\": 16, \"height\": 4, \"color\": \"Brand/GJ_Blue\"}, \"inactive\": {\"width\": 4, \"height\": 4, \"color\": \"rgba(0,0,0,0.2)\"}, \"gap\": 3, \"radius\": 4, \"scope\": \"local component values; not global tokens\"}",
+    "responsive": "{\"small\": \"5 columns become 4 at <=359; 3/4 remain; text floor 12px\", \"maxColumns\": 5}"
+  },
+  "tokenMap": {},
+  "assetMap": {
+    "icons": "{ROOT}assets/icons/glassicon/png/*.png（按 references/icons/glass-manifest.json 的 png 字段查找）"
+  },
+  "runtimeMap": {
+    "root": "nav.gj-m-gridnav[data-columns]",
+    "item": ".gj-m-gridnav-item",
+    "pages": ".gj-m-gridnav-pages",
+    "indicators": ".gj-m-gridnav-indicators"
+  },
+  "markup": {
+    "four": "<nav class=\"gj-m-gridnav\" data-columns=\"4\" aria-label=\"功能导航\"><button type=\"button\" class=\"gj-m-gridnav-item\"><img src=\"{ROOT}assets/icons/glassicon/png/investmentManage.png\" alt=\"\" draggable=\"false\"><span class=\"gj-mobile-type-p5-cn-r\">宫格标题</span></button><button type=\"button\" class=\"gj-m-gridnav-item\"><img src=\"{ROOT}assets/icons/glassicon/png/investmentManage.png\" alt=\"\" draggable=\"false\"><span class=\"gj-mobile-type-p5-cn-r\">宫格标题</span></button><button type=\"button\" class=\"gj-m-gridnav-item\"><img src=\"{ROOT}assets/icons/glassicon/png/investmentManage.png\" alt=\"\" draggable=\"false\"><span class=\"gj-mobile-type-p5-cn-r\">宫格标题</span></button></nav>",
+    "gridnav": "<nav class=\"gj-m-gridnav\" data-columns=\"4\" aria-label=\"功能导航\"><button type=\"button\" class=\"gj-m-gridnav-item\" data-go=\"渠道新增\"><img src=\"{ROOT}assets/icons/glassicon/png/building.png\" alt=\"\" draggable=\"false\"><span class=\"gj-mobile-type-p5-cn-r\">渠道新增</span></button><button type=\"button\" class=\"gj-m-gridnav-item\" data-go=\"数据看板\"><img src=\"{ROOT}assets/icons/glassicon/png/data.png\" alt=\"\" draggable=\"false\"><span class=\"gj-mobile-type-p5-cn-r\">数据看板</span></button></nav>"
+  },
+  "accessibility": {
+    "root": "nav + aria-label",
+    "item": "button（或 a）；图标 alt=\"\"，名称为文字"
+  },
+  "composition": {
+    "columns": "3 / 4 列用 Medium（图标 40），5 列用 Small（图标 36）；≤359 宽 5 列变 4 列",
+    "icons": "用毛玻璃 PNG（assets/icons/glassicon/png/），保留透明留白",
+    "text": "标题建议 4 字以内",
+    "more": "超过两行时分组或进入“全部功能”"
+  },
+  "pageRules": {},
+  "pending": {
+    "GN-M-001": "标题最长字数（6 字 vs 4 字）待确认",
+    "GN-M-003": "无按压 / 禁用 / 加载状态变体",
+    "GN-M-004": "5 列四字标题宽度不足"
+  },
+  "templates": {
+    "gridnav": {
+      "tpl": "<nav class=\"gj-m-gridnav\" data-columns=\"{{cols}}\" aria-label=\"功能导航\">{{#items}}<button type=\"button\" class=\"gj-m-gridnav-item\" data-go=\"{{label}}\"><img src=\"{ROOT}assets/icons/glassicon/png/{{icon}}.png\" alt=\"\" draggable=\"false\"><span class=\"gj-mobile-type-p5-cn-r\">{{label}}</span></button>{{/items}}</nav>",
+      "example": {
+        "cols": 4,
+        "items": [
+          {
+            "label": "渠道新增",
+            "icon": "building"
+          },
+          {
+            "label": "数据看板",
+            "icon": "data"
+          }
+        ]
+      },
+      "params": "cols：4 / 5；items：[{label, icon(毛玻璃 PNG 名)}]"
+    }
+  }
+}

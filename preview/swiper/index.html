@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 轮播 Swiper</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid2+.grid2{margin-top:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">展示组件 · Data Display</div>
+    <h1>轮播 Swiper</h1>
+    <p>循环轮播一组图片或内容，也可以左右滑动切换，轮播间隔可以设置。当需要承载一组 banner 或一组图片时使用，常用于营销活动、平台公告等具有时效性的内容入口。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>指示器</h2><p>圆点指示器未选中 8×3、选中 16×3，间距 3。图片偏深用 light（白点），图片偏浅或放在容器外用 dark（蓝点）。数字指示器用于张数较多或需要明确位置的场景。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">圆点 · light / dark · 2x</span><div data-demo="iDots"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">数字 · fraction · 2x</span><div data-demo="iFrac"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用方法</h2><p>均为 375 宽，示例每 3 秒自动切换。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">置于容器内部 · 深色图片 / light</span><div data-demo="uInLight"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">置于容器内部 · 浅色图片 / dark</span><div data-demo="uInDark"></div></div>
+      </div>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">置于容器外部 · 圆角卡片 banner</span><div data-demo="uOut"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">数字指示</span><div data-demo="uFrac"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>左右滑动或拖动切换；松手后继续自动轮播。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pInd">指示器</label><select id="pInd"><option value="light" selected>圆点 · 容器内 light</option><option value="dark">圆点 · 容器内 dark</option><option value="outside">圆点 · 容器外</option><option value="fraction">数字</option></select></div>
+          <div class="field"><label for="pAuto">自动轮播</label><select id="pAuto"><option value="3000" selected>每 3 秒</option><option value="5000">每 5 秒</option><option value="0">关闭</option></select></div>
+          <div class="field"><label for="pLoop">循环</label><select id="pLoop"><option value="1" selected>开启</option><option value="0">关闭</option></select></div>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>选用规则</h2><p>轮播只承载同类、可替换的内容入口。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>何时使用</td><td>一组 banner 或图片，如营销活动、平台公告等时效性内容入口。</td><td>不承载关键操作或必读信息；只有 1 张时不用轮播。</td></tr>
+        <tr><td>数量</td><td>3–5 张为宜，每张对应一个明确入口。</td><td>张数较多时用数字指示器。</td></tr>
+        <tr><td>指示器</td><td>图片偏深用 light，偏浅用 dark；圆角卡片式 banner 指示器放在容器外部、下方 8。</td><td>指示器不响应点击，不与图片内文字重叠。</td></tr>
+        <tr><td>自动轮播</td><td>默认开启，间隔 3–5 秒；用户触摸时暂停，松手后继续。</td><td>系统开启“减少动态效果”时不播放切换动画。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const SLIDES=[['稳健理财季','精选固收+ 产品限时开放','linear-gradient(120deg,#2B73FF,#0095FF)'],['机构服务升级','一站式交易与清算服务','linear-gradient(120deg,#1D3F8F,#2B73FF)'],['新客开户礼','完成开户即享专属权益','linear-gradient(120deg,#CF8B42,#DBA869)'],['投研直播','每周三晚 8 点 首席解读','linear-gradient(120deg,#0E2A5C,#3A5C9E)']];
+  const LIGHT=[['财富月报','9 月市场回顾已发布'],['路演日历','本周 6 场线上路演'],['服务公告','国庆期间交易安排'],['客户调研','您的建议让服务更好']];
+  const slide=(s,i,light,h,rad)=>light
+    ?`<div class="gj-m-swiper-item"><div class="sl light" style="height:${h}rem;${rad?'border-radius:var(--Radius-LG);':''}"><b>${s[0]}</b><span>${s[1]}</span></div></div>`
+    :`<div class="gj-m-swiper-item"><div class="sl" style="height:${h}rem;background:${s[2]};${rad?'border-radius:var(--Radius-LG);':''}"><b>${s[0]}</b><span>${s[1]}</span></div></div>`;
+  const dots=(n,a,cls)=>`<div class="gj-m-swiper-indicator ${cls||''}" aria-hidden="true">${Array.from({length:n},(_,i)=>`<span class="gj-m-swiper-dot${i===a?' is-active':''}"></span>`).join('')}</div>`;
+  /* mode: light | dark | outside | fraction */
+  const swiper=(mode,h=1.2)=>{const light=mode==='dark'||mode==='outside'&&false;const data=mode==='dark'?LIGHT:SLIDES;const out=mode==='outside';
+    const body=`<div class="gj-m-swiper" role="region" aria-roledescription="carousel" aria-label="活动轮播"${out?' style="border-radius:var(--Radius-LG)"':''}><div class="gj-m-swiper-track">${data.map((s,i)=>slide(s,i,mode==='dark',h,out)).join('')}</div>${mode==='light'?dots(data.length,0):mode==='dark'?dots(data.length,0,'gj-m-swiper-indicator-dark'):mode==='fraction'?`<div class="gj-m-swiper-fraction" aria-live="polite">1/${data.length}</div>`:''}</div>`;
+    return out?`<div class="pad">${body}${dots(data.length,0,'gj-m-swiper-indicator-dark gj-m-swiper-indicator-outside')}</div>`:body};
+  const CSS='html,body{overflow-y:hidden}.scr{width:100%;max-width:3.75rem;margin:0 auto;background:var(--ds-background-container)}.pad{padding:.12rem var(--space-page-margin-x)}'+
+    '.sl{display:flex;flex-direction:column;justify-content:center;gap:.04rem;padding:0 .24rem;color:#fff;box-sizing:border-box}.sl b{font-size:.18rem;line-height:.26rem;font-weight:600}.sl span{font-size:.13rem;line-height:.2rem;opacity:.85}'+
+    '.sl.light{background:var(--ds-background-bg-blue,#EEF4FF);color:var(--ds-text-primary)}.sl.light span{color:var(--ds-text-secondary);opacity:1}'+
+    '.x2wrap{display:flex;justify-content:center;gap:1.1rem;padding:.24rem 0}.x2{transform:scale(2)}.chip{display:flex;align-items:center;justify-content:center;width:.9rem;height:.3rem;border-radius:.04rem}.chip .gj-m-swiper-indicator,.chip .gj-m-swiper-fraction{position:static;transform:none}';
+  /* 轮播行为：自动播放、拖动切换、循环 */
+  function wire(frame,opt){const d=frame.contentDocument,w=d.defaultView;d.querySelectorAll('.gj-m-swiper').forEach(sw=>{
+    const track=sw.querySelector('.gj-m-swiper-track'),n=track.children.length;let i=0,timer=null,sx=null,dx=0;
+    const host=sw.parentElement;const dotsEl=[...(sw.querySelectorAll('.gj-m-swiper-dot').length?sw.querySelectorAll('.gj-m-swiper-dot'):host.querySelectorAll('.gj-m-swiper-indicator-outside .gj-m-swiper-dot'))];const frac=sw.querySelector('.gj-m-swiper-fraction');
+    const go=k=>{i=opt.loop?(k+n)%n:Math.max(0,Math.min(n-1,k));track.style.transition='';track.style.transform=`translateX(${-i*100}%)`;dotsEl.forEach((el,j)=>el.classList.toggle('is-active',j===i));if(frac)frac.textContent=`${i+1}/${n}`};
+    const play=()=>{clearInterval(timer);if(opt.auto)timer=w.setInterval(()=>{if(!opt.loop&&i===n-1){clearInterval(timer);return}go(i+1)},opt.auto)};
+    sw.addEventListener('pointerdown',e=>{sx=e.clientX;dx=0;clearInterval(timer);track.style.transition='none';sw.setPointerCapture(e.pointerId)});
+    sw.addEventListener('pointermove',e=>{if(sx===null)return;dx=e.clientX-sx;track.style.transform=`translateX(calc(${-i*100}% + ${dx}px))`});
+    const end=()=>{if(sx===null)return;sx=null;const th=sw.clientWidth*.2;go(dx<-th?i+1:dx>th?i-1:i);play()};
+    sw.addEventListener('pointerup',end);sw.addEventListener('pointercancel',end);
+    go(0);play()})}
+  const show=(k,html,opt)=>{const f=GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS,height:'auto'});if(opt)f.addEventListener('load',()=>wire(f,opt));return f};
+  show('iDots',`<div class="x2wrap"><div class="x2"><div class="chip" style="background:#2B73FF">${dots(4,0)}</div></div><div class="x2"><div class="chip" style="background:#fff">${dots(4,0,'gj-m-swiper-indicator-dark')}</div></div></div>`);
+  show('iFrac',`<div class="x2wrap"><div class="x2"><div class="chip" style="background:#2B73FF"><div class="gj-m-swiper-fraction">1/4</div></div></div></div>`);
+  const AUTO={auto:3000,loop:true};
+  show('uInLight',`<div class="scr">${swiper('light')}</div>`,AUTO);
+  show('uInDark',`<div class="scr">${swiper('dark')}</div>`,AUTO);
+  show('uOut',`<div class="scr">${swiper('outside')}</div>`,AUTO);
+  show('uFrac',`<div class="scr">${swiper('fraction')}</div>`,AUTO);
+  const $=id=>document.getElementById(id);
+  function renderLab(){const f=GJPhone.swatch($('lab'),{html:`<div class="scr">${swiper($('pInd').value,1.6)}</div>`,css:CSS,height:'auto'});f.addEventListener('load',()=>wire(f,{auto:+$('pAuto').value,loop:$('pLoop').value==='1'}))}
+  ['pInd','pAuto','pLoop'].forEach(id=>$(id).addEventListener('change',renderLab));renderLab();
+})();
+</script>
+</body>
+</html>

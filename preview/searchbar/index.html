@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 搜索栏 SearchBar</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid2+.grid2{margin-top:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>搜索栏 SearchBar</h1>
+    <p>在信息密集的页面里快速定位内容，支持输入、清除和提交。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>类型</h2><p>框内按钮用于页内检索；框外按钮用于进入搜索或提交查询。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">框内按钮 · Inside · L / M</span><div data-demo="tIn"></div></div>
+        <div class="panel"><span class="docs-stage-label">框外按钮 · outside · L / M</span><div data-demo="tOut"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>样式与状态</h2><p>填充式为默认样式；描边式适合表单或灰色背景上的筛选，同一区域不混用。激活后显示品牌色边框，有内容时显示清除按钮。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">填充式 · 默认 / 激活</span><div data-demo="sFill"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">描边式 · 默认 / 激活（灰色背景上）</span><div data-demo="sLine"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用示例</h2><p>均为 375 宽。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">列表页 · 页内检索</span><div data-demo="exList"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">独立搜索 · 提交查询</span><div data-demo="exPage"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>勾选“实时搜索”时输入即过滤，否则点“搜索”才提交。可输入“张”或“KH202301”试试。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pBtn">按钮位置</label><select id="pBtn"><option value="in" selected>框内 Inside</option><option value="out">框外 outside</option></select></div>
+          <div class="field"><label for="pStyle">样式</label><select id="pStyle"><option value="fill" selected>填充式</option><option value="line">描边式</option></select></div>
+          <div class="field"><label for="pSize">尺寸</label><select id="pSize"><option value="L">L · 40</option><option value="M" selected>M · 32</option></select></div>
+          <div class="field"><span>演示效果</span><label class="ck"><input type="checkbox" id="pLive" checked>实时搜索：输入时即时过滤并高亮关键字</label></div>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>占位文案</td><td>使用“搜索 + 对象/字段”，如“搜索客户名称或编号”。</td><td>不要只写“请输入”。</td></tr>
+        <tr><td>触发方式</td><td>短列表可实时搜索；大数据查询在提交后触发，并提供加载反馈。</td><td>同一模块内不混用两种触发方式。</td></tr>
+        <tr><td>清除</td><td>有内容时显示清除按钮；清除后保留焦点并恢复默认结果。</td><td>清除不直接退出搜索模式。</td></tr>
+        <tr><td>独立搜索</td><td>框外按钮用于进入独立搜索模式或提交查询；退出时恢复进入前的筛选和滚动位置。</td><td>普通页内检索用框内按钮。</td></tr>
+        <tr><td>关键词高亮</td><td>实时搜索时，结果与联想词中与关键词匹配的文字用品牌蓝（Text/blue）高亮；名称、编号等可搜索字段都参与匹配。</td><td>不加底色、不改字重；只高亮第一处匹配，避免整段变色。</td></tr>
+        <tr><td>结果反馈</td><td>无结果时说明原因，并提供修改关键词、清除筛选等下一步操作。</td><td>不只显示空白。</td></tr>
+        <tr><td>历史与联想</td><td>仅在能提升效率时提供搜索历史与联想词。</td><td>敏感业务数据不得默认保存或跨用户展示。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const icon=n=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${n}.svg')" aria-hidden="true"></span>`;
+  /* o: {btn:'in'|'out', style:'fill'|'line', size:'L'|'M', value, ph, focus} */
+  const search=o=>{const box=`<label class="gj-m-search${o.style==='line'?' gj-m-search-line':''}${o.size==='M'?' gj-m-search-m':''}${o.focus?' is-focused':''}">${icon('icf_system_search')}<input type="search" enterkeyhint="search" placeholder="${o.ph||'搜索客户名称或编号'}" value="${o.value||''}" aria-label="${o.ph||'搜索客户名称或编号'}"><button type="button" class="gj-m-search-clear" aria-label="清除">${icon('icf_system_close-circle-fill')}</button>${o.btn==='in'?'<span class="gj-m-search-divider" aria-hidden="true"></span><span class="gj-m-search-action"><button type="button" class="gj-m-text-button">搜索</button></span>':''}</label>`;
+    return o.btn==='out'?`<div class="gj-m-search-row">${box}<button type="button" class="gj-m-button gj-m-button-primary${o.size==='M'?'':' gj-m-button-large'}"${o.value?'':' disabled'}>搜索</button></div>`:box};
+  const CUST=[['张一鸣','KH20230001','机构客户'],['李明轩','KH20230017','个人客户'],['王浩然','KH20230102','个人客户'],['陈思远','KH20230145','机构客户'],['张欣然','KH20230188','个人客户'],['刘雅琪','KH20230203','机构客户']];
+  const rows=(q)=>{const r=CUST.filter(c=>!q||c[0].includes(q)||c[1].toLowerCase().includes(q.toLowerCase()));const hl=s=>{if(!q)return s;const i=s.toLowerCase().indexOf(q.toLowerCase());return i<0?s:s.slice(0,i)+`<mark class="gj-m-search-highlight">${s.slice(i,i+q.length)}</mark>`+s.slice(i+q.length)};
+    return r.length?r.map(c=>`<div class="li"><div><div class="t">${hl(c[0])}</div><div class="d">${hl(c[1])}</div></div><span class="tg">${c[2]}</span></div>`).join(''):`<div class="empty">未找到与“${q}”相关的客户<br><span>请检查关键词，或换用客户编号搜索</span></div>`};
+  const CSS='html,body{overflow-y:hidden}.scr{width:100%;max-width:3.75rem;margin:0 auto;padding:.12rem var(--space-page-margin-x);background:var(--ds-background-container)}.scr.g{background:var(--ds-background-background)}.stack{display:flex;flex-direction:column;gap:.12rem}'+
+    '.list{margin:.12rem calc(var(--space-page-margin-x)*-1) 0;background:var(--ds-background-container)}.li{display:flex;align-items:center;justify-content:space-between;padding:.12rem var(--space-page-margin-x);box-shadow:inset 0 -1px 0 var(--ds-border-default)}.li .t{font-size:.16rem;line-height:.24rem}.li .d{font-size:.13rem;line-height:.2rem;color:var(--ds-text-tiatery)}.tg{font-size:.12rem;color:var(--ds-text-secondary)}'+
+    '.empty{padding:.32rem .16rem;text-align:center;font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)}.empty span{font-size:.12rem;color:var(--ds-text-tiatery)}'+
+    '.hd{display:flex;align-items:center;height:44px;font-size:.17rem;font-weight:600;justify-content:center}.tags{display:flex;flex-wrap:wrap;gap:.08rem;margin-top:.12rem}.sub{margin-top:.16rem;font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)}';
+  const show=(k,html)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS,height:'auto'});
+  show('tIn',`<div class="scr stack">${search({btn:'in'})}${search({btn:'in',size:'M'})}</div>`);
+  show('tOut',`<div class="scr stack">${search({btn:'out',ph:'搜索产品名称或代码'})}${search({btn:'out',size:'M',value:'稳健增利',focus:1})}</div>`);
+  show('sFill',`<div class="scr stack">${search({btn:'in'})}${search({btn:'in',value:'张',focus:1})}</div>`);
+  show('sLine',`<div class="scr g stack">${search({btn:'in',style:'line'})}${search({btn:'in',style:'line',value:'张',focus:1})}</div>`);
+  show('exList',`<div class="scr">${search({btn:'in',size:'M'})}<div class="list">${rows('')}</div></div>`);
+  show('exPage',`<div class="scr">${search({btn:'out',ph:'搜索产品名称或代码'})}<div class="sub">最近搜索</div><div class="tags"><button type="button" class="gj-m-button gj-m-button-small gj-m-button-ghost gj-m-button-pill">稳健增利 3 号</button><button type="button" class="gj-m-button gj-m-button-small gj-m-button-ghost gj-m-button-pill">固收+</button><button type="button" class="gj-m-button gj-m-button-small gj-m-button-ghost gj-m-button-pill">沪深 300 指数增强</button><button type="button" class="gj-m-button gj-m-button-small gj-m-button-ghost gj-m-button-pill">国金货币</button></div></div>`);
+  function wire(f,o){const d=f.contentDocument,i=d.querySelector('.gj-m-search input'),c=d.querySelector('.gj-m-search-clear'),list=d.querySelector('.list'),btn=d.querySelector('.gj-m-search-row .gj-m-button');
+    const live=o.live!==false;const run=()=>{if(list)list.innerHTML=rows(i.value.trim())};
+    const upd=()=>{if(btn)btn.disabled=!i.value.trim();if(live||!i.value.trim())run()};
+    i.addEventListener('input',upd);c.addEventListener('pointerdown',e=>e.preventDefault());c.addEventListener('click',()=>{i.value='';i.focus();upd();run()});
+    const submit=e=>{if(e)e.preventDefault();run()};d.querySelectorAll('.gj-m-search-action .gj-m-text-button, .gj-m-search-row .gj-m-button').forEach(b=>b.addEventListener('click',submit));
+    i.addEventListener('keydown',e=>{if(e.key==='Enter')submit(e)})}
+  const $=id=>document.getElementById(id);
+  function renderLab(){const o={btn:$('pBtn').value,style:$('pStyle').value,size:$('pSize').value,live:$('pLive').checked};const f=GJPhone.swatch($('lab'),{html:`<div class="scr${o.style==='line'?' g':''}">${search(o)}<div class="list">${rows('')}</div></div>`,css:CSS,height:'auto'});f.addEventListener('load',()=>wire(f,o))}
+  ['pBtn','pStyle','pSize','pLive'].forEach(id=>$(id).addEventListener('change',renderLab));renderLab();
+})();
+</script>
+</body>
+</html>

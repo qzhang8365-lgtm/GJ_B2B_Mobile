@@ -1,0 +1,59 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "upload",
+  "name": "文件上传 Upload",
+  "category": "信息录入组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "上传Upload（1114:815）",
+    "nodes": {
+      "Upload_Button": "1114:883（size=large|medium，Button Tertiary + icf_file_upload）",
+      "Upload_item/File_item": "1114:890（Figma源含Pressed；2026-10-13用户要求基座仅保留Default/Error/Uploading × filesize=false/true）",
+      "usage": "1117:72"
+    },
+    "extractedAt": "2026-10-13",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-upload / -head / -tip / -list / .gj-m-upload-item(.is-uploading|.is-error) / -icon / -name / -base / -ext / -size / -percent / -remove / .gj-m-upload-progress",
+    "button": ".gj-m-button.gj-m-button-tertiary(.gj-m-button-large) + .gj-icon icf_file_upload"
+  },
+  "button": {
+    "large": "40（Button Large left_icon，Figma 内边距 16，圆角 8，图标 20）",
+    "medium": "32（Button Medium left_icon，Figma 内边距 12，圆角 6，图标 16）",
+    "default": "移动端默认大号"
+  },
+  "layout": {
+    "headGap": "按钮与说明间距 12",
+    "listGap": "头部与列表12；多文件列表项之间4（2026-10-13用户确认）",
+    "tip": "网站 P4 13/20 Text/Tiatery（Figma 示意 14，未绑定样式）"
+  },
+  "fileItem": {
+    "height": "Components/control-L 40",
+    "padding": "Interval/space3 8",
+    "gap": "8",
+    "radius": "Radius-MD 8",
+    "icon": "文件图标 20：assets/icons/fileicon/24px-pdf|word|excel|ppt|img|text.svg",
+    "name": "P2_CN-R 16/24 Text/Primary，单行截断，网站保留扩展名",
+    "size": "P5_CN-R 12/18 Text/Tiatery",
+    "remove": "icf_system_close-md 20 Text/Tiatery，热区 44",
+    "uploading": "文件图标 24px-text；「上传中...」P2；进度条高 4 圆角 2，轨道 Background/MK_10，进度 Brand/GJ_Blue，占剩余宽度；百分比 P4 13/20 Text/Primary 或「已传/总大小」P5 Text/Tiatery；网站补充取消按钮",
+    "error": "内容最小高60；Background/BT_R8；错误图标20；文件名P2 16/24 Text/Primary + 原因P5 12/18 Feedback/error&rise，行间距4；大小P5 12/18 Feedback/error&rise；删除图标Text/Tiatery。文本按真实行高自然撑高。",
+    "errorHeight": {
+      "minimumDesignPx": 60,
+      "naturalDesignPx": 62,
+      "rule": "保留24+4+18文字行高与上下8内边距，自然撑高，不裁字；长原因允许继续增高",
+      "confirmedAt": "2026-10-13",
+      "basis": "用户确认"
+    },
+    "iconContainer": "宽20，单行最小高24，上下padding2，图标20；失败项顶部对齐，图标与首行标题中心对齐；多行不垂直居中",
+    "errorSizeText": "P5_CN-R 12/18，Feedback/error&rise（2026-10-13重新核对）"
+  },
+  "states": [
+    "Default",
+    "Error",
+    "Uploading"
+  ]
+}

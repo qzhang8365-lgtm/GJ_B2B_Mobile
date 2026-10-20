@@ -1,0 +1,99 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "filter",
+  "figmaComponent": "筛选 Filter：Filter_item（170:8300）/ Filter_bar（170:8344）/ Filter_panel（1792:14204）/ Filter_sheet（1792:14452）",
+  "prototypeClass": "gj-m-filter",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "Filter_bar": ".gj-m-filter > .gj-m-filter-bar[role=toolbar]",
+    "Align=left": ".gj-m-filter-bar-left",
+    "Filter_item/Filter_item Type=arrow": "button.gj-m-filter-item > .gj-m-filter-item-text + .gj-icon",
+    "Type=icon": "button.gj-m-filter-item.gj-m-filter-item-icon",
+    "State=open": "[aria-expanded=true]",
+    "State=selected": ".is-active",
+    "Filter_panel Type=single": ".gj-m-filter-mask + .gj-m-filter-panel > .gj-m-selection（.gj-m-selection-item[role=radio]）",
+    "Type=multi-list": ".gj-m-filter-panel > .gj-m-selection[role=group] + .gj-m-popup-footer",
+    "Type=multi-chip": ".gj-m-filter-panel > .gj-m-filter-sheet-body + .gj-m-popup-footer",
+    "Filter_sheet": ".gj-m-popup > .gj-m-popup-panel > .gj-m-popup-header + .gj-m-filter-sheet-body > .gj-m-filter-group > .gj-m-filter-group-title + .gj-m-filter-options > button.gj-m-filter-option[aria-pressed] ; + .gj-m-popup-footer",
+    "Filter_bar More=true / Filter_item/Filter_item more=true": ".gj-m-filter-bar-left > … + button.gj-m-filter-more(.is-active)"
+  },
+  "valueMap": {
+    "bar": "{\"height\": 46, \"bg\": \"Background/Container\", \"border\": \"底部 1px Border/default\", \"align\": {\"fill\": \"左右 16 页边距，触发项在内容区内等分、内容居中（默认；2026-10-16 设计方调整，原为无内边距）\", \"left\": \"左右 16、间距 16，触发项 Hug\"}, \"count\": \"1–4；375 均分 4 个条件时每项约 93，文字约 4 字\", \"overflow\": {\"lastAsFilter\": \"超过 4 个条件：第 4 项换成图标型“筛选”，其余条件放全部筛选弹层\", \"moreIcon\": \"左对齐 4 个条件 + 右侧筛选图标（Filter_bar More=true；图标 16，右缘对齐 16 页边距；网站热区宽 44、有已选条件变 Text/blue）\"}, …（完整见 schema.json）",
+    "item": "{\"padding\": \"12/0\", \"gap\": 4, \"text\": \"P3_CN-R 14/22 Text/Secondary\", \"arrow\": \"16 Text/Tiatery，图形 icf_Arrow_down / icf_Arrow_up（Figma 名 caret-down / up；2026-10-13 由 20 改 16）\", \"icon\": \"icf_system_filter 16，在文字前\", \"states\": {\"default\": \"文字 Text/Secondary，箭头 Text/Tiatery\", \"open\": \"文字与图标 Text/blue，箭头朝上\", \"selected\": \"文字 Text/blue，箭头朝下 / 筛选图标 Text/Tiatery；单选可显示已选值，多选与图标型保持维度名，不显示数量\", \"disabled\": \"40…（完整见 schema.json）",
+    "panel": "{\"position\": \"筛选栏下方通栏\", \"bg\": \"Background/Container\", \"maxHeight\": \"60vh（网站补充）\", \"mask\": \"Background/MK_60（网站补充）\", \"content\": \"single：Selection List（行高 46）；multi-list：Selection List 多选 + 清空 / 确认；multi-chip：分组标签（同 Sheet）+ 清空 / 确认\"}",
+    "sheet": "{\"container\": \"Bottom Dialog（顶部圆角 16）+ panel-header（标题 P2 居中、关闭 24）\", \"body\": \"内边距 8/16，组间距 20\", \"groupTitle\": \"H5-CN-S 14/22 Text/Secondary，与选项间距 10\", \"option\": \"1.Button Medium：高 32、左右 16、圆角 6，P3 14/22，换行间距 8；未选 Ghost（Background/Background + Text/Primary），选中 Primary（Button/Primary/Bg-default + Text/reversal）\", \"footer\": \"Modal_buttonset：内边距 16、间距 12，Tertiary「清空」+ Primary「确认」Large\", \"entry\": \"图标型…（完整见 schema.json）"
+  },
+  "tokenMap": {
+    "Text/Secondary / Tiatery / blue / Primary / reversal": "--ds-text-secondary / --ds-text-tiatery / --ds-text-blue / --ds-text-primary / --ds-text-reversal",
+    "Background/Container / Background / Tiatery / MK_60": "--ds-background-container / --ds-background-background / --ds-background-tiatery / --ds-background-mk-60",
+    "Border/default": "--ds-border-default",
+    "Button/Primary/Bg-default": "--ds-button-primary-bg-default",
+    "P3_CN-R / H5-CN-S / P5_CN-R": "--ds-type-p3-cn-r-* / --ds-type-h5-cn-s-* / --ds-type-p5-cn-r-*",
+    "Components/control-S / M": "--control-S / --control-M",
+    "Radius-SM / Radius-full": "--Radius-SM / --Radius-full"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-filter",
+    "bar": ".gj-m-filter-bar",
+    "item": ".gj-m-filter-item",
+    "panel": ".gj-m-filter-panel",
+    "mask": ".gj-m-filter-mask",
+    "sheetBody": ".gj-m-filter-sheet-body",
+    "group": ".gj-m-filter-group",
+    "option": ".gj-m-filter-option",
+    "more": ".gj-m-filter-more"
+  },
+  "markup": {
+    "bar": "<div class=\"gj-m-filter\"><div class=\"gj-m-filter-bar gj-m-filter-bar-left\" role=\"toolbar\" aria-label=\"筛选条件\"><button type=\"button\" class=\"gj-m-filter-item\" aria-expanded=\"false\"><span class=\"gj-m-filter-item-text\">排序</span><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><button type=\"button\" class=\"gj-m-filter-item\" aria-expanded=\"true\"><span class=\"gj-m-filter-item-text\">排序</span><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><button type=\"button\" class=\"gj-m-filter-item is-active\" aria-expanded=\"false\"><span class=\"gj-m-filter-item-text\">近一年收益</span><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></div></div>",
+    "panelSingle": "<div class=\"gj-m-filter-panel\"><div class=\"gj-m-selection\" role=\"radiogroup\"><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"false\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">综合排序</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"true\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">近一年收益</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"false\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">近三月收益</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"false\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">最新净值</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"false\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">成立时间</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button></div></div>",
+    "sheetBody": "<div class=\"gj-m-filter-sheet-body\"><div class=\"gj-m-filter-group\" role=\"group\" aria-label=\"产品类型（可多选）\"><div class=\"gj-m-filter-group-title\">产品类型（可多选）</div><div class=\"gj-m-filter-options\"><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">股票型</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">债券型</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"true\"><span class=\"gj-m-filter-option-text\">混合型</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">货币型</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">指数型</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">QDII</span></button></div></div><div class=\"gj-m-filter-group\" role=\"group\" aria-label=\"风险等级\"><div class=\"gj-m-filter-group-title\">风险等级</div><div class=\"gj-m-filter-options\"><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">R1 低风险</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">R2 中低风险</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"true\"><span class=\"gj-m-filter-option-text\">R3 中风险</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">R4 中高风险</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">R5 高风险</span></button></div></div></div>",
+    "fromPreview_filter_filter_panel": "<div class=\"gj-m-filter\"><div class=\"gj-m-filter-bar\" role=\"toolbar\" aria-label=\"筛选条件\"><button type=\"button\" class=\"gj-m-filter-item\" aria-expanded=\"true\" data-k=\"\"><span class=\"gj-m-filter-item-text\">排序</span><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><button type=\"button\" class=\"gj-m-filter-item\" aria-expanded=\"false\" data-k=\"\"><span class=\"gj-m-filter-item-text\">类型</span><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><button type=\"button\" class=\"gj-m-filter-item\" aria-expanded=\"false\" data-k=\"\"><span class=\"gj-m-filter-item-text\">风险等级</span><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><button type=\"button\" class=\"gj-m-filter-item gj-m-filter-item-icon\" aria-expanded=\"false\" aria-haspopup=\"dialog\" data-k=\"\"><span class=\"gj-m-filter-item-text\">筛选</span><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></div><div class=\"gj-m-filter-mask\"></div><div class=\"gj-m-filter-panel\"><div class=\"gj-m-selection\" role=\"radiogroup\"><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"false\" data-v=\"综合排序\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">综合排序</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"true\" data-v=\"近一年收益\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">近一年收益</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"false\" data-v=\"近三月收益\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">近三月收益</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"false\" data-v=\"最新净值\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">最新净值</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"radio\" aria-checked=\"false\" data-v=\"成立时间\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">成立时间</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button></div></div></div>",
+    "fromPreview_filter_panel_filter_sheet_body": "<div class=\"gj-m-filter\"><div class=\"gj-m-filter-bar\" role=\"toolbar\" aria-label=\"筛选条件\"><button type=\"button\" class=\"gj-m-filter-item\" aria-expanded=\"false\" data-k=\"\"><span class=\"gj-m-filter-item-text\">排序</span><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><button type=\"button\" class=\"gj-m-filter-item\" aria-expanded=\"true\" data-k=\"\"><span class=\"gj-m-filter-item-text\">类型</span><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><button type=\"button\" class=\"gj-m-filter-item\" aria-expanded=\"false\" data-k=\"\"><span class=\"gj-m-filter-item-text\">风险等级</span><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><button type=\"button\" class=\"gj-m-filter-item gj-m-filter-item-icon\" aria-expanded=\"false\" aria-haspopup=\"dialog\" data-k=\"\"><span class=\"gj-m-filter-item-text\">筛选</span><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></div><div class=\"gj-m-filter-mask\"></div><div class=\"gj-m-filter-panel\"><div class=\"gj-m-filter-sheet-body\"><div class=\"gj-m-filter-group\" role=\"group\" aria-label=\"产品类型（可多选）\"><div class=\"gj-m-filter-group-title\">产品类型（可多选）</div><div class=\"gj-m-filter-options\"><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">股票型</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">债券型</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"true\"><span class=\"gj-m-filter-option-text\">混合型</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">货币型</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">指数型</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">QDII</span></button></div></div><div class=\"gj-m-filter-group\" role=\"group\" aria-label=\"风险等级\"><div class=\"gj-m-filter-group-title\">风险等级</div><div class=\"gj-m-filter-options\"><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">R1 低风险</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">R2 中低风险</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"true\"><span class=\"gj-m-filter-option-text\">R3 中风险</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">R4 中高风险</span></button><button type=\"button\" class=\"gj-m-filter-option\" aria-pressed=\"false\"><span class=\"gj-m-filter-option-text\">R5 高风险</span></button></div></div></div><div class=\"gj-m-popup-footer\"><button type=\"button\" class=\"gj-m-button gj-m-button-tertiary gj-m-button-large\" data-act=\"reset\">清空</button><button type=\"button\" class=\"gj-m-button gj-m-button-primary gj-m-button-large\" data-act=\"ok\">确认（2）</button></div></div></div>",
+    "filter": "<div class=\"gj-m-filter\"><div class=\"gj-m-filter-bar\" role=\"toolbar\" aria-label=\"筛选条件\"><button type=\"button\" class=\"gj-m-filter-item\" aria-expanded=\"true\" data-k=\"type\"><span class=\"gj-m-filter-item-text\">客户类型</span><span class=\"gj-icon\" aria-hidden=\"true\"></span></button><button type=\"button\" class=\"gj-m-filter-item is-active\" aria-expanded=\"false\" data-k=\"risk\"><span class=\"gj-m-filter-item-text\">R3</span><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></div><div class=\"gj-m-filter-mask\"></div><div class=\"gj-m-filter-panel\">…</div></div>"
+  },
+  "interactionMap": {
+    "open": "点击触发项展开面板，遮罩覆盖列表区",
+    "select": "单选即关闭并生效；多选在面板底部取消 / 确认",
+    "active": "有已选条件的项 .is-active（Text/blue）"
+  },
+  "accessibility": {
+    "bar": "role=\"toolbar\" + aria-label",
+    "item": "button + aria-expanded（展开面板时 true）",
+    "option": "多选项 aria-pressed；单选面板 role=\"radiogroup\" / role=\"radio\" + aria-checked"
+  },
+  "composition": {
+    "count": "1–4 个条件均分；超过 4 个时第 4 项换图标型“筛选”打开全部筛选",
+    "edge": "均分模式左右也留 16 页边距（PR-006）",
+    "sticky": "与搜索区作为整体吸顶",
+    "result": "单选选中即生效；多选点确认生效"
+  },
+  "pageRules": {
+    "PR-006": "筛选栏内容两端不少于 16",
+    "PR-018": "顶部筛选区控制高度"
+  },
+  "pending": {},
+  "markupNote": "markup 中 fromPreview_* 片段由 scripts/check-mapping.cjs 从预览页实际渲染补录（2026-10-19），与预览页一致；其余为手写的常用写法。",
+  "templates": {
+    "filter": {
+      "tpl": "<div class=\"gj-m-filter\"><div class=\"gj-m-filter-bar{{#left}} gj-m-filter-bar-left{{/left}}\" role=\"toolbar\" aria-label=\"筛选条件\">{{#items}}<button type=\"button\" class=\"gj-m-filter-item{{#active}} is-active{{/active}}\" aria-expanded=\"{{open}}\"{{#key}} data-k=\"{{key}}\"{{/key}}><span class=\"gj-m-filter-item-text\">{{text}}</span><span class=\"gj-icon\" aria-hidden=\"true\"></span></button>{{/items}}</div>{{#panel}}<div class=\"gj-m-filter-mask\"></div><div class=\"gj-m-filter-panel\">{{{panel}}}</div>{{/panel}}</div>",
+      "params": "下拉筛选：left：左对齐；items：[{text, active(已选值), open(展开中，true/false), key}]；panel：展开面板内容 HTML（selection-list.single），不展开时不传",
+      "example": {
+        "items": [
+          {
+            "text": "客户类型",
+            "active": false,
+            "open": true,
+            "key": "type"
+          },
+          {
+            "text": "R3",
+            "active": true,
+            "open": false,
+            "key": "risk"
+          }
+        ],
+        "panel": "…"
+      }
+    }
+  }
+}

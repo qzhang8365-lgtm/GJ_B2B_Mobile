@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 弹窗 Dialog</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">操作反馈组件 · Feedback</div>
+    <h1>弹窗 Dialog</h1>
+    <p>承载必须优先处理的确认、决策或结果，用遮罩暂时中断当前页面。按位置分为居中弹窗和底部弹窗。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section" id="dialog-center">
+      <header class="docs-section-head"><div><h2>居中弹窗</h2><p>简短确认和高优先级结果。头部可由状态图标、标题、正文组合，操作一至两个。状态图标分默认、成功、失败、风险。</p></div></header>
+      <div class="panel gray"><span class="docs-stage-label">头部组合：图标 + 标题 + 正文 / 标题 + 正文 / 图标 + 正文 / 图标 + 标题</span><div data-demo="heads"></div></div>
+      <div class="panel gray" style="margin-top:16px"><span class="docs-stage-label">状态图标：默认 / 成功 / 失败 / 风险</span><div data-demo="status"></div></div>
+      <div class="grid2" style="margin-top:16px">
+        <div class="panel gray"><span class="docs-stage-label">一个操作</span><div data-demo="c1"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">两个操作</span><div data-demo="c2"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="dialog-bottom">
+      <header class="docs-section-head"><div><h2>底部弹窗</h2><p>内容较多、含表单或连续操作时使用。无标题时顶部放拖拽条；有标题时放关闭按钮。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">无标题</span><div data-demo="b1"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">有标题</span><div data-demo="b2"></div></div><div class="panel gray"><span class="docs-stage-label">居中标题与副标题</span><div data-demo="b3"></div></div><div class="panel gray"><span class="docs-stage-label">左对齐标题与副标题</span><div data-demo="b4"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点「收款账户」打开底部弹窗；「立即转账」未选收款账户时提示，选好后显示结果；「删除账户」为危险确认。焦点进入弹窗，关闭后回到触发处。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pType">底部弹窗</label><select id="pType"><option value="titled" selected>有标题</option><option value="sheet">无标题</option></select></div>
+          <label class="ck"><input type="checkbox" id="pSubtitle">显示副标题</label><div class="field"><label for="pSubtitleText">副标题文案</label><input id="pSubtitleText" value="请选择本次转账使用的账户"></div><label class="ck"><input type="checkbox" id="pMask" checked>点击遮罩关闭</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>选用</td><td>居中弹窗用于简短确认和高优先级信息；内容多、含表单时用底部弹窗。</td><td>普通成功提示、无需决策的信息用提示 Notice / Toast。</td></tr>
+        <tr><td>层级</td><td>复杂分支进入独立页面，或在同一弹窗内切换步骤。</td><td>不在弹窗中再打开弹窗。</td></tr>
+        <tr><td>文案</td><td>标题一句话说明任务；正文只写决策所需信息；按钮用“删除、提交”等具体动词。</td><td>不用模糊警告，长说明放详情页。</td></tr>
+        <tr><td>操作</td><td>最多一个主要操作加一个次要操作；危险操作写明对象和后果。</td><td>危险按钮不默认获得焦点；提交中防止重复点击。</td></tr>
+        <tr><td>关闭</td><td>关闭、取消、系统返回结果一致；点击遮罩或下滑是否关闭按风险决定。</td><td>有未保存内容时不直接关闭。</td></tr>
+        <tr><td>滚动</td><td>打开时锁定背景滚动；内容超长只滚动正文，操作区保持可见。</td><td>—</td></tr>
+        <tr><td>无障碍</td><td>焦点进入弹窗并限制在内，关闭后回到触发控件；读屏能读出标题和正文。</td><td>—</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const ic=n=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${n}.svg')" aria-hidden="true"></span>`;
+  const BTN=(t,p,cls='')=>`<button type="button" class="gj-m-button gj-m-button-large ${p?'gj-m-button-primary':'gj-m-button-tertiary'} ${cls}">${t}</button>`;
+  const head=o=>`<div class="gj-m-dialog-header">${o.icon?`<span class="gj-icon gj-m-dialog-icon${o.icon==='default'?'':' is-'+o.icon}" aria-hidden="true"></span>`:''}${o.title?`<h2 class="gj-m-dialog-title" id="dlgT">${o.title}</h2>`:''}${o.msg?`<p class="gj-m-dialog-message" id="dlgM">${o.msg}</p>`:''}</div>`;
+  const panel=(o,btns)=>`<div class="gj-m-dialog-panel" role="dialog" aria-modal="true"${o.title?' aria-labelledby="dlgT"':''}${o.msg?' aria-describedby="dlgM"':''} tabindex="-1">${head(o)}${btns?`<div class="gj-m-dialog-footer">${btns}</div>`:''}</div>`;
+  const center=(o,btns)=>`<div class="gj-m-dialog">${panel(o,btns)}</div>`;
+  const BODY=()=>payeeRows();
+  const sheet=(o)=>`<div class="gj-m-popup"><div class="gj-m-popup-panel gj-m-popup-dialog" role="dialog" aria-modal="true"${o.title?' aria-labelledby="shT"':' aria-label="选择收款账户"'} tabindex="-1">${o.title?`<div class="gj-m-popup-header${o.line?' gj-m-popup-header-line':''}" data-align="${o.align||'center'}"><div class="gj-m-popup-header-row"><span class="gj-m-popup-title" id="shT">${o.title}</span><button type="button" class="gj-m-popup-close" aria-label="关闭">${ic('icf_system_close-md')}</button></div>${o.subtitle?`<p class="gj-m-popup-subtitle">${o.subtitle}</p>`:''}</div>`:'<div class="gj-m-popup-bar" aria-hidden="true"></div>'}<div class="gj-m-popup-body">${o.body||BODY(o.rows||6)}</div><div class="gj-m-popup-footer">${BTN('取消')}${BTN('确认',1)}</div></div></div>`;
+  const CSS='html,body{overflow:hidden;background:transparent}.ph{position:relative;width:100%;max-width:3.75rem;margin:0 auto;height:100%;overflow:hidden;background:var(--ds-background-background);display:flex;flex-direction:column}.ph>.gj-m-navbar{flex:none}'+
+    '.heads{display:flex;flex-direction:column;gap:.12rem;max-width:3.75rem;margin:0 auto;padding:.12rem 0}.heads.st{display:grid;grid-template-columns:repeat(auto-fit,1.60rem);justify-content:center;max-width:none}.heads.hz{grid-template-columns:repeat(auto-fit,1.80rem);align-items:start}.trig{display:flex;flex-direction:column;gap:.12rem}';
+  const FIX='html,body,.page{height:100%}';
+  const APPCSS='.sc{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:var(--space-card-l1-gap);padding:.12rem var(--space-page-margin-x) .16rem}'+
+    '.acc-no{font-size:var(--ds-type-p2-cn-r-font-size);line-height:var(--ds-type-p2-cn-r-line-height);color:var(--ds-text-secondary);font-variant-numeric:tabular-nums}'+
+    '.acc-amt{display:block;font-family:var(--ds-font-family-numeric);font-size:var(--ds-type-n2-num-s-font-size);line-height:var(--ds-type-n2-num-s-line-height);font-weight:var(--ds-type-n2-num-s-font-weight);color:var(--ds-text-primary)}.acc-lb{font-size:var(--ds-type-p5-cn-r-font-size);line-height:var(--ds-type-p5-cn-r-line-height);color:var(--ds-text-tiatery)}'+
+    '.nil{color:var(--ds-text-disable)}.in{color:var(--ds-feedback-error-rise)}.amt{font-family:var(--ds-font-family-numeric)}'+
+    '.ft{flex:none;padding:.12rem var(--space-page-margin-x) calc(.12rem + env(safe-area-inset-bottom,0px));background:var(--ds-background-container);box-shadow:0 -1px 0 var(--ds-border-default)}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+APPCSS+(h?FIX:''),height:h||'auto'});
+
+  show('heads',`<div class="heads st hz">${[{icon:'default',title:'操作反馈',msg:'Dialog message'},{title:'操作反馈',msg:'Dialog message'},{icon:'default',msg:'Dialog message'},{icon:'default',title:'操作反馈'}].map(o=>`<div class="gj-m-dialog-panel">${head(o)}</div>`).join('')}</div>`);
+  show('status',`<div class="heads st">${[['','默认','操作反馈'],['success','成功','提交成功'],['error','失败','提交失败'],['warning','风险','确认删除？']].map(([k,l,t])=>`<div class="gj-m-dialog-panel">${head({icon:k||'default',title:t})}</div>`).join('')}</div>`);
+
+  const PAYEES=[['李四','工商银行','8821'],['王五','建设银行','3307'],['上海国金咨询有限公司','招商银行','6610'],['赵六','农业银行','1192'],['孙七','中国银行','5546'],['周八','交通银行','2085'],['吴九','浦发银行','7731'],['郑十','兴业银行','4468']];
+  const TX=[['工资入账','10-12 09:30','+18,600.00',1],['转账至 李四','10-10 14:22','-3,000.00'],['基金申购 · 国金稳健','10-08 10:05','-10,000.00'],['理财到期赎回','10-01 08:00','+25,382.16',1]];
+  const HEAD=(t,right='')=>`<div class="gj-m-card-head"><div class="gj-m-card-header"><h3 class="gj-m-card-title">${t}</h3>${right}</div></div>`;
+  const LI=(text,extra,o={})=>`<${o.btn?'button type="button"':'div'} class="gj-m-list-item"${o.attrs||''}><span class="gj-m-list-item-content"><span class="gj-m-list-item-main">${o.label?`<span class="gj-m-list-item-label">${o.label}</span>`:''}<span class="gj-m-list-item-text">${text}</span>${o.desc?`<span class="gj-m-list-item-desc">${o.desc}</span>`:''}</span><span class="gj-m-list-item-extra">${extra}</span>${o.btn?`<span class="gj-m-list-item-arrow">${ic('icf_Arrow_right')}</span>`:''}</span></${o.btn?'button':'div'}>`;
+  const APP=()=>`<header class="gj-m-navbar" aria-label="页面导航"><div class="gj-m-navbar-left"></div><div class="gj-m-navbar-center"><span class="gj-m-navbar-title">账户详情</span></div><div class="gj-m-navbar-right"></div></header><div class="sc">
+    <section class="gj-m-card">${HEAD('招商银行 · 储蓄卡','<span class="gj-m-tag gj-m-tag-blue">默认收款</span>')}<div class="gj-m-card-body"><p class="acc-no" style="margin:0">6222 **** **** 1234</p><p style="margin:.12rem 0 0"><span class="acc-lb">可用余额（元）</span><span class="acc-amt">128,560.32</span></p></div></section>
+    <section class="gj-m-card">${HEAD('转账')}<div class="gj-m-card-body"><div class="gj-m-list gj-m-list-in-card">${LI('收款账户','<span class="nil" id="payee">请选择</span>',{btn:1,attrs:' id="pick" aria-haspopup="dialog"'})}${LI('转账金额','20,000.00 元')}${LI('手续费','0.00 元')}</div></div></section>
+    <section class="gj-m-card">${HEAD('账户信息')}<div class="gj-m-card-body"><dl class="gj-m-info-list">${[['开户名','张三'],['开户行','招商银行上海陆家嘴支行'],['账户类型','个人储蓄卡'],['绑定时间','2024-03-18'],['单日限额','500,000.00 元']].map(([k,v])=>`<div class="gj-m-info-item"><dt class="gj-m-info-label">${k}</dt><dd class="gj-m-info-value">${v}</dd></div>`).join('')}</dl></div></section>
+    <section class="gj-m-card">${HEAD('最近交易')}<div class="gj-m-card-body"><div class="gj-m-list gj-m-list-in-card">${TX.map(([t,dt,a,inc])=>LI(t,`<span class="amt${inc?' in':''}">${a}</span>`,{desc:dt})).join('')}</div></div></section>
+  </div><div class="ft"><div class="gj-m-form-actions">${BTN('删除账户',0,'del')}${BTN('立即转账',1,'pay')}</div></div><div id="toast"></div>`;
+  const payeeRows=()=>`<div class="gj-m-selection" role="radiogroup" aria-label="收款账户">${PAYEES.map(([n,b,no],i)=>`<button type="button" class="gj-m-selection-item" role="radio" aria-checked="false" data-i="${i}"><span class="gj-m-selection-item-content"><span class="gj-m-selection-item-text">${n} · ${b} 尾号 ${no}</span><span class="gj-m-selection-check"><span class="gj-icon" aria-hidden="true"></span></span></span></button>`).join('')}</div>`;
+
+  const APPH=APP();
+  show('c1',`<div class="ph">${APPH}${center({icon:'success',title:'转账已提交',msg:'20,000.00 元转至 李四，预计 2 小时内到账。'},BTN('我知道了',1))}</div>`,640);
+  show('c2',`<div class="ph">${APPH}${center({icon:'warning',title:'确认删除该账户？',msg:'删除尾号 1234 的储蓄卡后需重新绑定才能使用。'},BTN('取消')+BTN('删除',1))}</div>`,640);
+  show('b1',`<div class="ph">${APPH}${sheet({body:payeeRows()})}</div>`,640);
+  show('b2',`<div class="ph">${APPH}${sheet({title:'选择收款账户',line:1,body:payeeRows()})}</div>`,640);
+  show('b3',`<div class="ph">${APPH}${sheet({title:'选择收款账户',subtitle:'请选择本次转账使用的账户',body:payeeRows()})}</div>`,640);
+  show('b4',`<div class="ph">${APPH}${sheet({title:'选择收款账户',subtitle:'请选择本次转账使用的账户',align:'left',line:true,body:payeeRows()})}</div>`,640);
+  function render(){const T=$('pType').value,M=$('pMask').checked,S=$('pSubtitle').checked,ST=$('pSubtitleText').value.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));$('pSubtitle').disabled=T!=='titled';$('pSubtitleText').disabled=T!=='titled'||!S;let payee=null;
+    const f=GJPhone.swatch($('lab'),{html:`<div class="ph">${APP()}<div id="host"></div></div>`,css:CSS+APPCSS+FIX,height:640});
+    f.addEventListener('load',()=>{const d=f.contentDocument,host=d.getElementById('host'),toast=d.getElementById('toast');let trigger=null;
+      const say=t=>{clearTimeout(say.t1);clearTimeout(say.t2);toast.innerHTML=`<div class="gj-m-toast-layer" role="status"><div class="gj-m-notice" data-tone="default"><span class="gj-m-notice-text">${t}</span></div></div>`;const el=toast.firstElementChild;say.t1=setTimeout(()=>{el.classList.add('is-leaving');say.t2=setTimeout(()=>{if(toast.firstElementChild===el)toast.innerHTML=''},200)},1500)};
+      const key=e=>{if(e.key==='Escape'){e.preventDefault();close()}
+        if(e.key==='Tab'){const fs=[...host.querySelectorAll('button,[tabindex="0"]')];if(!fs.length)return;const a=fs[0],z=fs[fs.length-1];if(e.shiftKey&&d.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&d.activeElement===z){e.preventDefault();a.focus()}}};
+      const close=(msg)=>{host.innerHTML='';d.removeEventListener('keydown',key,true);if(trigger)trigger.focus();if(msg)say(msg)};
+      const open=(html,from,focusSel)=>{trigger=from;host.innerHTML=html;const mask=host.firstElementChild,pn=mask.firstElementChild;
+        mask.addEventListener('click',e=>{if(e.target===mask&&M)close()});const x=host.querySelector('.gj-m-popup-close');if(x)x.addEventListener('click',()=>close());
+        d.addEventListener('keydown',key,true);(focusSel?host.querySelector(focusSel):pn).focus();return host};
+      const pick=d.getElementById('pick'),del=d.querySelector('.del'),pay=d.querySelector('.pay');
+      const openSheet=from=>{let sel=payee;const h=open(sheet({title:T==='titled'?'选择收款账户':'',subtitle:T==='titled'&&S?ST:'',line:1,body:payeeRows()}),from);
+        h.querySelectorAll('.gj-m-selection-item').forEach(r=>{const choose=()=>{h.querySelectorAll('.gj-m-selection-item').forEach(x=>x.setAttribute('aria-checked','false'));r.setAttribute('aria-checked','true');sel=+r.dataset.i};
+          if(sel===+r.dataset.i)r.setAttribute('aria-checked','true');
+          r.addEventListener('click',choose)});
+        const [no,ok]=h.querySelectorAll('.gj-m-popup-footer .gj-m-button');no.addEventListener('click',()=>close());
+        ok.addEventListener('click',()=>{if(sel==null){say('请选择收款账户');return}payee=sel;const b=d.getElementById('payee');const [n,bk,num]=PAYEES[sel];b.textContent=`${n} · ${bk} ${num}`;b.classList.remove('nil');close()})};
+      pick.addEventListener('click',()=>openSheet(pick));
+      del.addEventListener('click',()=>{const h=open(center({icon:'warning',title:'确认删除该账户？',msg:'删除尾号 1234 的储蓄卡后需重新绑定才能使用，进行中的转账不受影响。'},BTN('取消',0,'no')+BTN('删除',1,'ok')),del,'.no');
+        h.querySelector('.no').addEventListener('click',()=>close());h.querySelector('.ok').addEventListener('click',()=>close('账户已删除'))});
+      pay.addEventListener('click',()=>{
+        if(payee==null){const h=open(center({icon:'error',title:'还未选择收款账户',msg:'请先选择收款账户再转账。'},BTN('取消',0,'no')+BTN('去选择',1,'ok')),pay,'.ok');
+          h.querySelector('.no').addEventListener('click',()=>close());h.querySelector('.ok').addEventListener('click',()=>{close();openSheet(pick)});return}
+        const [n]=PAYEES[payee];const h=open(center({icon:'success',title:'转账已提交',msg:`20,000.00 元转至 ${n}，预计 2 小时内到账。`},BTN('我知道了',1,'ok')),pay,'.ok');
+        h.querySelector('.ok').addEventListener('click',()=>close())})})}
+  $('pType').addEventListener('change',render);$('pMask').addEventListener('change',render);$('pSubtitle').addEventListener('change',render);$('pSubtitleText').addEventListener('input',render);render();
+})();
+</script>
+</body>
+</html>

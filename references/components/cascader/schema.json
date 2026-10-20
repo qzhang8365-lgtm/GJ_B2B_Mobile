@@ -1,0 +1,50 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "cascader",
+  "name": "级联选择器 Cascader",
+  "category": "信息录入组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "级联选择器cascader（58:4517）",
+    "nodes": {
+      "Cascader_item/Item": "58:4532（Level=tab|option × State=default|selected；Tab Text / Option Text）",
+      "Cascader_item/Menu": "58:4539（Level=tab|option × Count=2–6）",
+      "Cascader_item/Body": "1027:10681（Levels=1|2，Filter 布尔）",
+      "Cascader_inline": "1037:11552",
+      "Cascader_sheet": "1026:9767",
+      "Cascader_item/Column_item": "1792:13371（Level=1|2|3 × State=default|selected）",
+      "Cascader_columns": "1792:13384（Levels=2|3）",
+      "usage": "1031:147"
+    },
+    "extractedAt": "2026-10-13",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-cascader / -head / -tabs / -tab / -options / -option / -tree / -tree-col / -tree-item",
+    "note": "末级复用 .gj-m-selection，弹层复用 .gj-m-popup，筛选入口复用 .gj-m-filter-item-icon"
+  },
+  "tabs": {
+    "height": 46,
+    "bg": "Background/Container",
+    "border": "Cascader_item/Body 底部 1px Border/default（描边）：只有一级时在路径栏下，有二级时在选项行下",
+    "item": "左右 12，P3_CN-R 14/22 Text/Secondary；当前 H5-CN-S Text/blue",
+    "overflow": "横向滚动；右侧 Filter_item/Filter_item Type=icon 固定"
+  },
+  "options": {
+    "height": 40,
+    "padding": "0 / 12 / 12（上 / 左右 / 下）",
+    "gap": 8,
+    "item": "高 28（control-S）、左右 12、全圆角（Figma 24）；未选 Background/Background + P4_CN-R 13/20 Text/Secondary；选中 Background/BG_blue + H6-CN-S 13/20 Brand/GJ_Blue",
+    "hit": "向上 4、向下 12，共 44",
+    "overflow": "数量多时横向滑动"
+  },
+  "inline": "Cascader_top：路径栏 + 选项行 + Selection List，选到末级即生效",
+  "sheet": "Cascader_bottom：顶部圆角 16，panel-header + body + Selection List + 取消 / 确认（Large，间距 12）",
+  "columns": {
+    "row": "高 40，内边距 8/16，P3 Text/Primary；选中 Text/blue + H5-CN-S",
+    "cols": "第 1 列 88 Background/Background；第 2 列 Background/Tiatery；第 3 列 Background/Container",
+    "height": "7 行 280，每列独立滚动"
+  }
+}

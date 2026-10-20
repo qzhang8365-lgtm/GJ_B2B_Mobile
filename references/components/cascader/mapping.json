@@ -1,0 +1,53 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "cascader",
+  "figmaComponent": "级联 Cascader：Item（58:4532）/ Menu（58:4539）/ Body（1027:10681）/ inline（1037:11552）/ sheet（1026:9767）/ columns（1792:13384）",
+  "prototypeClass": "gj-m-cascader",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "Cascader_item/Body": "div.gj-m-cascader > .gj-m-cascader-head + .gj-m-cascader-options",
+    "Cascader_item/Menu Level=tab": "div.gj-m-cascader-head > .gj-m-cascader-tabs[role=tablist] > button.gj-m-cascader-tab[role=tab]",
+    "Cascader_item/Item Level=tab, State=selected": "[aria-selected=true]",
+    "Filter=true": "+ button.gj-m-filter-item.gj-m-filter-item-icon",
+    "Cascader_item/Menu Level=option": "div.gj-m-cascader-options[role=listbox] > button.gj-m-cascader-option[role=option]",
+    "Cascader_item/Item Level=option, State=selected": "[aria-selected=true]",
+    "Cascader_inline": "div.gj-m-cascader > … + .gj-m-selection",
+    "Cascader_sheet": ".gj-m-popup > .gj-m-popup-panel > .gj-m-popup-header + .gj-m-cascader + .gj-m-popup-footer",
+    "Cascader_columns": ".gj-m-cascader-columns > .gj-m-cascader-column[role=listbox] × 2|3",
+    "Cascader_item/Column_item State=selected": "button.gj-m-cascader-column-item[aria-selected=true]"
+  },
+  "valueMap": {
+    "tabs": "{\"height\": 46, \"bg\": \"Background/Container\", \"border\": \"Cascader_item/Body 底部 1px Border/default（描边）：只有一级时在路径栏下，有二级时在选项行下\", \"item\": \"左右 12，P3_CN-R 14/22 Text/Secondary；当前 H5-CN-S Text/blue\", \"overflow\": \"横向滚动；右侧 Filter_item/Filter_item Type=icon 固定\"}",
+    "options": "{\"height\": 40, \"padding\": \"0 / 12 / 12（上 / 左右 / 下）\", \"gap\": 8, \"item\": \"高 28（control-S）、左右 12、全圆角（Figma 24）；未选 Background/Background + P4_CN-R 13/20 Text/Secondary；选中 Background/BG_blue + H6-CN-S 13/20 Brand/GJ_Blue\", \"hit\": \"向上 4、向下 12，共 44\", \"overflow\": \"数量多时横向滑动\"}",
+    "inline": "Cascader_top：路径栏 + 选项行 + Selection List，选到末级即生效",
+    "sheet": "Cascader_bottom：顶部圆角 16，panel-header + body + Selection List + 取消 / 确认（Large，间距 12）",
+    "columns": "{\"row\": \"高 40，内边距 8/16，P3 Text/Primary；选中 Text/blue + H5-CN-S\", \"cols\": \"第 1 列 88 Background/Background；第 2 列 Background/Tiatery；第 3 列 Background/Container\", \"height\": \"7 行 280，每列独立滚动\"}"
+  },
+  "tokenMap": {
+    "Text/Secondary / blue / Primary": "--ds-text-secondary / --ds-text-blue / --ds-text-primary",
+    "Background/BG_blue / Background / Tiatery / Container": "--ds-background-bg-blue / --ds-background-background / --ds-background-tiatery / --ds-background-container",
+    "Brand/GJ_Blue": "--ds-brand-gj-blue",
+    "P3_CN-R / H5-CN-S / P4_CN-R / H6-CN-S": "--ds-type-p3-cn-r-* / --ds-type-h5-cn-s-* / --ds-type-p4-cn-r-* / --ds-type-h6-cn-s-*",
+    "Components/control-S": "--control-S"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-cascader",
+    "head": ".gj-m-cascader-head",
+    "tabs": ".gj-m-cascader-tabs",
+    "tab": ".gj-m-cascader-tab",
+    "options": ".gj-m-cascader-options"
+  },
+  "markup": {
+    "body": "<div class=\"gj-m-cascader\"><div class=\"gj-m-cascader-head\"><div class=\"gj-m-cascader-tabs\" role=\"tablist\" aria-label=\"区域\"><button type=\"button\" role=\"tab\" class=\"gj-m-cascader-tab\" aria-selected=\"false\">华东</button><button type=\"button\" role=\"tab\" class=\"gj-m-cascader-tab\" aria-selected=\"false\">华北</button><button type=\"button\" role=\"tab\" class=\"gj-m-cascader-tab\" aria-selected=\"true\">华南</button><button type=\"button\" role=\"tab\" class=\"gj-m-cascader-tab\" aria-selected=\"false\">华中</button><button type=\"button\" role=\"tab\" class=\"gj-m-cascader-tab\" aria-selected=\"false\">西南</button><button type=\"button\" role=\"tab\" class=\"gj-m-cascader-tab\" aria-selected=\"false\">西北</button><button type=\"button\" role=\"tab\" class=\"gj-m-cascader-tab\" aria-selected=\"false\">东北</button></div></div></div>"
+  },
+  "accessibility": {
+    "tabs": "路径栏 role=\"tablist\" / role=\"tab\" + aria-selected",
+    "options": "选项按钮 aria-pressed 或选择列表语义"
+  },
+  "composition": {
+    "inline": "Cascader_top：路径栏 + 选项行 + 选择列表，选到末级即生效",
+    "sheet": "Cascader_bottom：底部弹层 + 取消 / 确认"
+  },
+  "pageRules": {},
+  "pending": {}
+}

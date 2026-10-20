@@ -1,0 +1,177 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "tag",
+  "name": "标签 Tag",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "node": "948:6243",
+    "extractedAt": "2026-10-09",
+    "readOnly": true,
+    "componentSets": {
+      "Tag_small": "948:6308（66 变体）",
+      "Tag_middle": "948:6484（88 变体）",
+      "CornerTag": "948:6683（20 变体）",
+      "circleTag": "948:6441（14 变体）"
+    }
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "classes": [
+      ".gj-m-tag",
+      ".gj-m-corner-tag",
+      ".gj-m-circle-tag"
+    ],
+    "note": "原型基座，不代表真实前端组件库 API；标签为展示元素，无交互状态"
+  },
+  "tag": {
+    "size": {
+      "Medium（Tag_middle，基础类）": {
+        "height": "24（--control-XS）",
+        "paddingX": 8,
+        "gap": 4,
+        "text": "H7_CN-S 12/18 Semibold",
+        "icon": "12（仅 filled）",
+        "iconPaddingX": 6
+      },
+      "Small（Tag_small，-small）": {
+        "height": "20（--control-XXS）",
+        "paddingX": 4,
+        "gap": 4,
+        "text": "H8_CN-S 10/14 Semibold"
+      }
+    },
+    "shape": {
+      "rectangle": "圆角 4（--Radius-XS）",
+      "round": "全圆角（--Radius-full）"
+    },
+    "style": {
+      "Default": "浅色底 Background/BG_<色> + 深色文字",
+      "filled": "主色底 + Text/reversal 白字",
+      "line": "Background/Container 白底 + 0.6px 内描边（主色）+ 主色文字"
+    },
+    "colors": {
+      "blue": {
+        "meaning": "默认、品牌",
+        "main": "Text/blue",
+        "soft": "Background/BG_blue",
+        "text": "Text/blue"
+      },
+      "orange": {
+        "meaning": "警示、待办",
+        "main": "Feedback/warning",
+        "soft": "Background/BG_orange",
+        "text": "Primitive/Orange/O07"
+      },
+      "red": {
+        "meaning": "风险、上涨",
+        "main": "Feedback/error&rise",
+        "soft": "Background/BG_red",
+        "text": "Feedback/error&rise"
+      },
+      "grey": {
+        "main": "Text/Secondary",
+        "soft": "Background/Secondary",
+        "text": "Text/Secondary",
+        "filledBg": "Primitive/Neutral/N07"
+      },
+      "yellow": {
+        "main": "Primitive/Yellow/Y06",
+        "soft": "Background/BG_yellow",
+        "text": "Primitive/Yellow/Y07"
+      },
+      "cyan": {
+        "main": "Primitive/Cyan/C05",
+        "soft": "Background/BG_cyan",
+        "text": "Primitive/Cyan/C07",
+        "lineText": "Primitive/Cyan/C06"
+      },
+      "sky": {
+        "main": "Primitive/Sky/S06",
+        "soft": "Background/BG_sky",
+        "text": "Primitive/Sky/S06"
+      },
+      "deepblue": {
+        "figmaName": "ddeepblue",
+        "main": "Primitive/DeepBlue/DB07",
+        "soft": "Background/BG_deepblue",
+        "text": "Primitive/DeepBlue/DB07"
+      },
+      "purple": {
+        "main": "Primitive/Purple/P06",
+        "soft": "Background/BG_purple",
+        "text": "Primitive/Purple/P06"
+      },
+      "pink": {
+        "main": "Primitive/Pink/PK06",
+        "soft": "Background/BG_pink",
+        "text": "Primitive/Pink/PK06"
+      },
+      "green": {
+        "meaning": "完成、下跌",
+        "main": "Feedback/success&decline",
+        "soft": "Background/BG_green",
+        "text": "Primitive/Green/G07"
+      }
+    },
+    "icon": {
+      "figmaProperty": "Instance#1595:5",
+      "default": "icf_business_stock",
+      "only": "filled",
+      "rule": "图标库取用，颜色跟随文字"
+    },
+    "text": {
+      "figmaProperty": "tag",
+      "default": "基础标签",
+      "maxChars": "建议不超过 6 个汉字"
+    }
+  },
+  "cornerTag": {
+    "size": {
+      "Regular（基础类）": {
+        "height": 24,
+        "paddingX": 6,
+        "text": "P5_CN-R 12/18"
+      },
+      "Small（-small）": {
+        "height": 20,
+        "paddingX": 6,
+        "text": "P6_CN-R 10/16"
+      }
+    },
+    "radius": "左上、右下 8（--Radius-MD，随容器圆角），右上、左下 0",
+    "colors": {
+      "blue": "极客蓝渐变 --ds-gradient-f689524a0624",
+      "red": "国金红渐变 --ds-gradient-e6957da9728b",
+      "purple": "国金紫渐变 --ds-gradient-4735d2588eea",
+      "gold": "高端金渐变 --ds-gradient-cebca2d10361",
+      "black": "Background/MK_60（黑 60%）"
+    },
+    "text": "Text/reversal",
+    "icon": "可选，12，默认 icf_business_stock，颜色跟随文字"
+  },
+  "circleTag": {
+    "size": "20×20 圆形",
+    "text": "H8_CN-S 10/14 单字",
+    "default": {
+      "bg": "Background/Secondary",
+      "text": "Text/Tiatery",
+      "meaning": "未开通"
+    },
+    "active": {
+      "bg": "Primitive/Blue/B03",
+      "text": "Primitive/Blue/B08",
+      "meaning": "已开通"
+    },
+    "figmaTexts": [
+      "港",
+      "北",
+      "三",
+      "创",
+      "科",
+      "期",
+      "融"
+    ],
+    "usage": "客户各证券市场开户情况：Default 未开通（灰），active 已开通（蓝，点亮）；7 个市场固定顺序成组展示，间距 4"
+  }
+}

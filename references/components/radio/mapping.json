@@ -1,0 +1,76 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "radio",
+  "figmaComponent": "Radio/Icon（216:5181）/ Radio（216:5194）/ Radio/Group（216:5339）",
+  "prototypeClass": "gj-m-radio",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "Radio": "label.gj-m-radio > input[type=radio].gj-m-radio-input + span.gj-m-radio-icon + span.gj-m-radio-label",
+    "Checked=true": "input checked（展示用 .is-checked）",
+    "Disabled=true": "input disabled（展示用 .is-disabled）",
+    "Radio/Group": "div.gj-m-radio-group[role=radiogroup]（同组同 name）",
+    "number": "选项个数，横排自动换行"
+  },
+  "valueMap": {
+    "icon": "20（圆形）",
+    "group": "横排间距 24，换行行距 12",
+    "hitArea": "44（组件自身扩展）",
+    "label": "P3 14/22，图标到文字 8"
+  },
+  "tokenMap": {
+    "default": "Background/Container + Border/secondary",
+    "checked": "Brand/GJ_Blue（--ds-brand-gj-blue）",
+    "label": "Text/Primary",
+    "disabled": "Text/disable"
+  },
+  "runtimeMap": {
+    "root": "label.gj-m-radio",
+    "input": ".gj-m-radio-input",
+    "icon": ".gj-m-radio-icon",
+    "label": ".gj-m-radio-label",
+    "group": ".gj-m-radio-group"
+  },
+  "markup": {
+    "group": "<div class=\"gj-m-radio-group\" role=\"radiogroup\" aria-label=\"需求状态\" data-radios=\"status\"><label class=\"gj-m-radio\"><input type=\"radio\" class=\"gj-m-radio-input\" name=\"status\" value=\"已满足\" checked><span class=\"gj-m-radio-icon\" aria-hidden=\"true\"></span><span class=\"gj-m-radio-label\">已满足</span></label><label class=\"gj-m-radio\"><input type=\"radio\" class=\"gj-m-radio-input\" name=\"status\" value=\"未满足\"><span class=\"gj-m-radio-icon\" aria-hidden=\"true\"></span><span class=\"gj-m-radio-label\">未满足</span></label></div>",
+    "disabled": "<label class=\"gj-m-radio\"><input type=\"radio\" class=\"gj-m-radio-input\" name=\"st2\" disabled><span class=\"gj-m-radio-icon\" aria-hidden=\"true\"></span><span class=\"gj-m-radio-label\">无法解决</span></label>",
+    "setDefault": "<label class=\"gj-m-radio\"><input type=\"radio\" class=\"gj-m-radio-input\" name=\"def\" checked><span class=\"gj-m-radio-icon\" aria-hidden=\"true\"></span><span class=\"gj-m-radio-label\">默认签名</span></label>"
+  },
+  "interactionMap": {
+    "select": "同组互斥，点击整个 label 选中",
+    "keyboard": "方向键在同组间移动（原生行为）"
+  },
+  "accessibility": {
+    "group": "role=\"radiogroup\" + aria-label；同组 input 同 name",
+    "input": "原生 radio"
+  },
+  "composition": {
+    "use": "2–3 个选项的单选用单选框横排；选项更多用选择器",
+    "noButtons": "单选不改为按钮组合（PR-009）"
+  },
+  "pageRules": {
+    "PR-009": "单选 2–3 项保持单选框横排",
+    "PR-010": "标签到控件间距 8，热区由组件扩展"
+  },
+  "pending": {},
+  "templates": {
+    "group": {
+      "tpl": "<div class=\"gj-m-radio-group\" role=\"radiogroup\" aria-label=\"{{label}}\" data-radios=\"{{key}}\">{{#items}}<label class=\"gj-m-radio\"><input type=\"radio\" class=\"gj-m-radio-input\" name=\"{{name}}\" value=\"{{text}}\"{{#checked}} checked{{/checked}}><span class=\"gj-m-radio-icon\" aria-hidden=\"true\"></span><span class=\"gj-m-radio-label\">{{text}}</span></label>{{/items}}</div>",
+      "example": {
+        "label": "需求状态",
+        "key": "status",
+        "name": "status",
+        "items": [
+          {
+            "text": "已满足",
+            "checked": true
+          },
+          {
+            "text": "未满足",
+            "checked": false
+          }
+        ]
+      },
+      "params": "单选横排（2–3 项，PR-009）"
+    }
+  }
+}

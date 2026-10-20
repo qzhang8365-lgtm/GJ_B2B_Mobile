@@ -1,0 +1,105 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "info-list",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "figmaComponent": "信息列表 List（1871:20013）：info_list_item/horizontal、vertical、Info_List、Info_Grid",
+  "prototypeClass": "gj-m-info-list",
+  "propertyMap": {
+    "Align=justify": "dl.gj-m-info-list > div.gj-m-info-item > dt.gj-m-info-label + dd.gj-m-info-value（默认）",
+    "Align=start": "gj-m-info-list-inline（标签带冒号、内容左对齐）",
+    "vertical": "gj-m-info-list-vertical",
+    "Info_Grid": "gj-m-info-grid（两列）",
+    "无分割线": "gj-m-info-list-plain（可与其他排列组合）",
+    "Nodata=true": "值写 --",
+    "infoicon=true": "dt 内 button.gj-m-info-tip",
+    "紧凑行": "gj-m-info-list-compact（对象信息头：标签不定宽、P4 三级文字，值单行省略；配合 -plain，PR-020）"
+  },
+  "valueMap": {
+    "row": "上下 12（plain 为 4），底部 1px 分割线",
+    "label": "P3 14/22 Text/Secondary，不换行",
+    "value": "P3 14/22 Text/Primary，可换行",
+    "inline": "标签最小宽 92，间距 12",
+    "vertical": "标签 P4 13/20 在上，间距 4",
+    "grid": "两列，分割线两侧各 12，单行省略",
+    "tip": "icf_system_info 16，间距 4，热区 44"
+  },
+  "tokenMap": {
+    "background": "Background/Container",
+    "divider": "Border/default",
+    "label": "Text/Secondary",
+    "value": "Text/Primary",
+    "tip": "Text/Tiatery"
+  },
+  "assetMap": {
+    "tip": "{ROOT}assets/icons/iconfont/icf_system_info.svg"
+  },
+  "runtimeMap": {
+    "root": "dl.gj-m-info-list",
+    "item": ".gj-m-info-item",
+    "label": "dt.gj-m-info-label",
+    "value": "dd.gj-m-info-value",
+    "tip": ".gj-m-info-tip"
+  },
+  "markup": {
+    "justify": "<dl class=\"gj-m-info-list\"><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">客户号</dt><dd class=\"gj-m-info-value\">80012345</dd></div><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">开户日期</dt><dd class=\"gj-m-info-value\">2024-03-18</dd></div></dl>",
+    "inlinePlain": "<dl class=\"gj-m-info-list gj-m-info-list-inline gj-m-info-list-plain\"><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">费用期间：</dt><dd class=\"gj-m-info-value\">2026-10-08 至 2026-10-10</dd></div><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">报销类型：</dt><dd class=\"gj-m-info-value\"><span class=\"gj-m-tag gj-m-tag-blue gj-m-tag-filled\">差旅</span></dd></div></dl>",
+    "vertical": "<dl class=\"gj-m-info-list gj-m-info-list-vertical\"><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">事由</dt><dd class=\"gj-m-info-value\">赴成都开展季度渠道拜访</dd></div></dl>",
+    "grid": "<dl class=\"gj-m-info-list gj-m-info-grid\"><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">风险等级</dt><dd class=\"gj-m-info-value\">C3</dd></div><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">持仓数</dt><dd class=\"gj-m-info-value\">5</dd></div></dl>",
+    "tip": "<dt class=\"gj-m-info-label\"><span class=\"gj-m-info-label-text\">可用资金</span><button type=\"button\" class=\"gj-m-info-tip\" aria-label=\"可用资金说明\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_info.svg')\" aria-hidden=\"true\"></span></button></dt>",
+    "list": "<dl class=\"gj-m-info-list gj-m-info-list-inline gj-m-info-list-plain\"><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">所属网点：</dt><dd class=\"gj-m-info-value\">建设银行建国路支行</dd></div><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">需求类型：</dt><dd class=\"gj-m-info-value\">AUM / 存款提升</dd></div></dl>",
+    "compact": "<dl class=\"gj-m-info-list gj-m-info-list-compact gj-m-info-list-plain\"><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">已签（30）：</dt><dd class=\"gj-m-info-value\">AI+投顾、AI股票解套、AI选好股</dd></div><div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">服务阶段：</dt><dd class=\"gj-m-info-value\">建立信任阶段</dd></div></dl>"
+  },
+  "accessibility": {
+    "semantics": "dl / dt / dd 表达名称与内容",
+    "tip": "button + aria-label“××说明”，热区 44"
+  },
+  "composition": {
+    "inCard": "放在卡片内，首行上、末行下内边距由基座清零（PR-007）",
+    "records": "混合记录列表的字段用文本行“字段名：值”，不用信息列表（PR-011）",
+    "tagValue": "标签可作为值，用 Medium",
+    "profileExpanded": "PR-020：compact只用于收起摘要及短字段；展开后完整服务段落允许自然换行，不使用compact截断；服务阶段右侧保留收起按钮。",
+    "inlineTypography": "PR-032：同一信息行字段名和值优先同字号/行高，用Text/Tiatery与Text/Primary区分，不只缩小字段名"
+  },
+  "pageRules": {
+    "PR-007": "卡片内信息列表首末行不再叠加内边距",
+    "PR-011": "记录列表字段用文本行，不用信息列表",
+    "PR-005": "标签作为值时用 Medium",
+    "PR-020": "对象信息头收起紧凑、展开完整展示（2026-10-19设计方截图）",
+    "PR-032": "卡片信息列表同一行优先同字号与行高"
+  },
+  "pending": {},
+  "templates": {
+    "list": {
+      "tpl": "<dl class=\"gj-m-info-list {{cls}}\">{{#rows}}<div class=\"gj-m-info-item\"><dt class=\"gj-m-info-label\">{{label}}</dt><dd class=\"gj-m-info-value\">{{{value}}}</dd></div>{{/rows}}</dl>",
+      "params": "cls：布局类（gj-m-info-list-inline / -vertical / -compact，可加 -plain）；rows：[{label, value(HTML，空值传 --)}]",
+      "examples": {
+        "list": {
+          "cls": "gj-m-info-list-inline gj-m-info-list-plain",
+          "rows": [
+            {
+              "label": "所属网点：",
+              "value": "建设银行建国路支行"
+            },
+            {
+              "label": "需求类型：",
+              "value": "AUM / 存款提升"
+            }
+          ]
+        },
+        "compact": {
+          "cls": "gj-m-info-list-compact gj-m-info-list-plain",
+          "rows": [
+            {
+              "label": "已签（30）：",
+              "value": "AI+投顾、AI股票解套、AI选好股"
+            },
+            {
+              "label": "服务阶段：",
+              "value": "建立信任阶段"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

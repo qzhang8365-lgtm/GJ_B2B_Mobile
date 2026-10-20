@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 列表 + 搜索 / 筛选</title>
+  <link rel="stylesheet" href="../../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../../site.css">
+  <link rel="stylesheet" href="../../docs.css">
+  <style>
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-background);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel>.docs-stage-label{flex:none}
+    .anatomy{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:24px;align-items:start}
+    .regions{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+    .regions li{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:12px 16px;background:var(--ds-background-background);border-radius:8px;font-size:13px;line-height:20px;color:var(--ds-text-secondary)}
+    .regions b{display:block;color:var(--ds-text-primary);font-size:14px;line-height:22px;font-weight:600}
+    .regions .n{display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--ds-brand-gj-blue);color:#fff;font-size:12px;font-weight:600}
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .field-full{grid-column:1/-1}
+    .feedback{margin:0;font-size:13px;line-height:22px;color:var(--ds-text-secondary)}
+    @media(max-width:1100px){.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:960px){.grid2,.grid3,.anatomy{grid-template-columns:1fr}}
+  </style>
+  <script src="../../phone-stage.js?v=20261020-src1"></script>
+  <script src="../../../assets/scripts/gj-m-markup.js?v=20261019-tpl2"></script>
+  <script src="../../../assets/scripts/gj-m-templates.js?v=20261020-src1"></script>
+  <script src="list-filter.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">页面模式 · Patterns</div>
+    <h1>列表 + 搜索 / 筛选</h1>
+    <p>浏览一组同类对象并进入详情，如客户、产品、待办、委托记录。由搜索栏、筛选栏、列表导航（或卡片）、加载与空状态组合而成。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>页面骨架</h2><p>自上而下的区域顺序；组件内部规格以各组件规范为准。</p></div></header>
+      <div class="anatomy">
+        <div class="panel"><span class="docs-stage-label">客户列表 · 375 × 720</span><div id="anatomy"></div></div>
+        <ol class="regions">
+          <li><span class="n">1</span><div><b>顶部导航 Navbar</b>容器不提供导航时才绘制；标题写对象集合名。页内已有搜索栏时，右侧不再放搜索图标。</div></li>
+          <li><span class="n">2</span><div><b>搜索区 SearchBar</b>L 填充式，白底，上下 8、左右 16。占位写“搜索 + 对象 / 字段”。短列表实时搜索，大数据量提交后搜索。</div></li>
+          <li><span class="n">3</span><div><b>筛选栏 Filter</b>高 46，均分 1–4 个条件；超过 4 个时第 4 项换图标型“筛选”。搜索区与筛选栏整体吸顶。</div></li>
+          <li><span class="n">4</span><div><b>结果概要（可选）</b>搜索或筛选生效后显示“共 N 个结果”，12/18 三级文字。</div></li>
+          <li><span class="n">5</span><div><b>列表 ListBar / 卡片</b>默认通栏列表：头像、名称、编号与关键属性、状态标签、箭头。每项信息超过 3 行或需多个指标时改用卡片列表，卡片间距 12。</div></li>
+          <li><span class="n">6</span><div><b>列表尾</b>到底自动加载下一页，显示加载中；全部加载后显示“没有更多了”。</div></li>
+          <li><span class="n">7</span><div><b>回到顶部 Floating Button</b>滚动超过约一屏后出现，距右 16、距底 24 + 安全区，有底部导航时再加栏高。</div></li>
+          <li><span class="n">8</span><div><b>底部导航 TabBar（可选）</b>仅一级页面使用；二级列表页不放。</div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>首次加载用骨架屏；空与异常按原因选择空状态类型，搜索区与筛选栏保留。</p></div></header>
+      <div class="grid3">
+        <div class="panel"><span class="docs-stage-label">首次加载 · 骨架屏</span><div id="sLoading"></div></div>
+        <div class="panel"><span class="docs-stage-label">搜索 / 筛选无结果</span><div id="sSearch"></div></div>
+        <div class="panel"><span class="docs-stage-label">网络异常</span><div id="sNetwork"></div></div>
+        <div class="panel"><span class="docs-stage-label">搜索命中 · 结果概要与关键字高亮</span><div id="sHit"></div></div>
+        <div class="panel"><span class="docs-stage-label">卡片列表 · 信息较多时</span><div id="sCard"></div></div>
+        <div class="panel"><span class="docs-stage-label">分页加载失败</span><div id="sTail"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>在预览中搜索、切换筛选、滚动加载与回到顶部；右侧切换页面形态与状态。</p></div></header>
+      <div class="playground">
+        <div class="panel"><span class="docs-stage-label">H5 · 375 × 640 · 在预览内滚动</span><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pStyle">列表样式</label><select id="pStyle"><option value="list" selected>通栏列表</option><option value="card">卡片列表</option></select></div>
+          <div class="field"><label for="pState">页面状态</label><select id="pState"><option value="normal" selected>正常</option><option value="loading">首次加载</option><option value="search">搜索无结果</option><option value="empty">暂无数据</option><option value="network">网络异常</option><option value="permission">无权限</option></select></div>
+          <label class="ck"><input type="checkbox" id="pNav" checked>顶部导航</label>
+          <label class="ck"><input type="checkbox" id="pTab">底部导航（一级页面）</label>
+          <label class="ck"><input type="checkbox" id="pSum" checked>结果概要</label>
+          <label class="ck"><input type="checkbox" id="pTail">分页加载失败</label>
+          <p id="feedback" class="feedback field-full" aria-live="polite">示例数据为虚构，点击列表项只反馈，不跳转。</p>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用规则</h2><p>模式由已确认的组件规则组合；页面级取值按语义间距。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:46%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>何时使用</td><td>对象较多、需要查找或按条件缩小范围时使用搜索与筛选。</td><td>少于约 8 项且无需查找时，直接用列表或卡片。</td></tr>
+        <tr><td>搜索与筛选</td><td>两者同时生效（取交集）；清除搜索保留筛选，反之亦然。单选筛选选中即生效，多选点确认生效。</td><td>不用笼统的“筛选”代替具体维度；同一时刻只展开一个筛选面板。</td></tr>
+        <tr><td>列表形态</td><td>通栏列表信息紧凑；卡片列表用于每项多个指标或说明。整行 / 整卡可点进入详情。</td><td>同一列表不混用通栏与卡片；右侧箭头只表示可进入下一层级。</td></tr>
+        <tr><td>加载</td><td>首次加载用骨架屏；下拉刷新保留原列表；到底自动加载下一页。</td><td>刷新失败用 Toast 提示并保留原内容，不清空列表。</td></tr>
+        <tr><td>空与异常</td><td>搜索无结果给“清除筛选”（仅筛选生效时）；网络异常给“重新加载”；无权限不显示搜索与筛选。</td><td>空状态最多一个主操作，不编造业务操作。</td></tr>
+        <tr><td>返回</td><td>从详情返回时保留搜索词、筛选条件与滚动位置（按业务需要）。</td><td>—</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const L=window.GJListFilter;
+  const mk=(id,o,h)=>GJPhone.mount(document.getElementById(id),{html:L.page(o),css:L.CSS,width:375,widths:[],height:h,fit:true,background:'var(--ds-background-background)'});
+  mk('anatomy',{nav:true,tab:true,summary:true,state:'normal'},720);
+  mk('sLoading',{nav:true,state:'loading'},520);
+  mk('sSearch',{nav:true,state:'normal',q:'国金证券',summary:true},520);
+  mk('sNetwork',{nav:true,state:'network'},520);
+  mk('sHit',{nav:true,state:'normal',q:'张',summary:true},520);
+  mk('sCard',{nav:true,state:'normal',style:'card'},520);
+  const tailEl=document.getElementById('sTail');tailEl.addEventListener('phone:ready',({detail:{doc}})=>doc.defaultView.scrollTo(0,doc.documentElement.scrollHeight));
+  mk('sTail',{nav:true,state:'normal',tail:'error'},520);
+  /* 交互演示：状态由外部控件与预览内操作共同决定 */
+  const $=id=>document.getElementById(id);
+  let st={nav:true,tab:false,summary:true,style:'list',state:'normal',q:'',f:{},open:'',shown:L.PAGE,tail:''};let stage,pending=null;
+  const host=$('lab');
+  function render(){st.nav=$('pNav').checked;st.tab=$('pTab').checked;st.summary=$('pSum').checked;st.style=$('pStyle').value;
+    const html=L.page(st);if(stage)stage.setHTML(html);else stage=GJPhone.mount(host,{html,css:L.CSS,width:375,widths:[],height:640,fit:true,background:'var(--ds-background-background)'})}
+  host.addEventListener('phone:ready',({detail:{doc}})=>{
+    L.wire(doc,st,(patch,fromSearch,fromScroll)=>{const y=doc.defaultView.scrollY;Object.assign(st,patch);delete st._busy;pending={fromSearch,fromScroll,y};render()});
+    if(pending){const W=doc.defaultView;if(pending.fromScroll)W.scrollTo(0,pending.y);if(pending.fromSearch){const i=doc.querySelector('.gj-m-search input');if(i){i.focus();const n=i.value.length;i.setSelectionRange(n,n)}}pending=null}
+  });
+  $('pState').addEventListener('change',()=>{st.state=$('pState').value;st.q='';st.f={};st.shown=L.PAGE;render()});
+  $('pTail').addEventListener('change',()=>{st.tail=$('pTail').checked?'error':'';st.shown=$('pTail').checked?L.PAGE:st.shown;render()});
+  ['pNav','pTab','pSum','pStyle'].forEach(id=>$(id).addEventListener('change',render));
+  render();
+})();
+</script>
+</body>
+</html>

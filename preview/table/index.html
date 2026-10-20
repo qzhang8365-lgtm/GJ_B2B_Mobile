@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 表格 Table</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">数据展示组件 · Data Display</div>
+    <h1>表格 Table</h1>
+    <p>结构化展示多条同类数据，支持字段比较、排序、选择和单行操作。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section" id="table-type">
+      <header class="docs-section-head"><div><h2>类型</h2><p>按承载场景选择页面内普通表格或弹出层表格；两种都保留字段标题和必要的操作入口。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">普通表格 · 可完整展示，操作列无投影</span><div data-demo="regular"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">弹出层表格 · 内容超出可横向滑动，操作列出现投影</span><div data-demo="popover"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="table-cell">
+      <header class="docs-section-head"><div><h2>表头与单元格</h2><p>表头高 46、Table/head_bg 底、Text/Secondary；单元格上下 12、左右 16，单行 46 / 双行 68，底部 1px 分割线；文字 P3 14/22。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">表头 · 默认 / 排序 / 勾选 / 说明图标</span><div data-demo="head"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">单元格 · 单行 / 双行 / 勾选 / 操作</span><div data-demo="cell"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="table-action">
+      <header class="docs-section-head"><div><h2>表格操作</h2><p>操作列放最右侧并始终固定，有内容被遮住时左侧出现投影；优先展示 1–2 个高频动作；表头勾选按勾选组件的未选 / 选中 / 半选显示；勾选后批量操作放在表格上方。</p></div></header>
+      <div class="panel gray"><span class="docs-stage-label">行内操作 · 勾选与半选</span><div data-demo="action"></div></div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点「可用资金」排序（升序 → 降序 → 取消）；勾选行后上方出现批量操作；点「切换」打开弹出层表格选择账户；表格可左右滑动，操作列始终固定；有内容被操作列遮住时才出现投影，滑到最右或字段能完整展示时没有投影。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pC">单元格</label><select id="pC"><option value="1">单行</option><option value="2">双行</option></select></div>
+          <div class="field"><label for="pF">字段</label><select id="pF"><option value="2">精简（可完整展示）</option><option value="4" selected>基础（需横向滑动）</option><option value="6">更多（需横向滑动）</option></select></div>
+          <label class="ck"><input type="checkbox" id="pS" checked>行选择</label>
+          <label class="ck"><input type="checkbox" id="pT" checked>表头说明图标</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>优先保证关键字段与操作可读，不直接压缩桌面端的全部列。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>字段</td><td>优先展示 3–4 个关键字段；更多字段横向滚动、折叠或进入详情。</td><td>不把桌面端全部列压缩进一屏。</td></tr>
+        <tr><td>单元格</td><td>主要内容用单行；需要补充信息时用双行（如编号 + 手机号）。</td><td>不超过两行，超出用省略或进详情。</td></tr>
+        <tr><td>对齐</td><td>文本默认左对齐；同列数据格式和精度一致，需要比较大小时数值可右对齐。</td><td>同一列不混用对齐方式。</td></tr>
+        <tr><td>排序</td><td>只有真正支持排序的字段显示排序图标，并显示当前方向。</td><td>不给不可排序的字段加图标。</td></tr>
+        <tr><td>操作</td><td>操作列放最右侧并始终固定，保留 1–2 个高频动作，其余收进“更多”。</td><td>删除等高风险操作用危险语义并二次确认；不可用操作说明原因。</td></tr>
+        <tr><td>批量</td><td>勾选后在表格上方显示批量入口和已选数量。</td><td>不在每行重复放批量入口。</td></tr>
+        <tr><td>可访问性</td><td>表头用 th scope="col"；排序表头写 aria-sort；勾选框写“选择××”；排序、说明、操作热区不小于 44。</td><td>—</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const ic=(n,s=24)=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${n}.svg');width:${s/100}rem;height:${s/100}rem" aria-hidden="true"></span>`;
+  const CB=(label,o={})=>`<label class="gj-m-checkbox"><input type="checkbox" class="gj-m-checkbox-input" aria-label="${label}"${o.checked?' checked':''}${o.data?' '+o.data:''}><span class="gj-m-checkbox-icon"></span></label>`;
+  const TB=(t,data='')=>`<button type="button" class="gj-m-text-button gj-m-text-button-blue"${data}>${t}</button>`;
+  const SORT=(t,dir)=>`<button type="button" class="gj-m-table-sort" data-sort>${t}<span class="gj-m-table-sort-icon" aria-hidden="true"></span></button>`;
+  const TIP=(t,tip)=>`<span class="gj-m-table-head">${t}<button type="button" class="gj-m-table-tip" data-tip="${tip}" aria-label="${t}说明">${ic('icf_system_question',16)}</button></span>`;
+  const L2=(a,b)=>`<span class="gj-m-table-lines"><span>${a}</span><span>${b}</span></span>`;
+  /* 操作列（最后一列）始终固定：th、td 加 .gj-m-table-op */
+  const OP=c=>c.replace(/^<(th|td)([^>]*?)( class="([^"]*)")?([^>]*)>/,(m,t,a,c1,cls,b)=>`<${t}${a} class="${cls?cls+' ':''}gj-m-table-op"${b}>`);
+  const opRow=r=>{const x=r.filter(Boolean);x[x.length-1]=OP(x[x.length-1]);return x.join('')};
+  const T=(head,rows,o={})=>`<div class="gj-m-table-wrap${o.pop?' gj-m-table-popover':''}"><div class="gj-m-table-scroll"><table class="gj-m-table"${o.label?` aria-label="${o.label}"`:''}><thead><tr>${o.op===false?head.join(''):opRow(head)}</tr></thead><tbody>${rows.map(r=>`<tr>${o.op===false?r.join(''):opRow(r)}</tr>`).join('')}</tbody></table></div></div>`;
+  const th=(c,attr='')=>`<th scope="col"${attr}>${c}</th>`, td=(c,cls='')=>`<td${cls?` class="${cls}"`:''}>${c}</td>`;
+  const CSS='html,body{overflow:hidden;background:transparent}.scr{width:100%;max-width:3.75rem;margin:0 auto;box-sizing:border-box}.stack{display:flex;flex-direction:column;gap:.12rem}.hrow{display:flex;flex-wrap:wrap;gap:.08rem;justify-content:center}.hrow .gj-m-table-wrap{flex:none}'+
+    '.mk{position:relative;padding:.28rem .12rem;background:var(--ds-background-mk-60)}.cap{display:block;margin-top:.04rem;text-align:center;font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}';
+  const FIX='html,body,.page{height:100%}';
+  /* 操作列投影：有内容被固定操作列遮住（可横向滚动且未滑到最右）时给 .gj-m-table-wrap 加 .is-covered；表格完整展示时不加。 */
+  const tableShadow=doc=>{const win=doc.defaultView;
+    const upd=sc=>{const w=sc.closest('.gj-m-table-wrap');if(w)w.classList.toggle('is-covered',sc.scrollWidth-sc.clientWidth-sc.scrollLeft>1)};
+    const bind=()=>doc.querySelectorAll('.gj-m-table-scroll').forEach(sc=>{if(!sc.dataset.sh){sc.dataset.sh=1;sc.addEventListener('scroll',()=>upd(sc),{passive:true});if(win.ResizeObserver)new win.ResizeObserver(()=>upd(sc)).observe(sc)}upd(sc)});
+    bind();new win.MutationObserver(bind).observe(doc.body,{childList:true,subtree:true})};
+  const SW=(el,o)=>{const f=GJPhone.swatch(el,o);f.addEventListener('load',()=>tableShadow(f.contentDocument));return f};
+  const show=(k,html,h)=>SW(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+(h?FIX:''),height:h||'auto'});
+
+  const H4=['资金账号','用户编号','更新时间','操作'].map(x=>th(x));
+  show('regular',`<div class="scr gj-m-card">${T(['客户姓名','资金账号','操作'].map(x=>th(x)),[['王**','8883404579'],['李**','8883404612'],['陈**','8883405108'],['周**','8883405227']].map(([n,id])=>[td(n),td(id),td(TB('操作'))]),{label:'资金账户'})}</div>`);
+  show('popover',`<div class="scr mk">${T(H4,[['当前'],['操作'],['操作']].map(([a],i)=>[td('8883404579'),td(L2('8883404579','(173****0128)')),td(L2('2025/09/24','09:37:24')),td(i?TB(a):a)]),{pop:1,label:'选择资金账户'})}</div>`);
+  const one=(h)=>`<div class="gj-m-table-wrap"><table class="gj-m-table"><thead><tr>${h}</tr></thead></table></div>`;
+  show('head',`<div class="scr hrow">${[th('表头'),th(SORT('表头'),' aria-sort="ascending"'),th(`<span class="gj-m-table-head">${CB('全选')}表头</span>`),th(TIP('表头','字段说明'))].map(one).join('')}</div>`);
+  const cellT=(c,cap)=>`<div><div class="gj-m-table-wrap"><table class="gj-m-table"><tbody><tr>${c}</tr></tbody></table></div><span class="cap">${cap}</span></div>`;
+  show('cell',`<div class="scr hrow" style="align-items:flex-start">${cellT(td('表格内容'),'单行 46')}${cellT(td(L2('表格内容','表格内容')),'双行 68')}${cellT(td(CB('选择'),'gj-m-table-check'),'勾选')}${cellT(td(TB('操作')),'操作')}</div>`);
+  const ACT=[['查看',1],['编辑'],['更多'],['查看']];
+  show('action',`<div class="scr gj-m-card">${T([th(CB('全选',{data:'data-ind'}),' class="gj-m-table-check"'),th('资金账号'),th('用户编号'),th('更新时间'),th('操作')],ACT.map(([a,c])=>[td(CB('选择 8883404579',{checked:c}),'gj-m-table-check'),td('8883404579'),td('224455'),td('2025/09/24'),td(TB(a))]),{label:'资金账户'})}</div>`);
+  // set indeterminate after render
+  const fixInd=()=>document.querySelectorAll('iframe').forEach(f=>{try{f.contentDocument.querySelectorAll('[data-ind]').forEach(i=>i.indeterminate=true)}catch(e){}});
+  setTimeout(fixInd,600);setTimeout(fixInd,1500);
+
+  /* ---------- 交互演示 ---------- */
+  const ACC=[{id:'8883404579',name:'王**',uid:'224455',phone:'173****0128',cash:52380.00,time:'2025/09/24',clock:'09:37:24',branch:'陆家嘴营业部',risk:'R3'},
+    {id:'8883404612',name:'李**',uid:'224617',phone:'138****2236',cash:8600.50,time:'2025/09/24',clock:'10:12:05',branch:'陆家嘴营业部',risk:'R2'},
+    {id:'8883405108',name:'陈**',uid:'225032',phone:'186****7790',cash:126400.00,time:'2025/09/23',clock:'16:48:51',branch:'张江营业部',risk:'R4'},
+    {id:'8883405227',name:'周**',uid:'225118',phone:'139****5512',cash:3120.80,time:'2025/09/23',clock:'14:02:33',branch:'张江营业部',risk:'R1'},
+    {id:'8883405391',name:'赵**',uid:'225246',phone:'135****8064',cash:45210.00,time:'2025/09/22',clock:'11:20:17',branch:'徐汇营业部',risk:'R3'}];
+  const fmt=n=>n.toLocaleString('zh-CN',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const TI=(name,active)=>`<span aria-hidden="true" class="gj-icon gj-icon-24 ${active?'gj-icon-active':'gj-icon-default'}" style="--gj-icon:url('${ICON}${name}${active?'-fill':''}.svg')"></span>`;
+  const APPCSS='.app{position:relative;width:100%;max-width:3.75rem;margin:0 auto;height:100%;overflow:hidden;display:flex;flex-direction:column;background:var(--ds-background-background)}'+
+    '.app>.gj-m-navbar{flex:none}'+
+    '.body{flex:1;min-height:0;overflow-y:auto;padding:.12rem var(--space-page-margin-x);display:flex;flex-direction:column;gap:.12rem}'+
+    '.cur{display:flex;align-items:center;gap:.12rem}.cur .m{flex:1;min-width:0}.cur small{display:block;font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}.cur b{display:block;font-family:var(--ds-font-family-numeric);font-size:.18rem;line-height:.26rem;color:var(--ds-text-primary)}'+
+    ''+
+    '.batch{flex-direction:row;align-items:center;gap:.12rem;font-size:.13rem;line-height:.2rem;color:var(--ds-text-secondary)}.batch span{flex:1}'+
+    '#batch:empty{display:none}.tb{flex:none;box-shadow:0 -1px 0 var(--ds-border-default)}.toast{position:absolute;inset:0;pointer-events:none}'+
+    '.layer{position:absolute;inset:0;z-index:20;display:flex;align-items:center;padding:0 .12rem}.layer .gj-m-mask{z-index:0}.layer .box{position:relative;z-index:1;width:100%;animation:pop .2s ease both}@keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){.layer .box{animation:none}}'+
+    '.box h3{margin:0 0 .08rem;padding:0 .04rem;font-size:.15rem;line-height:.22rem;color:var(--ds-text-reversal)}';
+  function render(){const C=$('pC').value,F=+$('pF').value,S=$('pS').checked,TT=$('pT').checked;
+    const TABS=[['首页','icf_system_home'],['客户','icf_user_idcard'],['消息','icf_contact_message'],['我的','icf_user_user']];
+    const f=SW($('lab'),{html:`<div class="app"><header class="gj-m-navbar" aria-label="页面导航"><div class="gj-m-navbar-left"><button class="gj-m-navbar-action gj-m-navbar-back" type="button" aria-label="返回上一页">${ic('icf_Arrow_left')}</button></div><div class="gj-m-navbar-center"><span class="gj-m-navbar-title">客户资金账户</span></div><div class="gj-m-navbar-right"></div></header><div class="body">
+      <section class="gj-m-card"><div class="cur"><div class="m"><small>当前资金账户</small><b id="curId">8883404579</b></div><button type="button" class="gj-m-text-button gj-m-text-button-blue" id="switch">切换</button></div></section>
+      <section class="gj-m-card" aria-labelledby="lt"><div class="gj-m-card-head"><div class="gj-m-card-header"><h3 class="gj-m-card-title" id="lt">账户列表</h3></div><p class="gj-m-card-subtitle">共 ${ACC.length} 个</p></div><div id="batch"></div><div id="tbl"></div></section></div>
+      <div class="toast" id="toast"></div><div id="layer"></div>
+      <div class="tb"><nav class="gj-m-tabbar" aria-label="底部导航">${TABS.map(([t,i],x)=>`<button type="button" class="gj-m-tabbar-item${x===1?' is-active':''}"${x===1?' aria-current="page"':''}><span class="gj-m-tabbar-icon">${TI(i)}${TI(i,true)}</span><span class="gj-m-tabbar-label">${t}</span></button>`).join('')}</nav><div class="gj-m-tabbar-safe"></div></div></div>`,css:CSS+APPCSS+FIX,height:680});
+    f.addEventListener('load',()=>{const d=f.contentDocument,tbl=d.getElementById('tbl'),batch=d.getElementById('batch'),toast=d.getElementById('toast'),layer=d.getElementById('layer');
+      let dir=0,sel=new Set(),cur='8883404579';
+      const say=t=>{clearTimeout(say.t1);clearTimeout(say.t2);toast.innerHTML=`<div class="gj-m-toast-layer" role="status"><div class="gj-m-notice" data-tone="default"><span class="gj-m-notice-text">${t}</span></div></div>`;const el=toast.firstElementChild;say.t1=setTimeout(()=>{el.classList.add('is-leaving');say.t2=setTimeout(()=>{if(toast.firstElementChild===el)toast.innerHTML=''},200)},1600)};
+      const draw=()=>{const old=tbl.querySelector('.gj-m-table-scroll'),sx=old?old.scrollLeft:0;const rows=[...ACC];if(dir)rows.sort((a,b)=>(a.cash-b.cash)*dir);
+        const sortAttr=` aria-sort="${dir===1?'ascending':dir===-1?'descending':'none'}"`;
+        const head=[S?th(CB('全选',{checked:sel.size===ACC.length,data:'data-all'}),' class="gj-m-table-check"'):'',F>2?th('资金账号'):'',th(C==='2'?'客户':'客户姓名'),th(SORT('可用资金'),sortAttr),F>4?th('营业部')+th(TT?TIP('风险等级','客户风险承受能力等级，每年复评'):'风险等级'):'',F>2?th(TT?TIP('更新时间','T+1 日终更新'):'更新时间'):'',th('操作')];
+        const body=rows.map(r=>[S?td(CB('选择 '+r.id,{checked:sel.has(r.id),data:`data-row="${r.id}"`}),'gj-m-table-check'):'',F>2?td(r.id):'',td(C==='2'?L2(r.name,'('+r.phone+')'):r.name),td(fmt(r.cash),'gj-m-table-num'),F>4?td(r.branch)+td(r.risk):'',F>2?td(C==='2'?L2(r.time,r.clock):r.time):'',td(TB('查看',` data-view="${r.id}"`))]);
+        tbl.innerHTML=T(head,body,{label:'客户资金账户'});tbl.querySelector('.gj-m-table-scroll').scrollLeft=sx;
+        const all=tbl.querySelector('[data-all]');if(all)all.indeterminate=sel.size>0&&sel.size<ACC.length;
+        batch.innerHTML=S&&sel.size?`<div class="gj-m-card-l2 batch" role="status"><span>已选 ${sel.size} 个账户</span><button type="button" class="gj-m-text-button gj-m-text-button-blue" data-batch>批量导出</button></div>`:'';};
+      d.addEventListener('click',e=>{const s=e.target.closest('[data-sort]'),v=e.target.closest('[data-view]'),tp=e.target.closest('[data-tip]'),bt=e.target.closest('[data-batch]');
+        if(s){dir=dir===0?1:dir===1?-1:0;draw();tbl.querySelector('[data-sort]').focus({preventScroll:true});say(dir===1?'按可用资金升序':dir===-1?'按可用资金降序':'已取消排序')}
+        if(v)say('查看账户 '+v.dataset.view+'（原型演示）');if(tp)say(tp.dataset.tip);if(bt)say('已导出 '+sel.size+' 个账户（原型演示）')});
+      d.addEventListener('change',e=>{const t=e.target;if(t.matches('[data-row]')){t.checked?sel.add(t.dataset.row):sel.delete(t.dataset.row)}else if(t.matches('[data-all]')){sel=t.checked?new Set(ACC.map(a=>a.id)):new Set()}else return;const k=t.dataset.row||'all';draw();const back=tbl.querySelector(k==='all'?'[data-all]':`[data-row="${k}"]`);back&&back.focus({preventScroll:true})});
+      const close=(trig)=>{const m=layer.querySelector('.gj-m-mask');if(!m)return;m.classList.add('is-leaving');layer.querySelector('.box').style.opacity='0';setTimeout(()=>{layer.innerHTML='';trig&&trig.focus()},200);d.removeEventListener('keydown',key,true)};
+      const key=e=>{if(e.key==='Escape'){e.preventDefault();close(d.getElementById('switch'))}};
+      d.getElementById('switch').addEventListener('click',e=>{const trig=e.currentTarget;
+        layer.innerHTML=`<div class="layer"><div class="gj-m-mask"></div><div class="box" role="dialog" aria-modal="true" aria-labelledby="pt" tabindex="-1"><h3 id="pt">选择资金账户</h3>${T([th('资金账号'),th('用户编号'),th('更新时间'),th('操作')],ACC.slice(0,4).map(r=>[td(r.id),td(L2(r.uid,'('+r.phone+')')),td(L2(r.time,r.clock)),td(r.id===cur?'当前':TB('选择',` data-pick="${r.id}"`))]),{pop:1,label:'选择资金账户'})}</div></div>`;
+        layer.querySelector('.layer').addEventListener('click',ev=>{const p=ev.target.closest('[data-pick]');if(p){cur=p.dataset.pick;d.getElementById('curId').textContent=cur;close(trig);say('已切换到 '+cur)}else if(ev.target.classList.contains('gj-m-mask')||ev.target.classList.contains('layer'))close(trig)});
+        d.addEventListener('keydown',key,true);layer.querySelector('.box').focus()});
+      draw()})}
+  ['pC','pF','pS','pT'].forEach(k=>$(k).addEventListener('change',render));render();
+})();
+</script>
+</body>
+</html>

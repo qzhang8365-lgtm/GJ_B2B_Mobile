@@ -1,0 +1,51 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "badge",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "figmaComponent": "Badge（158:1331）",
+  "prototypeClass": "gj-m-badge",
+  "propertyMap": {
+    "Type=Number": "span.gj-m-badge（宽度随内容，最小宽 = 高）",
+    "Max=True": "文字写 99+",
+    "Type=Dot": "span.gj-m-badge.gj-m-badge-dot",
+    "Size=Large": "gj-m-badge-lg",
+    "Stroke=True": "gj-m-badge-stroke",
+    "anchor": ".gj-m-badge-anchor > 承载对象 + .gj-m-badge（中心对齐右上角）"
+  },
+  "valueMap": {
+    "default": "高 16、最小宽 16、左右 4、H8 10/14 中粗",
+    "large": "高 20、最小宽 20、左右 4、H7 12/18 中粗",
+    "dot": "8",
+    "overflow": "> 99 显示 99+"
+  },
+  "tokenMap": {
+    "fill": "Feedback/error&rise",
+    "text": "Text/reversal",
+    "stroke": "1px Text/reversal"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-badge",
+    "anchor": ".gj-m-badge-anchor"
+  },
+  "markup": {
+    "number": "<span class=\"gj-m-badge\">8</span>",
+    "max": "<span class=\"gj-m-badge\">99+</span>",
+    "dot": "<span class=\"gj-m-badge gj-m-badge-dot\" aria-hidden=\"true\"></span>",
+    "onIcon": "<span class=\"gj-m-badge-anchor\"><span class=\"gj-icon gj-icon-24\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_bell.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-badge gj-m-badge-stroke\">3</span></span>",
+    "inline": "<span class=\"gj-m-list-item-extra\"><span class=\"gj-m-badge gj-m-badge-lg\">12</span></span>",
+    "fromPreview_badge_anchor_badge_dot": "<span class=\"gj-m-badge-anchor\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_bell.svg');width:0.24rem;height:0.24rem\" aria-hidden=\"true\"></span><span class=\"gj-m-badge gj-m-badge-dot gj-m-badge-stroke\" aria-hidden=\"true\"></span></span>"
+  },
+  "accessibility": {
+    "count": "数量需在承载对象的可访问名称中说明（如“消息，3 条未读”）；红点同理说明“有新信息”"
+  },
+  "composition": {
+    "use": "提示真实的新信息或待处理数量",
+    "scenes": "页签、底部导航、侧边栏有各自的场景化写法（.gj-m-tab-badge / .gj-m-tabbar-dot / .gj-m-sidebar-dot）",
+    "roundTabs": "圆角按钮式页签上不放徽标，数量写进文字"
+  },
+  "pageRules": {},
+  "pending": {
+    "BD-M-003": "红点没有大号，暂不处理"
+  },
+  "markupNote": "markup 中 fromPreview_* 片段由 scripts/check-mapping.cjs 从预览页实际渲染补录（2026-10-19），与预览页一致；其余为手写的常用写法。"
+}

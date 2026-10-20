@@ -1,0 +1,49 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "stepper",
+  "name": "步数器 Stepper",
+  "category": "信息录入组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "步数器Stepper（158:2963）",
+    "nodes": {
+      "stepper": "158:2968（State default|limited|disabled|error|active × Style default|stroke × Boundary none|max|min，14 变体；2026-10-13 设计方重构）",
+      "usage": "1076:8"
+    },
+    "extractedAt": "2026-10-12",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-stepper(-line) / .gj-m-stepper-row / .gj-m-stepper-btn[data-dir] / .gj-m-stepper-input / .gj-m-stepper-message",
+    "note": "原型基座"
+  },
+  "size": {
+    "height": "control-M 32",
+    "gap": 4,
+    "button": "32 × 32，内边距 6，图标 20",
+    "input": "最小 48、随位数变宽（Hug），内边距 5 / 6",
+    "radius": "Radius-SM 6"
+  },
+  "text": {
+    "value": "H4-CN-S 16/24 Semibold Text/Primary 居中",
+    "message": "H6-CN-S 13/20 Semibold，上方间距 8；limited 为 Text/Tiatery，error 为 Feedback/error&rise"
+  },
+  "icons": {
+    "minus": "icf_system_minimize",
+    "plus": "icf_system_add",
+    "color": "Text/Secondary"
+  },
+  "styles": {
+    "default（填充式）": "Background/Background",
+    "stroke（描边式）": "Background/Container + 1px Border/secondary"
+  },
+  "states": {
+    "active": "数值区描边 Border/focused",
+    "limited": "Boundary=max|min：对应按钮 40%；数值 Text/Primary；提示“最大值 / 最小值 N” Text/Tiatery",
+    "error": "数值区描边 Border/error，数值与提示 Feedback/error&rise，提示“输入超出范围，请输入 min–max”",
+    "disabled": "整体 40%（全站统一，2026-10-13）"
+  },
+  "hitArea": "按钮向外侧与上下扩到 44，不覆盖数值区"
+}

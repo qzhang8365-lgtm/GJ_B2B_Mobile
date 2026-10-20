@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 布局 Layout</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    :root{--tertiary:var(--ds-text-tiatery);--mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:var(--ds-font-family-ui);color:var(--ds-text-primary);background:transparent}button{font:inherit}
+    .shell{max-width:var(--docs-page-max-width);margin:auto;padding:var(--docs-page-padding)}.intro{margin-bottom:30px;padding:0 4px}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--ds-text-blue);font-size:13px;font-weight:600;letter-spacing:.04em;margin-bottom:10px}.eyebrow:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ds-text-blue);box-shadow:0 0 0 3px var(--ds-background-bt-b10)}.intro h1{font-size:32px;line-height:42px;margin:0 0 8px}.intro p{max-width:900px;margin:0;color:var(--ds-text-secondary);font-size:15px;line-height:1.75}
+    .section{background:var(--ds-background-container);border-radius:20px;padding:24px;margin-bottom:28px}.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--ds-border-default);margin-bottom:24px}.title-group{display:flex;align-items:baseline;gap:12px}.section-heading h2{font-size:24px;line-height:32px;margin:0;font-weight:600}.sub{font-size:14px;color:var(--tertiary)}.count{font:12px/20px var(--mono);color:var(--tertiary);white-space:nowrap}.section-desc{font-size:14px;line-height:22px;color:var(--ds-text-disable);margin:-4px 0 24px}
+    #stage .phone-viewport{max-height:460px;overflow:auto;overscroll-behavior:contain}
+    .stage-tag{display:inline-flex;align-items:center;gap:8px;margin:0 0 12px;padding:4px 10px;border-radius:999px;background:var(--ds-background-bt-b10);color:var(--ds-text-blue);font-size:13px;line-height:20px}
+    .viewport-cards{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:16px}
+    .viewport{display:flex;flex-direction:column;gap:6px;min-width:0;padding:16px;border:1px solid var(--ds-border-secondary);border-radius:14px;background:var(--ds-background-container);text-align:left;cursor:pointer;transition:border-color .15s,box-shadow .15s}
+    .viewport:hover{border-color:var(--ds-button-primary-bg-hover)}
+    .viewport.active{border-color:var(--ds-brand-gj-blue);box-shadow:0 0 0 3px var(--ds-background-bt-b10)}
+    .viewport-bar{height:6px;border-radius:3px;background:var(--ds-background-bt-b20);margin-bottom:6px}.viewport.active .viewport-bar{background:var(--ds-brand-gj-blue)}
+    .viewport strong{font:600 18px/26px var(--mono)}
+    .viewport .tier{font-size:14px;font-weight:600;line-height:22px}
+    .viewport .range{font:12px/18px var(--mono);color:var(--tertiary)}
+    .viewport .rule{font-size:13px;line-height:20px;color:var(--ds-text-secondary)}
+    .grid-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .grid-card{display:flex;flex-direction:column;gap:14px;min-width:0;padding:18px;border:1px solid var(--ds-border-secondary);border-radius:16px}
+    .grid-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px}.grid-head strong{font-size:16px;line-height:24px}.grid-head span{font:12px/18px var(--mono);color:var(--tertiary)}
+    .grid-canvas{position:relative;aspect-ratio:375/200;border-radius:10px;background:var(--ds-background-background);overflow:hidden;box-shadow:inset 0 0 0 1px var(--ds-border-default)}
+    .grid-cols{position:absolute;inset:0;display:flex}
+    .grid-cols i{flex:1;background:rgba(255,0,0,.1);box-shadow:inset 1px 0 0 rgba(255,0,0,.25),inset -1px 0 0 rgba(255,0,0,.25)}
+    .grid-offset{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(45deg,transparent 0 4px,var(--ds-background-bt-b10) 4px 8px)}
+    .grid-data{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+    .grid-data div{padding:7px 4px;border-radius:8px;background:var(--ds-background-tiatery);text-align:center}.grid-data b{display:block;font:600 13px/18px var(--mono)}.grid-data span{font-size:11px;color:var(--tertiary)}
+    .grid-vars{display:flex;flex-wrap:wrap;gap:4px 12px}
+    .copy{padding:0;border:0;background:transparent;cursor:pointer;font:12px/20px var(--mono);color:var(--ds-text-secondary)}.copy:hover{color:var(--ds-text-blue)}
+    .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,12px);opacity:0;pointer-events:none;padding:8px 14px;border-radius:8px;background:var(--ds-text-primary);color:var(--ds-text-reversal);font-size:13px;transition:.18s}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:1200px){.viewport-cards{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:760px){.grid-gallery{grid-template-columns:1fr}}
+    @media(max-width:760px){.shell{padding:var(--docs-page-padding-compact)}.section{padding:20px}.intro h1{font-size:28px}.title-group{display:block}.section-heading{align-items:flex-start}.section-heading h2{font-size:22px}.viewport-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    /* ===== 间距（由原间距页并入） ===== */
+    :root{--mark-page:var(--ds-background-bt-b10);--mark-l0:var(--ds-background-bt-c20);--mark-l1:var(--ds-background-bt-o15);--mark-l2:var(--ds-background-bt-g15);--mark-l3:var(--ds-background-bt-p15);--mark-el:var(--ds-background-bt-r15)}
+    /* 阶梯 */
+    .scale{border:1px solid var(--ds-border-secondary);border-radius:16px;overflow:hidden}
+    .scale-row{display:grid;grid-template-columns:150px 80px 90px 150px minmax(0,1fr);align-items:center;gap:16px;min-height:64px;padding:8px 20px;border-top:1px solid var(--ds-border-default)}.scale-row:first-child{border-top:0}
+    .scale-head{min-height:48px;background:var(--ds-background-background);color:var(--ds-text-secondary);font-size:13px;font-weight:600}
+    .scale-name{font:600 13px/20px var(--mono)}.scale-val{font:13px/20px var(--mono);color:var(--ds-text-secondary)}
+    .scale-block{display:block;background:var(--ds-brand-gj-blue);border-radius:3px}
+    /* 语义间距 */
+    .sem-table{border:1px solid var(--ds-border-secondary);border-radius:16px;overflow:hidden}
+    .sem-row{display:grid;grid-template-columns:110px 230px 70px 120px minmax(0,1fr) 110px;align-items:center;gap:16px;min-height:52px;padding:8px 20px;border-top:1px solid var(--ds-border-default)}
+    .sem-head{min-height:48px;border-top:0;background:var(--ds-background-background);color:var(--ds-text-secondary);font-size:13px;font-weight:600}
+    .sem-layer{font-size:13px;color:var(--ds-text-secondary)}.sem-row .sem-layer.repeat{color:transparent}
+    .sem-name{display:grid;gap:2px}.sem-name b{font:600 13px/20px var(--mono)}
+    .sem-val{font:13px/20px var(--mono)}.sem-ref{font:12px/20px var(--mono);color:var(--tertiary)}.sem-use{font-size:14px;line-height:22px;color:var(--ds-text-secondary)}.sem-use small{display:block;font-size:12px;color:var(--tertiary)}
+    .sem-viz{display:flex;align-items:center;height:24px}.sem-viz i{display:block;height:24px;border-radius:2px;background:var(--mark-color,var(--ds-background-bt-b20));box-shadow:inset 0 0 0 1px var(--ds-background-mk-10)}
+    .layer-page{--mark-color:var(--mark-page)}.layer-l0{--mark-color:var(--mark-l0)}.layer-l1{--mark-color:var(--mark-l1)}.layer-l2{--mark-color:var(--mark-l2)}.layer-l3{--mark-color:var(--mark-l3)}.layer-el{--mark-color:var(--mark-el)}
+    /* 示意 */
+    .demo-layout{display:grid;grid-template-columns:minmax(0,3fr) minmax(280px,2fr);gap:20px;align-items:start}
+    .legend{display:grid;gap:12px;padding:20px;border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius)}
+    .legend h3{margin:0 0 4px;font-size:16px;line-height:24px}
+    .legend-item{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;align-items:start;font-size:13px;line-height:20px;color:var(--ds-text-secondary)}
+    .legend-item i{width:18px;height:18px;border-radius:4px;background:var(--mark-color);box-shadow:inset 0 0 0 1px var(--ds-background-mk-10)}
+    .legend-item code{font:12px/20px var(--mono);color:var(--ds-text-primary)}
+    .toggle{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ds-text-secondary);cursor:pointer}
+    /* 规则 */
+    .sp-rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .sp-rule{border:1px solid var(--ds-border-secondary);border-radius:14px;padding:18px}.sp-rule-num{font:600 12px/20px var(--mono);color:var(--ds-text-blue);margin-bottom:6px}.sp-rule p{margin:0;font-size:14px;line-height:22px}
+    @media(max-width:1100px){.demo-layout{grid-template-columns:1fr}.sp-rules{grid-template-columns:1fr}.scale,.sem-table{overflow-x:auto}.scale-row,.sem-row{min-width:860px}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+<script src="../_data/tokens.js?v=20261020-data1"></script></head>
+<body><main class="shell">
+  <header class="intro"><div class="eyebrow">基础规范 · Foundations</div><h1>布局 Layout</h1><p>通过屏幕宽度适配、栏栅格与间距体系共同控制移动端页面的信息密度与空间秩序。以 375×812 为设计基准，375 不是固定页面宽度。根字号按 <code>min(100vw / 3.75, 120px)</code> 随屏宽缩放，450px 起封顶；宽屏宽度撑满，通过增加列数承载更多信息，而不是继续放大组件。</p></header>
+
+  <section class="section"><div class="section-heading"><div class="title-group"><h2>屏幕宽度适配</h2><span class="sub">Responsive viewport</span></div><span class="count">375 baseline</span></div>
+    <p class="section-desc">点击下方档位切换预览宽度。示例页全部使用基座组件与语义间距，卡片列表与底部按钮按各档规则变化。</p>
+    <span class="stage-tag" id="stageTag"></span>
+    <div id="stage"></div>
+    <div class="viewport-cards" id="viewportCards"></div>
+  </section>
+
+  <section class="section"><div class="section-heading"><div class="title-group"><h2>栏栅格</h2><span class="sub">Grid Styles</span></div><span class="count" id="gridCount"></span></div>
+    <p class="section-desc">按 375 基准的列数、槽宽和边距生成示意，红色为列。点击变量名可复制。</p>
+    <div class="grid-gallery" id="gridGallery"></div>
+  </section>
+
+    <section class="section"><div class="section-heading"><div class="title-group"><h2>间距阶梯</h2><span class="sub">Spacing scale</span></div><span class="count" id="scaleCount"></span></div>
+    <p class="section-desc">Figma Interval 变量。设计值为 375 基准 px，代码按 px ÷ 100 写成 rem。</p>
+    <div class="scale" id="scale"></div>
+  </section>
+  <section class="section"><div class="section-heading"><div class="title-group"><h2>语义间距</h2><span class="sub">Semantic spacing</span></div><span class="count" id="semCount"></span></div>
+    <p class="section-desc">按页面、卡片层级与元素关系定义，每项引用一档间距阶梯。</p>
+    <div class="sem-table" id="semTable"></div>
+  </section>
+  <section class="section"><div class="section-heading"><div class="title-group"><h2>层级示意</h2><span class="sub">Spacing hierarchy</span></div><label class="toggle"><input type="checkbox" id="annotate" checked> 显示间距标注</label></div>
+    <p class="section-desc">示例页面全部使用语义间距变量，可切换宽度查看 rem 缩放。色块标出各层级的内边距与间距。</p>
+    <div class="demo-layout">
+      <div id="demoPhone"></div>
+      <div class="legend">
+        <h3>标注说明</h3>
+        <div class="legend-item layer-page"><i></i><span>页面：<code>page-margin-x</code> 16 · <code>module-gap</code> 24 · <code>module-title-gap</code> 12</span></div>
+        <div class="legend-item layer-l0"><i></i><span>0级卡片：<code>card-l0-margin-x</code> 0（撑满页面）· <code>card-l0-padding</code> 16 · 圆角 <code>--Radius-XL</code> 16</span></div>
+        <div class="legend-item layer-l1"><i></i><span>一级卡片：<code>card-l1-padding</code> 16 · <code>card-l1-gap</code> 12 · <code>card-l1-title-gap</code> 12 · <code>card-l1-section-gap</code> 16</span></div>
+        <div class="legend-item layer-l2"><i></i><span>二级卡片：<code>card-l2-padding</code> 12 · <code>card-l2-gap</code> 8 · <code>card-l2-title-gap</code> 8</span></div>
+        <div class="legend-item layer-l3"><i></i><span>三级块：<code>block-l3-padding</code> 8 · <code>block-l3-gap</code> 8</span></div>
+        <div class="legend-item layer-el"><i></i><span>元素：<code>stack-tight</code> 4 · <code>stack-default</code> 8 · <code>inline-icon-gap</code> 4 · <code>inline-tag-gap</code> 4–8 · <code>btn-gap-footer</code> 12</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="section"><div class="section-heading"><div class="title-group"><h2>校验规则</h2><span class="sub">Rules</span></div></div>
+    <div class="sp-rules" id="rules"></div>
+  </section>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+  const VIEWPORTS=[
+    {w:320,tier:'小屏',range:'320–359px',rule:'等比缩小，并执行小屏结构兜底：换行、堆叠，不重叠、不横向溢出。'},
+    {w:375,tier:'标准',range:'360–449px',rule:'纯等比缩放，按 375 基准设计还原。'},
+    {w:450,tier:'大屏',range:'450–599px',rule:'根字号封顶 120px，尺寸不再放大，宽度流式撑满。'},
+    {w:600,tier:'宽屏',range:'600–959px',rule:'宽度撑满；宫格每行最多 5 列（图标尺寸不变），卡片列表改两列；普通列表保持单列。'},
+    {w:720,tier:'折叠屏展开',range:'按展开宽度落档',rule:'展开后通常落入宽屏档。布局由 CSS 随宽度响应，JS 尺寸监听 resize 重算，切换时保留滚动位置与状态。'},
+    {w:1200,tier:'超宽',range:'≥960px',rule:'内容区最大 960px 居中，卡片列表改三列；背景随根容器撑满。'}
+  ];
+  const rootPx=w=>Math.round(Math.min(w/3.75,120)*100)/100;
+  let current=375;
+
+  const DEMO_CSS=`
+    .page{background:var(--ds-background-background);min-height:100%}
+    .top{padding:var(--space-12) var(--space-page-margin-x);background:var(--ds-background-container)}
+    .entries{padding:var(--space-16) var(--space-page-margin-x);background:var(--ds-background-container)}
+    .tabs-bar{background:var(--ds-background-container);box-shadow:var(--ds-effect-bottom-border)}
+    .module{display:flex;flex-direction:column;gap:var(--space-module-title-gap);padding:var(--space-module-gap) var(--space-page-margin-x) 0}
+    .cards{display:grid;grid-template-columns:1fr;gap:var(--space-card-l1-gap)}
+    .kv{display:flex;flex-direction:column;gap:var(--space-stack-tight);color:var(--ds-text-secondary)}
+    .amt{font-family:var(--ds-font-family-numeric)}.rise{color:var(--ds-feedback-error-rise)}.fall{color:var(--ds-feedback-success-decline)}
+    .footer{margin-top:var(--space-module-gap);padding:var(--space-12) var(--space-page-margin-x);padding-bottom:calc(var(--space-12) + var(--safe-bottom));background:var(--ds-background-container)}
+    @media (min-width:600px){.cards{grid-template-columns:repeat(2,1fr)}}
+    @media (min-width:960px){.cards{grid-template-columns:repeat(3,1fr)}}
+  `;
+  const ENTRY_ICONS=['businessProcessing','day','account','trade','risk','investmentManage','data','menu'];
+  const ENTRIES=['审批','报销','考勤','项目','客户','合同','公告','更多'];
+  const CARDS=[['Q4 重点项目复盘','进行中',''],['客户分层运营方案','待审批','warn'],['财富管理系统升级','进行中',''],['合规培训计划','已完成',''],['分支机构巡检','待审批','warn'],['数据治理二期','进行中','']];
+  const ROWS=[['客户 A · 基金申购','10-08 14:20','+12,000.00','rise'],['客户 B · 赎回','10-08 11:05','-3,860.00','fall'],['客户 C · 定投扣款','10-07 09:30','+1,000.00','rise']];
+  const DEMO_HTML=`
+    <div class="top"><label class="gj-m-search"><span class="gj-icon" style="--gj-icon:url('${GJPhone.ROOT}assets/icons/iconfont/icf_system_search.svg')" aria-hidden="true"></span><input type="search" placeholder="搜索项目、客户、审批" aria-label="搜索项目、客户、审批"></label></div>
+    <div class="entries"><nav class="gj-m-gridnav" data-columns="4" aria-label="功能导航">${ENTRIES.map((n,i)=>`<button type="button" class="gj-m-gridnav-item"><img src="${GJPhone.ROOT}assets/icons/glassicon/png/${ENTRY_ICONS[i]}.png" alt="" draggable="false"><span class="gj-mobile-type-p5-cn-r">${n}</span></button>`).join('')}</nav></div>
+    <div class="tabs-bar"><div class="gj-m-tabs" role="tablist" aria-label="审批分类" data-kind="primary" data-line="fixed" data-inset="page">${['全部','我发起','待我审','已完成'].map((t,i)=>`<button type="button" class="gj-m-tab" role="tab" aria-selected="${i===0}"><span class="gj-m-tab-face"><span class="gj-m-tab-label">${t}</span></span></button>`).join('')}</div></div>
+    <section class="module"><div class="gj-mobile-type-h4-cn-s">项目卡片</div>
+      <div class="cards">${CARDS.map(([t,s,c])=>`<article class="gj-m-card"><div class="gj-m-card-head"><div class="gj-m-card-header"><h3 class="gj-m-card-title">${t}</h3><span class="gj-m-tag gj-m-tag-small ${c?'gj-m-tag-orange':'gj-m-tag-blue'}">${s}</span></div></div><div class="kv gj-mobile-type-p4-cn-r"><span>负责人 · 张明</span><span>截止 · 2026-12-31</span></div></article>`).join('')}</div>
+    </section>
+    <section class="module"><div class="gj-mobile-type-h4-cn-s">最近流水</div>
+      <section class="gj-m-card"><div class="gj-m-list gj-m-list-in-card">${ROWS.map(([n,d,a,c])=>`<div class="gj-m-list-item"><span class="gj-m-list-item-content"><span class="gj-m-list-item-main"><span class="gj-m-list-item-text">${n}</span><span class="gj-m-list-item-desc">${d}</span></span><span class="gj-m-list-item-extra"><span class="amt ${c}">${a}</span></span></span></div>`).join('')}</div></section>
+    </section>
+    <div class="footer"><button type="button" class="gj-m-button gj-m-button-large gj-m-button-primary gj-m-button-block">新建申请</button></div>`;
+  const $=id=>document.getElementById(id);let toastTimer;
+  async function copyValue(value){let ok=false;try{await navigator.clipboard.writeText(value);ok=true}catch{const a=document.createElement('textarea');a.value=value;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();try{ok=document.execCommand('copy')}catch{}a.remove()}const text=ok?`已复制 ${value}`:'复制失败，请手动选择';if(window.parent!==window){window.parent.postMessage({type:'gj-copy-feedback',text},location.origin);return}$('toast').textContent=text;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),1500)}
+  document.addEventListener('click',e=>{const el=e.target.closest('[data-copy]');if(el)copyValue(el.dataset.copy)});
+  // 栏栅格：375 基准示意，按百分比换算，卡片缩放时比例不变
+  Promise.resolve(GJ_PREVIEW_DATA.tokens).then(t=>{
+    const grids=Object.values(t.grid||{});const W=375;
+    $('gridGallery').innerHTML=grids.map(s=>{const g=s.layoutGrids.find(x=>x.visible);const colW=Math.round((W-2*g.offset-(g.count-1)*g.gutterSize)/g.count*100)/100;const v=s.cssVariables;
+      return `<article class="grid-card"><header class="grid-head"><strong>${s.name}</strong><span>${s.description||'Columns · Stretch'}</span></header>`+
+        `<div class="grid-canvas"><span class="grid-offset" style="left:0;width:${g.offset/W*100}%"></span><span class="grid-offset" style="right:0;width:${g.offset/W*100}%"></span><div class="grid-cols" style="padding:0 ${g.offset/W*100}%;column-gap:${g.gutterSize/(W-2*g.offset)*100}%">${'<i></i>'.repeat(g.count)}</div></div>`+
+        `<div class="grid-data"><div><b>${g.count}</b><span>列数</span></div><div><b>${g.gutterSize}</b><span>槽宽</span></div><div><b>${g.offset}</b><span>边距</span></div><div><b>${colW}</b><span>列宽 @375</span></div></div>`+
+        `<div class="grid-vars">${Object.values(v).map(x=>`<button class="copy" data-copy="var(${x})">${x}</button>`).join('')}</div></article>`}).join('');
+    $('gridCount').textContent=`${grids.length} styles`;
+  }).catch(err=>console.error(err));
+  const stage=GJPhone.mount($('stage'),{html:DEMO_HTML,css:DEMO_CSS,width:375,widths:[],fit:true,background:'var(--ds-background-secondary)'});
+  function select(w){
+    current=w;const v=VIEWPORTS.find(x=>x.w===w);
+    stage.setWidth(w);
+    document.querySelectorAll('.viewport').forEach(el=>el.classList.toggle('active',+el.dataset.w===w));
+    $('stageTag').textContent=`${v.tier} · ${w}px · 1rem = ${rootPx(w)}px`;
+  }
+  $('viewportCards').innerHTML=VIEWPORTS.map(v=>`<button class="viewport" data-w="${v.w}"><div class="viewport-bar" style="width:${Math.min(100,v.w/1200*100)}%"></div><strong>${v.w}px</strong><span class="tier">${v.tier}</span><span class="range">${v.range} · 1rem ${rootPx(v.w)}px</span><span class="rule">${v.rule}</span></button>`).join('');
+  $('viewportCards').addEventListener('click',e=>{const c=e.target.closest('.viewport');if(c)select(+c.dataset.w)});
+  select(375);
+
+  // ===== 间距（由原间距页并入） =====
+  (()=>{
+  const $=id=>document.getElementById(id);
+  function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+  const LAYER_CLASS={'页面':'layer-page','0级卡片':'layer-l0','一级卡片':'layer-l1','二级卡片':'layer-l2','三级块':'layer-l3'};
+  const remOf=px=>String(px/100)+'rem';
+
+  function render(t){
+    const ladder=Object.values(t.dimension).filter(d=>d.name.startsWith('Interval/')).sort((a,b)=>a.value-b.value);
+    const max=ladder[ladder.length-1].value;
+    $('scale').innerHTML='<div class="scale-row scale-head"><span>Figma 名称</span><span>设计值</span><span>代码值</span><span>CSS 变量</span><span>示意</span></div>'+
+      ladder.map(d=>`<div class="scale-row"><span class="scale-name">${esc(d.name)}</span><span class="scale-val">${d.value}px</span><span class="scale-val">${d.cssValue}</span><button class="copy" data-copy="var(${d.cssVariable})">${d.cssVariable}</button><span><i class="scale-block" style="width:${d.value}px;height:${d.value}px${d.value<=4?';border-radius:50%':''}"></i></span></div>`).join('');
+    // 示意方块边长 = 设计值（375 基准下的实际尺寸）
+    $('scaleCount').textContent=`${ladder.length} 档`;
+
+    const sem=Object.values(t.spacing.semantic);let last='';
+    $('semTable').innerHTML='<div class="sem-row sem-head"><span>层级</span><span>Token</span><span>值</span><span>引用阶梯</span><span>用途</span><span>示意</span></div>'+
+      sem.map(s=>{
+        const range=typeof s.value==='object';
+        const vals=range?[s.value.min,s.value.max]:[s.value];
+        const vars=range?Object.values(s.cssVariables):[s.cssVariable];
+        const refs=range?[s.aliasOf.min,s.aliasOf.max]:[s.aliasOf];
+        const layerCls=LAYER_CLASS[s.layer]||'layer-el';
+        const repeat=s.layer===last;last=s.layer;
+        return `<div class="sem-row ${layerCls}"><span class="sem-layer${repeat?' repeat':''}">${esc(s.layer)}</span>`+
+          `<span class="sem-name"><b>${esc(s.name)}</b>${vars.map(v=>`<button class="copy" data-copy="var(${v})">${v}</button>`).join('')}</span>`+
+          `<span class="sem-val">${vals.join('–')}px</span>`+
+          `<span class="sem-ref">${refs.map(r=>r?t.dimension[r].cssVariable:'—（0）').join(' / ')}</span>`+
+          `<span class="sem-use">${esc(s.usage)}${s.note?`<small>${esc(s.note)}</small>`:''}</span>`+
+          `<span class="sem-viz">${vals.map(v=>v?`<i style="width:${v*2}px;margin-right:6px"></i>`:'<span class="sem-ref">0</span>').join('')}</span></div>`;
+      }).join('');
+    $('semCount').textContent=`${sem.length} 个语义间距`;
+    $('rules').innerHTML=t.spacing.rules.map((r,i)=>`<article class="sp-rule"><div class="sp-rule-num">0${i+1}</div><p>${esc(r)}</p></article>`).join('');
+  }
+
+  // 示例页面：只用语义间距、文字样式类、颜色与圆角 Token
+  const DEMO_CSS=`
+    body{background:var(--ds-background-background)}
+    .pg{display:flex;flex-direction:column;gap:var(--space-module-gap);padding:var(--space-module-gap) 0}
+    .module{display:flex;flex-direction:column;gap:var(--space-module-title-gap);padding:0 var(--space-page-margin-x)}
+    .module.full{padding:0 var(--space-card-l0-margin-x)}
+    .module.full>.gj-mobile-type-h4-cn-s{padding:0 var(--space-page-margin-x)}
+    .l0 .kv{gap:var(--space-stack-default)}
+    .cards{display:flex;flex-direction:column;gap:var(--space-card-l1-gap)}
+    .l1-head{display:flex;flex-direction:column;gap:var(--space-card-l1-title-gap)}
+    .stack-tight{display:flex;flex-direction:column;gap:var(--space-stack-tight)}
+    .l2-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-card-l2-gap)}
+    .kv{display:flex;flex-direction:column;gap:var(--space-stack-default)}
+    .kv div{display:flex;justify-content:space-between}
+    .l3-row{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-block-l3-gap)}
+    .meta{display:flex;align-items:center;justify-content:space-between}
+    .tags{display:flex;flex-wrap:wrap;gap:var(--space-inline-tag-gap-min)}
+    .icon-text{display:flex;align-items:center;gap:var(--space-inline-icon-gap);color:var(--ds-text-tiatery)}
+    .footer{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-btn-gap-footer);padding:var(--space-12) var(--space-page-margin-x);padding-bottom:calc(var(--space-12) + var(--safe-bottom));background:var(--ds-background-container)}
+    .sec{color:var(--ds-text-secondary)}.ter{color:var(--ds-text-tiatery)}
+    /* 标注：用内阴影涂出内边距区域，用父级底色显示间距 */
+    .on .pg{background:var(--mark-page)}
+    .on .module,.on .cards{background:var(--mark-page)}
+    .on .l1{box-shadow:inset 0 0 0 var(--space-card-l1-padding) var(--mark-l1)}
+    .on .l1-head,.on .l2-row,.on .kv{background:var(--mark-l1)}
+    .on .l2{box-shadow:inset 0 0 0 var(--space-card-l2-padding) var(--mark-l2)}
+    .on .l3-row{background:var(--mark-l2)}
+    .on .l3{background:var(--ds-background-container);box-shadow:inset 0 0 0 var(--space-block-l3-padding) var(--mark-l3)}
+    .on .stack-tight,.on .tags,.on .icon-text{background:var(--mark-el)}
+    .on .footer{background:var(--mark-el)}
+    .on .l1>*,.on .l2>*,.on .module>*,.on .cards>*{position:relative}
+    .on .l1-head>*,.on .kv>*,.on .stack-tight>*{background:var(--ds-background-container)}
+    .on .l2 .stack-tight>*{background:var(--ds-background-background)}
+    .on .module>.gj-mobile-type-h4-cn-s{background:var(--ds-background-background);background-clip:content-box}
+    .on .l0{box-shadow:inset 0 0 0 var(--space-card-l0-padding) var(--mark-l0)}
+    .on .l0>.l3-row,.on .l0>.kv{background:var(--mark-l0)}
+    .on .l0>*{position:relative}
+  `;
+  const MARK_VARS=':root{--mark-page:var(--ds-background-bt-b10);--mark-l0:var(--ds-background-bt-c20);--mark-l1:var(--ds-background-bt-o15);--mark-l2:var(--ds-background-bt-g15);--mark-l3:var(--ds-background-bt-p15);--mark-el:var(--ds-background-bt-r15)}';
+  const DEMO_HTML=`<div class="pg">
+    <section class="module"><div class="gj-mobile-type-h4-cn-s">项目进度</div>
+      <article class="gj-m-card l1">
+        <div class="l1-head"><div class="stack-tight"><div class="gj-mobile-type-h5-cn-s">Q4 重点项目</div><div class="gj-mobile-type-p5-cn-r ter">更新于 10-08 15:30</div></div></div>
+        <div class="l2-row">
+          <div class="gj-m-card-l2 l2"><div class="gj-mobile-type-p5-cn-r sec">进行中</div><div class="stack-tight"><div class="gj-mobile-type-n4-num-s">12</div><div class="gj-mobile-type-p6-cn-r ter">较上周 +2</div></div></div>
+          <div class="gj-m-card-l2 l2"><div class="gj-mobile-type-p5-cn-r sec">已完成</div><div class="stack-tight"><div class="gj-mobile-type-n4-num-s">36</div><div class="gj-mobile-type-p6-cn-r ter">完成率 75%</div></div></div>
+        </div>
+        <div class="kv gj-mobile-type-p3-cn-r"><div><span class="sec">负责人</span><span>张明</span></div><div><span class="sec">截止日期</span><span>2026-12-31</span></div></div>
+      </article>
+    </section>
+    <section class="module"><div class="gj-mobile-type-h4-cn-s">待办审批</div>
+      <div class="cards">
+        <article class="gj-m-card l1">
+          <div class="l1-head"><div class="stack-tight"><div class="gj-mobile-type-h5-cn-s">差旅报销 · 上海</div><div class="meta"><div class="tags gj-mobile-type-p5-cn-r"><span class="gj-m-tag gj-m-tag-small">待审批</span><span class="gj-m-tag gj-m-tag-small">加急</span></div><span class="icon-text gj-mobile-type-p5-cn-r"><span class="gj-icon gj-icon-12" style="--gj-icon:url('${GJPhone.ROOT}assets/icons/iconfont/icf_system_time.svg')" aria-hidden="true"></span>2 小时前</span></div></div></div>
+          <div class="l3-row gj-mobile-type-p5-cn-r"><div class="gj-m-block-l3 l3">交通</div><div class="gj-m-block-l3 l3">住宿</div><div class="gj-m-block-l3 l3">餐补</div></div>
+        </article>
+        <article class="gj-m-card l1"><div class="l1-head"><div class="stack-tight"><div class="gj-mobile-type-h5-cn-s">采购申请 · 办公设备</div><div class="gj-mobile-type-p5-cn-r ter">行政部 · 李然</div></div></div></article>
+      </div>
+    </section>
+    <section class="module full"><div class="gj-mobile-type-h4-cn-s">费用明细</div>
+      <article class="gj-m-card gj-m-card-l0 l0">
+        <div class="kv gj-mobile-type-p3-cn-r"><div><span class="sec">申请单号</span><span>BX-20261008-0132</span></div><div><span class="sec">申请部门</span><span>财富管理部</span></div><div><span class="sec">费用类型</span><span>差旅 · 交通</span></div><div><span class="sec">申请金额</span><span>¥3,860.00</span></div><div><span class="sec">预算余额</span><span>¥128,400.00</span></div></div>
+        <div class="l3-row gj-mobile-type-p5-cn-r"><div class="gj-m-block-l3 l3">发票 3</div><div class="gj-m-block-l3 l3">行程单 2</div><div class="gj-m-block-l3 l3">附件 1</div></div>
+      </article>
+    </section>
+  </div>
+  <div class="footer"><button type="button" class="gj-m-button gj-m-button-large gj-m-button-secondary">驳回</button><button type="button" class="gj-m-button gj-m-button-large gj-m-button-primary">通过</button></div>`;
+  const phone=GJPhone.mount($('demoPhone'),{widths:[320,375,450],html:`<div class="on" id="root">${DEMO_HTML}</div>`,css:MARK_VARS+DEMO_CSS});
+  $('annotate').addEventListener('change',e=>{const r=phone.doc&&phone.doc.getElementById('root');if(r)r.classList.toggle('on',e.target.checked)});
+  $('demoPhone').addEventListener('phone:ready',()=>{const r=phone.doc.getElementById('root');if(r)r.classList.toggle('on',$('annotate').checked)});
+
+  Promise.resolve(GJ_PREVIEW_DATA.tokens).then(render).catch(err=>{$('semTable').textContent='间距数据读取失败';console.error(err)});
+  })();
+</script></body></html>

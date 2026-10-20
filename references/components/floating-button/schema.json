@@ -1,0 +1,102 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "floating-button",
+  "name": "悬浮按钮 Floating Button",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "node": "1157:5100",
+    "page": "Mobile_按钮Button（11:1610）",
+    "extractedAt": "2026-10-09",
+    "readOnly": true,
+    "usageFrom": "设计方 2026-10-09 口头说明（Figma 中无用法说明）"
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-fab",
+    "container": ".gj-m-fab-group",
+    "note": "原型基座，不代表真实前端组件库 API"
+  },
+  "variants": {
+    "count": 4,
+    "matrix": "2 color × 2 direction"
+  },
+  "properties": {
+    "color": {
+      "type": "enum",
+      "default": "default",
+      "values": [
+        "default",
+        "blue"
+      ]
+    },
+    "direction": {
+      "type": "enum",
+      "default": "to_top",
+      "values": [
+        "to_top",
+        "to_bottom"
+      ],
+      "icon": {
+        "to_top": "icf_Arrow_up",
+        "to_bottom": "icf_Arrow_down"
+      }
+    },
+    "icon": {
+      "type": "icon-library",
+      "note": "Figma 只有方向两种图标、无实例交换属性；按设计方说明可换用图标库中的新增、下载等图标",
+      "library": "references/icons/index.json → general（iconfont）"
+    }
+  },
+  "size": {
+    "width": 48,
+    "height": 48,
+    "icon": 28,
+    "iconAlign": "居中（Figma 2026-10-09 改为 28，内边距 8 不影响居中位置）",
+    "radius": "圆形（Figma 48，未绑定；实现用 --Radius-full）"
+  },
+  "color": {
+    "default": {
+      "background": "--ds-background-container",
+      "icon": "--ds-text-tiatery",
+      "hex": [
+        "#FFFFFF",
+        "#8D96A3"
+      ]
+    },
+    "blue": {
+      "background": "--ds-button-primary-bg-default",
+      "icon": "--ds-text-reversal",
+      "hex": [
+        "#2B73FF（设计方确认，FAB-M-001 已关闭）",
+        "#FFFFFF"
+      ]
+    }
+  },
+  "effect": {
+    "style": "Shadow_center",
+    "token": "--ds-effect-shadow-center",
+    "value": "0 0 15px rgba(0,0,0,.10)"
+  },
+  "states": {
+    "values": [
+      "default",
+      "pressed"
+    ],
+    "pressed": {
+      "default": "叠加 --ds-background-hover-2（黑 3%）",
+      "blue": "底色换 --ds-button-primary-bg-pressed（#1F63F0）"
+    },
+    "note": "Figma 只有 default；按下态沿用按钮做法（设计方 2026-10-09 确认）；无禁用态"
+  },
+  "placement": {
+    "anchor": "界面右下方",
+    "offsetX": "--space-page-margin-x（16）",
+    "offsetY": "--space-24（24）+ 底部安全区；有 TabBar / 底部操作栏时再加栏高",
+    "gap": "--space-12（12）",
+    "status": "设计方 2026-10-09 确认（FAB-M-003 已关闭）"
+  },
+  "interaction": {
+    "hitArea": "≥ 44×44px"
+  }
+}

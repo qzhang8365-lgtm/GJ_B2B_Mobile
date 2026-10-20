@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 滑块 Slider</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>滑块 Slider</h1>
+    <p>在一段范围内拖动选择数值。连续值用连续滑块，有限几档用刻度滑块。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section" id="slider-type">
+      <header class="docs-section-head"><div><h2>类型与状态</h2><p>连续滑块用颜色区分已选段；刻度滑块标出每一档，当前档文字加深。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">连续 · 默认 / 禁用</span><div data-demo="cont"></div></div>
+        <div class="panel"><span class="docs-stage-label">刻度 · 默认 / 禁用</span><div data-demo="step"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="slider-form">
+      <header class="docs-section-head"><div><h2>表单中使用</h2><p>连续滑块在标题右侧显示当前数值；刻度滑块用档位文字表示当前值。</p></div></header>
+      <div class="panel gray"><span class="docs-stage-label">Form_slider / Form_slider_rule</span><div data-demo="form"></div></div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>拖动或用方向键调整；数值与档位实时更新。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pN">刻度档数</label><select id="pN"><option>3</option><option selected>4</option><option>5</option></select></div>
+          <label class="ck"><input type="checkbox" id="pDis">禁用</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>适用</td><td>值的精确度要求不高、需要直观感受大小时使用。</td><td>需要精确数值（如金额）时改用输入框或步数器。</td></tr>
+        <tr><td>数值</td><td>连续滑块同时显示当前数值和单位。</td><td>不让用户只凭位置猜数值。</td></tr>
+        <tr><td>刻度</td><td>档位 3–5 个，每档文字简短。</td><td>档位过多时文字会挤在一起，改用选择器。</td></tr>
+        <tr><td>触控</td><td>滑块热区不小于 44，左右留出拖动空间。</td><td>不放在可横向滑动的容器里，避免手势冲突。</td></tr>
+        <tr><td>无障碍</td><td>支持方向键调整，读屏能读出当前值或档位。</td><td>—</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const cont=(v,o={})=>`<input type="range" class="gj-m-slider" min="0" max="100" step="1" value="${v}" style="--gj-m-slider-pct:${v}%" aria-label="${o.label||'比例'}" aria-valuetext="${v}%"${o.dis?' disabled':''}>`;
+  const step=(labels,cur,o={})=>`<div class="gj-m-slider-step${o.dis?' is-disabled':''}" style="--gj-m-slider-n:${labels.length}"><ul class="gj-m-slider-labels" aria-hidden="true">${labels.map((t,i)=>`<li style="--i:${i}"${i===cur?' class="is-current"':''}>${t}</li>`).join('')}</ul><div class="gj-m-slider-rail"><input type="range" class="gj-m-slider" min="0" max="${labels.length-1}" step="1" value="${cur}" aria-label="${o.label||'档位'}" aria-valuetext="${labels[cur]}"${o.dis?' disabled':''}></div></div>`;
+  const label=t=>`<span class="gj-m-form-label"><span class="gj-m-form-label-text">${t}</span></span>`;
+  const fCont=(t,v,o={})=>`<div class="gj-m-form-slider"><div class="gj-m-form-slider-head">${label(t)}<span class="gj-m-form-slider-value" aria-hidden="true">${v}%</span></div>${cont(v,{label:t,...o})}</div>`;
+  const fStep=(t,labels,cur,o={})=>`<div class="gj-m-form-slider">${label(t)}${step(labels,cur,{label:t,...o})}</div>`;
+  const CSS='html,body{overflow:hidden;background:transparent}.scr{width:100%;max-width:3.75rem;margin:0 auto;padding:.16rem var(--space-page-margin-x);box-sizing:border-box;background:var(--ds-background-container)}.stack{display:flex;flex-direction:column;gap:.32rem;padding:.12rem 0}'+
+    '.ph{position:relative;width:100%;max-width:3.75rem;margin:0 auto;height:100%;overflow:hidden;background:var(--ds-background-background);display:flex;flex-direction:column}.hd{flex:none;display:flex;align-items:center;justify-content:center;height:44px;background:var(--ds-background-container);font-size:.17rem;font-weight:600}.sum{margin-top:.12rem;padding:.12rem var(--space-page-margin-x);background:var(--ds-background-container);color:var(--ds-text-secondary);font-size:.13rem;line-height:.2rem}';
+  const FIX='html,body,.page{height:100%}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+(h?FIX:''),height:h||'auto'});
+  const bind=d=>{d.querySelectorAll('.gj-m-slider').forEach(r=>r.addEventListener('input',()=>{
+    const st=r.closest('.gj-m-slider-step');
+    if(st){const lis=st.querySelectorAll('.gj-m-slider-labels li');lis.forEach((li,i)=>li.classList.toggle('is-current',i===+r.value));r.setAttribute('aria-valuetext',lis[+r.value].textContent)}
+    else{r.style.setProperty('--gj-m-slider-pct',(r.value-r.min)/(r.max-r.min)*100+'%');r.setAttribute('aria-valuetext',r.value+'%');const v=r.closest('.gj-m-form-slider');if(v){const t=v.querySelector('.gj-m-form-slider-value');if(t)t.textContent=r.value+'%'}}
+    const sum=d.getElementById('sum');if(sum)sum.dispatchEvent(new Event('upd'))}))};
+  const RISK=['保守','稳健','平衡','进取','激进'];
+  const swatch=(k,html,h)=>{const f=show(k,html,h);f.addEventListener('load',()=>bind(f.contentDocument));return f};
+  swatch('cont',`<div class="scr"><div class="stack">${cont(70)}${cont(70,{dis:1})}</div></div>`);
+  swatch('step',`<div class="scr"><div class="stack">${step(RISK.slice(0,4),2)}${step(RISK.slice(0,4),2,{dis:1})}</div></div>`);
+  swatch('form',`<div class="scr">${fCont('投资比例',70)}${fStep('风险偏好',RISK.slice(0,4),2)}</div>`);
+
+  function render(){const n=+$('pN').value,dis=$('pDis').checked;const L=n===3?['保守','平衡','进取']:RISK.slice(0,n);
+    const f=GJPhone.swatch($('lab'),{html:`<div class="ph"><div class="hd">投资偏好</div><div class="scr" style="margin-top:.12rem">${fCont('权益类资产比例',40,{dis})}${fStep('风险偏好',L,1,{dis})}</div><div class="sum" id="sum" aria-live="polite"></div></div>`,css:CSS+'.ph{height:auto;padding-bottom:.16rem}',height:'auto'});
+    f.addEventListener('load',()=>{const d=f.contentDocument;bind(d);const sum=d.getElementById('sum');const rs=d.querySelectorAll('.gj-m-slider');
+      const upd=()=>{sum.textContent=`当前：权益类 ${rs[0].value}%，风险偏好「${L[+rs[1].value]}」`};sum.addEventListener('upd',upd);upd()})}
+  $('pN').addEventListener('change',render);$('pDis').addEventListener('change',render);render();
+})();
+</script>
+</body>
+</html>

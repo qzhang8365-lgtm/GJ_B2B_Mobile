@@ -1,0 +1,444 @@
+{
+  "extractedAt": "2026-09-30",
+  "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+  "scope": "定点检查卡片、弹窗、220 移动业务组件三个页面；未绑定样式的局部效果仅记录，不参加全局 Token 一致性审计。",
+  "pages": [
+    {
+      "page": {
+        "id": "58:791",
+        "name": "卡片Card"
+      },
+      "nodes": [],
+      "count": 0
+    },
+    {
+      "page": {
+        "id": "58:5100",
+        "name": "弹窗Popover"
+      },
+      "nodes": [],
+      "count": 0
+    },
+    {
+      "page": {
+        "id": "192:8826",
+        "name": "【业务组件】220移动端"
+      },
+      "nodes": [
+        {
+          "id": "192:8828",
+          "name": "Rectangle 1",
+          "type": "RECTANGLE",
+          "parentId": "192:8827",
+          "effectStyleId": "S:d3f90c0c1e6cf19683abcdcafd0d2d07aec2035b,",
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "visible": true,
+              "radius": 20,
+              "boundVariables": {},
+              "color": {
+                "r": 0.48224523663520813,
+                "g": 0.5304371118545532,
+                "b": 0.6239858269691467,
+                "a": 0.10000000149011612
+              },
+              "offset": {
+                "x": 0,
+                "y": 8
+              },
+              "spread": 0,
+              "blendMode": "NORMAL",
+              "showShadowBehindNode": false
+            }
+          ]
+        },
+        {
+          "id": "192:9086",
+          "name": "Rectangle 2",
+          "type": "RECTANGLE",
+          "parentId": "192:8827",
+          "effectStyleId": "S:d3f90c0c1e6cf19683abcdcafd0d2d07aec2035b,",
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "visible": true,
+              "radius": 20,
+              "boundVariables": {},
+              "color": {
+                "r": 0.48224523663520813,
+                "g": 0.5304371118545532,
+                "b": 0.6239858269691467,
+                "a": 0.10000000149011612
+              },
+              "offset": {
+                "x": 0,
+                "y": 8
+              },
+              "spread": 0,
+              "blendMode": "NORMAL",
+              "showShadowBehindNode": false
+            }
+          ]
+        },
+        {
+          "id": "211:189",
+          "name": "Rectangle 3",
+          "type": "RECTANGLE",
+          "parentId": "192:8827",
+          "effectStyleId": "S:c2e0b3976344a436a85f5d5f25ea1c8eaee1ef7b,",
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "visible": true,
+              "radius": 15,
+              "boundVariables": {},
+              "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0.10000000149011612
+              },
+              "offset": {
+                "x": 0,
+                "y": 0
+              },
+              "spread": 0,
+              "blendMode": "NORMAL",
+              "showShadowBehindNode": false
+            }
+          ]
+        },
+        {
+          "id": "211:193",
+          "name": "Rectangle 4",
+          "type": "RECTANGLE",
+          "parentId": "192:8827",
+          "effectStyleId": "S:c2e0b3976344a436a85f5d5f25ea1c8eaee1ef7b,",
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "visible": true,
+              "radius": 15,
+              "boundVariables": {},
+              "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0.10000000149011612
+              },
+              "offset": {
+                "x": 0,
+                "y": 0
+              },
+              "spread": 0,
+              "blendMode": "NORMAL",
+              "showShadowBehindNode": false
+            }
+          ]
+        },
+        {
+          "id": "218:6440",
+          "name": "Rectangle 5",
+          "type": "RECTANGLE",
+          "parentId": "192:8827",
+          "effectStyleId": "S:c2e0b3976344a436a85f5d5f25ea1c8eaee1ef7b,",
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "visible": true,
+              "radius": 15,
+              "boundVariables": {},
+              "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0.10000000149011612
+              },
+              "offset": {
+                "x": 0,
+                "y": 0
+              },
+              "spread": 0,
+              "blendMode": "NORMAL",
+              "showShadowBehindNode": false
+            }
+          ]
+        },
+        {
+          "id": "218:6442",
+          "name": "Rectangle 6",
+          "type": "RECTANGLE",
+          "parentId": "192:8827",
+          "effectStyleId": "S:c2e0b3976344a436a85f5d5f25ea1c8eaee1ef7b,",
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "visible": true,
+              "radius": 15,
+              "boundVariables": {},
+              "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0.10000000149011612
+              },
+              "offset": {
+                "x": 0,
+                "y": 0
+              },
+              "spread": 0,
+              "blendMode": "NORMAL",
+              "showShadowBehindNode": false
+            }
+          ]
+        },
+        {
+          "id": "279:4577",
+          "name": "Rectangle 34630406",
+          "type": "RECTANGLE",
+          "parentId": "192:8827",
+          "effectStyleId": "S:c2e0b3976344a436a85f5d5f25ea1c8eaee1ef7b,",
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "visible": true,
+              "radius": 15,
+              "boundVariables": {},
+              "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0.10000000149011612
+              },
+              "offset": {
+                "x": 0,
+                "y": 0
+              },
+              "spread": 0,
+              "blendMode": "NORMAL",
+              "showShadowBehindNode": false
+            }
+          ]
+        },
+        {
+          "id": "228:1204",
+          "name": "2.对话输入组件",
+          "type": "COMPONENT",
+          "parentId": "192:8827",
+          "effectStyleId": "",
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "visible": true,
+              "radius": 20,
+              "boundVariables": {},
+              "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0.10000000149011612
+              },
+              "offset": {
+                "x": 0,
+                "y": 0
+              },
+              "spread": 0,
+              "blendMode": "NORMAL",
+              "showShadowBehindNode": false
+            },
+            {
+              "type": "BACKGROUND_BLUR",
+              "visible": true,
+              "radius": 15,
+              "boundVariables": {},
+              "blurType": "NORMAL"
+            }
+          ]
+        },
+        {
+          "id": "228:1223",
+          "name": "Frame 1321316641",
+          "type": "FRAME",
+          "parentId": "228:1222",
+          "effectStyleId": "",
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "visible": true,
+              "radius": 4,
+              "boundVariables": {},
+              "color": {
+                "r": 0.2688959240913391,
+                "g": 0.3317706882953644,
+                "b": 0.5046762228012085,
+                "a": 0.05000000074505806
+              },
+              "offset": {
+                "x": 0,
+                "y": 0
+              },
+              "spread": 0,
+              "blendMode": "NORMAL",
+              "showShadowBehindNode": false
+            }
+          ]
+        },
+        {
+          "id": "279:4578",
+          "name": "AI助答按钮",
+          "type": "COMPONENT",
+          "parentId": "192:8827",
+          "effectStyleId": "",
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "visible": true,
+              "radius": 10,
+              "boundVariables": {},
+              "color": {
+                "r": 0.48235294222831726,
+                "g": 0.529411792755127,
+                "b": 0.6235294342041016,
+                "a": 0.20000000298023224
+              },
+              "offset": {
+                "x": 0,
+                "y": 4
+              },
+              "spread": 0,
+              "blendMode": "NORMAL",
+              "showShadowBehindNode": false
+            }
+          ]
+        },
+        {
+          "id": "1483:686",
+          "name": "矩形",
+          "type": "RECTANGLE",
+          "parentId": "1483:685",
+          "effectStyleId": "",
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "visible": true,
+              "radius": 0,
+              "boundVariables": {},
+              "color": {
+                "r": 0.9333333373069763,
+                "g": 0.9333333373069763,
+                "b": 0.9333333373069763,
+                "a": 1
+              },
+              "offset": {
+                "x": 0,
+                "y": 1
+              },
+              "spread": 0,
+              "blendMode": "NORMAL",
+              "showShadowBehindNode": true
+            }
+          ]
+        },
+        {
+          "id": "I1483:798;464:5928",
+          "name": "蒙版",
+          "type": "ELLIPSE",
+          "parentId": "1483:798",
+          "effectStyleId": "",
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "visible": false,
+              "radius": 16.66666603088379,
+              "boundVariables": {},
+              "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 0.03999999910593033
+              },
+              "offset": {
+                "x": 0,
+                "y": 16.66666603088379
+              },
+              "spread": 0,
+              "blendMode": "NORMAL",
+              "showShadowBehindNode": false
+            }
+          ]
+        },
+        {
+          "id": "1483:863",
+          "name": "矩形",
+          "type": "RECTANGLE",
+          "parentId": "1483:862",
+          "effectStyleId": "",
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "visible": true,
+              "radius": 0,
+              "boundVariables": {},
+              "color": {
+                "r": 0.9333333373069763,
+                "g": 0.9333333373069763,
+                "b": 0.9333333373069763,
+                "a": 1
+              },
+              "offset": {
+                "x": 0,
+                "y": 1
+              },
+              "spread": 0,
+              "blendMode": "NORMAL",
+              "showShadowBehindNode": true
+            }
+          ]
+        },
+        {
+          "id": "1483:1028",
+          "name": "矩形",
+          "type": "RECTANGLE",
+          "parentId": "1483:1027",
+          "effectStyleId": "",
+          "effects": [
+            {
+              "type": "DROP_SHADOW",
+              "visible": true,
+              "radius": 0,
+              "boundVariables": {},
+              "color": {
+                "r": 0.9333333373069763,
+                "g": 0.9333333373069763,
+                "b": 0.9333333373069763,
+                "a": 1
+              },
+              "offset": {
+                "x": 0,
+                "y": 1
+              },
+              "spread": 0,
+              "blendMode": "NORMAL",
+              "showShadowBehindNode": true
+            }
+          ]
+        }
+      ],
+      "count": 14
+    }
+  ],
+  "checks": {
+    "namedStyleCount": 6,
+    "duplicateNames": [],
+    "duplicateIds": [],
+    "boundReferences": 7,
+    "mismatchedReferences": 0
+  },
+  "notVerified": [
+    "团队库发布状态",
+    "其余页面引用",
+    "真实设备与 H5 渲染",
+    "其他四种效果的实例应用"
+  ]
+}

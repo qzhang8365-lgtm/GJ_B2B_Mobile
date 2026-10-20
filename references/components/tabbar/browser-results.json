@@ -1,0 +1,103 @@
+{
+  "results": [
+    {
+      "width": 375,
+      "content": "icon+text",
+      "checks": {
+        "contentHeight": true,
+        "equalWidth": true,
+        "hit": true,
+        "oneActive": true,
+        "noOverflow": true,
+        "safeHeight": true,
+        "indicatorCentered": true,
+        "dot": true,
+        "click": true,
+        "feedback": true
+      }
+    },
+    {
+      "width": 375,
+      "content": "text",
+      "checks": {
+        "contentHeight": true,
+        "equalWidth": true,
+        "hit": true,
+        "oneActive": true,
+        "noOverflow": true,
+        "safeHeight": true,
+        "indicatorCentered": true,
+        "dot": true,
+        "click": true,
+        "feedback": true
+      }
+    },
+    {
+      "width": 375,
+      "content": "icon",
+      "checks": {
+        "contentHeight": true,
+        "equalWidth": true,
+        "hit": true,
+        "oneActive": true,
+        "noOverflow": true,
+        "safeHeight": true,
+        "indicatorCentered": true,
+        "dot": true,
+        "click": true,
+        "feedback": true
+      }
+    },
+    {
+      "width": 320,
+      "content": "icon+text",
+      "checks": {
+        "contentHeight": true,
+        "equalWidth": true,
+        "hit": true,
+        "oneActive": true,
+        "noOverflow": true,
+        "safeHeight": true,
+        "indicatorCentered": true,
+        "dot": true,
+        "click": true,
+        "feedback": true
+      }
+    },
+    {
+      "width": 320,
+      "content": "text",
+      "checks": {
+        "contentHeight": true,
+        "equalWidth": true,
+        "hit": true,
+        "oneActive": true,
+        "noOverflow": true,
+        "safeHeight": true,
+        "indicatorCentered": true,
+        "dot": true,
+        "click": true,
+        "feedback": true
+      }
+    },
+    {
+      "width": 320,
+      "content": "icon",
+      "checks": {
+        "contentHeight": true,
+        "equalWidth": true,
+        "hit": true,
+        "oneActive": true,
+        "noOverflow": true,
+        "safeHeight": true,
+        "indicatorCentered": true,
+        "dot": true,
+        "click": true,
+        "feedback": true
+      }
+    }
+  ],
+  "hideSafe": true,
+  "hideBadge": true,
+  "errors": []
+}

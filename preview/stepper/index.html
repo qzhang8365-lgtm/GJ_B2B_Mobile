@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 步数器 Stepper</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select,.playground .controls .field input{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid2+.grid2{margin-top:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>步数器 Stepper</h1>
+    <p>在明确范围内按固定步长调整数值，适合数量、份数等；大范围数字用输入框。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>样式</h2><p>填充式为默认，描边式用于灰色背景，同一区域不混用。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">填充式 · Default</span><div data-demo="sFill"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">描边式 · lined（灰色背景上）</span><div data-demo="sLine"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>到达边界只禁用对应按钮，并在下方说明限制；输入超出范围时变红并提示允许区间。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">默认 / 输入中 / 整体禁用</span><div data-demo="st1"></div></div>
+        <div class="panel"><span class="docs-stage-label">到达最大值 / 到达最小值</span><div data-demo="st2"></div></div>
+      </div>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">超出范围 · 大于最大值 / 小于最小值</span><div data-demo="st3"></div></div>
+        <div class="panel"><span class="docs-stage-label">数值区随位数变宽</span><div data-demo="st4"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用示例</h2><p>均为 375 宽。单位、库存、限额等辅助信息放在组件旁边，不放进数值区。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">列表行 · 数量调整</span><div data-demo="exList"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">表单 · 份数与限额说明</span><div data-demo="exForm"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点加减按步长变化；点数值可直接输入，失焦后自动校正到范围内。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pStyle">样式</label><select id="pStyle"><option value="fill" selected>填充式</option><option value="line">描边式</option></select></div>
+          <div class="field"><label for="pStep">步长</label><select id="pStep"><option>1</option><option>10</option><option>100</option></select></div>
+          <div class="field"><label for="pMin">最小值</label><select id="pMin"><option>0</option><option selected>1</option><option>100</option></select></div>
+          <div class="field"><label for="pMax">最大值</label><select id="pMax"><option>10</option><option>99</option><option selected>999</option></select></div>
+          <label class="ck"><input type="checkbox" id="pDis">整体禁用</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>范围明确、按固定步长变化的离散数值；清晰反馈当前值、边界和不可用原因。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>适用范围</td><td>数量、次数、份数等离散数值。</td><td>连续范围用滑块，大范围录入用输入框；不替代开关、进度步骤或日期选择。</td></tr>
+        <tr><td>默认值与范围</td><td>默认值、步长、最小值、最大值由业务规则明确，首次展示即为有效值。</td><td>不出现越界的初始值。</td></tr>
+        <tr><td>加减</td><td>每次只改变一个步长；支持长按连续变化时限制速度并即时反馈。</td><td>数值变化触发计算或请求时，处理连续点击、重复提交与异步结果覆盖。</td></tr>
+        <tr><td>直接输入</td><td>唤起数字键盘；按业务规则限制负数、小数位、前导零与非法字符；失焦或确认后校验并格式化。</td><td>超出范围时就近提示允许区间，焦点留在组件上。</td></tr>
+        <tr><td>边界</td><td>到最小值只禁用减号，到最大值只禁用加号，并显示限制说明。</td><td>仍可操作时不禁用整个组件。</td></tr>
+        <tr><td>整体禁用</td><td>只用于确实不可编辑的场景，在邻近位置说明原因。</td><td>不只靠变淡表达。</td></tr>
+        <tr><td>辅助信息</td><td>单位、库存、限额放在组件旁边。</td><td>不塞进数值区。</td></tr>
+        <tr><td>无障碍</td><td>加减按钮提供“减少 / 增加”说明；读屏可获取当前值、范围与禁用状态。</td><td>—</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const stepper=(o={})=>{const v=o.v??1,min=o.min??1,max=o.max??999;const lim=o.limited;
+    return `<div class="gj-m-stepper${o.line?' gj-m-stepper-line':''}${o.dis?' is-disabled':''}${lim?' is-limited':''}${o.err?' is-error':''}" data-min="${min}" data-max="${max}" data-step="${o.step||1}"${o.dis?' aria-disabled="true"':''}><div class="gj-m-stepper-row"><button type="button" class="gj-m-stepper-btn" data-dir="-1" aria-label="减少"${v<=min&&!o.dis?' disabled':''}><span class="gj-icon" aria-hidden="true"></span></button><input class="gj-m-stepper-input${o.focus?' is-focused':''}" type="text" inputmode="numeric" pattern="[0-9]*" value="${v}" style="--gj-m-stepper-len:${String(v).length}"${o.err?' aria-invalid="true"':''} aria-label="${o.label||'数量'}" aria-valuemin="${min}" aria-valuemax="${max}"><button type="button" class="gj-m-stepper-btn" data-dir="1" aria-label="增加"${v>=max&&!o.dis?' disabled':''}><span class="gj-icon" aria-hidden="true"></span></button></div>${o.err?`<div class="gj-m-stepper-message" role="alert">输入超出范围，请输入 ${min}–${max}</div>`:lim?`<div class="gj-m-stepper-message" role="status">${v>=max?'最大值 '+max:'最小值 '+min}</div>`:''}</div>`};
+  const CSS='html,body{overflow-y:hidden}.scr{width:100%;max-width:3.75rem;margin:0 auto;padding:.16rem var(--space-page-margin-x);background:var(--ds-background-container);box-sizing:border-box}.scr.g{background:var(--ds-background-background)}.scr.l{padding:.12rem 0;background:var(--ds-background-background)}'+
+    '.row{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:.24rem}'+
+    '.li{display:flex;align-items:center;justify-content:space-between;gap:.12rem;padding:.12rem var(--space-page-margin-x);background:var(--ds-background-container);box-shadow:inset 0 -1px 0 var(--ds-border-default)}.li:last-child{box-shadow:none}.li .t{font-size:.16rem;line-height:.24rem}.li .d{font-size:.13rem;line-height:.2rem;color:var(--ds-text-tiatery)}'+
+    '.card{background:var(--ds-background-container);padding:.04rem var(--space-page-margin-x) .16rem}.fl{padding:.12rem 0 .08rem;font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)}.inl{display:flex;align-items:flex-start;gap:.08rem}.unit{height:.32rem;display:flex;align-items:center;font-size:.14rem;color:var(--ds-text-secondary)}.tip{margin-top:.08rem;font-size:.13rem;line-height:.2rem;color:var(--ds-text-tiatery)}.sum{margin-top:.12rem;font-size:.14rem;line-height:.22rem}.sum b{color:var(--ds-text-primary)}';
+  function wire(root){root.querySelectorAll('.gj-m-stepper:not(.is-disabled)').forEach(s=>{
+    const min=+s.dataset.min,max=+s.dataset.max,step=+s.dataset.step,inp=s.querySelector('.gj-m-stepper-input'),[minus,plus]=s.querySelectorAll('.gj-m-stepper-btn');
+    const msg=t=>{let m=s.querySelector('.gj-m-stepper-message');if(!t){if(m)m.remove();return}if(!m){m=document.createElement('div');m.className='gj-m-stepper-message';m.setAttribute('role','status');s.appendChild(m)}m.textContent=t};
+    const len=()=>inp.style.setProperty('--gj-m-stepper-len',Math.max(1,inp.value.length));
+    const set=v=>{v=Math.min(max,Math.max(min,v));inp.value=v;len();minus.disabled=v<=min;plus.disabled=v>=max;s.classList.remove('is-error');inp.removeAttribute('aria-invalid');
+      const lim=v>=max||v<=min;s.classList.toggle('is-limited',lim);msg(v>=max?'最大值 '+max:v<=min?'最小值 '+min:'');s.dispatchEvent(new CustomEvent('change',{bubbles:true}))};
+    minus.addEventListener('click',()=>set((+inp.value||min)-step));plus.addEventListener('click',()=>set((+inp.value||min)+step));
+    inp.addEventListener('input',()=>{inp.value=inp.value.replace(/\D/g,'').replace(/^0+(?=\d)/,'');const v=+inp.value;len();const bad=inp.value===''||v<min||v>max;s.classList.toggle('is-error',bad);s.classList.remove('is-limited');inp.toggleAttribute('aria-invalid',bad);msg(bad?`输入超出范围，请输入 ${min}–${max}`:'')});
+    inp.addEventListener('blur',()=>set(inp.value===''?min:+inp.value));inp.addEventListener('keydown',e=>{if(e.key==='Enter')inp.blur()});
+  })}
+  const show=(k,html)=>{const f=GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS,height:'auto'});f.addEventListener('load',()=>wire(f.contentDocument));return f};
+  show('sFill',`<div class="scr"><div class="row">${stepper({v:1})}${stepper({v:12})}</div></div>`);
+  show('sLine',`<div class="scr g"><div class="row">${stepper({v:1,line:1})}${stepper({v:12,line:1})}</div></div>`);
+  show('st1',`<div class="scr"><div class="row">${stepper({v:5})}${stepper({v:5,focus:1})}${stepper({v:5,dis:1})}</div></div>`);
+  show('st3',`<div class="scr"><div class="row">${stepper({v:1000,min:0,max:999,err:1})}${stepper({v:0,min:1,max:999,err:1})}</div></div>`);
+  show('st4',`<div class="scr"><div class="row">${stepper({v:8,max:99999})}${stepper({v:1200,max:99999})}${stepper({v:50000,max:99999})}</div></div>`);
+  show('st2',`<div class="scr"><div class="row">${stepper({v:999,limited:1})}${stepper({v:1,limited:1})}</div></div>`);
+  show('exList',`<div class="scr l">${[['国金稳健增利 3 号','单价 ¥1.0236 / 份',2],['沪深 300 指数增强','单价 ¥1.4812 / 份',1],['国金货币 A','单价 ¥1.0000 / 份',10]].map(r=>`<div class="li"><div><div class="t">${r[0]}</div><div class="d">${r[1]}</div></div>${stepper({v:r[2],min:0,max:99,label:r[0]+' 份数'})}</div>`).join('')}</div>`);
+  const ex=show('exForm',`<div class="scr g"><div class="card"><div class="fl">申购份数</div><div class="inl">${stepper({v:100,min:100,max:5000,step:100,line:0,label:'申购份数'})}<span class="unit">份</span></div><div class="tip">起购 100 份，按 100 份递增；单笔上限 5000 份</div><div class="sum">预计金额 <b id="amt">¥102.36</b></div></div></div>`);
+  ex.addEventListener('load',()=>{const d=ex.contentDocument;d.addEventListener('change',()=>{const v=+d.querySelector('.gj-m-stepper-input').value;d.getElementById('amt').textContent='¥'+(v*1.0236).toFixed(2)})});
+  const $=id=>document.getElementById(id);
+  function renderLab(){const min=+$('pMin').value,max=Math.max(+$('pMax').value,min+1),step=+$('pStep').value,line=$('pStyle').value==='line',dis=$('pDis').checked;
+    const f=GJPhone.swatch($('lab'),{html:`<div class="scr${line?' g':''}"><div class="row">${stepper({v:Math.min(max,min+step),min,max,step,line,dis,limited:!dis&&min+step>=max,label:'数量'})}</div>${dis?'<div class="tip" style="text-align:center">当前账户无交易权限，暂不可调整</div>':''}</div>`,css:CSS,height:'auto'});
+    f.addEventListener('load',()=>wire(f.contentDocument))}
+  ['pStyle','pStep','pMin','pMax','pDis'].forEach(id=>$(id).addEventListener('change',renderLab));renderLab();
+})();
+</script>
+</body>
+</html>

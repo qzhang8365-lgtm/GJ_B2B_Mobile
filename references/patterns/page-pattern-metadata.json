@@ -1,0 +1,431 @@
+{
+  "$schema": "gj-design-skill/mobile-page-pattern-metadata/v1",
+  "description": "移动端页面模式的机器可读生成契约。详细区域规则、状态与已确认取值见各模式 .md；本文件用于按需求匹配模式、确定必需组件与必测状态。",
+  "updated": "2026-10-19",
+  "howToMatch": "把需求里的页面类型和关键词与各模式的 match 对照；命中后检查 notFor；一个应用通常由多个模式组合（如 一级页 list-filter / workbench + 二级页 detail + form），底部导航只出现在一级页面。",
+  "common": {
+    "responsiveRules": [
+      "375 为基准，320 宽检查不溢出、正文不低于 12",
+      "768 代表大屏：尺寸封顶、宽度撑满，≥600 按尺寸适配文档改多列，单列内容限制最大宽度",
+      "页面左右边距 16，卡片间距 12",
+      "固定底栏 / 底部导航预留栏高 + 安全区"
+    ],
+    "containerRules": [
+      "小程序原生页面不自绘顶部导航；H5 / web-view 自绘",
+      "H5 / web-view 用 M 尺寸输入时 viewport 加 maximum-scale=1",
+      "容器已有原生 TabBar 时不重复绘制"
+    ],
+    "copyRules": [
+      "导航标题写对象类型或任务动作，不写泛称",
+      "按钮用具体动词",
+      "空状态写清原因与下一步"
+    ]
+  },
+  "patterns": {
+    "workbench": {
+      "name": "工作台首页",
+      "pageType": "一级入口 / 首页",
+      "taskGoal": "汇总待办、经营指标、当日任务与常用功能，从这里进入各业务",
+      "match": [
+        "工作台",
+        "首页",
+        "我的工作",
+        "团队长首页",
+        "业务首页",
+        "经营看板入口"
+      ],
+      "notFor": "只有单一列表的首页 → list-filter；纯数据大屏 → 不适用",
+      "layoutSkeleton": [
+        "顶部导航（容器不提供时）",
+        "锚点主级页签（模块 ≥ 3 时，与导航一起吸顶）",
+        "待办模块卡片（按钮式页签 Medium + 对象摘要条目，最多 3 条 + 查看全部）",
+        "指标模块卡片（分段控制 Medium + 绩效卡 + 组合指标 + 横排进度）",
+        "任务模块卡片（通栏主按钮 + 纵向时间轴）",
+        "功能入口宫格（4 列）",
+        "底部导航（一级页面时）"
+      ],
+      "requiredComponents": [
+        "card",
+        "tabs",
+        "metric",
+        "gridnav"
+      ],
+      "optionalComponents": [
+        "navbar",
+        "tag",
+        "text-button",
+        "chart",
+        "steps",
+        "button",
+        "tabbar",
+        "skeleton",
+        "empty"
+      ],
+      "stateCoverage": [
+        "首次加载（卡片骨架屏）",
+        "单个模块失败（模块内重新加载）",
+        "整页网络异常",
+        "模块无数据（卡片内说明）"
+      ],
+      "interactionRules": [
+        "锚点页签点击滚动定位，滚动时自动切换当前项",
+        "模块内页签只切换该模块内容",
+        "条目与入口进入下一层级"
+      ],
+      "pageRules": [
+        "PR-001",
+        "PR-002",
+        "PR-003",
+        "PR-004",
+        "PR-005",
+        "PR-012",
+        "PR-016"
+      ],
+      "doc": "references/patterns/workbench.md",
+      "preview": "preview/patterns/workbench/index.html"
+    },
+    "list-filter": {
+      "name": "列表 + 搜索 / 筛选",
+      "pageType": "对象列表",
+      "taskGoal": "浏览并定位一组同类对象，再进入详情",
+      "match": [
+        "列表",
+        "客户列表",
+        "产品列表",
+        "查询",
+        "搜索",
+        "筛选",
+        "记录列表",
+        "文件列表"
+      ],
+      "notFor": "少于约 8 项且无需查找 → 直接用 ListBar 或卡片；需要批量勾选处理 → batch；按日期浏览 → records",
+      "layoutSkeleton": [
+        "顶部导航",
+        "搜索区（白底上下 8，与筛选栏一起吸顶）",
+        "筛选栏（1–4 个条件）",
+        "结果概要（可选）",
+        "列表（通栏 ListBar 或一级卡片列表，不混用）",
+        "列表尾（加载 / 没有更多了）",
+        "回到顶部（可选）",
+        "底部导航（一级页面时）"
+      ],
+      "requiredComponents": [
+        "searchbar",
+        "listbar"
+      ],
+      "optionalComponents": [
+        "navbar",
+        "filter",
+        "card",
+        "tag",
+        "info-list",
+        "skeleton",
+        "loading",
+        "empty",
+        "floating-button",
+        "tabbar",
+        "tabs",
+        "datepicker",
+        "notice"
+      ],
+      "stateCoverage": [
+        "首次加载（骨架屏）",
+        "下拉刷新",
+        "搜索 / 筛选无结果",
+        "暂无数据",
+        "网络异常 / 加载错误",
+        "分页加载失败",
+        "无权限"
+      ],
+      "interactionRules": [
+        "搜索与筛选取交集",
+        "返回时保留搜索词、筛选与滚动位置",
+        "整行可点进入详情"
+      ],
+      "pageRules": [
+        "PR-006",
+        "PR-007",
+        "PR-011",
+        "PR-015",
+        "PR-017",
+        "PR-018"
+      ],
+      "doc": "references/patterns/list-filter.md",
+      "preview": "preview/patterns/list-filter/index.html"
+    },
+    "detail": {
+      "name": "详情 + 底部操作",
+      "pageType": "对象详情",
+      "taskGoal": "查看单个业务对象并在页内完成状态更新或审批",
+      "match": [
+        "详情",
+        "审批",
+        "工单",
+        "需求详情",
+        "拜访详情",
+        "委托详情"
+      ],
+      "notFor": "纯阅读文章 → markdown 组件的文章页",
+      "layoutSkeleton": [
+        "顶部导航（标题写对象类型）",
+        "概要卡片（对象名 + 状态标签 + 信息列表）",
+        "说明卡片（浅灰文本块）",
+        "编辑卡片（可改字段集中）",
+        "记录卡片（纵向时间轴，最新在上）",
+        "固定底栏（次左主右，L 等分）"
+      ],
+      "requiredComponents": [
+        "navbar",
+        "card",
+        "info-list"
+      ],
+      "optionalComponents": [
+        "tag",
+        "form",
+        "radio",
+        "input",
+        "steps",
+        "button",
+        "file-list",
+        "dialog",
+        "notice",
+        "skeleton",
+        "empty"
+      ],
+      "stateCoverage": [
+        "首次加载",
+        "编辑（未改动时底栏禁用）",
+        "待处理",
+        "只读（无编辑卡片、无底栏）",
+        "网络异常"
+      ],
+      "interactionRules": [
+        "保存成功 Toast 并写回概要与记录",
+        "危险或不可逆操作二次确认",
+        "离开有未保存修改时确认"
+      ],
+      "pageRules": [
+        "PR-005",
+        "PR-007",
+        "PR-008",
+        "PR-012",
+        "PR-016",
+        "PR-017"
+      ],
+      "doc": "references/patterns/detail.md",
+      "preview": "preview/patterns/detail/index.html"
+    },
+    "form": {
+      "name": "分组表单提交",
+      "pageType": "录入 / 提交",
+      "taskGoal": "一次提交多组信息",
+      "match": [
+        "新建",
+        "上报",
+        "打卡",
+        "填写",
+        "申请",
+        "登记",
+        "表单"
+      ],
+      "notFor": "只有 1–2 个字段的验证类页面 → login",
+      "layoutSkeleton": [
+        "顶部导航（标题写任务动作）",
+        "上下文卡片（自动预填，可选）",
+        "表单卡片（按业务决策顺序分组，每组一张）",
+        "固定底栏（保存草稿 + 主操作）"
+      ],
+      "requiredComponents": [
+        "navbar",
+        "form",
+        "button"
+      ],
+      "optionalComponents": [
+        "card",
+        "input",
+        "select",
+        "datepicker",
+        "radio",
+        "checkbox",
+        "switch",
+        "slider",
+        "stepper",
+        "upload",
+        "listbar",
+        "notice",
+        "loading",
+        "dialog"
+      ],
+      "stateCoverage": [
+        "上下文获取中 / 失败",
+        "校验失败（Toast 数量 + 定位第一项 + 字段下方错误）",
+        "提交成功（结果卡片）",
+        "草稿"
+      ],
+      "interactionRules": [
+        "提交时校验，修改后错误立即消失，保留已填内容",
+        "离开未保存页面时确认"
+      ],
+      "pageRules": [
+        "PR-007",
+        "PR-008",
+        "PR-009",
+        "PR-010"
+      ],
+      "doc": "references/patterns/form.md",
+      "preview": "preview/patterns/form/index.html"
+    },
+    "records": {
+      "name": "日历 + 记录时间轴",
+      "pageType": "按日期浏览记录",
+      "taskGoal": "按日期查看带时间的记录与分布",
+      "match": [
+        "日历",
+        "日程",
+        "拜访记录",
+        "活动排期",
+        "按日查看"
+      ],
+      "notFor": "只按时间倒序浏览 → list-filter",
+      "layoutSkeleton": [
+        "顶部导航（右侧可放筛选入口）",
+        "类型页签（按钮式 Medium）",
+        "日历卡片（只翻月，圆点 + 图例）",
+        "日期标题",
+        "记录卡片（纵向时间轴，统一骨架）"
+      ],
+      "requiredComponents": [
+        "datepicker",
+        "steps",
+        "card"
+      ],
+      "optionalComponents": [
+        "navbar",
+        "tabs",
+        "tag",
+        "chart",
+        "empty",
+        "skeleton",
+        "button"
+      ],
+      "stateCoverage": [
+        "首次加载",
+        "当日无记录（卡片内说明 + 新建）",
+        "网络异常"
+      ],
+      "interactionRules": [
+        "类型页签同时作用于日历圆点、图例与当日列表",
+        "点日期切换当日列表并滚动到可见"
+      ],
+      "pageRules": [
+        "PR-001",
+        "PR-007",
+        "PR-011",
+        "PR-012",
+        "PR-013",
+        "PR-015"
+      ],
+      "doc": "references/patterns/records.md",
+      "preview": "preview/patterns/records/index.html"
+    },
+    "batch": {
+      "name": "批量处理列表",
+      "pageType": "待办批量处理",
+      "taskGoal": "逐条勾选后统一处理",
+      "match": [
+        "批量",
+        "待提醒",
+        "待审批",
+        "待分配",
+        "超时关注",
+        "一键处理"
+      ],
+      "notFor": "不需要批量操作 → list-filter",
+      "layoutSkeleton": [
+        "顶部导航（与状态页签一起吸顶）",
+        "状态页签 + 排序图标",
+        "列表概要",
+        "条目卡片（多选框 + 标签 + 对象名 + 描述 + 元信息）",
+        "批量底栏（全选 + 已选数 + 主按钮）"
+      ],
+      "requiredComponents": [
+        "card",
+        "checkbox",
+        "button"
+      ],
+      "optionalComponents": [
+        "navbar",
+        "tabs",
+        "tag",
+        "text-button",
+        "skeleton",
+        "empty"
+      ],
+      "stateCoverage": [
+        "首次加载",
+        "执行后（Toast + 条目状态更新）",
+        "页签无条目",
+        "网络异常"
+      ],
+      "interactionRules": [
+        "切换页签或排序清空已选",
+        "全选只作用于当前页签可选项，部分选中半选",
+        "主按钮带数量，未选禁用"
+      ],
+      "pageRules": [
+        "PR-001",
+        "PR-012",
+        "PR-014",
+        "PR-015"
+      ],
+      "doc": "references/patterns/batch.md",
+      "preview": "preview/patterns/batch/index.html"
+    },
+    "login": {
+      "name": "登录",
+      "pageType": "登录入口",
+      "taskGoal": "首次进入或退出后重新登录",
+      "match": [
+        "登录",
+        "验证码",
+        "快捷登录",
+        "手机号登录"
+      ],
+      "notFor": "多租户 / 企业账号选择 → 登录后在“我的”中处理",
+      "layoutSkeleton": [
+        "品牌区（logo + 产品名，右侧给胶囊留空）",
+        "配图 + 产品名（中间偏上）",
+        "主次登录按钮（通栏 L，间距 12）",
+        "协议勾选",
+        "账号登录页：返回 + 标题 + 账号 / 验证码输入（后缀操作）+ 登录按钮 + 协议"
+      ],
+      "requiredComponents": [
+        "button",
+        "checkbox",
+        "input"
+      ],
+      "optionalComponents": [
+        "navbar",
+        "dialog",
+        "notice"
+      ],
+      "stateCoverage": [
+        "未勾选协议（弹窗同意并继续）",
+        "获取验证码（校验 + 倒计时）",
+        "校验错误",
+        "验证码错误",
+        "登录成功"
+      ],
+      "interactionRules": [
+        "协议默认不勾选",
+        "两项都填后登录可点",
+        "错误提示在对应输入框下方并聚焦"
+      ],
+      "pageRules": [
+        "PR-010"
+      ],
+      "doc": "references/patterns/login.md",
+      "preview": "preview/patterns/login/index.html"
+    }
+  }
+}

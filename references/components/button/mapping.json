@@ -1,0 +1,212 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "button",
+  "figmaComponent": "1.Button（161:6274，页面 Mobile_按钮Button 11:1610）",
+  "prototypeClass": "gj-m-button",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "Label#2410:0": "按钮文字（textContent）",
+    "Level": "gj-m-button-primary | gj-m-button-secondary | gj-m-button-tertiary | gj-m-button-ghost",
+    "Size": "gj-m-button-large | （Medium 为默认，无类名）| gj-m-button-small",
+    "State=pressed": ":active；展示或切换选中用 .is-pressed",
+    "State=disabled": "原生 disabled 属性；非 button 元素用 .is-disabled",
+    "Icon=Left_Icon": "图标 span 放在文字前",
+    "Icon=Right_Icon": "图标 span 放在文字后",
+    "Icon=Icon_Only": "gj-m-button-icon-only + aria-label，只放图标",
+    "Shape=pill": "gj-m-button-pill",
+    "ButtonIcon#87:0": "span.gj-icon（--gj-icon 指向图标库资源），尺寸由按钮尺寸控制"
+  },
+  "valueMap": {
+    "Size.Large": "gj-m-button-large：高 40（--control-L）、左右 20、圆角 8、P2 16/24、图标 20",
+    "Size.Medium": "（默认）：高 32（--control-M）、左右 16、圆角 6、P3 14/22、图标 16",
+    "Size.Small": "gj-m-button-small：高 28（--control-S）、左右 12、圆角 6、P5 12/18、图标 12",
+    "Shape.pill": "圆角 999（--Radius-full），其余尺寸不变",
+    "Icon_Only": "正方形，宽 = 高（40 / 32 / 28）"
+  },
+  "tokenMap": {
+    "primary.default.background": "Button/Primary/Bg-default（--ds-button-primary-bg-default）",
+    "primary.default.text": "Text/reversal（--ds-text-reversal）",
+    "primary.pressed.background": "Button/Primary/Bg-pressed（--ds-button-primary-bg-pressed）",
+    "primary.disabled.background": "Button/Primary/Bg-disable（--ds-button-primary-bg-disable）",
+    "secondary.default.background": "Background/Container（--ds-background-container）",
+    "secondary.default.text": "Text/blue（--ds-text-blue）",
+    "secondary.default.border": "Border/focused（--ds-border-focused）",
+    "secondary.pressed.overlay": "Background/hover（--ds-background-hover）",
+    "secondary.disabled": "整体 opacity 0.4",
+    "tertiary.default.background": "Background/Container（--ds-background-container）",
+    "tertiary.default.text": "Text/Primary（--ds-text-primary）",
+    "tertiary.default.border": "Border/secondary（--ds-border-secondary）",
+    "tertiary.pressed.overlay": "Background/hover-2（--ds-background-hover-2）",
+    "tertiary.disabled.text": "Text/disable（--ds-text-disable）",
+    "ghost.default.background": "Background/Background（--ds-background-background），无描边",
+    "ghost.pressed.overlay": "Background/hover-2（--ds-background-hover-2）",
+    "ghost.disabled": "整体 opacity 0.4",
+    "height": "--control-L / --control-M / --control-S",
+    "radius": "--Radius-MD（Large）/ --Radius-SM（Medium、Small）/ --Radius-full（pill）"
+  },
+  "assetMap": {
+    "icon": "{ROOT}assets/icons/iconfont/icf_*.svg（按 references/icons/index.json 查找）",
+    "colorRule": "图标用 currentColor，始终与按钮文字同色，含所有层级、状态与 Icon_Only"
+  },
+  "runtimeMap": {
+    "root": "button.gj-m-button",
+    "icon": ".gj-m-button > .gj-icon",
+    "block": ".gj-m-button-block",
+    "group": ".gj-m-button-group"
+  },
+  "markup": {
+    "primary": "<button type=\"button\" class=\"gj-m-button gj-m-button-primary\">确认</button>",
+    "secondary": "<button type=\"button\" class=\"gj-m-button gj-m-button-secondary\">查看</button>",
+    "tertiary": "<button type=\"button\" class=\"gj-m-button gj-m-button-tertiary\">取消</button>",
+    "ghost": "<button type=\"button\" class=\"gj-m-button gj-m-button-ghost\">更多</button>",
+    "large": "<button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary\">提交</button>",
+    "small": "<button type=\"button\" class=\"gj-m-button gj-m-button-small gj-m-button-tertiary\">编辑</button>",
+    "disabled": "<button type=\"button\" class=\"gj-m-button gj-m-button-primary\" disabled>提交</button>",
+    "leftIcon": "<button type=\"button\" class=\"gj-m-button gj-m-button-secondary\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_add.svg')\" aria-hidden=\"true\"></span>新建</button>",
+    "iconOnly": "<button type=\"button\" class=\"gj-m-button gj-m-button-tertiary gj-m-button-icon-only\" aria-label=\"搜索\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_search.svg')\" aria-hidden=\"true\"></span></button>",
+    "pill": "<button type=\"button\" class=\"gj-m-button gj-m-button-primary gj-m-button-pill\">立即办理</button>",
+    "block": "<button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary gj-m-button-block\">登录</button>",
+    "footerPair": "<div class=\"gj-m-form-actions\"><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-tertiary\">驳回</button><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary\">同意</button></div>",
+    "cardActions": "<div style=\"display:flex;justify-content:flex-end;gap:var(--space-btn-gap);margin-top:var(--space-12)\"><button type=\"button\" class=\"gj-m-button gj-m-button-tertiary\">验签</button><button type=\"button\" class=\"gj-m-button gj-m-button-primary\">下载</button></div>",
+    "multiChoice": "<div class=\"gj-m-button-group\" role=\"group\" aria-label=\"拜访对象\"><button type=\"button\" class=\"gj-m-button gj-m-button-secondary is-pressed\" aria-pressed=\"true\">行长</button><button type=\"button\" class=\"gj-m-button gj-m-button-tertiary\" aria-pressed=\"false\">理财经理</button></div>",
+    "fromPreview_button_group_button_primary": "<div class=\"gj-m-button-group\"><button type=\"button\" class=\"gj-m-button gj-m-button-primary\">按钮</button><button type=\"button\" class=\"gj-m-button gj-m-button-secondary\">按钮</button></div>",
+    "fromPreview_button_group_button_large": "<div class=\"gj-m-button-group gj-m-button-group-large\"><button type=\"button\" class=\"gj-m-button gj-m-button-primary gj-m-button-large\">按钮</button><button type=\"button\" class=\"gj-m-button gj-m-button-primary gj-m-button-large\">按钮</button></div>",
+    "fromPreview_button_group_button_small": "<div class=\"gj-m-button-group gj-m-button-group-small\"><button type=\"button\" class=\"gj-m-button gj-m-button-tertiary gj-m-button-small\">按钮</button><button type=\"button\" class=\"gj-m-button gj-m-button-tertiary gj-m-button-small\">按钮</button></div>",
+    "button": "<button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary\">提交</button>",
+    "choices": "<div class=\"gj-m-button-group\" role=\"group\" aria-label=\"拜访对象\" data-btns=\"who\"><button type=\"button\" class=\"gj-m-button gj-m-button-secondary is-pressed\" aria-pressed=\"true\" data-v=\"行长\">行长</button><button type=\"button\" class=\"gj-m-button gj-m-button-tertiary\" aria-pressed=\"false\" data-v=\"理财经理\">理财经理</button></div>",
+    "actions": "<div class=\"gj-m-form-actions\"><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-tertiary\"><span>取消</span></button><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary\"><span>保存</span></button></div>",
+    "option 选项按钮（标题 + 说明）": "<button type=\"button\" class=\"gj-m-button gj-m-button-secondary gj-m-button-option\">立即填写<small>趁热打铁，一次完成</small></button>"
+  },
+  "interactionMap": {
+    "pressed": "触摸按下 :active；移动端无 hover",
+    "disabled": "原生 disabled，不响应点击；主操作在条件不满足时禁用并在附近说明原因",
+    "submitting": "提交中把文字改为“提交中...”并 disabled，完成后恢复",
+    "toggle": "按钮组多选：未选 Tertiary，选中切换为 Secondary + .is-pressed，同步 aria-pressed"
+  },
+  "accessibility": {
+    "element": "原生 button，type=\"button\"（表单提交用 type=\"submit\"）",
+    "iconOnly": "必须有 aria-label；图标 aria-hidden=\"true\"",
+    "toggle": "多选按钮用 aria-pressed；单选按钮组用 role=\"radiogroup\" + role=\"radio\" + aria-checked",
+    "hitArea": "实际热区 ≥ 44×44，由基座伪元素扩展，不改变视觉尺寸（PR-010）",
+    "focus": "保留 :focus-visible 描边"
+  },
+  "composition": {
+    "sameRow": "同一行按钮同档；并排间距 8（--space-btn-gap），底部双按钮间距 12（--space-btn-gap-footer）",
+    "primaryFloor": "主操作按钮实际高度至少 40（Large）",
+    "text": "按钮文字不省略、不换行；空间不足时调整按钮组（h5-small-screen.md）",
+    "layoutClasses": {
+      "通栏": "gj-m-button-block",
+      "按钮组合（间距 8）": "gj-m-button-group",
+      "大按钮组合（间距 12）": "gj-m-button-group gj-m-button-group-large",
+      "小按钮组合（间距 4）": "gj-m-button-group gj-m-button-group-small",
+      "弹窗双按钮等分": "gj-m-button-group gj-m-button-group-large gj-m-button-group-equal",
+      "底部面板双按钮竖排": "gj-m-button-group gj-m-button-group-large gj-m-button-group-vertical",
+      "底部固定双按钮": "gj-m-form-actions（次左主右，等分，间距 12）"
+    },
+    "actionSize": "普通卡片操作Medium（size省略），紧凑同行Small（size=small），通栏/底部重要操作Large（size=large）；不改变多选按钮组规范。"
+  },
+  "pageRules": {
+    "PR-009": "卡片内多选首选 Medium 按钮组合：宽度随文字、左对齐换行、间距 8；未选 Tertiary，选中 Secondary + aria-pressed；不用 Small",
+    "PR-010": "热区靠按钮自身扩展，不用 min-height 撑大布局",
+    "PR-017": "卡片 / 列表项的操作按钮放右下角，Medium，间距 8，主操作在最右，与上方内容间距 12",
+    "PR-031": "卡片内操作默认Medium；紧凑同行Small；通栏和底部重点操作Large"
+  },
+  "pending": {
+    "BT-M-006": "旧版 1.Button（13:1720）仍有实例引用；不影响原型写法"
+  },
+  "markupNote": "markup 中 fromPreview_* 片段由 scripts/check-mapping.cjs 从预览页实际渲染补录（2026-10-19），与预览页一致；其余为手写的常用写法。",
+  "templates": {
+    "button": {
+      "tpl": "<button type=\"{{#submit}}submit{{/submit}}{{^submit}}button{{/submit}}\" class=\"gj-m-button{{#size}} gj-m-button-{{size}}{{/size}} gj-m-button-{{level}}{{#iconOnly}} gj-m-button-icon-only{{/iconOnly}}{{#pill}} gj-m-button-pill{{/pill}}{{#pressed}} is-pressed{{/pressed}}{{#block}} gj-m-button-block{{/block}}\"{{#disabled}} disabled{{/disabled}}{{{attrs}}}>{{#icon}}<span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/{{icon}}.svg')\" aria-hidden=\"true\"></span>{{/icon}}{{text}}</button>",
+      "params": "level：primary / secondary / tertiary / ghost；size：large / small（Medium 不写）；icon：左侧图标名；iconOnly：纯图标（text 留空，attrs 带 aria-label）；pill：胶囊；pressed：按下态；block：通栏；disabled；attrs：附加属性；submit：表单提交按钮（type=submit）",
+      "examples": {
+        "primary": {
+          "level": "primary",
+          "text": "确认"
+        },
+        "secondary": {
+          "level": "secondary",
+          "text": "查看"
+        },
+        "tertiary": {
+          "level": "tertiary",
+          "text": "取消"
+        },
+        "ghost": {
+          "level": "ghost",
+          "text": "更多"
+        },
+        "large": {
+          "size": "large",
+          "level": "primary",
+          "text": "提交"
+        },
+        "small": {
+          "size": "small",
+          "level": "tertiary",
+          "text": "编辑"
+        },
+        "disabled": {
+          "level": "primary",
+          "disabled": true,
+          "text": "提交"
+        },
+        "leftIcon": {
+          "level": "secondary",
+          "icon": "icf_system_add",
+          "text": "新建"
+        },
+        "iconOnly": {
+          "level": "tertiary",
+          "iconOnly": true,
+          "icon": "icf_system_search",
+          "attrs": " aria-label=\"搜索\""
+        },
+        "pill": {
+          "level": "primary",
+          "pill": true,
+          "text": "立即办理"
+        },
+        "block": {
+          "size": "large",
+          "level": "primary",
+          "block": true,
+          "text": "登录"
+        },
+        "button": {
+          "size": "large",
+          "level": "primary",
+          "text": "提交"
+        }
+      }
+    },
+    "choices": {
+      "tpl": "<div class=\"gj-m-button-group{{#large}} gj-m-button-group-large{{/large}}\" role=\"{{role}}\" aria-label=\"{{label}}\" data-btns=\"{{key}}\"{{#single}} data-single=\"1\"{{/single}}>{{#items}}<button type=\"button\" class=\"gj-m-button{{#large}} gj-m-button-large{{/large}} {{#on}}gj-m-button-secondary is-pressed{{/on}}{{^on}}gj-m-button-tertiary{{/on}}\" {{{state}}} data-v=\"{{text}}\">{{text}}</button>{{/items}}</div>",
+      "example": {
+        "role": "group",
+        "label": "拜访对象",
+        "key": "who",
+        "items": [
+          {
+            "text": "行长",
+            "on": true,
+            "state": "aria-pressed=\"true\""
+          },
+          {
+            "text": "理财经理",
+            "on": false,
+            "state": "aria-pressed=\"false\""
+          }
+        ]
+      },
+      "params": "卡片内多选按钮组合（PR-009）：未选 Tertiary、选中 Secondary + is-pressed；single 时 role=radiogroup，state 用 role=\"radio\" aria-checked"
+    },
+    "actions": {
+      "tpl": "<div class=\"gj-m-form-actions\">{{{buttons}}}</div>",
+      "example": {
+        "buttons": "<button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-tertiary\"><span>取消</span></button><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary\"><span>保存</span></button>"
+      },
+      "params": "底部等分双按钮（间距 12）"
+    }
+  }
+}

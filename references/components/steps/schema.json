@@ -1,0 +1,39 @@
+{
+  "id": "steps",
+  "name": "步骤条 Steps",
+  "category": "数据展示组件",
+  "source": {
+    "page": "58:3228",
+    "horizontal": "218:6510",
+    "vertical": "218:6702",
+    "readOnly": true
+  },
+  "prototypeOnly": true,
+  "states": [
+    "finish",
+    "process",
+    "wait",
+    "error"
+  ],
+  "directions": [
+    "horizontal",
+    "vertical"
+  ],
+  "layout": {
+    "dot": 8,
+    "marker": 24,
+    "line": 1,
+    "title": "H5 14/22",
+    "description": "P5 12/18",
+    "verticalMinHeight": 0,
+    "verticalHeight": "auto，按实际标题/描述/extra撑高；无描述不占位（设计方2026-10-20）",
+    "verticalItemGap": 16
+  },
+  "timeline": {
+    "source": "58:3459",
+    "time": "H6-CN-S 13/20",
+    "title": "H5-CN-S 14/22",
+    "description": "P5_CN-R 12/18",
+    "updatedAt": "2026-10-14"
+  }
+}

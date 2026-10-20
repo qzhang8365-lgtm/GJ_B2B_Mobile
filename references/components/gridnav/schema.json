@@ -1,0 +1,103 @@
+{
+  "component": "GridNav",
+  "source": "source.json",
+  "figmaSet": "1680:5729",
+  "prototypeOnly": true,
+  "variants": [
+    {
+      "grid": "3*1",
+      "node": "1680:7124",
+      "columns": 3,
+      "rows": 1,
+      "width": 375,
+      "height": 70,
+      "icon": 40
+    },
+    {
+      "grid": "3*2",
+      "node": "1680:7129",
+      "columns": 3,
+      "rows": 2,
+      "width": 375,
+      "height": 152,
+      "icon": 40
+    },
+    {
+      "grid": "4*1",
+      "node": "225:726",
+      "columns": 4,
+      "rows": 1,
+      "width": 375,
+      "height": 70,
+      "icon": 40
+    },
+    {
+      "grid": "4*2",
+      "node": "225:725",
+      "columns": 4,
+      "rows": 2,
+      "width": 375,
+      "height": 152,
+      "icon": 40
+    },
+    {
+      "grid": "5*1",
+      "node": "225:724",
+      "columns": 5,
+      "rows": 1,
+      "width": 375,
+      "height": 62,
+      "icon": 36
+    },
+    {
+      "grid": "5*2",
+      "node": "225:723",
+      "columns": 5,
+      "rows": 2,
+      "width": 375,
+      "height": 136,
+      "icon": 36
+    }
+  ],
+  "unit": "design px at 375",
+  "item": {
+    "set": "1680:6397",
+    "sizes": {
+      "Medium": {
+        "node": "224:391",
+        "icon": 40,
+        "height": 70
+      },
+      "Small": {
+        "node": "1680:6398",
+        "icon": 36,
+        "height": 62
+      }
+    },
+    "iconLabelGap": 4,
+    "horizontalPadding": 16,
+    "rowGap": 12,
+    "textStyle": "P5_CN-R",
+    "color": "Text/Secondary"
+  },
+  "pagination": {
+    "node": "1680:5473",
+    "active": {
+      "width": 16,
+      "height": 4,
+      "color": "Brand/GJ_Blue"
+    },
+    "inactive": {
+      "width": 4,
+      "height": 4,
+      "color": "rgba(0,0,0,0.2)"
+    },
+    "gap": 3,
+    "radius": 4,
+    "scope": "local component values; not global tokens"
+  },
+  "responsive": {
+    "small": "5 columns become 4 at <=359; 3/4 remain; text floor 12px",
+    "maxColumns": 5
+  }
+}

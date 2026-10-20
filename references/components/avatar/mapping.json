@@ -1,0 +1,63 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "avatar",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "figmaComponent": "Avatar（58:779）",
+  "prototypeClass": "gj-m-avatar",
+  "propertyMap": {
+    "Fill=image": ".gj-m-avatar > img",
+    "circle=true": "gj-m-avatar-circle",
+    "Fill=default": ".is-default（img 保留，onerror 时加）",
+    "Fill=logo": "gj-m-avatar-contain（白底描边、完整显示）",
+    "Size=44": "（默认）",
+    "Size=36": "gj-m-avatar-md",
+    "Size=32": "gj-m-avatar-sm"
+  },
+  "valueMap": {
+    "32": "对话流",
+    "36": "紧凑列表、次级信息",
+    "44": "主要身份信息（默认）",
+    "square": "圆角 8（--Radius-MD）",
+    "logo": "图片四周留 12%",
+    "defaultIcon": "28 / 24 / 20"
+  },
+  "tokenMap": {
+    "default.background": "Background/Secondary",
+    "default.icon": "Text/disable",
+    "logo": "Background/Container + 1px Border/default"
+  },
+  "assetMap": {
+    "default": "基座内置 icf_user_user-fill",
+    "samples": "{ROOT}assets/images/avatar/person-1~3.svg（示例）",
+    "orgLogo": "{ROOT}assets/images/gj-logo-mark.png"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-avatar",
+    "img": ".gj-m-avatar > img"
+  },
+  "markup": {
+    "person": "<span class=\"gj-m-avatar gj-m-avatar-circle\"><img alt=\"\" src=\"{ROOT}assets/images/avatar/person-1.svg\" onerror=\"this.parentNode.classList.add('is-default')\"></span>",
+    "default": "<span class=\"gj-m-avatar gj-m-avatar-circle is-default\"><img alt=\"\" src=\"\"></span>",
+    "md": "<span class=\"gj-m-avatar gj-m-avatar-md gj-m-avatar-circle\"><img alt=\"\" src=\"{ROOT}assets/images/avatar/person-2.svg\"></span>",
+    "logo": "<span class=\"gj-m-avatar gj-m-avatar-contain\"><img alt=\"国金证券\" src=\"{ROOT}assets/images/gj-logo-mark.png\"></span>"
+  },
+  "interactionMap": {
+    "fallback": "图片缺失或加载失败时 onerror 加 .is-default，尺寸不变"
+  },
+  "accessibility": {
+    "img": "旁边有姓名时 alt=\"\"；单独出现时 alt 写姓名或组织名"
+  },
+  "composition": {
+    "consistency": "同一列表形状与尺寸一致；人物圆形、组织方形",
+    "text": "头像旁保留姓名等文字"
+  },
+  "pageRules": {},
+  "pending": {},
+  "templates": {
+    "person": {
+      "tpl": "<span class=\"gj-m-avatar gj-m-avatar-circle\"><img alt=\"\" src=\"{ROOT}assets/images/avatar/person-1.svg\" onerror=\"this.parentNode.classList.add('is-default')\"></span>",
+      "example": {},
+      "params": "默认示例头像，沿用person基座写法。"
+    }
+  }
+}

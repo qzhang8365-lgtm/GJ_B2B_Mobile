@@ -1,0 +1,38 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "card",
+  "name": "卡片 Card",
+  "category": "数据展示组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "卡片Card（58:791）",
+    "nodes": {
+      "card": "58:1740 Card（343 宽，标题区 + Slot）",
+      "headerH1": "58:1722 card_item/header_h1（Icon × Action=none|arrow|more|tag）",
+      "headerH2": "1862:18534 card_item/header_h2（Bar × Action=none|arrow|more|tag）"
+    },
+    "extractedAt": "2026-10-15",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": "section.gj-m-card > .gj-m-card-head（.gj-m-card-header + .gj-m-card-subtitle）+ .gj-m-card-body"
+  },
+  "card": {
+    "background": "Background/Container",
+    "radius": "Radius-LG 12",
+    "padding": 16,
+    "gap": "头部与内容 16；标题与副标题 4"
+  },
+  "header": {
+    "h1": "标题 H4-CN-S 16/24 Text/Primary，单行省略；前缀图标 20 Text/blue",
+    "h2": ".gj-m-card-header-h2：标题 H5-CN-S 14/22；前缀竖条 3 × 12，圆角 Radius-XS 4，Brand/GJ_Blue",
+    "gap": 8,
+    "height": 24,
+    "right": "三选一：箭头 .gj-m-card-arrow（icf_Arrow_right 20 Text/Tiatery，占 24；标题行整行可点，热区高 44）/ 查看更多 .gj-m-text-button-small（grey）/ 标签 .gj-m-tag（一级）、.gj-m-tag-small（二级）"
+  },
+  "subtitle": "P5_CN-R 12/18 Text/Tiatery",
+  "a11y": "标题用 h3（卡片内分组 h4）；有箭头时标题行用 a / button，整行可点",
+  "group": ".gj-m-card-group：二级标题 + 内容，间距 8（设计方 2026-10-15：至少 8），组间距 16"
+}

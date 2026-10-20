@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 日历 + 记录时间轴</title>
+  <link rel="stylesheet" href="../../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../../site.css">
+  <link rel="stylesheet" href="../../docs.css">
+  <link rel="stylesheet" href="../pattern-doc.css?v=20261016-pat2">
+  <script src="../../phone-stage.js?v=20261020-src1"></script>
+  <script src="../../../assets/scripts/gj-m-markup.js?v=20261019-tpl2"></script>
+  <script src="../../../assets/scripts/gj-m-templates.js?v=20261020-src1"></script>
+  <script src="../kit.js?v=20261020-src1"></script>
+  <script src="records.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">页面模式 · Patterns</div>
+    <h1>日历 + 记录时间轴</h1>
+    <p>按日期浏览带时间的记录：月历标出有记录的日期，选中日期后在下方按时间轴列出当天记录。适用于拜访记录、日程、活动排期。</p>
+  </header>
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>页面骨架</h2><p>自上而下的区域顺序；组件内部规格以各组件规范为准。</p></div></header>
+      <div class="anatomy">
+        <div class="panel"><span class="docs-stage-label">拜访记录 · 375 × 760</span><div id="anatomy"></div></div>
+        <ol class="regions"><li><span class="n">1</span><div><b>顶部导航 Navbar</b>右侧可放一个筛选入口（如按员工）；与类型页签一起吸顶。</div></li><li><span class="n">2</span><div><b>类型页签 Tabs 按钮式</b>切换记录类型（全部 / 拜访 / 活动），同时作用于日历圆点和当日列表。</div></li><li><span class="n">3</span><div><b>日历卡片 Calendar</b>只翻月（不放年切换）；今天品牌蓝字，选中蓝色方块；有记录的日期下方圆点按类型着色（不用主题蓝），下方给图例。</div></li><li><span class="n">4</span><div><b>日期标题</b>“10 月 16 日 · 2 条”，H4 16/24，标题到卡片 12。</div></li><li><span class="n">5</span><div><b>记录卡片 Steps 纵向 + 时间</b>每条：时间 + 类型标签 + 对象名，描述一行，关联标签另起一行；整条标题可点进入详情。当日无记录时给说明，今天及以后给“新建拜访”。</div></li></ol>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>首次加载用骨架屏；选中日期无记录时在卡片内说明，不用整页空状态。</p></div></header>
+      <div class="grid3"><div class="panel"><span class="docs-stage-label">首次加载</span><div id="s0"></div></div><div class="panel"><span class="docs-stage-label">当日无记录</span><div id="s1"></div></div><div class="panel"><span class="docs-stage-label">筛选类型 · 活动</span><div id="s2"></div></div></div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点日期查看当天记录，翻月、切换类型；点右上筛选入口只给轻提示。</p></div></header>
+      <div class="playground">
+        <div class="panel"><span class="docs-stage-label">H5 · 375 × 640 · 在预览内操作</span><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields"><div class="field"><label for="c0">页面状态</label><select id="c0" data-k="state"><option value='"normal"' selected>正常</option><option value='"loading"'>首次加载</option><option value='"network"'>网络异常</option></select></div>
+          <p class="feedback field-full">示例数据为虚构；跳转类操作只给轻提示。切换控件会重置预览。</p>
+        </div></aside>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用规则</h2><p>模式由已确认的组件规则组合；页面级取值按语义间距。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:46%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody><tr><td>日历</td><td>周日开始，行数按当月需要；圆点最多 3 个、按类型着色并配图例。</td><td>圆点不用主题蓝（与今天、选中冲突）；不靠颜色单独区分，图例和列表标签同时说明类型。</td></tr><tr><td>选中与列表</td><td>默认选中今天；切换日期只刷新下方列表，日期标题写条数。</td><td>选中日期在可视区外时把列表滚到可见位置。</td></tr><tr><td>时间轴</td><td>同一天按时间正序；时间 H6 13/20，标题 H5 14/22，描述 12/18。</td><td>记录内容超过三行时进入详情查看，不在时间轴里展开全文。</td></tr><tr><td>空与新建</td><td>选中日无记录：卡片内说明；今天及未来日期可给“新建”次按钮。</td><td>过去日期不提供新建入口。</td></tr></tbody></table></div>
+      <p class="source">结构参考：零售银行渠道经营工作台「04-06 历史拜访记录」「11 拜访记录二级页面」与首页渠道拜访模块，组件已替换为当前组件库。</p>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const P=window.GJRecords;const BG='var(--ds-background-background)';
+  const mk=(id,o,h)=>GJPhone.mount(document.getElementById(id),{html:P.page(o),css:P.CSS,width:375,widths:[],height:h,fit:true,background:BG});
+  mk('anatomy',{},760);
+  [[{"state": "loading"}, 560], [{"sel": "2026-10-12"}, 560], [{"f": "event", "sel": "2026-10-21", "_y": 300}, 560]].forEach(([o,h],i)=>{const el=document.getElementById('s'+i);el.addEventListener('phone:ready',({detail:{doc}})=>{P.wire(doc,Object.assign({},o),()=>{});if(o._y)doc.defaultView.scrollTo(0,o._y)},{once:true});mk('s'+i,o,h)});
+  const host=document.getElementById('lab'),sels=[...document.querySelectorAll('.controls select')];let stage,st,keepY=null;
+  function reset(){st={};sels.forEach(s=>Object.assign(st,{[s.dataset.k]:JSON.parse(s.value)}));keepY=null;render()}
+  function render(){const html=P.page(st);if(stage)stage.setHTML(html);else stage=GJPhone.mount(host,{html,css:P.CSS,width:375,widths:[],height:640,fit:true,background:BG})}
+  host.addEventListener('phone:ready',({detail:{doc}})=>{const W=doc.defaultView;if(keepY!=null){W.scrollTo(0,keepY);keepY=null}
+    P.wire(doc,st,patch=>{keepY=W.scrollY;Object.assign(st,patch);render()})});
+  sels.forEach(s=>s.addEventListener('change',reset));reset();
+})();
+</script>
+</body>
+</html>

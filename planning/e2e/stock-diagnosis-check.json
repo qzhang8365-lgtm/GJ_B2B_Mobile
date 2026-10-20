@@ -1,0 +1,24 @@
+{
+  "page": "planning/e2e/stock-diagnosis.html",
+  "container": "h5",
+  "widths": {
+    "320": {
+      "B": [],
+      "W": [
+        "字号 10–11px（小屏按 h5-small-screen.md 正文不低于 12；辅助文字、Small 标签、底部导航标签可为 10）：span.numeric.code、span.numeric.rise、span.gj-m-metric-label、span.gj-m-tag.gj-m-tag-grey、span.caption、span.label、span、span.gj-m-tab-label"
+      ]
+    },
+    "375": {
+      "B": [],
+      "W": [
+        "字号 10–11px（小屏按 h5-small-screen.md 正文不低于 12；辅助文字、Small 标签、底部导航标签可为 10）：span.gj-m-tag.gj-m-tag-small"
+      ]
+    },
+    "768": {
+      "B": [],
+      "W": []
+    }
+  },
+  "blockers": 0,
+  "warnings": 2
+}

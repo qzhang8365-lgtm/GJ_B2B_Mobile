@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 卡片 Card</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">数据展示组件 · Data Display</div>
+    <h1>卡片 Card</h1>
+    <p>承载一组相关信息的白色容器，由标题、副标题和内容区组成。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section" id="card-structure">
+      <header class="docs-section-head"><div><h2>基础结构</h2><p>白底、圆角 12、内边距 16；标题与副标题间距 4，头部与内容间距 16。内容区可放任意组件。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">标题 + 副标题 + 内容</span><div data-demo="s1"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">仅标题 + 内容</span><div data-demo="s2"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="card-title">
+      <header class="docs-section-head"><div><h2>卡片标题</h2><p>一级标题 H4 16/24，可带图标；二级标题 H5 14/22，可带竖条，用于卡片内分组，与下方内容间距 8，组间距 16。右侧可放箭头、查看更多或标签，三选一。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">一级标题</span><div data-demo="h1"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">二级标题</span><div data-demo="h2"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>客户详情页：调整标题图标、副标题、右侧操作和二级标题竖条；点箭头或查看更多跳转（原型提示）。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pR">右侧操作</label><select id="pR"><option value="arrow">箭头</option><option value="more">查看更多</option><option value="tag">标签</option><option value="">无</option></select></div>
+          <label class="ck"><input type="checkbox" id="pI" checked>标题图标</label>
+          <label class="ck"><input type="checkbox" id="pS" checked>副标题</label>
+          <label class="ck"><input type="checkbox" id="pB" checked>二级标题竖条</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>标题</td><td>简短说明卡片主题，单行显示，过长省略。</td><td>不在标题里放数值或状态说明。</td></tr>
+        <tr><td>副标题</td><td>补充数据口径、更新时间等次要信息。</td><td>不超过一行，不重复标题内容。</td></tr>
+        <tr><td>右侧操作</td><td>整张卡片可进入详情时用箭头（整个标题行可点）；只跳到列表全集时用“查看更多”；表达状态时用标签。三选一。</td><td>不同时放箭头和查看更多。</td></tr>
+        <tr><td>层级</td><td>卡片标题用一级；卡片内分组用二级标题，可加竖条区分；二级标题与下方内容至少间距 8，组与组间距 16。</td><td>卡片不嵌套卡片。</td></tr>
+        <tr><td>间距</td><td>卡片之间间距 12，页面左右边距 16。</td><td>同一页面卡片圆角、内边距保持一致。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const ic=(n,s=24,cls='gj-icon')=>`<span class="${cls}" style="--gj-icon:url('${ICON}${n}.svg');width:${s/100}rem;height:${s/100}rem" aria-hidden="true"></span>`;
+  /* o: {lv:2, icon, bar, right:'arrow'|'more'|'tag', tag, title} */
+  const HEAD=(t,o={})=>{const tag=o.right==='arrow'?'a':'div';const lv2=o.lv===2;
+    const pre=(o.icon&&!lv2?`<span class="gj-icon gj-m-card-icon" style="--gj-icon:url('${ICON}${o.icon}.svg')" aria-hidden="true"></span>`:'')+(o.bar&&lv2?'<span class="gj-m-card-bar" aria-hidden="true"></span>':'');
+    const Tn=lv2?'h4':'h3';
+    const right=o.right==='arrow'?`<span class="gj-m-card-arrow" aria-hidden="true">${ic('icf_Arrow_right',20)}</span>`:o.right==='more'?`<button type="button" class="gj-m-text-button gj-m-text-button-small" data-go="${t}">查看更多</button>`:o.right==='tag'?`<span class="gj-m-tag${lv2?' gj-m-tag-small':''}">${o.tag||'基础标签'}</span>`:'';
+    return `<${tag} class="gj-m-card-header${lv2?' gj-m-card-header-h2':''}"${tag==='a'?` href="#" data-go="${t}"`:''}>${pre}<${Tn} class="gj-m-card-title">${t}</${Tn}>${right}</${tag}>`};
+  const CARD=(t,o,body)=>`<section class="gj-m-card"><div class="gj-m-card-head">${HEAD(t,o)}${o.sub?`<p class="gj-m-card-subtitle">${o.sub}</p>`:''}</div>${body?`<div class="gj-m-card-body">${body}</div>`:''}</section>`;
+  const INFO=rows=>`<dl class="gj-m-info-list gj-m-info-list-plain" style="margin:-.04rem 0">${rows.map(([l,v])=>`<div class="gj-m-info-item"><dt class="gj-m-info-label">${l}</dt><dd class="gj-m-info-value">${v}</dd></div>`).join('')}</dl>`;
+  const CSS='html,body{overflow:hidden;background:transparent}.scr{width:100%;max-width:3.75rem;margin:0 auto;box-sizing:border-box}.stack{display:flex;flex-direction:column;gap:.12rem}dl,dd{margin:0}';
+  const FIX='html,body,.page{height:100%}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+(h?FIX:''),height:h||'auto'});
+  const R2=[['资金账号','8883404579'],['开户营业部','上海陆家嘴营业部'],['风险等级','R3 · 平衡型']];
+  show('s1',`<div class="scr">${CARD('账户信息',{right:'arrow',sub:'数据截至 2025-10-14 15:00'},INFO(R2))}</div>`);
+  show('s2',`<div class="scr">${CARD('账户信息',{},INFO(R2))}</div>`);
+  const B=x=>`<div style="padding:.12rem .16rem;border-radius:var(--Radius-LG);background:var(--ds-background-container)">${x}</div>`;
+  show('h1',`<div class="scr stack">${[{},{right:'arrow'},{right:'more'},{right:'tag'},{icon:'icf_AI_classify-2-ai-fill'},{icon:'icf_AI_classify-2-ai-fill',right:'arrow'}].map(o=>B(HEAD('卡片标题',o))).join('')}</div>`);
+  show('h2',`<div class="scr stack">${[{lv:2},{lv:2,right:'arrow'},{lv:2,right:'more'},{lv:2,right:'tag'},{lv:2,bar:1},{lv:2,bar:1,right:'arrow'}].map(o=>B(HEAD('二级标题',o))).join('')}</div>`);
+
+  const TI=(name,active)=>`<span aria-hidden="true" class="gj-icon gj-icon-24 ${active?'gj-icon-active':'gj-icon-default'}" style="--gj-icon:url('${ICON}${name}${active?'-fill':''}.svg')"></span>`;
+  const APPCSS='.app{position:relative;width:100%;max-width:3.75rem;margin:0 auto;height:100%;overflow:hidden;display:flex;flex-direction:column;background:var(--ds-background-background)}'+
+    '.nav{flex:none;position:relative;display:flex;align-items:center;justify-content:center;height:44px;background:var(--ds-background-container);font-size:.17rem;font-weight:600;color:var(--ds-text-primary)}.nav .ib{position:absolute;left:4px;top:0;display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin:0;padding:0;border:0;background:none;color:inherit;cursor:pointer}'+
+    '.body{flex:1;min-height:0;overflow-y:auto;padding:.12rem var(--space-page-margin-x);display:flex;flex-direction:column;gap:.12rem}'+
+    '.who{display:flex;align-items:center;gap:.12rem}.who b{display:block;font-size:.17rem;line-height:.26rem;color:var(--ds-text-primary)}.who small{display:block;font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}'+
+    
+    '.tb{flex:none;box-shadow:0 -1px 0 var(--ds-border-default)}.toast{position:absolute;inset:0;pointer-events:none}';
+  function render(){const R=$('pR').value,I=$('pI').checked,S=$('pS').checked,Bb=$('pB').checked;
+    const o=(icon,sub,tag)=>({icon:I?icon:'',right:R,sub:S?sub:'',tag});
+    const MET=`<div class="gj-m-metric-grid">${[['52.38','总资产(万)'],['+1,286','昨日收益','rise'],['+4.2%','近一月','rise'],['3','持仓产品']].map(([v,l,t])=>`<div class="gj-m-metric${t?' is-'+t:''}"><span class="gj-m-metric-value"><span class="gj-m-metric-num">${v}</span></span><span class="gj-m-metric-label">${l}</span></div>`).join('')}</div>`;
+    const TABS=[['首页','icf_system_home'],['客户','icf_user_idcard'],['消息','icf_contact_message'],['我的','icf_user_user']];
+    const f=GJPhone.swatch($('lab'),{html:`<div class="app"><div class="nav"><button type="button" class="ib" aria-label="返回">${ic('icf_Arrow_left')}</button>客户详情</div><div class="body">
+      <section class="gj-m-card"><div class="who"><span class="gj-m-avatar gj-m-avatar-circle is-default"></span><div><b>王**</b><small>资金账号 8883404579 · 陆家嘴营业部</small></div></div></section>
+      ${CARD('资产概览',o('icf_business_wallet-fill','数据截至 2025-10-14 15:00','已更新'),MET)}
+      ${CARD('账户信息',o('icf_user_idcard-fill','开户日期 2019-06-18','正常'),`<div class="gj-m-card-group">${HEAD('基本信息',{lv:2,bar:Bb})}${INFO([['证件类型','居民身份证'],['联系电话','173****0128']])}</div><div class="gj-m-card-group">${HEAD('风险测评',{lv:2,bar:Bb,right:R==='tag'?'tag':'',tag:'有效'})}${INFO([['风险等级','R3 · 平衡型'],['有效期至','2026-06-17']])}</div>`)}
+    </div><div class="toast" id="toast"></div>
+      <div class="tb"><nav class="gj-m-tabbar" aria-label="底部导航">${TABS.map(([t,i],x)=>`<button type="button" class="gj-m-tabbar-item${x===1?' is-active':''}"${x===1?' aria-current="page"':''}><span class="gj-m-tabbar-icon">${TI(i)}${TI(i,true)}</span><span class="gj-m-tabbar-label">${t}</span></button>`).join('')}</nav><div class="gj-m-tabbar-safe"></div></div></div>`,css:CSS+APPCSS+FIX,height:680});
+    f.addEventListener('load',()=>{const d=f.contentDocument,toast=d.getElementById('toast');
+      const say=t=>{clearTimeout(say.t1);clearTimeout(say.t2);toast.innerHTML=`<div class="gj-m-toast-layer" role="status"><div class="gj-m-notice" data-tone="default"><span class="gj-m-notice-text">${t}</span></div></div>`;const el=toast.firstElementChild;say.t1=setTimeout(()=>{el.classList.add('is-leaving');say.t2=setTimeout(()=>{if(toast.firstElementChild===el)toast.innerHTML=''},200)},1600)};
+      d.addEventListener('click',e=>{const g=e.target.closest('[data-go]');if(g){e.preventDefault();say('进入「'+g.dataset.go+'」（原型演示）')}})})}
+  ['pR','pI','pS','pB'].forEach(k=>$(k).addEventListener('change',render));render();
+})();
+</script>
+</body>
+</html>

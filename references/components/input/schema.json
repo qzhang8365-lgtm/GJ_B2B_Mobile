@@ -1,0 +1,102 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "input",
+  "name": "输入框 Input",
+  "category": "信息录入组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "输入框Input（155:520）",
+    "nodes": {
+      "input": "155:2373（State × Style × Size，16 变体）",
+      "textarea": "161:4842（state × textlimited × style，16 变体）",
+      "usage": "999:4"
+    },
+    "extractedAt": "2026-10-12",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-input(-m|-line) / .gj-m-input-clear / .gj-m-textarea(-line) / .gj-m-textarea-count",
+    "note": "原型基座"
+  },
+  "sizes": {
+    "L": {
+      "height": 40,
+      "padding": "8/12",
+      "radius": "Radius-MD 8",
+      "text": "P2_CN-R 16/24",
+      "clearIcon": 20
+    },
+    "M": {
+      "height": "control-M 32",
+      "padding": "8/8",
+      "radius": "Radius-SM 6",
+      "text": "P3_CN-R 14/22",
+      "clearIcon": 16
+    }
+  },
+  "styles": {
+    "default（填充式）": {
+      "bg": "Background/Background",
+      "border": "1px Border/default"
+    },
+    "stroke（描边式）": {
+      "bg": "Background/Container",
+      "border": "1px Border/secondary"
+    }
+  },
+  "states": {
+    "default": "占位 Text/Tiatery",
+    "typing": "描边 Border/focused，文字 Text/Primary，清除图标 icf_system_close-circle-fill Text/disable（左 12）",
+    "filled": "文字 Text/Primary，无清除",
+    "disabled": "整体 opacity 0.4",
+    "error": "描边 Border/error；下方 4 显示错误提示 P5 12/18 Feedback/error&rise"
+  },
+  "textarea": {
+    "height": 80,
+    "padding": "8/12",
+    "radius": 8,
+    "text": "P2_CN-R 16/24",
+    "count": "P5_CN-R 12/18 Text/Tiatery，右对齐贴底",
+    "overLimit": "描边 Border/error，计数 Feedback/error&rise，下方提示",
+    "M": "高 80，内边距 8/12，圆角 Radius-SM 6，P3 14/22"
+  },
+  "interaction": {
+    "clear": "聚焦且有内容时显示，热区 44（向左延伸，不超出输入框）"
+  },
+  "suffixAction": {
+    "added": "2026-10-19",
+    "source": "设计方确认（端到端验证「国金智慧签」登录页）",
+    "divider": {
+      "width": 1,
+      "height": {
+        "L": 16,
+        "M": 12
+      },
+      "color": "Border/default",
+      "gapLeft": {
+        "L": 12,
+        "M": 8
+      }
+    },
+    "action": {
+      "component": "text-button",
+      "color": "Text/blue",
+      "type": "P3 14/22",
+      "gapLeft": {
+        "L": 12,
+        "M": 8
+      },
+      "hitArea": 44
+    },
+    "states": [
+      "default",
+      "disabled(countdown)"
+    ],
+    "classes": [
+      ".gj-m-input-divider",
+      ".gj-m-input-action"
+    ]
+  }
+}

@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 图表 Chart</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css?v=20261015-tx1">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-container);border-color:var(--ds-border-default)}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    .controls [hidden]{display:none!important}
+    .controls input[type=range]{width:100%}
+    .docs-sheet+.docs-sheet{margin-top:28px}
+    .sheet-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-bottom:16px;margin-bottom:24px;border-bottom:1px solid var(--ds-border-default)}
+    .sheet-head h2{margin:0;font-size:24px;line-height:32px;font-weight:600}
+    .sheet-head .sub{margin-left:8px;font-size:14px;color:var(--ds-text-tiatery);font-weight:400}
+    .sheet-head p{margin:6px 0 0;max-width:none;color:var(--ds-text-secondary);font-size:14px;line-height:22px}
+    .sheet-head+.docs-section{padding-top:0;border-top:0}
+    /* 配色 */
+    .palette{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+    .box{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius)}
+    .palette h3,.notes h3{margin:0 0 4px;font-size:16px;line-height:24px;font-weight:600}
+    .palette .desc{margin:0 0 16px;font-size:13px;line-height:20px;color:var(--ds-text-secondary)}
+    .swatches{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:12px}
+    .sw{display:flex;flex-direction:column;gap:6px;min-width:0}
+    .sw i{display:block;height:40px;border-radius:8px;background:var(--c)}
+    .sw b{font-size:13px;line-height:20px;font-weight:600}
+    .sw span{font-size:12px;line-height:18px;color:var(--ds-text-tiatery);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    .rules{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+    .rules div{padding:16px;border-radius:var(--docs-panel-radius);background:var(--ds-background-background);font-size:13px;line-height:20px;color:var(--ds-text-secondary)}
+    .rules b{display:block;margin-bottom:4px;font-size:14px;line-height:22px;color:var(--ds-text-primary)}
+    /* 说明条 */
+    .notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+    .notes div{padding:16px;border-radius:var(--docs-panel-radius);background:var(--ds-background-background);font-size:13px;line-height:20px;color:var(--ds-text-secondary)}
+    .notes b{display:block;margin-bottom:4px;font-size:14px;line-height:22px;color:var(--ds-text-primary)}
+    @media(max-width:960px){.grid2,.palette,.notes{grid-template-columns:1fr}.swatches{grid-template-columns:repeat(5,minmax(0,1fr))}.rules{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:560px){.rules{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">数据展示组件 · Data Display</div>
+    <h1>图表 Chart</h1>
+    <p>先判断数据关系，再选图形类型：趋势用折线 / 曲线，离散比较用柱状，构成用饼 / 环 / 百分比，多维比较用雷达，单目标达成用仪表或进度，关键词热度用词云。同一页面保持颜色映射稳定，不用临时颜色替代图表色。</p>
+  </header>
+
+  <article class="docs-sheet" id="chart-color">
+    <header class="sheet-head"><div><h2>图表配色规则<span class="sub">Color</span></h2><p>所有图表共同的前置规则：先建立稳定的系列映射，再进入具体图表；状态语义色不占用系列色序列。</p></div></header>
+    <section class="docs-section">
+      <div class="palette">
+        <div class="box"><h3>系列色板</h3><p class="desc">按数据系列出现顺序，从 CH01 开始依次取色，超过 10 个循环。</p><div class="swatches" id="swatches"></div></div>
+        <div class="box"><h3>映射原则</h3><p class="desc">颜色服务于识别和比较，不单独承担数据含义。</p><div class="rules">
+          <div><b>依次取色</b>系列从 CH01 开始依次使用，不跳号，不按图表类型另建临时色。</div>
+          <div><b>映射稳定</b>同一指标在图表、图例和交互状态中保持同一颜色。</div>
+          <div><b>语义分离</b>上涨、下跌、持平用 Feedback 色（error&amp;rise / success&amp;decline / plain），不占用 CH 序列。</div>
+          <div><b>不只靠颜色</b>两个及以上系列必须有图例或标注保留系列名称。</div>
+          <div><b>字体</b>图上的数据数字（坐标、柱顶 / 扇区标签、图例数值）用普通 UI 字体 Regular，不加粗；数字字体只用于指标卡和需要突出的关键数值（如环形中心总量、仪表完成率、进度列表数值）。</div>
+        </div></div>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="chart-foundation">
+    <header class="sheet-head"><div><h2>图表基础<span class="sub">Primitives</span></h2><p>坐标轴、图例是所有直角坐标图表共享的基础单元。</p></div></header>
+
+    <section class="docs-section" id="chart-axis">
+      <header class="docs-section-head"><div><h2>坐标轴</h2><p>直角坐标图表共用的网格线、Y 轴与 X 轴。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">横向网格 · 单位 · X 隔一个显示</span><div data-demo="axH"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">纵向网格 · 条形图</span><div data-demo="vBar"></div></div>
+      </div>
+      <div class="notes">
+        <div><b>网格线</b>1px Border/default，虚线 2/2（可选实线），数值 0 基线实线。</div>
+        <div><b>标签</b>Y 标签右对齐，X 标签居中于数据点，距绘图区均为 8；过密时隔一个显示。</div>
+        <div><b>单位与方向</b>单位放左上方；需要时加 1 × 8 刻度线；条形图用纵向网格，类目在左。</div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="chart-legend">
+      <header class="docs-section-head"><div><h2>图例</h2><p>说明系列颜色对应的含义，标记形状与图表类型对应。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">标记 · 横向排列</span><div data-demo="lgRow"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">纵向排列 · 带数值</span><div data-demo="lgCol"></div></div>
+      </div>
+      <div class="notes">
+        <div><b>标记</b>线：折线 / 面积；线 + 点：带数据点的折线；圆点：饼图；方块：柱状 / 环形。</div>
+        <div><b>排列</b>横向自动换行，列距 16、行距 4；纵向行距 8。</div>
+        <div><b>数值</b>名称后可带数值（P4 Regular），间距 12。</div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="chart-indicator">
+      <header class="docs-section-head"><div><h2>数据指示器与数据卡</h2><p>点按或拖动绘图区查看某一刻度的数据，指示器与数据卡同步出现。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">单系列 · 数据卡（单指标）</span><div data-demo="idSingle"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">多系列 · 数据卡（多指标）· 靠右放左侧</span><div data-demo="idMulti"></div></div>
+      </div>
+      <div class="notes">
+        <div><b>指示器</b>竖线 1px 虚线 MK_20；节点 8 圆点，系列色 + 白色内描边。</div>
+        <div><b>数据卡</b>MK_60 底、圆角 8、内边距 12；贴绘图区顶部，靠右时放到左侧。</div>
+        <div><b>交互</b>吸附最近数据点，抬手保持，再点同一点取消；隐藏的系列不显示。</div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>切换全部图表类型，属性随类型变化；折线 / 曲线可点按查看数据，点图例可隐藏系列。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pType">图表类型</label><select id="pType"><option value="line">折线图</option><option value="curve">曲线图</option><option value="bar">柱状图</option><option value="barh">横向正负柱</option><option value="pie">饼图 / 环形图</option><option value="pct">柱状百分比</option><option value="radar">雷达图</option><option value="gauge">仪表盘</option><option value="prog">进度条</option><option value="ring">环状进度</option><option value="cloud">词云</option></select></div>
+          <div class="field"><label for="pS">风格</label><select id="pS"></select></div>
+          <div class="field"><label for="pN">数量</label><select id="pN"></select></div>
+          <div class="field" data-c="dim"><label for="pD">维度数</label><select id="pD"><option value="3">3 个</option><option value="4">4 个</option><option value="5">5 个</option><option value="6" selected>6 个</option><option value="7">7 个</option><option value="8">8 个</option><option value="9">9 个</option><option value="10">10 个</option></select></div>
+          <div class="field" data-c="legpos"><label for="pP">图例位置</label><select id="pP"><option value="right">右侧（直径 160）</option><option value="bottom">下方（直径 180）</option></select></div>
+          <div class="field" data-c="grid"><label for="pG">网格线</label><select id="pG"><option value="dash">虚线（0 基线实线）</option><option value="solid">实线</option></select></div>
+          <div class="field" data-c="x"><label for="pX">X 标签</label><select id="pX"><option value="2">隔一个显示</option><option value="1">全部显示</option></select></div>
+          <div class="field" data-c="val"><label for="pV">完成值 <span id="pVv"></span></label><input type="range" id="pV" min="0" max="100" value="46"></div>
+          <label class="ck" data-c="ind"><input type="checkbox" id="pI" checked>数据指示器</label>
+          <label class="ck" data-c="ind"><input type="checkbox" id="pC" checked>数据卡</label>
+          <label class="ck" data-c="rtick"><input type="checkbox" id="pRt" checked>坐标轴数值</label>
+          <label class="ck" data-c="leg"><input type="checkbox" id="pLg" checked>图例</label>
+          <label class="ck" data-c="label"><input type="checkbox" id="pL" checked>数值标签</label>
+          <label class="ck" data-c="tick"><input type="checkbox" id="pT">X 轴刻度线</label>
+          <label class="ck" data-c="unit"><input type="checkbox" id="pU" checked>单位</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>基础组件属性总览</h2><p>Figma 组件、属性与网站基座类名对应。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:20%"><col style="width:12%"><col style="width:18%"><col><col style="width:22%"></colgroup><thead><tr><th>组件</th><th>属性</th><th>可选值</th><th>关键尺寸与规则</th><th>基座类名</th></tr></thead><tbody>
+        <tr><td>chart_item/y_axis</td><td><code>style</code></td><td>dash / solid</td><td>标签右对齐、距绘图区 8；线 1px Border/default，虚线 2/2；0 基线实线</td><td><code>.gj-m-chart-ytick</code></td></tr>
+        <tr><td>chart_item/x_axis</td><td><code>Style</code></td><td>dash / solid</td><td>刻度线 1 × 8；标签距绘图区 8（带刻度 14）</td><td><code>.gj-m-chart-xaxis</code></td></tr>
+        <tr><td>Chart_item/Y Axis_group</td><td>—</td><td>—</td><td>横向网格 + Y 标签 + 单位，Y 标签区宽 28 起</td><td><code>.gj-m-chart-axes</code></td></tr>
+        <tr><td>Chart_item/X Axis_group</td><td>—</td><td>—</td><td>纵向网格，首条实线；类目在左距 12</td><td><code>.gj-m-chart-axes-v</code></td></tr>
+        <tr><td>Chart_item/Legend</td><td><code>Style</code></td><td>line / dotline / dot / stack</td><td>标记与名称 4；横向列距 16、换行行距 4；纵向行距 8</td><td><code>.gj-m-legend</code></td></tr>
+        <tr><td>Chart_item/popover</td><td><code>Property 1</code></td><td>data_detail_card / Variant2</td><td>MK_60 底、圆角 8、内边距 12、行距 4；单指标数值 16/24，多指标行高 22、左右间距 12；标记 8 圆点</td><td><code>.gj-m-chart-tip</code></td></tr>
+        <tr><td>indicator</td><td>—</td><td>—</td><td>竖线 1px 虚线 2/2 MK_20；节点 8，系列色填充 + 1px 白色内描边</td><td><code>.gj-m-chart-indicator</code></td></tr>
+        <tr><td>Graph_line</td><td><code>line</code> · <code>Style</code></td><td>1–5 · Default / Fill</td><td>线宽 2、尖角；Fill 渐变 30% → 0%，仅 1–2 条</td><td><code>.gj-m-chart-line</code></td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>刻度</td><td>Y 轴 4–6 个刻度，取整齐步长；有单位时写在左上方，刻度只写数字。</td><td>不出现 13.7 这类刻度，不在每个刻度后重复单位。</td></tr>
+        <tr><td>起点</td><td>柱状图数值轴从 0 开始；折线图截断坐标轴时标清范围。</td><td>不通过截断放大差异。</td></tr>
+        <tr><td>方向</td><td>时间趋势、纵向柱状用横向网格；类目名称较长或排行对比用条形图 + 纵向网格。</td><td>同一图表不同时画横竖两组网格。</td></tr>
+        <tr><td>X 标签</td><td>标签过密时抽样显示，首末标签贴边对齐。</td><td>不缩小字号、不旋转标签。</td></tr>
+        <tr><td>图例</td><td>两个及以上系列显示图例，折线 / 柱状放在图表上方；可点图例隐藏系列，隐藏态名称 40%，热区不小于 44。</td><td>单系列不加图例；图例不压在图形上；至少保留一个系列。</td></tr>
+        <tr><td>数据指示器</td><td>点按 / 拖动绘图区出现并吸附最近数据点，抬手保持；选中日期与各系列数值同步显示在图例或数据卡片上。</td><td>不常驻显示；不遮挡数值；隐藏的系列不显示节点。</td></tr>
+        <tr><td>无数据</td><td>无数据或加载失败时改用空状态组件。</td><td>不保留空坐标系。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="chart-line">
+    <header class="sheet-head"><div><h2>折线图<span class="sub">Line</span></h2><p>用直线连接相邻数据，适合观察阶段变化、转折和多个指标之间的差异。分 Default（仅折线）与 Fill（折线 + 渐变面积）两种风格。</p></div></header>
+    <section class="docs-section">
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">单指标 · Fill</span><div data-demo="lnSingle"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">多指标 · Default</span><div data-demo="lnMulti"></div></div>
+      </div>
+      <div class="notes">
+        <div><b>单指标</b>一条 CH01 折线，可加同色渐变面积（最高点 30% → 底部 0%）强调量感；不加图例，由标题说明。</div>
+        <div><b>多指标</b>1–5 条，按 CH01、CH02… 依次取色，图表上方加图例；Fill 只用于 1–2 条，3 条及以上用 Default。所有面积在下、折线在上。</div>
+        <div><b>线型</b>线宽 2，尖角转折、端点平头，不加数据点，不做平滑处理。超过 5 条拆图或改为选择后查看。</div>
+      </div>
+    </section>
+  </article>
+  <article class="docs-sheet" id="chart-curve">
+    <header class="sheet-head"><div><h2>曲线图<span class="sub">Curve</span></h2><p>用平滑曲线表现连续趋势，适合强调变化平滑性的场景，如客户增长、流量波动。样式、取色、风格与折线图一致。</p></div></header>
+    <section class="docs-section">
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">单指标 · Fill</span><div data-demo="cvSingle"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">多指标 · Default</span><div data-demo="cvMulti"></div></div>
+      </div>
+      <div class="notes">
+        <div><b>平滑方式</b>单调三次插值，曲线经过每个数据点，不越过相邻点的高低范围，不制造原数据没有的波峰波谷。</div>
+        <div><b>何时不用</b>数据有突变、需要读出转折点时用折线图；不用平滑掩盖真实突变。</div>
+        <div><b>基座</b><code>path.gj-m-chart-line</code> / <code>path.gj-m-chart-area</code>，与折线共用类名，只是路径为曲线。</div>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="chart-bar">
+    <header class="sheet-head"><div><h2>柱状图<span class="sub">Bar</span></h2><p>比较离散类别；支持纵向、横向，单系列、分组、堆叠和正负值。</p></div></header>
+    <section class="docs-section">
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">纵向 · 分组</span><div data-demo="barGroup"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">横向 · 正负值（涨跌）</span><div data-demo="barPN"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">纵向 · 单系列 · 数值标签</span><div data-demo="barSingle"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">纵向 · 堆叠</span><div data-demo="barStack"></div></div>
+      </div>
+      <div class="notes">
+        <div><b>柱宽与圆角</b>单系列柱宽 16；分组每柱 12、组内间距 4；堆叠柱宽 16、分段间距 2。圆角统一 4。类目在绘图区内平均分布；放不下时柱宽收窄，单柱最小 8。</div>
+        <div><b>数值轴</b>纵向柱从 0 开始；正负值共用 0 基线（实线），向相反方向生长，正值 CH01、负值 CH02；涨跌类数据改用 Feedback 色（涨红、跌绿，加 .is-updown）。</div>
+        <div><b>数量</b>纵向类目建议不超过 7 个，放不下时改横向柱或减少类目；数值标签 P5 12/18 Regular，堆叠只在整柱外显示总值。</div>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="chart-pie">
+    <header class="sheet-head"><div><h2>饼图与环形图<span class="sub">Pie / Donut</span></h2><p>展示整体中的构成比例；环形图可在中心承载总量。图例默认放右侧纵排（方块标记带数值），宽度不够时自动换到下方。</p></div></header>
+    <section class="docs-section">
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">环形 · 160 · 图例右侧带数值</span><div data-demo="donut"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">饼图 · 180 · 图例下方</span><div data-demo="pie"></div></div>
+      </div>
+      <div class="notes">
+        <div><b>尺寸</b>直径 160–180：与图例并排用 160，图例在下方用 180；环形内径 74%，中心数值 N3 24/36，单位 P5。</div>
+        <div><b>指标数</b>2–10 个，按 CH01→CH10 取色；扇区间留 2 的间隔。指标过多或比例接近时改用柱状图。</div>
+        <div><b>标签</b>饼图扇区内显示百分比（P3 14/22 Regular 白字），小于 8% 的扇区隐藏标签，图例保留名称和数值。</div>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="chart-percentage">
+    <header class="sheet-head"><div><h2>柱状百分比<span class="sub">Percentage</span></h2><p>用一根横条展示各部分在整体中的占比，具体数值通过图例展示。</p></div></header>
+    <section class="docs-section">
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">双指标占比</span><div data-demo="pct2"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">多指标占比 · 高 16</span><div data-demo="pctN"></div></div>
+      </div>
+      <div class="notes">
+        <div><b>样式</b>高 8（强调时 16），分段间距 2、圆角 4，按 CH01、CH02… 顺序取色。</div>
+        <div><b>构成</b>所有分段必须构成同一整体，比例合计 100%；单段过小时保留最小宽度 2。</div>
+        <div><b>结构</b>标题 / 总量 → 条形 → 图例（名称 + 百分比），间距 16（Figma Segmented Progress）。</div>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="chart-radar">
+    <header class="sheet-head"><div><h2>雷达图<span class="sub">Radar</span></h2><p>比较多个维度的能力、表现或结构差异；默认 Fill 并显示端点，维度标签始终展示。</p></div></header>
+    <section class="docs-section">
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">单组 · 5 维</span><div data-demo="radar1"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">两组对比 · 6 维 · 坐标轴数值</span><div data-demo="radar2"></div></div>
+      </div>
+      <div class="notes">
+        <div><b>数量</b>3–10 个维度、1–3 组；9–10 维用 2–3 字短标签。各组用相同量纲或归一化尺度；需要读数时沿 12 点方向的轴显示坐标轴数值（25 / 50 / 75 / 100，P6 10/16）。</div>
+        <div><b>样式</b>网格 1px Border/default，数据线 2、填充 20%（重叠严重可关闭），端点直径 6 始终显示；最大宽 240。</div>
+        <div><b>图例</b>两组及以上加线标记图例，放在图形上方。</div>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="chart-gauge">
+    <header class="sheet-head"><div><h2>仪表盘<span class="sub">Gauge</span></h2><p>用弧形展示当前值与目标的关系，适用于 KPI 达成率等单一关键指标。</p></div></header>
+    <section class="docs-section">
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">半圆</span><div data-demo="gaugeHalf"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">3/4 圆</span><div data-demo="gaugeThree"></div></div>
+      </div>
+      <div class="notes">
+        <div><b>变体</b>只保留半圆与 3/4 圆两种。</div>
+        <div><b>样式</b>直径 154、弧宽 12、圆头；进度 CH01，轨道 Background/Secondary。</div>
+        <div><b>信息</b>中心显示指标名（P5）与完成率（N3 24/36），间距 4；说明文字放在仪表下方 12（P4 Text/Secondary），不放进弧内。</div>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="chart-progress">
+    <header class="sheet-head"><div><h2>进度条<span class="sub">Progress</span></h2><p>以水平条展示任务或指标的完成进度，提供指标列表、横排分布列表与单项完成三种形式。</p></div></header>
+    <section class="docs-section">
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">指标进度列表 · 高 16</span><div data-demo="progList"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">单项完成 · 多段构成 · 高 8</span><div data-demo="progSingle"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">横排进度列表 · 高 8 · 单色（default / bar）· 可展开明细</span><div data-demo="progInline"></div></div>
+      </div>
+      <div class="notes">
+        <div><b>样式</b>圆头轨道高 8；强调型高 16、圆角 4。轨道 Background/Secondary，进度按 CH01、CH02… 顺序取色。</div>
+        <div><b>横排列表</b>同一维度的分布（如星级、档位）用 Progress default / bar：每项一行“名称 — 条形 — 数值”，条形高 8、单色；数值不是重点突出数据，用普通文字粗体 H5 14/22。可下钻时整行可点，右侧 16 箭头展开 / 收起，明细块在该行下方（浅灰底、圆角 8，每行 44 带右箭头进入详情）；数量为 0 不可展开。</div>
+        <div><b>文字</b>列表：名称行高 24、与条形间距 4、项间距 12，名称 P3 14/22 + 数值 N6 16/24（数字字体）；单项：大数值 N2 32/48（数字字体），环比用 Feedback 色。</div>
+        <div><b>边界</b>数值限定在有效范围内；超过目标时明确业务含义（如“超额 12%”），不让条形溢出轨道。</div>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="chart-progress-ring">
+    <header class="sheet-head"><div><h2>环状进度<span class="sub">Progress Ring</span></h2><p>用完整圆环展示一项或多项并列任务的完成进度，不表达构成。</p></div></header>
+    <section class="docs-section">
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">单项 · 88</span><div data-demo="ring1"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">多项并列</span><div data-demo="ringN"></div></div>
+      </div>
+      <div class="notes">
+        <div><b>样式</b>默认直径 88、弧宽为直径的 1/10、圆头，从 12 点方向顺时针；中心数值 N4 20/30 + 名称 P5 12/18。</div>
+        <div><b>多项</b>每项一个圆环，居中并列、间距 24（最大 32），一行最多 3 个，窄屏时等比缩小；按 CH01、CH02… 取色，不嵌套。</div>
+        <div><b>区别</b>表达构成用饼 / 环形图，环状进度只表达“完成了多少”。</div>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="chart-wordcloud">
+    <header class="sheet-head"><div><h2>词云<span class="sub">Word Cloud</span></h2><p>气泡面积、字号和背景强度共同表达关键词权重；文字保持水平，不随机旋转。</p></div></header>
+    <section class="docs-section">
+      <div class="panel gray"><span class="docs-stage-label">客户关注热词</span><div data-demo="cloud"></div></div>
+      <div class="notes">
+        <div><b>权重</b>强 / 中 / 弱三档只用气泡直径和字号（16 / 14 / 12）区分；气泡统一为系列所属色系的 BT_x20 底 + 同色系 09 号字（如 BT_B20 + B09），字重 Regular。气泡直径随权重递增。</div>
+        <div><b>取色</b>按关键词类别依次取 CH01、CH02…，同一类别同色。</div>
+        <div><b>边界</b>只用于感知热度，不用于精确比较；关键词不超过 15 个，不重叠、不旋转。</div>
+      </div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  /* 色板 */
+  $('swatches').innerHTML=Array.from({length:10},(_,i)=>{const k='ch'+String(i+1).padStart(2,'0');const v=getComputedStyle(document.documentElement).getPropertyValue('--ds-chart-'+k).trim();
+    const c=document.createElement('canvas').getContext('2d');c.fillStyle=v;const hex=/^#/.test(c.fillStyle)?c.fillStyle.toUpperCase():c.fillStyle;
+    return `<div class="sw"><i style="--c:var(--ds-chart-${k})"></i><b>${k.toUpperCase()}</b><span>${hex}</span></div>`}).join('');
+
+  /* Y 轴：ticks 从上到下；opt.solid 全实线；0 刻度（无 0 时最后一条）实线 */
+  const AXES=(ticks,o={})=>`<div class="gj-m-chart-axes${o.solid?' gj-m-chart-axes-solid':''}" style="${o.h?`--gj-m-chart-h:${o.h/100}rem;`:''}${o.yw?`--gj-m-chart-y-w:${o.yw/100}rem`:''}">${ticks.map((t,i)=>`<div class="gj-m-chart-ytick${(ticks.includes(0)?t===0:i===ticks.length-1)?' is-solid':''}" style="top:${i/(ticks.length-1)*100}%"><span class="gj-m-chart-ylabel">${t}</span></div>`).join('')}${o.plot?`<div class="gj-m-chart-plot">${o.plot}</div>`:''}</div>`;
+  /* X 轴：labels 等分到 0–100%；every 抽样；首末贴边 */
+  const XAXIS=(labels,o={})=>{const n=labels.length,ev=o.every||1;if(o.band)return `<div class="gj-m-chart-xaxis"${o.yw?` style="--gj-m-chart-y-w:${o.yw/100}rem"`:''}>${labels.map((l,i)=>`<div class="gj-m-chart-xtick" style="left:${(i+.5)/n*100}%"><span class="gj-m-chart-xlabel">${l}</span></div>`).join('')}</div>`;return `<div class="gj-m-chart-xaxis${o.tick?' gj-m-chart-xaxis-tick':''}${o.tick&&o.solid?' gj-m-chart-xaxis-solid':''}"${o.yw?` style="--gj-m-chart-y-w:${o.yw/100}rem"`:''}>${labels.map((l,i)=>{const show=(i%ev===0&&(n-1-i>=ev||i===n-1))||i===n-1;if(!show&&!o.tick)return '';return `<div class="gj-m-chart-xtick${i===0?' is-start':''}${i===n-1?' is-end':''}" style="left:${n>1?i/(n-1)*100:50}%">${show?`<span class="gj-m-chart-xlabel">${l}</span>`:''}</div>`}).join('')}</div>`};
+  /* 折线图基座：series=[{v:[…],s:系列序号(1起),off}]；o.fill 画面积（先画全部面积，再画全部折线） */
+  let GID=0;
+  const LINESVG=(series,lo,hi,o={})=>{const P=v=>v.map((y,j)=>`${(j/(v.length-1)*100).toFixed(2)},${(100-(y-lo)/(hi-lo)*100).toFixed(2)}`);let defs='',areas='',lines='';
+    series.forEach(({v,s,off})=>{const pts=P(v),cls=` gj-m-chart-s${s}${off?' is-off':''}`;
+      if(o.fill){const id='gjArea'+(++GID);defs+=`<linearGradient id="${id}" class="gj-m-chart-area-grad gj-m-chart-s${s}" x1="0" y1="0" x2="0" y2="1"><stop offset="0"/><stop offset="1"/></linearGradient>`;areas+=`<path class="gj-m-chart-area${cls}" fill="url(#${id})" d="M${pts.join(' L')} L100,100 L0,100 Z"/>`}
+      lines+=`<polyline class="gj-m-chart-line${cls}" points="${pts.join(' ')}"/>`});
+    return `<svg class="gj-m-chart-line-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${defs?`<defs>${defs}</defs>`:''}${areas}${lines}</svg>`};
+  const UNIT=u=>`<p class="gj-m-chart-unit">${u}</p>`;
+  /* 数据指示器：idx 为数据点序号；只为可见系列画节点 */
+  const IND=(series,lo,hi,idx)=>{const n=series[0].v.length;return `<div class="gj-m-chart-indicator" style="left:${(idx/(n-1)*100).toFixed(2)}%">${series.filter(x=>!x.off).map(x=>`<span class="gj-m-chart-indicator-dot gj-m-chart-s${x.s}" style="top:${(100-(x.v[idx]-lo)/(hi-lo)*100).toFixed(2)}%"></span>`).join('')}</div>`};
+  /* 详细数据卡：与指示器同步出现；靠右（> 55%）时放到竖线左侧；隐藏的系列不列出 */
+  const TIP=(series,idx,unit='%',f=v=>(v>0?'+':'')+v.toFixed(2))=>{const n=series[0].v.length,x=idx/(n-1)*100,vis=series.filter(s=>!s.off);
+    const row=s=>`<span class="gj-m-chart-tip-name gj-m-chart-s${s.s}">${s.nm}</span><span class="gj-m-chart-tip-value">${f(s.v[idx])}<span class="gj-m-chart-tip-unit">${unit}</span></span>`;
+    return `<div class="gj-m-chart-tip${vis.length===1?' gj-m-chart-tip-single':''}${x>55?' is-left':''}" style="--x:${x.toFixed(2)}">${vis.length===1?row(vis[0]).replace('</span><span class="gj-m-chart-tip-value">','</span><span class="gj-m-chart-tip-value">'):vis.map(s=>`<div class="gj-m-chart-tip-row">${row(s)}</div>`).join('')}</div>`};
+  const LG=(name,s,mark,o={})=>{const tag=o.btn?'button':'span';const leg=`<${tag}${o.btn?` type="button" aria-pressed="${!o.off}" data-i="${o.i}"`:''} class="gj-m-legend gj-m-chart-s${s}${o.off?' is-off':''}"><span class="gj-m-legend-mark is-${mark}" aria-hidden="true"></span>${name}</${tag}>`;return o.value!=null?`<span class="gj-m-legend-data">${leg}<span class="gj-m-legend-value">${o.value}</span></span>`:leg};
+  const CSS='html,body{overflow:hidden;background:transparent}.scr{width:100%;max-width:3.75rem;margin:0 auto;box-sizing:border-box}';
+  const show=(k,html)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS,height:'auto'});
+
+  /* ---------- 坐标轴 ---------- */
+  const XL=['10-08','10-09','10-10','10-11','10-12','10-13','10-14'];
+  show('axH',`<div class="scr gj-m-card"><div class="gj-m-card-body">${UNIT('单位：%')}${AXES([6,4,2,0,-2],{h:140,plot:LINESVG([{v:[0,1.2,0.8,2.6,3.1,2.4,4.6],s:1}],-2,6)})}${XAXIS(XL,{every:2})}</div></div>`);
+  const VAXES=(cats,vals,o={})=>`<div class="gj-m-chart-axes gj-m-chart-axes-v" style="--gj-m-chart-h:${(o.h||168)/100}rem;--gj-m-chart-y-w:${(o.yw||64)/100}rem">${vals.map((v,i)=>`<div class="gj-m-chart-vtick${i===0?' is-solid':''}" style="left:${i/(vals.length-1)*100}%"></div>`).join('')}${cats.map((c,i)=>`<div class="gj-m-chart-ycat" style="top:${(i+.5)/cats.length*100}%"><span class="gj-m-chart-ylabel">${c}</span></div>`).join('')}${o.plot?`<div class="gj-m-chart-plot">${o.plot}</div>`:''}</div>${XAXIS(vals,{yw:o.yw||64})}`;
+  const CATS=['股票型','混合型','债券型','货币型','指数型'],BV=[62,48,85,30,54];
+  show('vBar',`<div class="scr gj-m-card"><div class="gj-m-card-body">${VAXES(CATS,[0,25,50,75,100],{h:160,plot:`<div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-around">${BV.map(v=>`<div style="height:.12rem;width:${v}%;border-radius:0 var(--Radius-XS) var(--Radius-XS) 0;background:var(--ds-chart-ch01)"></div>`).join('')}</div>`})}</div></div>`);
+
+  /* ---------- 图例 ---------- */
+  show('lgRow',`<div class="scr gj-m-card"><div class="gj-m-card-body" style="display:flex;flex-direction:column;gap:.16rem"><div class="gj-m-chart-legend" style="justify-content:space-between">${[['line','线'],['dotline','线 + 点'],['dot','圆点'],['stack','方块']].map(([m,t])=>LG(t,1,m)).join('')}</div><div style="height:1px;background:var(--ds-border-default)"></div><div class="gj-m-chart-legend">${['我的组合','沪深 300','同类平均','业绩基准'].map((n,i)=>LG(n,i+1,'line')).join('')}</div></div></div>`);
+  const ALLOC=[['股票',42.6],['债券',28.4],['货币',18.0],['其他',11.0]];
+  show('lgCol',`<div class="scr gj-m-card"><div class="gj-m-card-body" style="display:flex;align-items:center;gap:.24rem"><div style="flex:none;display:flex;flex-direction:column;width:.24rem;height:1.04rem;border-radius:var(--Radius-XS);overflow:hidden">${ALLOC.map(([n,v],i)=>`<div style="height:${v}%;background:var(--ds-chart-ch0${i+1})"></div>`).join('')}</div><div class="gj-m-chart-legend-v">${ALLOC.map(([n,v],i)=>LG(n,i+1,'stack',{value:v.toFixed(1)+'%'})).join('')}</div></div></div>`);
+
+  /* ---------- 折线图 ---------- */
+  const LSER=[['我的组合',[0,1.2,0.8,2.6,3.1,2.4,3.8,4.6,4.2,5.2]],['沪深 300',[0,0.6,-0.4,0.9,1.8,1.1,2.0,2.6,1.9,2.4]],['同类平均',[0,0.9,0.5,1.6,2.2,1.9,2.8,3.1,3.0,3.6]],['业绩基准',[0,0.3,0.6,0.9,1.2,1.5,1.8,2.1,2.4,2.7]],['中证 500',[0,-0.8,-1.4,-0.2,0.6,1.8,1.2,2.9,3.8,4.4]]];
+  /* 坐标：按可见系列取整齐刻度（5 条刻度） */
+  const SCALE=(vals,n=5)=>{const lo0=Math.min(0,...vals),hi0=Math.max(...vals);const raw=(hi0-lo0)/(n-1);const mag=Math.pow(10,Math.floor(Math.log10(raw||1)));const step=[1,2,2.5,5,10].map(m=>m*mag).find(s=>s>=raw);const lo=Math.floor(lo0/step)*step;let hi=lo+step*(n-1);while(hi<hi0)hi+=step;const cnt=Math.round((hi-lo)/step)+1;return {lo,hi,ticks:Array.from({length:cnt},(_,i)=>+(hi-step*i).toFixed(2))}};
+  const LCH=(ser,o={})=>{const sc=SCALE(ser.filter(x=>!x.off).flatMap(x=>x.v),o.yn||5);const yw=Math.max(...sc.ticks.map(t=>String(t).length))*7+12;
+    return (o.unit===false?'':UNIT(o.unitText||'单位：%'))+AXES(sc.ticks,{h:140,yw,solid:o.solid,plot:(o.curve?CURVESVG:LINESVG)(ser,sc.lo,sc.hi,{fill:o.fill})+(o.sel!=null?IND(ser,sc.lo,sc.hi,o.sel)+(o.tip?TIP(ser,o.sel,o.tipUnit,o.tipFmt):''):'')})+XAXIS(o.x||['07-14','08-14','09-14','10-14'],{yw,every:o.every,tick:o.tick,solid:o.solid})};
+  const SER=n=>LSER.slice(0,n).map(([nm,v],i)=>({nm,v,s:i+1}));
+  show('lnSingle',`<div class="scr gj-m-card"><div class="gj-m-card-body">${LCH(SER(1),{fill:1})}</div></div>`);
+  const DATES=['07-14','07-28','08-11','08-25','09-08','09-22','09-29','10-06','10-10','10-14'];
+  const fmt=v=>(v>0?'+':'')+v.toFixed(2)+'%';
+  show('idSingle',`<div class="scr gj-m-card"><div class="gj-m-card-body">${LCH(SER(1),{sel:7,tip:1})}</div></div>`);
+  show('idMulti',`<div class="scr gj-m-card"><div class="gj-m-card-body"><div class="gj-m-chart-legend" style="margin-bottom:.12rem">${SER(3).map(x=>LG(x.nm,x.s,'line')).join('')}</div>${LCH(SER(3),{sel:7,tip:1})}</div></div>`);
+  show('lnMulti',`<div class="scr gj-m-card"><div class="gj-m-card-body"><div class="gj-m-chart-legend" style="margin-bottom:.12rem">${SER(3).map(x=>LG(x.nm,x.s,'line')).join('')}</div>${LCH(SER(3))}</div></div>`);
+
+
+  /* ================= 图表类型 ================= */
+  const CARD=(inner,style='')=>`<div class="scr gj-m-card"><div class="gj-m-card-body"${style?` style="${style}"`:''}>${inner}</div></div>`;
+  const LEGH=(names,mark='line',vals)=>`<div class="gj-m-chart-legend">${names.map((n,i)=>LG(n,i+1,mark,vals?{value:vals[i]}:{})).join('')}</div>`;
+  const LEGV=(names,mark,vals)=>`<div class="gj-m-chart-legend-v">${names.map((n,i)=>LG(n,i+1,mark,{value:vals[i]})).join('')}</div>`;
+
+  /* 曲线：单调三次插值（Fritsch–Carlson），坐标为 viewBox 0–100 */
+  const CURVE=(pts)=>{const n=pts.length;if(n<3)return 'M'+pts.map(p=>p.join(',')).join(' L');const dx=[],dy=[],m=[];
+    for(let i=0;i<n-1;i++){dx[i]=pts[i+1][0]-pts[i][0];dy[i]=pts[i+1][1]-pts[i][1];m[i]=dy[i]/dx[i]}
+    const t=[m[0]];for(let i=1;i<n-1;i++)t[i]=m[i-1]*m[i]<=0?0:(3*(dx[i-1]+dx[i]))/((2*dx[i]+dx[i-1])/m[i-1]+(dx[i]+2*dx[i-1])/m[i]);t[n-1]=m[n-2];
+    let d=`M${pts[0][0].toFixed(2)},${pts[0][1].toFixed(2)}`;for(let i=0;i<n-1;i++){const h=dx[i]/3;d+=` C${(pts[i][0]+h).toFixed(2)},${(pts[i][1]+h*t[i]).toFixed(2)} ${(pts[i+1][0]-h).toFixed(2)},${(pts[i+1][1]-h*t[i+1]).toFixed(2)} ${pts[i+1][0].toFixed(2)},${pts[i+1][1].toFixed(2)}`}return d};
+  const CURVESVG=(series,lo,hi,o={})=>{let defs='',areas='',lines='';series.forEach(({v,s})=>{const pts=v.map((y,j)=>[j/(v.length-1)*100,100-(y-lo)/(hi-lo)*100]);const d=CURVE(pts);
+      if(o.fill){const id='gjArea'+(++GID);defs+=`<linearGradient id="${id}" class="gj-m-chart-area-grad gj-m-chart-s${s}" x1="0" y1="0" x2="0" y2="1"><stop offset="0"/><stop offset="1"/></linearGradient>`;areas+=`<path class="gj-m-chart-area gj-m-chart-s${s}" fill="url(#${id})" d="${d} L100,100 L0,100 Z"/>`}
+      lines+=`<path class="gj-m-chart-line gj-m-chart-s${s}" d="${d}"/>`});
+    return `<svg class="gj-m-chart-line-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${defs?`<defs>${defs}</defs>`:''}${areas}${lines}</svg>`};
+  const CV1=[12,18,16,24,30,28,36,42,40,48],CV2=[8,10,15,14,20,26,24,30,34,33],CV3=[5,9,8,12,13,18,22,21,25,29];
+  show('cvSingle',CARD(UNIT('单位：万户')+AXES([60,45,30,15,0],{h:140,plot:CURVESVG([{v:CV1,s:1}],0,60,{fill:1})})+XAXIS(['1月','4月','7月','10月'])));
+  show('cvMulti',CARD(`<div style="margin-bottom:.12rem">${LEGH(['新开户','有效户','高净值'])}</div>`+UNIT('单位：万户')+AXES([60,45,30,15,0],{h:140,plot:CURVESVG([{v:CV1,s:1},{v:CV2,s:2},{v:CV3,s:3}],0,60)})+XAXIS(['1月','4月','7月','10月'])));
+
+  /* 柱状 */
+  const MON=['5月','6月','7月','8月','9月','10月'];
+  const VBARS=(cats,series,max,o={})=>`<div class="gj-m-chart-bars">${cats.map((c,i)=>{
+      if(o.stack){const tot=series.reduce((a,s)=>a+s[i],0);return `<div class="gj-m-chart-bar-group"><div class="gj-m-chart-bar-stack" style="--v:${tot/max*100}">${series.map((s,k)=>`<div class="gj-m-chart-bar gj-m-chart-s${k+1}" style="--v:${s[i]}"></div>`).join('')}</div>${o.label?`<span class="gj-m-chart-bar-label" style="bottom:calc(${tot/max*100}% + .04rem)">${tot}</span>`:''}</div>`}
+      return `<div class="gj-m-chart-bar-group${series.length>1?' is-grouped':''}">${series.map((s,k)=>`<div class="gj-m-chart-bar gj-m-chart-s${k+1}" style="--v:${s[i]/max*100}">${o.label?`<span class="gj-m-chart-bar-label">${s[i]}</span>`:''}</div>`).join('')}</div>`}).join('')}</div>`;
+  const BA=[42,56,38,64,50,72],BB=[30,44,46,40,58,52],BC=[12,18,10,20,14,16];
+  show('barGroup',CARD(`<div style="margin-bottom:.12rem">${LEGH(['本年','去年'],'stack')}</div>`+UNIT('单位：亿元')+AXES([80,60,40,20,0],{h:140,plot:VBARS(MON,[BA,BB],80)})+XAXIS(MON,{band:1})));
+  show('barSingle',CARD(UNIT('单位：亿元')+AXES([80,60,40,20,0],{h:140,plot:VBARS(MON,[BA],80,{label:1})})+XAXIS(MON,{band:1})));
+  show('barStack',CARD(`<div style="margin-bottom:.12rem">${LEGH(['股票','债券','货币'],'stack')}</div>`+UNIT('单位：亿元')+AXES([120,90,60,30,0],{h:140,yw:36,plot:VBARS(MON,[BA,BB,BC],120,{stack:1})})+XAXIS(MON,{band:1,yw:36})));
+  /* 横向正负：类目在左，0 基线位于 --zero */
+  const PN=[['新能源',12.6],['半导体',8.2],['医药',-3.4],['消费',4.1],['地产',-9.8]];const lo=-20,hi=20,zero=(0-lo)/(hi-lo)*100,PT=[-20,-10,0,10,20];
+  show('barPN',CARD(UNIT('单位：%')+`<div class="gj-m-chart-axes gj-m-chart-axes-v" style="--gj-m-chart-h:1.6rem;--gj-m-chart-y-w:.48rem">${PT.map((v,i)=>`<div class="gj-m-chart-vtick${v===0?' is-solid':''}" style="left:${i/4*100}%"></div>`).join('')}${PN.map(([c],i)=>`<div class="gj-m-chart-ycat" style="top:${(i+.5)/PN.length*100}%"><span class="gj-m-chart-ylabel">${c}</span></div>`).join('')}<div class="gj-m-chart-plot"><div class="gj-m-chart-bars-h is-updown" style="--zero:${zero}">${PN.map(([c,v])=>`<div class="gj-m-chart-bar-group"><div class="gj-m-chart-bar ${v<0?'is-negative gj-m-chart-s2':'gj-m-chart-s1'}" style="--v:${Math.abs(v)/(hi-lo)*100}"><span class="gj-m-chart-bar-label">${v>0?'+':''}${v}</span></div></div>`).join('')}</div></div></div>`+XAXIS(PT,{yw:48})));
+
+  /* 饼 / 环：viewBox 100，r=50，环内径 74% */
+  const ARC=(cx,cy,r,a0,a1)=>{const p=a=>[cx+r*Math.sin(a),cy-r*Math.cos(a)];return {p0:p(a0),p1:p(a1),large:a1-a0>Math.PI?1:0}};
+  const PIESVG=(vals,o={})=>{const tot=vals.reduce((a,b)=>a+b,0);let a=0,paths='',labels='';const R=50,r=o.donut?R*.74:0;
+    vals.forEach((v,i)=>{const a0=a,a1=a+v/tot*Math.PI*2;a=a1;const o1=ARC(50,50,R,a0,a1);let d;
+      if(r){const i1=ARC(50,50,r,a0,a1);d=`M${o1.p0} A${R},${R} 0 ${o1.large} 1 ${o1.p1} L${i1.p1} A${r},${r} 0 ${o1.large} 0 ${i1.p0} Z`}else d=`M50,50 L${o1.p0} A${R},${R} 0 ${o1.large} 1 ${o1.p1} Z`;
+      paths+=`<path class="gj-m-chart-slice gj-m-chart-s${i+1}" d="${d}"/>`;
+      if(o.labels&&v/tot>=.08){const m=(a0+a1)/2,rr=r?(R+r)/2:R*.62;labels+=`<span class="gj-m-chart-pie-label" style="left:${50+rr*Math.sin(m)}%;top:${50-rr*Math.cos(m)}%">${Math.round(v/tot*100)}%</span>`}});
+    return `<svg viewBox="0 0 100 100" aria-hidden="true">${paths}</svg>${labels}`};
+  const ALC=['股票','债券','基金','其他'],ALV=[36,26,20,18];
+  show('donut',CARD(`<div class="gj-m-chart-pie-wrap"><div class="gj-m-chart-pie" role="img" aria-label="资产配置：${ALC.map((n,i)=>n+ALV[i]+'%').join('，')}">${PIESVG(ALV,{donut:1})}<div class="gj-m-chart-pie-center"><span class="gj-m-chart-pie-total">508</span><span class="gj-m-chart-pie-unit">万元</span></div></div>${LEGV(ALC,'stack',ALV.map(v=>v+'%'))}</div>`));
+  const PV=[55,20,16,9];
+  show('pie',CARD(`<div class="gj-m-chart-pie-wrap is-stacked"><div class="gj-m-chart-pie gj-m-chart-pie-lg" role="img" aria-label="客户构成：${['个人','机构','产品','其他'].map((n,i)=>n+PV[i]+'%').join('，')}">${PIESVG(PV,{labels:1})}</div>${LEGH(['个人','机构','产品','其他'],'dot',PV.map(v=>v+'%'))}</div>`));
+
+  /* 百分比 */
+  const PCT=(vals,lg)=>`<div class="gj-m-chart-percent${lg?' gj-m-chart-percent-lg':''}" role="img" aria-label="占比">${vals.map((v,i)=>`<div class="gj-m-chart-percent-seg gj-m-chart-s${i+1}" style="--v:${v}"></div>`).join('')}</div>`;
+  const PHEAD=(t,n)=>`<div class="gj-m-chart-block-head"><span style="font-size:.14rem;line-height:.22rem">${t}</span><span class="gj-m-legend-value">${n}</span></div>`;
+  show('pct2',CARD(`<div class="gj-m-chart-block">${PHEAD('项目总数','2,821 项')+PCT([62,38])+LEGH(['投行','财富'],'stack',['62%','38%'])}</div>`));
+  show('pctN',CARD(`<div class="gj-m-chart-block">${PHEAD('项目总数','2,821 项')+PCT([33,20,22,5,20],1)+LEGH(['投行','财富','总部','鼎兴','机构'],'stack',['33%','20%','22%','5%','20%'])}</div>`));
+
+  /* 雷达 */
+  const RADAR=(dims,groups,o={})=>{const n=dims.length,pt=(i,k)=>{const a=i/n*Math.PI*2;return [50+40*k*Math.sin(a),50-40*k*Math.cos(a)]};
+    const grid=[.25,.5,.75,1].map(k=>`<polygon class="gj-m-chart-radar-grid${k===1?' is-outer':''}" points="${dims.map((_,i)=>pt(i,k).join(',')).join(' ')}"/>`).join('');
+    const axes=dims.map((_,i)=>`<line class="gj-m-chart-radar-axis" x1="50" y1="50" x2="${pt(i,1)[0]}" y2="${pt(i,1)[1]}"/>`).join('');
+    const areas=groups.map((g,s)=>`<polygon class="gj-m-chart-radar-area gj-m-chart-s${s+1}" points="${g.map((v,i)=>pt(i,v/100).join(',')).join(' ')}"/>`).join('');
+    const dots=groups.map((g,s)=>g.map((v,i)=>{const p=pt(i,v/100);return `<circle class="gj-m-chart-radar-dot gj-m-chart-s${s+1}" cx="${p[0]}" cy="${p[1]}" r="1.25"/>`}).join('')).join('');
+    const labels=dims.map((d,i)=>{const p=pt(i,1.18);return `<span class="gj-m-chart-radar-label" style="left:${p[0]}%;top:${p[1]}%">${d}</span>`}).join('');
+    const ticks=o.ticks?[25,50,75,100].map(k=>`<span class="gj-m-chart-radar-tick" style="left:50%;top:${50-40*k/100}%">${k}</span>`).join(''):'';
+    return `<div class="gj-m-chart-radar" role="img" aria-label="雷达图"><svg viewBox="0 0 100 100" aria-hidden="true">${grid}${axes}${areas}${dots}</svg>${labels}${ticks}</div>`};
+  show('radar1',CARD(`<div style="padding:.16rem 0">${RADAR(['收益','回撤','波动','夏普','规模'],[[82,64,70,76,58]])}</div>`));
+  show('radar2',CARD(`${LEGH(['本基金','同类平均'])}<div style="padding:.2rem 0 .12rem">${RADAR(['收益','回撤','波动','夏普','规模','费率'],[[82,64,70,76,58,66],[60,72,58,62,70,74]],{ticks:1})}</div>`));
+
+  /* 仪表：直径 154、弧宽 12 → viewBox 154，r=71 */
+  const GAUGE=(type,pct,name)=>{const W=154,c=77,r=71,sw=12,span=type==='half'?Math.PI:Math.PI*1.5,start=-span/2;const p=a=>[c+r*Math.sin(a),c-r*Math.cos(a)];
+    const arc=(a0,a1)=>{const[x0,y0]=p(a0),[x1,y1]=p(a1);return `M${x0.toFixed(2)} ${y0.toFixed(2)} A${r} ${r} 0 ${a1-a0>Math.PI?1:0} 1 ${x1.toFixed(2)} ${y1.toFixed(2)}`};
+    const H=type==='half'?c+sw/2:c+r*Math.cos(Math.PI-span/2)+sw/2+1;
+    return `<div class="gj-m-chart-gauge gj-m-chart-gauge-${type}" style="--cy:${(c/H*100).toFixed(1)}%" role="img" aria-label="${name}${pct}%"><svg viewBox="0 0 ${W} ${H.toFixed(1)}" aria-hidden="true"><path class="gj-m-chart-gauge-track" stroke-width="${sw}" d="${arc(start,start+span)}"/><path class="gj-m-chart-gauge-value" stroke-width="${sw}" d="${arc(start,start+span*pct/100)}"/></svg><div class="gj-m-chart-gauge-center"><span class="gj-m-chart-gauge-name">${name}</span><span class="gj-m-chart-gauge-value-text">${pct}%</span></div></div>`};
+  const GNOTE=t=>`<p style="margin:.12rem 0 0;text-align:center;font-size:.13rem;line-height:.2rem;color:var(--ds-text-secondary)">${t}</p>`;
+  show('gaugeHalf',CARD(GAUGE('half',46,'年度目标')+GNOTE('已完成计划销售额的 46%')));
+  show('gaugeThree',CARD(GAUGE('three',72,'客户覆盖率')+GNOTE('较上月提升 6 个百分点')));
+
+  /* 进度条 */
+  const PL=[['新增有效户',72,'72%'],['客户资产 AUM',56,'56%'],['产品销售额',38,'38%'],['客户满意度',91,'91%']];
+  show('progList',CARD(`<ul class="gj-m-chart-progress-list">${PL.map(([n,v,t],i)=>`<li class="gj-m-chart-progress-item"><div class="gj-m-chart-progress-head"><span class="gj-m-chart-progress-name">${n}</span><span class="gj-m-chart-progress-value">${t}</span></div><div class="gj-m-chart-progress gj-m-chart-progress-lg" role="progressbar" aria-valuenow="${v}" aria-valuemin="0" aria-valuemax="100" aria-label="${n}"><div class="gj-m-chart-progress-bar gj-m-chart-s${i+1}" style="--v:${v}"></div></div></li>`).join('')}</ul>`));
+  const PI=[['五星',40,'2 家'],['四星',80,'4 家'],['三星',60,'3 家'],['二星',20,'1 家'],['一星',0,'0 家']];
+  show('progInline',CARD(`<ul class="gj-m-chart-progress-list gj-m-chart-progress-list-inline is-expandable">${PI.map(([n,v,t],k)=>`<li class="gj-m-chart-progress-item"><button type="button" class="gj-m-chart-progress-toggle"${v?` aria-expanded="${k===0}"`:' disabled'}><span class="gj-m-chart-progress-name">${n}</span><span class="gj-m-chart-progress"><span class="gj-m-chart-progress-bar" style="--v:${v}"></span></span><span class="gj-m-chart-progress-value">${t}</span>${v?'<span class="gj-m-chart-progress-caret"></span>':'<span></span>'}</button>${k===0?`<ul class="gj-m-chart-progress-detail"><li><a class="gj-m-chart-progress-detail-item" href="javascript:void 0"><span>中国银行东城根支行</span><span class="gj-icon" style="--gj-icon:url('${new URL('../../assets/icons/iconfont/icf_Arrow_right.svg',location.href).href}')"></span></a></li><li><a class="gj-m-chart-progress-detail-item" href="javascript:void 0"><span>东城营业部</span><span class="gj-icon" style="--gj-icon:url('${new URL('../../assets/icons/iconfont/icf_Arrow_right.svg',location.href).href}')"></span></a></li></ul>`:''}</li>`).join('')}</ul>`));
+  show('progSingle',CARD(`<div class="gj-m-chart-block"><div class="gj-m-chart-block-head"><span class="gj-m-chart-progress-big">59%</span><span style="font-size:.13rem;line-height:.2rem;color:var(--ds-text-secondary)">较上月 <span style="color:var(--ds-feedback-error-rise)">+8%</span></span></div><div class="gj-m-chart-progress" role="img" aria-label="已完成 49%，进行中 10%"><div class="gj-m-chart-progress-bar gj-m-chart-s1" style="--v:49"></div><div class="gj-m-chart-progress-bar gj-m-chart-s2" style="--v:10"></div></div><div style="font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)">目标 100 项，已完成 49、进行中 10</div>${LEGH(['已完成','进行中'],'dot',['49','10'])}</div>`));
+
+  /* 环状进度：直径 80、弧宽 8 */
+  const RING=(pct,name,s=1,size)=>{const C=2*Math.PI*36;return `<div class="gj-m-chart-ring gj-m-chart-s${s}"${size?` style="--gj-m-chart-ring-size:${size}"`:''} role="img" aria-label="${name}${pct}%"><svg viewBox="0 0 80 80" aria-hidden="true"><circle class="gj-m-chart-ring-track" cx="40" cy="40" r="36" stroke-width="8"/><circle class="gj-m-chart-ring-value" cx="40" cy="40" r="36" stroke-width="8" stroke-dasharray="${(C*pct/100).toFixed(2)} ${C.toFixed(2)}"/></svg><div class="gj-m-chart-ring-center"><span class="gj-m-chart-ring-value-text">${pct}%</span><span class="gj-m-chart-ring-name">${name}</span></div></div>`};
+  show('ring1',CARD(`<div style="display:flex;align-items:center;gap:.16rem">${RING(85,'完成度')}<div><div style="font-size:.16rem;line-height:.24rem;font-weight:600">季度开户任务</div><div style="margin-top:.04rem;font-size:.13rem;line-height:.2rem;color:var(--ds-text-secondary)">已开 1,700 户 / 目标 2,000 户</div></div></div>`));
+  show('ringN',CARD(`<div class="gj-m-chart-rings">${[[65,'开户',1],[48,'入金',2],[82,'活跃',3]].map(([p,n,s])=>RING(p,n,s)).join('')}</div>`));
+
+  /* 词云：位置为预排布的圆心百分比，直径随权重 */
+  const CL=[['财富管理',3,1,50,48,96],['ETF',3,2,21,28,70],['科创板',2,3,79,28,70],['降费',2,4,79,76,62],['分红',2,1,21,76,62],['港股通',1,2,50,10,44],['REITs',1,3,50,90,44],['可转债',1,5,8,54,44],['北交所',1,6,92,54,44]];
+  show('cloud',CARD(`<div class="gj-m-chart-cloud" role="img" aria-label="热词：${CL.map(c=>c[0]).join('、')}">${CL.map(([t,w,s,x,y,d])=>`<span class="gj-m-chart-cloud-item is-w${w} gj-m-chart-s${s}" style="--x:${x}%;--y:${y}%;--d:${(d/3.11).toFixed(2)}cqw">${t}</span>`).join('')}</div>`));
+
+
+  /* ================= 交互演示（全部图表类型） ================= */
+  const PER={m1:{label:'近1月',k:.4,d:['09-15','09-18','09-22','09-25','09-29','10-02','10-06','10-09','10-11','10-14'],x:['09-15','09-22','09-29','10-06','10-14'],b:['09-15','09-22','09-29','10-06','10-14']},m3:{label:'近3月',k:1,d:['07-14','07-24','08-04','08-14','08-25','09-05','09-15','09-25','10-05','10-14'],x:['07-14','08-01','08-18','09-05','09-22','10-14'],b:['5月','6月','7月','8月','9月','10月']},y1:{label:'近1年',k:2.6,d:['2024-10','2024-12','2025-01','2025-03','2025-04','2025-05','2025-07','2025-08','2025-09','2025-10'],x:['2024-10','2025-01','2025-04','2025-07','2025-10'],b:['24Q4','25Q1','25Q2','25Q3']}};
+  const APPCSS='.app{width:100%;max-width:3.75rem;margin:0 auto;display:flex;flex-direction:column;background:var(--ds-background-background)}'+
+    '.nav{flex:none;display:flex;align-items:center;justify-content:center;height:44px;background:var(--ds-background-container);font-size:.17rem;font-weight:600;color:var(--ds-text-primary)}'+
+    '.body{padding:.12rem var(--space-page-margin-x) .16rem;display:flex;flex-direction:column;gap:.12rem}.seg .gj-m-tabs{width:100%;margin:0}#pick{margin:0 0 -.04rem}.cbody{display:flex;flex-direction:column;gap:.12rem}';
+  /* 每种类型：标题、副标题、系列数选项、风格选项、可用控件 */
+  const TYPES={
+    line:{t:'收益率走势',sub:'累计收益率 · 数据截至 2025-10-14',n:[1,5,3],n2:'条',s:[['default','Default'],['fill','Fill（最多 2 条）']],c:'seg grid x tick unit ind leg'},
+    curve:{t:'客户增长趋势',sub:'累计户数 · 数据截至 2025-10-14',n:[1,5,3],n2:'条',s:[['default','Default'],['fill','Fill（最多 2 条）']],c:'seg grid x tick unit ind leg'},
+    bar:{t:'月度销售额',sub:'本年与去年同期对比',n:[1,5,2],n2:'个系列',s:[['group','分组（最多 3 个）'],['stack','堆叠']],c:'seg grid unit label leg'},
+    barh:{t:'行业涨跌幅',sub:'近一周',n:[3,7,5],n2:'个类目',s:null,c:'grid unit label'},
+    pie:{t:'资产配置',sub:'截至 2025-10-14',n:[2,5,4],n2:'个指标',s:[['donut','环形图'],['pie','饼图']],c:'label legpos leg'},
+    pct:{t:'项目分布',sub:'按业务线',n:[2,5,3],n2:'个指标',s:[['s8','高 8'],['s16','高 16']],c:'leg'},
+    radar:{t:'基金能力评估',sub:'同类排名百分位',n:[1,3,2],n2:'组',s:[['fill','Fill'],['nofill','无填充']],c:'dim rtick leg'},
+    gauge:{t:'年度目标达成',sub:'截至 2025-10-14',n:null,s:[['half','半圆'],['three','3/4 圆']],c:'val'},
+    prog:{t:'本季度任务进度',sub:'截至 2025-10-14',n:[2,5,4],n2:'项',s:[['list','指标列表'],['single','单项多段']],c:'val'},
+    ring:{t:'本月经营指标',sub:'完成率',n:[1,3,3],n2:'项',s:[['88','直径 88'],['72','直径 72']],c:'val'},
+    cloud:{t:'客户关注热词',sub:'近 30 天',n:null,s:null,c:''}};
+  const BSER=[['本年',[42,56,38,64,50,72]],['去年',[30,44,46,40,58,52]],['目标',[45,50,50,55,55,60]],['港股',[12,18,10,20,14,16]],['其他',[8,6,9,7,10,8]]];
+  const PIE5=[['股票',36],['债券',26],['基金',20],['货币',12],['其他',6]];
+  const PCT5=[['投行',33],['财富',22],['总部',20],['机构',15],['鼎兴',10]];
+  const PROG5=[['新增有效户',72],['客户资产 AUM',56],['产品销售额',38],['客户满意度',91],['培训覆盖率',64]];
+  const RDIM=['收益','回撤','波动','夏普','规模','费率','换手','持有人','集中度','胜率'];
+  const RG=[[82,64,70,76,58,66,72,60,68,74],[60,72,58,62,70,74,56,68,62,58],[70,55,80,58,64,52,66,74,56,66]];
+  const RNG=[['开户',1],['入金',2],['活跃',3]];
+  let CUR='m3',OFF=new Set(),SEL=null,LAST='';
+  const setOpts=(id,list,cur)=>{const el=$(id);el.innerHTML=list.map(([v,t])=>`<option value="${v}">${t}</option>`).join('');el.value=list.some(([v])=>String(v)===String(cur))?cur:list[0][0]};
+  function syncControls(){const T=$('pType').value,C=TYPES[T];
+    if(T!==LAST){LAST=T;OFF.clear();SEL=null;
+      if(C.n){const[a,b,def]=C.n;setOpts('pN',Array.from({length:b-a+1},(_,i)=>[a+i,(a+i)+' '+C.n2]),def)}
+      if(C.s)setOpts('pS',C.s,C.s[0][0]);}
+    $('pN').closest('.field').hidden=!C.n;$('pS').closest('.field').hidden=!C.s;
+    document.querySelectorAll('[data-c]').forEach(el=>{el.hidden=!C.c.split(' ').includes(el.dataset.c)});
+    /* Fill 最多 2 条、分组最多 3 个 */
+    const S=$('pS').value;[...$('pN').options].forEach(o=>{o.disabled=((T==='line'||T==='curve')&&S==='fill'&&+o.value>2)||(T==='bar'&&S==='group'&&+o.value>3)});
+    if($('pN').selectedOptions[0]&&$('pN').selectedOptions[0].disabled){const ok=[...$('pN').options].filter(o=>!o.disabled);$('pN').value=ok[ok.length-1].value}
+    $('pVv').textContent=$('pV').value+'%'}
+  const legBtn=(items,mark,vals,o={})=>`<div class="${o.v?'gj-m-chart-legend-v':'gj-m-chart-legend'}">${items.map(([nm,s],i)=>LG(nm,s,mark,{btn:items.length>1,i,off:OFF.has(i),value:vals?(OFF.has(i)?'--':vals[i]):null})).join('')}</div>`;
+  /* 只创建一次预览画框，之后原地替换内容，避免切换类型 / 拖动滑块时整框重载闪烁 */
+  let FR=null,PEND=null;
+  const MOUNT=(html,setup)=>{const go=d=>{const w=d.getElementById('appwrap');const y=w.scrollTop;w.innerHTML=html;setup(d)};
+    const d=FR&&FR.isConnected&&FR.contentDocument;
+    if(d&&d.getElementById('appwrap')){go(d);return}
+    PEND=[html,setup];if(FR&&FR.isConnected)return;
+    FR=GJPhone.swatch($('lab'),{html:'<div id="appwrap"></div>',css:CSS+APPCSS,height:'auto'});
+    FR.addEventListener('load',()=>{const[h,s]=PEND;PEND=null;const dd=FR.contentDocument,w=dd.getElementById('appwrap');w.innerHTML=h;s(dd)},{once:true})};
+  function render(){syncControls();
+    const T=$('pType').value,C=TYPES[T],N=+$('pN').value,S=$('pS').value,has=k=>C.c.split(' ').includes(k);
+    const G=$('pG').value==='solid',Xe=+$('pX').value,TK=$('pT').checked,Un=$('pU').checked,LB=$('pL').checked,LGd=$('pLg').checked,IND_ON=$('pI').checked,V=+$('pV').value,D=+$('pD').value,LP=$('pP').value;
+    [...OFF].forEach(i=>{if(i>=N)OFF.delete(i)});if(OFF.size>=N)OFF.clear();
+    const APPHTML=`<div class="app"><div class="nav">经营看板</div><div class="body"><section class="gj-m-card"><div class="gj-m-card-head"><div class="gj-m-card-header"><h3 class="gj-m-card-title">${C.t}</h3></div><p class="gj-m-card-subtitle">${C.sub}</p></div>
+      <div class="gj-m-card-body cbody">${has('seg')?`<div class="seg"><div class="gj-m-tabs" data-kind="segment" data-size="small" role="tablist" id="seg">${Object.entries(PER).map(([k,p])=>`<button type="button" class="gj-m-tab" role="tab" data-k="${k}" aria-selected="${k===CUR}"><span class="gj-m-tab-face">${p.label}</span></button>`).join('')}</div></div>`:''}${has('ind')&&IND_ON?'<div id="pick" class="gj-m-chart-unit"></div>':''}<div id="leg"></div><div id="ch" role="img" style="touch-action:pan-y"></div></div></section></div></div>`;
+    MOUNT(APPHTML,d=>{const ch=d.getElementById('ch'),leg=d.getElementById('leg');
+      const bindLeg=redraw=>d.querySelectorAll('#leg button, #leg2 button').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.i;if(OFF.has(i))OFF.delete(i);else if(OFF.size<N-1)OFF.add(i);redraw();const nb=d.querySelector(`#leg button[data-i="${i}"], #leg2 button[data-i="${i}"]`);nb&&nb.focus()}));
+      const draw=()=>{const p=PER[CUR];let html='',lg='';
+        if(T==='line'||T==='curve'){const base=T==='curve'?[CV1,CV2,CV3,CV1.map(v=>v*.7),CV2.map(v=>v*.5)]:LSER.map(x=>x[1]);const names=T==='curve'?['新开户','有效户','高净值','机构户','产品户']:LSER.map(x=>x[0]);
+          const ser=base.slice(0,N).map((v,i)=>({nm:names[i],s:i+1,v:v.map(y=>+(y*p.k).toFixed(2)),off:OFF.has(i)}));const at=SEL==null?9:SEL;
+          html=LCH(ser,{fill:S==='fill',curve:T==='curve',solid:G,every:Xe,tick:TK,unit:Un,x:p.x,sel:IND_ON?SEL:null,tip:$('pC').checked,tipUnit:T==='curve'?'万户':'%',tipFmt:T==='curve'?(v=>v.toFixed(1)):undefined,unitText:T==='curve'?'单位：万户':null});
+          if(LGd)lg=legBtn(ser.map(x=>[x.nm,x.s]),'line',IND_ON&&$('pC').checked&&SEL!=null?null:ser.map(x=>T==='curve'?x.v[at].toFixed(1):fmt(x.v[at])));
+          const pk=d.getElementById('pick');if(pk)pk.textContent=SEL==null?'最新 '+p.d[9]+' · 点按或拖动图表查看':p.d[SEL];
+          ch.setAttribute('aria-label',C.t+'：'+ser.filter(x=>!x.off).map(x=>x.nm+' '+x.v[9]).join('，'))}
+        else if(T==='bar'){const cats=p.b,n=cats.length,stack=S==='stack';const ser=BSER.slice(0,N).map(([nm,v],i)=>({nm,s:i+1,v:v.slice(0,n).map(y=>Math.round(y*p.k)),off:OFF.has(i)}));const vis=ser.filter(x=>!x.off);
+          const tops=stack?cats.map((_,j)=>vis.reduce((a,x)=>a+x.v[j],0)):vis.flatMap(x=>x.v);const sc=SCALE(tops);const yw=Math.max(...sc.ticks.map(t=>String(t).length))*7+12;
+          const bars=`<div class="gj-m-chart-bars">${cats.map((c,j)=>{if(stack){const tot=vis.reduce((a,x)=>a+x.v[j],0);return `<div class="gj-m-chart-bar-group"><div class="gj-m-chart-bar-stack" style="--v:${tot/sc.hi*100}">${vis.map(x=>`<div class="gj-m-chart-bar gj-m-chart-s${x.s}" style="--v:${x.v[j]}"></div>`).join('')}</div>${LB?`<span class="gj-m-chart-bar-label" style="bottom:calc(${tot/sc.hi*100}% + .04rem)">${tot}</span>`:''}</div>`}
+            return `<div class="gj-m-chart-bar-group${vis.length>1?' is-grouped':''}">${vis.map(x=>`<div class="gj-m-chart-bar gj-m-chart-s${x.s}" style="--v:${x.v[j]/sc.hi*100}">${LB&&vis.length<3?`<span class="gj-m-chart-bar-label">${x.v[j]}</span>`:''}</div>`).join('')}</div>`}).join('')}</div>`;
+          html=(Un?UNIT('单位：亿元'):'')+AXES(sc.ticks,{h:150,yw,solid:G,plot:bars})+XAXIS(cats,{band:1,yw});
+          if(LGd&&N>1)lg=legBtn(ser.map(x=>[x.nm,x.s]),'stack',ser.map(x=>x.v.reduce((a,b)=>a+b,0)+' 亿'));ch.setAttribute('aria-label',C.t)}
+        else if(T==='barh'){const all=[['新能源',12.6],['半导体',8.2],['医药',-3.4],['消费',4.1],['地产',-9.8],['银行',2.3],['传媒',-6.5]].slice(0,N);const lo=-20,hi=20,zero=50,PT=[-20,-10,0,10,20];
+          html=(Un?UNIT('单位：%'):'')+`<div class="gj-m-chart-axes gj-m-chart-axes-v${G?' gj-m-chart-axes-solid':''}" style="--gj-m-chart-h:${(N*32+16)/100}rem;--gj-m-chart-y-w:.48rem">${PT.map((v,i)=>`<div class="gj-m-chart-vtick${v===0?' is-solid':''}" style="left:${i/4*100}%"></div>`).join('')}${all.map(([c],i)=>`<div class="gj-m-chart-ycat" style="top:${(i+.5)/all.length*100}%"><span class="gj-m-chart-ylabel">${c}</span></div>`).join('')}<div class="gj-m-chart-plot"><div class="gj-m-chart-bars-h" style="--zero:${zero}">${all.map(([c,v])=>`<div class="gj-m-chart-bar-group"><div class="gj-m-chart-bar ${v<0?'is-negative gj-m-chart-s2':'gj-m-chart-s1'}" style="--v:${Math.abs(v)/(hi-lo)*100}">${LB?`<span class="gj-m-chart-bar-label">${v>0?'+':''}${v}</span>`:''}</div></div>`).join('')}</div></div></div>`+XAXIS(PT,{yw:48});ch.setAttribute('aria-label',C.t)}
+        else if(T==='pie'){const items=PIE5.slice(0,N);const vals=items.map(([n,v],i)=>OFF.has(i)?0:v);const tot=vals.reduce((a,b)=>a+b,0);const pctv=vals.map(v=>Math.round(v/tot*100));
+          const vis=items.map((x,i)=>[x,i]).filter(([x,i])=>!OFF.has(i));const big=LP==='bottom';
+          const svg=(()=>{let a=0,paths='',labels='';const R=50,r=S==='donut'?R*.74:0;vis.forEach(([[n,v],i])=>{const a0=a,a1=a+v/tot*Math.PI*2;a=a1;const o1=ARC(50,50,R,a0,a1);let dd;if(r){const i1=ARC(50,50,r,a0,a1);dd=`M${o1.p0} A${R},${R} 0 ${o1.large} 1 ${o1.p1} L${i1.p1} A${r},${r} 0 ${o1.large} 0 ${i1.p0} Z`}else dd=vis.length===1?`M50,0 A50,50 0 1 1 49.99,0 Z`:`M50,50 L${o1.p0} A${R},${R} 0 ${o1.large} 1 ${o1.p1} Z`;paths+=`<path class="gj-m-chart-slice gj-m-chart-s${i+1}" d="${dd}"/>`;
+            if(LB&&!r&&v/tot>=.08){const m=(a0+a1)/2;labels+=`<span class="gj-m-chart-pie-label" style="left:${50+31*Math.sin(m)}%;top:${50-31*Math.cos(m)}%">${Math.round(v/tot*100)}%</span>`}});return `<svg viewBox="0 0 100 100" aria-hidden="true">${paths}</svg>${labels}`})();
+          html=`<div class="gj-m-chart-pie-wrap${big?' is-stacked':''}"><div class="gj-m-chart-pie${big?' gj-m-chart-pie-lg':''}">${svg}${S==='donut'?`<div class="gj-m-chart-pie-center"><span class="gj-m-chart-pie-total">${Math.round(508*tot/100)}</span><span class="gj-m-chart-pie-unit">万元</span></div>`:''}</div>${LGd?`<div id="leg2">${legBtn(items.map((x,i)=>[x[0],i+1]),big?'dot':'stack',pctv.map(v=>v+'%'),{v:!big})}</div>`:''}</div>`;ch.setAttribute('aria-label',C.t+'：'+vis.map(([[n],i])=>n+pctv[i]+'%').join('，'))}
+        else if(T==='pct'){const items=PCT5.slice(0,N);const tot=items.reduce((a,[,v],i)=>a+(OFF.has(i)?0:v),0);
+          html=`<div class="gj-m-chart-block"><div class="gj-m-chart-block-head"><span style="font-size:.14rem;line-height:.22rem">项目总数</span><span class="gj-m-legend-value">2,821 项</span></div><div class="gj-m-chart-percent${S==='s16'?' gj-m-chart-percent-lg':''}">${items.map(([n,v],i)=>OFF.has(i)?'':`<div class="gj-m-chart-percent-seg gj-m-chart-s${i+1}" style="--v:${v}"></div>`).join('')}</div>${LGd?`<div id="leg2">${legBtn(items.map((x,i)=>[x[0],i+1]),'stack',items.map(([,v],i)=>Math.round(v/tot*100)+'%'))}</div>`:''}</div>`;ch.setAttribute('aria-label',C.t)}
+        else if(T==='radar'){const dims=RDIM.slice(0,D);const groups=RG.slice(0,N).map((g,i)=>OFF.has(i)?null:g.slice(0,D));
+          const n=dims.length,pt=(i,k)=>{const a=i/n*Math.PI*2;return [50+40*k*Math.sin(a),50-40*k*Math.cos(a)]};
+          html=`<div class="gj-m-chart-radar${S==='nofill'?' is-nofill':''}" style="margin:.12rem auto"><svg viewBox="0 0 100 100" aria-hidden="true">${[.25,.5,.75,1].map(k=>`<polygon class="gj-m-chart-radar-grid${k===1?' is-outer':''}" points="${dims.map((_,i)=>pt(i,k).join(',')).join(' ')}"/>`).join('')}${dims.map((_,i)=>`<line class="gj-m-chart-radar-axis" x1="50" y1="50" x2="${pt(i,1)[0]}" y2="${pt(i,1)[1]}"/>`).join('')}${groups.map((g,s)=>g?`<polygon class="gj-m-chart-radar-area gj-m-chart-s${s+1}" points="${g.map((v,i)=>pt(i,v/100).join(',')).join(' ')}"/>`:'').join('')}${groups.map((g,s)=>g?g.map((v,i)=>{const q=pt(i,v/100);return `<circle class="gj-m-chart-radar-dot gj-m-chart-s${s+1}" cx="${q[0]}" cy="${q[1]}" r="1.25"/>`}).join(''):'').join('')}</svg>${dims.map((t,i)=>{const q=pt(i,1.18);return `<span class="gj-m-chart-radar-label" style="left:${q[0]}%;top:${q[1]}%">${t}</span>`}).join('')}${$('pRt').checked?[25,50,75,100].map(k=>`<span class="gj-m-chart-radar-tick" style="left:50%;top:${50-40*k/100}%">${k}</span>`).join(''):''}</div>`;
+          if(LGd&&N>1)lg=legBtn(['本基金','同类平均','业绩基准'].slice(0,N).map((x,i)=>[x,i+1]),'line');ch.setAttribute('aria-label',C.t)}
+        else if(T==='gauge'){html=GAUGE(S,V,'年度目标')+`<p style="margin:0;text-align:center;font-size:.13rem;line-height:.2rem;color:var(--ds-text-secondary)">已完成计划销售额的 ${V}%</p>`}
+        else if(T==='prog'){if(S==='list'){const items=PROG5.slice(0,N).map(([n,v],i)=>[n,i===0?V:v]);html=`<ul class="gj-m-chart-progress-list">${items.map(([n,v],i)=>`<li class="gj-m-chart-progress-item"><div class="gj-m-chart-progress-head"><span class="gj-m-chart-progress-name">${n}</span><span class="gj-m-chart-progress-value">${v}%</span></div><div class="gj-m-chart-progress gj-m-chart-progress-lg" role="progressbar" aria-valuenow="${v}" aria-valuemin="0" aria-valuemax="100" aria-label="${n}"><div class="gj-m-chart-progress-bar gj-m-chart-s${i+1}" style="--v:${v}"></div></div></li>`).join('')}</ul>`}
+          else{const done=Math.round(V*.83),ing=V-done;html=`<div class="gj-m-chart-block"><div class="gj-m-chart-block-head"><span class="gj-m-chart-progress-big">${V}%</span><span style="font-size:.13rem;line-height:.2rem;color:var(--ds-text-secondary)">较上月 <span style="color:var(--ds-feedback-error-rise)">+8%</span></span></div><div class="gj-m-chart-progress" role="img" aria-label="已完成 ${done}%，进行中 ${ing}%"><div class="gj-m-chart-progress-bar gj-m-chart-s1" style="--v:${done}"></div><div class="gj-m-chart-progress-bar gj-m-chart-s2" style="--v:${ing}"></div></div><div style="font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)">目标 100 项，已完成 ${done}、进行中 ${ing}</div>${LEGH(['已完成','进行中'],'dot',[String(done),String(ing)])}</div>`}}
+        else if(T==='ring'){const sz=S==='72'?'.72rem':null;html=N===1?`<div style="display:flex;align-items:center;gap:.16rem">${RING(V,'完成度',1,sz)}<div><div style="font-size:.16rem;line-height:.24rem;font-weight:600">季度开户任务</div><div style="margin-top:.04rem;font-size:.13rem;line-height:.2rem;color:var(--ds-text-secondary)">已开 ${V*20} 户 / 目标 2,000 户</div></div></div>`:`<div class="gj-m-chart-rings">${[V,48,82].slice(0,N).map((v,i)=>RING(v,RNG[i][0],i+1,sz)).join('')}</div>`}
+        else if(T==='cloud'){html=`<div class="gj-m-chart-cloud" role="img" aria-label="热词">${CL.map(([t,w,s,x,y,dd])=>`<span class="gj-m-chart-cloud-item is-w${w} gj-m-chart-s${s}" style="--x:${x}%;--y:${y}%;--d:${(dd/3.11).toFixed(2)}cqw">${t}</span>`).join('')}</div>`}
+        ch.innerHTML=html;leg.innerHTML=lg;leg.hidden=!lg;bindLeg(draw);};
+      const tabs=[...d.querySelectorAll('#seg .gj-m-tab')];tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.setAttribute('aria-selected',x===t));CUR=t.dataset.k;SEL=null;draw()}));
+      if((T==='line'||T==='curve')&&IND_ON){let down=false,start=null;
+        const idxAt=e=>{const r=ch.querySelector('.gj-m-chart-plot').getBoundingClientRect();return Math.max(0,Math.min(9,Math.round((e.clientX-r.left)/r.width*9)))};
+        const inPlot=e=>{const pl=ch.querySelector('.gj-m-chart-plot');if(!pl)return false;const r=pl.getBoundingClientRect();return e.clientY>=r.top-8&&e.clientY<=r.bottom+8&&e.clientX>=r.left-8&&e.clientX<=r.right+8};
+        ch.addEventListener('pointerdown',e=>{if(!inPlot(e))return;down=true;start=SEL;const i=idxAt(e);if(i!==SEL){SEL=i;draw()}ch.setPointerCapture(e.pointerId)});
+        ch.addEventListener('pointermove',e=>{if(!down)return;const i=idxAt(e);if(i!==SEL){SEL=i;start=-1;draw()}});
+        ch.addEventListener('pointerup',()=>{if(!down)return;down=false;if(start===SEL&&start!=null){SEL=null;draw()}})}
+      draw()})}
+  ['pType','pN','pS','pG','pX','pT','pU','pL','pLg','pI','pC','pD','pP','pRt'].forEach(k=>$(k).addEventListener('change',render));$('pV').addEventListener('input',render);render();
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1571 @@
+{
+  "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+  "page": "222:584",
+  "readOnly": true,
+  "extractedAt": "2026-10-09",
+  "components": {
+    "grid": {
+      "properties": {
+        "grid": {
+          "type": "VARIANT",
+          "defaultValue": "3*1",
+          "variantOptions": [
+            "4*1",
+            "4*2",
+            "5*1",
+            "5*2",
+            "3*1",
+            "3*2"
+          ]
+        }
+      },
+      "tree": {
+        "id": "1680:5729",
+        "name": "GridNav",
+        "type": "COMPONENT_SET",
+        "w": 415,
+        "h": 818,
+        "layoutMode": "NONE",
+        "itemSpacing": 0,
+        "counterAxisSpacing": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "cornerRadius": 5,
+        "boundVariables": {},
+        "children": [
+          {
+            "id": "225:726",
+            "name": "grid=4*1",
+            "type": "COMPONENT",
+            "w": 375,
+            "h": 70,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": 0,
+            "counterAxisSpacing": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "cornerRadius": 0,
+            "boundVariables": {},
+            "variantProperties": {
+              "grid": "4*1"
+            },
+            "children": [
+              {
+                "id": "225:392",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 93.75,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:397",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 93.75,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:402",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 93.75,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:407",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 93.75,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              }
+            ]
+          },
+          {
+            "id": "1680:7124",
+            "name": "grid=3*1",
+            "type": "COMPONENT",
+            "w": 375,
+            "h": 70,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": 0,
+            "counterAxisSpacing": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "cornerRadius": 0,
+            "boundVariables": {},
+            "variantProperties": {
+              "grid": "3*1"
+            },
+            "children": [
+              {
+                "id": "1680:7125",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 125,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "1680:7126",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 125,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "1680:7127",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 125,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              }
+            ]
+          },
+          {
+            "id": "225:725",
+            "name": "grid=4*2",
+            "type": "COMPONENT",
+            "w": 375,
+            "h": 152,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": 0,
+            "counterAxisSpacing": 12,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "cornerRadius": 0,
+            "boundVariables": {},
+            "variantProperties": {
+              "grid": "4*2"
+            },
+            "children": [
+              {
+                "id": "225:559",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 93.75,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:560",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 93.75,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:561",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 93.75,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:562",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 93.75,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:699",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 93.75,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:705",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 93.75,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:711",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 93.75,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:717",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 93.75,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              }
+            ]
+          },
+          {
+            "id": "1680:7129",
+            "name": "grid=3*2",
+            "type": "COMPONENT",
+            "w": 375,
+            "h": 152,
+            "layoutMode": "GRID",
+            "itemSpacing": 0,
+            "counterAxisSpacing": 12,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "cornerRadius": 0,
+            "boundVariables": {},
+            "variantProperties": {
+              "grid": "3*2"
+            },
+            "children": [
+              {
+                "id": "1680:7130",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 125,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "1680:7131",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 125,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "1680:7132",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 125,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "1680:7134",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 125,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "1680:7135",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 125,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "1680:7136",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 125,
+                "h": 70,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              }
+            ]
+          },
+          {
+            "id": "225:724",
+            "name": "grid=5*1",
+            "type": "COMPONENT",
+            "w": 375,
+            "h": 62,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": 0,
+            "counterAxisSpacing": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "cornerRadius": 0,
+            "boundVariables": {},
+            "variantProperties": {
+              "grid": "5*1"
+            },
+            "children": [
+              {
+                "id": "225:538",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:539",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:540",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:541",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:621",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              }
+            ]
+          },
+          {
+            "id": "225:723",
+            "name": "grid=5*2",
+            "type": "COMPONENT",
+            "w": 375,
+            "h": 136,
+            "layoutMode": "HORIZONTAL",
+            "itemSpacing": 0,
+            "counterAxisSpacing": 12,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "paddingLeft": 0,
+            "paddingRight": 0,
+            "cornerRadius": 0,
+            "boundVariables": {},
+            "variantProperties": {
+              "grid": "5*2"
+            },
+            "children": [
+              {
+                "id": "225:601",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:602",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:603",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:604",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:663",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:669",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:675",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:681",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:687",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              },
+              {
+                "id": "225:693",
+                "name": "Grid Item",
+                "type": "INSTANCE",
+                "w": 75,
+                "h": 62,
+                "layoutMode": "VERTICAL",
+                "itemSpacing": 4,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 16,
+                "paddingRight": 16,
+                "cornerRadius": 0,
+                "boundVariables": {}
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "item": {
+      "properties": {
+        "icon#1680:6": {
+          "type": "INSTANCE_SWAP",
+          "defaultValue": "688:18",
+          "preferredValues": [
+            {
+              "type": "COMPONENT",
+              "key": "204fa67389c49ec0c8de4519ea15bbde62ba0652"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "93bdad118cda4c1fef46933a82ef3d07f0a82e9b"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "a09be82759837293c73d9b15ed38fb90b70226f2"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "3bd9bb2738a22a39b6cde9c62f5219c49d9d764d"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "ec5c4c4c14321bbc4b4d50b802afe47beded86db"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "b88883b63d9ff47864c8cce31af36c33bc89e2b8"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "08218309db0099f1a2134d081c71debaa1e4a248"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "618149ba0f296e23d8fca9685dd2994128ffd95b"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "6725f3d21d59456236d24ab39b8b7426f8a901f5"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "d00bb5b1aca77a679e4b20f60a1584db59848df6"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "a8eee5be44c387ffcbadf5713215f1b506c02665"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "6f2ca5f05e4ace533787d77e4a2021f525a07917"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "2c650d98adcf0490a6acb90c2dcf6f37216ea2be"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "556f0a0ec9bce02fa57afcc164d3775322978088"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "37778af3497eac181e322346459682c372c4d182"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "f743ebe91a9e5af9c4e62d77755ad38d54c9728b"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "4602c4c254e44ba604eea0027aa6982e97cb3141"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "19446bf11eee27934b842dc2a087b8261637e3bb"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "dada0f4720506fc9f78c07d69e6d8e2db5363865"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "1aca71ef250072889290b97c36b091435e3eb1d9"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "e3d8c2fc2f428a9531ed7e12608542c7c6e110d8"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "21cd6c08f467b407d886e3cec53b29def40acd49"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "24b1d99a454ce214b4aa83c51242680d15518b7b"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "1ce66afcbdf422e698b01bae377ce47ceea28458"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "531e09d3366ab6974cbdf39f17c387953a8686a2"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "f3789dda415d909076cb353f5f231daa7fcaa304"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "b4b9b48ff1a5881b2b13b4faca0479a00d10ad0c"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "c9e66237e1f3ef09ddf6d268e7563d51eb6fca42"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "37665dd13c37072f4ad0746f7c3b5e8ccf9e1b4a"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "9ba370ddc3fcd3a2f9d0d827cfbab5532c3fbb3f"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "108c3078478af179fae52fa67106c9d616bde323"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "0d5d735e3a019e0adb9a8224b9f1dcb0204b4ae3"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "38331f4de252bac0d156e58e0a90a5f788854c38"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "2f5bd6bdda9b7408e08cf8d33a3ca859a3182069"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "153ad1938bcd8c674c8afe4c9efcb9296529cfc7"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "978e5cf2bf120d68a80d5884f01ec3a8f11ecb72"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "0b04e8460475f5e6a6870f82aaad48dc508115b5"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "3494faaf865e23aafc654b2f22e0cb2990740167"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "84c9deb4a38dbf8fc2d73a8a9dde0806eefbe412"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "a8ea34ba47afbfc86eaf45ddbc0a86c5ff2ffd77"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "955f1de1ce6e33c7f3a4330f9edf50880d11eacd"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "406fb95c19de23304644d0d0db034dcef24f09f3"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "712e24008d81c44eb3c9cccce09824f765a140dc"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "8be4ddcef0c4ce14fa574965ef7279c694b5c773"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "f83d2e910057bb9f87f783c8b43edba569c84fcf"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "61a97e2ad5b7bda3575eb8532bdb7aec4bf0349a"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "1ad1356eed902f75a196fedf74e139025394510d"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "333736f5da689f655f401479823dc80b1e7aca8a"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "73f98f27dba69e8240032406f9ab87ee2194b490"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "53a9064cd02bc51af972b7b665a90f9713b1b620"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "b54c28f9e60f2c2664142ae2aee60a7ba6ad0572"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "4fd27aeb17d783171eb9a06aa33cf88249614df9"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "8f17fea1243fa6e26974c87d565aaff468881cc1"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "57ed1da0dd53b6e81255d05c8f0057c13a2abe57"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "7091258ad9f0fecf8f3aed6d8f9cdbe08f9f2481"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "b97d86535b75e65577f26e975f379b1a37cb8a6f"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "2a4ecb42a8488bdc58c4e2faeff611ef0da775cd"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "0a21056570da3d11efe2d51bc275462c996ae76e"
+            },
+            {
+              "type": "COMPONENT",
+              "key": "9cdaf332f9258c94e2528c14ea6d554559f7e624"
+            }
+          ]
+        },
+        "Size": {
+          "type": "VARIANT",
+          "defaultValue": "Medium",
+          "variantOptions": [
+            "Medium",
+            "Small"
+          ]
+        }
+      },
+      "tree": {
+        "id": "1680:6397",
+        "name": "Grid Item",
+        "type": "COMPONENT_SET",
+        "w": 108,
+        "h": 184,
+        "layoutMode": "NONE",
+        "itemSpacing": 0,
+        "counterAxisSpacing": 0,
+        "paddingTop": 0,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "paddingRight": 0,
+        "cornerRadius": 5,
+        "boundVariables": {},
+        "children": [
+          {
+            "id": "224:391",
+            "name": "Size=Medium",
+            "type": "COMPONENT",
+            "w": 80,
+            "h": 70,
+            "layoutMode": "VERTICAL",
+            "itemSpacing": 4,
+            "counterAxisSpacing": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+            "cornerRadius": 0,
+            "boundVariables": {},
+            "variantProperties": {
+              "Size": "Medium"
+            },
+            "children": [
+              {
+                "id": "222:739",
+                "name": "glassicon/investmentManage",
+                "type": "INSTANCE",
+                "w": 48,
+                "h": 48,
+                "layoutMode": "NONE",
+                "itemSpacing": 0,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "cornerRadius": 0,
+                "boundVariables": {},
+                "children": [
+                  {
+                    "id": "I222:739;688:19",
+                    "name": "矩形",
+                    "type": "RECTANGLE",
+                    "w": 36.37028503417969,
+                    "h": 27.977142333984375,
+                    "cornerRadius": 4,
+                    "boundVariables": {}
+                  },
+                  {
+                    "id": "I222:739;688:20",
+                    "name": "矩形",
+                    "type": "RECTANGLE",
+                    "w": 36.37028503417969,
+                    "h": 27.977142333984375,
+                    "cornerRadius": 4,
+                    "boundVariables": {}
+                  },
+                  {
+                    "id": "I222:739;688:21",
+                    "name": "路径 9",
+                    "type": "VECTOR",
+                    "w": 20.515087127685547,
+                    "h": 11.750106811523438,
+                    "cornerRadius": 0,
+                    "boundVariables": {}
+                  },
+                  {
+                    "id": "I222:739;688:22",
+                    "name": "icon_100px_investmentmanage",
+                    "type": "SLICE",
+                    "w": 48,
+                    "h": 48,
+                    "boundVariables": {}
+                  }
+                ]
+              },
+              {
+                "id": "222:743",
+                "name": "宫格标题",
+                "type": "TEXT",
+                "w": 48,
+                "h": 18,
+                "boundVariables": {
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  ]
+                },
+                "text": "宫格标题",
+                "fontSize": 12,
+                "fontName": {
+                  "family": "PingFang SC",
+                  "style": "Regular"
+                },
+                "lineHeight": {
+                  "unit": "PIXELS",
+                  "value": 18
+                },
+                "textStyleId": "S:ccf9d5e80bd5848e0841588c812c507cab7e23e6,",
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "visible": true,
+                    "opacity": 1,
+                    "blendMode": "NORMAL",
+                    "color": {
+                      "r": 0.27843138575553894,
+                      "g": 0.3294117748737335,
+                      "b": 0.40392157435417175
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:7:4"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "1680:6398",
+            "name": "Size=Small",
+            "type": "COMPONENT",
+            "w": 80,
+            "h": 62,
+            "layoutMode": "VERTICAL",
+            "itemSpacing": 4,
+            "counterAxisSpacing": 0,
+            "paddingTop": 0,
+            "paddingBottom": 0,
+            "paddingLeft": 16,
+            "paddingRight": 16,
+            "cornerRadius": 0,
+            "boundVariables": {},
+            "variantProperties": {
+              "Size": "Small"
+            },
+            "children": [
+              {
+                "id": "1680:6399",
+                "name": "glassicon/investmentManage",
+                "type": "INSTANCE",
+                "w": 40,
+                "h": 40,
+                "layoutMode": "NONE",
+                "itemSpacing": 0,
+                "counterAxisSpacing": 0,
+                "paddingTop": 0,
+                "paddingBottom": 0,
+                "paddingLeft": 0,
+                "paddingRight": 0,
+                "cornerRadius": 0,
+                "boundVariables": {},
+                "children": [
+                  {
+                    "id": "I1680:6399;688:19",
+                    "name": "矩形",
+                    "type": "RECTANGLE",
+                    "w": 30.30857276916504,
+                    "h": 23.314285278320312,
+                    "cornerRadius": 4,
+                    "boundVariables": {}
+                  },
+                  {
+                    "id": "I1680:6399;688:20",
+                    "name": "矩形",
+                    "type": "RECTANGLE",
+                    "w": 30.30857276916504,
+                    "h": 23.314285278320312,
+                    "cornerRadius": 4,
+                    "boundVariables": {}
+                  },
+                  {
+                    "id": "I1680:6399;688:21",
+                    "name": "路径 9",
+                    "type": "VECTOR",
+                    "w": 17.095905303955078,
+                    "h": 9.791755676269531,
+                    "cornerRadius": 0,
+                    "boundVariables": {}
+                  },
+                  {
+                    "id": "I1680:6399;688:22",
+                    "name": "icon_100px_investmentmanage",
+                    "type": "SLICE",
+                    "w": 40,
+                    "h": 40,
+                    "boundVariables": {}
+                  }
+                ]
+              },
+              {
+                "id": "1680:6400",
+                "name": "宫格标题",
+                "type": "TEXT",
+                "w": 48,
+                "h": 18,
+                "boundVariables": {
+                  "fills": [
+                    {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  ]
+                },
+                "text": "宫格标题",
+                "fontSize": 12,
+                "fontName": {
+                  "family": "PingFang SC",
+                  "style": "Regular"
+                },
+                "lineHeight": {
+                  "unit": "PIXELS",
+                  "value": 18
+                },
+                "textStyleId": "S:ccf9d5e80bd5848e0841588c812c507cab7e23e6,",
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "visible": true,
+                    "opacity": 1,
+                    "blendMode": "NORMAL",
+                    "color": {
+                      "r": 0.27843138575553894,
+                      "g": 0.3294117748737335,
+                      "b": 0.40392157435417175
+                    },
+                    "boundVariables": {
+                      "color": {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:7:4"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "guide": {
+    "texts": [
+      {
+        "id": "1680:5209",
+        "text": "宫格导航GridNav"
+      },
+      {
+        "id": "1680:5208",
+        "text": "宫格导航由图标与文字组成，用于集中展示同一层级的功能入口，适合首页工作台、常用功能和业务分类导航。每个宫格对应一个明确的功能或页面，点击图标与文字所在的整个区域均可进入。"
+      },
+      {
+        "id": "1683:139",
+        "text": "3/4 列布局示例（375 宽度）"
+      },
+      {
+        "id": "1680:7270",
+        "text": "图标大小48*48px"
+      },
+      {
+        "id": "I1683:140;1680:7125;222:743",
+        "text": "日程安排"
+      },
+      {
+        "id": "I1683:140;1680:7126;222:743",
+        "text": "交易记录"
+      },
+      {
+        "id": "I1683:140;1680:7127;222:743",
+        "text": "行业分析"
+      },
+      {
+        "id": "I1680:7454;225:392;222:743",
+        "text": "日程安排"
+      },
+      {
+        "id": "I1680:7454;225:397;222:743",
+        "text": "交易记录"
+      },
+      {
+        "id": "I1680:7454;225:402;222:743",
+        "text": "行业分析"
+      },
+      {
+        "id": "I1680:7454;225:407;222:743",
+        "text": "资产总览"
+      },
+      {
+        "id": "1683:162",
+        "text": "5 列布局示例（375 宽度）"
+      },
+      {
+        "id": "1680:7316",
+        "text": "图标大小40*40px"
+      },
+      {
+        "id": "I1683:163;225:538;1680:6400",
+        "text": "业务审批"
+      },
+      {
+        "id": "I1683:163;225:539;1680:6400",
+        "text": "项目管理"
+      },
+      {
+        "id": "I1683:163;225:540;1680:6400",
+        "text": "费用管理"
+      },
+      {
+        "id": "I1683:163;225:541;1680:6400",
+        "text": "数据报表"
+      },
+      {
+        "id": "I1683:163;225:621;1680:6400",
+        "text": "风险监控"
+      },
+      {
+        "id": "1683:190",
+        "text": "4x2 网格示例（375 宽度）"
+      },
+      {
+        "id": "1680:7414",
+        "text": "图标大小48*48px"
+      },
+      {
+        "id": "I1687:9189;225:559;222:743",
+        "text": "资金流水"
+      },
+      {
+        "id": "I1687:9189;225:560;222:743",
+        "text": "待办事项"
+      },
+      {
+        "id": "I1687:9189;225:561;222:743",
+        "text": "系统设置"
+      },
+      {
+        "id": "I1687:9189;225:562;222:743",
+        "text": "订单管理"
+      },
+      {
+        "id": "I1687:9189;225:699;222:743",
+        "text": "产品中心"
+      },
+      {
+        "id": "I1687:9189;225:705;222:743",
+        "text": "客户管理"
+      },
+      {
+        "id": "I1687:9189;225:711;222:743",
+        "text": "任务中心"
+      },
+      {
+        "id": "I1687:9189;225:717;222:743",
+        "text": "操作记录"
+      },
+      {
+        "id": "1683:233",
+        "text": "5x2 网格示例（375 宽度）"
+      },
+      {
+        "id": "1680:7416",
+        "text": "图标大小40*40px"
+      },
+      {
+        "id": "I1683:234;225:601;1680:6400",
+        "text": "合同管理"
+      },
+      {
+        "id": "I1683:234;225:602;1680:6400",
+        "text": "权限管理"
+      },
+      {
+        "id": "I1683:234;225:603;1680:6400",
+        "text": "收益分析"
+      },
+      {
+        "id": "I1683:234;225:604;1680:6400",
+        "text": "财务报表"
+      },
+      {
+        "id": "I1683:234;225:663;1680:6400",
+        "text": "我的收藏"
+      },
+      {
+        "id": "I1683:234;225:669;1680:6400",
+        "text": "资料管理"
+      },
+      {
+        "id": "I1683:234;225:675;1680:6400",
+        "text": "消息中心"
+      },
+      {
+        "id": "I1683:234;225:681;1680:6400",
+        "text": "全部功能"
+      },
+      {
+        "id": "I1683:234;225:687;1680:6400",
+        "text": "通知公告"
+      },
+      {
+        "id": "I1683:234;225:693;1680:6400",
+        "text": "投资管理"
+      },
+      {
+        "id": "1683:286",
+        "text": "图标与文字"
+      },
+      {
+        "id": "1683:287",
+        "text": "用于分隔信息层级、区块内容、行内操作或表单分组。弱化线条感，默认使用浅蓝灰边框色。"
+      },
+      {
+        "id": "1683:308",
+        "text": "文字长度示例"
+      },
+      {
+        "id": "1680:7538",
+        "text": "建议最长标题文字不超过6字，超出6字部分省略展示"
+      },
+      {
+        "id": "I1680:7514;222:743",
+        "text": "短标题"
+      },
+      {
+        "id": "I1680:7522;222:743",
+        "text": "最长标题文字"
+      },
+      {
+        "id": "I1680:7540;222:743",
+        "text": "6字以上标..."
+      },
+      {
+        "id": "1683:321",
+        "text": "滑动分页"
+      },
+      {
+        "id": "1683:322",
+        "text": "宫格过多可选分页展示"
+      },
+      {
+        "id": "1683:324",
+        "text": "分页示例"
+      },
+      {
+        "id": "I1680:7548;225:559;222:743",
+        "text": "资金流水"
+      },
+      {
+        "id": "I1680:7548;225:560;222:743",
+        "text": "待办事项"
+      },
+      {
+        "id": "I1680:7548;225:561;222:743",
+        "text": "系统设置"
+      },
+      {
+        "id": "I1680:7548;225:562;222:743",
+        "text": "订单管理"
+      },
+      {
+        "id": "I1680:7548;225:699;222:743",
+        "text": "产品中心"
+      },
+      {
+        "id": "I1680:7548;225:705;222:743",
+        "text": "客户管理"
+      },
+      {
+        "id": "I1680:7548;225:711;222:743",
+        "text": "任务中心"
+      },
+      {
+        "id": "I1680:7548;225:717;222:743",
+        "text": "操作记录"
+      },
+      {
+        "id": "1683:372",
+        "text": "注意事项"
+      },
+      {
+        "id": "1683:373",
+        "text": "用于分隔信息层级、区块内容、行内操作或表单分组。弱化线条感，默认使用浅蓝灰边框色。"
+      },
+      {
+        "id": "1683:375",
+        "text": "使用建议"
+      },
+      {
+        "id": "1680:5262",
+        "text": "按业务关系和使用频率确定顺序，避免无提示地频繁改变入口位置。\n宫格主要承载导航入口；提交、删除等操作使用对应操作组件。\n角标仅用于真实的待办数量、新内容或异常提醒，避免所有入口同时突出。\n不可用入口应提供明确的禁用状态或原因反馈；无权限且无需展示的入口可隐藏，并重新排列。\n点击后提供按压反馈；跳转较慢时提供加载反馈，避免重复点击。"
+      }
+    ],
+    "pagination": {
+      "id": "1680:5495",
+      "name": "Frame 1",
+      "width": 851,
+      "height": 72,
+      "children": [
+        {
+          "id": "1683:135",
+          "name": "Divider usage methods title",
+          "type": "TEXT",
+          "width": 90,
+          "height": 26,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 0.12156862765550613,
+                "g": 0.16470588743686676,
+                "b": 0.239215686917305
+              },
+              "boundVariables": {}
+            }
+          ],
+          "boundVariables": {}
+        },
+        {
+          "id": "1683:136",
+          "name": "Divider usage methods title",
+          "type": "TEXT",
+          "width": 851,
+          "height": 22,
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 0.4000000059604645,
+                "g": 0.4588235318660736,
+                "b": 0.5411764979362488
+              },
+              "boundVariables": {}
+            }
+          ],
+          "boundVariables": {}
+        }
+      ]
+    },
+    "style": {
+      "id": "S:ccf9d5e80bd5848e0841588c812c507cab7e23e6,",
+      "name": "P5_CN-R"
+    },
+    "variable": {
+      "name": "Text/Secondary",
+      "values": {
+        "11:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:7:140"
+        }
+      }
+    }
+  }
+}

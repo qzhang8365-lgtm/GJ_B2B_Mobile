@@ -1,0 +1,47 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "switch",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "figmaComponent": "switch（58:3154）",
+  "prototypeClass": "gj-m-switch",
+  "propertyMap": {
+    "switch": "button.gj-m-switch[role=switch][aria-checked]（或 input[type=checkbox][role=switch].gj-m-switch）",
+    "Checked=true": "aria-checked=\"true\"（或 :checked）",
+    "Disabled=true": "disabled",
+    "Size=small": "gj-m-switch-sm",
+    "列表行内": ".gj-m-list-item-action > .gj-m-switch"
+  },
+  "valueMap": {
+    "Default": "48×28（--control-S），内边距 2，滑块 24，行程 20",
+    "small": "32×20（--control-XXS），内边距 2，滑块 16，行程 12",
+    "radius": "全圆角"
+  },
+  "tokenMap": {
+    "off": "Background/Secondary + Innershadow_small（--ds-effect-innershadow-small）",
+    "on": "Feedback/brand（--ds-feedback-brand）",
+    "knob": "Background/Container + shadow_small（--ds-effect-shadow-small）",
+    "disabled": "整体 opacity 0.4"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-switch"
+  },
+  "markup": {
+    "on": "<button type=\"button\" class=\"gj-m-switch\" role=\"switch\" aria-checked=\"true\" aria-label=\"消息提醒\"></button>",
+    "off": "<button type=\"button\" class=\"gj-m-switch\" role=\"switch\" aria-checked=\"false\" aria-label=\"消息提醒\"></button>",
+    "small": "<button type=\"button\" class=\"gj-m-switch gj-m-switch-sm\" role=\"switch\" aria-checked=\"true\" aria-label=\"显示金额\"></button>",
+    "disabled": "<button type=\"button\" class=\"gj-m-switch\" role=\"switch\" aria-checked=\"false\" aria-label=\"自动续期\" disabled></button>"
+  },
+  "interactionMap": {
+    "toggle": "点击切换 aria-checked，立即生效；需要提交的设置不用开关",
+    "disabled": "同步说明原因"
+  },
+  "accessibility": {
+    "element": "button role=\"switch\" + aria-checked + aria-label（或关联可见标签）",
+    "hitArea": "≥ 44"
+  },
+  "composition": {
+    "list": "放在列表行右侧 .gj-m-list-item-action，标题说明设置对象，描述补充影响"
+  },
+  "pageRules": {},
+  "pending": {}
+}

@@ -1,0 +1,80 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "file-list",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "figmaComponent": "文件展示列表 File List（Icon / FileInfo / Actions）",
+  "prototypeClass": "gj-m-file-list",
+  "propertyMap": {
+    "list": "ul.gj-m-file-list",
+    "item": "li.gj-m-file-list-item",
+    "Icon": "span.gj-m-file-list-icon > img（文件类型图标 24）",
+    "content": "span.gj-m-file-list-content > .gj-m-file-list-name（.gj-m-file-list-base + .gj-m-file-list-ext）+ .gj-m-file-list-info",
+    "FileInfo": ".gj-m-file-list-info > span（上传人、大小等）",
+    "Actions": "span.gj-m-file-list-actions > button.gj-m-file-list-action"
+  },
+  "valueMap": {
+    "item": "内边距 8、间距 8、无列表间距",
+    "name": "P3 14/22（文件名过长中间省略：保留扩展名）",
+    "info": "P5 12/18，内容间距 4",
+    "action": "图标 20，间距 8，热区高 44"
+  },
+  "tokenMap": {
+    "name": "Text/Primary",
+    "info": "Text/Tiatery",
+    "action": "Text/Tiatery"
+  },
+  "assetMap": {
+    "fileIcons": "{ROOT}assets/icons/fileicon/24px-pdf.svg | 24px-word | 24px-excel | 24px-ppt | 24px-img | 24px-text",
+    "actions": "icf_system_eye（预览）、icf_file_download（下载）等"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-file-list",
+    "item": ".gj-m-file-list-item",
+    "icon": ".gj-m-file-list-icon",
+    "name": ".gj-m-file-list-name",
+    "info": ".gj-m-file-list-info",
+    "actions": ".gj-m-file-list-actions",
+    "action": ".gj-m-file-list-action"
+  },
+  "markup": {
+    "item": "<ul class=\"gj-m-file-list\"><li class=\"gj-m-file-list-item\"><span class=\"gj-m-file-list-icon\"><img alt=\"\" src=\"{ROOT}assets/icons/fileicon/24px-pdf.svg\"></span><span class=\"gj-m-file-list-content\"><span class=\"gj-m-file-list-name\" title=\"机票行程单.pdf\"><span class=\"gj-m-file-list-base\">机票行程单</span><span class=\"gj-m-file-list-ext\">.pdf</span></span><span class=\"gj-m-file-list-info\"><span>李明 上传</span><span>182.4KB</span></span></span><span class=\"gj-m-file-list-actions\"><button type=\"button\" class=\"gj-m-file-list-action\" aria-label=\"预览 机票行程单.pdf\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_eye.svg')\" aria-hidden=\"true\"></span></button></span></li></ul>",
+    "file": "<ul class=\"gj-m-file-list\"><li class=\"gj-m-file-list-item\"><span class=\"gj-m-file-list-icon\"><img alt=\"\" src=\"{ROOT}assets/icons/fileicon/24px-pdf.svg\"></span><span class=\"gj-m-file-list-content\"><span class=\"gj-m-file-list-name\" title=\"任职报告示例.pdf\"><span class=\"gj-m-file-list-base\">任职报告示例</span><span class=\"gj-m-file-list-ext\">.pdf</span></span><span class=\"gj-m-file-list-info\"><span>上传完成 · 林知遥</span><span>128KB</span></span></span><span class=\"gj-m-file-list-actions\"></span></li></ul>",
+    "action": "<button type=\"button\" class=\"gj-m-file-list-action\" aria-label=\"查看任职报告\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_eye.svg')\" aria-hidden=\"true\"></span></button>"
+  },
+  "accessibility": {
+    "action": "图标按钮 aria-label 写“操作 + 文件名”",
+    "icon": "文件类型图标 alt=\"\""
+  },
+  "composition": {
+    "inCard": "放进卡片时基座抵消列表项内边距（.gj-m-card .gj-m-file-list），留白只算一次"
+  },
+  "pageRules": {
+    "PR-007": "卡片内文件列表留白只算一次"
+  },
+  "pending": {
+    "FLS-M-001": "右侧多个操作图标的 44 热区会重叠；当前只放一个操作或按宽 28 处理"
+  },
+  "templates": {
+    "file": {
+      "tpl": "<ul class=\"gj-m-file-list\"><li class=\"gj-m-file-list-item\"><span class=\"gj-m-file-list-icon\"><img alt=\"\" src=\"{ROOT}assets/icons/fileicon/{{icon}}.svg\"></span><span class=\"gj-m-file-list-content\"><span class=\"gj-m-file-list-name\" title=\"{{name}}\"><span class=\"gj-m-file-list-base\">{{base}}</span><span class=\"gj-m-file-list-ext\">{{ext}}</span></span><span class=\"gj-m-file-list-info\"><span>{{info}}</span><span>{{size}}</span></span></span><span class=\"gj-m-file-list-actions\">{{{actions}}}</span></li></ul>",
+      "example": {
+        "icon": "24px-pdf",
+        "name": "任职报告示例.pdf",
+        "base": "任职报告示例",
+        "ext": ".pdf",
+        "info": "上传完成 · 林知遥",
+        "size": "128KB",
+        "actions": ""
+      },
+      "params": "已完成附件展示，actions使用file-list.action；上传中由Upload进度基座承载，不伪造File List状态"
+    },
+    "action": {
+      "tpl": "<button type=\"button\" class=\"gj-m-file-list-action\" aria-label=\"{{label}}\"{{{attrs}}}><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/{{icon}}.svg')\" aria-hidden=\"true\"></span></button>",
+      "example": {
+        "label": "查看任职报告",
+        "icon": "icf_system_eye",
+        "attrs": ""
+      }
+    }
+  }
+}

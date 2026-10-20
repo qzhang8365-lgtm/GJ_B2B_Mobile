@@ -1,0 +1,70 @@
+/* 移动端规范站 · 文档版式（移植自 PC 规范站 assets/styles/component-docs.css）。
+   仅用于规范站文档页，业务页面与手机预览框内部都不加载本文件。
+   依赖：../assets/styles/gj-b2b-mobile-tokens.css（颜色）+ site.css（docs-* 版式变量）。 */
+*{box-sizing:border-box}
+body{margin:0;background:transparent;color:var(--ds-text-primary);font-family:var(--ds-font-family-ui);font-size:14px}
+button,input,select{font:inherit}
+.docs-shell{width:100%;max-width:var(--docs-page-max-width);margin:0 auto;padding:var(--docs-page-padding)}
+.docs-page-head{max-width:920px;margin:0 4px var(--docs-section-padding)}
+.docs-eyebrow{margin:0 0 8px;color:var(--ds-text-blue);font-size:13px;font-weight:600;line-height:20px}
+.docs-page-head h1{margin:0 0 8px;font-size:28px;line-height:40px}
+.docs-page-head p{margin:0;color:var(--ds-text-secondary);font-size:14px;line-height:22px}
+.docs-sheet{min-width:0;padding:var(--docs-section-padding);overflow:hidden;background:var(--ds-background-container);border:0;border-radius:var(--docs-section-radius)}
+.docs-section{min-width:0;padding:32px 0;border-top:1px solid var(--ds-border-default)}
+.docs-section:first-child{padding-top:0;border-top:0}
+.docs-section:last-child{padding-bottom:0}
+.docs-section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin:0 0 16px}
+.docs-section-head>div{min-width:0}
+.docs-section-head h2{margin:0;font-size:18px;font-weight:600;line-height:28px}
+.docs-section-head p{max-width:none;margin:4px 0 0;color:var(--ds-text-secondary);font-size:14px;line-height:22px}
+.docs-stage{min-width:0;max-width:100%;padding:var(--docs-panel-padding);overflow:hidden;background:var(--ds-background-background);border:0;border-radius:var(--docs-panel-radius)}
+.docs-surface-white{background:var(--ds-background-container);border:1px solid var(--ds-border-default)}
+.docs-surface-gray{background:var(--ds-background-background);border:0}
+.docs-surface-dark{color:var(--ds-text-reversal);background:var(--ds-text-primary);border:0}
+.docs-stage-scroll{max-width:100%;overflow:auto}
+.docs-stage-label{display:block;margin:0 0 12px;color:var(--ds-text-secondary);font-size:12px;font-weight:500;line-height:20px}
+.docs-spec-table-wrap{width:100%;max-width:100%;overflow:auto;border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);background:var(--ds-background-container)}
+.docs-spec-table{width:100%;min-width:680px;border-collapse:collapse;border-spacing:0;table-layout:fixed;color:var(--ds-text-primary);font-size:14px;line-height:22px}
+.docs-spec-table th,.docs-spec-table td{height:var(--docs-table-row-height);padding:8px 16px;border-bottom:1px solid var(--ds-border-default);text-align:left;vertical-align:middle}
+.docs-spec-table th{background:var(--ds-table-head-bg);color:var(--ds-text-secondary);font-weight:600}
+.docs-spec-table tbody tr:last-child td{border-bottom:0}
+.docs-spec-table code{color:var(--ds-text-secondary);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+
+/* 状态标记：区分“已提取 / 待确认 / 预览已验证 / 已发布”，不把待确认项当作已通过 */
+.docs-status{display:inline-flex;align-items:center;gap:6px;height:22px;padding:0 8px;border-radius:999px;font-size:12px;line-height:22px;white-space:nowrap;background:var(--ds-background-tiatery);color:var(--ds-text-secondary)}
+.docs-status::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.docs-status[data-status="extracted"]{background:var(--ds-background-bt-b8);color:var(--ds-text-blue)}
+.docs-status[data-status="pending"]{background:var(--ds-background-bt-o10);color:var(--ds-primitive-orange-o07)}
+.docs-status[data-status="verified"]{background:var(--ds-background-bt-g10);color:var(--ds-primitive-green-g07)}
+.docs-status[data-status="published"]{background:var(--ds-brand-gj-blue);color:var(--ds-text-reversal)}
+
+/* 交互演示：左侧手机预览，右侧属性控制（与 PC 组件页同一布局） */
+.playground{display:grid;grid-template-columns:minmax(0,var(--docs-layout-demo-fr)) minmax(var(--docs-interaction-min-width),var(--docs-layout-interaction-fr));gap:var(--docs-layout-column-gap);min-width:0}
+.controls{min-width:0;padding:20px;border-radius:var(--docs-panel-radius)}
+/* 交互演示高度（2026-10-15）：两栏顶部对齐，各自按内容高度，属性面板不再被拉伸出大片空白；演示较高时属性面板吸顶，滚动查看演示时仍可操作 */
+.playground{align-items:start}
+.playground>.controls{position:sticky;top:24px}
+@media(max-width:980px){.playground>.controls{position:static}}
+.control-title{margin:0 0 16px;font-size:16px;font-weight:600;line-height:24px}
+.control-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px}
+.field{display:grid;min-width:0;gap:6px}
+.field label{color:var(--ds-text-secondary);font-size:12px;line-height:20px}
+.field select,.field input:not([type=checkbox]){width:100%;height:36px;min-width:0;padding:0 10px;color:var(--ds-text-primary);background:var(--ds-background-container);border:1px solid var(--ds-border-secondary);border-radius:var(--docs-item-radius)}
+.field input:focus,.field select:focus{border-color:var(--ds-brand-gj-blue);outline:3px solid var(--ds-background-bt-b20)}
+.check{display:flex;align-items:center;gap:8px;min-height:36px;color:var(--ds-text-secondary)}
+
+/* 手机预览框（phone-stage.js 生成）。外框是文档样式；框内是独立 iframe，按 H5 规则设置根字号。 */
+.phone-stage{display:grid;gap:12px;min-width:0;padding:var(--docs-panel-padding);background:var(--ds-background-background);border-radius:var(--docs-panel-radius)}
+.phone-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;color:var(--ds-text-secondary);font-size:12px;line-height:20px}
+.phone-toolbar .seg{display:inline-flex;gap:2px;padding:2px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:6px}
+.phone-toolbar .seg button{height:24px;min-width:40px;padding:0 8px;border:0;border-radius:4px;background:transparent;color:var(--ds-text-secondary);font-size:12px;cursor:pointer}
+.phone-toolbar .seg button[aria-pressed="true"]{background:var(--ds-background-bt-b10);color:var(--ds-text-blue);font-weight:600}
+.phone-toolbar .phone-meta{margin-left:auto;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ds-text-tiatery)}
+.phone-toolbar[hidden]{display:none}
+.phone-viewport{display:flex;min-width:0;overflow:auto;padding:4px 0}
+.phone-scaler{flex:none;margin:0 auto}
+.phone-inner{transform-origin:top left}
+.phone-frame{display:block;border:0;background:var(--ds-background-background);border-radius:12px;box-shadow:0 0 0 1px var(--ds-border-default),0 8px 24px rgba(16,24,40,.08)}
+
+@media(max-width:980px){.playground{grid-template-columns:1fr}}
+@media(max-width:650px){.docs-shell{padding:var(--docs-page-padding-compact)}.docs-sheet{padding:20px}.docs-section{padding:24px 0}.docs-section-head{display:block}.docs-page-head h1{font-size:26px;line-height:36px}.control-fields{grid-template-columns:1fr}.phone-toolbar .phone-meta{margin-left:0}}

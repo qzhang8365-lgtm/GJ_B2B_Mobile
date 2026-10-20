@@ -1,0 +1,29 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "_shared",
+  "figmaComponent": "—（跨组件通用写法，如图标）",
+  "prototypeClass": "gj-icon",
+  "note": "不是独立组件；存放多个组件共用的模板。",
+  "propertyMap": {},
+  "tokenMap": {
+    "icon": "颜色跟随文字 currentColor"
+  },
+  "runtimeMap": {
+    "icon": ".gj-icon"
+  },
+  "markup": {
+    "icon": "<span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_search.svg')\" aria-hidden=\"true\"></span>"
+  },
+  "accessibility": {
+    "icon": "装饰图标 aria-hidden=\"true\"；纯图标按钮由按钮提供 aria-label"
+  },
+  "templates": {
+    "icon": {
+      "tpl": "<span class=\"gj-icon{{#size}} gj-icon-{{size}}{{/size}}{{#cls}} {{cls}}{{/cls}}\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/{{name}}.svg')\" aria-hidden=\"true\"></span>",
+      "example": {
+        "name": "icf_system_search"
+      },
+      "params": "通用图标：name 为图标库名称（不含 .svg），size 为 16/20/24 等尺寸类，cls 为附加类"
+    }
+  }
+}

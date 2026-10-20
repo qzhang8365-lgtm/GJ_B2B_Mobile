@@ -1,0 +1,190 @@
+{
+  "source": {
+    "type": "designer-confirmed",
+    "confirmedAt": "2026-10-08",
+    "note": "设计方确认的语义间距；不是 Figma 变量，每项映射到 Figma Interval 阶梯（dimensions.json）。值为 375 基准设计 px。 0级卡片于 2026-10-08 追加。"
+  },
+  "rules": [
+    "同组间距 < 组间距 ≤ 容器内边距。",
+    "每嵌套一层降一档（16 → 12 → 8）。",
+    "有背景或描边的卡片，外间距可以小于内边距；无边界的平铺列表，组间距必须明显大于组内间距。"
+  ],
+  "tokens": [
+    {
+      "name": "page-margin-x",
+      "layer": "页面",
+      "unit": "px",
+      "usage": "页面左右边距",
+      "value": 16,
+      "aliasOf": "Interval/space-16"
+    },
+    {
+      "name": "module-gap",
+      "layer": "页面",
+      "unit": "px",
+      "usage": "不同模块之间",
+      "value": 24,
+      "aliasOf": "Interval/space-24"
+    },
+    {
+      "name": "module-title-gap",
+      "layer": "页面",
+      "unit": "px",
+      "usage": "模块标题 → 下方卡片",
+      "value": 12,
+      "aliasOf": "Interval/space12"
+    },
+    {
+      "name": "card-l0-margin-x",
+      "layer": "0级卡片",
+      "unit": "px",
+      "usage": "0级卡片左右外边距：宽度撑满页面",
+      "value": 0,
+      "aliasOf": null,
+      "note": "页面内容信息过于密集、需要承载更多内容时使用；圆角 Radius/Radius-XL（16px）"
+    },
+    {
+      "name": "card-l0-padding",
+      "layer": "0级卡片",
+      "unit": "px",
+      "usage": "0级卡片内边距（与一级卡片相同）",
+      "value": 16,
+      "aliasOf": "Interval/space-16"
+    },
+    {
+      "name": "card-l1-padding",
+      "layer": "一级卡片",
+      "unit": "px",
+      "usage": "一级卡片内边距",
+      "value": 16,
+      "aliasOf": "Interval/space-16"
+    },
+    {
+      "name": "card-l1-gap",
+      "layer": "一级卡片",
+      "unit": "px",
+      "usage": "同类一级卡片之间",
+      "value": 12,
+      "aliasOf": "Interval/space12"
+    },
+    {
+      "name": "card-l1-title-gap",
+      "layer": "一级卡片",
+      "unit": "px",
+      "usage": "卡片标题 → 内容",
+      "value": 12,
+      "aliasOf": "Interval/space12"
+    },
+    {
+      "name": "card-l1-section-gap",
+      "layer": "一级卡片",
+      "unit": "px",
+      "usage": "卡片内分区之间",
+      "value": 16,
+      "aliasOf": "Interval/space-16"
+    },
+    {
+      "name": "card-l2-padding",
+      "layer": "二级卡片",
+      "unit": "px",
+      "usage": "二级卡片内边距",
+      "value": 12,
+      "aliasOf": "Interval/space12"
+    },
+    {
+      "name": "card-l2-gap",
+      "layer": "二级卡片",
+      "unit": "px",
+      "usage": "二级卡片之间",
+      "value": 8,
+      "aliasOf": "Interval/space-8"
+    },
+    {
+      "name": "card-l2-title-gap",
+      "layer": "二级卡片",
+      "unit": "px",
+      "usage": "标题 → 内容",
+      "value": 8,
+      "aliasOf": "Interval/space-8"
+    },
+    {
+      "name": "card-l2-section-gap",
+      "layer": "二级卡片",
+      "unit": "px",
+      "usage": "分区之间",
+      "value": 12,
+      "aliasOf": "Interval/space12"
+    },
+    {
+      "name": "block-l3-padding",
+      "layer": "三级块",
+      "unit": "px",
+      "usage": "格子、标签块内边距",
+      "value": 8,
+      "aliasOf": "Interval/space-8"
+    },
+    {
+      "name": "block-l3-gap",
+      "layer": "三级块",
+      "unit": "px",
+      "usage": "三级块之间",
+      "value": 8,
+      "aliasOf": "Interval/space-8"
+    },
+    {
+      "name": "stack-tight",
+      "layer": "元素 · 垂直",
+      "unit": "px",
+      "usage": "强绑定：标题+副标题、数字+说明",
+      "value": 4,
+      "aliasOf": "Interval/space-4"
+    },
+    {
+      "name": "stack-default",
+      "layer": "元素 · 垂直",
+      "unit": "px",
+      "usage": "同组元素：label-value 行、列表行",
+      "value": 8,
+      "aliasOf": "Interval/space-8",
+      "note": "二级卡片内可用 4"
+    },
+    {
+      "name": "inline-icon-gap",
+      "layer": "元素 · 水平",
+      "unit": "px",
+      "usage": "图标与文字",
+      "value": 4,
+      "aliasOf": "Interval/space-4"
+    },
+    {
+      "name": "inline-tag-gap",
+      "layer": "元素 · 水平",
+      "unit": "px",
+      "usage": "标签与标签",
+      "value": {
+        "min": 4,
+        "max": 8
+      },
+      "aliasOf": {
+        "min": "Interval/space-4",
+        "max": "Interval/space-8"
+      }
+    },
+    {
+      "name": "btn-gap",
+      "layer": "元素 · 水平",
+      "unit": "px",
+      "usage": "并排按钮",
+      "value": 8,
+      "aliasOf": "Interval/space-8"
+    },
+    {
+      "name": "btn-gap-footer",
+      "layer": "元素 · 水平",
+      "unit": "px",
+      "usage": "底部双按钮",
+      "value": 12,
+      "aliasOf": "Interval/space12"
+    }
+  ]
+}

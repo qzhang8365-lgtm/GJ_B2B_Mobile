@@ -1,0 +1,33 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "badge",
+  "name": "徽标 Badge",
+  "category": "操作反馈组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "徽标Badge（155:2400）",
+    "nodes": {
+      "badge-content / badge-dot": "单元组件，主组件已不在画布上（见 BD-M-001）",
+      "usage": "1079:4",
+      "Badge": "158:1331（Type=Dot|Number × Size=Default|Large × Stroke=False|True × width=Fixed|Hug × Max，14 变体）"
+    },
+    "extractedAt": "2026-10-14",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-badge(-lg / -dot / -stroke) / .gj-m-badge-anchor"
+  },
+  "number": {
+    "fill": "Feedback/error&rise",
+    "text": "Text/reversal",
+    "default": "高 16、最小宽 16、左右 4，全圆角，H8-CN-S 10/14 中粗",
+    "large": "高 20、最小宽 20、左右 4，H7-CN-S 12/18 中粗",
+    "overflow": "超过 99 显示 99+"
+  },
+  "dot": "8 圆 Feedback/error&rise，只有一种尺寸",
+  "stroke": "1px Text/reversal（居中描边）",
+  "position": "徽标中心对齐承载对象右上角（设计方 2026-10-14 确认）；列表：行尾内联",
+  "related": "页签 .gj-m-tab-badge、底部导航 .gj-m-tabbar-dot、侧边栏 .gj-m-sidebar-dot 为同一规格的场景化写法"
+}

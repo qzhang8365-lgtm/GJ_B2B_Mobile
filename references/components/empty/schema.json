@@ -1,0 +1,32 @@
+{
+  "id": "empty",
+  "name": "空状态 Empty",
+  "category": "操作反馈组件",
+  "source": {
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "161:5438",
+    "set": "161:5439",
+    "illustrations": "612:25",
+    "readOnly": true,
+    "chart": "1063:160 type=no chart"
+  },
+  "prototypeOnly": true,
+  "types": [
+    "text",
+    "empty",
+    "chart",
+    "search",
+    "network",
+    "permission",
+    "error"
+  ],
+  "layout": {
+    "imageWidth": 100,
+    "gap": 12,
+    "textGap": 4,
+    "title": "H5-CN-S 14/22",
+    "description": "P4_CN-R 13/20",
+    "button": "现有Button Medium，独立热区由Button基座提供"
+  },
+  "illustrationCount": 6
+}

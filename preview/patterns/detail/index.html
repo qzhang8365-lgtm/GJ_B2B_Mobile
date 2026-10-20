@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 详情 + 底部操作</title>
+  <link rel="stylesheet" href="../../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../../site.css">
+  <link rel="stylesheet" href="../../docs.css">
+  <link rel="stylesheet" href="../pattern-doc.css?v=20261016-pat2">
+  <script src="../../phone-stage.js?v=20261020-src1"></script>
+  <script src="../../../assets/scripts/gj-m-markup.js?v=20261019-tpl2"></script>
+  <script src="../../../assets/scripts/gj-m-templates.js?v=20261020-src1"></script>
+  <script src="../kit.js?v=20261020-src1"></script>
+  <script src="detail.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">页面模式 · Patterns</div>
+    <h1>详情 + 底部操作</h1>
+    <p>查看单个业务对象的完整信息，并在页内完成状态更新或审批类操作。适用于需求、拜访、工单、委托等详情页。</p>
+  </header>
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>页面骨架</h2><p>自上而下的区域顺序；组件内部规格以各组件规范为准。</p></div></header>
+      <div class="anatomy">
+        <div class="panel"><span class="docs-stage-label">需求详情 · 375 × 760</span><div id="anatomy"></div></div>
+        <ol class="regions"><li><span class="n">1</span><div><b>顶部导航 Navbar</b>标题写对象类型（“需求详情”），不写对象名；吸顶。</div></li><li><span class="n">2</span><div><b>概要卡片 Card + Info List</b>卡片标题写对象名，右侧用标签表示当前状态；副标题写记录人和时间。字段用左对齐信息列表（名称带冒号），长文本换行不截断，标签可作为值。</div></li><li><span class="n">3</span><div><b>说明卡片 Card</b>大段说明放在浅灰文本块内；右侧文字按钮进入相关资料（如案例库）。</div></li><li><span class="n">4</span><div><b>编辑卡片 Form</b>页内可改的字段集中在一张卡片：状态用单选框横排，补充说明用多行输入（选填）。</div></li><li><span class="n">5</span><div><b>记录卡片 Steps 纵向 + 时间</b>处理记录按时间倒序，最新在上；新的操作保存后插入顶部。</div></li><li><span class="n">6</span><div><b>固定底栏 Form Actions</b>两个等分按钮，次操作在左、主操作在右，间距 12；正文预留栏高与安全区。只读时不显示底栏。</div></li></ol>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>首次加载用卡片骨架屏；只读、待审核、编辑三种角色态只改变编辑卡片和底栏，信息结构不变。</p></div></header>
+      <div class="grid3"><div class="panel"><span class="docs-stage-label">首次加载 · 骨架屏</span><div id="s0"></div></div><div class="panel"><span class="docs-stage-label">待处理 · 归档 / 标记跟进</span><div id="s1"></div></div><div class="panel"><span class="docs-stage-label">已归档 · 只读无底栏</span><div id="s2"></div></div><div class="panel"><span class="docs-stage-label">编辑中 · 底栏可用</span><div id="s3"></div></div><div class="panel"><span class="docs-stage-label">网络异常</span><div id="s4"></div></div></div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>选择需求状态或填写处理说明后底栏可用；保存后状态标签与处理记录更新，取消恢复原值。</p></div></header>
+      <div class="playground">
+        <div class="panel"><span class="docs-stage-label">H5 · 375 × 640 · 在预览内操作</span><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields"><div class="field"><label for="c0">页面状态</label><select id="c0" data-k="state"><option value='"normal"' selected>正常</option><option value='"loading"'>首次加载</option><option value='"network"'>网络异常</option></select></div><div class="field"><label for="c1">角色态</label><select id="c1" data-k="mode"><option value='"edit"' selected>编辑（取消 / 保存更新）</option><option value='"review"'>待处理（归档 / 标记跟进）</option><option value='"archived"'>已归档（只读）</option></select></div>
+          <p class="feedback field-full">示例数据为虚构；跳转类操作只给轻提示。切换控件会重置预览。</p>
+        </div></aside>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用规则</h2><p>模式由已确认的组件规则组合；页面级取值按语义间距。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:46%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody><tr><td>信息顺序</td><td>概要（是谁、什么状态）→ 说明 → 可操作区 → 历史记录。</td><td>不把历史记录放在可编辑区之前；不重复展示同一字段。</td></tr><tr><td>状态表达</td><td>当前状态只在概要卡片标题右侧用一个标签表达，颜色按语义（新上报红、跟进中蓝、已满足绿、已归档灰）。</td><td>同一状态不同时用标签、红字和图标重复强调。</td></tr><tr><td>页内编辑</td><td>可改字段集中在一张卡片；未改动时底栏按钮禁用，改动后可用。保存成功用 Toast，并把结果写回概要与记录。</td><td>离开有未保存修改的页面时确认保存或放弃。</td></tr><tr><td>底栏操作</td><td>最多两个按钮：次操作（取消 / 归档）+ 主操作（保存更新 / 标记跟进），主操作用明确动词。</td><td>不放三个以上按钮；危险或不可逆操作（如归档）需要时加确认弹窗。</td></tr><tr><td>只读</td><td>已归档等不可改的状态：顶部给轻提示说明原因，隐藏编辑卡片与底栏。</td><td>不把按钮置灰后长期保留在底栏。</td></tr></tbody></table></div>
+      <p class="source">结构参考：零售银行渠道经营工作台「03-2 需求详情」「07-2 需求详情」「04-07 拜访详情」，组件已替换为当前组件库。</p>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const P=window.GJDetail;const BG='var(--ds-background-background)';
+  const mk=(id,o,h)=>GJPhone.mount(document.getElementById(id),{html:P.page(o),css:P.CSS,width:375,widths:[],height:h,fit:true,background:BG});
+  mk('anatomy',{"mode": "edit"},760);
+  [[{"state": "loading"}, 560], [{"mode": "review"}, 560], [{"mode": "archived"}, 560], [{"mode": "edit", "status": "已满足", "dirty": true, "_y": 330}, 560], [{"state": "network"}, 560]].forEach(([o,h],i)=>{const el=document.getElementById('s'+i);el.addEventListener('phone:ready',({detail:{doc}})=>{P.wire(doc,Object.assign({},o),()=>{});if(o._y)doc.defaultView.scrollTo(0,o._y)},{once:true});mk('s'+i,o,h)});
+  const host=document.getElementById('lab'),sels=[...document.querySelectorAll('.controls select')];let stage,st,keepY=null;
+  function reset(){st={};sels.forEach(s=>Object.assign(st,{[s.dataset.k]:JSON.parse(s.value)}));keepY=null;render()}
+  function render(){const html=P.page(st);if(stage)stage.setHTML(html);else stage=GJPhone.mount(host,{html,css:P.CSS,width:375,widths:[],height:640,fit:true,background:BG})}
+  host.addEventListener('phone:ready',({detail:{doc}})=>{const W=doc.defaultView;if(keepY!=null){W.scrollTo(0,keepY);keepY=null}
+    P.wire(doc,st,patch=>{keepY=W.scrollY;Object.assign(st,patch);render()})});
+  sels.forEach(s=>s.addEventListener('change',reset));reset();
+})();
+</script>
+</body>
+</html>

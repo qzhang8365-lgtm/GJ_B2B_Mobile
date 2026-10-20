@@ -1,0 +1,59 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "sidebar",
+  "figmaComponent": "侧边导航栏 SideBar（31:874）",
+  "prototypeClass": "gj-m-sidebar",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "sidebar-item/list": "nav.gj-m-sidebar > .gj-m-sidebar-list",
+    "sidebar-item/system_Logo": ".gj-m-sidebar-brand > img + 文字",
+    "item active=false": "a.gj-m-sidebar-item",
+    "item active=true": "a.gj-m-sidebar-item.is-active[aria-current=page]",
+    "state=pressed": ":active（展示用 .is-pressed）",
+    "badge=true,count=false": ".gj-m-sidebar-dot",
+    "badge=true,count=true": ".gj-m-sidebar-count（>99 显示 99+）",
+    "分类标题": ".gj-m-sidebar-group",
+    "展开方式": ".gj-m-sidebar-push(.is-open) > .gj-m-sidebar + .gj-m-sidebar-main"
+  },
+  "valueMap": {
+    "nav": "{\"width\": \"264（375 下约 70%，建议 64%–72%）\", \"listPadding\": 8, \"bg\": \"Background/Container\", \"scroll\": \"独立纵向滚动\", \"topInset\": \"--safe-top（状态栏透明覆盖）\"}",
+    "brand": "{\"size\": \"264×44（上下 4、左右 16，间距 12）\", \"logo\": \"36×36 位图（网站用 assets/images/gj-logo-mark.png），左距 16\", \"text\": \"H4-CN-S 16/24 Text/Primary\"}",
+    "item": "{\"size\": \"高 56（列表内宽 248，图标左距 24）\", \"padding\": 16, \"gap\": 12, \"radius\": 12, \"icon\": 24, \"title\": \"H4-CN-S 16/24（Semibold）\", \"default\": {\"bg\": \"Background/Container\", \"text\": \"Text/Secondary\"}, \"active\": {\"bg\": \"Background/Background\", \"text\": \"Text/Primary\"}, \"pressed\": {\"bg\": \"Background/Background\"}, \"iconColor\": \"网站：跟随标题文字；Figma：固定 Text/Primary（见 SB-M-001）\"}",
+    "badge": "{\"dot\": \"badge-dot 8 圆 Feedback/error&rise\", \"count\": \"badge-content Size=S：高 16，最小宽 18（hug 20），左右 4，Radius full，P6_CN-R 10 号，Feedback/error&rise 底、Text/reversal 字；>99 显示 99+\"}",
+    "group": "{\"padding\": \"16 16 8 16\", \"height\": 46, \"text\": \"H5-CN-S 14/22 Text/Secondary\", \"component\": \"1704:1090 sidebar-item/item_button_title\"}",
+    "push": "{\"main\": \"主页面整体右移导航宽度，圆角 24，Shadow_center（--ds-effect-shadow-center）\"}"
+  },
+  "tokenMap": {
+    "Background/Container": "--ds-background-container",
+    "Background/Background": "--ds-background-background",
+    "Text/Primary": "--ds-text-primary",
+    "Text/Secondary": "--ds-text-secondary",
+    "Feedback/error&rise": "--ds-feedback-error-rise",
+    "H4-CN-S / H5-CN-S / P3_CN-R": "--ds-type-h4-cn-s-* / --ds-type-h5-cn-s-* / --ds-type-p3-cn-r-*",
+    "Radius 12 / 24": "--Radius-LG / --Radius-2XL",
+    "P6_CN-R（数字徽标）": "--ds-type-p6-cn-r-*",
+    "Text/reversal（徽标白字）": "--ds-text-reversal"
+  },
+  "runtimeMap": {
+    "root": "nav.gj-m-sidebar",
+    "brand": ".gj-m-sidebar-brand",
+    "list": ".gj-m-sidebar-list",
+    "item": ".gj-m-sidebar-item",
+    "dot": ".gj-m-sidebar-dot",
+    "count": ".gj-m-sidebar-count",
+    "group": ".gj-m-sidebar-group"
+  },
+  "markup": {
+    "nav": "<nav class=\"gj-m-sidebar\" aria-label=\"侧边导航\"><div class=\"gj-m-sidebar-brand\"><img src=\"{ROOT}assets/images/gj-logo-mark.png\" alt=\"\">国金证券</div><div class=\"gj-m-sidebar-list\"><a class=\"gj-m-sidebar-item is-active\" href=\"javascript:void 0\" aria-current=\"page\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_home.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-sidebar-item-title\">工作台</span></a><a class=\"gj-m-sidebar-item\" href=\"javascript:void 0\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_user_group.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-sidebar-item-title\">客户管理</span></a><a class=\"gj-m-sidebar-item\" href=\"javascript:void 0\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_contact_message.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-sidebar-item-title\">消息中心</span><span class=\"gj-m-sidebar-dot\" aria-label=\"有新内容\"></span></a><a class=\"gj-m-sidebar-item\" href=\"javascript:void 0\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_file_task.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-sidebar-item-title\">待办审批</span><span class=\"gj-m-sidebar-count\">12</span></a><div class=\"gj-m-sidebar-group\">业务</div><a class=\"gj-m-sidebar-item\" href=\"javascript:void 0\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_data_chart.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-sidebar-item-title\">业绩看板</span></a><a class=\"gj-m-sidebar-item\" href=\"javascript:void 0\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_business_wallet.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-sidebar-item-title\">产品中心</span></a><a class=\"gj-m-sidebar-item\" href=\"javascript:void 0\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_calendar.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-sidebar-item-title\">日程安排</span></a><div class=\"gj-m-sidebar-group\">其他</div><a class=\"gj-m-sidebar-item\" href=\"javascript:void 0\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_settings.svg')\" aria-hidden=\"true\"></span><span class=\"gj-m-sidebar-item-title\">设置</span></a></div></nav>"
+  },
+  "accessibility": {
+    "nav": "nav + aria-label；当前项 aria-current=\"page\"",
+    "badge": "数量或红点在名称中说明"
+  },
+  "composition": {
+    "width": "264（约 70% 屏宽），独立纵向滚动",
+    "icon": "图标跟随文字色"
+  },
+  "pageRules": {},
+  "pending": {}
+}

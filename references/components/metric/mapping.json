@@ -1,0 +1,124 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "metric",
+  "figmaComponent": "数据指标 Metric（209:1346）：Metric_Stat、Metric_Grid、Metric_Card、Performance_Card、trend",
+  "prototypeClass": "gj-m-metric",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "Metric_Stat color=Default": ".gj-m-metric",
+    "Metric_Stat color=red": ".gj-m-metric.is-rise",
+    "Metric_Stat color=green": ".gj-m-metric.is-decline",
+    "Metric_Stat align=left": ".gj-m-metric.gj-m-metric-left",
+    "Metric_Stat label=top": ".gj-m-metric-label 写在 .gj-m-metric-value 之前",
+    "Metric_Stat unit=true": ".gj-m-metric-unit",
+    "Metric_Stat infoicon=true": "button.gj-m-metric-info",
+    "Metric_Grid number=4 / 3": ".gj-m-metric-grid / .gj-m-metric-grid.gj-m-metric-grid-3",
+    "Metric_Grid align=left": ".gj-m-metric-grid.gj-m-metric-grid-left",
+    "Metric_Card": ".gj-m-metric-card（-head / -title / -desc）+ .gj-m-metric-grid",
+    "metric_item/trend trend=rise|decline|flat": ".gj-m-trend.is-rise / .is-decline / .is-flat",
+    "Performance_Card": ".gj-m-metric-tile",
+    "数字字号 16–24": ".gj-m-metric-n3（24）/ 默认（20）/ .gj-m-metric-n5（18）/ .gj-m-metric-n6（16），可加在任意外层",
+    "绩效卡两列排布": ".gj-m-metric-tiles",
+    "灰色背景指标（1871:20192）": ".gj-m-metric-tile.gj-m-metric-tile-gray，放在 .gj-m-metric-card 内"
+  },
+  "valueMap": {
+    "stat": "{\"value\": \"默认 N4_NUM-S 20/30（设计方 2026-10-14 定，Figma 为 N3 24/36）；可选 .gj-m-metric-n3 24 / -n5 18 / -n6 16，同组一致；单位 P5_CN-R Text/Primary，间距 4\", \"label\": \"P5_CN-R Text/Secondary；信息图标 icf_system_info 16（Text/Tiatery，热区 44）\", \"tone\": {\"rise\": \"Feedback/error&rise\", \"decline\": \"Feedback/success&decline\", \"empty\": \"「--」Text/Tiatery\"}, \"align\": \"居中（默认）/ .gj-m-metric-left\", \"labelTop\": \"标签写在数值前\"}",
+    "grid": "{\"columns\": \"4（默认）/ .gj-m-metric-grid-3\", \"left\": \".gj-m-metric-grid-left（无内边距）\", \"columnGap\": 8}",
+    "card": "{\"padding\": 16, \"radius\": \"Radius-LG 12\", \"gap\": 16, \"title\": \"H4-CN-S Text/Primary\", \"desc\": \"P3_CN-R Text/Tiatery，与标题间距 4\"}",
+    "trend": "{\"icon\": \"上涨 icf_Arrow_arrow-up-large（Line F087），下跌 icf_Arrow_arrow-down-large（Line F0B9）；持平 icf_Arrow_flat；16\", \"text\": \"H7-CN-S 12/18\", \"flat\": \"文字和横线 Text/Tiatery\"}",
+    "tile": "{\"padding\": 12, \"radius\": 12, \"gap\": 4, \"label\": \"P5_CN-R Text/Secondary\", \"valueRow\": \"数字（跟随字号，默认 N4 20）+ 单位 P5_CN-R Text/Primary + 趋势，同一行，间距 4；窄屏放不下时趋势换行\", \"empty\": \"数字显示「--」，不显示单位和趋势\", \"updatedAt\": \"2026-10-14（Figma 210:2957 更新）\", \"layout\": \".gj-m-metric-tiles 两列等分，间距 12\", \"gray\": \".gj-m-metric-tile-gray：Background/Background 底、圆角 8；白色卡片内指标较多时用浅灰底分割\"}"
+  },
+  "tokenMap": {
+    "Text/Primary": "--ds-text-primary",
+    "Text/Secondary": "--ds-text-secondary",
+    "Text/Tiatery": "--ds-text-tiatery",
+    "Background/Container": "--ds-background-container",
+    "Background/Background": "--ds-background-background",
+    "Feedback/error&rise": "--ds-feedback-error-rise",
+    "Feedback/success&decline": "--ds-feedback-success-decline"
+  },
+  "assetMap": {
+    "上涨": "assets/icons/iconfont/icf_Arrow_arrow-up-large.svg（Line F087）",
+    "下跌": "assets/icons/iconfont/icf_Arrow_arrow-down-large.svg（Line F0B9）",
+    "持平": "assets/icons/iconfont/icf_Arrow_flat.svg",
+    "信息": "assets/icons/iconfont/icf_system_info.svg"
+  },
+  "runtimeMap": {
+    "stat": ".gj-m-metric",
+    "value": ".gj-m-metric-value",
+    "num": ".gj-m-metric-num",
+    "unit": ".gj-m-metric-unit",
+    "label": ".gj-m-metric-label",
+    "grid": ".gj-m-metric-grid",
+    "card": ".gj-m-metric-card",
+    "tile": ".gj-m-metric-tile",
+    "trend": ".gj-m-trend"
+  },
+  "markup": {
+    "stat": "<div class=\"gj-m-metric\"><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">246</span></span><span class=\"gj-m-metric-label\">指标</span></div>",
+    "withUnit": "<div class=\"gj-m-metric gj-m-metric-left gj-m-metric-n3\"><span class=\"gj-m-metric-label\">报销金额（元）</span><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">3,286.50</span></span></div>",
+    "card": "<section class=\"gj-m-metric-card\"><div class=\"gj-m-metric-card-head\"><h3 class=\"gj-m-metric-card-title\">团队业绩</h3><p class=\"gj-m-metric-card-desc\">数据截至 10/14 15:00</p></div><div class=\"gj-m-metric-grid\"><div class=\"gj-m-metric\"><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">246</span></span><span class=\"gj-m-metric-label\">指标</span></div><div class=\"gj-m-metric\"><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">12</span></span><span class=\"gj-m-metric-label\">指标</span></div><div class=\"gj-m-metric\"><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">240</span></span><span class=\"gj-m-metric-label\">指标</span></div><div class=\"gj-m-metric is-rise\"><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">+3.4</span></span><span class=\"gj-m-metric-label\">指标</span></div></div></section>",
+    "tile": "<div class=\"gj-m-metric-tile\"><span class=\"gj-m-metric-label\">托管资产</span><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">245.0</span><span class=\"gj-m-metric-unit\">亿元</span><span class=\"gj-m-trend is-rise\" aria-label=\"较上期上涨 20%\"><span aria-hidden=\"true\">20%</span></span></span></div>",
+    "trend": "<span class=\"gj-m-trend is-rise\" aria-label=\"较上期上涨 21%\"><span aria-hidden=\"true\">21%</span></span>",
+    "fromPreview_metric_grid_metric_n3": "<div class=\"gj-m-metric-grid\"><div class=\"gj-m-metric-n3\"><div class=\"gj-m-metric\"><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">246</span><span class=\"gj-m-metric-unit\">万</span></span><span class=\"gj-m-metric-label\">字号 24</span></div></div><div class=\"\"><div class=\"gj-m-metric\"><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">246</span><span class=\"gj-m-metric-unit\">万</span></span><span class=\"gj-m-metric-label\">字号 20</span></div></div><div class=\"gj-m-metric-n5\"><div class=\"gj-m-metric\"><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">246</span><span class=\"gj-m-metric-unit\">万</span></span><span class=\"gj-m-metric-label\">字号 18</span></div></div><div class=\"gj-m-metric-n6\"><div class=\"gj-m-metric\"><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">246</span><span class=\"gj-m-metric-unit\">万</span></span><span class=\"gj-m-metric-label\">字号 16</span></div></div></div>",
+    "tiles": "<div class=\"gj-m-metric-tiles\"><div class=\"gj-m-metric-tile gj-m-metric-tile-gray\"><span class=\"gj-m-metric-label\">银行渠道新增资产</span><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">318</span><span class=\"gj-m-metric-unit\">万</span></span></div></div>",
+    "grid": "<div class=\"gj-m-metric-grid\"><div class=\"gj-m-metric gj-m-metric-n5\"><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">6</span></span><span class=\"gj-m-metric-label\">拜访次数</span></div><div class=\"gj-m-metric gj-m-metric-n5\"><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">2</span></span><span class=\"gj-m-metric-label\">活动次数</span></div></div>",
+    "fromPreview_metric_card_tiles": "<section class=\"gj-m-metric-card\" style=\"box-shadow:var(--ds-effect-shadow-small)\"><div class=\"gj-m-metric-card-head\"><h3 class=\"gj-m-metric-card-title\">我的渠道</h3></div><div class=\"gj-m-metric-tiles\"><div class=\"gj-m-metric-tile gj-m-metric-tile-gray\"><span class=\"gj-m-metric-label\">银行渠道新增资产</span><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">246</span><span class=\"gj-m-metric-unit\">万元</span><span class=\"gj-m-trend is-rise\" aria-label=\"较上期上涨 21%\"><span aria-hidden=\"true\">21%</span></span></span></div><div class=\"gj-m-metric-tile gj-m-metric-tile-gray\"><span class=\"gj-m-metric-label\">银行渠道新增有效户</span><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">42</span><span class=\"gj-m-metric-unit\">户</span><span class=\"gj-m-trend is-rise\" aria-label=\"较上期上涨 8%\"><span aria-hidden=\"true\">8%</span></span></span></div><div class=\"gj-m-metric-tile gj-m-metric-tile-gray\"><span class=\"gj-m-metric-label\">银行渠道新增开户数</span><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">23</span><span class=\"gj-m-metric-unit\">户</span><span class=\"gj-m-trend is-flat\" aria-label=\"较上期持平\"><span aria-hidden=\"true\">持平</span></span></span></div><div class=\"gj-m-metric-tile gj-m-metric-tile-gray\"><span class=\"gj-m-metric-label\">名下渠道数</span><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">8</span><span class=\"gj-m-metric-unit\">个</span></span></div><div class=\"gj-m-metric-tile gj-m-metric-tile-gray\"><span class=\"gj-m-metric-label\">银行渠道经营积分</span><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">1240</span><span class=\"gj-m-metric-unit\">分</span><span class=\"gj-m-trend is-rise\" aria-label=\"较上期上涨 8%\"><span aria-hidden=\"true\">8%</span></span></span></div></div></section>"
+  },
+  "accessibility": {
+    "trend": "趋势加 aria-label（如“较上期上涨 20%”），可见文字 aria-hidden",
+    "info": "信息图标按钮 aria-label，热区 44"
+  },
+  "composition": {
+    "numbers": "金融数字用 GJType 等宽数字；同组单位、精度、口径一致；缺失值“--”",
+    "tone": "涨跌色只用于有方向的数据",
+    "tiles": "绩效卡两列 .gj-m-metric-tiles；灰底指标 .gj-m-metric-tile-gray 放在指标卡内"
+  },
+  "pageRules": {},
+  "pending": {
+    "MT-M-002": "上涨 / 下跌箭头图标不在图标库，暂不处理"
+  },
+  "markupNote": "markup 中 fromPreview_* 片段由 scripts/check-mapping.cjs 从预览页实际渲染补录（2026-10-19），与预览页一致；其余为手写的常用写法。",
+  "templates": {
+    "trend": {
+      "tpl": "<span class=\"gj-m-trend is-{{kind}}\" aria-label=\"较上期{{label}}{{text}}\"><span aria-hidden=\"true\">{{text}}</span></span>",
+      "example": {
+        "kind": "rise",
+        "label": "上涨 ",
+        "text": "21%"
+      },
+      "params": "kind：rise / decline / flat；label：读屏前缀"
+    },
+    "tiles": {
+      "tpl": "<div class=\"gj-m-metric-tiles\">{{#items}}<div class=\"gj-m-metric-tile{{#gray}} gj-m-metric-tile-gray{{/gray}}{{#empty}} is-empty{{/empty}}\"><span class=\"gj-m-metric-label\">{{label}}</span><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">{{num}}</span>{{#unit}}<span class=\"gj-m-metric-unit\">{{unit}}</span>{{/unit}}{{{trend}}}</span></div>{{/items}}</div>",
+      "example": {
+        "items": [
+          {
+            "label": "银行渠道新增资产",
+            "num": "318",
+            "unit": "万",
+            "gray": true,
+            "trend": ""
+          }
+        ]
+      },
+      "params": "items：[{label, num, unit, gray, empty, trend(metric.trend HTML)}]"
+    },
+    "grid": {
+      "tpl": "<div class=\"gj-m-metric-grid{{#n3}} gj-m-metric-grid-3{{/n3}}{{#left}} gj-m-metric-grid-left{{/left}}\">{{#items}}<div class=\"gj-m-metric {{#size}}gj-m-metric-{{size}}{{/size}}{{^size}}gj-m-metric-n5{{/size}}{{#tone}} is-{{tone}}{{/tone}}\"><span class=\"gj-m-metric-value\"><span class=\"gj-m-metric-num\">{{{num}}}</span></span><span class=\"gj-m-metric-label\">{{label}}</span></div>{{/items}}</div>",
+      "example": {
+        "items": [
+          {
+            "num": "6",
+            "label": "拜访次数"
+          },
+          {
+            "num": "2",
+            "label": "活动次数"
+          }
+        ]
+      },
+      "params": "n3：三列；left：左对齐（卡片内数据行）；size：数字字号 n3 / n4 / n5（默认）/ n6；items：[{num(HTML), label, tone(rise / decline / empty)}]"
+    }
+  }
+}

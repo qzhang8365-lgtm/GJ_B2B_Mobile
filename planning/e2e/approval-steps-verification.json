@@ -1,0 +1,95 @@
+{
+  "pass": true,
+  "results": [
+    {
+      "width": 375,
+      "heights": [
+        {
+          "height": 40,
+          "desc": false,
+          "padding": 16,
+          "min": "0px"
+        },
+        {
+          "height": 62,
+          "desc": true,
+          "padding": 16,
+          "min": "0px"
+        },
+        {
+          "height": 62,
+          "desc": true,
+          "padding": 16,
+          "min": "0px"
+        },
+        {
+          "height": 24,
+          "desc": false,
+          "padding": 0,
+          "min": "0px"
+        }
+      ],
+      "interactions": "附件预览/弹层取消/Esc/必填校验/输入计数/同意/驳回通过"
+    },
+    {
+      "width": 320,
+      "heights": [
+        {
+          "height": 34.109375,
+          "desc": false,
+          "padding": 13.6533,
+          "min": "0px"
+        },
+        {
+          "height": 52.875,
+          "desc": true,
+          "padding": 13.6533,
+          "min": "0px"
+        },
+        {
+          "height": 52.875,
+          "desc": true,
+          "padding": 13.6533,
+          "min": "0px"
+        },
+        {
+          "height": 20.46875,
+          "desc": false,
+          "padding": 0,
+          "min": "0px"
+        }
+      ],
+      "interactions": "附件预览/弹层取消/Esc/必填校验/输入计数/同意/驳回通过"
+    },
+    {
+      "width": 768,
+      "heights": [
+        {
+          "height": 47.984375,
+          "desc": false,
+          "padding": 19.2,
+          "min": "0px"
+        },
+        {
+          "height": 74.375,
+          "desc": true,
+          "padding": 19.2,
+          "min": "0px"
+        },
+        {
+          "height": 74.375,
+          "desc": true,
+          "padding": 19.2,
+          "min": "0px"
+        },
+        {
+          "height": 28.796875,
+          "desc": false,
+          "padding": 0,
+          "min": "0px"
+        }
+      ],
+      "interactions": "附件预览/弹层取消/Esc/必填校验/输入计数/同意/驳回通过"
+    }
+  ]
+}

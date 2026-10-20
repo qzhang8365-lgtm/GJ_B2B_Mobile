@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 分组表单提交</title>
+  <link rel="stylesheet" href="../../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../../site.css">
+  <link rel="stylesheet" href="../../docs.css">
+  <link rel="stylesheet" href="../pattern-doc.css?v=20261016-pat2">
+  <script src="../../phone-stage.js?v=20261020-src1"></script>
+  <script src="../../../assets/scripts/gj-m-markup.js?v=20261019-tpl2"></script>
+  <script src="../../../assets/scripts/gj-m-templates.js?v=20261020-src1"></script>
+  <script src="../kit.js?v=20261020-src1"></script>
+  <script src="form.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">页面模式 · Patterns</div>
+    <h1>分组表单提交</h1>
+    <p>一次提交多组信息的录入页：定位 / 关联对象 + 分组表单卡片 + 固定底栏。适用于拜访打卡、需求上报、新建客户等。</p>
+  </header>
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>页面骨架</h2><p>自上而下的区域顺序；组件内部规格以各组件规范为准。</p></div></header>
+      <div class="anatomy">
+        <div class="panel"><span class="docs-stage-label">我要拜访 · 375 × 760</span><div id="anatomy"></div></div>
+        <ol class="regions"><li><span class="n">1</span><div><b>顶部导航 Navbar</b>标题写任务动作（“我要拜访”）；吸顶。</div></li><li><span class="n">2</span><div><b>上下文卡片 ListBar 卡片模式（圆角 12）</b>展示自动获取的上下文（当前定位网点），尾部文字按钮“重新定位”。获取中用 Loading，失败用小号警示提示并引导手动选择。</div></li><li><span class="n">3</span><div><b>表单卡片 Form</b>按业务决策顺序分组（拜访信息 → 需求挖掘 → 达成合作），每组一张卡片，卡片标题即分组名。标题在上、控件在下；必填加红色星号，多选在标题后注明“可多选”。</div></li><li><span class="n">4</span><div><b>多选项 按钮组合</b>卡片内多选首选按钮组合：Medium 按钮宽度随文字、左对齐、放不下换行，间距 8；未选 Tertiary、选中 Secondary-pressed。其次用多选框组合。单选三项以内用单选框横排；长说明用多行输入并显示字数。</div></li><li><span class="n">5</span><div><b>固定底栏 Form Actions</b>“保存草稿”+“提交打卡”等分，主操作在右。</div></li></ol>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>定位中 / 定位失败只影响上下文卡片；提交校验失败时逐项提示并定位到第一项；提交成功切换为结果页。</p></div></header>
+      <div class="grid3"><div class="panel"><span class="docs-stage-label">定位中</span><div id="s0"></div></div><div class="panel"><span class="docs-stage-label">定位失败 · 手动选择</span><div id="s1"></div></div><div class="panel"><span class="docs-stage-label">校验失败 · 逐项提示</span><div id="s2"></div></div><div class="panel"><span class="docs-stage-label">提交成功</span><div id="s3"></div></div></div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>直接点“提交打卡”查看必填校验：Toast 提示未完成数量，滚动并聚焦第一项；补全后对应错误立即消失。</p></div></header>
+      <div class="playground">
+        <div class="panel"><span class="docs-stage-label">H5 · 375 × 640 · 在预览内操作</span><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields"><div class="field"><label for="c0">定位结果</label><select id="c0" data-k="loc"><option value='"ok"' selected>定位成功</option><option value='"locating"'>定位中</option><option value='"fail"'>定位失败</option></select></div>
+          <p class="feedback field-full">示例数据为虚构；跳转类操作只给轻提示。切换控件会重置预览。</p>
+        </div></aside>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用规则</h2><p>模式由已确认的组件规则组合；页面级取值按语义间距。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:46%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody><tr><td>分组</td><td>每组 2–6 个字段，组名写业务含义；整页核心字段 8–12 个，更多时拆分步骤。</td><td>不按后台数据结构分组；卡片不嵌套卡片。</td></tr><tr><td>选项控件</td><td>卡片内多选用按钮组合（Medium、宽度自适应、左对齐换行），其次多选框；单选 2–3 项用单选框横排，更多用选择器。</td><td>不用选项胶囊（只用于底部弹层）；不用固定每行 3 个等宽按钮（长文字会溢出）；避免 Small 按钮；同一表单内同类选择用同一种控件。</td></tr><tr><td>自动带入</td><td>定位、当前时间等可自动获取的值预填，允许修改；获取失败时说明原因并给手动方式。</td><td>不因定位失败阻塞整个表单。</td></tr><tr><td>校验</td><td>提交时校验；Toast 提示还有几项未完成，滚动到并聚焦第一项错误；错误文字在字段下方，修改后立即消失。</td><td>不在用户输入过程中提前报错；不清空已填内容。</td></tr><tr><td>提交</td><td>主操作用明确动词（提交打卡）；长表单提供保存草稿。成功后给结果反馈与下一步入口。</td><td>离开未保存页面时确认保存或放弃。</td></tr></tbody></table></div>
+      <p class="source">结构参考：零售银行渠道经营工作台「04-02～04-05 我要拜访」，组件已替换为当前组件库。</p>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const P=window.GJForm;const BG='var(--ds-background-background)';
+  const mk=(id,o,h)=>GJPhone.mount(document.getElementById(id),{html:P.page(o),css:P.CSS,width:375,widths:[],height:h,fit:true,background:BG});
+  mk('anatomy',{},760);
+  [[{"loc": "locating"}, 560], [{"loc": "fail"}, 560], [{"err": {"who": "请选择拜访对象", "need": "请选择银行需求", "met": "请选择需求是否满足"}, "_y": 280}, 560], [{"submitted": true}, 560]].forEach(([o,h],i)=>{const el=document.getElementById('s'+i);el.addEventListener('phone:ready',({detail:{doc}})=>{P.wire(doc,Object.assign({},o),()=>{});if(o._y)doc.defaultView.scrollTo(0,o._y)},{once:true});mk('s'+i,o,h)});
+  const host=document.getElementById('lab'),sels=[...document.querySelectorAll('.controls select')];let stage,st,keepY=null;
+  function reset(){st={};sels.forEach(s=>Object.assign(st,{[s.dataset.k]:JSON.parse(s.value)}));keepY=null;render()}
+  function render(){const html=P.page(st);if(stage)stage.setHTML(html);else stage=GJPhone.mount(host,{html,css:P.CSS,width:375,widths:[],height:640,fit:true,background:BG})}
+  host.addEventListener('phone:ready',({detail:{doc}})=>{const W=doc.defaultView;if(keepY!=null){W.scrollTo(0,keepY);keepY=null}
+    P.wire(doc,st,patch=>{keepY=W.scrollY;Object.assign(st,patch);render()})});
+  sels.forEach(s=>s.addEventListener('change',reset));reset();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+/* 规范站自身的版式变量（只用于文档外壳，不属于移动端设计 Token）。
+   数值与 PC 规范站 docs-* 变量保持一致，以 px 固定，不随 H5 根字号缩放。
+   设计值一律来自 ../assets/styles/gj-b2b-mobile-tokens.css。 */
+:root{
+  --docs-page-max-width:1480px;
+  --docs-page-padding:32px;
+  --docs-page-padding-compact:20px;
+  --docs-section-padding:24px;
+  --docs-panel-padding:20px;
+  --docs-panel-radius:8px;
+  --docs-section-radius:12px;
+  --docs-item-radius:4px;
+  --docs-table-row-height:48px;
+  --docs-shell-nav-width:224px;
+  --docs-shell-topbar-height:58px;
+  --docs-shell-mobile-breakpoint:760px;
+  --docs-layout-column-gap:20px;
+  --docs-layout-stack-gap:16px;
+  --docs-layout-demo-fr:3fr;
+  --docs-layout-interaction-fr:2fr;
+  --docs-interaction-min-width:320px;
+  --docs-interaction-stage-min-height:220px;
+  --docs-white-40:rgba(255,255,255,.4);
+  --docs-white-60:rgba(255,255,255,.6);
+  --docs-white-80:rgba(255,255,255,.8);
+}

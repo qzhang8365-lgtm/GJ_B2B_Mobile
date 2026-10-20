@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 选择列表 Selection List</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid2+.grid2{margin-top:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    .docs-sheet+.docs-sheet{margin-top:28px}
+    .sheet-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-bottom:16px;margin-bottom:24px;border-bottom:1px solid var(--ds-border-default)}
+    .sheet-head h2{margin:0;font-size:24px;line-height:32px;font-weight:600}
+    .sheet-head .sub{margin-left:8px;font-size:14px;color:var(--ds-text-tiatery);font-weight:400}
+    .sheet-head p{margin:6px 0 0;max-width:760px;color:var(--ds-text-secondary);font-size:14px;line-height:22px}
+    .sheet-head+.docs-section{padding-top:0;border-top:0}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+    @media(max-width:650px){.sheet-head h2{font-size:22px;line-height:30px}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>选择列表 Selection List</h1>
+    <p>从一组并列选项中选择一个或多个结果。按选项密度与任务复杂度，采用列表、选项胶囊或确认式弹层；常作为<a href="../select/index.html" style="color:var(--ds-text-blue);text-decoration:none">选择器</a>弹层的内容。</p>
+  </header>
+
+  <article class="docs-sheet" id="selection-list">
+    <header class="sheet-head"><div><h2>选择列表<span class="sub">Selection List</span></h2><p>列表行承载选项，点击整行切换状态。先确定单选或多选，同一组选项只用一种选择模型。</p></div></header>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>单选与多选</h2><p>单选、多选同一样式：选中文字变蓝、尾部出现勾。单选点击即生效；多选标题注明“可多选”，在弹层底部统一确认。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">单选 · 选中一项</span><div data-demo="tPlain"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">多选 · 选中多项</span><div data-demo="tInd"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>对齐</h2><p>支持左对齐与居中。居中只用于弹层内少量、短文案的单选（如排序方式）；选中勾选固定在右侧，不影响文字居中。多选只用左对齐。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">左对齐 · Align=left</span><div data-demo="aLeft"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">居中 · Align=center</span><div data-demo="aCenter"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>选中用颜色和勾选共同表达；禁用 40%，保留当前状态。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">单选 · 默认 / 选中 / 禁用</span><div data-demo="sPlain"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">多选 · 默认 / 选中 / 禁用</span><div data-demo="sInd"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>单选点击即生效；多选点击切换勾选。可切换类型和对齐方式查看效果。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pType">选择模型</label><select id="pType"><option value="single" selected>单选</option><option value="multi">多选</option></select></div>
+          <div class="field"><label for="pAlign">对齐</label><select id="pAlign"><option value="left" selected>左对齐</option><option value="center">居中（仅单选）</option></select></div>
+          <label class="ck"><input type="checkbox" id="pDis" checked>包含禁用项</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>保持选择模型、视觉反馈与操作结果一致，避免让导航行为和选择行为相互干扰。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>选择模型</td><td>根据业务规则明确单选或多选；单选使用 radio 语义，多选使用 checkbox 语义（视觉同为尾部勾选）。</td><td>同一组选项不混用两种模型；本组件不替代 Radio / Checkbox。</td></tr>
+        <tr><td>列表形式</td><td>单选、多选都用尾部勾选；多选在标题注明“可多选”，并在弹层底部显示已选数量、统一确认。</td><td>列表内不用方形多选框或左侧圆形勾选；方形多选框只用于表单横排、协议确认与全选。</td></tr>
+        <tr><td>生效时机</td><td>简单单选选择后立即生效；多选或复杂任务保留当前状态，并提供确认操作。</td><td>确认前不回填结果；取消不提交更改。</td></tr>
+        <tr><td>再次进入</td><td>恢复已有结果，允许修改、清除或取消本次更改。</td><td>不重置用户已做的选择。</td></tr>
+        <tr><td>选项数量</td><td>超过 6 个、需要搜索或存在分组时，用选择弹层或独立选择页。</td><td>不在页面内平铺过长的选项列表。</td></tr>
+        <tr><td>尾部箭头</td><td>箭头表示进入下一层内容。</td><td>不同时暗示立即选中；确需组合时区分两个点击区域。</td></tr>
+        <tr><td>禁用项</td><td>保留当前状态；业务限制不明显时说明不可选原因。</td><td>不直接隐藏。</td></tr>
+        <tr><td>触控范围</td><td>整行都是点击热区，行高不低于 44。</td><td>不只让文字或图标可点。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="choice-chip">
+    <header class="sheet-head"><div><h2>选项胶囊<span class="sub">Choice Chip</span></h2><p>以紧凑胶囊承载简短、同维度的选项，适合筛选和轻量多选；不属于标准列表行。</p></div></header>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>排列与状态</h2><p>选项较少、需要醒目展示时使用；默认两列，也可单列。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">网格 · Layout=grid</span><div data-demo="cGrid"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">单列 · Layout=list</span><div data-demo="cList"></div></div>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点击胶囊切换选中，可切换排列方式。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="chipLab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="cLayout">排列</label><select id="cLayout"><option value="grid" selected>两列网格</option><option value="list">单列</option></select></div>
+          <div class="field"><label for="cMode">选择模型</label><select id="cMode"><option value="multi" selected>多选</option><option value="single">单选</option></select></div>
+        </div></aside>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="selection-sheet">
+    <header class="sheet-head"><div><h2>确认式选择弹层<span class="sub">Selection Sheet</span></h2><p>把标题、选择列表与确认操作组合在底部弹层中，适合多选或需要集中确认的任务。是组合模式，不是基础列表的一部分。</p></div></header>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>结构</h2><p>头部标题 + 关闭，中间选择列表，底部“取消 / 确定”，多选时显示已选数量。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">多选 · 关注行业</span><div data-demo="shMulti"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">选项胶囊 · 筛选</span><div data-demo="shChip"></div></div>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>弹层内的勾选是临时的，点“确定”才回填。</p></div></header>
+      <div class="lab"><div id="sheetLab"></div></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const item=(t,o={})=>`<button type="button" class="gj-m-selection-item" role="${o.type==='multi'?'checkbox':'radio'}" aria-checked="${!!o.sel}"${o.dis?' aria-disabled="true"':''}><span class="gj-m-selection-item-content"><span class="gj-m-selection-item-text">${t}</span><span class="gj-m-selection-check"><span class="gj-icon" aria-hidden="true"></span></span></span></button>`;
+  const list=(rows,o={})=>`<div class="gj-m-selection${o.align==='center'?' gj-m-selection-center':''}" role="${o.type==='multi'?'group':'radiogroup'}">${rows.map(r=>item(r[0],Object.assign({type:o.type},r[1]||{}))).join('')}</div>`;
+  const chip=(t,sel,dis)=>`<button type="button" class="gj-m-chip" aria-pressed="${!!sel}"${dis?' disabled':''}><span class="gj-m-chip-text">${t}</span><span class="gj-m-selection-indicator"><span class="gj-icon" aria-hidden="true"></span></span></button>`;
+  const chips=(arr,layout)=>`<div class="gj-m-chip-group${layout==='list'?' gj-m-chip-group-list':''}">${arr.map(c=>chip(c[0],c[1],c[2])).join('')}</div>`;
+  const header=t=>`<div class="gj-m-popup-header"><span class="gj-m-popup-title">${t}</span><button type="button" class="gj-m-popup-close" aria-label="关闭"><span class="gj-icon" aria-hidden="true"></span></button></div>`;
+  const footer=n=>`<div class="gj-m-popup-footer"><button type="button" class="gj-m-button gj-m-button-tertiary gj-m-button-large" data-act="cancel">取消</button><button type="button" class="gj-m-button gj-m-button-primary gj-m-button-large" data-act="ok">确定${n==null?'':`<span data-n>（${n}）</span>`}</button></div>`;
+  const sheet=(t,body,n)=>`<div class="gj-m-popup" role="dialog" aria-modal="true" aria-label="${t}"><div class="gj-m-popup-panel">${header(t)}${body}${footer(n)}</div></div>`;
+  const CSS='html,body{overflow-y:hidden}.scr{position:relative;width:100%;max-width:3.75rem;margin:0 auto;background:var(--ds-background-background);box-sizing:border-box}.gap{height:.12rem}'+
+    '.ph{height:100%;display:flex;flex-direction:column;background:var(--ds-background-background)}.hd{flex:none;display:flex;align-items:center;justify-content:center;height:44px;background:var(--ds-background-container);font-size:.17rem;font-weight:600}'+
+    '.fm{background:var(--ds-background-container);padding:.04rem var(--space-page-margin-x) .16rem}.fl{padding:.12rem 0 .08rem;font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)}'+
+    '.cnt{padding:.08rem var(--space-page-margin-x);font-size:.13rem;line-height:.2rem;color:var(--ds-text-tiatery)}';
+  const FIX='html,body,.page{height:100%}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+(h?FIX:''),height:h||'auto'});
+  const CT=['个人客户','机构客户','产品客户','私募基金','公募基金'];
+  const IND=['银行','证券','保险','新能源','半导体','医药生物'];
+  show('tPlain',`<div class="scr">${list(CT.map((t,i)=>[t,{sel:i===1}]))}</div>`);
+  show('tInd',`<div class="scr">${list(IND.slice(0,5).map((t,i)=>[t,{sel:i===0||i===3}]),{type:'multi'})}</div>`);
+  show('aLeft',`<div class="scr">${list([['综合排序'],['最新开户',{sel:1}],['资产规模从高到低'],['资产规模从低到高']])}</div>`);
+  show('aCenter',`<div class="scr">${list([['综合排序'],['最新开户',{sel:1}],['资产规模从高到低'],['资产规模从低到高']],{align:'center'})}</div>`);
+  show('sPlain',`<div class="scr">${list([['默认'],['选中',{sel:1}],['禁用',{dis:1}],['禁用且选中',{sel:1,dis:1}]])}</div>`);
+  show('sInd',`<div class="scr">${list([['默认'],['选中',{sel:1}],['禁用',{dis:1}],['禁用且选中',{sel:1,dis:1}]],{type:'multi'})}</div>`);
+  show('cGrid',`<div class="scr">${chips([['近 1 月'],['近 3 月',1],['近 6 月'],['近 1 年'],['今年以来',1],['成立以来']])}</div>`);
+  show('cList',`<div class="scr">${chips([['低风险 R1'],['中低风险 R2',1],['中风险 R3'],['中高风险 R4',0,1]],'list')}</div>`);
+  show('shMulti',`<div class="scr" style="height:100%"><div class="ph"></div>${sheet('关注行业（可多选）',list(IND.map((t,i)=>[t,{sel:i===1||i===4}]),{type:'multi'}),2)}</div>`,600);
+  show('shChip',`<div class="scr" style="height:100%"><div class="ph"></div>${sheet('筛选',`<div class="cnt">持有期限</div>${chips([['近 1 月'],['近 3 月',1],['近 6 月'],['近 1 年']])}<div class="cnt">风险等级</div>${chips([['R1',1],['R2'],['R3'],['R4']])}`)}</div>`,600);
+
+  const $=id=>document.getElementById(id);
+  function renderLab(){const type=$('pType').value,align=type==='multi'?'left':$('pAlign').value,dis=$('pDis').checked;
+    $('pAlign').disabled=type==='multi';
+    const rows=(type==='multi'?IND:CT).map((t,i)=>[t,{dis:dis&&i===2}]);
+    const f=GJPhone.swatch($('lab'),{html:`<div class="scr">${list(rows,{type,align})}${type==='multi'?'<div class="cnt" id="n">已选 0 项</div>':''}</div>`,css:CSS,height:'auto'});
+    f.addEventListener('load',()=>{const d=f.contentDocument,its=[...d.querySelectorAll('.gj-m-selection-item')];
+      its.forEach(x=>x.addEventListener('click',()=>{if(x.getAttribute('aria-disabled')==='true')return;
+        if(type==='multi'){x.setAttribute('aria-checked',x.getAttribute('aria-checked')!=='true');d.getElementById('n').textContent='已选 '+its.filter(y=>y.getAttribute('aria-checked')==='true').length+' 项'}
+        else its.forEach(y=>y.setAttribute('aria-checked',y===x))}))})}
+  ['pType','pAlign','pDis'].forEach(id=>$(id).addEventListener('change',renderLab));renderLab();
+
+  function renderChip(){const layout=$('cLayout').value,multi=$('cMode').value==='multi';
+    const f=GJPhone.swatch($('chipLab'),{html:`<div class="scr">${chips([['近 1 月'],['近 3 月'],['近 6 月'],['近 1 年'],['今年以来'],['成立以来至今全部区间']],layout)}</div>`,css:CSS,height:'auto'});
+    f.addEventListener('load',()=>{const d=f.contentDocument,cs=[...d.querySelectorAll('.gj-m-chip')];cs.forEach(c=>c.addEventListener('click',()=>{const on=c.getAttribute('aria-pressed')!=='true';if(!multi)cs.forEach(y=>y.setAttribute('aria-pressed','false'));c.setAttribute('aria-pressed',multi?on:true)}))})}
+  ['cLayout','cMode'].forEach(id=>$(id).addEventListener('change',renderChip));renderChip();
+
+  let committed=['证券','半导体'];
+  (function renderSheet(){
+    const sel=(v)=>`<button type="button" class="gj-m-select" aria-haspopup="dialog" aria-expanded="false"><span class="gj-m-select-value${v.length?'':' is-placeholder'}">${v.length?v.join('、'):'选择关注行业'}</span><span class="gj-m-select-arrow"><span class="gj-icon" aria-hidden="true"></span></span></button>`;
+    const f=GJPhone.swatch($('sheetLab'),{html:`<div class="scr" style="height:100%"><div class="ph"><div class="hd">客户偏好</div><div class="fm"><div class="fl">关注行业</div><div id="s">${sel(committed)}</div></div></div><div id="pop"></div></div>`,css:CSS+FIX,height:600});
+    f.addEventListener('load',()=>{const d=f.contentDocument,slot=d.getElementById('pop'),host=d.getElementById('s');
+      const bind=()=>{const btn=host.querySelector('.gj-m-select');btn.addEventListener('click',()=>{btn.setAttribute('aria-expanded','true');
+        slot.innerHTML=sheet('关注行业（可多选）',list(IND.map(t=>[t,{sel:committed.includes(t)}]),{type:'multi'}),committed.length);
+        const pop=slot.firstElementChild,close=()=>{slot.innerHTML='';btn.setAttribute('aria-expanded','false')};
+        const its=[...pop.querySelectorAll('.gj-m-selection-item')];its.forEach(x=>x.addEventListener('click',()=>{x.setAttribute('aria-checked',x.getAttribute('aria-checked')!=='true');pop.querySelector('[data-n]').textContent='（'+its.filter(y=>y.getAttribute('aria-checked')==='true').length+'）'}));
+        pop.addEventListener('click',e=>{if(e.target===pop)close()});pop.querySelector('.gj-m-popup-close').addEventListener('click',close);
+        pop.querySelector('[data-act="cancel"]').addEventListener('click',close);
+        pop.querySelector('[data-act="ok"]').addEventListener('click',()=>{committed=[...pop.querySelectorAll('.gj-m-selection-item[aria-checked="true"] .gj-m-selection-item-text')].map(x=>x.textContent);close();host.innerHTML=sel(committed);bind()});
+      })};bind()});
+  })();
+})();
+</script>
+</body>
+</html>

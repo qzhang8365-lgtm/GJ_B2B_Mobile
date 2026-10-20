@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 信息列表 Info List</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">数据展示组件 · Data Display</div>
+    <h1>信息列表 Info List</h1>
+    <p>以“名称 + 内容”成对展示详情信息，用于订单、账户、产品等详情页。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section" id="info-horizontal">
+      <header class="docs-section-head"><div><h2>横向列表</h2><p>每行上下 12、底部分割线；名称 Text/Secondary，内容 Text/Primary，P3 14/22。内容过长时换行，名称与内容按顶部对齐；可带信息图标；无数据显示“--”。也可不带分割线，此时上下 4。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">两端对齐 · 内容右对齐</span><div data-demo="hEnd"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">左对齐 · 名称带冒号，最小宽 92</span><div data-demo="hStart"></div></div>
+      </div>
+      <div class="grid2" style="margin-top:16px">
+        <div class="panel gray"><span class="docs-stage-label">无分割线 · 两端对齐，上下 4</span><div data-demo="pEnd"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">无分割线 · 左对齐，上下 4</span><div data-demo="pStart"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section" id="info-vertical">
+      <header class="docs-section-head"><div><h2>纵向列表与两列宫格</h2><p>内容较长时用纵向，名称 P4 13/20 在上、内容在下，间距 4；字段多且内容短时用两列宫格，放在卡片内（左右 16），中间分割线两侧各 12，只显示一行，超出用 … 省略。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">纵向</span><div data-demo="vert"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">两列宫格 · 放在卡片内</span><div data-demo="grid"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>委托详情页：切换排列方式（备注为多行内容）；点信息图标查看说明；资金信息宫格中过长内容省略；切换未成交状态时，成交相关字段显示“--”。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pL">排列</label><select id="pL"><option value="">两端对齐</option><option value="inline">左对齐</option><option value="vertical">纵向</option></select></div>
+          <div class="field"><label for="pD">委托状态</label><select id="pD"><option value="done">已成交</option><option value="wait">未成交（部分无数据）</option></select></div>
+          <label class="ck"><input type="checkbox" id="pS" checked>分割线</label>
+          <label class="ck"><input type="checkbox" id="pI" checked>信息图标</label>
+          <label class="ck"><input type="checkbox" id="pG" checked>资金信息用两列宫格</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>排列</td><td>名称短、内容短时用两端对齐；名称长短不一、需要对齐阅读时用左对齐；内容很长时用纵向。</td><td>同一张卡片里不混用排列方式。</td></tr>
+        <tr><td>宫格</td><td>字段多且内容短（数值、状态）时用两列宫格，放在卡片内；只显示一行，超出用 … 省略。</td><td>可能超过一行的重要内容不放进宫格。</td></tr>
+        <tr><td>名称</td><td>简短明确；需要解释口径时加信息图标。</td><td>名称不换行，过长时缩短措辞。</td></tr>
+        <tr><td>多行</td><td>列表中内容过长自动换行，名称与内容按顶部对齐；数值保持统一精度和单位。</td><td>列表中不截断关键信息。</td></tr>
+        <tr><td>分割线</td><td>字段多、需要逐行比对时带分割线（上下 12）；字段少、整体较轻时可不带分割线（上下 4）。</td><td>同一张卡片里不混用。</td></tr>
+        <tr><td>无数据</td><td>统一显示“--”。</td><td>不用 0 或留空代替。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const ic=(n,s=24)=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${n}.svg');width:${s/100}rem;height:${s/100}rem" aria-hidden="true"></span>`;
+  const TIP=(l,t)=>`<button type="button" class="gj-m-info-tip" data-tip="${t}" aria-label="${l}说明">${ic('icf_system_info',16)}</button>`;
+  /* rows: [label, value, tip] */
+  const LIST=(rows,cls='',tag='div')=>`<dl class="gj-m-info-list${cls?' '+cls:''}">${rows.map(([l,v,t])=>`<div class="gj-m-info-item"><dt class="gj-m-info-label"><span class="gj-m-info-label-text">${l}</span>${t?TIP(l.replace('：',''),t):''}</dt><dd class="gj-m-info-value"${cls.includes('grid')&&v?` title="${v}"`:''}>${v==null||v===''?'--':v}</dd></div>`).join('')}</dl>`;
+  const CSS='html,body{overflow:hidden;background:transparent}.scr{width:100%;max-width:3.75rem;margin:0 auto;box-sizing:border-box}dl,dd{margin:0}';
+  const FIX='html,body,.page{height:100%}';
+  const show=(k,html,h)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS+(h?FIX:''),height:h||'auto'});
+  const R=[['资金账号','8883404579'],['客户姓名','王**'],['可用资金','52,380.00','可用于买入的资金，不含冻结部分'],['冻结资金',null],['联系地址','上海市浦东新区芳甸路 1088 号紫竹国际大厦 20 层']];
+  show('hEnd',`<div class="scr gj-m-card">${LIST(R)}</div>`);
+  show('hStart',`<div class="scr gj-m-card">${LIST(R.map(([l,v,t])=>[l+'：',v,t]),'gj-m-info-list-inline')}</div>`);
+  show('pEnd',`<div class="scr gj-m-card">${LIST(R,'gj-m-info-list-plain')}</div>`);
+  show('pStart',`<div class="scr gj-m-card">${LIST(R.map(([l,v,t])=>[l+'：',v,t]),'gj-m-info-list-inline gj-m-info-list-plain')}</div>`);
+  show('vert',`<div class="scr gj-m-card">${LIST([['产品名称','国金稳健增利 3 号集合资产管理计划'],['风险等级','R2 · 中低风险'],['联系地址','上海市浦东新区芳甸路 1088 号紫竹国际大厦 20 层'],['备注',null]],'gj-m-info-list-vertical')}</div>`);
+  show('grid',`<div class="scr gj-m-card">${LIST([['成交数量','1,000'],['成交均价','12.36'],['成交金额','12,360'],['手续费','5.00'],['交易市场','上海证券交易所主板 A 股'],['过户费','0.12']],'gj-m-info-grid')}</div>`);
+
+  const APPCSS='.app{position:relative;width:100%;max-width:3.75rem;margin:0 auto;height:100%;overflow:hidden;display:flex;flex-direction:column;background:var(--ds-background-background)}.app>.gj-m-navbar{flex:none}'+
+    '.body{flex:1;min-height:0;overflow-y:auto;padding:.12rem var(--space-page-margin-x);display:flex;flex-direction:column;gap:var(--space-card-l1-gap)}'+
+    '.ft{flex:none;padding:.08rem var(--space-page-margin-x) calc(.08rem + env(safe-area-inset-bottom,0px));background:var(--ds-background-container);box-shadow:0 -1px 0 var(--ds-border-default)}.toast{position:absolute;inset:0;pointer-events:none}';
+  const HEAD=(t,pre='')=>`<div class="gj-m-card-head"><div class="gj-m-card-header">${pre}<h3 class="gj-m-card-title">${t}</h3></div></div>`;
+  function render(){const SP=$('pS').checked,L=$('pL').value,D=$('pD').value,I=$('pI').checked,G=$('pG').checked;const wait=D==='wait';
+    const t=(x)=>I?x:'';const lab=l=>L==='inline'?l+'：':l;
+    const main=[['委托编号','20251014-008821'],['证券名称','国金证券 600109'],['委托方向','买入'],['委托价格','12.38'],['委托数量','1,000 股'],['成交均价',wait?null:'12.36',t('本笔委托所有成交的加权平均价格')],['委托时间','2025-10-14 10:12:05'],['委托备注','客户来电要求在 12.40 元以下分批买入，单笔不超过 500 股']].map(([l,v,tp])=>[lab(l),v,tp]);
+    const money=[['交易市场','上海证券交易所主板 A 股'],['成交数量',wait?null:'1,000'],['成交金额',wait?null:'12,360.00'],['手续费',wait?null:'5.00',t('按成交金额万分之 2.5 收取，最低 5 元')],['印花税',null],['过户费',wait?null:'0.12'],['冻结资金',wait?'12,385.00':'0.00']];
+    const cls=(L==='inline'?'gj-m-info-list-inline':L==='vertical'?'gj-m-info-list-vertical':'')+(SP?'':' gj-m-info-list-plain');
+    const f=GJPhone.swatch($('lab'),{html:`<div class="app"><header class="gj-m-navbar" aria-label="页面导航"><div class="gj-m-navbar-left"><button class="gj-m-navbar-action gj-m-navbar-back" type="button" aria-label="返回上一页">${ic('icf_Arrow_left')}</button></div><div class="gj-m-navbar-center"><span class="gj-m-navbar-title">委托详情</span></div><div class="gj-m-navbar-right"></div></header><div class="body">
+      <section class="gj-m-card"><div class="gj-m-card-head"><div class="gj-m-card-header"><span class="gj-icon gj-m-card-icon" style="--gj-icon:url('${ICON}${wait?'icf_system_time':'icf_system_check-circle-fill'}.svg')" aria-hidden="true"></span><h3 class="gj-m-card-title">${wait?'未成交':'已成交'}</h3></div><p class="gj-m-card-subtitle">${wait?'委托已提交，等待撮合成交':'全部成交 · 2025-10-14 10:12:08'}</p></div></section>
+      <section class="gj-m-card">${HEAD('委托信息')}<div class="gj-m-card-body">${LIST(main,cls)}</div></section>
+      ${G?`<section class="gj-m-card">${HEAD('资金信息')}<div class="gj-m-card-body">${LIST(money.map(([l,v,tp])=>[l,v,tp]),'gj-m-info-grid'+(SP?'':' gj-m-info-list-plain'))}</div></section>`:`<section class="gj-m-card">${HEAD('资金信息')}<div class="gj-m-card-body">${LIST(money.map(([l,v,tp])=>[lab(l),v,tp]),cls)}</div></section>`}
+    </div><div class="toast" id="toast"></div><div class="ft"><div class="gj-m-form-actions"><button type="button" class="gj-m-button gj-m-button-large gj-m-button-tertiary" data-act="再次委托">再次委托</button><button type="button" class="gj-m-button gj-m-button-large gj-m-button-primary" data-act="${wait?'撤单':'查看成交明细'}">${wait?'撤单':'成交明细'}</button></div></div></div>`,css:CSS+APPCSS+FIX,height:680});
+    f.addEventListener('load',()=>{const d=f.contentDocument,toast=d.getElementById('toast');
+      const say=t=>{clearTimeout(say.t1);clearTimeout(say.t2);toast.innerHTML=`<div class="gj-m-toast-layer" role="status"><div class="gj-m-notice" data-tone="default"><span class="gj-m-notice-text">${t}</span></div></div>`;const el=toast.firstElementChild;say.t1=setTimeout(()=>{el.classList.add('is-leaving');say.t2=setTimeout(()=>{if(toast.firstElementChild===el)toast.innerHTML=''},200)},1800)};
+      d.addEventListener('click',e=>{const tp=e.target.closest('[data-tip]'),a=e.target.closest('[data-act]');if(tp)say(tp.dataset.tip);if(a)say(a.dataset.act+'（原型演示）')})})}
+  ['pL','pD','pS','pI','pG'].forEach(k=>$(k).addEventListener('change',render));render();
+})();
+</script>
+</body>
+</html>

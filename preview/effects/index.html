@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 样式效果 Effects</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    :root{--blue:var(--ds-text-blue);--blue-pale:var(--ds-primitive-blue-b01);--text:var(--ds-text-primary);--secondary:var(--ds-text-secondary);--tertiary:var(--ds-text-tiatery);--disabled:var(--ds-text-disable);--border:var(--ds-border-default);--border-2:var(--ds-border-secondary);--page:var(--ds-background-background);--font:var(--ds-font-family-ui);--mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:var(--font);color:var(--text);background:transparent}button{font:inherit}
+    .shell{max-width:var(--docs-page-max-width);margin:auto;padding:var(--docs-page-padding)}
+    .intro{margin-bottom:30px;padding:0 4px}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--blue);font-size:13px;font-weight:600;letter-spacing:.04em;margin-bottom:10px}.eyebrow:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 3px var(--ds-background-bt-b10)}.intro h1{font-size:32px;line-height:42px;letter-spacing:-.02em;margin:0 0 8px}.intro p{max-width:900px;margin:0;color:var(--secondary);font-size:15px;line-height:1.75}.intro code{font:13px/20px var(--mono);background:var(--ds-background-container);padding:1px 6px;border-radius:4px}
+    .section{background:var(--ds-background-container);border-radius:20px;padding:24px;margin-bottom:28px}.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--border);margin-bottom:24px}.title-group{display:flex;align-items:baseline;gap:12px}.section-heading h2{font-size:24px;line-height:32px;margin:0;font-weight:600}.section-heading .sub{font-size:14px;color:var(--tertiary)}.count{font:12px/20px var(--mono);color:var(--tertiary);white-space:nowrap}.section-desc{font-size:14px;line-height:22px;color:var(--ds-text-disable);margin:-4px 0 24px}
+    .effect-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .effect-card{display:flex;flex-direction:column;border:1px solid var(--border-2);border-radius:16px;padding:18px;background:var(--ds-background-container);min-width:0}
+    .effect-stage{border-radius:12px;overflow:hidden;margin-bottom:16px;background:var(--page)}
+    .effect-name{display:block;width:100%;padding:0;border:0;background:transparent;text-align:left;font:600 14px/22px var(--mono);color:var(--text);cursor:pointer}
+    .effect-types{display:flex;flex-wrap:wrap;gap:6px;margin:7px 0 10px}.effect-type{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--blue-pale);color:var(--blue);font:11px/18px var(--mono)}
+    .layer{margin-bottom:10px}.blur-row{display:flex;width:100%;border:0;cursor:pointer;text-align:left;align-items:center;gap:8px;margin:-2px 0 10px;padding:6px 10px;border-radius:8px;background:var(--ds-background-tiatery);font-size:12px;line-height:18px;color:var(--tertiary)}.blur-row b{font:600 12px/18px var(--mono);color:var(--text)}.blur-row small{margin-left:auto;font:11px/18px var(--mono)}.blur-row:hover b,.blur-row:hover small{color:var(--blue)}
+    .effect-data{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.datum{padding:7px 5px;border-radius:8px;background:var(--ds-background-tiatery);text-align:center}.datum b{display:block;font:600 12px/18px var(--mono)}.datum span{font-size:11px;color:var(--tertiary)}
+    .layer-color{display:flex;align-items:center;gap:8px;margin-top:6px;font:12px/19px var(--mono);color:var(--secondary)}.layer-color i{flex:none;width:14px;height:14px;border-radius:4px;box-shadow:inset 0 0 0 1px var(--ds-background-mk-10);background-image:linear-gradient(45deg,var(--border) 25%,transparent 25%,transparent 75%,var(--border) 75%),linear-gradient(45deg,var(--border) 25%,transparent 25%,transparent 75%,var(--border) 75%);background-size:6px 6px;background-position:0 0,3px 3px;position:relative;overflow:hidden}.layer-color i span{position:absolute;inset:0}
+    .copy-line{display:block;width:100%;padding:1px 0;border:0;background:transparent;text-align:left;cursor:pointer;font:12px/19px var(--mono);color:var(--secondary);overflow-wrap:anywhere}.copy-line:hover,.effect-name:hover{color:var(--blue)}.copy-line small{color:var(--tertiary)}
+    .effect-foot{margin-top:auto;padding-top:10px;border-top:1px solid var(--border);display:grid;gap:4px;font-size:13px;line-height:20px}.effect-foot .usage{color:var(--disabled)}.effect-foot .refs{color:var(--secondary)}.effect-foot .refs.none{color:var(--tertiary)}
+    .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,12px);opacity:0;pointer-events:none;padding:8px 14px;border-radius:8px;background:var(--ds-text-primary);color:var(--ds-text-reversal);font-size:13px;transition:.18s}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:1100px){.effect-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:720px){.shell{padding:var(--docs-page-padding-compact)}.section{padding:20px}.intro h1{font-size:28px}.effect-grid{grid-template-columns:1fr}.title-group{display:block}.section-heading{align-items:flex-start}.section-heading h2{font-size:22px}.section-heading .sub{display:block;margin-top:4px}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+<script src="../_data/tokens.js?v=20261020-data1"></script></head>
+<body>
+<main class="shell">
+  <header class="intro"><div class="eyebrow">基础规范 · Foundations</div><h1>样式效果 Effects</h1><p>移动端 Figma 中的 6 个 Effect Styles，包括外阴影、内阴影与背景模糊。数值读取自 <code>references/tokens/gj-b2b-mobile.tokens.json</code>，预览按 375 基准渲染（1rem = 100px）。点击样式名、CSS 或类名可复制。</p></header>
+
+  <section class="section" id="effect-styles">
+    <div class="section-heading"><div class="title-group"><h2>Effect Styles</h2><span class="sub">阴影、内阴影与背景模糊</span></div><span class="count" id="effectCount"></span></div>
+    <p class="section-desc">X、Y、Blur、Spread 为 375 基准的设计 px，代码中按 px ÷ 100 写成 rem。原始 description 为空时不推导使用场景；复合效果须整体使用对应类。</p>
+    <div class="effect-grid" id="effectGrid"><div>正在读取样式效果…</div></div>
+  </section>
+
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+  const $=id=>document.getElementById(id);let toastTimer;
+  const TYPE={DROP_SHADOW:'外阴影',INNER_SHADOW:'内阴影',BACKGROUND_BLUR:'背景模糊',LAYER_BLUR:'图层模糊'};
+  const REF_PAGES={'192:8826':'业务组件页'};
+  function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+  const num=v=>{const n=Math.round(v*100)/100;return Object.is(n,-0)?'0':String(n)};
+  const pct=a=>Math.round(a*100)+'%';
+  const hex=c=>'#'+[c.r,c.g,c.b].map(x=>Math.round(x*255).toString(16).padStart(2,'0').toUpperCase()).join('');
+  const rgba=c=>`rgba(${[c.r,c.g,c.b].map(x=>Math.round(x*255)).join(',')},${num(c.a)})`;
+  // 浏览器读出的 CSS 变量值含浮点尾数，展示时收短（实际调用仍用变量）
+  const tidy=v=>v.replace(/rgba?\(([^)]*)\)/g,(m,args)=>{const p=args.split(',').map(x=>x.trim());return 'rgba('+p.map((x,i)=>i<3?Math.round(parseFloat(x)):String(Math.round(parseFloat(x)*100)/100)).join(', ')+')'}).replace(/-?\d*\.\d+/g,m=>String(Math.round(parseFloat(m)*10000)/10000)).replace(/\s+/g,' ').trim();
+  const cssVar=name=>tidy(getComputedStyle(document.documentElement).getPropertyValue(name));
+  async function copyValue(value){let ok=false;try{await navigator.clipboard.writeText(value);ok=true}catch{const a=document.createElement('textarea');a.value=value;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();try{ok=document.execCommand('copy')}catch{}a.remove()}const text=ok?`已复制 ${value}`:'复制失败，请手动选择';if(window.parent!==window){window.parent.postMessage({type:'gj-copy-feedback',text},location.origin);return}$('toast').textContent=text;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),1500)}
+
+  // 卡片小样：效果只依赖 375 基准尺寸，不依赖设备宽度
+  const SAMPLE_CSS='.stage{display:grid;place-items:center;height:1.5rem;padding:0 .24rem}'+
+    '.sample{display:grid;place-items:center;width:100%;max-width:2.4rem;height:.76rem;border-radius:.12rem;background:var(--ds-background-container);color:var(--ds-text-secondary);font-size:.13rem}'+
+    '.glass-bg{position:relative;overflow:hidden;background:var(--ds-primitive-blue-b02)}'+
+    '.glass-bg .dot{position:absolute;border-radius:50%}.glass-bg .a{width:.9rem;height:.9rem;left:18%;top:.14rem;background:var(--ds-brand-gj-blue)}.glass-bg .b{width:.7rem;height:.7rem;right:16%;bottom:.1rem;background:var(--ds-brand-gj-violet)}'+
+    '.glass-bg .sample{position:relative;background:rgba(255,255,255,.4);color:var(--ds-text-primary)}';
+  function sampleHTML(item){
+    const cls=item.cssClass||'';
+    if(item.effects.some(e=>e.type==='BACKGROUND_BLUR'))return `<div class="stage glass-bg"><span class="dot a"></span><span class="dot b"></span><div class="sample ${cls}">${esc(item.name)}</div></div>`;
+    return `<div class="stage"><div class="sample ${cls}">${esc(item.name)}</div></div>`;
+  }
+  function layerHTML(e,item){
+    // 背景模糊只有半径一个参数，压成一行，避免多出一排空数据格
+    if(e.type==='BACKGROUND_BLUR'||e.type==='LAYER_BLUR'){const v=item&&item.cssVariables&&item.cssVariables['backdrop-filter'];const decl=v?`backdrop-filter: var(${v});`:'';return `<button class="blur-row"${decl?` data-copy="${esc(decl)}" title="${esc(decl)}"`:''}><span>${TYPE[e.type]}</span><b>Blur ${num(e.radius)}</b><small>${v?esc(cssVar(v)):''}</small></button>`}
+    return `<div class="layer"><div class="effect-data"><div class="datum"><b>${num(e.offset.x)}</b><span>X</span></div><div class="datum"><b>${num(e.offset.y)}</b><span>Y</span></div><div class="datum"><b>${num(e.radius)}</b><span>Blur</span></div><div class="datum"><b>${num(e.spread||0)}</b><span>Spread</span></div></div>`+
+      `<div class="layer-color"><i><span style="background:${rgba(e.color)}"></span></i>${hex(e.color)} · ${pct(e.color.a)} <small>${rgba(e.color)}</small></div></div>`;
+  }
+  function refsHTML(item){
+    const refs=item.verifiedReferences||[];
+    if(!refs.length)return '<div class="refs none">未核到实例引用</div>';
+    const byPage={};refs.forEach(r=>{const k=REF_PAGES[r.pageId]||r.pageName;byPage[k]=(byPage[k]||0)+1});
+    return `<div class="refs">${Object.entries(byPage).map(([k,v])=>`${esc(k)}引用 ${v} 处`).join('；')}</div>`;
+  }
+  function cssLines(item){
+    const vars=item.cssVariables||{};
+    return Object.entries(vars).filter(([prop])=>prop!=='backdrop-filter').map(([prop,v])=>{const decl=`${prop}: var(${v});`;return `<button class="copy-line" data-copy="${esc(decl)}">${esc(decl)}<br><small>${esc(cssVar(v))}</small></button>`}).join('')+
+      (item.cssClass?`<button class="copy-line" data-copy=".${esc(item.cssClass)}">.${esc(item.cssClass)}</button>`:'');
+  }
+  function render(tokens){
+    const items=Object.values(tokens.effect||{});
+    $('effectGrid').innerHTML=items.map((item,i)=>{
+      const types=[...new Set(item.effects.map(e=>TYPE[e.type]||e.type))];
+      return `<article class="effect-card"><div class="effect-stage" id="sw-${i}"></div>`+
+        `<button class="effect-name" data-copy="${esc(item.name)}">${esc(item.name)}</button>`+
+        `<div class="effect-types">${types.map(t=>`<span class="effect-type">${esc(t)}</span>`).join('')}</div>`+
+        [...item.effects].sort((x,y)=>(x.type.endsWith('BLUR')?1:0)-(y.type.endsWith('BLUR')?1:0)).map(e=>layerHTML(e,item)).join('')+
+        cssLines(item)+
+        `<div class="effect-foot"><div class="usage">${esc(item.description||'暂无说明')}</div>${refsHTML(item)}</div></article>`;
+    }).join('');
+    items.forEach((item,i)=>GJPhone.swatch($('sw-'+i),{html:sampleHTML(item),css:SAMPLE_CSS,height:150}));
+    $('effectCount').textContent=`${items.length} 个 Effect Styles`;
+  }
+
+  document.addEventListener('click',e=>{const el=e.target.closest('[data-copy]');if(el)copyValue(el.dataset.copy)});
+  Promise.resolve(GJ_PREVIEW_DATA.tokens).then(render).catch(err=>{$('effectGrid').textContent='样式效果数据读取失败';console.error(err)});
+</script>
+</body>
+</html>

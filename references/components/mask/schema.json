@@ -1,0 +1,27 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "mask",
+  "name": "蒙层 Mask",
+  "category": "操作反馈组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "蒙层Mask（161:5658）",
+    "nodes": {
+      "mask": "161:5659（Opacity=45|60，375×812；2026-10-14 删除 80 与白色）",
+      "usage": "1083:2"
+    },
+    "extractedAt": "2026-10-14",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-mask(-light / .is-leaving)"
+  },
+  "types": {
+    "default": "Background/MK_60：弹窗、底部弹层、筛选面板、图片预览统一使用（设计方 2026-10-14）",
+    "light": "Background/MK_45：备用较轻遮挡，一般不用"
+  },
+  "behavior": "覆盖作用容器并阻止底层点击与滚动；与前景同时渐显 / 渐隐 0.2s；同一时刻只有一层；关闭后焦点回到触发入口",
+  "consumers": ".gj-m-popup / .gj-m-dialog / .gj-m-filter-mask / .gj-m-image-viewer 自带 MK_60，与默认一致"
+}

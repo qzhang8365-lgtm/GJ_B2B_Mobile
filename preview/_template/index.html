@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 组件页模板</title>
+  <!-- 组件页模板：复制到 preview/<component>/index.html 后替换内容。不进入导航。 -->
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">通用组件 · Components</div>
+    <h1>组件名 Component</h1>
+    <p>一句话说明组件用途与适用场景。内容来自 Figma 节点与已确认规则，未确认的写入“待确认”，不推测。</p>
+  </header>
+
+  <article class="docs-sheet">
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>变体与尺寸</h2><p>展示 Figma 中真实存在的变体。示例按 375 基准（1rem = 100px）直接嵌在文档面板中，可横排的分面板并排。</p></div></header>
+      <div id="variants"></div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>组合属性检查实际表现。左侧为手机预览，右侧为属性控制。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="tone">示例属性</label><select id="tone"><option value="primary">Primary</option><option value="secondary">Secondary</option></select></div>
+          <div class="field"><label for="label">文案</label><input id="label" value="示例文案"></div>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>选用规则</h2><p>适用场景与边界。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:19%"><col style="width:41%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>示例</td><td>按 Figma 与已确认规则填写。</td><td>不从 PC 端移植规则。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+  // 模板示例：只使用移动端 Token + rem，组件页统一用 GJPhone.swatch(el,{height:'auto'}) 按 375 基准嵌入面板，不用手机框、不放宽度切换。接入真实组件后替换为 .gj-m-* 结构。
+  const sampleCss='.sample{margin:.16rem;padding:.16rem;border-radius:.12rem;background:var(--ds-background-container);box-shadow:var(--ds-effect-shadow-down)}'+
+    '.sample h3{margin:0 0 .08rem;font-size:.16rem;line-height:.24rem}.sample p{margin:0;font-size:.14rem;line-height:.22rem;color:var(--ds-text-secondary)}'+
+    '.sample-btn{display:flex;align-items:center;justify-content:center;height:.44rem;margin-top:.16rem;border-radius:.08rem;font-size:.16rem;color:var(--ds-text-reversal);background:var(--ds-button-primary-bg-default)}'+
+    '.sample-btn.secondary{color:var(--ds-text-blue);background:var(--ds-background-bt-b10)}';
+  const sample=(tone,label)=>`<div class="sample"><h3>模板示例卡片</h3><p>375 宽时 1rem = 100px；本卡片外边距 .16rem、按钮高 .44rem。</p><div class="sample-btn ${tone==='secondary'?'secondary':''}">${label}</div></div>`;
+  GJPhone.swatch(document.getElementById('variants'),{html:sample('primary','主要操作')+sample('secondary','次要操作'),css:sampleCss,height:'auto'});
+  const update=()=>GJPhone.swatch(document.getElementById('lab'),{html:sample(document.getElementById('tone').value,document.getElementById('label').value||'示例文案'),css:sampleCss,height:'auto'});
+  update();
+  document.getElementById('tone').addEventListener('change',update);
+  document.getElementById('label').addEventListener('input',update);
+</script>
+</body>
+</html>

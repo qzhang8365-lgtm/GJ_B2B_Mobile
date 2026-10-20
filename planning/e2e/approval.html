@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>费用报销审批</title>
+<!-- 端到端验证：仅依据 skill（SKILL.md / page-rules.md / patterns/detail.md / 组件 rules）生成。原型，非生产代码。 -->
+<link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+<link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-components.css?v=20261020-src1">
+<style>
+html{font-size:min(calc(100vw / 3.75),120px)}
+:root{--safe-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+body{margin:0;font-size:.14rem;line-height:.22rem;font-family:var(--ds-font-family-ui);color:var(--ds-text-primary);background:var(--ds-background-background)}
+.top{position:sticky;top:0;z-index:10;background:var(--ds-background-container)}
+.body{display:flex;flex-direction:column;gap:var(--space-card-l1-gap);padding:var(--space-12) var(--space-page-margin-x) calc(.64rem + var(--space-24) + var(--safe-bottom))}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:var(--space-12) var(--space-page-margin-x) calc(var(--space-12) + var(--safe-bottom));background:var(--ds-background-container);box-shadow:0 -1px 0 var(--ds-border-default)}
+.amount{display:flex;align-items:baseline;gap:var(--space-4)}
+.block{margin:0;padding:var(--space-card-l2-padding);border-radius:var(--Radius-MD);background:var(--ds-background-background);color:var(--ds-text-secondary);font-size:var(--ds-type-p3-cn-r-font-size);line-height:var(--ds-type-p3-cn-r-line-height)}
+.layer{position:fixed;inset:0;z-index:30}
+.layer[hidden]{display:none}
+</style>
+</head>
+<body>
+<div class="top">
+  <header class="gj-m-navbar" aria-label="页面导航"><div class="gj-m-navbar-left"><button class="gj-m-navbar-action gj-m-navbar-back" type="button" aria-label="返回上一页"><span class="gj-icon gj-icon-24" style="--gj-icon:url('../../assets/icons/iconfont/icf_Arrow_left.svg')" aria-hidden="true"></span></button></div><div class="gj-m-navbar-center"><span class="gj-m-navbar-title">报销审批</span></div><div class="gj-m-navbar-right"></div></header>
+</div>
+<main class="body" id="main">
+  <!-- 概要：一级卡片，标题写对象，状态标签（三级标签：类型 filled / 属性 default / 状态 line → PR-012） -->
+  <section class="gj-m-card">
+    <div class="gj-m-card-head">
+      <div class="gj-m-card-header"><h3 class="gj-m-card-title">客户拜访差旅报销</h3><span class="gj-m-tag gj-m-tag-orange gj-m-tag-line" id="state">待我审批</span></div>
+      <p class="gj-m-card-subtitle">李明 · 零售渠道部 · 提交于 2026-10-16 17:20</p>
+    </div>
+    <div class="gj-m-card-body">
+      <div class="gj-m-metric gj-m-metric-left gj-m-metric-n3"><span class="gj-m-metric-label">报销金额（元）</span><span class="gj-m-metric-value"><span class="gj-m-metric-num">3,286.50</span></span></div>
+    </div>
+  </section>
+  <section class="gj-m-card">
+    <div class="gj-m-card-head"><div class="gj-m-card-header"><h3 class="gj-m-card-title">报销信息</h3></div></div>
+    <div class="gj-m-card-body">
+      <dl class="gj-m-info-list gj-m-info-list-inline gj-m-info-list-plain">
+        <div class="gj-m-info-item"><dt class="gj-m-info-label">报销类型：</dt><dd class="gj-m-info-value"><span class="gj-m-tag gj-m-tag-blue gj-m-tag-filled">差旅</span></dd></div>
+        <div class="gj-m-info-item"><dt class="gj-m-info-label">费用期间：</dt><dd class="gj-m-info-value">2026-10-08 至 2026-10-10</dd></div>
+        <div class="gj-m-info-item"><dt class="gj-m-info-label">关联客户：</dt><dd class="gj-m-info-value">中国银行东城根支行</dd></div>
+        <div class="gj-m-info-item"><dt class="gj-m-info-label">费用项目：</dt><dd class="gj-m-info-value"><span class="tags"><span class="gj-m-tag gj-m-tag-grey">交通</span> <span class="gj-m-tag gj-m-tag-grey">住宿</span> <span class="gj-m-tag gj-m-tag-grey">餐补</span></span></dd></div>
+        <div class="gj-m-info-item"><dt class="gj-m-info-label">事由：</dt><dd class="gj-m-info-value">赴成都开展季度渠道拜访与联合营销活动对接，共拜访网点 6 家。</dd></div>
+      </dl>
+    </div>
+  </section>
+  <section class="gj-m-card">
+    <div class="gj-m-card-head"><div class="gj-m-card-header"><h3 class="gj-m-card-title">附件</h3></div><p class="gj-m-card-subtitle">共 3 个</p></div>
+    <div class="gj-m-card-body">
+      <ul class="gj-m-file-list" id="files"></ul>
+    </div>
+  </section>
+  <section class="gj-m-card">
+    <div class="gj-m-card-head"><div class="gj-m-card-header"><h3 class="gj-m-card-title">审批流程</h3></div></div>
+    <div class="gj-m-card-body">
+      <div id="flowMount"></div>
+    </div>
+  </section>
+</main>
+<div class="bar" id="bar"><div class="gj-m-form-actions"><button type="button" class="gj-m-button gj-m-button-large gj-m-button-tertiary" id="reject">驳回</button><button type="button" class="gj-m-button gj-m-button-large gj-m-button-primary" id="approve">同意</button></div></div>
+
+<!-- 驳回：底部弹窗（含表单）；同意：居中确认弹窗（dialog/rules.md） -->
+<div class="layer" id="rejectLayer" hidden><div class="gj-m-popup"><div class="gj-m-popup-panel gj-m-popup-dialog" role="dialog" aria-modal="true" aria-labelledby="rjT" tabindex="-1">
+  <div class="gj-m-popup-header" data-align="center"><div class="gj-m-popup-header-row"><span class="gj-m-popup-title" id="rjT">驳回报销</span><button type="button" class="gj-m-popup-close" aria-label="关闭" data-close><span class="gj-icon" aria-hidden="true"></span></button></div></div>
+  <div class="gj-m-popup-body"><div class="gj-m-form-item" style="padding-top:0"><span class="gj-m-form-label"><span class="gj-m-form-label-text">驳回原因</span><span class="gj-m-form-required" aria-label="必填">*</span></span><label class="gj-m-textarea" id="ta"><textarea rows="3" maxlength="200" placeholder="请说明需要补充或修改的内容" aria-label="驳回原因"></textarea><span class="gj-m-textarea-count">0/200</span></label></div></div>
+  <div class="gj-m-popup-footer"><button type="button" class="gj-m-button gj-m-button-large gj-m-button-tertiary" data-close>取消</button><button type="button" class="gj-m-button gj-m-button-large gj-m-button-primary" id="rejectOk">确认驳回</button></div>
+</div></div></div>
+<div class="layer" id="approveLayer" hidden><div class="gj-m-dialog"><div class="gj-m-dialog-panel" role="dialog" aria-modal="true" aria-labelledby="apT" aria-describedby="apM" tabindex="-1">
+  <div class="gj-m-dialog-header"><h2 class="gj-m-dialog-title" id="apT">同意该报销？</h2><p class="gj-m-dialog-message" id="apM">同意后将流转至财务复核，金额 3,286.50 元。</p></div>
+  <div class="gj-m-dialog-footer"><button type="button" class="gj-m-button gj-m-button-large gj-m-button-tertiary" data-close>取消</button><button type="button" class="gj-m-button gj-m-button-large gj-m-button-primary" id="approveOk">同意</button></div>
+</div></div></div>
+<div id="toast"></div>
+<script src="../../assets/scripts/gj-m-markup.js"></script>
+<script src="../../assets/scripts/gj-m-templates.js?v=20261020-src1"></script>
+<script>
+(()=>{
+const I=n=>`<span class="gj-icon" aria-hidden="true" style="--gj-icon:url('../../assets/icons/iconfont/${n}.svg')"></span>`;
+const files=[['机票行程单.pdf','pdf','182.4KB'],['酒店发票.pdf','pdf','96.0KB'],['费用明细.xlsx','excel','24.6KB']];
+document.getElementById('files').innerHTML=files.map(([n,t,s])=>{const i=n.lastIndexOf('.');return `<li class="gj-m-file-list-item"><span class="gj-m-file-list-icon"><img alt="" src="../../assets/icons/fileicon/24px-${t}.svg"></span><span class="gj-m-file-list-content"><span class="gj-m-file-list-name" title="${n}"><span class="gj-m-file-list-base">${n.slice(0,i)}</span><span class="gj-m-file-list-ext">${n.slice(i)}</span></span><span class="gj-m-file-list-info"><span>李明 上传</span><span>${s}</span></span></span><span class="gj-m-file-list-actions"><button class="gj-m-file-list-action" type="button" aria-label="查看 ${n}" data-view="${n}">${I('icf_system_eye')}</button></span></li>`}).join('');
+let flow=[['finish','10-16 17:20','李明 提交申请',''],['finish','10-17 09:12','王芳（部门经理）同意','情况属实'],['process','','我 审批中','分管领导'],['wait','','财务复核','']];
+const drawFlow=()=>{window.GJMarkup.root='../../';document.getElementById('flowMount').innerHTML=window.GJMarkup.render('steps','timeline',{id:'flow',label:'审批流程',items:flow.map(([state,time,title,desc])=>({state,time:time||'00-00 00:00',placeholder:!time,current:state==='process',title:window.GJMarkup.esc(title),desc:window.GJMarkup.esc(desc)}))})};
+drawFlow();
+const toast=t=>{const h=document.getElementById('toast');h.innerHTML=`<div class="gj-m-toast-layer" role="status" style="position:fixed"><div class="gj-m-notice" data-tone="default"><span class="gj-m-notice-text">${t}</span></div></div>`;clearTimeout(toast.t);toast.t=setTimeout(()=>h.innerHTML='',3000)};
+let opener=null;
+const open=(id,from)=>{opener=from;const L=document.getElementById(id);L.hidden=false;document.body.style.overflow='hidden';const f=L.querySelector('textarea')||L.querySelector('[data-close]');f.focus()};
+const close=()=>{document.querySelectorAll('.layer').forEach(l=>l.hidden=true);document.body.style.overflow='';if(opener)opener.focus()};
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',close));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+document.getElementById('reject').addEventListener('click',e=>open('rejectLayer',e.currentTarget));
+document.getElementById('approve').addEventListener('click',e=>open('approveLayer',e.currentTarget));
+const ta=document.querySelector('#ta textarea'),cnt=document.querySelector('#ta .gj-m-textarea-count');
+ta.addEventListener('input',()=>{cnt.textContent=ta.value.length+'/200';const m=document.getElementById('taErr');if(m&&ta.value.trim()){m.remove();document.getElementById('ta').classList.remove('is-error')}});
+const finish=(state,tone,step,desc,msg)=>{close();const s=document.getElementById('state');s.textContent=state;s.className='gj-m-tag gj-m-tag-line gj-m-tag-'+tone;const d=new Date(),z=n=>String(n).padStart(2,'0');flow[2]=[step==='驳回'?'error':'finish',`${z(d.getMonth()+1)}-${z(d.getDate())} ${z(d.getHours())}:${z(d.getMinutes())}`,'我 '+step,desc];if(step!=='驳回')flow[3][0]='process';drawFlow();document.getElementById('bar').remove();document.getElementById('main').style.paddingBottom='calc(var(--space-24) + var(--safe-bottom))';toast(msg)};
+document.getElementById('rejectOk').addEventListener('click',()=>{if(!ta.value.trim()){const w=document.getElementById('ta');w.classList.add('is-error');if(!document.getElementById('taErr'))w.insertAdjacentHTML('afterend','<div class="gj-m-input-message" role="alert" id="taErr">请填写驳回原因</div>');ta.focus();return}finish('已驳回','red','驳回',ta.value.trim(),'已驳回，已通知李明')});
+document.getElementById('approveOk').addEventListener('click',()=>finish('已同意','green','同意','','已同意，流转至财务复核'));
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>toast('打开「'+b.dataset.view+'」预览（原型）')));
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "dialog",
+  "figmaComponent": "Dialog_center（161:4250）/ Dialog_bottom（1037:12071）/ Dialog_item/Header（161:4104）/ Panel_header（58:4611）/ Panel_bar（313:8560）",
+  "prototypeClass": "gj-m-dialog / gj-m-popup",
+  "note": "原型基座类名，不代表真实前端组件库 API。基座遮罩为 position:absolute，整页使用时外层包 position:fixed;inset:0 的容器。",
+  "propertyMap": {
+    "Dialog_center": ".gj-m-dialog（遮罩）> .gj-m-dialog-panel[role=dialog][aria-modal=true]",
+    "Header Icon / Title / Message": ".gj-m-dialog-header > span.gj-icon.gj-m-dialog-icon + h2.gj-m-dialog-title + p.gj-m-dialog-message",
+    "Status": ".gj-m-dialog-icon（Default 蓝）| .is-success | .is-error | .is-warning",
+    "Dialog_center Slot": ".gj-m-dialog-body",
+    "Buttons=1|2": ".gj-m-dialog-footer > .gj-m-button.gj-m-button-large ×1|2",
+    "Dialog_bottom": ".gj-m-popup（遮罩）> .gj-m-popup-panel.gj-m-popup-dialog[role=dialog]",
+    "Title=False（Panel_bar）": ".gj-m-popup-bar（拖拽条）",
+    "Title=True（Panel_header）": ".gj-m-popup-header > .gj-m-popup-header-row > .gj-m-popup-title + button.gj-m-popup-close",
+    "Panel_header Line=true": ".gj-m-popup-header-line",
+    "Panel_header 左右操作": ".gj-m-popup-header.gj-m-popup-header-action > button.gj-m-popup-cancel + 标题 + button.gj-m-popup-save",
+    "subtitle": ".gj-m-popup-subtitle",
+    "Dialog_bottom Slot": ".gj-m-popup-body",
+    "Dialog_bottom button": ".gj-m-popup-footer"
+  },
+  "valueMap": {
+    "center.radius": "16（--Radius-XL）",
+    "center.header": "内边距 16/32，间距 8；图标 52；标题 H2 20/30；正文 P2 16/24",
+    "center.footer": "内边距 16，间距 12，大号按钮等分，一个按钮撑满",
+    "bottom.body": "有标题时上下 8、左右 16；正文可滚动、操作区固定",
+    "close": "热区 44"
+  },
+  "tokenMap": {
+    "mask": "Background/MK_60（--ds-background-mk-60）",
+    "panel": "Background/Container（--ds-background-container）",
+    "title": "Text/Primary",
+    "message": "Text/Secondary",
+    "icon.default": "Text/blue",
+    "icon.success": "Feedback/success&decline",
+    "icon.error": "Feedback/error&rise",
+    "icon.warning": "Feedback/warning",
+    "headerLine": "Border/default",
+    "radius": "--Radius-XL"
+  },
+  "assetMap": {
+    "status": "基座内置 icf_system_check-circle-fill / close-circle-fill / warning-fill",
+    "close": "基座内置关闭图标"
+  },
+  "runtimeMap": {
+    "center.mask": ".gj-m-dialog",
+    "center.panel": ".gj-m-dialog-panel",
+    "center.header": ".gj-m-dialog-header",
+    "center.body": ".gj-m-dialog-body",
+    "center.footer": ".gj-m-dialog-footer",
+    "bottom.mask": ".gj-m-popup",
+    "bottom.panel": ".gj-m-popup-panel",
+    "bottom.header": ".gj-m-popup-header",
+    "bottom.body": ".gj-m-popup-body",
+    "bottom.footer": ".gj-m-popup-footer"
+  },
+  "markup": {
+    "confirm": "<div style=\"position:fixed;inset:0;z-index:30\"><div class=\"gj-m-dialog\"><div class=\"gj-m-dialog-panel\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"dlgT\" aria-describedby=\"dlgM\" tabindex=\"-1\"><div class=\"gj-m-dialog-header\"><h2 class=\"gj-m-dialog-title\" id=\"dlgT\">同意该报销？</h2><p class=\"gj-m-dialog-message\" id=\"dlgM\">同意后将流转至财务复核。</p></div><div class=\"gj-m-dialog-footer\"><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-tertiary\">取消</button><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary\">同意</button></div></div></div></div>",
+    "result": "<div style=\"position:fixed;inset:0;z-index:30\"><div class=\"gj-m-dialog\"><div class=\"gj-m-dialog-panel\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"resT\" tabindex=\"-1\"><div class=\"gj-m-dialog-header\"><span class=\"gj-icon gj-m-dialog-icon is-success\" aria-hidden=\"true\"></span><h2 class=\"gj-m-dialog-title\" id=\"resT\">验签通过</h2><p class=\"gj-m-dialog-message\">文件自签署后未被修改，全部签名有效。</p></div><div class=\"gj-m-dialog-footer\"><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary\">知道了</button></div></div></div></div>",
+    "bottomTitle": "<div style=\"position:fixed;inset:0;z-index:30\"><div class=\"gj-m-popup\"><div class=\"gj-m-popup-panel gj-m-popup-dialog\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"popT\" tabindex=\"-1\"><div class=\"gj-m-popup-header\" data-align=\"center\"><div class=\"gj-m-popup-header-row\"><span class=\"gj-m-popup-title\" id=\"popT\">驳回报销</span><button type=\"button\" class=\"gj-m-popup-close\" aria-label=\"关闭\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></div></div><div class=\"gj-m-popup-body\">…</div><div class=\"gj-m-popup-footer\"><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-tertiary\">取消</button><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary\">确认驳回</button></div></div></div></div>",
+    "bottomBar": "<div style=\"position:fixed;inset:0;z-index:30\"><div class=\"gj-m-popup\"><div class=\"gj-m-popup-panel gj-m-popup-dialog\" role=\"dialog\" aria-modal=\"true\" aria-label=\"选择日期\" tabindex=\"-1\"><div class=\"gj-m-popup-bar\" aria-hidden=\"true\"></div><div class=\"gj-m-popup-body\">…</div><div class=\"gj-m-popup-footer\"><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-tertiary\">取消</button><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary\">确认</button></div></div></div></div>",
+    "fromPreview_popup_header_popup_title": "<div class=\"gj-m-popup\" role=\"dialog\" aria-modal=\"true\" aria-label=\"客户类型\"><div class=\"gj-m-popup-panel\"><div class=\"gj-m-popup-header gj-m-popup-header-action\"><button type=\"button\" class=\"gj-m-popup-cancel\">取消</button><span class=\"gj-m-popup-title\">客户类型</span><button type=\"button\" class=\"gj-m-popup-save\">保存</button></div><div class=\"gj-m-picker\"><ul class=\"gj-m-picker-column\" role=\"listbox\"><li class=\"gj-m-picker-item\" role=\"option\" aria-selected=\"false\">个人客户</li><li class=\"gj-m-picker-item\" role=\"option\" aria-selected=\"true\">机构客户</li><li class=\"gj-m-picker-item\" role=\"option\" aria-selected=\"false\">产品客户</li><li class=\"gj-m-picker-item\" role=\"option\" aria-selected=\"false\">私募基金</li><li class=\"gj-m-picker-item\" role=\"option\" aria-selected=\"false\">公募基金</li><li class=\"gj-m-picker-item\" role=\"option\" aria-selected=\"false\">信托计划</li><li class=\"gj-m-picker-item\" role=\"option\" aria-selected=\"false\">QFII</li></ul></div></div></div>",
+    "fromPreview_popup_header_popup_close": "<div class=\"gj-m-popup\" role=\"dialog\" aria-modal=\"true\" aria-label=\"关注行业（可多选）\"><div class=\"gj-m-popup-panel\"><div class=\"gj-m-popup-header\"><span class=\"gj-m-popup-title\">关注行业（可多选）</span><button type=\"button\" class=\"gj-m-popup-close\" aria-label=\"关闭\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></div><div class=\"gj-m-selection\" role=\"group\"><button type=\"button\" class=\"gj-m-selection-item\" role=\"checkbox\" aria-checked=\"false\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">银行</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"checkbox\" aria-checked=\"true\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">证券</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"checkbox\" aria-checked=\"false\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">保险</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"checkbox\" aria-checked=\"false\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">新能源</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"checkbox\" aria-checked=\"true\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">半导体</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button><button type=\"button\" class=\"gj-m-selection-item\" role=\"checkbox\" aria-checked=\"false\"><span class=\"gj-m-selection-item-content\"><span class=\"gj-m-selection-item-text\">医药生物</span><span class=\"gj-m-selection-check\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></span></span></button></div><div class=\"gj-m-popup-footer\"><button type=\"button\" class=\"gj-m-button gj-m-button-tertiary gj-m-button-large\" data-act=\"cancel\">取消</button><button type=\"button\" class=\"gj-m-button gj-m-button-primary gj-m-button-large\" data-act=\"ok\">确定<span data-n=\"\">（2）</span></button></div></div></div>",
+    "dialog": "<div class=\"gj-m-dialog\"><div class=\"gj-m-dialog-panel\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"dlgT\" aria-describedby=\"dlgM\" tabindex=\"-1\"><div class=\"gj-m-dialog-header\"><h2 class=\"gj-m-dialog-title\" id=\"dlgT\">同意该报销？</h2><p class=\"gj-m-dialog-message\" id=\"dlgM\">同意后将流转至财务复核。</p></div><div class=\"gj-m-dialog-footer\"><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-tertiary\">取消</button><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary\">同意</button></div></div></div>"
+  },
+  "interactionMap": {
+    "open": "由明确操作打开；锁定背景滚动（body overflow:hidden）；焦点移入面板",
+    "close": "关闭、取消、Esc、系统返回结果一致；关闭后焦点回到触发控件",
+    "mask": "点遮罩是否关闭按任务风险决定；有未保存内容先确认",
+    "submit": "提交中主按钮 disabled 并显示“提交中...”",
+    "danger": "危险操作写明对象和后果，焦点默认放在次要操作"
+  },
+  "accessibility": {
+    "panel": "role=\"dialog\" + aria-modal=\"true\" + aria-labelledby（有正文加 aria-describedby），tabindex=\"-1\" 便于聚焦",
+    "close": "button + aria-label=\"关闭\"，热区 44",
+    "icon": "状态图标 aria-hidden"
+  },
+  "composition": {
+    "choose": "简短确认、高优先级结果用居中；内容多、含表单、连续操作用底部",
+    "buttons": "最多一个主操作（右，Primary）+ 一个次操作（左，Tertiary），按钮用 Large",
+    "nesting": "不在弹窗中再开弹窗",
+    "toast": "无需决策的结果用 Toast，不用弹窗",
+    "keyboard": "含输入的底部弹层，键盘弹起时操作区仍可见"
+  },
+  "pageRules": {},
+  "pending": {},
+  "markupNote": "markup 中 fromPreview_* 片段由 scripts/check-mapping.cjs 从预览页实际渲染补录（2026-10-19），与预览页一致；其余为手写的常用写法。",
+  "templates": {
+    "dialog": {
+      "tpl": "<div class=\"gj-m-dialog\"><div class=\"gj-m-dialog-panel\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"{{id}}T\"{{#message}} aria-describedby=\"{{id}}M\"{{/message}} tabindex=\"-1\"><div class=\"gj-m-dialog-header\">{{#icon}}<span class=\"gj-icon gj-m-dialog-icon is-{{icon}}\" aria-hidden=\"true\"></span>{{/icon}}<h2 class=\"gj-m-dialog-title\" id=\"{{id}}T\">{{title}}</h2>{{#message}}<p class=\"gj-m-dialog-message\" id=\"{{id}}M\">{{message}}</p>{{/message}}</div><div class=\"gj-m-dialog-footer\">{{{footer}}}</div></div></div>",
+      "params": "居中对话框：id：标题 / 说明的 id 前缀；icon：success / warning / error（结果类）；title；message；footer：按钮 HTML（button.button，Large）。外层定位遮罩由页面提供",
+      "example": {
+        "id": "dlg",
+        "title": "同意该报销？",
+        "message": "同意后将流转至财务复核。",
+        "footer": "<button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-tertiary\">取消</button><button type=\"button\" class=\"gj-m-button gj-m-button-large gj-m-button-primary\">同意</button>"
+      }
+    }
+  }
+}

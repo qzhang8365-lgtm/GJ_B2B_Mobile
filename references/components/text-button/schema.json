@@ -1,0 +1,118 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "text-button",
+  "name": "文字按钮 Text Button",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "node": "1158:2359",
+    "page": "Mobile_按钮Button（11:1610）",
+    "extractedAt": "2026-10-09（复核：删除 hover、新增 Style、文字样式改绑本地）",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-text-button",
+    "note": "原型基座，不代表真实前端组件库 API"
+  },
+  "variants": {
+    "count": 54,
+    "matrix": "3 size × 3 state × 3 icon × 2 style"
+  },
+  "properties": {
+    "size": {
+      "type": "enum",
+      "figmaDefault": "Large",
+      "prototypeDefault": "Medium",
+      "values": [
+        "Large",
+        "Medium",
+        "Small"
+      ],
+      "note": "Figma 组件集默认 Large；基座与 Button 保持一致以 Medium 为基础类"
+    },
+    "state": {
+      "type": "enum",
+      "default": "default",
+      "values": [
+        "default",
+        "pressed",
+        "disabled"
+      ],
+      "note": "移动端无 hover（设计方 2026-10-09 确认，Figma 中的 hover 变体将删除）"
+    },
+    "icon": {
+      "type": "enum",
+      "default": "None",
+      "values": [
+        "None",
+        "Left_Icon",
+        "Right_Icon"
+      ],
+      "note": "无 Icon_Only 变体"
+    },
+    "label": {
+      "type": "text",
+      "figmaProperty": "Label#1158:1",
+      "default": "按钮"
+    },
+    "buttonIcon": {
+      "type": "instance-swap",
+      "figmaProperty": "ButtonIcon#1158:0",
+      "default": "icf_system_search",
+      "library": "references/icons/index.json → general（iconfont）",
+      "rule": "只能使用图标库已登记图标；颜色始终与文字一致"
+    },
+    "style": {
+      "type": "enum",
+      "default": "grey",
+      "values": [
+        "grey",
+        "blue"
+      ],
+      "figmaProperty": "Style"
+    }
+  },
+  "size": {
+    "Large": {
+      "height": 24,
+      "padding": 0,
+      "textStyle": "P2_CN-R 16/24（本地）",
+      "icon": 20,
+      "gap": 4
+    },
+    "Medium": {
+      "height": 22,
+      "padding": 0,
+      "textStyle": "P3_CN-R 14/22（本地）",
+      "icon": 16,
+      "gap": 4
+    },
+    "Small": {
+      "height": 18,
+      "padding": 0,
+      "textStyle": "P5_CN-R 12/18（本地）",
+      "icon": 12,
+      "gap": 4
+    }
+  },
+  "color": {
+    "grey": {
+      "default": "--ds-text-secondary（#475467）",
+      "pressed": "--ds-text-primary（#101828）",
+      "disabled": "--ds-text-disable（#B8C0CC）"
+    },
+    "blue": {
+      "default": "--ds-button-primary-bg-default（#2B73FF）",
+      "pressed": "--ds-button-primary-bg-pressed（#1F63F0）",
+      "disabled": "--ds-button-primary-bg-disable（#9CC0FF）"
+    },
+    "icon": "始终等于文字色（currentColor）",
+    "background": null,
+    "border": null
+  },
+  "interaction": {
+    "hitArea": "≥ 44×44px，伪元素扩展",
+    "wrap": "nowrap"
+  }
+}

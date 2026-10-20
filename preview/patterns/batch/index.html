@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 批量处理列表</title>
+  <link rel="stylesheet" href="../../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../../site.css">
+  <link rel="stylesheet" href="../../docs.css">
+  <link rel="stylesheet" href="../pattern-doc.css?v=20261016-pat2">
+  <script src="../../phone-stage.js?v=20261020-src1"></script>
+  <script src="../../../assets/scripts/gj-m-markup.js?v=20261019-tpl2"></script>
+  <script src="../../../assets/scripts/gj-m-templates.js?v=20261020-src1"></script>
+  <script src="../kit.js?v=20261020-src1"></script>
+  <script src="batch.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">页面模式 · Patterns</div>
+    <h1>批量处理列表</h1>
+    <p>对一组待办逐条勾选后统一处理（提醒、分配、审批）。适用于超时关注、待审批、待分配等需要批量操作的列表。</p>
+  </header>
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>页面骨架</h2><p>自上而下的区域顺序；组件内部规格以各组件规范为准。</p></div></header>
+      <div class="anatomy">
+        <div class="panel"><span class="docs-stage-label">超时关注 · 375 × 760</span><div id="anatomy"></div></div>
+        <ol class="regions"><li><span class="n">1</span><div><b>顶部导航 Navbar</b>标题写待办集合名；与状态页签一起吸顶。</div></li><li><span class="n">2</span><div><b>状态页签 + 排序</b>按钮式页签切换处理状态（全部 / 待提醒 / 已提醒），右侧排序图标（热区 44）切换升降序。</div></li><li><span class="n">3</span><div><b>列表概要</b>“共 N 项 · 排序方式”，12/18 三级文字。</div></li><li><span class="n">4</span><div><b>条目卡片 Card + Checkbox</b>左侧多选框，右侧：类型标签 + 对象名 + 状态标签；描述最多两行；元信息写负责人与超时天数（红字）。已处理项多选框禁用，状态标签说明原因。</div></li><li><span class="n">5</span><div><b>批量底栏</b>左侧“全选”（部分选中为半选）+ 已选数量，右侧主操作带数量；未选时禁用。全部处理完后底栏隐藏。</div></li></ol>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>首次加载用卡片骨架屏；当前页签没有条目时用空状态并说明原因。</p></div></header>
+      <div class="grid3"><div class="panel"><span class="docs-stage-label">首次加载</span><div id="s0"></div></div><div class="panel"><span class="docs-stage-label">部分选中 · 半选</span><div id="s1"></div></div><div class="panel"><span class="docs-stage-label">已提醒页签 · 无可选项</span><div id="s2"></div></div><div class="panel"><span class="docs-stage-label">待提醒页签 · 全部完成</span><div id="s3"></div></div></div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>勾选条目或全选，点“一键提醒”后条目变为已提醒并从可选范围移除；切换页签与排序。</p></div></header>
+      <div class="playground">
+        <div class="panel"><span class="docs-stage-label">H5 · 375 × 640 · 在预览内操作</span><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields"><div class="field"><label for="c0">页面状态</label><select id="c0" data-k="state"><option value='"normal"' selected>正常</option><option value='"loading"'>首次加载</option><option value='"network"'>网络异常</option></select></div>
+          <p class="feedback field-full">示例数据为虚构；跳转类操作只给轻提示。切换控件会重置预览。</p>
+        </div></aside>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用规则</h2><p>模式由已确认的组件规则组合；页面级取值按语义间距。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:46%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody><tr><td>选择</td><td>整张卡片点击进入详情，多选框单独热区 44；已处理项禁用不参与全选。</td><td>不在列表里用尾部勾选或圆形勾选代替多选框。</td></tr><tr><td>全选</td><td>只作用于当前页签下的可选项；部分选中显示半选，点击后切换为全选。</td><td>切换页签或排序后清空选择，避免误操作不可见的条目。</td></tr><tr><td>批量操作</td><td>主按钮写动词并带数量（一键提醒（3））；未选时禁用。执行后 Toast 反馈结果数量，列表即时更新。</td><td>不可逆或影响他人的批量操作（如批量驳回）先确认。</td></tr><tr><td>条目信息</td><td>类型标签在前、状态标签在右；超时等风险信息用红色文字。</td><td>同一列表同一含义用同一标签颜色；标签只做展示不可点。</td></tr></tbody></table></div>
+      <p class="source">结构参考：零售银行渠道经营工作台「07-3 超时关注」「07-1 上报需求」，组件已替换为当前组件库。</p>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const P=window.GJBatch;const BG='var(--ds-background-background)';
+  const mk=(id,o,h)=>GJPhone.mount(document.getElementById(id),{html:P.page(o),css:P.CSS,width:375,widths:[],height:h,fit:true,background:BG});
+  mk('anatomy',{},760);
+  [[{"state": "loading"}, 560], [{"sel": {"b": true, "c": true}}, 560], [{"f": 2}, 560], [{"f": 1, "done": {"a": true, "b": true, "c": true, "f": true}}, 560]].forEach(([o,h],i)=>{const el=document.getElementById('s'+i);el.addEventListener('phone:ready',({detail:{doc}})=>{P.wire(doc,Object.assign({},o),()=>{});if(o._y)doc.defaultView.scrollTo(0,o._y)},{once:true});mk('s'+i,o,h)});
+  const host=document.getElementById('lab'),sels=[...document.querySelectorAll('.controls select')];let stage,st,keepY=null;
+  function reset(){st={};sels.forEach(s=>Object.assign(st,{[s.dataset.k]:JSON.parse(s.value)}));keepY=null;render()}
+  function render(){const html=P.page(st);if(stage)stage.setHTML(html);else stage=GJPhone.mount(host,{html,css:P.CSS,width:375,widths:[],height:640,fit:true,background:BG})}
+  host.addEventListener('phone:ready',({detail:{doc}})=>{const W=doc.defaultView;if(keepY!=null){W.scrollTo(0,keepY);keepY=null}
+    P.wire(doc,st,patch=>{keepY=W.scrollY;Object.assign(st,patch);render()})});
+  sels.forEach(s=>s.addEventListener('change',reset));reset();
+})();
+</script>
+</body>
+</html>

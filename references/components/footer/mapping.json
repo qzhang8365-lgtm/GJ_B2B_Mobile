@@ -1,0 +1,49 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "footer",
+  "figmaComponent": "Footer（138:1363）",
+  "prototypeClass": "gj-m-footer",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "base": "gj-m-footer",
+    "Class=content": "gj-m-footer > 文字",
+    "Class=links": "gj-m-footer > a.gj-m-footer-link",
+    "Class=chips-link": "gj-m-footer > .gj-m-footer-links > a.gj-m-footer-link × n",
+    "Class=label": "gj-m-footer gj-m-footer-end > .gj-m-footer-end-text"
+  },
+  "valueMap": {
+    "layout": "{\"width\": \"撑满容器\", \"paddingX\": \"16（页面边距）\", \"align\": \"水平居中\", \"gap\": 8, \"background\": null}",
+    "classes": "{\"content\": {\"name\": \"带内容的页脚 · 版权等信息\", \"paddingY\": 8, \"height\": 36, \"text\": \"P4_CN-R 13/20 Text/Tiatery\"}, \"links\": {\"name\": \"带链接的页脚 · 单个链接\", \"paddingY\": 8, \"height\": 36, \"text\": \"P4_CN-R 13/20 Text/blue\"}, \"chips-link\": {\"name\": \"带链接的页脚 · 多个链接\", \"paddingY\": 8, \"height\": 34, \"text\": \"P5_CN-R 12/18 Button/Primary/Bg-default（本地 Text_Button Small · Style=blue）\", \"separator\": \"本地 Divider vertical 1×16…（完整见 schema.json）",
+    "interaction": "{\"link\": \"点击跳转；无按下态（设计方 2026-10-09 确认）；热区 ≥ 44×44\"}",
+    "note": "单个链接 13/20 与多个链接 12/18 字号不同，为设计方确认（2026-10-09）"
+  },
+  "tokenMap": {
+    "Text/Tiatery (local)": "--ds-text-tiatery",
+    "Text/blue (local)": "--ds-text-blue",
+    "Border/default (local)": "--ds-border-default",
+    "P3_CN-R / P4_CN-R (local)": "--ds-type-p3-cn-r-* / --ds-type-p4-cn-r-*",
+    "label 分隔线：本地 Divider 423:3707": "伪元素 1px --ds-border-default（视觉等同）",
+    "chips-link 链接：本地 Text_Button Small · blue": "不复用 .gj-m-text-button（页脚链接无按下态），颜色与字号视觉一致（#2B73FF，12/18）",
+    "chips-link 竖线：本地 Divider vertical": "伪元素 1×16 --ds-border-default，垂直居中"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-footer",
+    "link": ".gj-m-footer-link",
+    "links": ".gj-m-footer-links",
+    "end": ".gj-m-footer-end"
+  },
+  "markup": {
+    "content": "<div class=\"gj-m-footer\">© 2004-2026 Sinolink All rights reserved</div>",
+    "link": "<div class=\"gj-m-footer\"><a class=\"gj-m-footer-link\" href=\"javascript:void 0\">联系客服</a></div>",
+    "chipsLink": "<div class=\"gj-m-footer\"><span class=\"gj-m-footer-links\"><a class=\"gj-m-footer-link\" href=\"javascript:void 0\">用户协议</a><a class=\"gj-m-footer-link\" href=\"javascript:void 0\">隐私政策</a></span></div>",
+    "end": "<div class=\"gj-m-footer gj-m-footer-end\"><span class=\"gj-m-footer-end-text\">没有更多了</span></div>"
+  },
+  "accessibility": {
+    "links": "链接文字说明去向"
+  },
+  "composition": {
+    "end": "列表到底用“没有更多了”（label 页脚）"
+  },
+  "pageRules": {},
+  "pending": {}
+}

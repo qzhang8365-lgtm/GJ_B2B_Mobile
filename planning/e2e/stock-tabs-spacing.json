@@ -1,0 +1,65 @@
+[
+  {
+    "width": 375,
+    "normal": {
+      "kind": "secondary",
+      "top": 292,
+      "height": 46,
+      "textTop": 16,
+      "textLeft": 16,
+      "rightPadding": "16px",
+      "indicatorToContent": 16
+    },
+    "sticky": {
+      "kind": "secondary",
+      "top": 0,
+      "height": 46,
+      "textTop": 16,
+      "textLeft": 16,
+      "rightPadding": "16px",
+      "indicatorToContent": -342
+    }
+  },
+  {
+    "width": 320,
+    "normal": {
+      "kind": "secondary",
+      "top": 312.21875,
+      "height": 39.234375,
+      "textTop": 13.640625,
+      "textLeft": 13.640625,
+      "rightPadding": "13.6533px",
+      "indicatorToContent": 13.640625
+    },
+    "sticky": {
+      "kind": "secondary",
+      "top": 0,
+      "height": 39.234375,
+      "textTop": 13.640625,
+      "textLeft": 13.640625,
+      "rightPadding": "13.6533px",
+      "indicatorToContent": -324.140625
+    }
+  },
+  {
+    "width": 768,
+    "normal": {
+      "kind": "secondary",
+      "top": 349.890625,
+      "height": 55.1875,
+      "textTop": 19.1875,
+      "textLeft": 19.1875,
+      "rightPadding": "19.2px",
+      "indicatorToContent": 19.1875
+    },
+    "sticky": {
+      "kind": "secondary",
+      "top": 0,
+      "height": 55.1875,
+      "textTop": 19.1875,
+      "textLeft": 19.1875,
+      "rightPadding": "19.2px",
+      "indicatorToContent": -280.921875
+    }
+  }
+]

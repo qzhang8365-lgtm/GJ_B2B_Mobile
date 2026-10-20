@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>使用指南 · 国金移动端设计规范</title>
+<link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../start.css?v=20261019-start5">
+<link rel="stylesheet" href="guide.css?v=20261020-g7">
+<script src="../phone-stage.js?v=20261020-src1"></script></head>
+<body>
+<main class="start">
+  <header class="hero">
+    <div class="eyebrow">GUIDE · GJ B2B MOBILE DESIGN SKILL</div>
+    <h1>Skill 使用指南</h1>
+    <p class="lead">让 AI 依据同一套移动端规则生成、修改和检查页面。产品、交互、UI、前端共用这一份：先找到自己的角色入口，再按任务复制 Prompt。</p>
+    <div class="quick">
+      <div class="quick-text"><span class="eyebrow">先读入口</span><pre id="entryText">先读取「[移动端 Skill 目录]/SKILL.md」，按需读取其中引用的移动端规则，再处理下面的任务。</pre></div>
+      <button type="button" class="action primary" data-copy-target="entryText">复制</button>
+    </div>
+    <nav class="jump" aria-label="本页目录"><a href="#roles">按角色使用</a><a href="#workflow">使用流程</a><a href="#issues">审查重点</a><a href="#prompts">按任务 Prompt</a><a href="#check">交付验收</a><a href="#archive">Figma 留档</a><a href="#refs">资料索引</a></nav>
+  </header>
+
+  <section class="section" id="roles">
+    <div class="sec-head">
+      <div><div class="eyebrow">01 · ROLES</div><h2>按角色使用</h2></div>
+      <p class="desc">同一套规则，不同角色关注的环节不同。选择角色查看场景、重点和推荐 Prompt。</p>
+    </div>
+    <div class="rtabs" data-tabs>
+      <div class="rtab-list" role="tablist" aria-label="角色"><button type="button" role="tab" id="r1t" aria-controls="r1" aria-selected="true"><span class="ic" style="--i:url('../../assets/icons/iconfont/icf_user_idcard-fill.svg')" aria-hidden="true"></span><span><b>产品经理</b><span>提需求、确认业务信息</span></span></button><button type="button" role="tab" id="r2t" aria-controls="r2" aria-selected="false" tabindex="-1"><span class="ic" style="--i:url('../../assets/icons/iconfont/icf_system_grid-fill.svg')" aria-hidden="true"></span><span><b>流程与交互设计</b><span>多页面流程、导航与状态</span></span></button><button type="button" role="tab" id="r3t" aria-controls="r3" aria-selected="false" tabindex="-1"><span class="ic" style="--i:url('../../assets/icons/iconfont/icf_system_edit-fill.svg')" aria-hidden="true"></span><span><b>UI 设计师</b><span>参考稿重做、视觉审查</span></span></button><button type="button" role="tab" id="r4t" aria-controls="r4" aria-selected="false" tabindex="-1"><span class="ic" style="--i:url('../../assets/icons/iconfont/icf_file_file-code-fill.svg')" aria-hidden="true"></span><span><b>前端开发</b><span>落地开发、维护基座</span></span></button></div>
+      <div class="rtab-panels"><div class="role-panel" role="tabpanel" id="r1" aria-labelledby="r1t"><div class="role-cols"><div><h3>常见场景</h3><ul><li>把需求交给 AI 出第一版原型</li><li>评审原型时核对字段、流程与业务口径</li><li>回复 AI 标出的待确认项</li></ul></div><div><h3>重点关注</h3><ul><li>写清<b>运行容器</b>（小程序原生 / H5 / web-view）、使用角色、核心任务和交付形式</li><li>给<b>真实字段与数据范围</b>：最长名称、最大金额、空数据、异常状态，便于验证换行和屏效</li><li>有参考稿就附上，并说明哪些区域必须保留；AI 不会自行增补原稿没有的内容</li><li>待确认项是需求缺口，逐条答复，不让 AI 自己编；说明页面是一级页还是二级页、从哪里进入</li><li>原型确认后用 Figma 插件<a href="#archive">存进设计稿</a>，作为需求迭代记录</li></ul></div></div><div class="role-prompt"><span class="eyebrow">推荐 Prompt</span><p class="prompt-text">先读取「[Skill目录]/SKILL.md」，为内部员工生成「[页面名称]」移动端原型。
+运行容器：[小程序原生 / H5 / web-view]
+使用角色：[角色]　入口：[从哪个页面进入，一级页 / 二级页]
+核心任务：[用户在这页要完成什么]
+字段与数据：[字段清单；最长名称、最大金额、空数据、异常情况]
+参考稿：[有 / 无；必须保留的区域]
+不清楚的业务信息不要自行补充，列为待确认，在交付报告里汇总。</p></div></div><div class="role-panel" role="tabpanel" id="r2" aria-labelledby="r2t" hidden><div class="role-cols"><div><h3>常见场景</h3><ul><li>设计一条完整流程：列表 → 详情 → 操作 → 结果</li><li>规划一级页、二级页与底部导航、返回路径</li><li>补齐加载、空、失败、校验、二次确认等状态</li></ul></div><div><h3>重点关注</h3><ul><li>每一页先匹配页面模式（<code>page-pattern-metadata.json</code>）；没有匹配的，按 page-rules 组合并在报告中说明</li><li>页签按位置定级：一页只有一组主级，第二张及以后的卡片用次级</li><li>浮层先定类型：少量确认用居中弹窗，表单与选择用底部弹层；关闭后焦点回到触发处</li><li>交互要真的点一遍：端到端出现过事件重复绑定、点一次触发两次</li></ul></div></div><div class="role-prompt"><span class="eyebrow">推荐 Prompt</span><p class="prompt-text">先读取「[Skill目录]/SKILL.md」，为「[流程名称]」生成一组可点击的移动端原型，运行在[容器]。
+页面与跳转：[页面A] → [页面B] → [页面C]，底部导航：[有 / 无，项目顺序]。
+每页先按 references/patterns/page-pattern-metadata.json 匹配模式，没有匹配的按 references/page-rules.md 组合并说明理由。
+覆盖状态：加载、空、失败重试、表单校验、提交确认与结果反馈；浮层关闭后焦点回到触发处。
+交付时列出每页的模式、跳转关系和实际触发过的交互，未覆盖的状态单独列出。</p></div></div><div class="role-panel" role="tabpanel" id="r3" aria-labelledby="r3t" hidden><div class="role-cols"><div><h3>常见场景</h3><ul><li>按参考稿、截图或旧项目用规范组件重做</li><li>审查生成页面的间距、层级、选档与细节</li><li>把审查意见沉淀成规则，避免下次再犯</li></ul></div><div><h3>重点关注</h3><ul><li>参考稿先让 AI 列<b>区域树与边界清单</b>（分割线、背景切换、留白），确认后再选组件</li><li>审查重点看<a href="#issues">审查重点</a>：留白叠加、承载层级、标签与按钮选档、标题换行、左右等行</li><li>提意见后先让 AI 查有没有对应规则：已有规则只改页面；没有才新增 PR 编号</li><li>规范站的组件展示直接取自基座，和 skill 生成的效果一致，可以作为审查依据</li><li>定稿后用 Figma 插件把原型<a href="#archive">抓取进设计稿</a>留档，再做细节调整</li></ul></div></div><div class="role-prompt"><span class="eyebrow">推荐 Prompt</span><p class="prompt-text">刚才对「[页面]」的修改意见是：[意见]。
+1. 先查 references/page-rules.md 与相关组件 rules.md，判断是否已有规则覆盖：已覆盖的只按规则修改页面，并指出原来哪里没执行到。
+2. 没有覆盖、且适用于同类场景时，再新增 PR 编号（写明场景、做法、原因、避免、来源），涉及组件的同步更新 rules.md、mapping.json 与基座。
+3. 只针对这一页的意见，只改页面，不写规则。
+改完后列出改动和对应依据。</p></div></div><div class="role-panel" role="tabpanel" id="r4" aria-labelledby="r4t" hidden><div class="role-cols"><div><h3>常见场景</h3><ul><li>把原型转成生产代码</li><li>对照原型核对尺寸、Token 与状态</li><li>维护 skill 的基座、模板与检查脚本</li></ul></div><div><h3>重点关注</h3><ul><li>原型基座（gj-m-*）是结构与视觉参考，不是生产组件库 API；按 <code>mapping.json</code> 的结构、Token 名和尺寸对齐自己的组件</li><li>尺寸按 375 设计、1rem = 100px；H5 / web-view 自绘导航并加 <code>maximum-scale=1</code>，小程序原生由容器提供导航与输入</li><li>弹窗外层固定定位、打开时锁定背景滚动、关闭后焦点返回；金融数字用等宽数字，刷新不跳动</li><li>改模板跑 <code>build-markup.cjs</code>，改基座跑 <code>build-docs-controls.py</code> 与 <code>build-preview-data.py</code>，提交前跑两个 check 脚本</li></ul></div></div><div class="role-prompt"><span class="eyebrow">推荐 Prompt</span><p class="prompt-text">读取「[Skill目录]/SKILL.md」与「[原型文件]」，整理一份开发交接说明，目标技术栈是[框架 / 小程序]。
+逐个列出页面用到的组件：对应的 mapping 模板、变体与尺寸、关键 Token、状态与交互边界。
+标出原型里的演示逻辑（模拟数据、模拟请求）与需要真实实现的部分；容器差异、安全区、键盘遮挡、弹层滚动锁定单独列出。
+不改原型，不确定的写成待确认。</p></div></div><button type="button" class="action primary" data-copy-prompt><span class="ic sm" style="--i:url('../../assets/icons/iconfont/icf_file_documents-line.svg')" aria-hidden="true"></span>复制当前 Prompt</button></div>
+    </div>
+  </section>
+
+  <section class="section" id="workflow">
+    <div class="sec-head">
+      <div><div class="eyebrow">02 · WORKFLOW</div><h2>一次完整的使用流程</h2></div>
+      <p class="desc">先确认任务与依据，再组合页面，最后在浏览器里实测；审查意见先对照已有规则，缺的再回写。</p>
+    </div>
+    <ol class="flow">
+      <li><span class="flow-n">1</span><h3>说明任务</h3><p>运行容器（小程序原生 / H5 / web-view）、角色、核心任务、业务数据和交付形式；有参考稿先列区域树。</p></li>
+      <li><span class="flow-n">2</span><h3>选结构</h3><p>按 <code>page-pattern-metadata.json</code> 匹配页面模式；没有匹配的按 <code>page-rules.md</code> 组合并说明。</p></li>
+      <li><span class="flow-n">3</span><h3>查组件与资源</h3><p>从 <code>inventory.json</code> 定位组件，读 <code>mapping.json</code> 取写法；图标查 <code>icons/index.json</code>。</p></li>
+      <li><span class="flow-n">4</span><h3>生成原型</h3><p>复用 gj-m-* 基座与语义 Token，按 H5 规则处理 rem、边距、控件与安全区。</p></li>
+      <li><span class="flow-n">5</span><h3>实测与回写</h3><p>运行 <code>verify-page.cjs</code>，逐个触发交互并人工核对；规则未覆盖的意见沉淀为 PR。</p></li>
+    </ol>
+    <div class="parts">
+      <div><b>设计依据</b><span><code>SKILL.md</code> + <code>references/</code>，给 AI 读</span></div>
+      <div><b>原型基座</b><span><code>assets/</code> 中的 gj-m-* 样式、图标与插图</span></div>
+      <div><b>预览与示例</b><span><code>preview/</code> 规范站；<code>planning/e2e/</code> 示例页在仓库与规范网站上（不在 Skill 包内）</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="issues">
+    <div class="sec-head">
+      <div><div class="eyebrow">03 · REVIEW FOCUS</div><h2>审查时重点看</h2></div>
+      <p class="desc">端到端验证中出现最多的几类问题，具体做法已沉淀在规则里，AI 生成和检查时自动执行。</p>
+    </div>
+    <div class="focus"><span>页签级别与位置</span><span>留白重复叠加</span><span>卡片承载层级</span><span>标题与标签换行</span><span>标签、按钮选档</span><span>参考稿结构还原</span></div>
+  </section>
+
+  <section class="section" id="prompts">
+    <div class="sec-head">
+      <div><div class="eyebrow">04 · PROMPTS</div><h2>按任务选择 Prompt</h2></div>
+      <p class="desc">按任务选择，复制后替换方括号中的目录、页面和业务信息。</p>
+    </div>
+    <div class="ptabs" data-tabs>
+      <div class="ptab-list" role="tablist" aria-label="Prompt 类型">
+        <button type="button" role="tab" id="t1" aria-controls="p1" aria-selected="true"><b>生成新页面</b><span>先选结构，再组合组件</span></button>
+        <button type="button" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"><b>按参考稿重做</b><span>先列区域树，不自行增补</span></button>
+        <button type="button" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1"><b>检查已有页面</b><span>先列问题与依据</span></button>
+        <button type="button" role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1"><b>沉淀审查意见</b><span>先查已有规则，再决定</span></button>
+        <button type="button" role="tab" id="t5" aria-controls="p5" aria-selected="false" tabindex="-1"><b>组件选型</b><span>查询规则后给出建议</span></button>
+        <button type="button" role="tab" id="t6" aria-controls="p6" aria-selected="false" tabindex="-1"><b>生成后验证</b><span>要求浏览器真实实测</span></button>
+        <button type="button" role="tab" id="t7" aria-controls="p7" aria-selected="false" tabindex="-1"><b>没有匹配的模式或组件</b><span>组合已有能力，缺口标待确认</span></button>
+      </div>
+      <div class="ptab-panels">
+        <div class="ptab-panel" role="tabpanel" id="p1" aria-labelledby="t1"><p class="prompt-text">先读取「[Skill目录]/SKILL.md」，为内部员工生成「[页面名称]」移动端原型，运行在[小程序原生 / H5 / web-view]。角色是[角色]，核心任务是[任务]，业务数据是[数据]。先查 references/page-rules.md 与 references/patterns/index.json，再查组件规则、Token 与图标。以 375 逻辑宽度设计，兼顾 320；复用 gj-m-* 基座。不清楚的业务信息标记待确认。</p></div>
+        <div class="ptab-panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden><p class="prompt-text">读取移动端 Skill。参考附图「[项目名]」，用 Skill 的组件库重新制作这些页面：[页面与底部导航说明]。
+1. 先逐页列出区域树：区域顺序、字段、操作入口、分割边界（分割线 / 背景切换 / 留白）及范围，把原图已知内容和推导内容分开，发给我确认。
+2. 确认后再选组件，按 references/page-rules.md 的 PR-033 / PR-034 还原结构，不增加原图没有的头像、字段、指标或入口。
+3. 组件、尺寸、间距按 Skill 规则调整；与原稿不同的地方列出改动和理由，缺少的组件或信息列为待确认。</p></div>
+        <div class="ptab-panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden><p class="prompt-text">对照移动端 Skill 的 SKILL.md、references/page-rules.md 以及相关组件 rules.md，检查「[文件路径]」。核对组件选型、字号行高、边距、控件尺寸、卡片层级、底部安全区、长文案、滚动和遮挡。先列出问题、依据和影响，不直接修改。</p></div>
+        <div class="ptab-panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden><p class="prompt-text">刚才对「[页面]」的修改意见是：[意见]。先查 references/page-rules.md 与相关组件 rules.md：已有规则覆盖的，只按规则修改页面，并说明原来哪里没执行到；没有覆盖、且适用于同类场景的，修改页面后新增 PR 编号（写明场景、做法、原因、避免与来源），涉及组件的同步更新组件 rules.md、mapping.json 与基座；只针对这一页的意见不写规则。</p></div>
+        <div class="ptab-panel" role="tabpanel" id="p5" aria-labelledby="t5" hidden><p class="prompt-text">读取移动端 Skill，判断「[业务场景]」适合哪些组件。从 references/components/inventory.json 查询，说明变体、尺寸、状态、图标、关键 Token 和交互边界；需要组合页面时查 references/patterns/。先不要写代码。</p></div>
+        <div class="ptab-panel" role="tabpanel" id="p6" aria-labelledby="t6" hidden><p class="prompt-text">运行「[页面路径]」，按移动端 Skill 的生成后自检，实测 375、320、768 逻辑宽度以及[目标设备宽度]。检查溢出、遮挡、热区、安全区、长文案、金融数字与加载 / 空 / 错误状态，触发页面实际支持的交互。汇报实测结果和未验证项。</p></div>
+        <div class="ptab-panel" role="tabpanel" id="p7" aria-labelledby="t7" hidden><p class="prompt-text">读取移动端 Skill，为「[页面 / 功能]」生成原型。先查 references/patterns/page-pattern-metadata.json 与 references/components/inventory.json：
+· 没有匹配的页面模式时，按 references/page-rules.md 用已有组件组合，并说明参考了哪些模式和规则；
+· 没有对应组件时，不自造外观，用最接近的已登记组件表达并标为待确认，在交付报告中写明缺什么、建议补什么。</p></div>
+        <button type="button" class="action primary" data-copy-prompt><span class="ic sm" style="--i:url('../../assets/icons/iconfont/icf_file_documents-line.svg')" aria-hidden="true"></span>复制当前 Prompt</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="check">
+    <div class="sec-head">
+      <div><div class="eyebrow">05 · CHECK</div><h2>交付前验收</h2></div>
+      <p class="desc">自动检查通过不等于设计审查通过；以页面实际支持的状态和交互为准，未覆盖的明确列出。</p>
+    </div>
+    <ul class="checklist">
+      <li><h3>符合页面生成规则</h3><p>让 AI 逐条对照 page-rules.md 自检，人工重点看上方几类高频问题。</p></li>
+      <li><h3>参考稿结构还原</h3><p>有参考稿时逐项核对区域数量与顺序、字段、操作入口、分割边界及范围；没有自行增补的内容。</p></li>
+      <li><h3>组件与资源可追溯</h3><p>组件来自已登记基座，图标来自 manifest，颜色用语义 Token；毛玻璃用已渲染 PNG。</p></li>
+      <li><h3>尺寸与适配准确</h3><p>按 H5 规则换算 rem；页边距与组件内边距分开处理；热区不小于 44，安全区与细线按文档执行。</p></li>
+      <li><h3>容器与导航正确</h3><p>小程序原生页面不自绘导航；H5 / web-view 自绘导航并加 maximum-scale=1；首页最左、个人入口最右。</p></li>
+      <li><h3>状态和交互可用</h3><p>实际触发选择、输入、展开、浮层与关闭，确认一次点击只响应一次；覆盖加载、空、失败和重试；弹层关闭后焦点回到触发处。</p></li>
+      <li><h3>长文案与数字可读</h3><p>用长标题、多行错误、较大金额核对截断和换行；金融数值用等宽数字，刷新不跳动。</p></li>
+      <li><h3>屏效合理</h3><p>顶部筛选区不过高，提示默认一行；首屏能看到主要内容；固定底栏和键盘不遮挡主要操作。</p></li>
+      <li><h3>报告与运行结果一致</h3><p>写明实测的宽度、操作步骤和结果；未验证项单独列出，不写成已通过。</p></li>
+    </ul>
+  </section>
+
+  <section class="section" id="archive">
+    <div class="sec-head">
+      <div><div class="eyebrow">06 · ARCHIVE</div><h2>原型存进 Figma 留档</h2></div>
+      <p class="desc">每版原型确认后存一份到 Figma 设计稿，方便设计留档和需求迭代对比。</p>
+    </div>
+    <div class="archive">
+      <div class="archive-intro">
+        <span class="ic" style="--i:url('../../assets/icons/iconfont/icf_file_download2-fill.svg')" aria-hidden="true"></span>
+        <div><h3>安装 Figma 官方 Chrome 插件</h3><p>Figma 官方出品，可以把浏览器里打开的页面直接抓取成 Figma 图层。推荐产品经理、设计师都装上。</p></div>
+        <a class="action primary" href="https://chromewebstore.google.com/detail/figma/fkmaohpngenfoccdgceedjkfhkdcohmg" target="_blank" rel="noopener">去 Chrome 应用商店安装</a>
+      </div>
+      <ol class="flow flow-3">
+        <li><span class="flow-n">1</span><h3>打开原型页面</h3><p>在 Chrome 中直接打开生成的 html 原型（不要用规范站里的预览框），切到需要留档的状态。</p></li>
+        <li><span class="flow-n">2</span><h3>用插件抓取</h3><p>点击插件选择 Capture design，抓取整页或选中部分区域，得到可编辑的设计图层。</p></li>
+        <li><span class="flow-n">3</span><h3>粘贴到设计稿</h3><p>在 Figma 中打开对应文件直接粘贴；画板按「页面名 · 版本 / 日期」命名，按迭代顺序排列。</p></li>
+      </ol>
+    </div>
+    <p class="note">Capture code（抓取为可交互的代码图层）目前是测试功能，需要 Figma Pro 及以上套餐；留档用 Capture design 即可。</p>
+  </section>
+
+  <section class="section" id="refs">
+    <div class="sec-head">
+      <div><div class="eyebrow">07 · REFERENCES</div><h2>需要时再读取这些资料</h2></div>
+      <p class="desc">从 SKILL.md 按任务定位，不一次性加载全部资料。</p>
+    </div>
+    <div class="ref-table"><table>
+      <thead><tr><th>文件</th><th>用途</th></tr></thead>
+      <tbody>
+        <tr><td><code>SKILL.md</code></td><td>入口、读取顺序与生成后自检</td></tr>
+        <tr><td><code>references/quick-reference.md</code></td><td>生成速查：换算、间距、控件高度、圆角、字号下限、固定栏与容器（先读这页）</td></tr>
+        <tr><td><code>references/library-index.json</code></td><td>全部资料的用途分类与读取顺序</td></tr>
+        <tr><td><code>references/page-rules.md</code></td><td>页面生成规则（PR-xxx），选组件和定尺寸前先查</td></tr>
+        <tr><td><code>references/patterns/page-pattern-metadata.json</code></td><td>7 种页面模式的匹配关键词、骨架、必需组件与状态，按 id 读对应 .md</td></tr>
+        <tr><td><code>references/components/inventory.json</code></td><td>组件索引：按 scenes 关键词与 notFor 定位组件，pageRules 为相关规则；每个组件目录下有 mapping / rules / schema / audit</td></tr>
+        <tr><td><code>references/components/MAPPING.md</code></td><td>mapping.json 字段说明与页面基础写法；生成时先读组件 mapping 的 markup</td></tr>
+        <tr><td><code>references/generation-verification.md</code></td><td>生成后验收：自动检查判定、交互实测、人工核对、交付报告模板</td></tr>
+        <tr><td><code>references/h5-sizing-and-adaptation.md</code></td><td>H5 尺寸、rem 换算、语义间距与栅格</td></tr>
+        <tr><td><code>references/h5-control-sizing.md</code></td><td>控件高度选档</td></tr>
+        <tr><td><code>references/h5-radius-and-containers.md</code></td><td>卡片层级与圆角</td></tr>
+        <tr><td><code>references/h5-small-screen.md</code></td><td>320–359 宽度兜底</td></tr>
+        <tr><td><code>references/icons/index.json</code></td><td>图标类型与 manifest 入口</td></tr>
+        <tr><td><code>references/tokens/token-contract.md</code></td><td>Token 调用约定</td></tr>
+        <tr><td><code>planning/e2e/</code></td><td>端到端生成示例与发现的缺口记录（仓库与规范网站上，不在 Skill 包内）</td></tr>
+      </tbody>
+    </table></div>
+    <div class="maint">
+      <div><b>生成页面验收</b><code>verify-page.cjs &lt;页面&gt;</code></div>
+      <div><b>改组件模板后</b><code>build-markup.cjs</code> + <code>check-mapping.cjs</code></div>
+      <div><b>改基座样式后</b><code>build-docs-controls.py</code> + <code>build-preview-data.py</code></div>
+      <div><b>改预览页后</b><code>check-preview-source.cjs</code></div>
+      <div><b>改 Token 源数据后</b><code>build-tokens.py</code> + <code>validate-tokens.py</code></div>
+      <div><b>改组件审计后</b><code>sync-inventory.py</code></div>
+      <div><b>发布新版本</b><code>build-release.py &lt;版本&gt;</code></div>
+      <div><b>改完记得</b>更新引用处的 <code>?v=</code> 版本号</div>
+    </div>
+    <p class="note">脚本都在 <code>scripts/</code> 下；构建校验通过不等于页面验收，页面以浏览器实测和设计审查为准。</p>
+  </section>
+</main>
+<div class="feedback" role="status" aria-live="polite"></div>
+<script src="guide.js?v=20261020-g4"></script>
+</body>
+</html>

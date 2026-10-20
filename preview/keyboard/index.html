@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 键盘 Keyboard</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-background);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>键盘 Keyboard</h1>
+    <p>系统键盘由操作系统绘制，H5 页面不实现键盘本身。此组件只用于原型与评审稿，展示输入框聚焦后“键盘弹起”时页面的遮挡与滚动关系。</p>
+  </header>
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>键盘示意</h2><p>iOS 拼音全键盘，375 × 327（含候选栏与底部 Home 指示区）。随屏宽等比缩放。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">IOS_拼音-全键盘 · 375 × 327</span><div id="kb"></div></div>
+        <div class="panel"><span class="docs-stage-label">表单 · 键盘弹起</span><div id="form"></div></div>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用规则</h2><p>键盘示意只出现在原型里；交付 H5 时按下述行为实现与验收。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:46%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>何时展示</td><td>原型需要说明输入过程时，在聚焦状态的页面底部叠加键盘示意。</td><td>不在 H5 交付物里绘制假键盘；不用图片模拟可点击键位。</td></tr>
+        <tr><td>可见性</td><td>当前聚焦的输入框及其错误提示滚动到键盘上方，至少留 16。</td><td>聚焦字段被键盘遮挡。</td></tr>
+        <tr><td>固定底栏</td><td>键盘弹起时，固定底栏被键盘遮盖，不跟随上移；业务稿另有要求时按业务稿。</td><td>底栏浮在键盘上方挡住正在输入的字段。</td></tr>
+        <tr><td>输入类型</td><td>数字、金额、手机号用对应的 inputmode 唤起数字键盘；搜索用 enterkeyhint="search"。</td><td>全部使用默认全键盘。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  GJPhone.mount(document.getElementById('kb'),{html:'<div class="gj-m-keyboard-mock" style="position:static"></div>',css:'html,body{background:var(--ds-background-background)}',width:375,widths:[],height:'auto',fit:true});
+  const field=(t,v,f)=>`<div class="gj-m-form-item"><span class="gj-m-form-label"><span class="gj-m-form-label-text">${t}</span></span><label class="gj-m-input${f?' is-focused':''}"><input value="${v}" aria-label="${t}"></label></div>`;
+  const html=`<div class="kbp gj-m-keyboard-open"><header class="gj-m-navbar"><div class="gj-m-navbar-left"></div><div class="gj-m-navbar-center"><span class="gj-m-navbar-title">新建客户</span></div><div class="gj-m-navbar-right"></div></header><div class="gj-m-form-card" style="margin:.12rem .16rem;border-radius:var(--Radius-LG)"><h2 class="gj-m-form-card-title">基本信息</h2>${field('客户名称','上海国泰投资')}${field('联系人','张一鸣')}${field('联系电话','1730128',1)}${field('邮箱','')}</div><div class="gj-m-form-card" style="margin:.12rem .16rem;border-radius:var(--Radius-LG)"><h2 class="gj-m-form-card-title">补充信息</h2>${field('所属营业部','')}${field('备注','')}</div></div><div class="gj-m-keyboard-mock"></div>`;
+  const fe=document.getElementById('form');fe.addEventListener('phone:ready',({detail:{doc}})=>{const W=doc.defaultView;const f=doc.querySelector('.gj-m-input.is-focused');const kb=doc.querySelector('.gj-m-keyboard-mock').getBoundingClientRect().height;const r=f.getBoundingClientRect();W.scrollTo(0,W.scrollY+r.bottom+16-(W.innerHeight-kb))});
+  GJPhone.mount(document.getElementById('form'),{html,css:'html,body{background:var(--ds-background-background)}.kbp{min-height:100vh}',width:375,widths:[],height:640,fit:true});
+})();
+</script>
+</body>
+</html>

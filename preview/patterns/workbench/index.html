@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 工作台首页</title>
+  <link rel="stylesheet" href="../../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../../site.css">
+  <link rel="stylesheet" href="../../docs.css">
+  <link rel="stylesheet" href="../pattern-doc.css?v=20261016-pat2">
+  <script src="../../phone-stage.js?v=20261020-src1"></script>
+  <script src="../../../assets/scripts/gj-m-markup.js?v=20261019-tpl2"></script>
+  <script src="../../../assets/scripts/gj-m-templates.js?v=20261020-src1"></script>
+  <script src="../kit.js?v=20261020-src1"></script>
+  <script src="workbench.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">页面模式 · Patterns</div>
+    <h1>工作台首页</h1>
+    <p>一级入口页：用锚点页签串起多个业务模块卡片，汇总待办、经营指标、当日任务与常用功能。适用于员工 / 团队长工作台、业务首页。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>页面骨架</h2><p>自上而下的区域顺序；组件内部规格以各组件规范为准。</p></div></header>
+      <div class="anatomy">
+        <div class="panel"><span class="docs-stage-label">渠道经营工作台 · 375 × 760</span><div id="anatomy"></div></div>
+        <ol class="regions">
+          <li><span class="n">1</span><div><b>顶部导航 Navbar</b>容器不提供导航时才绘制；右侧最多一个全局操作（如消息）。</div></li>
+          <li><span class="n">2</span><div><b>锚点页签 Tabs 主级</b>每个页签对应下方一个模块，点击滚动定位，滚动时自动切换当前项；模块超过 4 个时横向滚动。与导航一起吸顶。</div></li>
+          <li><span class="n">3</span><div><b>待办模块 Card</b>按钮式页签切换关注类型（页签文字可带数量）；列表条目最多 3 条，底部“查看全部 N 条”进入完整列表。</div></li>
+          <li><span class="n">4</span><div><b>指标模块 Card + Metric</b>分段控制切换统计周期；卡片内用灰色绩效卡两列排布，分组用二级标题（蓝色竖条），可接组合指标与进度条。</div></li>
+          <li><span class="n">5</span><div><b>任务模块 Card</b>主操作用通栏主按钮；当日记录用纵向时间轴，右侧“查看更多”进入记录页。</div></li>
+          <li><span class="n">6</span><div><b>功能入口 GridNav</b>4 列，每行最多 5 个；超过两行时分组或进入“全部功能”。</div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>整页首次加载用卡片骨架屏；单个模块失败只在模块内提示并可重试，不影响其他模块。</p></div></header>
+      <div class="grid3">
+        <div class="panel"><span class="docs-stage-label">首次加载 · 卡片骨架屏</span><div id="sLoading"></div></div>
+        <div class="panel"><span class="docs-stage-label">单个模块加载失败</span><div id="sModErr"></div></div>
+        <div class="panel"><span class="docs-stage-label">整页网络异常</span><div id="sError"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点击锚点页签定位模块，滚动时页签跟随；切换关注类型与统计周期。</p></div></header>
+      <div class="playground">
+        <div class="panel"><span class="docs-stage-label">H5 · 375 × 640 · 在预览内滚动</span><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pState">页面状态</label><select id="pState"><option value="normal" selected>正常</option><option value="loading">首次加载</option><option value="error">网络异常</option></select></div>
+          <label class="ck"><input type="checkbox" id="pModErr">「我的渠道」加载失败</label>
+          <label class="ck"><input type="checkbox" id="pFocusEmpty">重点关注为空</label>
+          <p id="feedback" class="feedback field-full" aria-live="polite">示例数据为虚构，点击条目与入口只给轻提示，不跳转。</p>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用规则</h2><p>模式由已确认的组件规则组合；页面级取值按语义间距。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:46%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>模块顺序</td><td>按使用频率与紧急程度：待办 → 经营指标 → 当日任务 → 功能入口。</td><td>不把功能入口放在待办之前；一屏内至少露出第一个模块的主要内容。</td></tr>
+        <tr><td>锚点页签</td><td>页签名与模块卡片标题一致；点击后滚动定位并保留在当前页，不产生新层级。</td><td>页签只做定位，不切换为另一套内容；模块少于 3 个时不放锚点页签。</td></tr>
+        <tr><td>模块卡片</td><td>一级卡片，间距 12、左右 16；卡片内分组用二级标题，组间距 16。</td><td>卡片不嵌套卡片；同一卡片内右侧操作只用一种（箭头 / 查看更多 / 标签）。</td></tr>
+        <tr><td>指标</td><td>同组单位、精度、时间口径一致；周期切换用分段控制，副标题写数据截至时间。</td><td>涨跌色只用于有方向的数据；缺失值显示“--”。</td></tr>
+        <tr><td>待办条目</td><td>标签写类型或状态，标题单行省略，描述最多两行，元信息放负责人和时间；超时用红色文字。</td><td>首页最多展示 3 条，其余进入列表页。</td></tr>
+        <tr><td>加载与失败</td><td>首次加载用卡片骨架屏；单个模块失败在模块内给“重新加载”。</td><td>不因单个模块失败把整页替换为空状态。</td></tr>
+      </tbody></table></div>
+      <p class="source">结构参考：零售银行渠道经营工作台「01 员工版首页」「06 团队版首页」，组件已替换为当前组件库。</p>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const P=window.GJWorkbench;
+  const mk=(id,o,h)=>GJPhone.mount(document.getElementById(id),{html:P.page(o),css:P.CSS,width:375,widths:[],height:h,fit:true,background:'var(--ds-background-background)'});
+  mk('anatomy',{},760);
+  mk('sLoading',{state:'loading'},560);
+  const se=document.getElementById('sModErr');se.addEventListener('phone:ready',({detail:{doc}})=>{const el=doc.getElementById('m-channel');if(el)doc.defaultView.scrollTo(0,el.offsetTop-110)},{once:true});
+  mk('sModErr',{modError:true},560);
+  mk('sError',{state:'error'},560);
+  const $=id=>document.getElementById(id),host=$('lab');let stage,st={tab:0,focus:'report',period:'week'},keepY=null;
+  function render(){st.state=$('pState').value;st.modError=$('pModErr').checked;st.focusEmpty=$('pFocusEmpty').checked;
+    const html=P.page(st);if(stage)stage.setHTML(html);else stage=GJPhone.mount(host,{html,css:P.CSS,width:375,widths:[],height:640,fit:true,background:'var(--ds-background-background)'})}
+  host.addEventListener('phone:ready',({detail:{doc}})=>{const W=doc.defaultView;
+    P.wire(doc,st,patch=>{keepY=W.scrollY;Object.assign(st,patch);if('modError' in patch)$('pModErr').checked=patch.modError;if(patch.state)$('pState').value=patch.state;render()});
+    if(keepY!=null){W.scrollTo(0,keepY);keepY=null}});
+  ['pState','pModErr','pFocusEmpty'].forEach(id=>$(id).addEventListener('change',()=>{keepY=null;render()}));
+  render();
+})();
+</script>
+</body>
+</html>

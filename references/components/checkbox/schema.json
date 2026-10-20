@@ -1,0 +1,40 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "checkbox",
+  "name": "多选框 Checkbox",
+  "category": "信息录入组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "多选框checkbox（1016:5760）",
+    "nodes": {
+      "Checkbox/Icon": "58:11096（图标，Checked × Disabled × Indeterminate，6 变体）",
+      "checkbox": "58:11128（图标 + 标签，Property 1 = Default / Variant2–7）",
+      "Checkbox/Group": "58:11264（Property 1 = 1–6，横排）",
+      "usage": "1019:77"
+    },
+    "extractedAt": "2026-10-12",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-checkbox / .gj-m-checkbox-input / .gj-m-checkbox-icon / .gj-m-checkbox-label / .gj-m-checkbox-group",
+    "note": "原型基座"
+  },
+  "icon": {
+    "size": 20,
+    "radius": "4（Radius-XS，Figma 未绑定）",
+    "unchecked": "Background/Container + 1px Border/secondary",
+    "checked": "Brand/GJ_Blue + 白勾（按 Figma 矢量复刻：折线 12.5 × 8.75，线宽 2.5，圆头圆角，Text/reversal；方框内居中）",
+    "indeterminate": "Brand/GJ_Blue + 白色横条 12.5 × 2.5",
+    "disabled": "Background/Background + 1px Border/secondary，勾 / 横条 Text/disable；标签 40%"
+  },
+  "label": {
+    "text": "P3 14/22 Text/Primary",
+    "gap": 8
+  },
+  "group": {
+    "horizontal": "间距 24，放不下换行（行距 12）"
+  },
+  "hitArea": "高度 ≥ 44，包含图标与标签"
+}

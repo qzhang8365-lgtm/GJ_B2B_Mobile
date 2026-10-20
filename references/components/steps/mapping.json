@@ -1,0 +1,115 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "steps",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "figmaComponent": "步骤条 Steps / 时间轴（58:3459）",
+  "prototypeClass": "gj-m-steps",
+  "propertyMap": {
+    "list": "ol.gj-m-steps[data-direction=horizontal|vertical]",
+    "item": "li.gj-m-step[data-state=finish|process|wait|error]",
+    "current": "当前项 aria-current=\"step\"",
+    "marker": ".gj-m-step-mark > span.gj-m-step-dot（或完成态 img.gj-m-step-check）",
+    "copy": ".gj-m-step-copy > p.gj-m-step-title + p.gj-m-step-description",
+    "time": "纵向时间轴：ol[data-time=true]，每项 time.gj-m-step-time；未发生节点 .is-placeholder（同格式隐藏占位）",
+    "height": "纵向：内容自适应，不保留58最小高度；可选描述为空不渲染，不占位；长内容自然撑高"
+  },
+  "valueMap": {
+    "dot": "8",
+    "marker": "24",
+    "line": "1",
+    "title": "H5 14/22",
+    "description": "P5 12/18",
+    "verticalMinHeight": "0（auto，内容自适应）",
+    "time": "H6 13/20，等宽数字；格式统一 MM-DD HH:mm"
+  },
+  "tokenMap": {
+    "finish": "Brand/GJ_Blue 点 + 实线",
+    "process": "Brand/GJ_Blue",
+    "wait": "Text/disable 一类灰",
+    "error": "Feedback/error&rise",
+    "title": "Text/Primary",
+    "description": "Text/Tiatery"
+  },
+  "assetMap": {
+    "check": "{ROOT}assets/images/steps/check.svg（完成态勾）"
+  },
+  "runtimeMap": {
+    "root": "ol.gj-m-steps",
+    "item": "li.gj-m-step",
+    "mark": ".gj-m-step-mark",
+    "time": ".gj-m-step-time",
+    "title": ".gj-m-step-title",
+    "description": ".gj-m-step-description"
+  },
+  "markup": {
+    "horizontal": "<ol class=\"gj-m-steps\" data-direction=\"horizontal\" aria-label=\"办理流程\"><li class=\"gj-m-step\" data-state=\"finish\"><div class=\"gj-m-step-mark\" aria-hidden=\"true\"><span class=\"gj-m-step-dot\"></span></div><div class=\"gj-m-step-copy\"><p class=\"gj-m-step-title\">提交</p></div></li><li class=\"gj-m-step\" data-state=\"process\" aria-current=\"step\"><div class=\"gj-m-step-mark\" aria-hidden=\"true\"><span class=\"gj-m-step-dot\"></span></div><div class=\"gj-m-step-copy\"><p class=\"gj-m-step-title\">审核</p></div></li><li class=\"gj-m-step\" data-state=\"wait\"><div class=\"gj-m-step-mark\" aria-hidden=\"true\"><span class=\"gj-m-step-dot\"></span></div><div class=\"gj-m-step-copy\"><p class=\"gj-m-step-title\">完成</p></div></li></ol>",
+    "verticalTime": "<ol class=\"gj-m-steps\" data-direction=\"vertical\" data-time=\"true\" aria-label=\"审批流程\"><li class=\"gj-m-step\" data-state=\"finish\"><div class=\"gj-m-step-mark\" aria-hidden=\"true\"><span class=\"gj-m-step-dot\"></span></div><time class=\"gj-m-step-time\">10-16 17:20</time><div class=\"gj-m-step-copy\"><p class=\"gj-m-step-title\">李明 提交申请</p></div></li><li class=\"gj-m-step\" data-state=\"process\" aria-current=\"step\"><div class=\"gj-m-step-mark\" aria-hidden=\"true\"><span class=\"gj-m-step-dot\"></span></div><time class=\"gj-m-step-time is-placeholder\">00-00 00:00</time><div class=\"gj-m-step-copy\"><p class=\"gj-m-step-title\">我 审批中</p><p class=\"gj-m-step-description\">分管领导</p></div></li><li class=\"gj-m-step\" data-state=\"wait\"><div class=\"gj-m-step-mark\" aria-hidden=\"true\"><span class=\"gj-m-step-dot\"></span></div><time class=\"gj-m-step-time is-placeholder\">00-00 00:00</time><div class=\"gj-m-step-copy\"><p class=\"gj-m-step-title\">财务复核</p></div></li></ol>",
+    "verticalError": "<ol class=\"gj-m-steps\" data-direction=\"vertical\" aria-label=\"开户进度\"><li class=\"gj-m-step\" data-state=\"finish\"><div class=\"gj-m-step-mark\" aria-hidden=\"true\"><span class=\"gj-m-step-dot\"></span></div><div class=\"gj-m-step-copy\"><p class=\"gj-m-step-title\">提交资料</p><p class=\"gj-m-step-description\">资料已上传</p></div></li><li class=\"gj-m-step\" data-state=\"error\" aria-current=\"step\"><div class=\"gj-m-step-mark\" aria-hidden=\"true\"><span class=\"gj-m-step-dot\"></span></div><div class=\"gj-m-step-copy\"><p class=\"gj-m-step-title\">资料审核</p><p class=\"gj-m-step-description\">身份证照片不清晰，请重新上传</p></div></li></ol>",
+    "timeline": "<ol class=\"gj-m-steps\" data-direction=\"vertical\" data-time=\"true\" aria-label=\"处理记录\"><li class=\"gj-m-step\" data-state=\"finish\"><div class=\"gj-m-step-mark\" aria-hidden=\"true\"><span class=\"gj-m-step-dot\"></span></div><time class=\"gj-m-step-time\">06-30 10:20</time><div class=\"gj-m-step-copy\"><p class=\"gj-m-step-title\">王芳 标记为跟进中</p><p class=\"gj-m-step-description\">已与支行行长沟通</p></div></li></ol>",
+    "timelineWithoutDescription": "<ol class=\"gj-m-steps\" data-direction=\"vertical\" data-time=\"true\" aria-label=\"审批流程\"><li class=\"gj-m-step\" data-state=\"finish\"><div class=\"gj-m-step-mark\" aria-hidden=\"true\"><span class=\"gj-m-step-dot\"></span></div><time class=\"gj-m-step-time\">10-16 17:20</time><div class=\"gj-m-step-copy\"><p class=\"gj-m-step-title\">李明 提交申请</p></div></li><li class=\"gj-m-step\" data-state=\"process\" aria-current=\"step\"><div class=\"gj-m-step-mark\" aria-hidden=\"true\"><span class=\"gj-m-step-dot\"></span></div><time class=\"gj-m-step-time is-placeholder\">00-00 00:00</time><div class=\"gj-m-step-copy\"><p class=\"gj-m-step-title\">我 审批中</p><p class=\"gj-m-step-description\">分管领导</p></div></li></ol>"
+  },
+  "accessibility": {
+    "list": "ol + aria-label",
+    "current": "当前步骤 aria-current=\"step\"；每项可加 aria-label 说明状态",
+    "decoration": "标记 aria-hidden"
+  },
+  "composition": {
+    "order": "流程按先后；历史记录（处理记录）按时间倒序、最新在上",
+    "inCard": "放进卡片时末项不留底部空白（基座处理）",
+    "time": "同一时间轴时间格式统一，不混用“刚刚”与日期",
+    "verticalHeight": "2026-10-20设计方：标题/描述/额外内容决定节点高度；无描述不预留描述行，非末项底部16保持，末项底部0。"
+  },
+  "pageRules": {
+    "PR-007": "纵向步骤节点不为缺失描述预留高度，节点间16只算一次，卡片内末项底部0",
+    "PR-011": "记录列表时间轴：时间 + Small filled 类型标签 + H4 标题"
+  },
+  "pending": {},
+  "templates": {
+    "timeline": {
+      "tpl": "<ol class=\"gj-m-steps\" data-direction=\"vertical\" data-time=\"true\"{{#size}} data-size=\"{{size}}\"{{/size}} aria-label=\"{{label}}\"{{#id}} id=\"{{id}}\"{{/id}}>{{#items}}<li class=\"gj-m-step\" data-state=\"{{state}}\"{{#current}} aria-current=\"step\"{{/current}}><div class=\"gj-m-step-mark\" aria-hidden=\"true\"><span class=\"gj-m-step-dot\"></span></div><time class=\"gj-m-step-time{{#placeholder}} is-placeholder{{/placeholder}}\">{{time}}</time><div class=\"gj-m-step-copy\"><p class=\"gj-m-step-title\">{{{title}}}</p>{{#desc}}<p class=\"gj-m-step-description\">{{{desc}}}</p>{{/desc}}{{{extra}}}</div></li>{{/items}}</ol>",
+      "example": {
+        "label": "处理记录",
+        "items": [
+          {
+            "state": "finish",
+            "time": "06-30 10:20",
+            "title": "王芳 标记为跟进中",
+            "desc": "已与支行行长沟通"
+          }
+        ]
+      },
+      "params": "纵向带时间：items：[{state(finish/process/wait/error), time, title(HTML), desc(HTML), extra(HTML)}]；id：列表id；current：当前节点；placeholder：隐藏时间（time仍传同格式占位）；desc为空不生成描述节点，纵向节点高度由内容及16间距决定",
+      "examples": {
+        "timeline": {
+          "label": "处理记录",
+          "items": [
+            {
+              "state": "finish",
+              "time": "06-30 10:20",
+              "title": "王芳 标记为跟进中",
+              "desc": "已与支行行长沟通"
+            }
+          ]
+        },
+        "timelineWithoutDescription": {
+          "label": "审批流程",
+          "items": [
+            {
+              "state": "finish",
+              "time": "10-16 17:20",
+              "title": "李明 提交申请"
+            },
+            {
+              "state": "process",
+              "time": "00-00 00:00",
+              "placeholder": true,
+              "current": true,
+              "title": "我 审批中",
+              "desc": "分管领导"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5474 @@
+{
+  "source": {
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "collectionId": "VariableCollectionId:7:2",
+    "collectionName": "Collection 1",
+    "modeId": "11:0",
+    "modeName": "Mobile",
+    "sourceUrl": "https://www.figma.com/design/KCpwE2Lh1yCGQ86y8ckYFN/?node-id=201-196",
+    "publication": "not verified"
+  },
+  "colors": [
+    {
+      "name": "Text/Primary",
+      "figmaId": "VariableID:7:3",
+      "figmaKey": "8005e837738247b8e692509c55e66149ae1a2c2a",
+      "kind": "semantic",
+      "value": "#101828",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N12",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Text/Primary",
+        "variableId": "VariableID:7:3",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Text/Secondary",
+      "figmaId": "VariableID:7:4",
+      "figmaKey": "1c67f3713a76d76c6345e9d291ab79329d8d1fef",
+      "kind": "semantic",
+      "value": "#475467",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N09",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Text/Secondary",
+        "variableId": "VariableID:7:4",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Text/Tiatery",
+      "figmaId": "VariableID:7:5",
+      "figmaKey": "8d74645dd4c7480a2123cac24f1794d762117a88",
+      "kind": "semantic",
+      "value": "#8D96A3",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N07",
+      "description": "辅助信息、placeholder",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Text/Tiatery",
+        "variableId": "VariableID:7:5",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Text/disable",
+      "figmaId": "VariableID:7:6",
+      "figmaKey": "bf06d2cf178b82dcd28f67450bf719e78ee5dee4",
+      "kind": "semantic",
+      "value": "#B8C0CC",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N06",
+      "description": "Disable禁用",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Text/disable",
+        "variableId": "VariableID:7:6",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Text/reversal",
+      "figmaId": "VariableID:7:7",
+      "figmaKey": "1aabba1e69d5535e92ae4616d2990eebb19729c9",
+      "kind": "semantic",
+      "value": "#FFFFFF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N01",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Text/reversal",
+        "variableId": "VariableID:7:7",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Text/blue",
+      "figmaId": "VariableID:7:8",
+      "figmaKey": "9fd23652fdd5890f0198a47eb9f13b6e98bca0d8",
+      "kind": "semantic",
+      "value": "#2B73FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Blue/B06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Text/blue",
+        "variableId": "VariableID:7:8",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Button/Primary/Bg-default",
+      "figmaId": "VariableID:7:9",
+      "figmaKey": "d51e82b38fd30ea8739b1b7d69c11640a35dfc70",
+      "kind": "semantic",
+      "value": "#2B73FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Blue/B06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Button/Primary/Bg-default",
+        "variableId": "VariableID:7:9",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Button/Primary/Bg-hover",
+      "figmaId": "VariableID:7:10",
+      "figmaKey": "b4c917fce63be045ed88effa439259ca77eefc06",
+      "kind": "semantic",
+      "value": "#6D9FFF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Blue/B05",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Button/Primary/Bg-hover",
+        "variableId": "VariableID:7:10",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Button/Primary/Bg-pressed",
+      "figmaId": "VariableID:7:11",
+      "figmaKey": "2afa5b4f8b874c2bd8c5ab9d9345296bb6227815",
+      "kind": "semantic",
+      "value": "#1F63F0",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Blue/B07",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Button/Primary/Bg-pressed",
+        "variableId": "VariableID:7:11",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Button/Primary/Bg-disable",
+      "figmaId": "VariableID:7:12",
+      "figmaKey": "a1bd8d3762483b4dc52f6b7a6fb7df0669dc3a9d",
+      "kind": "semantic",
+      "value": "#9CC0FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Blue/B04",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Button/Primary/Bg-disable",
+        "variableId": "VariableID:7:12",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Button/Red/Bg-default",
+      "figmaId": "VariableID:7:13",
+      "figmaKey": "bc7d20406e61ba4085bbc36081c416a1b2a3ba3c",
+      "kind": "semantic",
+      "value": "#F93838",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Red/R06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Button/Red/Bg-default",
+        "variableId": "VariableID:7:13",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Button/Red/Bg-hover",
+      "figmaId": "VariableID:7:14",
+      "figmaKey": "d3649e7ac33099dc4e84e17cb2690c7edd151476",
+      "kind": "semantic",
+      "value": "#F96666",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Red/R05",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Button/Red/Bg-hover",
+        "variableId": "VariableID:7:14",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Button/Red/Bg-pressed",
+      "figmaId": "VariableID:7:15",
+      "figmaKey": "6f107d23576cfbe2f0908f020e211b210f988452",
+      "kind": "semantic",
+      "value": "#D92020",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Red/R07",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Button/Red/Bg-pressed",
+        "variableId": "VariableID:7:15",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Button/Red/Bg-disable",
+      "figmaId": "VariableID:7:16",
+      "figmaKey": "5183d73f05b976c743cf0ecfbdb153f632bc6c45",
+      "kind": "semantic",
+      "value": "#FD9B9B",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Red/R04",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Button/Red/Bg-disable",
+        "variableId": "VariableID:7:16",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Button/Green/Bg-default",
+      "figmaId": "VariableID:7:17",
+      "figmaKey": "3a456da4512ceff395afd6ac08d4b8980cd1c439",
+      "kind": "semantic",
+      "value": "#12B76A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Green/G06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Button/Green/Bg-default",
+        "variableId": "VariableID:7:17",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Button/Green/Bg-hover",
+      "figmaId": "VariableID:7:18",
+      "figmaKey": "ce0c3d2b9ec3cdd308e566a20307613483713360",
+      "kind": "semantic",
+      "value": "#32D583",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Green/G05",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Button/Green/Bg-hover",
+        "variableId": "VariableID:7:18",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Button/Green/Bg-pressed",
+      "figmaId": "VariableID:7:19",
+      "figmaKey": "c46438290315b3214f399bec732defdff26f9a68",
+      "kind": "semantic",
+      "value": "#039855",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Green/G07",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Button/Green/Bg-pressed",
+        "variableId": "VariableID:7:19",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Button/Green/Bg-disable",
+      "figmaId": "VariableID:7:20",
+      "figmaKey": "9f6985bf2b8e5854be1bb8cf0bc8ecafec109226",
+      "kind": "semantic",
+      "value": "#6CE9A6",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Green/G04",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Button/Green/Bg-disable",
+        "variableId": "VariableID:7:20",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Table/border",
+      "figmaId": "VariableID:7:21",
+      "figmaKey": "95ffd6eb65f6a41264068cb0075b058464664a37",
+      "kind": "semantic",
+      "value": "#D7DCE3",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N05",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Table/border",
+        "variableId": "VariableID:7:21",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Table/divider",
+      "figmaId": "VariableID:7:22",
+      "figmaKey": "30eaee36966ff91a326d7f77b441764260ecdf2d",
+      "kind": "semantic",
+      "value": "#D7DCE3",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N05",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Table/divider",
+        "variableId": "VariableID:7:22",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Table/head_bg",
+      "figmaId": "VariableID:7:23",
+      "figmaKey": "4dbdf7cc19f695a5c4a6bfb60bf609502dfcc047",
+      "kind": "semantic",
+      "value": "#F5F7FA",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N03",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Table/head_bg",
+        "variableId": "VariableID:7:23",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Table/table_bg1",
+      "figmaId": "VariableID:7:24",
+      "figmaKey": "668b0801db22ae363177b53287eb9174aa95ecbe",
+      "kind": "semantic",
+      "value": "#FFFFFF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N01",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Table/table_bg1",
+        "variableId": "VariableID:7:24",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Table/table_bg2",
+      "figmaId": "VariableID:7:25",
+      "figmaKey": "55c720e40e082fdab45c0f7718466d275a207bda",
+      "kind": "semantic",
+      "value": "#FAFBFC",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N02",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Table/table_bg2",
+        "variableId": "VariableID:7:25",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Feedback/success&decline",
+      "figmaId": "VariableID:7:26",
+      "figmaKey": "6f9bb00614de703dd5347c8c6104c4950e753532",
+      "kind": "semantic",
+      "value": "#12B76A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Green/G06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Feedback/success&decline",
+        "variableId": "VariableID:7:26",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Feedback/error&rise",
+      "figmaId": "VariableID:7:27",
+      "figmaKey": "c9b57c838964b29939fd52e90cf7f0a097e89a2c",
+      "kind": "semantic",
+      "value": "#F93838",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Red/R06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Feedback/error&rise",
+        "variableId": "VariableID:7:27",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Feedback/warning",
+      "figmaId": "VariableID:7:28",
+      "figmaKey": "a069ddd666ea6bda8b3b22eac255d32e7eebd0f4",
+      "kind": "semantic",
+      "value": "#F77C09",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Orange/O06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Feedback/warning",
+        "variableId": "VariableID:7:28",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Feedback/plain",
+      "figmaId": "VariableID:7:29",
+      "figmaKey": "d6f124f3654a3e385cee8a3492d89e5469e4edd2",
+      "kind": "semantic",
+      "value": "#667085",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N08",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Feedback/plain",
+        "variableId": "VariableID:7:29",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Feedback/brand",
+      "figmaId": "VariableID:7:30",
+      "figmaKey": "d96759280c96c413aa4b4721efff8bc9dcf75091",
+      "kind": "semantic",
+      "value": "#2B73FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Blue/B06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Feedback/brand",
+        "variableId": "VariableID:7:30",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Chart/CH01",
+      "figmaId": "VariableID:7:31",
+      "figmaKey": "6f4058f121566c92644c53ac688ec92394cc5d9f",
+      "kind": "semantic",
+      "value": "#2B73FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Blue/B06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Chart/CH01",
+        "variableId": "VariableID:7:31",
+        "referencePage": "201:196",
+        "updatedAt": "2026-10-15",
+        "updateReason": "用户指定按PC截图顺序重新绑定，保留移动端原始色值"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Chart/CH02",
+      "figmaId": "VariableID:7:32",
+      "figmaKey": "1fe1299416d7a0c16e42dc849ff872062b4430e4",
+      "kind": "semantic",
+      "value": "#8B5CF6",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Purple/P06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Chart/CH02",
+        "variableId": "VariableID:7:32",
+        "referencePage": "201:196",
+        "updatedAt": "2026-10-15",
+        "updateReason": "用户指定按PC截图顺序重新绑定，保留移动端原始色值"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Chart/CH03",
+      "figmaId": "VariableID:7:33",
+      "figmaKey": "7ecd4717642a9795a0a9fed36a7d03eb852b6efd",
+      "kind": "semantic",
+      "value": "#22D3EE",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Cyan/C05",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Chart/CH03",
+        "variableId": "VariableID:7:33",
+        "referencePage": "201:196",
+        "updatedAt": "2026-10-15",
+        "updateReason": "用户指定按PC截图顺序重新绑定，保留移动端原始色值"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Chart/CH04",
+      "figmaId": "VariableID:7:34",
+      "figmaKey": "7ea78cd809bc6b3bf04bfec033fcdbd71fcce022",
+      "kind": "semantic",
+      "value": "#F472B6",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Pink/PK05",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Chart/CH04",
+        "variableId": "VariableID:7:34",
+        "referencePage": "201:196",
+        "updatedAt": "2026-10-15",
+        "updateReason": "用户指定按PC截图顺序重新绑定，保留移动端原始色值"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Chart/CH05",
+      "figmaId": "VariableID:7:35",
+      "figmaKey": "d3330d91ec76163cc4fa849f8293b0bd0e3de235",
+      "kind": "semantic",
+      "value": "#2F4FB8",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/DeepBlue/DB07",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Chart/CH05",
+        "variableId": "VariableID:7:35",
+        "referencePage": "201:196",
+        "updatedAt": "2026-10-15",
+        "updateReason": "用户指定按PC截图顺序重新绑定，保留移动端原始色值"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Chart/CH06",
+      "figmaId": "VariableID:7:36",
+      "figmaKey": "39bd50b372cabd143e1b52fd2597b81f172678bc",
+      "kind": "semantic",
+      "value": "#6CE9A6",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Green/G04",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Chart/CH06",
+        "variableId": "VariableID:7:36",
+        "referencePage": "201:196",
+        "updatedAt": "2026-10-15",
+        "updateReason": "用户指定按PC截图顺序重新绑定，保留移动端原始色值"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Chart/CH07",
+      "figmaId": "VariableID:7:37",
+      "figmaKey": "24e49bc06991fdd4169b1b2526f95e8b35ff5b1a",
+      "kind": "semantic",
+      "value": "#6D9FFF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Blue/B05",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Chart/CH07",
+        "variableId": "VariableID:7:37",
+        "referencePage": "201:196",
+        "updatedAt": "2026-10-15",
+        "updateReason": "用户指定按PC截图顺序重新绑定，保留移动端原始色值"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Chart/CH08",
+      "figmaId": "VariableID:7:38",
+      "figmaKey": "c4a9d935e776dde676bfd3966be6d5bd03c4bad6",
+      "kind": "semantic",
+      "value": "#FFD95A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Yellow/Y04",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Chart/CH08",
+        "variableId": "VariableID:7:38",
+        "referencePage": "201:196",
+        "updatedAt": "2026-10-15",
+        "updateReason": "用户指定按PC截图顺序重新绑定，保留移动端原始色值"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Chart/CH09",
+      "figmaId": "VariableID:7:39",
+      "figmaKey": "1e636832ba1ec119bc9ae74c0514552d23b78fdf",
+      "kind": "semantic",
+      "value": "#0284C7",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Sky/S07",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Chart/CH09",
+        "variableId": "VariableID:7:39",
+        "referencePage": "201:196",
+        "updatedAt": "2026-10-15",
+        "updateReason": "用户指定按PC截图顺序重新绑定，保留移动端原始色值"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Chart/CH10",
+      "figmaId": "VariableID:7:40",
+      "figmaKey": "8613ebb5ed24838ded8e4febbf808f2a1ec5706d",
+      "kind": "semantic",
+      "value": "#F9A8D4",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Pink/PK04",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Chart/CH10",
+        "variableId": "VariableID:7:40",
+        "referencePage": "201:196",
+        "updatedAt": "2026-10-15",
+        "updateReason": "用户指定按PC截图顺序重新绑定，保留移动端原始色值"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Border/default",
+      "figmaId": "VariableID:7:41",
+      "figmaKey": "c19f7e995ef11c82117261bdb579ebe791410621",
+      "kind": "semantic",
+      "value": "#EBEEF2",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N04",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Border/default",
+        "variableId": "VariableID:7:41",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Border/hover",
+      "figmaId": "VariableID:7:42",
+      "figmaKey": "a3470343fd60f7d9ad510d6b96c86270a52a2ea0",
+      "kind": "semantic",
+      "value": "#B8C0CC",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Border/hover",
+        "variableId": "VariableID:7:42",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Border/focused",
+      "figmaId": "VariableID:7:43",
+      "figmaKey": "8340a8ef1cacf9ed03a270a089448e33796c010f",
+      "kind": "semantic",
+      "value": "#2B73FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Blue/B06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Border/focused",
+        "variableId": "VariableID:7:43",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Border/error",
+      "figmaId": "VariableID:7:44",
+      "figmaKey": "9d54325c562b5075148a332f0d97439f2f507afc",
+      "kind": "semantic",
+      "value": "#F93838",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Red/R06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Border/error",
+        "variableId": "VariableID:7:44",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Border/disabled",
+      "figmaId": "VariableID:7:45",
+      "figmaKey": "b082b18b784790503247aec75d74ddeb0e301c1d",
+      "kind": "semantic",
+      "value": "#EBEEF2",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N04",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Border/disabled",
+        "variableId": "VariableID:7:45",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/Background",
+      "figmaId": "VariableID:7:46",
+      "figmaKey": "2f9a0fad4e14b88583b64e5994ed65261514b305",
+      "kind": "semantic",
+      "value": "#F5F7FA",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N03",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/Background",
+        "variableId": "VariableID:7:46",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/Container",
+      "figmaId": "VariableID:7:47",
+      "figmaKey": "7d36e30425e70faa0528ef1e25a53ffebd38fab7",
+      "kind": "semantic",
+      "value": "#FFFFFF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N01",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/Container",
+        "variableId": "VariableID:7:47",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/Secondary",
+      "figmaId": "VariableID:7:48",
+      "figmaKey": "364b430e8f796ddfdf5698ba33628a7a0e1b88f9",
+      "kind": "semantic",
+      "value": "#EBEEF2",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N04",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/Secondary",
+        "variableId": "VariableID:7:48",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/Hover",
+      "figmaId": "VariableID:7:49",
+      "figmaKey": "8e3680f0c7d39bf62fb2aa7101f3cabc0326dc7c",
+      "kind": "semantic",
+      "value": "#2B73FF0D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Background/BT_B5",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/Hover",
+        "variableId": "VariableID:7:49",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/Selected",
+      "figmaId": "VariableID:7:50",
+      "figmaKey": "dcf1cfc750f0800a36180c13f7aa80dbd229b1ab",
+      "kind": "semantic",
+      "value": "#E5F0FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Blue/B02",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/Selected",
+        "variableId": "VariableID:7:50",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BG_blue",
+      "figmaId": "VariableID:7:51",
+      "figmaKey": "e39ee2ee425ec47c7adb06b9eb321871f3c1f6fd",
+      "kind": "semantic",
+      "value": "#E5F0FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Blue/B02",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BG_blue",
+        "variableId": "VariableID:7:51",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BG_red",
+      "figmaId": "VariableID:7:52",
+      "figmaKey": "2d377e1dfc5b914d9abafb002e89cf268c2c7d3a",
+      "kind": "semantic",
+      "value": "#FEE2E2",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Red/R02",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BG_red",
+        "variableId": "VariableID:7:52",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BG_green",
+      "figmaId": "VariableID:7:53",
+      "figmaKey": "29906cb5cba50e9ef2791cf56ba0af76b21cfdf4",
+      "kind": "semantic",
+      "value": "#D1FADF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Green/G02",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BG_green",
+        "variableId": "VariableID:7:53",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BG_orange",
+      "figmaId": "VariableID:7:54",
+      "figmaKey": "56bf5dea6c19343fc64e4485480d83bfbf1dc1a7",
+      "kind": "semantic",
+      "value": "#FFEDD5",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Orange/O02",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BG_orange",
+        "variableId": "VariableID:7:54",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BG_yellow",
+      "figmaId": "VariableID:7:55",
+      "figmaKey": "fcdd632e9f3ffbe16228881745dad7fb37109def",
+      "kind": "semantic",
+      "value": "#FFF3BF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Yellow/Y02",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BG_yellow",
+        "variableId": "VariableID:7:55",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BG_cyan",
+      "figmaId": "VariableID:7:56",
+      "figmaKey": "feedcc52afb4f3dd2550107a51125d544322f06e",
+      "kind": "semantic",
+      "value": "#CFFAFE",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Cyan/C02",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BG_cyan",
+        "variableId": "VariableID:7:56",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BG_sky",
+      "figmaId": "VariableID:7:57",
+      "figmaKey": "ba1051f509f33144deb3760ba0701b1349492357",
+      "kind": "semantic",
+      "value": "#E0F2FE",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Sky/S02",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BG_sky",
+        "variableId": "VariableID:7:57",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BG_deepblue",
+      "figmaId": "VariableID:7:58",
+      "figmaKey": "11c641bab18162e4953e94f3228e06c2709ffa00",
+      "kind": "semantic",
+      "value": "#DDE7FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/DeepBlue/DB02",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BG_deepblue",
+        "variableId": "VariableID:7:58",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BG_purple",
+      "figmaId": "VariableID:7:59",
+      "figmaKey": "9301520b947cffa1b4a211f9ad275b616bb36968",
+      "kind": "semantic",
+      "value": "#EDE9FE",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Purple/P02",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BG_purple",
+        "variableId": "VariableID:7:59",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BG_pink",
+      "figmaId": "VariableID:7:60",
+      "figmaKey": "15ce46945ccb2d1f07b9285312bb0b2bb5fd833a",
+      "kind": "semantic",
+      "value": "#FCE7F3",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Pink/PK02",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BG_pink",
+        "variableId": "VariableID:7:60",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_B5",
+      "figmaId": "VariableID:7:61",
+      "figmaKey": "5061408df8a7285c72d5ac86013aa70678eb8675",
+      "kind": "semantic",
+      "value": "#2B73FF0D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.16862745583057404,
+        "g": 0.45098039507865906,
+        "b": 1,
+        "a": 0.05000000074505806
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_B5",
+        "variableId": "VariableID:7:61",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_B8",
+      "figmaId": "VariableID:7:62",
+      "figmaKey": "6c4e2bb67108a5defce791dcd82aea5cac9862e3",
+      "kind": "semantic",
+      "value": "#2B73FF14",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.16862745583057404,
+        "g": 0.45098039507865906,
+        "b": 1,
+        "a": 0.07999999821186066
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_B8",
+        "variableId": "VariableID:7:62",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Cyan/C09",
+      "figmaId": "VariableID:7:192",
+      "figmaKey": "a1293c6803fe9a7ff576afa8d26e5c94ff561bcd",
+      "kind": "primitive",
+      "value": "#155E75",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.08235294371843338,
+        "g": 0.3686274588108063,
+        "b": 0.4588235318660736,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Cyan/C09",
+        "variableId": "VariableID:7:192",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Cyan/C10",
+      "figmaId": "VariableID:7:193",
+      "figmaKey": "b939e36c604e84fd16c5a1493558ce12e0d0dc89",
+      "kind": "primitive",
+      "value": "#164E63",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.08627451211214066,
+        "g": 0.30588236451148987,
+        "b": 0.38823530077934265,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Cyan/C10",
+        "variableId": "VariableID:7:193",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Sky/S01",
+      "figmaId": "VariableID:7:194",
+      "figmaKey": "994d385e873bebae762d660fb928601d7f1e83ff",
+      "kind": "primitive",
+      "value": "#F0F9FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9411764740943909,
+        "g": 0.9764705896377563,
+        "b": 1,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Sky/S01",
+        "variableId": "VariableID:7:194",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Sky/S02",
+      "figmaId": "VariableID:7:195",
+      "figmaKey": "7b143d58a85821ecb479402d6040002dba456d82",
+      "kind": "primitive",
+      "value": "#E0F2FE",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.8784313797950745,
+        "g": 0.9490196108818054,
+        "b": 0.9960784316062927,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Sky/S02",
+        "variableId": "VariableID:7:195",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Sky/S03",
+      "figmaId": "VariableID:7:196",
+      "figmaKey": "9a4e672f1963e6daeb43b43f082b2f9068627be8",
+      "kind": "primitive",
+      "value": "#BAE6FD",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.729411780834198,
+        "g": 0.9019607901573181,
+        "b": 0.9921568632125854,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Sky/S03",
+        "variableId": "VariableID:7:196",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Sky/S04",
+      "figmaId": "VariableID:7:197",
+      "figmaKey": "c934802edfa64dbe9099694ab1505f0e8e64c2b6",
+      "kind": "primitive",
+      "value": "#7DD3FC",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.4901960790157318,
+        "g": 0.8274509906768799,
+        "b": 0.9882352948188782,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Sky/S04",
+        "variableId": "VariableID:7:197",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Sky/S05",
+      "figmaId": "VariableID:7:198",
+      "figmaKey": "4949c5ecbc50b0631cd72f08fb70aff01483ee66",
+      "kind": "primitive",
+      "value": "#38BDF8",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.21960784494876862,
+        "g": 0.7411764860153198,
+        "b": 0.9725490212440491,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Sky/S05",
+        "variableId": "VariableID:7:198",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Sky/S06",
+      "figmaId": "VariableID:7:199",
+      "figmaKey": "8d887dc2bc63ca147c6399789dd990dc4366f217",
+      "kind": "primitive",
+      "value": "#0EA5E9",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.054901961237192154,
+        "g": 0.6470588445663452,
+        "b": 0.9137254953384399,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Sky/S06",
+        "variableId": "VariableID:7:199",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Sky/S07",
+      "figmaId": "VariableID:7:200",
+      "figmaKey": "f0ea3fe9c97b2b0f20408d879911cc68ea0ab128",
+      "kind": "primitive",
+      "value": "#0284C7",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.007843137718737125,
+        "g": 0.5176470875740051,
+        "b": 0.7803921699523926,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Sky/S07",
+        "variableId": "VariableID:7:200",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Sky/S08",
+      "figmaId": "VariableID:7:201",
+      "figmaKey": "a246d30f3c1126e777d10fb6be8346bb85f854ee",
+      "kind": "primitive",
+      "value": "#0369A1",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.0117647061124444,
+        "g": 0.4117647111415863,
+        "b": 0.6313725709915161,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Sky/S08",
+        "variableId": "VariableID:7:201",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Sky/S09",
+      "figmaId": "VariableID:7:202",
+      "figmaKey": "e2fbb2b0dbeed2481a9d31e00c244989c117b73d",
+      "kind": "primitive",
+      "value": "#075985",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.027450980618596077,
+        "g": 0.3490196168422699,
+        "b": 0.5215686559677124,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Sky/S09",
+        "variableId": "VariableID:7:202",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Sky/S10",
+      "figmaId": "VariableID:7:203",
+      "figmaKey": "be467bb00da57ffe7174f2354f7b708561ddb772",
+      "kind": "primitive",
+      "value": "#0C4A6E",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.0470588244497776,
+        "g": 0.29019609093666077,
+        "b": 0.4313725531101227,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Sky/S10",
+        "variableId": "VariableID:7:203",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/DeepBlue/DB01",
+      "figmaId": "VariableID:7:204",
+      "figmaKey": "7e18cc3d3e17fbd1f3cf0b708bb7c626f40d4dda",
+      "kind": "primitive",
+      "value": "#EEF3FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9333333373069763,
+        "g": 0.9529411792755127,
+        "b": 1,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/DeepBlue/DB01",
+        "variableId": "VariableID:7:204",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/DeepBlue/DB02",
+      "figmaId": "VariableID:7:205",
+      "figmaKey": "6543b813d339cdd3a19ca1ae458b705fd4af570e",
+      "kind": "primitive",
+      "value": "#DDE7FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.8666666746139526,
+        "g": 0.9058823585510254,
+        "b": 1,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/DeepBlue/DB02",
+        "variableId": "VariableID:7:205",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/DeepBlue/DB03",
+      "figmaId": "VariableID:7:206",
+      "figmaKey": "c675a0ca0b97e3a22ba014804ca5daa1568339f3",
+      "kind": "primitive",
+      "value": "#BFD2FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.7490196228027344,
+        "g": 0.8235294222831726,
+        "b": 1,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/DeepBlue/DB03",
+        "variableId": "VariableID:7:206",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/DeepBlue/DB04",
+      "figmaId": "VariableID:7:207",
+      "figmaKey": "5bb858fa371291554f6ac653682b861cad4c6f63",
+      "kind": "primitive",
+      "value": "#91B0FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.5686274766921997,
+        "g": 0.6901960968971252,
+        "b": 1,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/DeepBlue/DB04",
+        "variableId": "VariableID:7:207",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/DeepBlue/DB05",
+      "figmaId": "VariableID:7:208",
+      "figmaKey": "6a133a55a4b6cdd07087677e8dc5315ea4a3c6fa",
+      "kind": "primitive",
+      "value": "#6388F2",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.38823530077934265,
+        "g": 0.5333333611488342,
+        "b": 0.9490196108818054,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/DeepBlue/DB05",
+        "variableId": "VariableID:7:208",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/DeepBlue/DB06",
+      "figmaId": "VariableID:7:209",
+      "figmaKey": "df992ed56a55f833de1c728dfa1728674823ec08",
+      "kind": "primitive",
+      "value": "#4167D8",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.2549019753932953,
+        "g": 0.40392157435417175,
+        "b": 0.8470588326454163,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/DeepBlue/DB06",
+        "variableId": "VariableID:7:209",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/DeepBlue/DB07",
+      "figmaId": "VariableID:7:210",
+      "figmaKey": "9900b7f4929ea81d42c786550ae69473e65f25c9",
+      "kind": "primitive",
+      "value": "#2F4FB8",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.18431372940540314,
+        "g": 0.30980393290519714,
+        "b": 0.7215686440467834,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/DeepBlue/DB07",
+        "variableId": "VariableID:7:210",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/DeepBlue/DB08",
+      "figmaId": "VariableID:7:211",
+      "figmaKey": "4e4dfa3f15fe939a42f1be64adfd6f859ff897ce",
+      "kind": "primitive",
+      "value": "#263F94",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.14901961386203766,
+        "g": 0.24705882370471954,
+        "b": 0.5803921818733215,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/DeepBlue/DB08",
+        "variableId": "VariableID:7:211",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/DeepBlue/DB09",
+      "figmaId": "VariableID:7:212",
+      "figmaKey": "7c851c16684fbef86e79e250c8bbfc207c69994b",
+      "kind": "primitive",
+      "value": "#21367A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.12941177189350128,
+        "g": 0.21176470816135406,
+        "b": 0.47843137383461,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/DeepBlue/DB09",
+        "variableId": "VariableID:7:212",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/DeepBlue/DB10",
+      "figmaId": "VariableID:7:213",
+      "figmaKey": "24f190ef8c20d76484f2ca63bb6d1bb2516fe414",
+      "kind": "primitive",
+      "value": "#1D2F66",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.11372549086809158,
+        "g": 0.18431372940540314,
+        "b": 0.4000000059604645,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/DeepBlue/DB10",
+        "variableId": "VariableID:7:213",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Purple/P01",
+      "figmaId": "VariableID:7:214",
+      "figmaKey": "d2d797bccff1cbb366ebf894991b800568d068ac",
+      "kind": "primitive",
+      "value": "#F5F3FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9607843160629272,
+        "g": 0.9529411792755127,
+        "b": 1,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Purple/P01",
+        "variableId": "VariableID:7:214",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Purple/P02",
+      "figmaId": "VariableID:7:215",
+      "figmaKey": "deca54aa9c8b8d6f07c2666f2ab3744a0a973761",
+      "kind": "primitive",
+      "value": "#EDE9FE",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.929411768913269,
+        "g": 0.9137254953384399,
+        "b": 0.9960784316062927,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Purple/P02",
+        "variableId": "VariableID:7:215",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Purple/P03",
+      "figmaId": "VariableID:7:216",
+      "figmaKey": "b4f8f13da56ec0148c43f9b6618ef5dcb822c041",
+      "kind": "primitive",
+      "value": "#DDD6FE",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.8666666746139526,
+        "g": 0.8392156958580017,
+        "b": 0.9960784316062927,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Purple/P03",
+        "variableId": "VariableID:7:216",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Purple/P04",
+      "figmaId": "VariableID:7:217",
+      "figmaKey": "e29a5b5de7693f7872ff51fd8cf9685390ac0163",
+      "kind": "primitive",
+      "value": "#C4B5FD",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.7686274647712708,
+        "g": 0.7098039388656616,
+        "b": 0.9921568632125854,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Purple/P04",
+        "variableId": "VariableID:7:217",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Purple/P05",
+      "figmaId": "VariableID:7:218",
+      "figmaKey": "c7326f730c697c3ede0fb532e81f8042e53ff9cf",
+      "kind": "primitive",
+      "value": "#A78BFA",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.6549019813537598,
+        "g": 0.545098066329956,
+        "b": 0.9803921580314636,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Purple/P05",
+        "variableId": "VariableID:7:218",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Purple/P06",
+      "figmaId": "VariableID:7:219",
+      "figmaKey": "7127c6e23a8be3d7e49b119d3643b87e886c16d4",
+      "kind": "primitive",
+      "value": "#8B5CF6",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.545098066329956,
+        "g": 0.3607843220233917,
+        "b": 0.9647058844566345,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Purple/P06",
+        "variableId": "VariableID:7:219",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Purple/P07",
+      "figmaId": "VariableID:7:220",
+      "figmaKey": "433300c5b3224715a6576d219155a48b8d8dd210",
+      "kind": "primitive",
+      "value": "#7C3AED",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.48627451062202454,
+        "g": 0.22745098173618317,
+        "b": 0.929411768913269,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Purple/P07",
+        "variableId": "VariableID:7:220",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Purple/P08",
+      "figmaId": "VariableID:7:221",
+      "figmaKey": "39f138cf73c44f5553be10c6d7bd0ef9e030808a",
+      "kind": "primitive",
+      "value": "#6D28D9",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.4274509847164154,
+        "g": 0.1568627506494522,
+        "b": 0.8509804010391235,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Purple/P08",
+        "variableId": "VariableID:7:221",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Purple/P09",
+      "figmaId": "VariableID:7:222",
+      "figmaKey": "e08769bfdcac1d16b69e47088732cd7bdb7e25f7",
+      "kind": "primitive",
+      "value": "#5B21B6",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.35686275362968445,
+        "g": 0.12941177189350128,
+        "b": 0.7137255072593689,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Purple/P09",
+        "variableId": "VariableID:7:222",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Purple/P10",
+      "figmaId": "VariableID:7:223",
+      "figmaKey": "79fa9e5316cf8832f504d96a20c42101abfd1b91",
+      "kind": "primitive",
+      "value": "#4C1D95",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.2980392277240753,
+        "g": 0.11372549086809158,
+        "b": 0.5843137502670288,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Purple/P10",
+        "variableId": "VariableID:7:223",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Pink/PK01",
+      "figmaId": "VariableID:7:224",
+      "figmaKey": "d2f6291b40556dca4b4808d50a868a92344a07ba",
+      "kind": "primitive",
+      "value": "#FDF2F8",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9921568632125854,
+        "g": 0.9490196108818054,
+        "b": 0.9725490212440491,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Pink/PK01",
+        "variableId": "VariableID:7:224",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Pink/PK02",
+      "figmaId": "VariableID:7:225",
+      "figmaKey": "c9c932c9f9b995846f741a9f80305bd8cffc0258",
+      "kind": "primitive",
+      "value": "#FCE7F3",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9882352948188782,
+        "g": 0.9058823585510254,
+        "b": 0.9529411792755127,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Pink/PK02",
+        "variableId": "VariableID:7:225",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Pink/PK03",
+      "figmaId": "VariableID:7:226",
+      "figmaKey": "245a2e7481453153bc9ab38437dd99ea3b668ad8",
+      "kind": "primitive",
+      "value": "#FBCFE8",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9843137264251709,
+        "g": 0.8117647171020508,
+        "b": 0.9098039269447327,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Pink/PK03",
+        "variableId": "VariableID:7:226",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Pink/PK04",
+      "figmaId": "VariableID:7:227",
+      "figmaKey": "68a001a88322ea70fb42b4a7426571ed9cd08b03",
+      "kind": "primitive",
+      "value": "#F9A8D4",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9764705896377563,
+        "g": 0.658823549747467,
+        "b": 0.8313725590705872,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Pink/PK04",
+        "variableId": "VariableID:7:227",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Pink/PK05",
+      "figmaId": "VariableID:7:228",
+      "figmaKey": "607d7aa53ba0b5f0df89d7550bfae89b28b06ea7",
+      "kind": "primitive",
+      "value": "#F472B6",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.95686274766922,
+        "g": 0.4470588266849518,
+        "b": 0.7137255072593689,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Pink/PK05",
+        "variableId": "VariableID:7:228",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Pink/PK06",
+      "figmaId": "VariableID:7:229",
+      "figmaKey": "943cfd8cfcb1e8a5ccbfa189573b340abd2d38e5",
+      "kind": "primitive",
+      "value": "#EC4899",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9254902005195618,
+        "g": 0.2823529541492462,
+        "b": 0.6000000238418579,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Pink/PK06",
+        "variableId": "VariableID:7:229",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Pink/PK07",
+      "figmaId": "VariableID:7:230",
+      "figmaKey": "58e86d0484cd77be262a4d3f44478c6da8434333",
+      "kind": "primitive",
+      "value": "#DB2777",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.8588235378265381,
+        "g": 0.15294118225574493,
+        "b": 0.46666666865348816,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Pink/PK07",
+        "variableId": "VariableID:7:230",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Pink/PK08",
+      "figmaId": "VariableID:7:231",
+      "figmaKey": "338d0e84c7d9ab101cd3adebf493105a317e9ed3",
+      "kind": "primitive",
+      "value": "#BE185D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.7450980544090271,
+        "g": 0.0941176488995552,
+        "b": 0.364705890417099,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Pink/PK08",
+        "variableId": "VariableID:7:231",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Pink/PK09",
+      "figmaId": "VariableID:7:232",
+      "figmaKey": "bda9a3597abccbff6dc0ebcbf4501757647f2a3f",
+      "kind": "primitive",
+      "value": "#9D174D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.615686297416687,
+        "g": 0.09019608050584793,
+        "b": 0.3019607961177826,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Pink/PK09",
+        "variableId": "VariableID:7:232",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Pink/PK10",
+      "figmaId": "VariableID:7:233",
+      "figmaKey": "db87d26ecd0320bef403e0e196eecce36e442189",
+      "kind": "primitive",
+      "value": "#831843",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.5137255191802979,
+        "g": 0.0941176488995552,
+        "b": 0.26274511218070984,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Pink/PK10",
+        "variableId": "VariableID:7:233",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Brand/GJ_Blue",
+      "figmaId": "VariableID:7:792",
+      "figmaKey": "c721c0aa6d294830cf9139276b4f85d86e0da081",
+      "kind": "brand",
+      "value": "#2B73FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Blue/B06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Brand/GJ_Blue",
+        "variableId": "VariableID:7:792",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Brand/GJ_red",
+      "figmaId": "VariableID:7:793",
+      "figmaKey": "2c382221ced654cf2cee4aba16dab882c624f0c7",
+      "kind": "brand",
+      "value": "#F93838",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Red/R06",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Brand/GJ_red",
+        "variableId": "VariableID:7:793",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Brand/GJ_purple",
+      "figmaId": "VariableID:7:794",
+      "figmaKey": "adbaf04cca98a7dccb8e2a6bdca56ea3f623598b",
+      "kind": "brand",
+      "value": "#667FFF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.4000000059604645,
+        "g": 0.49803921580314636,
+        "b": 1,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Brand/GJ_purple",
+        "variableId": "VariableID:7:794",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Brand/GJ_violet",
+      "figmaId": "VariableID:7:798",
+      "figmaKey": "7dd2821e158eb4497bb1a39f95ae77bb37747625",
+      "kind": "brand",
+      "value": "#8B52FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.545098066329956,
+        "g": 0.32156863808631897,
+        "b": 1,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Brand/GJ_violet",
+        "variableId": "VariableID:7:798",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/MK_60",
+      "figmaId": "VariableID:173:9626",
+      "figmaKey": "9064602894f69d60a360ec6c39fb59c395ecd578",
+      "kind": "semantic",
+      "value": "#00000099",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 0.6000000238418579
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/MK_60",
+        "variableId": "VariableID:173:9626",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/MK_10",
+      "figmaId": "VariableID:173:9630",
+      "figmaKey": "d15c371749626f48ceccccae2585668ffc7b8a2b",
+      "kind": "semantic",
+      "value": "#0000001A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 0.10000000149011612
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/MK_10",
+        "variableId": "VariableID:173:9630",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/MK_45",
+      "figmaId": "VariableID:173:9634",
+      "figmaKey": "a804b5583c8deebfb4ee4e149d3ddbe290e3d180",
+      "kind": "semantic",
+      "value": "#00000073",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 0.44999998807907104
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/MK_45",
+        "variableId": "VariableID:173:9634",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Border/secondary",
+      "figmaId": "VariableID:216:5176",
+      "figmaKey": "121058776dd6c7d8e313733660d94e5c5b31f74f",
+      "kind": "semantic",
+      "value": "#D7DCE3",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N05",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Border/secondary",
+        "variableId": "VariableID:216:5176",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/Tiatery",
+      "figmaId": "VariableID:824:311",
+      "figmaKey": "7661ad7f651b9c53f88e0e5f57792f40473001ff",
+      "kind": "semantic",
+      "value": "#FAFBFC",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Primitive/Neutral/N02",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/Tiatery",
+        "variableId": "VariableID:824:311",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/MK_20",
+      "figmaId": "VariableID:1150:127",
+      "figmaKey": "163f3ce2c564fc3563d602795bcbae8c2b6c2396",
+      "kind": "semantic",
+      "value": "#00000033",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 0.20000000298023224
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/MK_20",
+        "variableId": "VariableID:1150:127",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/MK_30",
+      "figmaId": "VariableID:1150:128",
+      "figmaKey": "ba45a1e5a773c7732534a00b16dfa5df2ec49f44",
+      "kind": "semantic",
+      "value": "#0000004D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 0.30000001192092896
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/MK_30",
+        "variableId": "VariableID:1150:128",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/Hover_2",
+      "figmaId": "VariableID:1544:8068",
+      "figmaKey": "2abad0ec5e6b1b8da0bd7a774228472b3acabbdd",
+      "kind": "semantic",
+      "value": "#00000008",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": "Background/MK_3",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/Hover_2",
+        "variableId": "VariableID:1544:8068",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/MK_3",
+      "figmaId": "VariableID:1544:8072",
+      "figmaKey": "105599ed88de58f968f83fc620ca53ea88fc2147",
+      "kind": "semantic",
+      "value": "#00000008",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 0.029999999329447746
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/MK_3",
+        "variableId": "VariableID:1544:8072",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_B10",
+      "figmaId": "VariableID:7:63",
+      "figmaKey": "7ac83b3e4df841155497009aa6fb56587ac514fb",
+      "kind": "semantic",
+      "value": "#2B73FF1A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.16862745583057404,
+        "g": 0.45098039507865906,
+        "b": 1,
+        "a": 0.10000000149011612
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_B10",
+        "variableId": "VariableID:7:63",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_B15",
+      "figmaId": "VariableID:7:64",
+      "figmaKey": "15915930ecf31afdb222b5c91ce669ebab70f47d",
+      "kind": "semantic",
+      "value": "#2B73FF26",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.16862745583057404,
+        "g": 0.45098039507865906,
+        "b": 1,
+        "a": 0.15000000596046448
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_B15",
+        "variableId": "VariableID:7:64",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_B20",
+      "figmaId": "VariableID:7:65",
+      "figmaKey": "a6298817b638c1f87172b9a5dfc93f5693e9ac82",
+      "kind": "semantic",
+      "value": "#2B73FF33",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.16862745583057404,
+        "g": 0.45098039507865906,
+        "b": 1,
+        "a": 0.20000000298023224
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_B20",
+        "variableId": "VariableID:7:65",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_R5",
+      "figmaId": "VariableID:7:66",
+      "figmaKey": "5b68d451ca0a54e28c386eb05ae2c2605d692d12",
+      "kind": "semantic",
+      "value": "#F038380D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9411764740943909,
+        "g": 0.21960784494876862,
+        "b": 0.21960784494876862,
+        "a": 0.05000000074505806
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_R5",
+        "variableId": "VariableID:7:66",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_R8",
+      "figmaId": "VariableID:7:67",
+      "figmaKey": "c24e871213a7786e3e3431ce1fa7210f41424021",
+      "kind": "semantic",
+      "value": "#F0383814",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9411764740943909,
+        "g": 0.21960784494876862,
+        "b": 0.21960784494876862,
+        "a": 0.07999999821186066
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_R8",
+        "variableId": "VariableID:7:67",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_R10",
+      "figmaId": "VariableID:7:68",
+      "figmaKey": "ddf5a4113ac7470640aac14132595bc58278ed06",
+      "kind": "semantic",
+      "value": "#F038381A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9411764740943909,
+        "g": 0.21960784494876862,
+        "b": 0.21960784494876862,
+        "a": 0.10000000149011612
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_R10",
+        "variableId": "VariableID:7:68",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_R15",
+      "figmaId": "VariableID:7:69",
+      "figmaKey": "e8fc0a6e32eb3bc6546b472c473339574c2dc94d",
+      "kind": "semantic",
+      "value": "#F0383826",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9411764740943909,
+        "g": 0.21960784494876862,
+        "b": 0.21960784494876862,
+        "a": 0.15000000596046448
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_R15",
+        "variableId": "VariableID:7:69",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_R20",
+      "figmaId": "VariableID:7:70",
+      "figmaKey": "80a7103c35d08c9a98e769fef51e91d8814b6225",
+      "kind": "semantic",
+      "value": "#F0383833",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9411764740943909,
+        "g": 0.21960784494876862,
+        "b": 0.21960784494876862,
+        "a": 0.20000000298023224
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_R20",
+        "variableId": "VariableID:7:70",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_G5",
+      "figmaId": "VariableID:7:71",
+      "figmaKey": "5a2599b1673b9d84149145789f108ae86a10eba1",
+      "kind": "semantic",
+      "value": "#12B76A0D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.07058823853731155,
+        "g": 0.7176470756530762,
+        "b": 0.4156862795352936,
+        "a": 0.05000000074505806
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_G5",
+        "variableId": "VariableID:7:71",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_G8",
+      "figmaId": "VariableID:7:72",
+      "figmaKey": "469c68e1ab515c58e213892b5ce2c8ad2a40b0d8",
+      "kind": "semantic",
+      "value": "#12B76A14",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.07058823853731155,
+        "g": 0.7176470756530762,
+        "b": 0.4156862795352936,
+        "a": 0.07999999821186066
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_G8",
+        "variableId": "VariableID:7:72",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_G10",
+      "figmaId": "VariableID:7:73",
+      "figmaKey": "8c0a3ba8ec178c78e7416fe90417728308e097e8",
+      "kind": "semantic",
+      "value": "#12B76A1A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.07058823853731155,
+        "g": 0.7176470756530762,
+        "b": 0.4156862795352936,
+        "a": 0.10000000149011612
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_G10",
+        "variableId": "VariableID:7:73",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_G15",
+      "figmaId": "VariableID:7:74",
+      "figmaKey": "16ee0974a13ca70926384dfc04aaf9d78b92dd7a",
+      "kind": "semantic",
+      "value": "#12B76A26",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.07058823853731155,
+        "g": 0.7176470756530762,
+        "b": 0.4156862795352936,
+        "a": 0.15000000596046448
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_G15",
+        "variableId": "VariableID:7:74",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_G20",
+      "figmaId": "VariableID:7:75",
+      "figmaKey": "15c42e5369b39e5812e02fbaa2665cd11b4308f9",
+      "kind": "semantic",
+      "value": "#12B76A33",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.07058823853731155,
+        "g": 0.7176470756530762,
+        "b": 0.4156862795352936,
+        "a": 0.20000000298023224
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_G20",
+        "variableId": "VariableID:7:75",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_O5",
+      "figmaId": "VariableID:7:76",
+      "figmaKey": "497a73f3c1cdc28ffbdec33a1afec3850d0577a5",
+      "kind": "semantic",
+      "value": "#F77C090D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9686274528503418,
+        "g": 0.48640522360801697,
+        "b": 0.03529411926865578,
+        "a": 0.05000000074505806
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_O5",
+        "variableId": "VariableID:7:76",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_O8",
+      "figmaId": "VariableID:7:77",
+      "figmaKey": "e76f831a3cd08ff5cdf0b891ec0e3c8e31477f34",
+      "kind": "semantic",
+      "value": "#F77C0914",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9686274528503418,
+        "g": 0.48640522360801697,
+        "b": 0.03529411926865578,
+        "a": 0.07999999821186066
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_O8",
+        "variableId": "VariableID:7:77",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_O10",
+      "figmaId": "VariableID:7:78",
+      "figmaKey": "1aabd61f5eb59b861c7fd7047c8023315e259a0b",
+      "kind": "semantic",
+      "value": "#F77C091A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9686274528503418,
+        "g": 0.48640522360801697,
+        "b": 0.03529411926865578,
+        "a": 0.10000000149011612
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_O10",
+        "variableId": "VariableID:7:78",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_O15",
+      "figmaId": "VariableID:7:79",
+      "figmaKey": "777678bcd0e42d306c25bcc4c8900a819f80ffb3",
+      "kind": "semantic",
+      "value": "#F77C0926",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9686274528503418,
+        "g": 0.48640522360801697,
+        "b": 0.03529411926865578,
+        "a": 0.15000000596046448
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_O15",
+        "variableId": "VariableID:7:79",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_O20",
+      "figmaId": "VariableID:7:80",
+      "figmaKey": "86ef92d5499fc46a84cfbbd9c035bd68fd524e15",
+      "kind": "semantic",
+      "value": "#F77C0933",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9686274528503418,
+        "g": 0.48640522360801697,
+        "b": 0.03529411926865578,
+        "a": 0.20000000298023224
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_O20",
+        "variableId": "VariableID:7:80",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_Y5",
+      "figmaId": "VariableID:7:81",
+      "figmaKey": "e159b2bae4f83c16eee22b84f9c6ab4606a0f2e5",
+      "kind": "semantic",
+      "value": "#F5B8000D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9607843160629272,
+        "g": 0.7215686440467834,
+        "b": 0,
+        "a": 0.05000000074505806
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_Y5",
+        "variableId": "VariableID:7:81",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_Y8",
+      "figmaId": "VariableID:7:82",
+      "figmaKey": "47e780f7b731d9209d29e22a33fc5766df5328b1",
+      "kind": "semantic",
+      "value": "#F5B80014",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9607843160629272,
+        "g": 0.7215686440467834,
+        "b": 0,
+        "a": 0.07999999821186066
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_Y8",
+        "variableId": "VariableID:7:82",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_Y10",
+      "figmaId": "VariableID:7:83",
+      "figmaKey": "077dbaa3e0a08cf6e786f4a4201532820d10ac37",
+      "kind": "semantic",
+      "value": "#F5B8001A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9607843160629272,
+        "g": 0.7215686440467834,
+        "b": 0,
+        "a": 0.10000000149011612
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_Y10",
+        "variableId": "VariableID:7:83",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_Y15",
+      "figmaId": "VariableID:7:84",
+      "figmaKey": "0e669c6a78753208e6fee8169d625f82f05d8022",
+      "kind": "semantic",
+      "value": "#F5B80026",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9607843160629272,
+        "g": 0.7215686440467834,
+        "b": 0,
+        "a": 0.15000000596046448
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_Y15",
+        "variableId": "VariableID:7:84",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_Y20",
+      "figmaId": "VariableID:7:85",
+      "figmaKey": "b9406f68b51dbe3662d06ff78a7e4f311aff2828",
+      "kind": "semantic",
+      "value": "#F5B80033",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9607843160629272,
+        "g": 0.7215686440467834,
+        "b": 0,
+        "a": 0.20000000298023224
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_Y20",
+        "variableId": "VariableID:7:85",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_C5",
+      "figmaId": "VariableID:7:86",
+      "figmaKey": "eb9b4aeb698741f4a47285e7ac7373a0d338db81",
+      "kind": "semantic",
+      "value": "#06B6D40D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.0235294122248888,
+        "g": 0.7137255072593689,
+        "b": 0.8313725590705872,
+        "a": 0.05000000074505806
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_C5",
+        "variableId": "VariableID:7:86",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_C8",
+      "figmaId": "VariableID:7:87",
+      "figmaKey": "9f0c1f8452762a5e1d1361ba437f517dfbb8a245",
+      "kind": "semantic",
+      "value": "#06B6D414",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.0235294122248888,
+        "g": 0.7137255072593689,
+        "b": 0.8313725590705872,
+        "a": 0.07999999821186066
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_C8",
+        "variableId": "VariableID:7:87",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_C10",
+      "figmaId": "VariableID:7:88",
+      "figmaKey": "20c2d7f4abd2c6bff3f39d7ae6e20fa51aba9b68",
+      "kind": "semantic",
+      "value": "#06B6D41A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.0235294122248888,
+        "g": 0.7137255072593689,
+        "b": 0.8313725590705872,
+        "a": 0.10000000149011612
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_C10",
+        "variableId": "VariableID:7:88",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_C15",
+      "figmaId": "VariableID:7:89",
+      "figmaKey": "6a72d80e0dc77d48abc1be21b5a5d2effd7de834",
+      "kind": "semantic",
+      "value": "#06B6D426",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.0235294122248888,
+        "g": 0.7137255072593689,
+        "b": 0.8313725590705872,
+        "a": 0.15000000596046448
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_C15",
+        "variableId": "VariableID:7:89",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_C20",
+      "figmaId": "VariableID:7:90",
+      "figmaKey": "72f592e2fe00e453f019ba301eb7e9e4baddaf4d",
+      "kind": "semantic",
+      "value": "#06B6D433",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.0235294122248888,
+        "g": 0.7137255072593689,
+        "b": 0.8313725590705872,
+        "a": 0.20000000298023224
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_C20",
+        "variableId": "VariableID:7:90",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_S5",
+      "figmaId": "VariableID:7:91",
+      "figmaKey": "180528d787b8fb8f011bb6346435b43e84872214",
+      "kind": "semantic",
+      "value": "#0EA5E90D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.054901961237192154,
+        "g": 0.6470588445663452,
+        "b": 0.9137254953384399,
+        "a": 0.05000000074505806
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_S5",
+        "variableId": "VariableID:7:91",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_S8",
+      "figmaId": "VariableID:7:92",
+      "figmaKey": "f2d5c885b99b1ef554f592b3cb2d2e99445968dd",
+      "kind": "semantic",
+      "value": "#0EA5E914",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.054901961237192154,
+        "g": 0.6470588445663452,
+        "b": 0.9137254953384399,
+        "a": 0.07999999821186066
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_S8",
+        "variableId": "VariableID:7:92",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_S10",
+      "figmaId": "VariableID:7:93",
+      "figmaKey": "2cf8543d36abd89e4958e126b3a69f7116c1f1c4",
+      "kind": "semantic",
+      "value": "#0EA5E91A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.054901961237192154,
+        "g": 0.6470588445663452,
+        "b": 0.9137254953384399,
+        "a": 0.10000000149011612
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_S10",
+        "variableId": "VariableID:7:93",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_S15",
+      "figmaId": "VariableID:7:94",
+      "figmaKey": "1fa198e5ccdfc194c0b0fef9f86336fb3673b89b",
+      "kind": "semantic",
+      "value": "#0EA5E926",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.054901961237192154,
+        "g": 0.6470588445663452,
+        "b": 0.9137254953384399,
+        "a": 0.15000000596046448
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_S15",
+        "variableId": "VariableID:7:94",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_S20",
+      "figmaId": "VariableID:7:95",
+      "figmaKey": "d2ed9183968959165ec995d01d46055335aea815",
+      "kind": "semantic",
+      "value": "#0EA5E933",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.054901961237192154,
+        "g": 0.6470588445663452,
+        "b": 0.9137254953384399,
+        "a": 0.20000000298023224
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_S20",
+        "variableId": "VariableID:7:95",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_DB5",
+      "figmaId": "VariableID:7:96",
+      "figmaKey": "bfbd5b6eea37330598352f0edae3cbf89f37cbe5",
+      "kind": "semantic",
+      "value": "#4167D80D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.2549019753932953,
+        "g": 0.40392157435417175,
+        "b": 0.8470588326454163,
+        "a": 0.05000000074505806
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_DB5",
+        "variableId": "VariableID:7:96",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_DB8",
+      "figmaId": "VariableID:7:97",
+      "figmaKey": "f433188a4f9b2bf709f71b03d093db92153f72e4",
+      "kind": "semantic",
+      "value": "#4167D814",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.2549019753932953,
+        "g": 0.40392157435417175,
+        "b": 0.8470588326454163,
+        "a": 0.07999999821186066
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_DB8",
+        "variableId": "VariableID:7:97",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_DB10",
+      "figmaId": "VariableID:7:98",
+      "figmaKey": "67c461162ef178abb717faa697ca820d721f62aa",
+      "kind": "semantic",
+      "value": "#4167D81A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.2549019753932953,
+        "g": 0.40392157435417175,
+        "b": 0.8470588326454163,
+        "a": 0.10000000149011612
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_DB10",
+        "variableId": "VariableID:7:98",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_DB15",
+      "figmaId": "VariableID:7:99",
+      "figmaKey": "cc65e1200ad511d2a638aa06b11fd9134480eacb",
+      "kind": "semantic",
+      "value": "#4167D826",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.2549019753932953,
+        "g": 0.40392157435417175,
+        "b": 0.8470588326454163,
+        "a": 0.15000000596046448
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_DB15",
+        "variableId": "VariableID:7:99",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_DB20",
+      "figmaId": "VariableID:7:100",
+      "figmaKey": "49876e26869809ebefc4b7840d984d597726b183",
+      "kind": "semantic",
+      "value": "#4167D833",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.2549019753932953,
+        "g": 0.40392157435417175,
+        "b": 0.8470588326454163,
+        "a": 0.20000000298023224
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_DB20",
+        "variableId": "VariableID:7:100",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_P5",
+      "figmaId": "VariableID:7:101",
+      "figmaKey": "4a8c3dcc00f24735161ba43186aeb251fe84b826",
+      "kind": "semantic",
+      "value": "#8B5CF60D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.545098066329956,
+        "g": 0.3607843220233917,
+        "b": 0.9647058844566345,
+        "a": 0.05000000074505806
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_P5",
+        "variableId": "VariableID:7:101",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_P8",
+      "figmaId": "VariableID:7:102",
+      "figmaKey": "afc08d3d57f0df671f7b40a0cb2c069c7140e75f",
+      "kind": "semantic",
+      "value": "#8B5CF614",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.545098066329956,
+        "g": 0.3607843220233917,
+        "b": 0.9647058844566345,
+        "a": 0.07999999821186066
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_P8",
+        "variableId": "VariableID:7:102",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_P10",
+      "figmaId": "VariableID:7:103",
+      "figmaKey": "90d7932666207500bdc8b013956a22decc1f0863",
+      "kind": "semantic",
+      "value": "#8B5CF61A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.545098066329956,
+        "g": 0.3607843220233917,
+        "b": 0.9647058844566345,
+        "a": 0.10000000149011612
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_P10",
+        "variableId": "VariableID:7:103",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_P15",
+      "figmaId": "VariableID:7:104",
+      "figmaKey": "cda69244f5d4938005fef4442bf1201e753df280",
+      "kind": "semantic",
+      "value": "#8B5CF626",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.545098066329956,
+        "g": 0.3607843220233917,
+        "b": 0.9647058844566345,
+        "a": 0.15000000596046448
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_P15",
+        "variableId": "VariableID:7:104",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_P20",
+      "figmaId": "VariableID:7:105",
+      "figmaKey": "fab24a447af8295b4f431176a81b89b73e7af3cb",
+      "kind": "semantic",
+      "value": "#8B5CF633",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.545098066329956,
+        "g": 0.3607843220233917,
+        "b": 0.9647058844566345,
+        "a": 0.20000000298023224
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_P20",
+        "variableId": "VariableID:7:105",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_PK5",
+      "figmaId": "VariableID:7:106",
+      "figmaKey": "9ffebd3964823a43b89c6d77c1ce72dcfe73f660",
+      "kind": "semantic",
+      "value": "#EC48990D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9254902005195618,
+        "g": 0.2823529541492462,
+        "b": 0.6000000238418579,
+        "a": 0.05000000074505806
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_PK5",
+        "variableId": "VariableID:7:106",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_PK8",
+      "figmaId": "VariableID:7:107",
+      "figmaKey": "6c54c7c98729c24ccbde0731789432e9e3f72676",
+      "kind": "semantic",
+      "value": "#EC489914",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9254902005195618,
+        "g": 0.2823529541492462,
+        "b": 0.6000000238418579,
+        "a": 0.07999999821186066
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_PK8",
+        "variableId": "VariableID:7:107",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_PK10",
+      "figmaId": "VariableID:7:108",
+      "figmaKey": "f7e0808ac3e76a1fd4b23f56d6ca446a2002e450",
+      "kind": "semantic",
+      "value": "#EC48991A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9254902005195618,
+        "g": 0.2823529541492462,
+        "b": 0.6000000238418579,
+        "a": 0.10000000149011612
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_PK10",
+        "variableId": "VariableID:7:108",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_PK15",
+      "figmaId": "VariableID:7:109",
+      "figmaKey": "3f272316c6141bef8bf6f0fdb23895aec6e46ed4",
+      "kind": "semantic",
+      "value": "#EC489926",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9254902005195618,
+        "g": 0.2823529541492462,
+        "b": 0.6000000238418579,
+        "a": 0.15000000596046448
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_PK15",
+        "variableId": "VariableID:7:109",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/BT_PK20",
+      "figmaId": "VariableID:7:110",
+      "figmaKey": "9c7e777c62d4a0218fb2d25bd9a0f6261ca6d600",
+      "kind": "semantic",
+      "value": "#EC489933",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9254902005195618,
+        "g": 0.2823529541492462,
+        "b": 0.6000000238418579,
+        "a": 0.20000000298023224
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/BT_PK20",
+        "variableId": "VariableID:7:110",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/MK_5",
+      "figmaId": "VariableID:7:111",
+      "figmaKey": "354414bc15b876bc7a215463bbd44d55ea2cd91f",
+      "kind": "semantic",
+      "value": "#0000000D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 0.05000000074505806
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/MK_5",
+        "variableId": "VariableID:7:111",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/MK_80",
+      "figmaId": "VariableID:7:112",
+      "figmaKey": "309a7290aeff48efeb52b7b46bec0feee9ea1248",
+      "kind": "semantic",
+      "value": "#000000CC",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0,
+        "g": 0,
+        "b": 0,
+        "a": 0.800000011920929
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/MK_80",
+        "variableId": "VariableID:7:112",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/WT_10",
+      "figmaId": "VariableID:1680:5203",
+      "figmaKey": "48c5c4f4f316b089c0b453b8e3692045a5332c94",
+      "kind": "semantic",
+      "value": "#FFFFFF1A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 0.10000000149011612
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/WT_10",
+        "variableId": "VariableID:1680:5203",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/WT_20",
+      "figmaId": "VariableID:1680:5202",
+      "figmaKey": "db6b26be13cf080ada81a7b383995859050e986f",
+      "kind": "semantic",
+      "value": "#FFFFFF33",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 0.20000000298023224
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/WT_20",
+        "variableId": "VariableID:1680:5202",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/WT_30",
+      "figmaId": "VariableID:1680:5199",
+      "figmaKey": "2cda033aaf8ad7a14c5b970ea338627ca13fa41e",
+      "kind": "semantic",
+      "value": "#FFFFFF4D",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 0.30000001192092896
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/WT_30",
+        "variableId": "VariableID:1680:5199",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/WT_40",
+      "figmaId": "VariableID:1680:5200",
+      "figmaKey": "a131a71160b6e2d776cb64fcbd5ddd38dd99e0fd",
+      "kind": "semantic",
+      "value": "#FFFFFF66",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 0.4000000059604645
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/WT_40",
+        "variableId": "VariableID:1680:5200",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/WT_45",
+      "figmaId": "VariableID:1680:5198",
+      "figmaKey": "08bf46e4651ab27a879facdb4bfcfed190f3a299",
+      "kind": "semantic",
+      "value": "#FFFFFF73",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 0.44999998807907104
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/WT_45",
+        "variableId": "VariableID:1680:5198",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/WT_60",
+      "figmaId": "VariableID:1680:5197",
+      "figmaKey": "53e0ae289a6ef8f4e63de3b812de5c38272be1a8",
+      "kind": "semantic",
+      "value": "#FFFFFF99",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 0.6000000238418579
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/WT_60",
+        "variableId": "VariableID:1680:5197",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Background/WT_80",
+      "figmaId": "VariableID:1680:5201",
+      "figmaKey": "36f517180ca7336790e192642526fe6eb51ed56b",
+      "kind": "semantic",
+      "value": "#FFFFFFCC",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 0.800000011920929
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Background/WT_80",
+        "variableId": "VariableID:1680:5201",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Blue/B01",
+      "figmaId": "VariableID:7:122",
+      "figmaKey": "71e7f76303ccffbede9e7a5864063241b25f75f2",
+      "kind": "primitive",
+      "value": "#F2F7FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9490196108818054,
+        "g": 0.9686274528503418,
+        "b": 1,
+        "a": 1
+      },
+      "description": "极浅背景",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Blue/B01",
+        "variableId": "VariableID:7:122",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Blue/B02",
+      "figmaId": "VariableID:7:123",
+      "figmaKey": "d2017befc3616f16d1f70af81eeeb212ea538227",
+      "kind": "primitive",
+      "value": "#E5F0FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.8980392217636108,
+        "g": 0.9411764740943909,
+        "b": 1,
+        "a": 1
+      },
+      "description": "hover背景",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Blue/B02",
+        "variableId": "VariableID:7:123",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Blue/B03",
+      "figmaId": "VariableID:7:124",
+      "figmaKey": "ae016e6397f83f0ad4afba2c194366c260e6ea36",
+      "kind": "primitive",
+      "value": "#C7DDFF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.7803921699523926,
+        "g": 0.8666666746139526,
+        "b": 1,
+        "a": 1
+      },
+      "description": "选中背景",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Blue/B03",
+        "variableId": "VariableID:7:124",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Blue/B04",
+      "figmaId": "VariableID:7:125",
+      "figmaKey": "5ac62bee18ab3f35e59512389ee5786be91e899a",
+      "kind": "primitive",
+      "value": "#9CC0FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.6117647290229797,
+        "g": 0.7529411911964417,
+        "b": 1,
+        "a": 1
+      },
+      "description": "辅助状态",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Blue/B04",
+        "variableId": "VariableID:7:125",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Blue/B05",
+      "figmaId": "VariableID:7:126",
+      "figmaKey": "63197f1d62e3be7bd6119fee4e5a4eb32044e722",
+      "kind": "primitive",
+      "value": "#6D9FFF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.4274509847164154,
+        "g": 0.6235294342041016,
+        "b": 1,
+        "a": 1
+      },
+      "description": "辅助状态",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Blue/B05",
+        "variableId": "VariableID:7:126",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Blue/B06",
+      "figmaId": "VariableID:7:127",
+      "figmaKey": "e1973b71e0c6d4f49bd4795e938d01939a7cb690",
+      "kind": "primitive",
+      "value": "#2B73FF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.16862745583057404,
+        "g": 0.45098039507865906,
+        "b": 1,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Blue/B06",
+        "variableId": "VariableID:7:127",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Blue/B07",
+      "figmaId": "VariableID:7:128",
+      "figmaKey": "a4b89d4b622df84d0be8f71bd55e258a39c44705",
+      "kind": "primitive",
+      "value": "#1F63F0",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.12156862765550613,
+        "g": 0.38823530077934265,
+        "b": 0.9411764740943909,
+        "a": 1
+      },
+      "description": "Hover",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Blue/B07",
+        "variableId": "VariableID:7:128",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Blue/B08",
+      "figmaId": "VariableID:7:129",
+      "figmaKey": "58e8644da395088fdea22ecb1bb4eb246db38811",
+      "kind": "primitive",
+      "value": "#1754D4",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.09019608050584793,
+        "g": 0.3294117748737335,
+        "b": 0.8313725590705872,
+        "a": 1
+      },
+      "description": "Pressed",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Blue/B08",
+        "variableId": "VariableID:7:129",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Blue/B09",
+      "figmaId": "VariableID:7:130",
+      "figmaKey": "ef16702e7e32a7b5c7dc384587ec95199a8ca9eb",
+      "kind": "primitive",
+      "value": "#1145B0",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.06666667014360428,
+        "g": 0.2705882489681244,
+        "b": 0.6901960968971252,
+        "a": 1
+      },
+      "description": "深色强调",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Blue/B09",
+        "variableId": "VariableID:7:130",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Blue/B10",
+      "figmaId": "VariableID:7:131",
+      "figmaKey": "1ab318fbf0302ea5c67d00e994711ec8c0d749e0",
+      "kind": "primitive",
+      "value": "#0D3385",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.05098039284348488,
+        "g": 0.20000000298023224,
+        "b": 0.5215686559677124,
+        "a": 1
+      },
+      "description": "极深色",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Blue/B10",
+        "variableId": "VariableID:7:131",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Neutral/N01",
+      "figmaId": "VariableID:7:132",
+      "figmaKey": "a528fc688363199172b6bbadd01d8c1d825f3f37",
+      "kind": "primitive",
+      "value": "#FFFFFF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Neutral/N01",
+        "variableId": "VariableID:7:132",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Neutral/N02",
+      "figmaId": "VariableID:7:133",
+      "figmaKey": "8739e01268d1454f930bf0cd880f3b2c49db403f",
+      "kind": "primitive",
+      "value": "#FAFBFC",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9803921580314636,
+        "g": 0.9843137264251709,
+        "b": 0.9882352948188782,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Neutral/N02",
+        "variableId": "VariableID:7:133",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Neutral/N03",
+      "figmaId": "VariableID:7:134",
+      "figmaKey": "33b430947f4351d98ff8bb6de064431dce45dca2",
+      "kind": "primitive",
+      "value": "#F5F7FA",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9607843160629272,
+        "g": 0.9686274528503418,
+        "b": 0.9803921580314636,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Neutral/N03",
+        "variableId": "VariableID:7:134",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Neutral/N04",
+      "figmaId": "VariableID:7:135",
+      "figmaKey": "573f63d3198ca3225b9a6f8759773919e3facd5a",
+      "kind": "primitive",
+      "value": "#EBEEF2",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9215686321258545,
+        "g": 0.9333333373069763,
+        "b": 0.9490196108818054,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Neutral/N04",
+        "variableId": "VariableID:7:135",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Neutral/N05",
+      "figmaId": "VariableID:7:136",
+      "figmaKey": "0d23d9a8a7bd3cf03974024546d2ffcf93ff19dc",
+      "kind": "primitive",
+      "value": "#D7DCE3",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.843137264251709,
+        "g": 0.8627451062202454,
+        "b": 0.8901960849761963,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Neutral/N05",
+        "variableId": "VariableID:7:136",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Neutral/N06",
+      "figmaId": "VariableID:7:137",
+      "figmaKey": "3eb806301223416a2d43ab7beffeabb6db295dfc",
+      "kind": "primitive",
+      "value": "#B8C0CC",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.7215686440467834,
+        "g": 0.7529411911964417,
+        "b": 0.800000011920929,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Neutral/N06",
+        "variableId": "VariableID:7:137",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Neutral/N07",
+      "figmaId": "VariableID:7:138",
+      "figmaKey": "ec99728e2380c90976756a507c1cde596f7ece51",
+      "kind": "primitive",
+      "value": "#8D96A3",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.5529412031173706,
+        "g": 0.5882353186607361,
+        "b": 0.6392157077789307,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Neutral/N07",
+        "variableId": "VariableID:7:138",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Neutral/N08",
+      "figmaId": "VariableID:7:139",
+      "figmaKey": "e07f710a84d5a44d55166966a72f65c6f35b44e2",
+      "kind": "primitive",
+      "value": "#667085",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.4000000059604645,
+        "g": 0.43921568989753723,
+        "b": 0.5215686559677124,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Neutral/N08",
+        "variableId": "VariableID:7:139",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Neutral/N09",
+      "figmaId": "VariableID:7:140",
+      "figmaKey": "cac114fdc1d4c4da47082414a7e81f5a4c7aac74",
+      "kind": "primitive",
+      "value": "#475467",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.27843138575553894,
+        "g": 0.3294117748737335,
+        "b": 0.40392157435417175,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Neutral/N09",
+        "variableId": "VariableID:7:140",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Neutral/N10",
+      "figmaId": "VariableID:7:141",
+      "figmaKey": "7c613a7880ea0c0c6263a1037786b3d1e8a3791f",
+      "kind": "primitive",
+      "value": "#344054",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.20392157137393951,
+        "g": 0.250980406999588,
+        "b": 0.3294117748737335,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Neutral/N10",
+        "variableId": "VariableID:7:141",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Neutral/N11",
+      "figmaId": "VariableID:7:142",
+      "figmaKey": "5649ea75857c3eea899b458ec9f9d40c06068b01",
+      "kind": "primitive",
+      "value": "#1D2939",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.11372549086809158,
+        "g": 0.16078431904315948,
+        "b": 0.2235294133424759,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Neutral/N11",
+        "variableId": "VariableID:7:142",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Neutral/N12",
+      "figmaId": "VariableID:7:143",
+      "figmaKey": "ba74a58a347b874827882c5dd9123fac5a27e743",
+      "kind": "primitive",
+      "value": "#101828",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.062745101749897,
+        "g": 0.0941176488995552,
+        "b": 0.1568627506494522,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Neutral/N12",
+        "variableId": "VariableID:7:143",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Red/R01",
+      "figmaId": "VariableID:7:144",
+      "figmaKey": "68d27dfa217313b9679a6d0fa677cffcb14b675e",
+      "kind": "primitive",
+      "value": "#FEF2F2",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9960784316062927,
+        "g": 0.9490196108818054,
+        "b": 0.9490196108818054,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Red/R01",
+        "variableId": "VariableID:7:144",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Red/R02",
+      "figmaId": "VariableID:7:145",
+      "figmaKey": "0140dc4b24fcc1cd91b99e1c3f65426fe6e45000",
+      "kind": "primitive",
+      "value": "#FEE2E2",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9960784316062927,
+        "g": 0.886274516582489,
+        "b": 0.886274516582489,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Red/R02",
+        "variableId": "VariableID:7:145",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Red/R03",
+      "figmaId": "VariableID:7:146",
+      "figmaKey": "1ae212ded60e3e8893f8f0c7507d13aab15a6440",
+      "kind": "primitive",
+      "value": "#FECACA",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9960784316062927,
+        "g": 0.7921568751335144,
+        "b": 0.7921568751335144,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Red/R03",
+        "variableId": "VariableID:7:146",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Red/R04",
+      "figmaId": "VariableID:7:147",
+      "figmaKey": "a6e3c454fbb741a9a3ba99089ba65b0178102b38",
+      "kind": "primitive",
+      "value": "#FD9B9B",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9921568632125854,
+        "g": 0.6078431606292725,
+        "b": 0.6078431606292725,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Red/R04",
+        "variableId": "VariableID:7:147",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Red/R05",
+      "figmaId": "VariableID:7:148",
+      "figmaKey": "b988f29faaa2d428666c56d9de0a69f83512b871",
+      "kind": "primitive",
+      "value": "#F96666",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9764705896377563,
+        "g": 0.4000000059604645,
+        "b": 0.4000000059604645,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Red/R05",
+        "variableId": "VariableID:7:148",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Red/R06",
+      "figmaId": "VariableID:7:149",
+      "figmaKey": "f3c331558fe31fe782aae08630eeefe755d72829",
+      "kind": "primitive",
+      "value": "#F93838",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9764705896377563,
+        "g": 0.21960784494876862,
+        "b": 0.21960784494876862,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Red/R06",
+        "variableId": "VariableID:7:149",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Red/R07",
+      "figmaId": "VariableID:7:150",
+      "figmaKey": "c525db48e4e5d5731da5fa31a297cab9b18c1715",
+      "kind": "primitive",
+      "value": "#D92020",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.8509804010391235,
+        "g": 0.125490203499794,
+        "b": 0.125490203499794,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Red/R07",
+        "variableId": "VariableID:7:150",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Red/R08",
+      "figmaId": "VariableID:7:151",
+      "figmaKey": "ce1f8166d12ba61987965940e56849134dfe6803",
+      "kind": "primitive",
+      "value": "#B41818",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.7058823704719543,
+        "g": 0.0941176488995552,
+        "b": 0.0941176488995552,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Red/R08",
+        "variableId": "VariableID:7:151",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Red/R09",
+      "figmaId": "VariableID:7:152",
+      "figmaKey": "9de59ef5d16ec918baad202698b227f6bc92d61d",
+      "kind": "primitive",
+      "value": "#911818",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.5686274766921997,
+        "g": 0.0941176488995552,
+        "b": 0.0941176488995552,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Red/R09",
+        "variableId": "VariableID:7:152",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Red/R10",
+      "figmaId": "VariableID:7:153",
+      "figmaKey": "a73dfad302c65d617c1879254533405c84cc345c",
+      "kind": "primitive",
+      "value": "#5C0000",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.36078935861587524,
+        "g": 0,
+        "b": 0,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Red/R10",
+        "variableId": "VariableID:7:153",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Green/G01",
+      "figmaId": "VariableID:7:154",
+      "figmaKey": "82d41e93de70143c64a7b4507085c2e6ae25f20b",
+      "kind": "primitive",
+      "value": "#ECFDF3",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9254902005195618,
+        "g": 0.9921568632125854,
+        "b": 0.9529411792755127,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Green/G01",
+        "variableId": "VariableID:7:154",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Green/G02",
+      "figmaId": "VariableID:7:155",
+      "figmaKey": "6d6e9a6730d91bde3309d3388494760d417a2491",
+      "kind": "primitive",
+      "value": "#D1FADF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.8196078538894653,
+        "g": 0.9803921580314636,
+        "b": 0.8745098114013672,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Green/G02",
+        "variableId": "VariableID:7:155",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Green/G03",
+      "figmaId": "VariableID:7:156",
+      "figmaKey": "cebbda68f354f053b73be43ff315356a05c34b37",
+      "kind": "primitive",
+      "value": "#A6F4C5",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.6509804129600525,
+        "g": 0.95686274766922,
+        "b": 0.772549033164978,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Green/G03",
+        "variableId": "VariableID:7:156",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Green/G04",
+      "figmaId": "VariableID:7:157",
+      "figmaKey": "b19980e5fc2e51b59769960dad321f5a9b2fd799",
+      "kind": "primitive",
+      "value": "#6CE9A6",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.42352941632270813,
+        "g": 0.9137254953384399,
+        "b": 0.6509804129600525,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Green/G04",
+        "variableId": "VariableID:7:157",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Green/G05",
+      "figmaId": "VariableID:7:158",
+      "figmaKey": "aaa4b6ed26598cf410ca06ddd4f82566bc3475a5",
+      "kind": "primitive",
+      "value": "#32D583",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.19607843458652496,
+        "g": 0.8352941274642944,
+        "b": 0.5137255191802979,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Green/G05",
+        "variableId": "VariableID:7:158",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Green/G06",
+      "figmaId": "VariableID:7:159",
+      "figmaKey": "1f7f81f9a4a217d370cfc36b251532766bff34ad",
+      "kind": "primitive",
+      "value": "#12B76A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.07058823853731155,
+        "g": 0.7176470756530762,
+        "b": 0.4156862795352936,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Green/G06",
+        "variableId": "VariableID:7:159",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Green/G07",
+      "figmaId": "VariableID:7:160",
+      "figmaKey": "6896e4b08c0512720a79fe017dbbd9dcebdf3a8d",
+      "kind": "primitive",
+      "value": "#039855",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.0117647061124444,
+        "g": 0.5960784554481506,
+        "b": 0.3333333432674408,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Green/G07",
+        "variableId": "VariableID:7:160",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Green/G08",
+      "figmaId": "VariableID:7:161",
+      "figmaKey": "332b503de22e5f94eaf85630e1f4c46190cc4faf",
+      "kind": "primitive",
+      "value": "#027A48",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.007843137718737125,
+        "g": 0.47843137383461,
+        "b": 0.2823529541492462,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Green/G08",
+        "variableId": "VariableID:7:161",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Green/G09",
+      "figmaId": "VariableID:7:162",
+      "figmaKey": "184bcfdff1f8d31129150513e60a4db1995e718e",
+      "kind": "primitive",
+      "value": "#05603A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.019607843831181526,
+        "g": 0.3764705955982208,
+        "b": 0.22745098173618317,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Green/G09",
+        "variableId": "VariableID:7:162",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Green/G10",
+      "figmaId": "VariableID:7:163",
+      "figmaKey": "7c9e826c00004f3212a9e35809eadab76deefcd1",
+      "kind": "primitive",
+      "value": "#054F31",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.019607843831181526,
+        "g": 0.30980393290519714,
+        "b": 0.1921568661928177,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Green/G10",
+        "variableId": "VariableID:7:163",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Orange/O10",
+      "figmaId": "VariableID:7:164",
+      "figmaKey": "07a29c805acd50fa1f2c689237c6514df7ea31e4",
+      "kind": "primitive",
+      "value": "#772509",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.4654482305049896,
+        "g": 0.14535832405090332,
+        "b": 0.03596050292253494,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Orange/O10",
+        "variableId": "VariableID:7:164",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Orange/O01",
+      "figmaId": "VariableID:7:165",
+      "figmaKey": "ace2890a1afc60ea33c95db3e5e3a5fa74e894af",
+      "kind": "primitive",
+      "value": "#FFF7ED",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 0.9686274528503418,
+        "b": 0.929411768913269,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Orange/O01",
+        "variableId": "VariableID:7:165",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Orange/O02",
+      "figmaId": "VariableID:7:166",
+      "figmaKey": "53d2989dbe3bfb8b565cd91f23d31fdca405b141",
+      "kind": "primitive",
+      "value": "#FFEDD5",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 0.929411768913269,
+        "b": 0.8352941274642944,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Orange/O02",
+        "variableId": "VariableID:7:166",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Orange/O03",
+      "figmaId": "VariableID:7:167",
+      "figmaKey": "99fd344ddc1b7119e337a4493c31167714320cb8",
+      "kind": "primitive",
+      "value": "#FED7AA",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9960784316062927,
+        "g": 0.843137264251709,
+        "b": 0.6666666865348816,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Orange/O03",
+        "variableId": "VariableID:7:167",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Orange/O04",
+      "figmaId": "VariableID:7:168",
+      "figmaKey": "5dfe13ea0a6d00bded04d80bb807bb148938bf5a",
+      "kind": "primitive",
+      "value": "#FDBA74",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9921568632125854,
+        "g": 0.729411780834198,
+        "b": 0.45490196347236633,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Orange/O04",
+        "variableId": "VariableID:7:168",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Orange/O05",
+      "figmaId": "VariableID:7:169",
+      "figmaKey": "9e2ac74652030f2c06c4386d7a04eb5b78665680",
+      "kind": "primitive",
+      "value": "#FB923C",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9843137264251709,
+        "g": 0.572549045085907,
+        "b": 0.23529411852359772,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Orange/O05",
+        "variableId": "VariableID:7:169",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Orange/O06",
+      "figmaId": "VariableID:7:170",
+      "figmaKey": "328abd67ce545b377f3cbe7d696a2c739b40fc7b",
+      "kind": "primitive",
+      "value": "#F77C09",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9686274528503418,
+        "g": 0.48640522360801697,
+        "b": 0.03529411926865578,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Orange/O06",
+        "variableId": "VariableID:7:170",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Orange/O07",
+      "figmaId": "VariableID:7:171",
+      "figmaKey": "ef0f03cb57789f1f74fb92d19c66963117243d2e",
+      "kind": "primitive",
+      "value": "#FF6A00",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 0.417431116104126,
+        "b": 0.0013104951940476894,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Orange/O07",
+        "variableId": "VariableID:7:171",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Orange/O08",
+      "figmaId": "VariableID:7:172",
+      "figmaKey": "50f661053395eccc776650a1bed3de99ebaf974f",
+      "kind": "primitive",
+      "value": "#C2410C",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.7607843279838562,
+        "g": 0.2549019753932953,
+        "b": 0.0470588244497776,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Orange/O08",
+        "variableId": "VariableID:7:172",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Orange/O09",
+      "figmaId": "VariableID:7:173",
+      "figmaKey": "076b355d7bbeb981ef5dbba4eafe85405d1e178a",
+      "kind": "primitive",
+      "value": "#9A3412",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.6039215922355652,
+        "g": 0.20392157137393951,
+        "b": 0.07058823853731155,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Orange/O09",
+        "variableId": "VariableID:7:173",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Yellow/Y01",
+      "figmaId": "VariableID:7:174",
+      "figmaKey": "9e252d912d355c249723e4cd864502292daa32d8",
+      "kind": "primitive",
+      "value": "#FFFBE6",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 0.9843137264251709,
+        "b": 0.9019607901573181,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Yellow/Y01",
+        "variableId": "VariableID:7:174",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Yellow/Y02",
+      "figmaId": "VariableID:7:175",
+      "figmaKey": "95aa9b904f531df65bc45042cba229871a970735",
+      "kind": "primitive",
+      "value": "#FFF3BF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 0.9529411792755127,
+        "b": 0.7490196228027344,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Yellow/Y02",
+        "variableId": "VariableID:7:175",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Yellow/Y03",
+      "figmaId": "VariableID:7:176",
+      "figmaKey": "ce1c8ef5f754670cc124be9b06bc666c35d6aa27",
+      "kind": "primitive",
+      "value": "#FFE68A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 0.9019607901573181,
+        "b": 0.5411764979362488,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Yellow/Y03",
+        "variableId": "VariableID:7:176",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Yellow/Y04",
+      "figmaId": "VariableID:7:177",
+      "figmaKey": "a20788a6f2f946a57404dc198547d78755de0910",
+      "kind": "primitive",
+      "value": "#FFD95A",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 0.8509804010391235,
+        "b": 0.3529411852359772,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Yellow/Y04",
+        "variableId": "VariableID:7:177",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Yellow/Y05",
+      "figmaId": "VariableID:7:178",
+      "figmaKey": "db768e50911d254f8d5782a21bfb45cf1d114d4e",
+      "kind": "primitive",
+      "value": "#FFC928",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 1,
+        "g": 0.7882353067398071,
+        "b": 0.1568627506494522,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Yellow/Y05",
+        "variableId": "VariableID:7:178",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Yellow/Y06",
+      "figmaId": "VariableID:7:179",
+      "figmaKey": "ee6e476ae98dcd4b0a479efbd80a5ad8de0654f8",
+      "kind": "primitive",
+      "value": "#F5B800",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9607843160629272,
+        "g": 0.7215686440467834,
+        "b": 0,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Yellow/Y06",
+        "variableId": "VariableID:7:179",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Yellow/Y07",
+      "figmaId": "VariableID:7:180",
+      "figmaKey": "276b58f709883e3a480f3695f7c05e436a334727",
+      "kind": "primitive",
+      "value": "#D99A00",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.8509804010391235,
+        "g": 0.6039215922355652,
+        "b": 0,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Yellow/Y07",
+        "variableId": "VariableID:7:180",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Yellow/Y08",
+      "figmaId": "VariableID:7:181",
+      "figmaKey": "625e718ade1ae755cc8e32fa014203f7cd731df7",
+      "kind": "primitive",
+      "value": "#B77900",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.7176470756530762,
+        "g": 0.4745098054409027,
+        "b": 0,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Yellow/Y08",
+        "variableId": "VariableID:7:181",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Yellow/Y09",
+      "figmaId": "VariableID:7:182",
+      "figmaKey": "729e68ba9fa9e049d2a0051d24a2729874d00665",
+      "kind": "primitive",
+      "value": "#8F5F00",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.5607843399047852,
+        "g": 0.37254902720451355,
+        "b": 0,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Yellow/Y09",
+        "variableId": "VariableID:7:182",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Yellow/Y10",
+      "figmaId": "VariableID:7:183",
+      "figmaKey": "5aaaa6d647887937beb980b444e23194b468ff91",
+      "kind": "primitive",
+      "value": "#704A00",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.43921568989753723,
+        "g": 0.29019609093666077,
+        "b": 0,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Yellow/Y10",
+        "variableId": "VariableID:7:183",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Cyan/C01",
+      "figmaId": "VariableID:7:184",
+      "figmaKey": "2e1b8a07c068ea183a3a05973a9aaf951507368b",
+      "kind": "primitive",
+      "value": "#ECFEFF",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.9254902005195618,
+        "g": 0.9960784316062927,
+        "b": 1,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Cyan/C01",
+        "variableId": "VariableID:7:184",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Cyan/C02",
+      "figmaId": "VariableID:7:185",
+      "figmaKey": "6a03a355246f9740bebe90bfa46a81633e1be0d1",
+      "kind": "primitive",
+      "value": "#CFFAFE",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.8117647171020508,
+        "g": 0.9803921580314636,
+        "b": 0.9960784316062927,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Cyan/C02",
+        "variableId": "VariableID:7:185",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Cyan/C03",
+      "figmaId": "VariableID:7:186",
+      "figmaKey": "39f82a8a66e4a1789aedee0a3ecc249307697917",
+      "kind": "primitive",
+      "value": "#A5F3FC",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.6470588445663452,
+        "g": 0.9529411792755127,
+        "b": 0.9882352948188782,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Cyan/C03",
+        "variableId": "VariableID:7:186",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Cyan/C04",
+      "figmaId": "VariableID:7:187",
+      "figmaKey": "d89b5b79f4ce2bdde2e5f4f4482a50164ce8ad47",
+      "kind": "primitive",
+      "value": "#67E8F9",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.40392157435417175,
+        "g": 0.9098039269447327,
+        "b": 0.9764705896377563,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Cyan/C04",
+        "variableId": "VariableID:7:187",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Cyan/C05",
+      "figmaId": "VariableID:7:188",
+      "figmaKey": "5a1341d3c004328356e40e5f1e45ae3e43cf3f73",
+      "kind": "primitive",
+      "value": "#22D3EE",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.13333334028720856,
+        "g": 0.8274509906768799,
+        "b": 0.9333333373069763,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Cyan/C05",
+        "variableId": "VariableID:7:188",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Cyan/C06",
+      "figmaId": "VariableID:7:189",
+      "figmaKey": "544ecbb5cf12a8cf881407b201fbc67aa95fd28f",
+      "kind": "primitive",
+      "value": "#06B6D4",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.0235294122248888,
+        "g": 0.7137255072593689,
+        "b": 0.8313725590705872,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Cyan/C06",
+        "variableId": "VariableID:7:189",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Cyan/C07",
+      "figmaId": "VariableID:7:190",
+      "figmaKey": "38002acb3814332543dc5810b4e92c7701bae5c2",
+      "kind": "primitive",
+      "value": "#0891B2",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.0313725508749485,
+        "g": 0.5686274766921997,
+        "b": 0.6980392336845398,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Cyan/C07",
+        "variableId": "VariableID:7:190",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Primitive/Cyan/C08",
+      "figmaId": "VariableID:7:191",
+      "figmaKey": "f301c0bac4ed6a3255d51759c2e12bb68927b731",
+      "kind": "primitive",
+      "value": "#0E7490",
+      "unit": "color",
+      "mode": "Mobile",
+      "aliasOf": null,
+      "rawValue": {
+        "r": 0.054901961237192154,
+        "g": 0.45490196347236633,
+        "b": 0.5647059082984924,
+        "a": 1
+      },
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Primitive/Cyan/C08",
+        "variableId": "VariableID:7:191",
+        "referencePage": "201:196"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    }
+  ]
+}

@@ -1,0 +1,4523 @@
+{
+  "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+  "page": "58:680",
+  "readOnly": true,
+  "date": "2026-10-09",
+  "overview": [
+    {
+      "id": "58:682",
+      "name": "tabs_item/primary_tab",
+      "properties": {
+        "Text#911:285": {
+          "type": "TEXT",
+          "defaultValue": "Tab"
+        },
+        "Badge": {
+          "type": "VARIANT",
+          "defaultValue": "false",
+          "variantOptions": [
+            "true",
+            "false"
+          ]
+        },
+        "ActiveLineMode": {
+          "type": "VARIANT",
+          "defaultValue": "none",
+          "variantOptions": [
+            "none",
+            "fill",
+            "fixed"
+          ]
+        },
+        "Status": {
+          "type": "VARIANT",
+          "defaultValue": "default",
+          "variantOptions": [
+            "default",
+            "active",
+            "disabled"
+          ]
+        }
+      },
+      "children": [
+        {
+          "id": "58:683",
+          "name": "Badge=false, ActiveLineMode=none, Status=default",
+          "width": 29,
+          "height": 42
+        },
+        {
+          "id": "58:685",
+          "name": "Badge=false, ActiveLineMode=none, Status=disabled",
+          "width": 29,
+          "height": 42
+        },
+        {
+          "id": "58:687",
+          "name": "Badge=false, ActiveLineMode=fill, Status=active",
+          "width": 29,
+          "height": 43
+        },
+        {
+          "id": "58:690",
+          "name": "Badge=false, ActiveLineMode=fill, Status=disabled",
+          "width": 29,
+          "height": 43
+        },
+        {
+          "id": "58:693",
+          "name": "Badge=false, ActiveLineMode=fixed, Status=active",
+          "width": 30,
+          "height": 43
+        },
+        {
+          "id": "58:696",
+          "name": "Badge=false, ActiveLineMode=fixed, Status=disabled",
+          "width": 30,
+          "height": 43
+        },
+        {
+          "id": "58:699",
+          "name": "Badge=true, ActiveLineMode=none, Status=default",
+          "width": 46,
+          "height": 42
+        },
+        {
+          "id": "58:702",
+          "name": "Badge=true, ActiveLineMode=none, Status=disabled",
+          "width": 46,
+          "height": 42
+        },
+        {
+          "id": "58:705",
+          "name": "Badge=true, ActiveLineMode=fill, Status=active",
+          "width": 29,
+          "height": 43
+        },
+        {
+          "id": "58:709",
+          "name": "Badge=true, ActiveLineMode=fill, Status=disabled",
+          "width": 29,
+          "height": 43
+        },
+        {
+          "id": "58:713",
+          "name": "Badge=true, ActiveLineMode=fixed, Status=active",
+          "width": 30,
+          "height": 43
+        },
+        {
+          "id": "58:717",
+          "name": "Badge=true, ActiveLineMode=fixed, Status=disabled",
+          "width": 30,
+          "height": 43
+        }
+      ]
+    },
+    {
+      "id": "58:722",
+      "name": "Primary_tabs",
+      "properties": {
+        "Count": {
+          "type": "VARIANT",
+          "defaultValue": "3",
+          "variantOptions": [
+            "3",
+            "2",
+            "4",
+            "more"
+          ]
+        }
+      },
+      "children": [
+        {
+          "id": "58:723",
+          "name": "Count=3",
+          "width": 375,
+          "height": 43
+        },
+        {
+          "id": "58:727",
+          "name": "Count=4",
+          "width": 375,
+          "height": 43
+        },
+        {
+          "id": "58:732",
+          "name": "Count=more",
+          "width": 375,
+          "height": 44
+        },
+        {
+          "id": "58:741",
+          "name": "Count=2",
+          "width": 375,
+          "height": 43
+        }
+      ]
+    },
+    {
+      "id": "161:7863",
+      "name": "tabs_item/secondary_tab",
+      "properties": {
+        "Tab#911:282": {
+          "type": "TEXT",
+          "defaultValue": "Tab"
+        },
+        "state": {
+          "type": "VARIANT",
+          "defaultValue": "selected",
+          "variantOptions": [
+            "selected",
+            "default"
+          ]
+        }
+      },
+      "children": [
+        {
+          "id": "161:7862",
+          "name": "state=selected",
+          "width": 26,
+          "height": 30
+        },
+        {
+          "id": "161:7867",
+          "name": "state=default",
+          "width": 26,
+          "height": 30
+        }
+      ]
+    },
+    {
+      "id": "161:7882",
+      "name": "Scondary_tabs",
+      "properties": {
+        "count": {
+          "type": "VARIANT",
+          "defaultValue": "2",
+          "variantOptions": [
+            "2",
+            "3",
+            "4",
+            "more",
+            "5"
+          ]
+        }
+      },
+      "children": [
+        {
+          "id": "161:7877",
+          "name": "count=2",
+          "width": 108,
+          "height": 30
+        },
+        {
+          "id": "1544:8676",
+          "name": "count=3",
+          "width": 158,
+          "height": 30
+        },
+        {
+          "id": "161:7883",
+          "name": "count=4",
+          "width": 365,
+          "height": 30
+        },
+        {
+          "id": "161:7897",
+          "name": "count=5",
+          "width": 365,
+          "height": 30
+        },
+        {
+          "id": "161:7915",
+          "name": "count=more",
+          "width": 365,
+          "height": 30
+        }
+      ]
+    },
+    {
+      "id": "161:7956",
+      "name": "ButtonTab_round",
+      "properties": {
+        "Property 1": {
+          "type": "VARIANT",
+          "defaultValue": "2",
+          "variantOptions": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "more"
+          ]
+        }
+      },
+      "children": [
+        {
+          "id": "161:7939",
+          "name": "Property 1=2",
+          "width": 104,
+          "height": 28
+        },
+        {
+          "id": "161:7957",
+          "name": "Property 1=3",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:7965",
+          "name": "Property 1=4",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:7973",
+          "name": "Property 1=5",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:7990",
+          "name": "Property 1=6",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:8005",
+          "name": "Property 1=more",
+          "width": 328,
+          "height": 28
+        }
+      ]
+    },
+    {
+      "id": "161:8141",
+      "name": "ButtonTab_rectangle",
+      "properties": {
+        "Property 1": {
+          "type": "VARIANT",
+          "defaultValue": "2",
+          "variantOptions": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "more"
+          ]
+        }
+      },
+      "children": [
+        {
+          "id": "161:8142",
+          "name": "Property 1=2",
+          "width": 104,
+          "height": 28
+        },
+        {
+          "id": "161:8145",
+          "name": "Property 1=3",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:8149",
+          "name": "Property 1=4",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:8154",
+          "name": "Property 1=5",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:8160",
+          "name": "Property 1=6",
+          "width": 328,
+          "height": 28
+        },
+        {
+          "id": "161:8167",
+          "name": "Property 1=more",
+          "width": 328,
+          "height": 28
+        }
+      ]
+    },
+    {
+      "id": "179:1417",
+      "name": "Segmented_Control",
+      "properties": {
+        "Tab1#911:298": {
+          "type": "TEXT",
+          "defaultValue": "Tab1"
+        },
+        "Tab2#911:305": {
+          "type": "TEXT",
+          "defaultValue": "Tab2"
+        },
+        "Tab3#911:312": {
+          "type": "TEXT",
+          "defaultValue": "Tab3"
+        },
+        "Size": {
+          "type": "VARIANT",
+          "defaultValue": "medium",
+          "variantOptions": [
+            "medium",
+            "small",
+            "Large"
+          ]
+        },
+        "count": {
+          "type": "VARIANT",
+          "defaultValue": "3",
+          "variantOptions": [
+            "3",
+            "2"
+          ]
+        },
+        "Selected": {
+          "type": "VARIANT",
+          "defaultValue": "first",
+          "variantOptions": [
+            "first",
+            "second",
+            "third"
+          ]
+        },
+        "style": {
+          "type": "VARIANT",
+          "defaultValue": "card",
+          "variantOptions": [
+            "card",
+            "pill"
+          ]
+        }
+      },
+      "children": [
+        {
+          "id": "179:1416",
+          "name": "Size=small, count=3, Selected=first, style=card",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "1014:5662",
+          "name": "Size=small, count=3, Selected=first, style=pill",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "911:4392",
+          "name": "Size=small, count=3, Selected=second, style=card",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "1014:5669",
+          "name": "Size=small, count=3, Selected=second, style=pill",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "911:4464",
+          "name": "Size=small, count=3, Selected=third, style=card",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "1014:5676",
+          "name": "Size=small, count=3, Selected=third, style=pill",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "866:2431",
+          "name": "Size=small, count=2, Selected=first, style=card",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "1014:5683",
+          "name": "Size=small, count=2, Selected=first, style=pill",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "911:4399",
+          "name": "Size=small, count=2, Selected=second, style=card",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "1014:5688",
+          "name": "Size=small, count=2, Selected=second, style=pill",
+          "width": 145,
+          "height": 28
+        },
+        {
+          "id": "179:1415",
+          "name": "Size=medium, count=3, Selected=first, style=card",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "1014:5693",
+          "name": "Size=medium, count=3, Selected=first, style=pill",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "911:4404",
+          "name": "Size=medium, count=3, Selected=second, style=card",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "1014:5700",
+          "name": "Size=medium, count=3, Selected=second, style=pill",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "911:4476",
+          "name": "Size=medium, count=3, Selected=third, style=card",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "1014:5707",
+          "name": "Size=medium, count=3, Selected=third, style=pill",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "866:2438",
+          "name": "Size=Large, count=3, Selected=first, style=card",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "1014:5714",
+          "name": "Size=Large, count=3, Selected=first, style=pill",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "911:4411",
+          "name": "Size=Large, count=3, Selected=second, style=card",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "1014:5721",
+          "name": "Size=Large, count=3, Selected=second, style=pill",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "911:4483",
+          "name": "Size=Large, count=3, Selected=third, style=card",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "1014:5728",
+          "name": "Size=Large, count=3, Selected=third, style=pill",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "866:2445",
+          "name": "Size=Large, count=2, Selected=first, style=card",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "1014:5735",
+          "name": "Size=Large, count=2, Selected=first, style=pill",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "911:4418",
+          "name": "Size=Large, count=2, Selected=second, style=card",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "1014:5740",
+          "name": "Size=Large, count=2, Selected=second, style=pill",
+          "width": 301,
+          "height": 40
+        },
+        {
+          "id": "866:2424",
+          "name": "Size=medium, count=2, Selected=first, style=card",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "1014:5745",
+          "name": "Size=medium, count=2, Selected=first, style=pill",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "911:4423",
+          "name": "Size=medium, count=2, Selected=second, style=card",
+          "width": 301,
+          "height": 32
+        },
+        {
+          "id": "1014:5750",
+          "name": "Size=medium, count=2, Selected=second, style=pill",
+          "width": 301,
+          "height": 32
+        }
+      ]
+    },
+    {
+      "id": "1049:208",
+      "name": "Tabs 组件说明",
+      "children": [
+        {
+          "id": "1049:209",
+          "name": "Header",
+          "width": 971,
+          "height": 151
+        },
+        {
+          "id": "1049:212",
+          "name": "Content",
+          "width": 971,
+          "height": 1363
+        }
+      ],
+      "texts": [
+        {
+          "id": "1049:210",
+          "text": "Tabs"
+        },
+        {
+          "id": "1049:211",
+          "text": "页签用于在同一页面内切换相互并列的内容区域，并持续显示当前位置，不产生新的页面层级。"
+        },
+        {
+          "id": "1049:215",
+          "text": "基础分类"
+        },
+        {
+          "id": "1049:216",
+          "text": "根据内容层级和视觉强度分为主级页签、次级页签、按钮式页签；分段控制用于切换视图或模式，需与导航型页签区分。"
+        },
+        {
+          "id": "1049:220",
+          "text": "主级页签"
+        },
+        {
+          "id": "1049:221",
+          "text": "用于页面主要内容分类，通常占满容器宽度，并通过底部指示线强调当前内容。"
+        },
+        {
+          "id": "I1049:224;58:724;58:688",
+          "text": "First Tab"
+        },
+        {
+          "id": "I1049:224;58:725;58:684",
+          "text": "Second Tab"
+        },
+        {
+          "id": "I1049:224;58:726;58:684",
+          "text": "Third Tab"
+        },
+        {
+          "id": "1049:233",
+          "text": "次级页签"
+        },
+        {
+          "id": "1049:234",
+          "text": "用于主内容内部的二级分类，视觉更轻，适合局部内容区域切换。"
+        },
+        {
+          "id": "I1049:237;161:7884;161:7851",
+          "text": "Tab"
+        },
+        {
+          "id": "I1049:237;161:7885;275:3116",
+          "text": "Tab"
+        },
+        {
+          "id": "I1049:237;161:7886;275:3116",
+          "text": "Tab"
+        },
+        {
+          "id": "I1049:237;161:7893;275:3116",
+          "text": "Tab"
+        },
+        {
+          "id": "1049:252",
+          "text": "按钮式页签"
+        },
+        {
+          "id": "1049:253",
+          "text": "以圆角或矩形按钮形式切换并列内容，适合较少且标签简短的分类。"
+        },
+        {
+          "id": "I1049:256;161:7958;58:8798",
+          "text": "按钮"
+        },
+        {
+          "id": "I1049:256;161:7959;58:8870",
+          "text": "按钮"
+        },
+        {
+          "id": "I1049:256;161:7962;58:8870",
+          "text": "按钮"
+        },
+        {
+          "id": "1049:264",
+          "text": "分段控制"
+        },
+        {
+          "id": "1049:265",
+          "text": "用于切换同一数据的展示方式、范围或模式；它不是页面内容导航。"
+        },
+        {
+          "id": "I1049:268;179:1409",
+          "text": "Tab1"
+        },
+        {
+          "id": "I1049:268;179:1411",
+          "text": "Tab2"
+        },
+        {
+          "id": "I1049:268;179:1413",
+          "text": "Tab3"
+        },
+        {
+          "id": "1049:277",
+          "text": "使用方法"
+        },
+        {
+          "id": "1049:278",
+          "text": "用户点击页签后在当前位置切换内容，激活项保持可见，并保留各内容区域必要的操作状态。"
+        },
+        {
+          "id": "1049:280",
+          "text": "1. 默认激活最常用或与当前任务最相关的页签，并同步展示对应内容。"
+        },
+        {
+          "id": "1049:281",
+          "text": "2. 点击其他页签后切换内容和激活指示，不新增导航层级，也不自动提交用户数据。"
+        },
+        {
+          "id": "1049:282",
+          "text": "3. 页签超过可用宽度时支持横向滚动，并自动将当前激活项滚动到可见区域。"
+        },
+        {
+          "id": "1049:283",
+          "text": "4. 用户返回原页签时按业务需要保留筛选、输入、滚动位置或已加载内容。"
+        },
+        {
+          "id": "1049:286",
+          "text": "使用建议"
+        },
+        {
+          "id": "1049:287",
+          "text": "保持分类维度一致、标签简短且激活状态明确，避免用页签承载流程步骤或即时设置。"
+        },
+        {
+          "id": "1049:289",
+          "text": "• 页签用于并列内容分类，通常建议 2–5 项；数量更多时允许横向滚动或重新梳理信息架构。"
+        },
+        {
+          "id": "1049:290",
+          "text": "• 同一组标签必须属于同一分类维度，使用简短名词，不混入动作按钮、状态或不同层级入口。"
+        },
+        {
+          "id": "1049:291",
+          "text": "• 一个页面通常只使用一组主级页签；需要二次分类时使用视觉更轻的次级页签。"
+        },
+        {
+          "id": "1049:292",
+          "text": "• 按钮式页签适合少量、短标签内容；选项含义是视图或模式时应归为 Segmented Control。"
+        },
+        {
+          "id": "1049:293",
+          "text": "• Segmented Control 切换同一内容的呈现方式，不用于页面导航；Switch 则控制立即生效的布尔设置。"
+        },
+        {
+          "id": "1049:294",
+          "text": "• 不使用 Tabs 表达有先后顺序的任务流程，此类场景应使用 Steps 或明确的上一步、下一步操作。"
+        },
+        {
+          "id": "1049:295",
+          "text": "• 激活状态至少通过文字样式与指示线、背景或选中块中的两种方式表达，不只依赖颜色。"
+        },
+        {
+          "id": "1049:296",
+          "text": "• 标签宽度等分时需保证文字完整；差异较大或数量较多时使用内容自适应宽度。"
+        },
+        {
+          "id": "1049:297",
+          "text": "• Badge 仅展示与该分类直接相关的数量或状态，不让频繁变化的数字造成布局抖动。"
+        },
+        {
+          "id": "1049:298",
+          "text": "• 禁用页签应谨慎使用；若内容暂不可用，优先说明原因，避免出现无法理解的灰色入口。"
+        },
+        {
+          "id": "1049:299",
+          "text": "• 切换过程中显示局部加载状态，并避免整页闪烁；已加载内容可按性能策略缓存。"
+        },
+        {
+          "id": "1049:300",
+          "text": "• 支持辅助技术识别选中状态和页签与面板关系，并允许键盘方向键切换焦点。"
+        }
+      ]
+    }
+  ],
+  "tabsItems": [
+    {
+      "id": "58:683",
+      "name": "Badge=false, ActiveLineMode=none, Status=default",
+      "type": "COMPONENT",
+      "width": 29,
+      "height": 42,
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 0,
+      "paddingTop": 8,
+      "paddingBottom": 10,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "58:684",
+          "name": "title",
+          "type": "TEXT",
+          "width": 29,
+          "height": 24,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:3"
+              }
+            ]
+          },
+          "characters": "Tab",
+          "fontSize": 16,
+          "fontName": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 24
+          },
+          "textStyleId": "S:26765cf268c92bd89de8d47a43c2ecdadaf782aa,",
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58:685",
+      "name": "Badge=false, ActiveLineMode=none, Status=disabled",
+      "type": "COMPONENT",
+      "width": 29,
+      "height": 42,
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 0,
+      "paddingTop": 8,
+      "paddingBottom": 10,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "58:686",
+          "name": "title",
+          "type": "TEXT",
+          "width": 29,
+          "height": 24,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:6"
+              }
+            ]
+          },
+          "characters": "Tab",
+          "fontSize": 16,
+          "fontName": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 24
+          },
+          "textStyleId": "S:26765cf268c92bd89de8d47a43c2ecdadaf782aa,",
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.7215686440467834,
+                "g": 0.7529411911964417,
+                "b": 0.800000011920929
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:6"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58:687",
+      "name": "Badge=false, ActiveLineMode=fill, Status=active",
+      "type": "COMPONENT",
+      "width": 29,
+      "height": 43,
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 8,
+      "paddingTop": 8,
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "58:688",
+          "name": "title",
+          "type": "TEXT",
+          "width": 29,
+          "height": 24,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:8"
+              }
+            ]
+          },
+          "characters": "Tab",
+          "fontSize": 16,
+          "fontName": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 24
+          },
+          "textStyleId": "S:26765cf268c92bd89de8d47a43c2ecdadaf782aa,",
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:8"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "58:689",
+          "name": "line",
+          "type": "RECTANGLE",
+          "width": 29,
+          "height": 3,
+          "cornerRadius": 2,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:8"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:8"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58:693",
+      "name": "Badge=false, ActiveLineMode=fixed, Status=active",
+      "type": "COMPONENT",
+      "width": 30,
+      "height": 43,
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 8,
+      "paddingTop": 8,
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "58:694",
+          "name": "title",
+          "type": "TEXT",
+          "width": 29,
+          "height": 24,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:8"
+              }
+            ]
+          },
+          "characters": "Tab",
+          "fontSize": 16,
+          "fontName": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 24
+          },
+          "textStyleId": "S:26765cf268c92bd89de8d47a43c2ecdadaf782aa,",
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:8"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "58:695",
+          "name": "line",
+          "type": "RECTANGLE",
+          "width": 30,
+          "height": 3,
+          "cornerRadius": 2,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:8"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:8"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58:705",
+      "name": "Badge=true, ActiveLineMode=fill, Status=active",
+      "type": "COMPONENT",
+      "width": 29,
+      "height": 43,
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 8,
+      "paddingTop": 8,
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "58:706",
+          "name": "title",
+          "type": "TEXT",
+          "width": 29,
+          "height": 24,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:8"
+              }
+            ]
+          },
+          "characters": "Tab",
+          "fontSize": 16,
+          "fontName": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 24
+          },
+          "textStyleId": "S:26765cf268c92bd89de8d47a43c2ecdadaf782aa,",
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:8"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "58:707",
+          "name": "line",
+          "type": "RECTANGLE",
+          "width": 29,
+          "height": 3,
+          "cornerRadius": 2,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:8"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:8"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "58:11580",
+          "name": "badge",
+          "type": "FRAME",
+          "width": 16,
+          "height": 16,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 0,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "cornerRadius": 40,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:27"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.9764705896377563,
+                "g": 0.21960784494876862,
+                "b": 0.21960784494876862
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:27"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "58:11616",
+              "name": ".badge-content",
+              "type": "FRAME",
+              "width": 16,
+              "height": 16,
+              "layoutMode": "VERTICAL",
+              "itemSpacing": 10,
+              "paddingTop": 1,
+              "paddingBottom": 1,
+              "paddingLeft": 4,
+              "paddingRight": 4,
+              "cornerRadius": 100,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:27"
+                  }
+                ]
+              },
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.9764705896377563,
+                    "g": 0.21960784494876862,
+                    "b": 0.21960784494876862
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:27"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "161:7862",
+      "name": "state=selected",
+      "type": "COMPONENT",
+      "width": 26,
+      "height": 30,
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 4,
+      "paddingTop": 0,
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "161:7851",
+          "name": "Tab",
+          "type": "TEXT",
+          "width": 26,
+          "height": 22,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:3"
+              }
+            ]
+          },
+          "characters": "Tab",
+          "fontSize": 14,
+          "fontName": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "textStyleId": "S:1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2,",
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.062745101749897,
+                "g": 0.0941176488995552,
+                "b": 0.1568627506494522
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:3"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "161:7852",
+          "name": "Vector 988 (Stroke)",
+          "type": "VECTOR",
+          "width": 24,
+          "height": 3.692307710647583,
+          "cornerRadius": 10,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:792"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:792"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "161:7867",
+      "name": "state=default",
+      "type": "COMPONENT",
+      "width": 26,
+      "height": 30,
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 6,
+      "paddingTop": 0,
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "275:3116",
+          "name": "Tab",
+          "type": "TEXT",
+          "width": 26,
+          "height": 22,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:5"
+              }
+            ]
+          },
+          "characters": "Tab",
+          "fontSize": 14,
+          "fontName": {
+            "family": "PingFang SC",
+            "style": "Semibold"
+          },
+          "lineHeight": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "textStyleId": "S:1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2,",
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.5529412031173706,
+                "g": 0.5882353186607361,
+                "b": 0.6392157077789307
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:5"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "161:7869",
+          "name": "Vector 988 (Stroke)",
+          "type": "VECTOR",
+          "width": 24,
+          "height": 3.692307710647583,
+          "cornerRadius": 10,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:792"
+              }
+            ]
+          },
+          "visible": false,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:792"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tabsGroups": [
+    {
+      "id": "58:723",
+      "name": "Count=3",
+      "type": "COMPONENT",
+      "width": 375,
+      "height": 43,
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 12,
+      "paddingTop": 0,
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "58:724",
+          "name": "tabs_item/primary_tab",
+          "type": "INSTANCE",
+          "width": 117,
+          "height": 43,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 8,
+          "paddingTop": 8,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "I58:724;58:688",
+              "name": "title",
+              "type": "TEXT",
+              "width": 68,
+              "height": 24,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:8"
+                  }
+                ]
+              },
+              "characters": "First Tab",
+              "fontSize": 16,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Semibold"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 24
+              },
+              "textStyleId": "S:26765cf268c92bd89de8d47a43c2ecdadaf782aa,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.16862745583057404,
+                    "g": 0.45098039507865906,
+                    "b": 1
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:8"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "I58:724;58:689",
+              "name": "line",
+              "type": "RECTANGLE",
+              "width": 117,
+              "height": 3,
+              "cornerRadius": 2,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:8"
+                  }
+                ]
+              },
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.16862745583057404,
+                    "g": 0.45098039507865906,
+                    "b": 1
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:8"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "58:725",
+          "name": "tabs_item/primary_tab",
+          "type": "INSTANCE",
+          "width": 117,
+          "height": 42,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 0,
+          "paddingTop": 8,
+          "paddingBottom": 10,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "I58:725;58:684",
+              "name": "title",
+              "type": "TEXT",
+              "width": 91,
+              "height": 24,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "Second Tab",
+              "fontSize": 16,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Semibold"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 24
+              },
+              "textStyleId": "S:26765cf268c92bd89de8d47a43c2ecdadaf782aa,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "58:726",
+          "name": "tabs_item/primary_tab",
+          "type": "INSTANCE",
+          "width": 117,
+          "height": 42,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 0,
+          "paddingTop": 8,
+          "paddingBottom": 10,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "I58:726;58:684",
+              "name": "title",
+              "type": "TEXT",
+              "width": 74,
+              "height": 24,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "Third Tab",
+              "fontSize": 16,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Semibold"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 24
+              },
+              "textStyleId": "S:26765cf268c92bd89de8d47a43c2ecdadaf782aa,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58:732",
+      "name": "Count=more",
+      "type": "COMPONENT",
+      "width": 375,
+      "height": 44,
+      "layoutMode": "NONE",
+      "itemSpacing": 12,
+      "paddingTop": 0,
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "58:733",
+          "name": "list-wrapper",
+          "type": "FRAME",
+          "width": 375,
+          "height": 43,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 12,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "58:734",
+              "name": "tabs_item/primary_tab",
+              "type": "INSTANCE",
+              "width": 68,
+              "height": 43,
+              "layoutMode": "VERTICAL",
+              "itemSpacing": 8,
+              "paddingTop": 8,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "visible": true
+            },
+            {
+              "id": "58:735",
+              "name": "tabs_item/primary_tab",
+              "type": "INSTANCE",
+              "width": 91,
+              "height": 42,
+              "layoutMode": "VERTICAL",
+              "itemSpacing": 0,
+              "paddingTop": 8,
+              "paddingBottom": 10,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "visible": true
+            },
+            {
+              "id": "58:736",
+              "name": "tabs_item/primary_tab",
+              "type": "INSTANCE",
+              "width": 74,
+              "height": 42,
+              "layoutMode": "VERTICAL",
+              "itemSpacing": 0,
+              "paddingTop": 8,
+              "paddingBottom": 10,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "visible": true
+            },
+            {
+              "id": "58:737",
+              "name": "tabs_item/primary_tab",
+              "type": "INSTANCE",
+              "width": 69,
+              "height": 42,
+              "layoutMode": "VERTICAL",
+              "itemSpacing": 0,
+              "paddingTop": 8,
+              "paddingBottom": 10,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "visible": true
+            },
+            {
+              "id": "58:738",
+              "name": "tabs_item/primary_tab",
+              "type": "INSTANCE",
+              "width": 60,
+              "height": 42,
+              "layoutMode": "VERTICAL",
+              "itemSpacing": 0,
+              "paddingTop": 8,
+              "paddingBottom": 10,
+              "paddingLeft": 0,
+              "paddingRight": 0,
+              "cornerRadius": 0,
+              "boundVariables": {},
+              "visible": true
+            }
+          ]
+        },
+        {
+          "id": "58:739",
+          "name": "mask-right",
+          "type": "RECTANGLE",
+          "width": 30,
+          "height": 42,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "visible": true,
+          "fills": [
+            {
+              "type": "GRADIENT_LINEAR",
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "id": "58:740",
+          "name": "mask-left",
+          "type": "RECTANGLE",
+          "width": 30,
+          "height": 42,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "visible": true,
+          "fills": [
+            {
+              "type": "GRADIENT_LINEAR",
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "161:7877",
+      "name": "count=2",
+      "type": "COMPONENT",
+      "width": 108,
+      "height": 30,
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 24,
+      "paddingTop": 0,
+      "paddingBottom": 0,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "161:7870",
+          "name": "tabs_item/secondary_tab",
+          "type": "INSTANCE",
+          "width": 26,
+          "height": 30,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 4,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "I161:7870;161:7851",
+              "name": "Tab",
+              "type": "TEXT",
+              "width": 26,
+              "height": 22,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:3"
+                  }
+                ]
+              },
+              "characters": "Tab",
+              "fontSize": 14,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Semibold"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "textStyleId": "S:1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.062745101749897,
+                    "g": 0.0941176488995552,
+                    "b": 0.1568627506494522
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:3"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "I161:7870;161:7852",
+              "name": "Vector 988 (Stroke)",
+              "type": "VECTOR",
+              "width": 24,
+              "height": 3.692307710647583,
+              "cornerRadius": 10,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:792"
+                  }
+                ]
+              },
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.16862745583057404,
+                    "g": 0.45098039507865906,
+                    "b": 1
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:792"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "161:7873",
+          "name": "tabs_item/secondary_tab",
+          "type": "INSTANCE",
+          "width": 26,
+          "height": 30,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 6,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "I161:7873;275:3116",
+              "name": "Tab",
+              "type": "TEXT",
+              "width": 26,
+              "height": 22,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:5"
+                  }
+                ]
+              },
+              "characters": "Tab",
+              "fontSize": 14,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Semibold"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "textStyleId": "S:1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.5529412031173706,
+                    "g": 0.5882353186607361,
+                    "b": 0.6392157077789307
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:5"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "161:7883",
+      "name": "count=4",
+      "type": "COMPONENT",
+      "width": 365,
+      "height": 30,
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 24,
+      "paddingTop": 0,
+      "paddingBottom": 0,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "161:7884",
+          "name": "tabs_item/secondary_tab",
+          "type": "INSTANCE",
+          "width": 26,
+          "height": 30,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 4,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "I161:7884;161:7851",
+              "name": "Tab",
+              "type": "TEXT",
+              "width": 26,
+              "height": 22,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:3"
+                  }
+                ]
+              },
+              "characters": "Tab",
+              "fontSize": 14,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Semibold"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "textStyleId": "S:1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.062745101749897,
+                    "g": 0.0941176488995552,
+                    "b": 0.1568627506494522
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:3"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "I161:7884;161:7852",
+              "name": "Vector 988 (Stroke)",
+              "type": "VECTOR",
+              "width": 24,
+              "height": 3.692307710647583,
+              "cornerRadius": 10,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:792"
+                  }
+                ]
+              },
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.16862745583057404,
+                    "g": 0.45098039507865906,
+                    "b": 1
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:792"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "161:7885",
+          "name": "tabs_item/secondary_tab",
+          "type": "INSTANCE",
+          "width": 26,
+          "height": 30,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 6,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "I161:7885;275:3116",
+              "name": "Tab",
+              "type": "TEXT",
+              "width": 26,
+              "height": 22,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:5"
+                  }
+                ]
+              },
+              "characters": "Tab",
+              "fontSize": 14,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Semibold"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "textStyleId": "S:1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.5529412031173706,
+                    "g": 0.5882353186607361,
+                    "b": 0.6392157077789307
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:5"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "161:7886",
+          "name": "tabs_item/secondary_tab",
+          "type": "INSTANCE",
+          "width": 26,
+          "height": 30,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 6,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "I161:7886;275:3116",
+              "name": "Tab",
+              "type": "TEXT",
+              "width": 26,
+              "height": 22,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:5"
+                  }
+                ]
+              },
+              "characters": "Tab",
+              "fontSize": 14,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Semibold"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "textStyleId": "S:1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.5529412031173706,
+                    "g": 0.5882353186607361,
+                    "b": 0.6392157077789307
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:5"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "161:7893",
+          "name": "tabs_item/secondary_tab",
+          "type": "INSTANCE",
+          "width": 26,
+          "height": 30,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 6,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 0,
+          "paddingRight": 0,
+          "cornerRadius": 0,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "I161:7893;275:3116",
+              "name": "Tab",
+              "type": "TEXT",
+              "width": 26,
+              "height": 22,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:5"
+                  }
+                ]
+              },
+              "characters": "Tab",
+              "fontSize": 14,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Semibold"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "textStyleId": "S:1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.5529412031173706,
+                    "g": 0.5882353186607361,
+                    "b": 0.6392157077789307
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:5"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tabsButtons": [
+    {
+      "id": "161:7939",
+      "name": "Property 1=2",
+      "type": "COMPONENT",
+      "width": 104,
+      "height": 28,
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 8,
+      "paddingTop": 0,
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "161:7931",
+          "name": "1.Button",
+          "type": "INSTANCE",
+          "width": 48,
+          "height": 28,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 0,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 999,
+          "boundVariables": {
+            "height": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:11:1609"
+            },
+            "topLeftRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:249"
+            },
+            "topRightRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:249"
+            },
+            "bottomLeftRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:249"
+            },
+            "bottomRightRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:249"
+            },
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:9"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:9"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "I161:7931;161:6282",
+              "name": "按钮",
+              "type": "TEXT",
+              "width": 24,
+              "height": 18,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:7"
+                  }
+                ]
+              },
+              "characters": "按钮",
+              "fontSize": 12,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "textStyleId": "S:ccf9d5e80bd5848e0841588c812c507cab7e23e6,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:7"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "161:7933",
+          "name": "1.Button",
+          "type": "INSTANCE",
+          "width": 48,
+          "height": 28,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 0,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 24,
+          "boundVariables": {
+            "height": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:11:1609"
+            },
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:48"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.9215686321258545,
+                "g": 0.9333333373069763,
+                "b": 0.9490196108818054
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:48"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "I161:7933;58:8870",
+              "name": "按钮",
+              "type": "TEXT",
+              "width": 24,
+              "height": 18,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "按钮",
+              "fontSize": 12,
+              "fontName": {
+                "family": "Microsoft YaHei",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "textStyleId": "S:e27a32106e639ff5c3960b32dcf394aba17ad3f5,2365:85",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "161:7957",
+      "name": "Property 1=3",
+      "type": "COMPONENT",
+      "width": 328,
+      "height": 28,
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 8,
+      "paddingTop": 0,
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "161:7958",
+          "name": "1.Button",
+          "type": "INSTANCE",
+          "width": 48,
+          "height": 28,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 0,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 24,
+          "boundVariables": {
+            "height": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:11:1609"
+            }
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {}
+            }
+          ],
+          "children": [
+            {
+              "id": "I161:7958;58:8798",
+              "name": "按钮",
+              "type": "TEXT",
+              "width": 24,
+              "height": 18,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:e9617524b3a22a899db6deee37e4d7747abbceb3/2441:243"
+                  }
+                ]
+              },
+              "characters": "按钮",
+              "fontSize": 12,
+              "fontName": {
+                "family": "Microsoft YaHei",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "textStyleId": "S:e27a32106e639ff5c3960b32dcf394aba17ad3f5,2365:85",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:e9617524b3a22a899db6deee37e4d7747abbceb3/2441:243"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "161:7959",
+          "name": "1.Button",
+          "type": "INSTANCE",
+          "width": 48,
+          "height": 28,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 0,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 24,
+          "boundVariables": {
+            "height": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:11:1609"
+            },
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:48"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.9215686321258545,
+                "g": 0.9333333373069763,
+                "b": 0.9490196108818054
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:48"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "I161:7959;58:8870",
+              "name": "按钮",
+              "type": "TEXT",
+              "width": 24,
+              "height": 18,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "按钮",
+              "fontSize": 12,
+              "fontName": {
+                "family": "Microsoft YaHei",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "textStyleId": "S:e27a32106e639ff5c3960b32dcf394aba17ad3f5,2365:85",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "161:7962",
+          "name": "1.Button",
+          "type": "INSTANCE",
+          "width": 48,
+          "height": 28,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 0,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 24,
+          "boundVariables": {
+            "height": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:11:1609"
+            },
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:48"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.9215686321258545,
+                "g": 0.9333333373069763,
+                "b": 0.9490196108818054
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:48"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "I161:7962;58:8870",
+              "name": "按钮",
+              "type": "TEXT",
+              "width": 24,
+              "height": 18,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "按钮",
+              "fontSize": 12,
+              "fontName": {
+                "family": "Microsoft YaHei",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "textStyleId": "S:e27a32106e639ff5c3960b32dcf394aba17ad3f5,2365:85",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "161:8142",
+      "name": "Property 1=2",
+      "type": "COMPONENT",
+      "width": 104,
+      "height": 28,
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 8,
+      "paddingTop": 0,
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "161:8143",
+          "name": "1.Button",
+          "type": "INSTANCE",
+          "width": 48,
+          "height": 28,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 0,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 6,
+          "boundVariables": {
+            "height": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:11:1609"
+            },
+            "topLeftRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "topRightRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "bottomLeftRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "bottomRightRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:62b013667b552f82c7d2024b651d5ef789fe42ec/2441:214"
+              }
+            ],
+            "strokes": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:84d50752b72d40d247fa0a16628dddf9b844c0f2/2441:211"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 0.10000000149011612,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:62b013667b552f82c7d2024b651d5ef789fe42ec/2441:214"
+                }
+              }
+            }
+          ],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:84d50752b72d40d247fa0a16628dddf9b844c0f2/2441:211"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "I161:8143;13:1790",
+              "name": "按钮",
+              "type": "TEXT",
+              "width": 24,
+              "height": 18,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:83c6c435690a4c0673bbea4fc47ef7342e683d86/2441:165"
+                  }
+                ]
+              },
+              "characters": "按钮",
+              "fontSize": 12,
+              "fontName": {
+                "family": "Microsoft YaHei",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "textStyleId": "S:e27a32106e639ff5c3960b32dcf394aba17ad3f5,2365:85",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.16862745583057404,
+                    "g": 0.45098039507865906,
+                    "b": 1
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:83c6c435690a4c0673bbea4fc47ef7342e683d86/2441:165"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "161:8144",
+          "name": "1.Button",
+          "type": "INSTANCE",
+          "width": 48,
+          "height": 28,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 0,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 6,
+          "boundVariables": {
+            "height": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:11:1609"
+            },
+            "topLeftRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "topRightRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "bottomLeftRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "bottomRightRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:47"
+              }
+            ],
+            "strokes": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:0bf2b28dfc427c276a9d6df5ddf27dbb2d417f38/2441:208"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:47"
+                }
+              }
+            }
+          ],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.843137264251709,
+                "g": 0.8627451062202454,
+                "b": 0.8901960849761963
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:0bf2b28dfc427c276a9d6df5ddf27dbb2d417f38/2441:208"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "I161:8144;13:1736",
+              "name": "按钮",
+              "type": "TEXT",
+              "width": 24,
+              "height": 18,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "按钮",
+              "fontSize": 12,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "textStyleId": "S:ccf9d5e80bd5848e0841588c812c507cab7e23e6,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "161:8145",
+      "name": "Property 1=3",
+      "type": "COMPONENT",
+      "width": 328,
+      "height": 28,
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 8,
+      "paddingTop": 0,
+      "paddingBottom": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "cornerRadius": 0,
+      "boundVariables": {},
+      "visible": true,
+      "children": [
+        {
+          "id": "161:8146",
+          "name": "1.Button",
+          "type": "INSTANCE",
+          "width": 48,
+          "height": 28,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 0,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 6,
+          "boundVariables": {
+            "height": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:11:1609"
+            },
+            "topLeftRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "topRightRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "bottomLeftRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "bottomRightRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:62b013667b552f82c7d2024b651d5ef789fe42ec/2441:214"
+              }
+            ],
+            "strokes": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:84d50752b72d40d247fa0a16628dddf9b844c0f2/2441:211"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 0.10000000149011612,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:62b013667b552f82c7d2024b651d5ef789fe42ec/2441:214"
+                }
+              }
+            }
+          ],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:84d50752b72d40d247fa0a16628dddf9b844c0f2/2441:211"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "I161:8146;13:1790",
+              "name": "按钮",
+              "type": "TEXT",
+              "width": 24,
+              "height": 18,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:83c6c435690a4c0673bbea4fc47ef7342e683d86/2441:165"
+                  }
+                ]
+              },
+              "characters": "按钮",
+              "fontSize": 12,
+              "fontName": {
+                "family": "Microsoft YaHei",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "textStyleId": "S:e27a32106e639ff5c3960b32dcf394aba17ad3f5,2365:85",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.16862745583057404,
+                    "g": 0.45098039507865906,
+                    "b": 1
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:83c6c435690a4c0673bbea4fc47ef7342e683d86/2441:165"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "161:8147",
+          "name": "1.Button",
+          "type": "INSTANCE",
+          "width": 48,
+          "height": 28,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 0,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 6,
+          "boundVariables": {
+            "height": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:11:1609"
+            },
+            "topLeftRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "topRightRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "bottomLeftRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "bottomRightRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:47"
+              }
+            ],
+            "strokes": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:0bf2b28dfc427c276a9d6df5ddf27dbb2d417f38/2441:208"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:47"
+                }
+              }
+            }
+          ],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.843137264251709,
+                "g": 0.8627451062202454,
+                "b": 0.8901960849761963
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:0bf2b28dfc427c276a9d6df5ddf27dbb2d417f38/2441:208"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "I161:8147;13:1736",
+              "name": "按钮",
+              "type": "TEXT",
+              "width": 24,
+              "height": 18,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "按钮",
+              "fontSize": 12,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "textStyleId": "S:ccf9d5e80bd5848e0841588c812c507cab7e23e6,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "161:8148",
+          "name": "1.Button",
+          "type": "INSTANCE",
+          "width": 48,
+          "height": 28,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 0,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 6,
+          "boundVariables": {
+            "height": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:11:1609"
+            },
+            "topLeftRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "topRightRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "bottomLeftRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "bottomRightRadius": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:bf74220da6d423187254feabc84c4d358a0acfd2/2340:2800"
+            },
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:47"
+              }
+            ],
+            "strokes": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:0bf2b28dfc427c276a9d6df5ddf27dbb2d417f38/2441:208"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:47"
+                }
+              }
+            }
+          ],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 0.843137264251709,
+                "g": 0.8627451062202454,
+                "b": 0.8901960849761963
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:0bf2b28dfc427c276a9d6df5ddf27dbb2d417f38/2441:208"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "I161:8148;13:1736",
+              "name": "按钮",
+              "type": "TEXT",
+              "width": 24,
+              "height": 18,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "按钮",
+              "fontSize": 12,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "textStyleId": "S:ccf9d5e80bd5848e0841588c812c507cab7e23e6,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tabsSegments": [
+    {
+      "id": "179:1416",
+      "name": "Size=small, count=3, Selected=first, style=card",
+      "type": "COMPONENT",
+      "width": 145,
+      "height": 28,
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 0,
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "paddingLeft": 2,
+      "paddingRight": 2,
+      "cornerRadius": 8,
+      "boundVariables": {
+        "fills": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:7:46"
+          }
+        ]
+      },
+      "visible": true,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.9607843160629272,
+            "g": 0.9686274528503418,
+            "b": 0.9803921580314636
+          },
+          "opacity": 1,
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:46"
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "179:1401",
+          "name": "day",
+          "type": "FRAME",
+          "width": 47,
+          "height": 24,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 10,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 6,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:47"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:47"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "179:1402",
+              "name": "Tab1",
+              "type": "TEXT",
+              "width": 27,
+              "height": 18,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:3"
+                  }
+                ]
+              },
+              "characters": "Tab1",
+              "fontSize": 12,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Semibold"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "textStyleId": "S:aec2f397199f7b2cf955d9807f2f7c5a1c3f4f44,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.062745101749897,
+                    "g": 0.0941176488995552,
+                    "b": 0.1568627506494522
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:3"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "179:1403",
+          "name": "month",
+          "type": "FRAME",
+          "width": 47,
+          "height": 24,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 10,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 4,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "179:1404",
+              "name": "Tab2",
+              "type": "TEXT",
+              "width": 31,
+              "height": 20,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "Tab2",
+              "fontSize": 13,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 20
+              },
+              "textStyleId": "S:d729da08e5135f43be1f20e8acdfee8b10f4a928,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "179:1405",
+          "name": "year",
+          "type": "FRAME",
+          "width": 47,
+          "height": 24,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 10,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 4,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "179:1406",
+              "name": "Tab3",
+              "type": "TEXT",
+              "width": 31,
+              "height": 20,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "Tab3",
+              "fontSize": 13,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 20
+              },
+              "textStyleId": "S:d729da08e5135f43be1f20e8acdfee8b10f4a928,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "179:1415",
+      "name": "Size=medium, count=3, Selected=first, style=card",
+      "type": "COMPONENT",
+      "width": 301,
+      "height": 32,
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 0,
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "paddingLeft": 2,
+      "paddingRight": 2,
+      "cornerRadius": 8,
+      "boundVariables": {
+        "fills": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:7:46"
+          }
+        ]
+      },
+      "visible": true,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.9607843160629272,
+            "g": 0.9686274528503418,
+            "b": 0.9803921580314636
+          },
+          "opacity": 1,
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:46"
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "179:1408",
+          "name": "day",
+          "type": "FRAME",
+          "width": 99,
+          "height": 28,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 10,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 6,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:47"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:47"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "179:1409",
+              "name": "Tab1",
+              "type": "TEXT",
+              "width": 31,
+              "height": 22,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:3"
+                  }
+                ]
+              },
+              "characters": "Tab1",
+              "fontSize": 14,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Semibold"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "textStyleId": "S:1dd2b9e7bb4ad3e063278d18a5ea679e4a1a84b2,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.062745101749897,
+                    "g": 0.0941176488995552,
+                    "b": 0.1568627506494522
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:3"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "179:1410",
+          "name": "month",
+          "type": "FRAME",
+          "width": 99,
+          "height": 28,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 10,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 6,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "179:1411",
+              "name": "Tab2",
+              "type": "TEXT",
+              "width": 34,
+              "height": 22,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "Tab2",
+              "fontSize": 14,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "textStyleId": "S:c81d62da465fece323efaaf30c8389cc327e599d,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "179:1412",
+          "name": "year",
+          "type": "FRAME",
+          "width": 99,
+          "height": 28,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 10,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 6,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "179:1413",
+              "name": "Tab3",
+              "type": "TEXT",
+              "width": 34,
+              "height": 22,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "Tab3",
+              "fontSize": 14,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "textStyleId": "S:c81d62da465fece323efaaf30c8389cc327e599d,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "866:2438",
+      "name": "Size=Large, count=3, Selected=first, style=card",
+      "type": "COMPONENT",
+      "width": 301,
+      "height": 40,
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 0,
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "paddingLeft": 2,
+      "paddingRight": 2,
+      "cornerRadius": 8,
+      "boundVariables": {
+        "fills": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:7:46"
+          }
+        ]
+      },
+      "visible": true,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.9607843160629272,
+            "g": 0.9686274528503418,
+            "b": 0.9803921580314636
+          },
+          "opacity": 1,
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:46"
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "866:2439",
+          "name": "day",
+          "type": "FRAME",
+          "width": 99,
+          "height": 36,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 10,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 6,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:47"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:47"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "866:2440",
+              "name": "Tab1",
+              "type": "TEXT",
+              "width": 36,
+              "height": 24,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:3"
+                  }
+                ]
+              },
+              "characters": "Tab1",
+              "fontSize": 16,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Semibold"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 24
+              },
+              "textStyleId": "S:26765cf268c92bd89de8d47a43c2ecdadaf782aa,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.062745101749897,
+                    "g": 0.0941176488995552,
+                    "b": 0.1568627506494522
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:3"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "866:2441",
+          "name": "month",
+          "type": "FRAME",
+          "width": 99,
+          "height": 36,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 10,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 6,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "866:2442",
+              "name": "Tab2",
+              "type": "TEXT",
+              "width": 38,
+              "height": 24,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "Tab2",
+              "fontSize": 16,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 24
+              },
+              "textStyleId": "S:08e7c51f87d6e5b3f1335d71a6edcca97dae2158,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "866:2443",
+          "name": "year",
+          "type": "FRAME",
+          "width": 99,
+          "height": 36,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 10,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 6,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "866:2444",
+              "name": "Tab3",
+              "type": "TEXT",
+              "width": 38,
+              "height": 24,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "Tab3",
+              "fontSize": 16,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 24
+              },
+              "textStyleId": "S:08e7c51f87d6e5b3f1335d71a6edcca97dae2158,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1014:5662",
+      "name": "Size=small, count=3, Selected=first, style=pill",
+      "type": "COMPONENT",
+      "width": 145,
+      "height": 28,
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 0,
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "paddingLeft": 2,
+      "paddingRight": 2,
+      "cornerRadius": 38,
+      "boundVariables": {
+        "fills": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:7:46"
+          }
+        ]
+      },
+      "visible": true,
+      "fills": [
+        {
+          "type": "SOLID",
+          "color": {
+            "r": 0.9607843160629272,
+            "g": 0.9686274528503418,
+            "b": 0.9803921580314636
+          },
+          "opacity": 1,
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:7:46"
+            }
+          }
+        }
+      ],
+      "children": [
+        {
+          "id": "1014:5663",
+          "name": "day",
+          "type": "FRAME",
+          "width": 47,
+          "height": 24,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 10,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 14,
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:7:47"
+              }
+            ]
+          },
+          "visible": true,
+          "fills": [
+            {
+              "type": "SOLID",
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "opacity": 1,
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:7:47"
+                }
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "1014:5664",
+              "name": "Tab1",
+              "type": "TEXT",
+              "width": 27,
+              "height": 18,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:3"
+                  }
+                ]
+              },
+              "characters": "Tab1",
+              "fontSize": 12,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Semibold"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "textStyleId": "S:aec2f397199f7b2cf955d9807f2f7c5a1c3f4f44,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.062745101749897,
+                    "g": 0.0941176488995552,
+                    "b": 0.1568627506494522
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:3"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1014:5665",
+          "name": "month",
+          "type": "FRAME",
+          "width": 47,
+          "height": 24,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 10,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 14,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "1014:5666",
+              "name": "Tab2",
+              "type": "TEXT",
+              "width": 31,
+              "height": 20,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "Tab2",
+              "fontSize": 13,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 20
+              },
+              "textStyleId": "S:d729da08e5135f43be1f20e8acdfee8b10f4a928,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1014:5667",
+          "name": "year",
+          "type": "FRAME",
+          "width": 47,
+          "height": 24,
+          "layoutMode": "HORIZONTAL",
+          "itemSpacing": 10,
+          "paddingTop": 0,
+          "paddingBottom": 0,
+          "paddingLeft": 12,
+          "paddingRight": 12,
+          "cornerRadius": 14,
+          "boundVariables": {},
+          "visible": true,
+          "children": [
+            {
+              "id": "1014:5668",
+              "name": "Tab3",
+              "type": "TEXT",
+              "width": 31,
+              "height": 20,
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7:4"
+                  }
+                ]
+              },
+              "characters": "Tab3",
+              "fontSize": 13,
+              "fontName": {
+                "family": "PingFang SC",
+                "style": "Regular"
+              },
+              "lineHeight": {
+                "unit": "PIXELS",
+                "value": 20
+              },
+              "textStyleId": "S:d729da08e5135f43be1f20e8acdfee8b10f4a928,",
+              "visible": true,
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.27843138575553894,
+                    "g": 0.3294117748737335,
+                    "b": 0.40392157435417175
+                  },
+                  "opacity": 1,
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:7:4"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

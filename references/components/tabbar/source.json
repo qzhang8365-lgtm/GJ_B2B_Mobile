@@ -1,0 +1,975 @@
+{
+  "sets": [
+    {
+      "id": "58:564",
+      "variants": [
+        {
+          "id": "58:565",
+          "properties": {
+            "Active": "true",
+            "Icon": "true",
+            "Badge": "false",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:569",
+          "properties": {
+            "Active": "true",
+            "Icon": "true",
+            "Badge": "true",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:574",
+          "properties": {
+            "Active": "false",
+            "Icon": "true",
+            "Badge": "false",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:578",
+          "properties": {
+            "Active": "false",
+            "Icon": "true",
+            "Badge": "true",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:583",
+          "properties": {
+            "Active": "true",
+            "Icon": "false",
+            "Badge": "false",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:586",
+          "properties": {
+            "Active": "true",
+            "Icon": "false",
+            "Badge": "true",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:590",
+          "properties": {
+            "Active": "false",
+            "Icon": "false",
+            "Badge": "false",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:593",
+          "properties": {
+            "Active": "false",
+            "Icon": "false",
+            "Badge": "true",
+            "Title": "true"
+          }
+        },
+        {
+          "id": "58:597",
+          "properties": {
+            "Active": "true",
+            "Icon": "false",
+            "Badge": "false",
+            "Title": "false"
+          }
+        },
+        {
+          "id": "58:600",
+          "properties": {
+            "Active": "true",
+            "Icon": "false",
+            "Badge": "true",
+            "Title": "false"
+          }
+        },
+        {
+          "id": "58:604",
+          "properties": {
+            "Active": "false",
+            "Icon": "false",
+            "Badge": "false",
+            "Title": "false"
+          }
+        },
+        {
+          "id": "58:607",
+          "properties": {
+            "Active": "false",
+            "Icon": "false",
+            "Badge": "true",
+            "Title": "false"
+          }
+        }
+      ]
+    },
+    {
+      "id": "58:611",
+      "variants": [
+        {
+          "id": "58:612",
+          "properties": {
+            "Content": "icon+text"
+          }
+        },
+        {
+          "id": "58:617",
+          "properties": {
+            "Content": "text"
+          }
+        },
+        {
+          "id": "58:622",
+          "properties": {
+            "Content": "icon"
+          }
+        }
+      ]
+    }
+  ],
+  "details": [
+    {
+      "id": "58:565",
+      "name": "Active=true, Icon=true, Badge=false, Title=true",
+      "w": 86,
+      "h": 56,
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": 0,
+      "fills": [
+        {
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "variable": "Background/Container"
+        }
+      ],
+      "children": [
+        {
+          "id": "58:566",
+          "name": "icon",
+          "type": "FRAME",
+          "w": 24,
+          "h": 24,
+          "x": 31,
+          "y": 8,
+          "visible": true
+        },
+        {
+          "id": "58:568",
+          "name": "Title",
+          "type": "TEXT",
+          "w": 70,
+          "h": 14,
+          "x": 8,
+          "y": 32,
+          "visible": true
+        }
+      ],
+      "texts": [
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 10,
+          "line": {
+            "unit": "PIXELS",
+            "value": 14
+          },
+          "style": "H8-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "variable": "Text/blue"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58:578",
+      "name": "Active=false, Icon=true, Badge=true, Title=true",
+      "w": 86,
+      "h": 56,
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": 0,
+      "fills": [
+        {
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "variable": "Background/Container"
+        }
+      ],
+      "children": [
+        {
+          "id": "58:579",
+          "name": "icon",
+          "type": "FRAME",
+          "w": 24,
+          "h": 24,
+          "x": 31,
+          "y": 8,
+          "visible": true
+        },
+        {
+          "id": "58:581",
+          "name": "Title",
+          "type": "TEXT",
+          "w": 70,
+          "h": 14,
+          "x": 8,
+          "y": 32,
+          "visible": true
+        },
+        {
+          "id": "58:582",
+          "name": "badge-dot",
+          "type": "INSTANCE",
+          "w": 8,
+          "h": 8,
+          "x": 51,
+          "y": 4,
+          "visible": true
+        }
+      ],
+      "texts": [
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 10,
+          "line": {
+            "unit": "PIXELS",
+            "value": 14
+          },
+          "style": "H8-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "variable": "Text/Secondary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58:593",
+      "name": "Active=false, Icon=false, Badge=true, Title=true",
+      "w": 86,
+      "h": 56,
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": 0,
+      "fills": [
+        {
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "variable": "Background/Container"
+        }
+      ],
+      "children": [
+        {
+          "id": "58:594",
+          "name": "Frame 2",
+          "type": "FRAME",
+          "w": 70,
+          "h": 30,
+          "x": 8,
+          "y": 8,
+          "visible": true
+        },
+        {
+          "id": "58:596",
+          "name": "badge-dot",
+          "type": "INSTANCE",
+          "w": 8,
+          "h": 8,
+          "x": 63,
+          "y": 12,
+          "visible": true
+        }
+      ],
+      "texts": [
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "style": "H5-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "variable": "Text/Secondary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58:597",
+      "name": "Active=true, Icon=false, Badge=false, Title=false",
+      "w": 86,
+      "h": 56,
+      "padding": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "gap": 0,
+      "fills": [
+        {
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "variable": "Background/Container"
+        }
+      ],
+      "children": [
+        {
+          "id": "58:598",
+          "name": "icon",
+          "type": "FRAME",
+          "w": 24,
+          "h": 24,
+          "x": 31,
+          "y": 8,
+          "visible": true
+        }
+      ],
+      "texts": []
+    },
+    {
+      "id": "58:612",
+      "name": "Content=icon+text",
+      "w": 375,
+      "h": 56,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "fills": [
+        {
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "variable": "Background/Container"
+        }
+      ],
+      "children": [
+        {
+          "id": "58:613",
+          "name": "tabBar-item/tabBar_item",
+          "type": "INSTANCE",
+          "w": 93.75,
+          "h": 56,
+          "x": 0,
+          "y": 0,
+          "visible": true
+        },
+        {
+          "id": "58:614",
+          "name": "tabBar-item/tabBar_item",
+          "type": "INSTANCE",
+          "w": 93.75,
+          "h": 56,
+          "x": 93.75,
+          "y": 0,
+          "visible": true
+        },
+        {
+          "id": "58:615",
+          "name": "tabBar-item/tabBar_item",
+          "type": "INSTANCE",
+          "w": 93.75,
+          "h": 56,
+          "x": 187.5,
+          "y": 0,
+          "visible": true
+        },
+        {
+          "id": "58:616",
+          "name": "tabBar-item/tabBar_item",
+          "type": "INSTANCE",
+          "w": 93.75,
+          "h": 56,
+          "x": 281.25,
+          "y": 0,
+          "visible": true
+        }
+      ],
+      "texts": [
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 10,
+          "line": {
+            "unit": "PIXELS",
+            "value": 14
+          },
+          "style": "H8-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "variable": "Text/blue"
+            }
+          ]
+        },
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 10,
+          "line": {
+            "unit": "PIXELS",
+            "value": 14
+          },
+          "style": "H8-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "variable": "Text/Secondary"
+            }
+          ]
+        },
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 10,
+          "line": {
+            "unit": "PIXELS",
+            "value": 14
+          },
+          "style": "H8-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "variable": "Text/Secondary"
+            }
+          ]
+        },
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 10,
+          "line": {
+            "unit": "PIXELS",
+            "value": 14
+          },
+          "style": "H8-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "variable": "Text/Secondary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58:617",
+      "name": "Content=text",
+      "w": 375,
+      "h": 56,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "fills": [
+        {
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "variable": "Background/Container"
+        }
+      ],
+      "children": [
+        {
+          "id": "58:618",
+          "name": "tabBar-item/tabBar_item",
+          "type": "INSTANCE",
+          "w": 93.75,
+          "h": 56,
+          "x": 0,
+          "y": 0,
+          "visible": true
+        },
+        {
+          "id": "58:619",
+          "name": "tabBar-item/tabBar_item",
+          "type": "INSTANCE",
+          "w": 93.75,
+          "h": 56,
+          "x": 93.75,
+          "y": 0,
+          "visible": true
+        },
+        {
+          "id": "58:620",
+          "name": "tabBar-item/tabBar_item",
+          "type": "INSTANCE",
+          "w": 93.75,
+          "h": 56,
+          "x": 187.5,
+          "y": 0,
+          "visible": true
+        },
+        {
+          "id": "58:621",
+          "name": "tabBar-item/tabBar_item",
+          "type": "INSTANCE",
+          "w": 93.75,
+          "h": 56,
+          "x": 281.25,
+          "y": 0,
+          "visible": true
+        }
+      ],
+      "texts": [
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "style": "H5-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "variable": "Text/blue"
+            }
+          ]
+        },
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "style": "H5-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "variable": "Text/Secondary"
+            }
+          ]
+        },
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "style": "H5-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "variable": "Text/Secondary"
+            }
+          ]
+        },
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 14,
+          "line": {
+            "unit": "PIXELS",
+            "value": 22
+          },
+          "style": "H5-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "variable": "Text/Secondary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58:622",
+      "name": "Content=icon",
+      "w": 375,
+      "h": 56,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "fills": [
+        {
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "variable": "Background/Container"
+        }
+      ],
+      "children": [
+        {
+          "id": "58:623",
+          "name": "tabBar-item/tabBar_item",
+          "type": "INSTANCE",
+          "w": 93.75,
+          "h": 56,
+          "x": 0,
+          "y": 0,
+          "visible": true
+        },
+        {
+          "id": "58:624",
+          "name": "tabBar-item/tabBar_item",
+          "type": "INSTANCE",
+          "w": 93.75,
+          "h": 56,
+          "x": 93.75,
+          "y": 0,
+          "visible": true
+        },
+        {
+          "id": "58:625",
+          "name": "tabBar-item/tabBar_item",
+          "type": "INSTANCE",
+          "w": 93.75,
+          "h": 56,
+          "x": 187.5,
+          "y": 0,
+          "visible": true
+        },
+        {
+          "id": "58:626",
+          "name": "tabBar-item/tabBar_item",
+          "type": "INSTANCE",
+          "w": 93.75,
+          "h": 56,
+          "x": 281.25,
+          "y": 0,
+          "visible": true
+        }
+      ],
+      "texts": []
+    },
+    {
+      "id": "994:934",
+      "name": "tabBar_comp",
+      "w": 375,
+      "h": 90,
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "gap": 0,
+      "fills": [],
+      "children": [
+        {
+          "id": "994:910",
+          "name": "tabBar",
+          "type": "INSTANCE",
+          "w": 375,
+          "h": 56,
+          "x": 0,
+          "y": 0,
+          "visible": true
+        },
+        {
+          "id": "994:931",
+          "name": "footer bar",
+          "type": "INSTANCE",
+          "w": 375,
+          "h": 34,
+          "x": 0,
+          "y": 56,
+          "visible": true
+        }
+      ],
+      "texts": [
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 10,
+          "line": {
+            "unit": "PIXELS",
+            "value": 14
+          },
+          "style": "H8-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.16862745583057404,
+                "g": 0.45098039507865906,
+                "b": 1
+              },
+              "variable": "Text/blue"
+            }
+          ]
+        },
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 10,
+          "line": {
+            "unit": "PIXELS",
+            "value": 14
+          },
+          "style": "H8-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "variable": "Text/Secondary"
+            }
+          ]
+        },
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 10,
+          "line": {
+            "unit": "PIXELS",
+            "value": 14
+          },
+          "style": "H8-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "variable": "Text/Secondary"
+            }
+          ]
+        },
+        {
+          "name": "Title",
+          "text": "Title",
+          "size": 10,
+          "line": {
+            "unit": "PIXELS",
+            "value": 14
+          },
+          "style": "H8-CN-S",
+          "remote": false,
+          "fills": [
+            {
+              "color": {
+                "r": 0.27843138575553894,
+                "g": 0.3294117748737335,
+                "b": 0.40392157435417175
+              },
+              "variable": "Text/Secondary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "226:5206",
+      "name": "footer bar",
+      "w": 375,
+      "h": 34,
+      "padding": [
+        21,
+        129,
+        8,
+        129
+      ],
+      "gap": 10,
+      "fills": [],
+      "children": [
+        {
+          "id": "226:5205",
+          "name": "Home Indicator",
+          "type": "RECTANGLE",
+          "w": 144,
+          "h": 5,
+          "x": 259.5,
+          "y": 21,
+          "visible": true
+        }
+      ],
+      "texts": []
+    }
+  ],
+  "instructions": [
+    {
+      "id": "997:75",
+      "text": "TabBar"
+    },
+    {
+      "id": "997:76",
+      "text": "底部导航栏用于承载应用一级目的地，帮助用户在核心业务模块之间快速、稳定地切换。"
+    },
+    {
+      "id": "997:79",
+      "text": "基础分类"
+    },
+    {
+      "id": "997:80",
+      "text": "优先使用图标+文字的标准形态；仅在图标语义高度明确或模块名称较长时，谨慎选择纯图标或纯文字形态。"
+    },
+    {
+      "id": "997:83",
+      "text": "使用方法"
+    },
+    {
+      "id": "997:89",
+      "text": "标准：图标 + 文字"
+    },
+    {
+      "id": "997:90",
+      "text": "默认推荐。图标强化识别，文字消除歧义，适合高频核心模块。"
+    },
+    {
+      "id": "997:114",
+      "text": "完整底栏与安全区"
+    },
+    {
+      "id": "997:115",
+      "text": "用于页面最终交付。导航内容下方需保留设备安全区，不自行压缩 Home Indicator 区域。"
+    },
+    {
+      "id": "997:142",
+      "text": "纯文字导航"
+    },
+    {
+      "id": "997:143",
+      "text": "适用于模块名称明确、图标难以形成统一语义的场景；各项文字长度应接近。"
+    },
+    {
+      "id": "997:159",
+      "text": "纯图标导航"
+    },
+    {
+      "id": "997:160",
+      "text": "仅用于用户高度熟悉的通用入口；使用辨识度高的图标，避免使用相似轮廓图标。"
+    },
+    {
+      "id": "997:181",
+      "text": "使用建议"
+    },
+    {
+      "id": "997:184",
+      "text": "设计与交互建议"
+    },
+    {
+      "id": "997:185",
+      "text": "1. 一级入口建议 3–5 个，最多不超过 5 个；按业务优先级稳定排序，避免频繁调整。\n2. 同一时刻仅允许一个选中项；切换后保留各模块的浏览位置和筛选状态。\n3. 角标只提示需要处理的新信息，不用于装饰；红点表示有更新，数量角标用于明确待办量。\n4. 标签尽量控制在 2–4 个汉字，避免换行、截断和使用内部缩写。\n5. 页面存在底部主操作时，应与 TabBar 明确分层，避免操作按钮遮挡导航或安全区。"
+    }
+  ]
+}

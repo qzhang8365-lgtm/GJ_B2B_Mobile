@@ -1,0 +1,68 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "floating-button",
+  "figmaComponent": "2.floatingbutton（1157:5100）",
+  "prototypeClass": "gj-m-fab",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "base": "gj-m-fab",
+    "color": "{\"default\": \"（基础类）\", \"blue\": \"gj-m-fab-blue\"}",
+    "direction": "{\"to_top\": \".gj-icon → icf_Arrow_up\", \"to_bottom\": \".gj-icon → icf_Arrow_down\"}",
+    "placement": "gj-m-fab-group（position: fixed，右下角，纵向排列）",
+    "state": "{\"default\": \"—\", \"pressed\": \":active；展示用 .is-pressed\"}"
+  },
+  "valueMap": {
+    "size": "{\"width\": 48, \"height\": 48, \"icon\": 28, \"iconAlign\": \"居中（Figma 2026-10-09 改为 28，内边距 8 不影响居中位置）\", \"radius\": \"圆形（Figma 48，未绑定；实现用 --Radius-full）\"}",
+    "color": "{\"default\": {\"background\": \"--ds-background-container\", \"icon\": \"--ds-text-tiatery\", \"hex\": [\"#FFFFFF\", \"#8D96A3\"]}, \"blue\": {\"background\": \"--ds-button-primary-bg-default\", \"icon\": \"--ds-text-reversal\", \"hex\": [\"#2B73FF（设计方确认，FAB-M-001 已关闭）\", \"#FFFFFF\"]}}",
+    "effect": "{\"style\": \"Shadow_center\", \"token\": \"--ds-effect-shadow-center\", \"value\": \"0 0 15px rgba(0,0,0,.10)\"}",
+    "states": "{\"values\": [\"default\", \"pressed\"], \"pressed\": {\"default\": \"叠加 --ds-background-hover-2（黑 3%）\", \"blue\": \"底色换 --ds-button-primary-bg-pressed（#1F63F0）\"}, \"note\": \"Figma 只有 default；按下态沿用按钮做法（设计方 2026-10-09 确认）；无禁用态\"}",
+    "placement": "{\"anchor\": \"界面右下方\", \"offsetX\": \"--space-page-margin-x（16）\", \"offsetY\": \"--space-24（24）+ 底部安全区；有 TabBar / 底部操作栏时再加栏高\", \"gap\": \"--space-12（12）\", \"status\": \"设计方 2026-10-09 确认（FAB-M-003 已关闭）\"}",
+    "interaction": "{\"hitArea\": \"≥ 44×44px\"}"
+  },
+  "tokenMap": {
+    "Background/Container (local)": "--ds-background-container",
+    "Text/Tiatery (local)": "--ds-text-tiatery",
+    "Text/reversal (local)": "--ds-text-reversal",
+    "Shadow_center (local effect style)": "--ds-effect-shadow-center",
+    "圆角 48（未绑定）": "--Radius-full",
+    "Button/Primary/Bg-default (local，blue 底色)": "--ds-button-primary-bg-default（#2B73FF）",
+    "图标 28（未绑定，居中）": "0.28rem"
+  },
+  "runtimeMap": {
+    "group": ".gj-m-fab-group",
+    "fab": ".gj-m-fab"
+  },
+  "markup": {
+    "toTop": "<div class=\"gj-m-fab-group\"><button class=\"gj-m-fab\" type=\"button\" aria-label=\"回到顶部\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_Arrow_up.svg')\" aria-hidden=\"true\"></span></button></div>",
+    "blue": "<div class=\"gj-m-fab-group\"><button class=\"gj-m-fab gj-m-fab-blue\" type=\"button\" aria-label=\"新建\"><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_system_add.svg')\" aria-hidden=\"true\"></span></button></div>"
+  },
+  "interactionMap": {
+    "pressed": "default 叠加 hover-2；blue 换 Bg-pressed"
+  },
+  "accessibility": {
+    "button": "button + aria-label"
+  },
+  "composition": {
+    "position": "距右 16、距底 24 + 安全区；有底部导航时再加栏高",
+    "toTop": "滚动超过约一屏出现，回到顶部后隐藏"
+  },
+  "pageRules": {},
+  "pending": {},
+  "templates": {
+    "fab": {
+      "tpl": "<div class=\"gj-m-fab-group{{#cls}} {{cls}}{{/cls}}\"{{#hidden}} hidden{{/hidden}}><button class=\"gj-m-fab{{#blue}} gj-m-fab-blue{{/blue}}\" type=\"button\" aria-label=\"{{label}}\"{{{attrs}}}><span class=\"gj-icon\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/{{icon}}.svg')\" aria-hidden=\"true\"></span></button></div>",
+      "params": "blue：主色；label：读屏名称；icon：图标名；hidden：初始隐藏（回到顶部滚动后出现）；cls / attrs：页面附加类与属性",
+      "examples": {
+        "toTop": {
+          "label": "回到顶部",
+          "icon": "icf_Arrow_up"
+        },
+        "blue": {
+          "blue": true,
+          "label": "新建",
+          "icon": "icf_system_add"
+        }
+      }
+    }
+  }
+}

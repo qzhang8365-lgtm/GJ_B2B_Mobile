@@ -1,0 +1,65 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "metric",
+  "name": "数据指标 Metric",
+  "category": "数据展示组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "数据指标Metric（209:1346）",
+    "nodes": {
+      "stat": "210:2732 Metric_Stat（color=Default|red|green × align=center|left × label=bottom|top；infoicon、unit 布尔）",
+      "grid": "345:3271 Metric_Grid（align=left|center × number=4|3）",
+      "card": "179:526 Metric_Card（align=center|left）",
+      "trend": "210:2923 metric_item/trend（trend=rise|decline|flat）",
+      "tile": "210:2957 Performance_Card",
+      "usage": "1104:266",
+      "tileGray": "1871:20192（组件说明「灰色背景指标」示例）"
+    },
+    "extractedAt": "2026-10-14",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-metric / .gj-m-metric-grid / .gj-m-metric-card / .gj-m-trend / .gj-m-metric-tile"
+  },
+  "stat": {
+    "value": "默认 N4_NUM-S 20/30（设计方 2026-10-14 定，Figma 为 N3 24/36）；可选 .gj-m-metric-n3 24 / -n5 18 / -n6 16，同组一致；单位 P5_CN-R Text/Primary，间距 4",
+    "label": "P5_CN-R Text/Secondary；信息图标 icf_system_info 16（Text/Tiatery，热区 44）",
+    "tone": {
+      "rise": "Feedback/error&rise",
+      "decline": "Feedback/success&decline",
+      "empty": "「--」Text/Tiatery"
+    },
+    "align": "居中（默认）/ .gj-m-metric-left",
+    "labelTop": "标签写在数值前"
+  },
+  "grid": {
+    "columns": "4（默认）/ .gj-m-metric-grid-3",
+    "left": ".gj-m-metric-grid-left（无内边距）",
+    "columnGap": 8
+  },
+  "card": {
+    "padding": 16,
+    "radius": "Radius-LG 12",
+    "gap": 16,
+    "title": "H4-CN-S Text/Primary",
+    "desc": "P3_CN-R Text/Tiatery，与标题间距 4"
+  },
+  "trend": {
+    "icon": "上涨 icf_Arrow_arrow-up-large（Line F087），下跌 icf_Arrow_arrow-down-large（Line F0B9）；持平 icf_Arrow_flat；16",
+    "text": "H7-CN-S 12/18",
+    "flat": "文字和横线 Text/Tiatery"
+  },
+  "tile": {
+    "padding": 12,
+    "radius": 12,
+    "gap": 4,
+    "label": "P5_CN-R Text/Secondary",
+    "valueRow": "数字（跟随字号，默认 N4 20）+ 单位 P5_CN-R Text/Primary + 趋势，同一行，间距 4；窄屏放不下时趋势换行",
+    "empty": "数字显示「--」，不显示单位和趋势",
+    "updatedAt": "2026-10-14（Figma 210:2957 更新）",
+    "layout": ".gj-m-metric-tiles 两列等分，间距 12",
+    "gray": ".gj-m-metric-tile-gray：Background/Background 底、圆角 8；白色卡片内指标较多时用浅灰底分割"
+  }
+}

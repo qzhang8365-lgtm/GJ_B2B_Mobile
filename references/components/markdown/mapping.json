@@ -1,0 +1,65 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "markdown",
+  "figmaComponent": "Markdown 内容组件（1097:8）/ Markdown / Article（1098:8027）",
+  "prototypeClass": "gj-m-markdown",
+  "note": "原型基座类名，不代表真实前端组件库 API。对话中的回答用 ai-chat 的 .gj-m-ai-markdown，两者排版有意不同。",
+  "propertyMap": {
+    "article": "article.gj-m-markdown.gj-m-markdown-article（文章容器：白底、上下 24、左右 16）",
+    "content": "div.gj-m-markdown（只要正文排版、不要容器时）",
+    "meta": "p.gj-m-markdown-meta（H1 下方：Small 标签 + 时间 + 阅读量）",
+    "elements": "h1–h4、p、strong、a、code、ul / ol（最多两级）、blockquote、pre > code、table、hr、img"
+  },
+  "valueMap": {
+    "body": "16/24",
+    "h1": "20/30",
+    "h2": "18/26",
+    "h3+": "16/24 Semibold",
+    "blockGap": "16",
+    "titleToPara": "8",
+    "liGap": "4",
+    "nestedIndent": "16",
+    "meta": "P5 12/18 Text/Tiatery，项间距 8；标题到元信息 8、元信息到正文 16",
+    "table": "各列左对齐，单元格最多 4 行，超宽横滑"
+  },
+  "tokenMap": {
+    "text": "Text/Primary",
+    "link": "Text/blue（品牌蓝）",
+    "meta": "Text/Tiatery",
+    "quote": "Primitive Blue B01（--ds-primitive-blue-b01）浅蓝底、圆角 8，左侧 2 宽 Brand/GJ_Blue 竖线；文字 14",
+    "background": "Background/Container"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-markdown",
+    "article": ".gj-m-markdown-article",
+    "meta": ".gj-m-markdown-meta"
+  },
+  "markup": {
+    "article": "<article class=\"gj-m-markdown gj-m-markdown-article\"><h1>小红书图文创作六部曲</h1><p class=\"gj-m-markdown-meta\"><span class=\"gj-m-tag gj-m-tag-small\">展业资料</span><span>更新于 2026-10-12</span><span>阅读 1,286</span></p><p>正文段落……</p><h2>一、选题</h2><ul><li>从客户高频问题出发</li><li>每周固定 3 个选题</li></ul><blockquote><p>标题控制在 20 字以内。</p></blockquote></article>",
+    "level0": "<article class=\"gj-m-markdown gj-m-markdown-article gj-m-card-l0\">…</article>",
+    "table": "<table><thead><tr><th>封面类型</th><th>适用内容</th><th>平均点击率</th></tr></thead><tbody><tr><td>大字报</td><td>政策解读</td><td>8.2%</td></tr></tbody></table>",
+    "fromPreview_ai_table_track": "<div class=\"gj-m-ai-table-track is-static\" aria-hidden=\"true\" style=\"--w: 100%; --x: 0%;\"><span></span></div>",
+    "fromPreview_ai_cell": "<span class=\"gj-m-ai-cell\" data-gj-fit=\"1\">品种</span>",
+    "fromPreview_ai_code": "<div class=\"gj-m-ai-code gj-m-ai-table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"json 代码，可左右滚动\" data-gj-bound=\"1\"><div class=\"gj-m-ai-code-lang\">json</div><pre><code>{\n  \"symbol\": \"600519\",\n  \"rating\": \"buy\"\n}</code></pre></div>"
+  },
+  "interactionMap": {
+    "tableScroll": "表格超宽在自身横向滚动",
+    "codeScroll": "代码块横滑"
+  },
+  "accessibility": {
+    "headings": "标题层级连续，从 h1 开始",
+    "images": "图片写 alt",
+    "links": "链接文字说明去向"
+  },
+  "composition": {
+    "page": "导航 → 文章（0 级卡片）→ 相关内容（同为 0 级卡片，卡片标题 + 通栏列表）→ 固定底栏（最多两个按钮）",
+    "noCard": "不把文章正文再放进一级卡片叠加内边距",
+    "safety": "只渲染 Markdown 子集；原始 HTML 转义，链接与图片只接受 http(s)"
+  },
+  "pageRules": {
+    "PR-005": "元信息行的分类标签用 Small",
+    "PR-016": "文章与相关内容同为 0 级卡片，首个贴住导航"
+  },
+  "pending": {},
+  "markupNote": "markup 中 fromPreview_* 片段由 scripts/check-mapping.cjs 从预览页实际渲染补录（2026-10-19），与预览页一致；其余为手写的常用写法。"
+}

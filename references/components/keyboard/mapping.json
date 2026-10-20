@@ -1,0 +1,39 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "keyboard",
+  "figmaComponent": "IOS_拼音-全键盘（313:8541，页面 313:4600）",
+  "prototypeClass": "gj-m-keyboard-mock",
+  "note": "系统键盘由操作系统绘制，H5 不实现键盘。示意只用于原型 / 评审稿表达“键盘弹起”状态，不进入 H5 交付物。",
+  "propertyMap": {
+    "keyboard": "div.gj-m-keyboard-mock（fixed 贴底，背景为键盘截图）",
+    "page": "body 或页面容器加 .gj-m-keyboard-open（正文底部预留键盘高度）"
+  },
+  "valueMap": {
+    "height": "375 下 327（3.27rem），随屏宽等比缩放"
+  },
+  "tokenMap": {},
+  "assetMap": {
+    "image": "{ROOT}assets/images/keyboard/ios-pinyin.png（1500×1308）"
+  },
+  "runtimeMap": {
+    "mock": ".gj-m-keyboard-mock",
+    "open": ".gj-m-keyboard-open"
+  },
+  "markup": {
+    "mock": "<div class=\"gj-m-keyboard-mock\" aria-hidden=\"true\"></div>",
+    "pageState": "<body class=\"gj-m-keyboard-open\">…<div class=\"gj-m-keyboard-mock\" aria-hidden=\"true\"></div></body>"
+  },
+  "interactionMap": {
+    "focus": "聚焦的输入框与错误提示滚到键盘上方，至少留 16",
+    "fixedBar": "键盘弹起时固定底栏被键盘遮盖，不上移（设计方 2026-10-16 确认）"
+  },
+  "accessibility": {
+    "mock": "aria-hidden=\"true\"，不可点击、不可聚焦"
+  },
+  "composition": {
+    "inputmode": "数字、金额、手机号用 inputmode numeric / decimal / tel；搜索用 enterkeyhint=\"search\"",
+    "delivery": "交付 H5 时删除示意"
+  },
+  "pageRules": {},
+  "pending": {}
+}

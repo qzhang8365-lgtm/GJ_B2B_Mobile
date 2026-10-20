@@ -1,0 +1,48 @@
+{
+  "$schema": "gj-design-skill/mobile-component-schema/v1",
+  "id": "image",
+  "name": "图片 Image",
+  "category": "信息录入组件",
+  "source": {
+    "type": "figma",
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "page": "图片Image（58:1903）",
+    "nodes": {
+      "Image": "58:1904（Ratio × State=Default|Loading|Error）",
+      "Image_viewer": "58:1942（Multiple；本地 mask Background/MK_60）",
+      "Image_upload": "201:2578（size=Small|Medium|Large）",
+      "上传宫格示意": "1037:11763",
+      "usage": "1039:7",
+      "Image_item/Upload_item": "1792:14847（State=removable|readonly|add|error|uploading）"
+    },
+    "extractedAt": "2026-10-13",
+    "readOnly": true
+  },
+  "foundation": {
+    "file": "assets/styles/gj-b2b-mobile-components.css",
+    "class": ".gj-m-image(-16x9|-1x1|-rounded|-contain) / .gj-m-image-viewer / -track / -count / .gj-m-image-upload(-160|-240)",
+    "samples": "assets/images/samples/sample-a|b|c.jpg（scikit-image 示例数据：coffee CC0、hubble / rocket 公有领域，仅供文档展示）"
+  },
+  "image": {
+    "ratios": "4:3（默认）/ 16:9 / 1:1，宽度随容器",
+    "fit": "默认 cover；完整展示 contain",
+    "fallback": "Background/Background + 图标 48 Text/disable 居中",
+    "loading": "Background/Background + icf_system_loading 40 Text/disable 居中",
+    "radius": "8（正常 / 加载中 / 失败一致）"
+  },
+  "viewer": {
+    "mask": "Background/MK_60",
+    "image": "按宽度居中",
+    "count": "多图顶部页码 P3 14/22 白色（Figma 未绑定，网站 Text/reversal）"
+  },
+  "upload": {
+    "sizes": "Small 120 / Medium 160 / Large 240，圆角均为 8",
+    "style": "Background/Background + 1px 虚线（8,8）Border/hover",
+    "icon": "icf_system_add 48 Text/disable"
+  },
+  "uploadGrid": {
+    "layout": "容器宽度扣除卡片内边距后等分三列，列距 / 行距 8（下限），格子 1:1（设计方确认）",
+    "item": "占满一列、1:1，图片 cover 圆角 8；删除 icf_system_close-circle-fill 20（Text/Secondary 圆 + Text/reversal 叉）偏移 8，热区 44；上传中 icf_system_loading 36、失败 icf_system_close-md 36，Text/disable，Background/Background",
+    "entry": "占满一列、1:1 虚线框，加号 36"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "AI 对话流",
+  "category": "业务组件",
+  "prototypeOnly": true,
+  "source": "source.json",
+  "page": "955:474",
+  "markdownGuide": "1136:30",
+  "bubble": "1135:10465",
+  "supported": [
+    "paragraph",
+    "heading (single visual level)",
+    "strong",
+    "link",
+    "ordered-list",
+    "unordered-list",
+    "table",
+    "divider",
+    "citation"
+  ],
+  "optional": [
+    "public-processing-summary",
+    "source-details",
+    "AI-notice",
+    "reply-actions",
+    "avatar-identity",
+    "thinking-status (think_inspector / finished / error)",
+    "public-thinking-progress",
+    "bubble-timestamp"
+  ],
+  "notDefined": [
+    "multi-level-heading-scale",
+    "code-block",
+    "blockquote",
+    "image",
+    "math",
+    "nested-list",
+    "streaming-protocol"
+  ]
+}

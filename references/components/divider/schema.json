@@ -1,0 +1,321 @@
+{
+  "component": "Divider",
+  "source": {
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "pageId": "58:10676",
+    "componentSet": "423:3707",
+    "readOnly": true
+  },
+  "properties": {
+    "Type": {
+      "type": "VARIANT",
+      "defaultValue": "horizontal",
+      "variantOptions": [
+        "horizontal",
+        "vertical"
+      ]
+    },
+    "Dashed": {
+      "type": "VARIANT",
+      "defaultValue": "false",
+      "variantOptions": [
+        "false",
+        "true"
+      ]
+    },
+    "Title": {
+      "type": "VARIANT",
+      "defaultValue": "true",
+      "variantOptions": [
+        "false",
+        "true"
+      ]
+    },
+    "Position": {
+      "type": "VARIANT",
+      "defaultValue": "center",
+      "variantOptions": [
+        "left",
+        "center",
+        "right"
+      ]
+    }
+  },
+  "variants": [
+    {
+      "id": "423:3708",
+      "properties": {
+        "Type": "horizontal",
+        "Dashed": "false",
+        "Title": "false",
+        "Position": "center"
+      },
+      "linePatterns": [
+        []
+      ]
+    },
+    {
+      "id": "423:3710",
+      "properties": {
+        "Type": "horizontal",
+        "Dashed": "false",
+        "Title": "true",
+        "Position": "left"
+      },
+      "linePatterns": [
+        [],
+        []
+      ]
+    },
+    {
+      "id": "423:3714",
+      "properties": {
+        "Type": "horizontal",
+        "Dashed": "false",
+        "Title": "true",
+        "Position": "center"
+      },
+      "linePatterns": [
+        [],
+        []
+      ]
+    },
+    {
+      "id": "423:3718",
+      "properties": {
+        "Type": "horizontal",
+        "Dashed": "false",
+        "Title": "true",
+        "Position": "right"
+      },
+      "linePatterns": [
+        [],
+        []
+      ]
+    },
+    {
+      "id": "423:3722",
+      "properties": {
+        "Type": "horizontal",
+        "Dashed": "true",
+        "Title": "false",
+        "Position": "center"
+      },
+      "linePatterns": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "id": "423:3724",
+      "properties": {
+        "Type": "horizontal",
+        "Dashed": "true",
+        "Title": "true",
+        "Position": "left"
+      },
+      "linePatterns": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "id": "423:3728",
+      "properties": {
+        "Type": "horizontal",
+        "Dashed": "true",
+        "Title": "true",
+        "Position": "center"
+      },
+      "linePatterns": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "id": "423:3732",
+      "properties": {
+        "Type": "horizontal",
+        "Dashed": "true",
+        "Title": "true",
+        "Position": "right"
+      },
+      "linePatterns": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "id": "423:3736",
+      "properties": {
+        "Type": "vertical",
+        "Dashed": "false",
+        "Title": "false",
+        "Position": "center"
+      },
+      "linePatterns": [
+        []
+      ]
+    },
+    {
+      "id": "423:3738",
+      "properties": {
+        "Type": "vertical",
+        "Dashed": "true",
+        "Title": "false",
+        "Position": "left"
+      },
+      "linePatterns": [
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "id": "423:3740",
+      "properties": {
+        "Type": "vertical",
+        "Dashed": "true",
+        "Title": "false",
+        "Position": "center"
+      },
+      "linePatterns": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "id": "423:3742",
+      "properties": {
+        "Type": "vertical",
+        "Dashed": "true",
+        "Title": "false",
+        "Position": "right"
+      },
+      "linePatterns": [
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "id": "423:3744",
+      "properties": {
+        "Type": "vertical",
+        "Dashed": "true",
+        "Title": "true",
+        "Position": "left"
+      },
+      "linePatterns": [
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "id": "423:3746",
+      "properties": {
+        "Type": "vertical",
+        "Dashed": "true",
+        "Title": "true",
+        "Position": "center"
+      },
+      "linePatterns": [
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "id": "423:3748",
+      "properties": {
+        "Type": "vertical",
+        "Dashed": "true",
+        "Title": "true",
+        "Position": "right"
+      },
+      "linePatterns": [
+        [
+          3,
+          2
+        ]
+      ]
+    }
+  ],
+  "spec": {
+    "stroke": {
+      "value": 1,
+      "unit": "px",
+      "token": "Border/default"
+    },
+    "title": {
+      "fontSize": 16,
+      "lineHeight": 24,
+      "weight": 400,
+      "color": "Text/Tiatery",
+      "fontPolicy": "system",
+      "textStyleId": "S:08e7c51f87d6e5b3f1335d71a6edcca97dae2158,",
+      "textStyleName": "P2_CN-R",
+      "letterSpacing": 0
+    },
+    "gap": 16,
+    "shortLine": 24,
+    "verticalHeight": 16,
+    "referenceWidth": 328,
+    "dash": {
+      "value": [
+        3,
+        3
+      ],
+      "unit": "design-px",
+      "basis": "设计方确认统一；最新水平与垂直 center 来源为 3/3"
+    }
+  },
+  "pending": [
+    "DIV-M-002"
+  ],
+  "supportedVariantIds": [
+    "423:3708",
+    "423:3710",
+    "423:3714",
+    "423:3718",
+    "423:3722",
+    "423:3724",
+    "423:3728",
+    "423:3732",
+    "423:3736",
+    "423:3740"
+  ],
+  "constraints": {
+    "vertical": {
+      "Title": false,
+      "Position": "not applicable"
+    }
+  }
+}

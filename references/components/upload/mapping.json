@@ -1,0 +1,74 @@
+{
+  "$schema": "gj-design-skill/mobile-component-mapping/v2",
+  "component": "upload",
+  "figmaComponent": "Upload_Button（1114:883）/ Upload_item/File_item（1114:890）",
+  "prototypeClass": "gj-m-upload",
+  "note": "原型基座类名，不代表真实前端组件库 API。",
+  "propertyMap": {
+    "Upload_Button size=large|medium": "button.gj-m-button.gj-m-button-tertiary(.gj-m-button-large) > .gj-icon(icf_file_upload) + 上传",
+    "组件说明 选择文件行": ".gj-m-upload-head > button + p.gj-m-upload-tip",
+    "Upload_item/File_item State=Default, filesize=false": "li.gj-m-upload-item > img.gj-m-upload-item-icon + .gj-m-upload-item-name(-base + -ext) + button.gj-m-upload-item-remove",
+    "State=State6, filesize=true": "+ .gj-m-upload-item-size",
+    "State=Uploading, filesize=false": "li.gj-m-upload-item.is-uploading > … + .gj-m-upload-progress[role=progressbar] > span + .gj-m-upload-item-percent (+ 网站补充取消按钮)",
+    "State=Uploading, filesize=true": "… + .gj-m-upload-item-size（已传/总大小）",
+    "State=Error": "li.gj-m-upload-item.is-error > span.gj-m-upload-item-icon.gj-icon + 失败原因 (+ -size) + remove"
+  },
+  "valueMap": {
+    "button": "{\"large\": \"40（Button Large left_icon，Figma 内边距 16，圆角 8，图标 20）\", \"medium\": \"32（Button Medium left_icon，Figma 内边距 12，圆角 6，图标 16）\", \"default\": \"移动端默认大号\"}",
+    "layout": "{\"headGap\": \"按钮与说明间距 12\", \"listGap\": \"头部与列表12；多文件列表项之间4（2026-10-13用户确认）\", \"tip\": \"网站 P4 13/20 Text/Tiatery（Figma 示意 14，未绑定样式）\"}",
+    "fileItem": "{\"height\": \"Components/control-L 40\", \"padding\": \"Interval/space3 8\", \"gap\": \"8\", \"radius\": \"Radius-MD 8\", \"icon\": \"文件图标 20：assets/icons/fileicon/24px-pdf|word|excel|ppt|img|text.svg\", \"name\": \"P2_CN-R 16/24 Text/Primary，单行截断，网站保留扩展名\", \"size\": \"P5_CN-R 12/18 Text/Tiatery\", \"remove\": \"icf_system_close-md 20 Text/Tiatery，热区 44\", \"uploading\": \"文件图标 24px-text；「上传中...」P2；进度条高 4 圆角 2，轨道 Background/MK_10…（完整见 schema.json）",
+    "states": "[\"Default\", \"Error\", \"Uploading\"]"
+  },
+  "tokenMap": {
+    "Text/Primary": "--ds-text-primary",
+    "Text/Tiatery": "--ds-text-tiatery",
+    "Background/Background": "--ds-background-background",
+    "Background/BT_R8": "--ds-background-bt-r8",
+    "Background/MK_10": "--ds-background-mk-10",
+    "Brand/GJ_Blue": "--ds-brand-gj-blue",
+    "Feedback/error&rise": "--ds-feedback-error-rise",
+    "Components/control-L": "--control-L",
+    "Interval/space3": "--space-8",
+    "Radius/Radius-MD": "--Radius-MD"
+  },
+  "runtimeMap": {
+    "root": ".gj-m-upload",
+    "head": ".gj-m-upload-head",
+    "tip": ".gj-m-upload-tip",
+    "list": ".gj-m-upload-list",
+    "item": ".gj-m-upload-item",
+    "remove": ".gj-m-upload-item-remove",
+    "progress": ".gj-m-upload-progress"
+  },
+  "markup": {
+    "upload": "<div class=\"gj-m-upload\"><div class=\"gj-m-upload-head\"><button type=\"button\" class=\"gj-m-button gj-m-button-tertiary gj-m-button-large\"><span class=\"gj-icon\" aria-hidden=\"true\" style=\"--gj-icon:url('{ROOT}assets/icons/iconfont/icf_file_upload.svg')\"></span>上传</button><p class=\"gj-m-upload-tip\">支持 PDF、Word、Excel、PPT，单个不超过 20MB</p></div><div id=\"l\"><ul class=\"gj-m-upload-list\"></ul></div></div>",
+    "list": "<ul class=\"gj-m-upload-list\"><li class=\"gj-m-upload-item\"><span class=\"gj-m-upload-item-icon-slot\"><img class=\"gj-m-upload-item-icon\" src=\"{ROOT}assets/icons/fileicon/24px-pdf.svg\" alt=\"\"></span><span class=\"gj-m-upload-item-name\"><span class=\"gj-m-upload-item-base\">示例文件</span><span class=\"gj-m-upload-item-ext\">.pdf</span></span><button type=\"button\" class=\"gj-m-upload-item-remove\" aria-label=\"删除 示例文件.pdf\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></li><li class=\"gj-m-upload-item\"><span class=\"gj-m-upload-item-icon-slot\"><img class=\"gj-m-upload-item-icon\" src=\"{ROOT}assets/icons/fileicon/24px-word.svg\" alt=\"\"></span><span class=\"gj-m-upload-item-name\"><span class=\"gj-m-upload-item-base\">客户尽职调查报告-2026年第三季度-最终版</span><span class=\"gj-m-upload-item-ext\">.docx</span></span><button type=\"button\" class=\"gj-m-upload-item-remove\" aria-label=\"删除 客户尽职调查报告-2026年第三季度-最终版.docx\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></li><li class=\"gj-m-upload-item is-uploading\"><span class=\"gj-m-upload-item-icon-slot\"><img class=\"gj-m-upload-item-icon\" src=\"{ROOT}assets/icons/fileicon/24px-text.svg\" alt=\"\"></span><span class=\"gj-m-upload-item-name\">上传中...</span><span class=\"gj-m-upload-progress\" role=\"progressbar\" aria-label=\"示例文件.pdf 上传进度\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"48\"><span style=\"--gj-m-upload-progress:48%\"></span></span><span class=\"gj-m-upload-item-percent\">48%</span><button type=\"button\" class=\"gj-m-upload-item-remove\" aria-label=\"取消上传 示例文件.pdf\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></li><li class=\"gj-m-upload-item is-error\"><span class=\"gj-m-upload-item-icon-slot\"><span class=\"gj-m-upload-item-icon gj-icon\" aria-hidden=\"true\"></span></span><span class=\"gj-m-upload-item-detail\"><span class=\"gj-m-upload-item-name\"><span class=\"gj-m-upload-item-base\">示例文件</span><span class=\"gj-m-upload-item-ext\">.pdf</span></span><span class=\"gj-m-upload-item-error\">上传失败</span></span><button type=\"button\" class=\"gj-m-upload-item-remove\" aria-label=\"删除 示例文件.pdf\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></li></ul>",
+    "progress": "<ul class=\"gj-m-upload-list\"><li class=\"gj-m-upload-item is-uploading\"><span class=\"gj-m-upload-item-icon-slot\"><img class=\"gj-m-upload-item-icon\" src=\"{ROOT}assets/icons/fileicon/24px-pdf.svg\" alt=\"\"></span><span class=\"gj-m-upload-item-name\">示例.pdf</span><span class=\"gj-m-upload-progress\" role=\"progressbar\" aria-label=\"示例.pdf 上传进度\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"48\"><span style=\"--gj-m-upload-progress:48%\"></span></span><span class=\"gj-m-upload-item-percent\">48%</span><button type=\"button\" class=\"gj-m-upload-item-remove\" aria-label=\"取消上传 示例.pdf\"><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></li></ul>"
+  },
+  "interactionMap": {
+    "uploading": "显示“上传中...”与进度",
+    "error": "失败显示原因并可重试或删除"
+  },
+  "accessibility": {
+    "button": "上传按钮文字明确；文件项删除按钮 aria-label=\"删除 文件名\"",
+    "progress": "上传中进度条 role=\"progressbar\""
+  },
+  "composition": {
+    "spacing": "按钮与说明 12；头部与列表 12；文件项间 4",
+    "tip": "写明格式与大小限制"
+  },
+  "pageRules": {},
+  "pending": {},
+  "templates": {
+    "progress": {
+      "tpl": "<ul class=\"gj-m-upload-list\"><li class=\"gj-m-upload-item is-uploading\"><span class=\"gj-m-upload-item-icon-slot\"><img class=\"gj-m-upload-item-icon\" src=\"{ROOT}assets/icons/fileicon/{{icon}}.svg\" alt=\"\"></span><span class=\"gj-m-upload-item-name\">{{name}}</span><span class=\"gj-m-upload-progress\" role=\"progressbar\" aria-label=\"{{name}} 上传进度\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"{{progress}}\"><span style=\"--gj-m-upload-progress:{{progress}}%\"></span></span><span class=\"gj-m-upload-item-percent\">{{progress}}%</span><button type=\"button\" class=\"gj-m-upload-item-remove\" aria-label=\"取消上传 {{name}}\"{{{attrs}}}><span class=\"gj-icon\" aria-hidden=\"true\"></span></button></li></ul>",
+      "example": {
+        "icon": "24px-pdf",
+        "name": "示例.pdf",
+        "progress": 48,
+        "attrs": ""
+      },
+      "params": "上传中进度与取消，沿用Upload原基座；progress为0到100。"
+    }
+  }
+}

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 标签 Tag</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .playground .controls .field select{appearance:auto}
+    .note-line{margin:12px 0 0;font-size:13px;line-height:20px;color:var(--ds-text-secondary)}
+    .showcase-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .size-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius)}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.size-groups,.showcase-grid{grid-template-columns:1fr}}
+    .panel .phone-stage{padding:0;background:transparent}
+    .docs-sheet+.docs-sheet{margin-top:28px}
+    .sheet-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding-bottom:16px;margin-bottom:24px;border-bottom:1px solid var(--ds-border-default)}
+    .sheet-head h2{margin:0;font-size:24px;line-height:32px;font-weight:600}
+    .sheet-head .sub{margin-left:8px;font-size:14px;color:var(--ds-text-tiatery);font-weight:400}
+    .sheet-head p{margin:6px 0 0;max-width:760px;color:var(--ds-text-secondary);font-size:14px;line-height:22px}
+    .sheet-head+.docs-section{padding-top:0;border-top:0}
+    @media(max-width:650px){.sheet-head h2{font-size:22px;line-height:30px}}
+    .group-title{margin:20px 0 12px;font-size:15px;font-weight:600;line-height:22px;color:var(--ds-text-primary)}
+    .docs-section-head+.group-title{margin-top:0}
+    .note-line a{color:var(--ds-text-blue);text-decoration:none}
+    .panel.gray{display:flex;flex-direction:column}
+    .panel.gray>.docs-stage-label{flex:none}
+    .panel.gray>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .panel{display:flex;flex-direction:column}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">通用组件 · Components</div>
+    <h1>标签 Tag</h1>
+    <p>展示内容的属性、状态、类别或营销信息，也可作为大量内容按类型筛选时的类别标识。包含常规标签、边角标签与圆形标签。</p>
+  </header>
+
+  <article class="docs-sheet" id="tag-basic">
+    <header class="sheet-head"><div><h2>常规标签<span class="sub">Tag</span></h2><p>Medium 24 与 Small 20 两档，Default / filled / line 三种风格，矩形与圆形两种形状，11 种颜色按语义选用。文字建议不超过 6 个汉字。</p></div></header>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>尺寸、风格与形状</h2><p>Medium 为默认尺寸，用于卡片与列表；Small 用于空间紧凑处。filled 可带图标，图标取自图标库、颜色跟随文字。</p></div></header>
+      <div class="size-groups">
+        <div class="panel"><span class="docs-stage-label">尺寸 · Medium 24 / Small 20</span><div data-demo="sz"></div></div>
+        <div class="panel"><span class="docs-stage-label">风格 · Default / filled / line</span><div data-demo="st"></div></div>
+        <div class="panel"><span class="docs-stage-label">形状与图标 · rectangle / round / +icon</span><div data-demo="sh"></div></div>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>颜色</h2><p>按语义选色：红色表示风险或上涨，绿色表示完成或下跌，橙色表示警示或待办，灰色表示中性状态；同一列表内同一含义保持同色。</p></div></header>
+      <div class="panel"><div data-demo="colors"></div></div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>组合使用</h2><p>标签放在标题后或信息行内，同一区域保持同一尺寸与形状。</p></div></header>
+      <div class="showcase-grid">
+        <div class="panel gray"><span class="docs-stage-label">列表信息 · Medium</span><div data-demo="cbList"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">标题后状态 · Small</span><div data-demo="cbTitle"></div></div>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>切换尺寸、颜色、风格与形状。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pSize">Size</label><select id="pSize"><option value="medium">Medium</option><option value="small">Small</option></select></div>
+          <div class="field"><label for="pColor">Color</label><select id="pColor"></select></div>
+          <div class="field"><label for="pStyle">Style</label><select id="pStyle"><option value="default">Default</option><option value="filled">filled</option><option value="line">line</option></select></div>
+          <div class="field"><label for="pShape">Shape</label><select id="pShape"><option value="rectangle">rectangle</option><option value="round">round</option></select></div>
+          <div class="field"><label for="pLabel">Label</label><input id="pLabel" value="基础标签" maxlength="8"></div>
+          <label class="check"><input type="checkbox" id="pIcon"> 图标（仅 filled）</label>
+        </div></aside>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>选用规则</h2><p>标签只做展示，不承载操作。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>用途</td><td>展示属性、状态、类别或营销信息。</td><td>可点击的筛选项用按钮，不用标签。</td></tr>
+        <tr><td>风格</td><td>Default 为常用；filled 用于需要强调的少量标签；line 用于弱化或与浅底区分。</td><td>同一区域不混用多种风格。</td></tr>
+        <tr><td>颜色</td><td>按语义选色，同一含义保持同色。</td><td>不为装饰随意换色。</td></tr>
+        <tr><td>文字</td><td>建议不超过 6 个汉字。</td><td>不换行、不省略。</td></tr>
+        <tr><td>图标</td><td>只配合 filled，取自图标库，颜色跟随文字。</td><td>不自绘图标。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="corner-tag">
+    <header class="sheet-head"><div><h2>边角标签<span class="sub">Corner Tag</span></h2><p>贴在卡片或图片左上角，左上、右下圆角与容器圆角一致。容器圆角大于等于 12 时不建议使用；不得遮挡任何可见信息。</p></div></header>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>尺寸与颜色</h2><p>Regular 24 / Small 20；颜色为极客蓝、国金红、国金紫、高端金渐变与黑色 60%，可带图标。</p></div></header>
+      <div class="showcase-grid">
+        <div class="panel"><span class="docs-stage-label">Regular · 24</span><div data-demo="crReg"></div></div>
+        <div class="panel"><span class="docs-stage-label">Small · 20</span><div data-demo="crSm"></div></div>
+      </div>
+    </section>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用示例</h2><p>图片圆角 8，边角标签左上角与之对齐。</p></div></header>
+      <div class="showcase-grid">
+        <div class="panel gray"><span class="docs-stage-label">资讯列表 · Small · 黑色 · 375 宽</span><div data-demo="crNews"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">产品列表 · Regular · 375 宽</span><div data-demo="crCard"></div></div>
+      </div>
+    </section>
+  </article>
+
+  <article class="docs-sheet" id="circle-tag">
+    <header class="sheet-head"><div><h2>圆形标签<span class="sub">Circle Tag</span></h2><p> 20×20 圆形单字标签，用于展示客户在各证券市场的开户情况：港（港股通）、北（北交所）、三（新三板）、创（创业板）、科（科创板）、期（期货）、融（融资融券）。成组展示，点亮表示已开通。</p></div></header>
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>灰色（Default）表示未开通该市场账户；蓝色（active）表示已开通，即“点亮”。7 个市场按固定顺序成组展示。</p></div></header>
+      <div class="showcase-grid">
+        <div class="panel"><span class="docs-stage-label">未开通 Default / 已开通 active · 2 倍显示</span><div data-demo="ccStates"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">客户开户信息 · 375 宽</span><div data-demo="ccList"></div></div>
+      </div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const ICON=new URL('../../assets/icons/iconfont/',location.href).href;
+  const icon=(name)=>`<span class="gj-icon" style="--gj-icon:url('${ICON}${name}.svg')" aria-hidden="true"></span>`;
+  const COLORS=['blue','orange','red','grey','yellow','cyan','sky','deepblue','purple','pink','green'];
+  const SEMN={blue:'blue · 默认/品牌',red:'red · 风险/上涨',green:'green · 完成/下跌',orange:'orange · 警示/待办',grey:'grey · 中性'};
+  const tag=({label='基础标签',size='medium',color='blue',style='default',shape='rectangle',withIcon=false,glyph='icf_business_stock'}={})=>{
+    const c=['gj-m-tag'];if(size==='small')c.push('gj-m-tag-small');if(color!=='blue')c.push('gj-m-tag-'+color);if(style!=='default')c.push('gj-m-tag-'+style);if(shape==='round')c.push('gj-m-tag-round');
+    const ic=withIcon&&style==='filled';if(ic)c.push('gj-m-tag-icon');
+    return `<span class="${c.join(' ')}">${ic?icon(glyph):''}${label}</span>`;};
+  const corner=({label='异形标签',size='regular',color='blue',withIcon=false,pin=false}={})=>{const c=['gj-m-corner-tag'];if(size==='small')c.push('gj-m-corner-tag-small');if(color!=='blue')c.push('gj-m-corner-tag-'+color);if(pin)c.push('gj-m-corner-tag-pin');return `<span class="${c.join(' ')}">${withIcon?icon('icf_business_stock'):''}${label}</span>`;};
+  const circle=(t,active)=>`<span class="gj-m-circle-tag${active?' is-active':''}">${t}</span>`;
+  const CSS='html,body{overflow-y:hidden}.page{padding-block:.08rem}'+
+    '.row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-8)}'+
+    '.stack{display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-12)}'+
+    '.x2wrap{display:flex;justify-content:center;padding-block:.24rem}'+
+    '.x2{display:flex;flex-direction:column;align-items:center;gap:var(--space-8);transform:scale(2);transform-origin:center}.x2 .row{flex-wrap:nowrap;gap:var(--space-4)}'+
+    '.ctable{width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed;font-size:.12rem;line-height:.18rem}'+
+    '.ctable th{padding:.08rem .04rem;color:var(--ds-text-secondary);font-weight:600;text-align:center;background:var(--ds-background-background)}'+
+    '.ctable td{padding:.08rem .04rem;text-align:center;border-top:1px solid var(--ds-border-default)}.ctable td:first-child{color:var(--ds-text-secondary);text-align:left;padding-left:.12rem}'+
+    ''+
+    '.card .t{display:flex;align-items:center;gap:.08rem;font-size:.16rem;line-height:.24rem;font-weight:600}.card .d{font-size:.12rem;line-height:.18rem;color:var(--ds-text-secondary)}'+
+    ''+
+    '.li{gap:.08rem}.li .t{font-size:.15rem;line-height:.22rem;font-weight:600}.li .d{font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}'+
+    ''+
+    '.feed{display:flex;flex-direction:column;gap:var(--space-12);width:100%;max-width:3.75rem;margin:0 auto;padding:var(--space-12) var(--space-page-margin-x);box-sizing:border-box;background:var(--ds-background-background)}'+
+    '.news{display:flex;gap:.12rem}'+
+    '.thumb{position:relative;flex:none;width:.91rem;height:.64rem;border-radius:var(--Radius-MD);overflow:hidden}'+
+    '.news .bd{display:flex;flex-direction:column;justify-content:space-between;min-width:0;flex:1}'+
+    '.news .t{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:.16rem;line-height:.24rem;font-weight:600}.news .d{font-size:.12rem;line-height:.18rem;color:var(--ds-text-secondary)}'+
+    '.pcard{position:relative;padding-top:.20rem}'+
+    '.pcard .ft{display:flex;align-items:flex-end;justify-content:space-between;gap:.08rem}.pcard .m{font-size:.12rem;line-height:.18rem;color:var(--ds-text-secondary)}'+
+    '.pcard .t{font-size:.15rem;line-height:.22rem;font-weight:600}.pcard .n{margin-top:.08rem;font-size:.2rem;line-height:.28rem;font-weight:600;color:var(--ds-feedback-error-rise)}.pcard .d{font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}'+
+    '.cust{display:flex;flex-direction:column;gap:var(--space-12);width:100%;max-width:3.75rem;margin:0 auto;padding:var(--space-12) var(--space-page-margin-x);box-sizing:border-box;background:var(--ds-background-background)}'+
+    '.cc{display:flex;flex-direction:column;gap:.08rem}'+
+    '.cc .hd{display:flex;align-items:center;justify-content:space-between}.cc .nm{font-size:.16rem;line-height:.24rem;font-weight:600}.cc .lv{font-size:.12rem;line-height:.18rem;color:var(--ds-text-tiatery)}'+
+    '.cc .d{font-size:.12rem;line-height:.18rem;color:var(--ds-text-secondary)}.cc .mk{display:flex;gap:.04rem}';
+  const show=(key,html)=>GJPhone.swatch(document.querySelector('[data-demo="'+key+'"]'),{html,css:CSS,height:'auto'});
+  const row=(...a)=>`<div class="row">${a.join('')}</div>`;
+  // 常规标签
+  show('sz',`<div class="stack">${row(tag(),tag({style:'filled'}),tag({style:'line'}))}${row(tag({size:'small'}),tag({size:'small',style:'filled'}),tag({size:'small',style:'line'}))}</div>`);
+  show('st',`<div class="stack">${row(tag({label:'Default'}),tag({label:'filled',style:'filled'}),tag({label:'line',style:'line'}))}${row(tag({color:'red',label:'风险提示'}),tag({color:'red',style:'filled',label:'风险提示'}),tag({color:'red',style:'line',label:'风险提示'}))}</div>`);
+  show('sh',`<div class="stack">${row(tag(),tag({shape:'round'}),tag({style:'filled',withIcon:true}),tag({style:'filled',withIcon:true,shape:'round'}))}${row(tag({size:'small'}),tag({size:'small',shape:'round'}))}</div>`);
+  const ST=[['default','Default'],['filled','filled'],['line','line']];
+  const ctable=(list,name=c=>c)=>`<table class="ctable"><colgroup><col style="width:22%"><col><col><col><col><col><col></colgroup><thead><tr><th style="text-align:left;padding-left:.12rem">颜色</th>${ST.map(s=>`<th>${s[1]} · M</th>`).join('')}${ST.map(s=>`<th>${s[1]} · S</th>`).join('')}</tr></thead><tbody>`+
+    list.map(c=>`<tr><td>${name(c)}</td>${ST.map(s=>`<td>${tag({color:c,style:s[0]})}</td>`).join('')}${ST.map(s=>`<td>${tag({color:c,style:s[0],size:'small'})}</td>`).join('')}</tr>`).join('')+'</tbody></table>';
+  show('colors',ctable(COLORS,c=>SEMN[c]||c));
+  show('cbList',`<div class="gj-m-list gj-m-list-card">${[['华东区域年度营销方案','进行中','blue','截止 2026-10-31 · 负责人 张明'],['合同续签（上海分公司）','待审批','orange','提交于 2026-10-08'],['客户资料补录','已逾期','red','逾期 3 天']].map(([t,s,c,d])=>`<div class="gj-m-list-item"><span class="gj-m-list-item-content"><span class="gj-m-list-item-main li"><span class="gj-m-list-item-text">${t}</span><div class="row">${tag({label:s,color:c})}${tag({label:'重点客户',color:'grey'})}</div><span class="gj-m-list-item-desc">${d}</span></span></span></div>`).join('')}</div>`);
+  show('cbTitle',`<div class="stack" style="width:100%">${[['稳健增利 6 个月','中低风险','green'],['科技先锋混合','高风险','red'],['国金货币 A','新发','blue']].map(([t,s,c])=>`<div class="gj-m-card card" style="width:100%;box-sizing:border-box"><div class="t">${t}${tag({label:s,color:c,size:'small'})}</div><div class="d">近一年收益率 · 业绩比较基准</div></div>`).join('')}</div>`);
+  // 交互
+  const $=id=>document.getElementById(id);$('pColor').innerHTML=COLORS.map(c=>`<option>${c}</option>`).join('');
+  const update=()=>GJPhone.swatch($('lab'),{html:`<div style="display:flex;justify-content:center">${tag({size:$('pSize').value,color:$('pColor').value,style:$('pStyle').value,shape:$('pShape').value,label:$('pLabel').value||'基础标签',withIcon:$('pIcon').checked})}</div>`,css:CSS,height:'auto'});
+  ['pSize','pColor','pStyle','pShape','pIcon'].forEach(id=>$(id).addEventListener('change',update));$('pLabel').addEventListener('input',update);update();
+  // 边角标签
+  const CC=['blue','red','purple','gold','black'];
+  show('crReg',`<div class="stack">${row(...CC.map(c=>corner({color:c})))}${row(...CC.map(c=>corner({color:c,withIcon:true})))}</div>`);
+  show('crSm',`<div class="stack">${row(...CC.map(c=>corner({color:c,size:'small'})))}${row(...CC.map(c=>corner({color:c,size:'small',withIcon:true})))}</div>`);
+  const NEWS=[['公司新闻','我司获金融科技发展奖三等奖','姚遥 · 彭治强　2026-08-05','var(--ds-background-bg-blue),var(--ds-background-bg-sky)'],
+    ['行业动态','证监会发布上市公司监管指引第 10 号','研究所　2026-08-04','var(--ds-background-bg-orange),var(--ds-background-bg-yellow)'],
+    ['政策解读','个人养老金制度全面实施，哪些产品值得关注','财富管理部　2026-08-02','var(--ds-background-bg-green),var(--ds-background-bg-cyan)']];
+  show('crNews',`<div class="feed">${NEWS.map(([tag,t,d,bg])=>`<section class="gj-m-card"><div class="news"><div class="thumb" style="background:linear-gradient(135deg,${bg})">${corner({label:tag,size:'small',color:'black',pin:true})}</div><div class="bd"><div class="t">${t}</div><div class="d">${d}</div></div></div></section>`).join('')}</div>`);
+  const PRODUCTS=[['精选定投','blue',true,'国金量化多因子 A','+12.36%','近一年收益率','1 元起投'],['热销','red',false,'稳健增利 6 个月持有','3.85%','业绩比较基准','1000 元起购'],['高端理财','gold',false,'国金尊享固收 1 号','4.20%','业绩比较基准','100 万元起购']];
+  show('crCard',`<div class="feed">${PRODUCTS.map(([tg,c,ic,t,n,d,m])=>`<div class="gj-m-card pcard">${corner({label:tg,color:c,withIcon:ic,pin:true})}<div class="t">${t}</div><div class="n">${n}</div><div class="ft"><span class="d">${d}</span><span class="m">${m}</span></div></div>`).join('')}</div>`);
+  // 圆形标签
+  const MK=['港','北','三','创','科','期','融'];
+  show('ccStates',`<div class="x2wrap"><div class="x2">${row(...MK.map(t=>circle(t)))}${row(...MK.map(t=>circle(t,true)))}</div></div>`);
+  const CUST=[['张*明','资金账号 3100****2618','开户 2019-03','港北创科融'],['李*华','资金账号 3100****0732','开户 2022-11','创科'],['王*芳','资金账号 3100****5590','开户 2024-06','']];
+  show('ccList',`<div class="cust">${CUST.map(([n,a,o,on])=>`<section class="gj-m-card"><div class="cc"><div class="hd"><span class="nm">${n}</span><span class="lv">${o}</span></div><div class="d">${a}</div><div class="mk">${MK.map(t=>circle(t,on.includes(t))).join('')}</div></div></section>`).join('')}</div>`);
+})();
+</script>
+</body>
+</html>

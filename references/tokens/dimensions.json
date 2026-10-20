@@ -1,0 +1,284 @@
+{
+  "source": {
+    "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "collectionId": "VariableCollectionId:7:2",
+    "modeId": "11:0",
+    "modeName": "Mobile",
+    "publication": "not verified"
+  },
+  "dimensions": [
+    {
+      "name": "Interval/space-4",
+      "figmaId": "VariableID:7:235",
+      "figmaKey": "2e41a8916b2ea9cb3e074b87120a5c9b3338c532",
+      "value": 4,
+      "unit": "px",
+      "mode": "Mobile",
+      "description": "最小单位",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Interval/space-4",
+        "variableId": "VariableID:7:235",
+        "referencePage": "165:766"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Interval/space-8",
+      "figmaId": "VariableID:7:236",
+      "figmaKey": "5b72c72774bd7ebdb3a18eb55e65f569186999fd",
+      "value": 8,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Interval/space-8",
+        "variableId": "VariableID:7:236",
+        "referencePage": "165:766"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Interval/space12",
+      "figmaId": "VariableID:7:237",
+      "figmaKey": "5e45ea87e30fd5a6e055171d07a2555304aa48f4",
+      "value": 12,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Interval/space12",
+        "variableId": "VariableID:7:237",
+        "referencePage": "165:766"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Interval/space-16",
+      "figmaId": "VariableID:7:238",
+      "figmaKey": "8a66065629a31c440576583c736fbcde8efbe853",
+      "value": 16,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Interval/space-16",
+        "variableId": "VariableID:7:238",
+        "referencePage": "165:766"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Interval/space-20",
+      "figmaId": "VariableID:7:239",
+      "figmaKey": "e39ba4973bcc40151ad89a84ea65986c13b31dd9",
+      "value": 20,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Interval/space-20",
+        "variableId": "VariableID:7:239",
+        "referencePage": "165:766"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Interval/space-24",
+      "figmaId": "VariableID:11:1607",
+      "figmaKey": "119c5faa3f2c4d52144b3227c1bb784574be5709",
+      "value": 24,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Interval/space-24",
+        "variableId": "VariableID:11:1607",
+        "referencePage": "165:766"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Interval/space-32",
+      "figmaId": "VariableID:7:241",
+      "figmaKey": "13fc6579ee14a8fb12209baccfbbbff6e18c4a09",
+      "value": 32,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Interval/space-32",
+        "variableId": "VariableID:7:241",
+        "referencePage": "165:766"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Interval/space-40",
+      "figmaId": "VariableID:11:1608",
+      "figmaKey": "e3808ac3d031f764ac0d4adbffe04684599e329e",
+      "value": 40,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Interval/space-40",
+        "variableId": "VariableID:11:1608",
+        "referencePage": "165:766"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Interval/space-48",
+      "figmaId": "VariableID:1613:11706",
+      "figmaKey": "baf2bc6b7ccf8b41989622651c081596ee59dbf4",
+      "value": 48,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Interval/space-48",
+        "variableId": "VariableID:1613:11706",
+        "referencePage": "165:766"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Radius/Radius-XXS",
+      "figmaId": "VariableID:7:242",
+      "figmaKey": "252586d9a5a526ccf21ee75dbe53b33113d95e88",
+      "value": 0,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Radius/Radius-XXS",
+        "variableId": "VariableID:7:242",
+        "referencePage": "226:5183"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Radius/Radius-XS",
+      "figmaId": "VariableID:7:243",
+      "figmaKey": "6eef7f9e732e1345d94be35c1493c43ad7872409",
+      "value": 4,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Radius/Radius-XS",
+        "variableId": "VariableID:7:243",
+        "referencePage": "226:5183"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Radius/Radius-SM",
+      "figmaId": "VariableID:7:244",
+      "figmaKey": "dfef36c2d38bdc35a3994c1a10c5f2745211d363",
+      "value": 6,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Radius/Radius-SM",
+        "variableId": "VariableID:7:244",
+        "referencePage": "226:5183"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Radius/Radius-MD",
+      "figmaId": "VariableID:7:245",
+      "figmaKey": "889bd13aeda3109c407bc7c1e48ad419308981f1",
+      "value": 8,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Radius/Radius-MD",
+        "variableId": "VariableID:7:245",
+        "referencePage": "226:5183"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Radius/Radius-LG",
+      "figmaId": "VariableID:7:246",
+      "figmaKey": "25ac90cc5f52b9fefbc3a0aa38f9b73606a9481f",
+      "value": 12,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Radius/Radius-LG",
+        "variableId": "VariableID:7:246",
+        "referencePage": "226:5183"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Radius/Radius-XL",
+      "figmaId": "VariableID:7:247",
+      "figmaKey": "4ccb0387c936ca8d3a3798afcebb6d06badedff5",
+      "value": 16,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Radius/Radius-XL",
+        "variableId": "VariableID:7:247",
+        "referencePage": "226:5183"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Radius/Radius-2XL",
+      "figmaId": "VariableID:7:248",
+      "figmaKey": "a1fa9838668373d7392b4d3858893679e5c3482f",
+      "value": 24,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Radius/Radius-2XL",
+        "variableId": "VariableID:7:248",
+        "referencePage": "226:5183"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    },
+    {
+      "name": "Radius/Radius-full",
+      "figmaId": "VariableID:7:249",
+      "figmaKey": "156abf97e83fbd24a76a48f652f8638c59c014f1",
+      "value": 999,
+      "unit": "px",
+      "mode": "Mobile",
+      "source": {
+        "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
+        "location": "Variable collection Collection 1 / Radius/Radius-full",
+        "variableId": "VariableID:7:249",
+        "referencePage": "226:5183"
+      },
+      "scope": "mobile design system",
+      "publication": "not verified"
+    }
+  ]
+}

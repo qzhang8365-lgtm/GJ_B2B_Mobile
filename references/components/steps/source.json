@@ -1,0 +1,950 @@
+{
+  "details": [
+    {
+      "id": "58:3237",
+      "name": "Status=finish, Description=true, Section=start",
+      "type": "COMPONENT",
+      "w": 120,
+      "h": 64,
+      "x": 16,
+      "y": 16,
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 0,
+      "cornerRadius": 0,
+      "fills": [],
+      "children": [
+        {
+          "id": "58:3238",
+          "name": "7.step-icon-container",
+          "type": "INSTANCE",
+          "w": 120,
+          "h": 24,
+          "x": 0,
+          "y": 0,
+          "layoutMode": "NONE",
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "children": [
+            {
+              "id": "I58:3238;58:3232",
+              "name": "line-wrapper",
+              "type": "FRAME",
+              "w": 120,
+              "h": 1,
+              "x": 0,
+              "y": 11.5,
+              "layoutMode": "HORIZONTAL",
+              "itemSpacing": 0,
+              "cornerRadius": 0,
+              "fills": [],
+              "children": [
+                {
+                  "id": "I58:3238;58:3233",
+                  "name": "left",
+                  "type": "FRAME",
+                  "w": 60,
+                  "h": 1,
+                  "x": 0,
+                  "y": 0,
+                  "layoutMode": "NONE",
+                  "itemSpacing": 0,
+                  "cornerRadius": 0,
+                  "fills": []
+                },
+                {
+                  "id": "I58:3238;58:3234",
+                  "name": "right",
+                  "type": "FRAME",
+                  "w": 60,
+                  "h": 1,
+                  "x": 60,
+                  "y": 0,
+                  "layoutMode": "NONE",
+                  "itemSpacing": 0,
+                  "cornerRadius": 0,
+                  "fills": [
+                    {
+                      "color": {
+                        "r": 0.16862745583057404,
+                        "g": 0.45098039507865906,
+                        "b": 1
+                      },
+                      "var": "Brand/GJ_Blue"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "I58:3238;58:3235",
+              "name": "5.step-icon",
+              "type": "INSTANCE",
+              "w": 24,
+              "h": 24,
+              "x": 48,
+              "y": 0,
+              "layoutMode": "NONE",
+              "itemSpacing": 10,
+              "cornerRadius": 0,
+              "fills": [],
+              "children": [
+                {
+                  "id": "I58:3238;58:3235;58:3230",
+                  "name": "dot",
+                  "type": "ELLIPSE",
+                  "w": 8,
+                  "h": 8,
+                  "x": 8,
+                  "y": 8,
+                  "cornerRadius": 0,
+                  "fills": [
+                    {
+                      "color": {
+                        "r": 0.16862745583057404,
+                        "g": 0.45098039507865906,
+                        "b": 1
+                      },
+                      "var": "Brand/GJ_Blue"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "58:3239",
+          "name": "content",
+          "type": "FRAME",
+          "w": 120,
+          "h": 40,
+          "x": 0,
+          "y": 24,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "children": [
+            {
+              "id": "58:3240",
+              "name": "title",
+              "type": "TEXT",
+              "w": 104,
+              "h": 22,
+              "x": 8,
+              "y": 0,
+              "text": "Title",
+              "size": 14,
+              "line": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "style": "H5-CN-S",
+              "fills": [
+                {
+                  "color": {
+                    "r": 0.062745101749897,
+                    "g": 0.0941176488995552,
+                    "b": 0.1568627506494522
+                  },
+                  "var": "Text/Primary"
+                }
+              ]
+            },
+            {
+              "id": "58:3241",
+              "name": "description",
+              "type": "TEXT",
+              "w": 104,
+              "h": 18,
+              "x": 8,
+              "y": 22,
+              "text": "Description",
+              "size": 12,
+              "line": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "style": "P5_CN-R",
+              "fills": [
+                {
+                  "color": {
+                    "r": 0.5529412031173706,
+                    "g": 0.5882353186607361,
+                    "b": 0.6392157077789307
+                  },
+                  "var": "Text/Tiatery"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58:3242",
+      "name": "Status=wait, Description=true, Section=start",
+      "type": "COMPONENT",
+      "w": 120,
+      "h": 64,
+      "x": 16,
+      "y": 152,
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 0,
+      "cornerRadius": 0,
+      "fills": [],
+      "children": [
+        {
+          "id": "58:3243",
+          "name": ".step-icon-container",
+          "type": "INSTANCE",
+          "w": 120,
+          "h": 24,
+          "x": 0,
+          "y": 0,
+          "layoutMode": "NONE",
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [
+            {
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "I58:3243;9797:7282",
+              "name": "line-wrapper",
+              "type": "FRAME",
+              "w": 120,
+              "h": 1,
+              "x": 0,
+              "y": 11.5,
+              "layoutMode": "HORIZONTAL",
+              "itemSpacing": 0,
+              "cornerRadius": 0,
+              "fills": [],
+              "children": [
+                {
+                  "id": "I58:3243;9797:7281",
+                  "name": "left",
+                  "type": "FRAME",
+                  "w": 60,
+                  "h": 1,
+                  "x": 0,
+                  "y": 0,
+                  "layoutMode": "NONE",
+                  "itemSpacing": 0,
+                  "cornerRadius": 0,
+                  "fills": []
+                },
+                {
+                  "id": "I58:3243;9797:7283",
+                  "name": "right",
+                  "type": "FRAME",
+                  "w": 60,
+                  "h": 1,
+                  "x": 60,
+                  "y": 0,
+                  "layoutMode": "NONE",
+                  "itemSpacing": 0,
+                  "cornerRadius": 0,
+                  "fills": [
+                    {
+                      "color": {
+                        "r": 0.9215686321258545,
+                        "g": 0.9333333373069763,
+                        "b": 0.9490196108818054
+                      },
+                      "var": "Border/default"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "I58:3243;9797:7271",
+              "name": ".step-icon",
+              "type": "INSTANCE",
+              "w": 24,
+              "h": 24,
+              "x": 48,
+              "y": 0,
+              "layoutMode": "NONE",
+              "itemSpacing": 10,
+              "cornerRadius": 0,
+              "fills": [],
+              "children": [
+                {
+                  "id": "I58:3243;9797:7271;9797:7267",
+                  "name": "dot",
+                  "type": "ELLIPSE",
+                  "w": 8,
+                  "h": 8,
+                  "x": 8,
+                  "y": 8,
+                  "cornerRadius": 0,
+                  "fills": [
+                    {
+                      "color": {
+                        "r": 0.9215686321258545,
+                        "g": 0.9333333373069763,
+                        "b": 0.9490196108818054
+                      },
+                      "var": "Border/default"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "58:3244",
+          "name": "content",
+          "type": "FRAME",
+          "w": 120,
+          "h": 40,
+          "x": 0,
+          "y": 24,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "children": [
+            {
+              "id": "58:3245",
+              "name": "title",
+              "type": "TEXT",
+              "w": 104,
+              "h": 22,
+              "x": 8,
+              "y": 0,
+              "text": "Title",
+              "size": 14,
+              "line": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "style": "H5-CN-S",
+              "fills": [
+                {
+                  "color": {
+                    "r": 0.5529412031173706,
+                    "g": 0.5882353186607361,
+                    "b": 0.6392157077789307
+                  },
+                  "var": "Text/Tiatery"
+                }
+              ]
+            },
+            {
+              "id": "58:3246",
+              "name": "description",
+              "type": "TEXT",
+              "w": 104,
+              "h": 18,
+              "x": 8,
+              "y": 22,
+              "text": "Description",
+              "size": 12,
+              "line": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "style": "P5_CN-R",
+              "fills": [
+                {
+                  "color": {
+                    "r": 0.5529412031173706,
+                    "g": 0.5882353186607361,
+                    "b": 0.6392157077789307
+                  },
+                  "var": "Text/Tiatery"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58:3255",
+      "name": "Status=process, Description=true, Section=start",
+      "type": "COMPONENT",
+      "w": 120,
+      "h": 64,
+      "x": 680,
+      "y": 16,
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 0,
+      "cornerRadius": 0,
+      "fills": [],
+      "children": [
+        {
+          "id": "58:3256",
+          "name": ".step-icon-container",
+          "type": "INSTANCE",
+          "w": 120,
+          "h": 24,
+          "x": 0,
+          "y": 0,
+          "layoutMode": "NONE",
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [
+            {
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "I58:3256;9797:7282",
+              "name": "line-wrapper",
+              "type": "FRAME",
+              "w": 120,
+              "h": 1,
+              "x": 0,
+              "y": 11.5,
+              "layoutMode": "HORIZONTAL",
+              "itemSpacing": 0,
+              "cornerRadius": 0,
+              "fills": [],
+              "children": [
+                {
+                  "id": "I58:3256;9797:7281",
+                  "name": "left",
+                  "type": "FRAME",
+                  "w": 60,
+                  "h": 1,
+                  "x": 0,
+                  "y": 0,
+                  "layoutMode": "NONE",
+                  "itemSpacing": 0,
+                  "cornerRadius": 0,
+                  "fills": []
+                },
+                {
+                  "id": "I58:3256;9797:7283",
+                  "name": "right",
+                  "type": "FRAME",
+                  "w": 60,
+                  "h": 1,
+                  "x": 60,
+                  "y": 0,
+                  "layoutMode": "NONE",
+                  "itemSpacing": 0,
+                  "cornerRadius": 0,
+                  "fills": [
+                    {
+                      "color": {
+                        "r": 0.9215686321258545,
+                        "g": 0.9333333373069763,
+                        "b": 0.9490196108818054
+                      },
+                      "var": "Border/default"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "I58:3256;9797:7271",
+              "name": ".step-icon",
+              "type": "INSTANCE",
+              "w": 24,
+              "h": 24,
+              "x": 48,
+              "y": 0,
+              "layoutMode": "NONE",
+              "itemSpacing": 10,
+              "cornerRadius": 0,
+              "fills": [],
+              "children": [
+                {
+                  "id": "I58:3256;9797:7271;9797:7267",
+                  "name": "dot",
+                  "type": "ELLIPSE",
+                  "w": 8,
+                  "h": 8,
+                  "x": 8,
+                  "y": 8,
+                  "cornerRadius": 0,
+                  "fills": [
+                    {
+                      "color": {
+                        "r": 0.16862745583057404,
+                        "g": 0.45098039507865906,
+                        "b": 1
+                      },
+                      "var": "Brand/GJ_Blue"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "58:3257",
+          "name": "content",
+          "type": "FRAME",
+          "w": 120,
+          "h": 40,
+          "x": 0,
+          "y": 24,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "children": [
+            {
+              "id": "58:3258",
+              "name": "title",
+              "type": "TEXT",
+              "w": 104,
+              "h": 22,
+              "x": 8,
+              "y": 0,
+              "text": "Title",
+              "size": 14,
+              "line": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "style": "H5-CN-S",
+              "fills": [
+                {
+                  "color": {
+                    "r": 0.16862745583057404,
+                    "g": 0.45098039507865906,
+                    "b": 1
+                  },
+                  "var": "Brand/GJ_Blue"
+                }
+              ]
+            },
+            {
+              "id": "58:3259",
+              "name": "description",
+              "type": "TEXT",
+              "w": 104,
+              "h": 18,
+              "x": 8,
+              "y": 22,
+              "text": "Description",
+              "size": 12,
+              "line": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "style": "P5_CN-R",
+              "fills": [
+                {
+                  "color": {
+                    "r": 0.5529412031173706,
+                    "g": 0.5882353186607361,
+                    "b": 0.6392157077789307
+                  },
+                  "var": "Text/Tiatery"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58:3260",
+      "name": "Status=error, Description=true, Section=start",
+      "type": "COMPONENT",
+      "w": 120,
+      "h": 64,
+      "x": 1088,
+      "y": 16,
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 0,
+      "cornerRadius": 0,
+      "fills": [],
+      "children": [
+        {
+          "id": "58:3261",
+          "name": ".step-icon-container",
+          "type": "INSTANCE",
+          "w": 120,
+          "h": 24,
+          "x": 0,
+          "y": 0,
+          "layoutMode": "NONE",
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [
+            {
+              "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              }
+            }
+          ],
+          "children": [
+            {
+              "id": "I58:3261;9797:7282",
+              "name": "line-wrapper",
+              "type": "FRAME",
+              "w": 120,
+              "h": 1,
+              "x": 0,
+              "y": 11.5,
+              "layoutMode": "HORIZONTAL",
+              "itemSpacing": 0,
+              "cornerRadius": 0,
+              "fills": [],
+              "children": [
+                {
+                  "id": "I58:3261;9797:7281",
+                  "name": "left",
+                  "type": "FRAME",
+                  "w": 60,
+                  "h": 1,
+                  "x": 0,
+                  "y": 0,
+                  "layoutMode": "NONE",
+                  "itemSpacing": 0,
+                  "cornerRadius": 0,
+                  "fills": []
+                },
+                {
+                  "id": "I58:3261;9797:7283",
+                  "name": "right",
+                  "type": "FRAME",
+                  "w": 60,
+                  "h": 1,
+                  "x": 60,
+                  "y": 0,
+                  "layoutMode": "NONE",
+                  "itemSpacing": 0,
+                  "cornerRadius": 0,
+                  "fills": [
+                    {
+                      "color": {
+                        "r": 0.9215686321258545,
+                        "g": 0.9333333373069763,
+                        "b": 0.9490196108818054
+                      },
+                      "var": "Border/default"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "I58:3261;9797:7271",
+              "name": ".step-icon",
+              "type": "INSTANCE",
+              "w": 24,
+              "h": 24,
+              "x": 48,
+              "y": 0,
+              "layoutMode": "NONE",
+              "itemSpacing": 10,
+              "cornerRadius": 0,
+              "fills": [],
+              "children": [
+                {
+                  "id": "I58:3261;9797:7271;9797:7267",
+                  "name": "dot",
+                  "type": "ELLIPSE",
+                  "w": 8,
+                  "h": 8,
+                  "x": 8,
+                  "y": 8,
+                  "cornerRadius": 0,
+                  "fills": [
+                    {
+                      "color": {
+                        "r": 0.9764705896377563,
+                        "g": 0.21960784494876862,
+                        "b": 0.21960784494876862
+                      },
+                      "var": "Feedback/error&rise"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "58:3262",
+          "name": "content",
+          "type": "FRAME",
+          "w": 120,
+          "h": 40,
+          "x": 0,
+          "y": 24,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "children": [
+            {
+              "id": "58:3263",
+              "name": "title",
+              "type": "TEXT",
+              "w": 104,
+              "h": 22,
+              "x": 8,
+              "y": 0,
+              "text": "Title",
+              "size": 14,
+              "line": {
+                "unit": "PIXELS",
+                "value": 22
+              },
+              "style": "H5-CN-S",
+              "fills": [
+                {
+                  "color": {
+                    "r": 0.9764705896377563,
+                    "g": 0.21960784494876862,
+                    "b": 0.21960784494876862
+                  },
+                  "var": "Feedback/error&rise"
+                }
+              ]
+            },
+            {
+              "id": "58:3264",
+              "name": "description",
+              "type": "TEXT",
+              "w": 104,
+              "h": 18,
+              "x": 8,
+              "y": 22,
+              "text": "Description",
+              "size": 12,
+              "line": {
+                "unit": "PIXELS",
+                "value": 18
+              },
+              "style": "P5_CN-R",
+              "fills": [
+                {
+                  "color": {
+                    "r": 0.5529412031173706,
+                    "g": 0.5882353186607361,
+                    "b": 0.6392157077789307
+                  },
+                  "var": "Text/Tiatery"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "170:8020",
+      "name": "Status=process, Description=true, Section=start",
+      "type": "COMPONENT",
+      "w": 160,
+      "h": 58,
+      "x": 16,
+      "y": 100,
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 0,
+      "cornerRadius": 0,
+      "fills": [],
+      "children": [
+        {
+          "id": "170:8021",
+          "name": "6.step-icon-container",
+          "type": "INSTANCE",
+          "w": 24,
+          "h": 58,
+          "x": 0,
+          "y": 0,
+          "layoutMode": "NONE",
+          "itemSpacing": 0,
+          "cornerRadius": 0,
+          "fills": [],
+          "children": [
+            {
+              "id": "I170:8021;58:3337",
+              "name": "line-wrapper",
+              "type": "FRAME",
+              "w": 1,
+              "h": 58,
+              "x": 11.5,
+              "y": 0,
+              "layoutMode": "VERTICAL",
+              "itemSpacing": 0,
+              "cornerRadius": 0,
+              "fills": [],
+              "children": [
+                {
+                  "id": "I170:8021;58:3338",
+                  "name": "top",
+                  "type": "FRAME",
+                  "w": 1,
+                  "h": 12,
+                  "x": 0,
+                  "y": 0,
+                  "layoutMode": "NONE",
+                  "itemSpacing": 0,
+                  "cornerRadius": 0,
+                  "fills": []
+                },
+                {
+                  "id": "I170:8021;58:3339",
+                  "name": "bottom",
+                  "type": "FRAME",
+                  "w": 1,
+                  "h": 46,
+                  "x": 0,
+                  "y": 12,
+                  "layoutMode": "NONE",
+                  "itemSpacing": 0,
+                  "cornerRadius": 0,
+                  "fills": [
+                    {
+                      "color": {
+                        "r": 0.9215686321258545,
+                        "g": 0.9333333373069763,
+                        "b": 0.9490196108818054
+                      },
+                      "var": "Border/default"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "I170:8021;58:3340",
+              "name": "5.step-icon",
+              "type": "INSTANCE",
+              "w": 24,
+              "h": 24,
+              "x": 0,
+              "y": 1,
+              "layoutMode": "NONE",
+              "itemSpacing": 10,
+              "cornerRadius": 0,
+              "fills": [],
+              "children": [
+                {
+                  "id": "I170:8021;58:3340;58:3230",
+                  "name": "dot",
+                  "type": "ELLIPSE",
+                  "w": 8,
+                  "h": 8,
+                  "x": 8,
+                  "y": 8,
+                  "cornerRadius": 0,
+                  "fills": [
+                    {
+                      "color": {
+                        "r": 0.16862745583057404,
+                        "g": 0.45098039507865906,
+                        "b": 1
+                      },
+                      "var": "Brand/GJ_Blue"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "170:8022",
+          "name": "content",
+          "type": "FRAME",
+          "w": 96,
+          "h": 58,
+          "x": 24,
+          "y": 0,
+          "layoutMode": "VERTICAL",
+          "itemSpacing": 4,
+          "cornerRadius": 0,
+          "fills": [],
+          "children": [
+            {
+              "id": "170:8023",
+              "name": "Frame 1321316709",
+              "type": "FRAME",
+              "w": 96,
+              "h": 40,
+              "x": 0,
+              "y": 2,
+              "layoutMode": "HORIZONTAL",
+              "itemSpacing": 8,
+              "cornerRadius": 0,
+              "fills": [],
+              "children": [
+                {
+                  "id": "170:8025",
+                  "name": "Frame 1321316710",
+                  "type": "FRAME",
+                  "w": 96,
+                  "h": 40,
+                  "x": 0,
+                  "y": 0,
+                  "layoutMode": "VERTICAL",
+                  "itemSpacing": 0,
+                  "cornerRadius": 0,
+                  "fills": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "instructions": [
+    "步骤条 Steps",
+    "用于展示任务流程、操作顺序和当前进度，帮助用户理解已完成、进行中、等待及异常状态。",
+    "基础分类",
+    "根据内容方向和步骤数量选择合适形式；移动端横向通常使用 3–4 步，纵向用于承载更长说明。",
+    "横向 · 3 步",
+    "适合步骤较少、标签简短的线性流程。",
+    "横向 · 4 步",
+    "适合在一屏内展示更完整的流程进度。",
+    "纵向：流程&时间轴 ",
+    "适合说明较多或需要逐项阅读的流程。",
+    "使用方法",
+    "通过状态、方向和描述信息表达流程进度；当前步骤应始终保持唯一且清晰可识别。",
+    "步骤状态",
+    "完成表示已结束，进行中表示当前节点，等待表示尚未开始，错误表示流程异常。",
+    "完成",
+    "进行中",
+    "等待",
+    "错误",
+    "描述信息",
+    "步骤含义不明确时显示描述；标题已足够清晰时可省略，避免横向空间拥挤。",
+    "带描述",
+    "无描述",
+    "图标使用",
+    "轴端默认使用圆点，需要强调任务完成态时可以使用勾选图标",
+    "圆点",
+    "图标",
+    "使用建议",
+    "步骤条用于表达具有目标和先后关系的流程；仅记录时间顺序的历史事件应使用 Timeline。",
+    "• 移动端横向步骤建议控制在 3–4 步；步骤更多或说明较长时改用纵向形式。",
+    "• 同一时刻只能有一个“进行中”步骤，避免用户无法判断当前进度。",
+    "• 完成、进行中、等待和错误状态应遵循统一语义，不使用状态色做普通强调。",
+    "• 标题应简短且使用一致的动词或名词结构；描述仅补充必要信息。",
+    "• 步骤条默认用于状态展示；支持点击跳转时，应明确可操作范围和点击反馈。",
+    "• 错误状态应说明原因或处理方式；流程恢复后及时更新状态并保持进度连续。"
+  ]
+}

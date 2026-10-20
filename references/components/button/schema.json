@@ -1,0 +1,233 @@
+{
+  "$schema": "gj-design-skill/mobile-component/v1",
+  "component": "Button",
+  "source": {
+    "figmaFile": "KCpwE2Lh1yCGQ86y8ckYFN",
+    "nodeId": "161:6274",
+    "nodeName": "1.Button",
+    "page": "Mobile_按钮Button",
+    "pageNodeId": "11:1610",
+    "extractedAt": "2026-10-08",
+    "readOnly": true,
+    "variantCount": 288,
+    "variantMatrix": "4 Level × 3 Size × 3 State × 4 Icon × 2 Shape",
+    "figmaDescription": "Textbutton：无容器内边距、背景和描边……（与本组件不符，见 audit.md BTN-M-001）"
+  },
+  "status": {
+    "extracted": true,
+    "foundation": "assets/styles/gj-b2b-mobile-components.css · .gj-m-button",
+    "previewVerified": "2026-10-08（375 / 320，浏览器计算值逐项比对，见 audit.md）",
+    "published": false,
+    "pending": [
+      "BTN-M-001",
+      "BTN-M-002",
+      "BTN-M-003"
+    ]
+  },
+  "props": {
+    "label": {
+      "type": "string",
+      "default": "按钮",
+      "figmaProperty": "Label#2410:0"
+    },
+    "level": {
+      "type": "enum",
+      "default": "Primary",
+      "values": [
+        "Primary",
+        "Secondary",
+        "Tertiary",
+        "Ghost"
+      ]
+    },
+    "size": {
+      "type": "enum",
+      "default": "Medium",
+      "values": [
+        "Large",
+        "Medium",
+        "Small"
+      ]
+    },
+    "state": {
+      "type": "enum",
+      "default": "default",
+      "values": [
+        "default",
+        "pressed",
+        "disabled"
+      ],
+      "note": "移动端无 hover；pressed 对应触摸按下（:active）"
+    },
+    "icon": {
+      "type": "enum",
+      "default": "None",
+      "values": [
+        "None",
+        "Left_Icon",
+        "Right_Icon",
+        "Icon_Only"
+      ]
+    },
+    "shape": {
+      "type": "enum",
+      "default": "regular",
+      "values": [
+        "regular",
+        "pill"
+      ]
+    },
+    "buttonIcon": {
+      "type": "instance-swap",
+      "figmaProperty": "ButtonIcon#87:0",
+      "default": "icf_system_search",
+      "library": "references/icons/index.json → general（iconfont）",
+      "rule": "只能使用图标库已登记图标；颜色始终与按钮文字一致"
+    }
+  },
+  "sizes": {
+    "Large": {
+      "height": 40,
+      "heightToken": "--control-L",
+      "paddingInline": 20,
+      "radius": 8,
+      "radiusToken": "--Radius-MD",
+      "textStyle": "P2_CN-R",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "fontWeight": 400,
+      "icon": 20,
+      "gap": 4,
+      "iconOnlyWidth": 40
+    },
+    "Medium": {
+      "height": 32,
+      "heightToken": "--control-M",
+      "paddingInline": 16,
+      "radius": 6,
+      "radiusToken": "--Radius-SM",
+      "textStyle": "P3_CN-R",
+      "fontSize": 14,
+      "lineHeight": 22,
+      "fontWeight": 400,
+      "icon": 16,
+      "gap": 4,
+      "iconOnlyWidth": 32
+    },
+    "Small": {
+      "height": 28,
+      "heightToken": "--control-S",
+      "paddingInline": 12,
+      "radius": 6,
+      "radiusToken": "--Radius-SM",
+      "radiusFigma": 6,
+      "textStyle": "P5_CN-R",
+      "fontSize": 12,
+      "lineHeight": 18,
+      "fontWeight": 400,
+      "icon": 12,
+      "gap": 4,
+      "iconOnlyWidth": 28
+    }
+  },
+  "shape": {
+    "regular": "按尺寸取 radius（Large 8 / Medium 6 / Small 6，控件尺寸圆角规则）",
+    "pill": {
+      "radius": 999,
+      "radiusToken": "--Radius-full",
+      "note": "Figma 绑定 Radius/Radius-full（999），2026-10-09"
+    }
+  },
+  "levels": {
+    "Primary": {
+      "default": {
+        "background": "--ds-button-primary-bg-default",
+        "text": "--ds-text-reversal",
+        "border": null
+      },
+      "pressed": {
+        "background": "--ds-button-primary-bg-pressed"
+      },
+      "disabled": {
+        "background": "--ds-button-primary-bg-disable",
+        "text": "--ds-text-reversal"
+      }
+    },
+    "Secondary": {
+      "default": {
+        "background": "--ds-background-container",
+        "text": "--ds-text-blue",
+        "border": "--ds-border-focused"
+      },
+      "pressed": {
+        "overlay": "--ds-background-hover"
+      },
+      "disabled": {
+        "opacity": 0.4
+      }
+    },
+    "Tertiary": {
+      "default": {
+        "background": "--ds-background-container",
+        "text": "--ds-text-primary",
+        "border": "--ds-border-secondary"
+      },
+      "pressed": {
+        "overlay": "--ds-background-hover-2",
+        "border": "--ds-border-secondary"
+      },
+      "disabled": {
+        "text": "--ds-text-disable",
+        "border": "--ds-border-secondary"
+      }
+    },
+    "Ghost": {
+      "default": {
+        "background": "--ds-background-background",
+        "text": "--ds-text-primary",
+        "border": null,
+        "note": "Figma 绑定了描边颜色但描边宽度为 0，不画边框"
+      },
+      "pressed": {
+        "overlay": "--ds-background-hover-2"
+      },
+      "disabled": {
+        "opacity": 0.4
+      }
+    }
+  },
+  "border": {
+    "width": 1,
+    "align": "INSIDE",
+    "implementation": "inset box-shadow，不占内边距"
+  },
+  "icon": {
+    "source": "assets/icons/iconfont/（.gj-icon + --gj-icon）",
+    "color": "currentColor，始终等于按钮文字色；包括 Icon_Only 与所有状态",
+    "forbidden": "不得自绘图标、使用 Emoji 或图标库以外的资源"
+  },
+  "interaction": {
+    "hitArea": "实际热区至少 44×44px（伪元素扩展，不改变视觉尺寸）",
+    "iconOnly": "必须提供 aria-label",
+    "disabled": "原生 disabled 属性",
+    "text": "按钮文字不省略、不换行（h5-small-screen.md）"
+  },
+  "layout": {
+    "source": "Figma 312:2295 按钮使用规范（无独立组件）",
+    "block": {
+      "class": "gj-m-button-block",
+      "rule": "通栏按钮宽度依据页面边距撑满所在容器"
+    },
+    "group": {
+      "class": "gj-m-button-group",
+      "gap": {
+        "default": "--space-btn-gap（8）",
+        "large": "gj-m-button-group-large · --space-12（12）",
+        "small": "gj-m-button-group-small · --space-4（4）"
+      },
+      "equal": "gj-m-button-group-equal：一行等分（弹窗双按钮）",
+      "vertical": "gj-m-button-group-vertical：纵向撑满（底部面板双按钮竖排）",
+      "note": "横向、纵向间距相同；可按场景调整"
+    }
+  }
+}

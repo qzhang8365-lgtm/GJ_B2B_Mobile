@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>国金移动端设计规范 · 开关 Switch</title>
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css">
+  <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="../docs.css">
+  <style>
+    .ck{display:flex;align-items:center;gap:6px;font-size:13px;line-height:20px;color:var(--ds-text-secondary);cursor:pointer}
+    .playground .controls .field select{appearance:auto}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .grid2+.grid2{margin-top:16px}
+    .panel{min-width:0;padding:20px;background:var(--ds-background-container);border:1px solid var(--ds-border-default);border-radius:var(--docs-panel-radius);display:flex;flex-direction:column}
+    .panel.gray{background:var(--ds-background-background);border-color:transparent}
+    .panel>.docs-stage-label{flex:none}
+    .panel>div:last-child{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+    .lab{display:grid;min-width:0;min-height:var(--docs-interaction-stage-min-height);place-items:center;padding:32px;background:var(--ds-background-background);border:1px dashed var(--ds-border-secondary);border-radius:var(--docs-panel-radius)}
+    .lab>div{width:100%}
+    @media(max-width:960px){.grid2{grid-template-columns:1fr}}
+  </style>
+  <script src="../phone-stage.js?v=20261020-src1"></script>
+</head>
+<body>
+<main class="docs-shell">
+  <header class="docs-page-head">
+    <div class="docs-eyebrow">信息录入组件 · Data Entry</div>
+    <h1>开关 Switch</h1>
+    <p>控制单一功能或设置的开启与关闭，操作后通常立即生效，并持续反映当前的开 / 关状态。</p>
+  </header>
+
+  <article class="docs-sheet">
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>尺寸</h2><p>Default 用于常规设置页，Small 只用于紧凑列表；放在列表行内时整行可点。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">Default · 关 / 开</span><div data-demo="zD"></div></div>
+        <div class="panel"><span class="docs-stage-label">Small · 关 / 开</span><div data-demo="zS"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>状态</h2><p>开、关、禁用（40%，保持当前状态）。禁用需有业务原因，必要时就近说明。</p></div></header>
+      <div class="grid2">
+        <div class="panel"><span class="docs-stage-label">关 / 开 / 禁用关 / 禁用开</span><div data-demo="st"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">灰色背景上</span><div data-demo="stG"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用示例</h2><p>均为 375 宽。标签描述被控制的功能，开关放在行尾。</p></div></header>
+      <div class="grid2">
+        <div class="panel gray"><span class="docs-stage-label">设置页 · Default</span><div data-demo="exSet"></div></div>
+        <div class="panel gray"><span class="docs-stage-label">紧凑列表 · Small</span><div data-demo="exSm"></div></div>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>交互演示</h2><p>点击开关或整行切换，立即生效。勾选“模拟请求失败”后，切换会先进入请求中（不可再点），失败后恢复原状态并提示。</p></div></header>
+      <div class="playground">
+        <div class="lab"><div id="lab"></div></div>
+        <aside class="controls docs-surface-white"><h3 class="control-title">属性控制</h3><div class="control-fields">
+          <div class="field"><label for="pSize">尺寸</label><select id="pSize"><option value="D" selected>Default · 48×28</option><option value="S">Small · 32×20</option></select></div>
+          <label class="ck"><input type="checkbox" id="pDis">禁用第 3 行</label>
+          <label class="ck"><input type="checkbox" id="pFail">模拟请求失败</label>
+        </div></aside>
+      </div>
+    </section>
+
+    <section class="docs-section">
+      <header class="docs-section-head"><div><h2>使用建议</h2><p>设计与交互建议。</p></div></header>
+      <div class="docs-spec-table-wrap"><table class="docs-spec-table"><colgroup><col style="width:18%"><col style="width:42%"><col></colgroup><thead><tr><th>主题</th><th>推荐做法</th><th>边界与避免</th></tr></thead><tbody>
+        <tr><td>适用范围</td><td>只用于明确的开 / 关状态。</td><td>不用于多个互斥选项、内容视图或筛选条件切换；切换互斥内容或模式用分段控制。</td></tr>
+        <tr><td>标签</td><td>描述被控制的功能，如“消息通知”“自动保存”。</td><td>不写含义不完整的“开关”，也不重复写“开启 / 关闭”。</td></tr>
+        <tr><td>生效时机</td><td>切换后立即生效。</td><td>变更不可逆、风险高或需要提交审核时，改用按钮与确认流程。</td></tr>
+        <tr><td>请求反馈</td><td>涉及网络请求时提供请求中与失败反馈；失败后恢复原状态。</td><td>不让界面与实际状态不一致。</td></tr>
+        <tr><td>禁用</td><td>有明确业务原因；必要时在附近提供说明或权限入口。</td><td>不只靠降低透明度表达。</td></tr>
+        <tr><td>尺寸</td><td>Default 用于常规设置页；Small 只用于紧凑列表，且整行可点。</td><td>同一列表不混用两种尺寸。</td></tr>
+      </tbody></table></div>
+    </section>
+  </article>
+</main>
+<script>
+(()=>{
+  const sw=(on,o={})=>`<button type="button" class="gj-m-switch${o.sm?' gj-m-switch-sm':''}" role="switch" aria-checked="${!!on}"${o.dis?' disabled':''}${o.label?` aria-label="${o.label}"`:''}></button>`;
+  const row=(t,on,o={})=>`<div class="gj-m-list-item${o.dis?' is-disabled':''}" data-row${o.dis?' aria-disabled="true"':''}><span class="gj-m-list-item-content"><span class="gj-m-list-item-main"><span class="gj-m-list-item-text">${t}</span>${o.desc?`<span class="gj-m-list-item-desc">${o.desc}</span>`:''}</span><span class="gj-m-list-item-action">${sw(on,Object.assign({label:t},o,{dis:0})).replace('role="switch"','role="switch"'+(o.dis?' aria-disabled="true"':''))}</span></span></div>`;
+  const CSS='html,body{overflow-y:hidden}.scr{width:100%;max-width:3.75rem;margin:0 auto;padding:.16rem var(--space-page-margin-x);background:var(--ds-background-container);box-sizing:border-box}.scr.g{background:var(--ds-background-background)}.scr.l{padding:.12rem 0;background:var(--ds-background-background)}'+
+    '.row{display:flex;align-items:center;justify-content:center;gap:.32rem}.tip{padding:.08rem var(--space-page-margin-x) 0;font-size:.13rem;line-height:.2rem;color:var(--ds-text-tiatery)}.err{color:var(--ds-feedback-error-rise)}'+
+    '';
+  const show=(k,html)=>GJPhone.swatch(document.querySelector('[data-demo="'+k+'"]'),{html,css:CSS,height:'auto'});
+  show('zD',`<div class="scr"><div class="row">${sw(0)}${sw(1)}</div></div>`);
+  show('zS',`<div class="scr"><div class="row">${sw(0,{sm:1})}${sw(1,{sm:1})}</div></div>`);
+  show('st',`<div class="scr"><div class="row">${sw(0)}${sw(1)}${sw(0,{dis:1})}${sw(1,{dis:1})}</div></div>`);
+  show('stG',`<div class="scr g"><div class="row">${sw(0)}${sw(1)}${sw(0,{sm:1})}${sw(1,{sm:1})}</div></div>`);
+  show('exSet',`<div class="scr l"><div class="gj-m-list-title">消息通知</div><div class="gj-m-list">${row('审批提醒',1,{desc:'新的审批事项即时推送'})}${row('交易成交通知',1)}${row('夜间免打扰',0,{desc:'22:00 – 次日 08:00 不推送'})}</div><div class="gj-m-list-title">安全</div><div class="gj-m-list">${row('指纹登录',0,{dis:1})}</div><div class="tip">当前设备不支持指纹识别</div></div>`);
+  show('exSm',`<div class="scr l"><div class="gj-m-list-title">列表字段显示</div><div class="gj-m-list">${['客户编号','风险等级','开户日期','最近交易'].map((t,i)=>row(t,i<2,{sm:1})).join('')}</div></div>`);
+  document.querySelectorAll('[data-demo] iframe').forEach(f=>f.addEventListener('load',()=>wire(f.contentDocument,{})));
+  function wire(d,o){d.querySelectorAll('.gj-m-switch').forEach(b=>{
+    const row=b.closest('[data-row]');const toggle=()=>{if(b.disabled||b.getAttribute('aria-busy')==='true'||(row&&row.getAttribute('aria-disabled')==='true'))return;
+      const prev=b.getAttribute('aria-checked')==='true';b.setAttribute('aria-checked',!prev);
+      if(o.fail){b.setAttribute('aria-busy','true');const tip=d.getElementById('msg');if(tip){tip.className='tip';tip.textContent='保存中…'}
+        setTimeout(()=>{b.setAttribute('aria-checked',prev);b.removeAttribute('aria-busy');if(tip){tip.className='tip err';tip.textContent='网络异常，设置未保存，已恢复原状态'}},900)}
+      else{const tip=d.getElementById('msg');if(tip){tip.className='tip';tip.textContent=(row?row.querySelector('.gj-m-list-item-text').textContent:'')+(prev?' 已关闭':' 已开启')}}};
+    b.addEventListener('click',e=>{e.stopPropagation();toggle()});if(row)row.addEventListener('click',toggle)})}
+  const $=id=>document.getElementById(id);
+  function renderLab(){const sm=$('pSize').value==='S',dis=$('pDis').checked,fail=$('pFail').checked;
+    const f=GJPhone.swatch($('lab'),{html:`<div class="scr l"><div class="gj-m-list-title">通知设置</div><div class="gj-m-list">${row('审批提醒',1,{sm,desc:'新的审批事项即时推送'})}${row('交易成交通知',0,{sm})}${row('营销活动推送',0,{sm,dis})}</div><div class="tip" id="msg">${dis?'营销活动推送需在合规设置中开通':'点击开关或整行切换'}</div></div>`,css:CSS,height:'auto'});
+    f.addEventListener('load',()=>wire(f.contentDocument,{fail}))}
+  ['pSize','pDis','pFail'].forEach(id=>$(id).addEventListener('change',renderLab));renderLab();
+})();
+</script>
+</body>
+</html>
