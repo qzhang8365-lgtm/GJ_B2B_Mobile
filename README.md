@@ -96,7 +96,7 @@ python3 -m http.server 8000
 2. `python3 scripts/build-release.py <版本>`：校验后在 `dist/` 生成 `gj-b2b-mobile-design-skill-v<版本>.zip` 与 `release.json`，同时更新 `preview/_data/release.js`（总览页的下载地址、文件数与体积）。
 3. 提交并推送（`dist/` 不进仓库）。
 4. GitHub 上新建 Release，标签 `v<版本>`，上传 `dist/` 里的 zip。附件名必须与 `release.json` 的 `file` 一致，下载地址为 `https://github.com/qzhang8365-lgtm/GJ_B2B_Mobile/releases/download/v<版本>/<file>`。
-5. 规范网站从仓库部署（根目录 `_redirects` 把首页指到 `preview/index.html`）。
+5. 规范网站由 Netlify 从仓库部署（发布目录为根目录、无构建命令）；根目录 `index.html` 跳转到 `preview/index.html`。不要改用 `_redirects` 的 200 重写：规范站用相对路径，地址停在根路径时样式与图标会加载失败。
 
 发布包内容：SKILL.md、README.md、references、assets、preview、scripts；不带端到端示例与过程文档（`planning/`）、截图与核对记录。包内规范站的「页面模式」页会隐藏端到端示例区块并说明去处。
 
