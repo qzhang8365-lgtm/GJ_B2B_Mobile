@@ -42,6 +42,8 @@ body{margin:0;font-size:.14rem;line-height:.22rem;font-family:var(--ds-font-fami
 </style>
 ```
 
+页面完成后运行 `node scripts/embed-icons.cjs <页面>`：在 `</body>` 前写入页面用到的图标 SVG 与 `assets/scripts/gj-m-inline-icons.js`，打开时把 `.gj-icon` 及组件伪元素上的 CSS 遮罩图标换成内嵌 SVG（颜色仍跟随文字色）。原因：Figma「网页导入」等工具不支持 CSS 遮罩，图标会丢失。
+
 ## 唯一来源与一致性检查
 
 `templates`（没有模板的组件则是 `markup`）是组件写法的唯一来源。模板语法为 Mustache 子集（`{{x}}` 转义、`{{{x}}}` 原样、`{{#x}}…{{/x}}` 循环或条件、`{{^x}}…{{/x}}` 取反），渲染器 `assets/scripts/gj-m-markup.js` 在浏览器与 Node 中通用：页面引入 `gj-m-markup.js` 与 `gj-m-templates.js` 后，`GJMarkup.root` 设为到 Skill 根目录的相对路径，用 `GJMarkup.render(组件, 模板名, 参数)` 输出 HTML。改模板后运行 `node scripts/build-markup.cjs`（更新 markup 与打包文件）。预览页、页面模式脚本（`preview/patterns/kit.js` 与各模式 js，已全部改为调用模板，不再手写组件 HTML）与端到端示例都应与之一致：修改基座 CSS、mapping、预览页或 kit.js 后运行 `node scripts/check-mapping.cjs`。它会渲染全部片段（检查资源、脚本错误、类名是否存在于基座），并对比各页面实际用到的 `gj-m-*` 类与同一组件内部的父子结构，列出未收录或已偏离的写法。`fromPreview_*` 片段是该脚本从预览页补录的真实渲染写法。

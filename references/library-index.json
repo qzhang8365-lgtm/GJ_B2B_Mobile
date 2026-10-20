@@ -81,7 +81,8 @@
     "syncInventory": "python3 scripts/sync-inventory.py",
     "buildRelease": "python3 scripts/build-release.py <版本>",
     "checkMapping": "node scripts/check-mapping.cjs [--verbose]（组件写法一致性：mapping 为唯一来源）",
-    "buildMarkup": "node scripts/build-markup.cjs [--check]（由 mapping templates 生成 markup 与 assets/scripts/gj-m-templates.js）"
+    "buildMarkup": "node scripts/build-markup.cjs [--check]（由 mapping templates 生成 markup 与 assets/scripts/gj-m-templates.js）",
+    "embedIcons": "node scripts/embed-icons.cjs <页面>：生成页面后把图标 SVG 内嵌进页面（Figma 网页导入保留图标）；--check 只检查"
   },
   "humanPreviewOnly": {
     "site": "preview/index.html",
