@@ -18,41 +18,40 @@ figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px}
 figcaption{font-size:14px;font-weight:600}
 figcaption span{display:block;font-weight:400;color:var(--sub);font-size:12px;text-align:center;margin-top:2px}
 .phone{width:375px;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--frame);box-shadow:0 8px 24px rgba(0,0,0,.08)}
-.statusbar{display:block;width:100%;height:auto}
-iframe{display:block;width:100%;height:768px;border:0;background:var(--frame)}
+iframe{display:block;width:100%;height:812px;border:0;background:var(--frame)}
 @media (max-width:420px){.phone{width:calc(100vw - 32px)}}
 </style>
 </head>
 <body>
 <header>
   <h1>端到端验证页面</h1>
-  <p>按 skill 页面生成流程产出的页面，均为 375 × 812 屏幕（顶部 44 为手机状态栏示意，页面视口 375 × 768），可在框内直接滚动和操作。</p>
+  <p>按 skill 页面生成流程产出的页面，均为 375 × 812 视口（顶部手机状态栏为示意，由页面生成时默认加上），可在框内直接滚动和操作。</p>
 </header>
 <main class="row">
-  <figure><div class="phone"><img class="statusbar" src="../../assets/images/navbar-status-bar.svg" alt="手机状态栏（示意）"><iframe src="investment-declaration.html" title="证券投资情况申报"></iframe></div><figcaption>证券投资情况申报<span>investment-declaration.html · 虚构数据 · 股权 / 账户持仓 / 报告关联</span></figcaption></figure>
+  <figure><div class="phone"><iframe src="investment-declaration.html" title="证券投资情况申报"></iframe></div><figcaption>证券投资情况申报<span>investment-declaration.html · 虚构数据 · 股权 / 账户持仓 / 报告关联</span></figcaption></figure>
   <figure>
-    <div class="phone"><img class="statusbar" src="../../assets/images/navbar-status-bar.svg" alt="手机状态栏（示意）"><iframe src="customer.html" title="客户账户"></iframe></div>
+    <div class="phone"><iframe src="customer.html" title="客户账户"></iframe></div>
     <figcaption>客户账户<span>customer.html · 0 级卡片 · 资产 / 投资表现 / 持仓与交易</span></figcaption>
   </figure>
-  <figure><div class="phone"><img class="statusbar" src="../../assets/images/navbar-status-bar.svg" alt="手机状态栏（示意）"><iframe src="stock-diagnosis.html" title="宁德时代 · 个股诊断"></iframe></div><figcaption>宁德时代 · 个股诊断<span>stock-diagnosis.html · 策略信号 / 估值基本面 / 资金面 / 近期消息</span></figcaption></figure>
+  <figure><div class="phone"><iframe src="stock-diagnosis.html" title="宁德时代 · 个股诊断"></iframe></div><figcaption>宁德时代 · 个股诊断<span>stock-diagnosis.html · 策略信号 / 估值基本面 / 资金面 / 近期消息</span></figcaption></figure>
   <figure>
-    <div class="phone"><img class="statusbar" src="../../assets/images/navbar-status-bar.svg" alt="手机状态栏（示意）"><iframe src="approval.html" title="费用报销审批"></iframe></div>
+    <div class="phone"><iframe src="approval.html" title="费用报销审批"></iframe></div>
     <figcaption>费用报销审批<span>approval.html · 一级卡片 · 驳回弹层 / 同意对话框</span></figcaption>
   </figure>
   <figure>
-    <div class="phone"><img class="statusbar" src="../../assets/images/navbar-status-bar.svg" alt="手机状态栏（示意）"><iframe src="article.html" title="知识库文章"></iframe></div>
+    <div class="phone"><iframe src="article.html" title="知识库文章"></iframe></div>
     <figcaption>知识库文章<span>article.html · 0 级卡片 · Markdown 正文 + 相关案例</span></figcaption>
   </figure>
   <figure>
-    <div class="phone"><img class="statusbar" src="../../assets/images/navbar-status-bar.svg" alt="手机状态栏（示意）"><iframe src="esign.html" title="国金智慧签"></iframe></div>
+    <div class="phone"><iframe src="esign.html" title="国金智慧签"></iframe></div>
     <figcaption>国金智慧签<span>esign.html · 底部导航（文件 / 我的）· 签署、验签、签名管理</span></figcaption>
   </figure>
   <figure>
-    <div class="phone"><img class="statusbar" src="../../assets/images/navbar-status-bar.svg" alt="手机状态栏（示意）"><iframe src="leave.html" title="请假申请"></iframe></div>
+    <div class="phone"><iframe src="leave.html" title="请假申请"></iframe></div>
     <figcaption>请假申请<span>leave.html · 新流程第 1 轮 · 分组表单 + 日期 / 时段 + 审批流程预览</span></figcaption>
   </figure>
   <figure>
-    <div class="phone"><img class="statusbar" src="../../assets/images/navbar-status-bar.svg" alt="手机状态栏（示意）"><iframe src="esign-login.html" title="国金智慧签登录"></iframe></div>
+    <div class="phone"><iframe src="esign-login.html" title="国金智慧签登录"></iframe></div>
     <figcaption>国金智慧签 · 登录<span>esign-login.html · 快捷登录 / 手机号邮箱验证码登录 · 协议勾选</span></figcaption>
   </figure>
 </main>

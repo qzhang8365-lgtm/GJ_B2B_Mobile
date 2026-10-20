@@ -83,7 +83,7 @@ python3 -m http.server 8000
 | 修改组件基座 CSS 后 | 同步修改 `preview/phone-stage.js` 中的样式版本号，避免浏览器使用旧样式 |
 | 修改组件 mapping 的 templates 后 | `node scripts/build-markup.cjs`（用模板示例更新 markup，打包 `assets/scripts/gj-m-templates.js`） |
 | 修改组件基座、mapping、预览页或 kit.js 后 | `node scripts/check-mapping.cjs`（mapping 片段可渲染、类名存在于基座；预览页与示例用到的写法都已收录进 mapping） |
-| 生成页面后 / 需要复制到 Figma 前 | `node scripts/embed-icons.cjs <页面>`（把用到的图标 SVG 和图片写进页面，图标由 CSS 遮罩换成内嵌 SVG、图片换成页面内数据，Figma 网页导入才能保留图标与文件图标；改写同一份文件。导入前在电脑上安装 `assets/fonts/` 里的 GJType，数字字体才能保留） |
+| 生成页面后 / 需要复制到 Figma 前 | `node scripts/embed-icons.cjs <页面>`（把用到的图标 SVG 和图片写进页面，图标由 CSS 遮罩换成内嵌 SVG、图片换成页面内数据、内阴影描边换成 border，Figma 网页导入才能保留图标、文件图标与组件描边；默认在页面顶部加手机状态栏示意，交付真实 H5 代码时加 `--no-statusbar`；改写同一份文件。导入前在电脑上安装 `assets/fonts/` 里的 GJType，数字字体才能保留） |
 | 页面验收 | `node scripts/verify-page.cjs <页面> --container h5`（判定见 `references/generation-verification.md`） |
 | 发布新版本 | 见下方「发布」 |
 
@@ -105,4 +105,4 @@ python3 -m http.server 8000
 
 | 版本 | 日期 | 说明 |
 | --- | --- | --- |
-| v1.0.0 | 2026-10-20 | 首个发布包：48 个组件、7 个页面模式、页面生成规则 PR-001～PR-034、规范站；端到端示例只在仓库与规范网站。 |
+| v1.0.0 | 2026-10-20 | 首个发布包：48 个组件、7 个页面模式、页面生成规则 PR-001～PR-035、规范站；生成页面后用 `embed-icons.cjs` 内嵌图标、图片、描边并加手机状态栏（支持 Figma 网页导入）；端到端示例只在仓库与规范网站。 |

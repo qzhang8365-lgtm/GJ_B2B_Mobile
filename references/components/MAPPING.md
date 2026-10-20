@@ -42,7 +42,7 @@ body{margin:0;font-size:.14rem;line-height:.22rem;font-family:var(--ds-font-fami
 </style>
 ```
 
-页面完成后运行 `node scripts/embed-icons.cjs <页面>`：在 `</body>` 前写入页面用到的图标 SVG 与 `assets/scripts/gj-m-inline-icons.js`，打开时把 `.gj-icon` 及组件伪元素上的 CSS 遮罩图标换成内嵌 SVG（颜色仍跟随文字色）。原因：Figma「网页导入」等工具不支持 CSS 遮罩，图标会丢失。
+页面完成后运行 `node scripts/embed-icons.cjs <页面>`：在 `</body>` 前写入页面用到的图标 SVG 与 `assets/scripts/gj-m-inline-icons.js`，打开时把 `.gj-icon` 及组件伪元素上的 CSS 遮罩图标换成内嵌 SVG（颜色仍跟随文字色）。原因：Figma「网页导入」等工具不支持 CSS 遮罩，图标会丢失。同一步默认在页面顶部加手机状态栏示意（`.gj-m-statusbar`，吸顶，页面吸顶元素自动下移 44）；交付真实 H5 代码时加 `--no-statusbar`。
 
 ## 唯一来源与一致性检查
 

@@ -5,6 +5,7 @@
  *
  * 用法：node scripts/embed-icons.cjs <页面.html> [更多页面...]        直接改写页面（同一份文件，不另存）
  *       node scripts/embed-icons.cjs <页面.html> --check              只检查：未内嵌或图标数据过期时退出码 1
+ *       node scripts/embed-icons.cjs <页面.html> --no-statusbar       不加手机状态栏（交付真实 H5 代码时；验证页、原型默认加）
  * 收集范围：页面与它引用的本地脚本中出现的图标名（icf_*），加上基座 CSS 与组件模板里用到的全部图标。
  * 可重复运行：页面里 <!-- gj-m-icons:start --> … <!-- gj-m-icons:end --> 之间的内容整体替换。
  */
@@ -14,6 +15,9 @@ const ICON_DIR = path.join(ROOT, 'assets/icons/iconfont');
 const NAME = /icf_[A-Za-z0-9_.-]+?(?=\.svg|['"`\s),;}\]])/g;
 const START = '<!-- gj-m-icons:start -->', END = '<!-- gj-m-icons:end -->';
 const check = process.argv.includes('--check');
+const noBar = process.argv.includes('--no-statusbar');
+/* 手机状态栏示意（9:41、信号、电池，透明底；背景由页面顶部导航决定） */
+const STATUSBAR = 'data:image/svg+xml;base64,' + fs.readFileSync(path.join(ROOT, 'assets/images/status-bar-transparent.svg')).toString('base64');
 /* 运行脚本一起写进页面：页面移动到别处或单独发送也能用 */
 const RUNTIME = fs.readFileSync(path.join(ROOT, 'assets/scripts/gj-m-inline-icons.js'), 'utf8').replace(/<\/script/gi, '<\\/script').trim();
 const pages = process.argv.slice(2).filter(a => !a.startsWith('--'));
@@ -73,7 +77,7 @@ for (const page of pages) {
   const names = [...new Set([...common, ...own])].sort();
   const data = {}; names.forEach(n => { data[n] = clean(n); });
   const pics = {}; [...imgs].sort().forEach(r => { pics[r] = dataUrl(r); });
-  const block = `${START}\n<script>/* 由 scripts/embed-icons.cjs 生成：页面用到的图标 SVG（${names.length} 个）与图片（${imgs.size} 个），供 gj-m-inline-icons.js 把遮罩图标换成内嵌 SVG。请勿手改，改页面后重新运行。 */\nwindow.GJ_M_ICONS=${JSON.stringify(data)};\nwindow.GJ_M_ASSETS=${JSON.stringify(pics)};</script>\n<script>${RUNTIME}</script>\n${END}`;
+  const block = `${START}\n<script>/* 由 scripts/embed-icons.cjs 生成：页面用到的图标 SVG（${names.length} 个）与图片（${imgs.size} 个），供 gj-m-inline-icons.js 把遮罩图标换成内嵌 SVG。请勿手改，改页面后重新运行。 */\nwindow.GJ_M_ICONS=${JSON.stringify(data)};\nwindow.GJ_M_ASSETS=${JSON.stringify(pics)};${noBar ? '' : `\nwindow.GJ_M_STATUSBAR=${JSON.stringify(STATUSBAR)};`}</script>\n<script>${RUNTIME}</script>\n${END}`;
   const has = html.includes(START) && html.includes(END);
   const next = has ? html.replace(new RegExp(START + '[\\s\\S]*?' + END), () => block) : html.replace(/<\/body>/i, () => block + '\n</body>');
   if (check) {

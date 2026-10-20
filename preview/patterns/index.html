@@ -42,7 +42,7 @@
     .pt-info p{margin:0}
     .pt-info a{color:var(--ds-text-blue);text-decoration:none}
 .pt-switch-wrap{display:flex;flex-wrap:wrap;width:fit-content;max-width:100%}
-    .pt-frame{width:375px;max-width:100%;height:764px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 0 0 1px var(--ds-border-default);background:var(--ds-background-background)}
+    .pt-frame{width:375px;max-width:100%;height:720px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 0 0 1px var(--ds-border-default);background:var(--ds-background-background)}
     .pt-statusbar{display:block;width:375px;height:44px}
     .pt-frame iframe{display:block;width:375px;height:720px;border:0}
     @media(max-width:960px){.pt-more{grid-template-columns:1fr}}
@@ -66,7 +66,7 @@
       <header class="docs-section-head"><div><h2>端到端示例</h2><p>只依据 Skill 资料从需求生成的完整页面，用来验证模式与规则；可在预览内操作。</p></div></header>
       <div class="pt-switch pt-switch-wrap" role="tablist" aria-label="端到端示例"><button type="button" role="tab" id="e2e-customer" aria-selected="true" tabindex="0" data-k="customer">客户账户</button><button type="button" role="tab" id="e2e-stock-diagnosis" aria-selected="false" tabindex="-1" data-k="stock-diagnosis">宁德时代 · 个股诊断</button><button type="button" role="tab" id="e2e-approval" aria-selected="false" tabindex="-1" data-k="approval">费用报销审批</button><button type="button" role="tab" id="e2e-article" aria-selected="false" tabindex="-1" data-k="article">知识库文章</button><button type="button" role="tab" id="e2e-esign" aria-selected="false" tabindex="-1" data-k="esign">国金智慧签</button><button type="button" role="tab" id="e2e-esign-login" aria-selected="false" tabindex="-1" data-k="esign-login">国金智慧签 · 登录</button><button type="button" role="tab" id="e2e-leave" aria-selected="false" tabindex="-1" data-k="leave">请假申请</button></div>
       <div class="pt-more" role="tabpanel" id="e2e-panel" aria-labelledby="e2e-customer">
-        <div class="panel"><div class="pt-frame"><img class="pt-statusbar" src="../../assets/images/navbar-status-bar.svg" alt="手机状态栏（示意）"><iframe id="e2e-frame" title="客户账户" src="../../planning/e2e/customer.html"></iframe></div></div>
+        <div class="panel"><div class="pt-frame"><iframe id="e2e-frame" title="客户账户" src="../../planning/e2e/customer.html"></iframe></div></div>
         <div class="pt-info" id="e2e-info"></div>
       </div>
     </section>
