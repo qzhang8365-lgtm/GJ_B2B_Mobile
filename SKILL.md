@@ -61,7 +61,7 @@ description: 为国金内部员工使用的 B 端移动端产品生成或检查�
 
 H5 实现以 `references/quick-reference.md` 为起点，细节以 `references/h5-sizing-and-adaptation.md` 为准；Token JSON 中的 px 是 Figma 原始数值。页面级间距使用该文档的九档阶梯；页面、卡片层级与元素间距优先使用其中“语义间距”的 `--space-<token>` 变量（源数据 `references/tokens/spacing-semantic.json`）并按校验规则自查；多列排布参考该文档的“栅格”（`--ds-grid-*`），组件内部尺寸按 Figma 实例还原。控件高度依 `references/h5-control-sizing.md` 选档，已绑定 `control-*` 的节点使用同名 CSS 变量；除不缩放项外，其他设计尺寸写入页面代码前按设计值 ÷ 100 换算为 rem。不要把 MCP 返回的示意 px 样式直接交付。
 
-H5 中西文跟随系统字体，不把 Figma Text Style 中记录的具体字体家族直接写入字体栈；保留样式的字重、字号、行高和字间距。数字样式使用 GJType（`assets/fonts/`，已由 Token CSS 的 `@font-face` 加载，失败时回退系统字体）；H5 授权范围见 `references/tokens/pending-confirmation.md`。
+H5 中西文跟随系统字体，不把 Figma Text Style 中记录的具体字体家族直接写入字体栈；保留样式的字重、字号、行高和字间距。数字样式使用 GJType（`assets/fonts/`，已由 Token CSS 的 `@font-face` 加载，失败时回退系统字体）；授权已确认，可随包分发、无使用限制（2026-10-20）。
 
 ## 数字字体的场景选择
 
