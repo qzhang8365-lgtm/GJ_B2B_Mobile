@@ -47,7 +47,7 @@ for s in read('typography.json')['textStyles']:
  assert t['source']==s['source']
  assert abs(float(t['cssDeclarations']['font-size'][:-3])*100-s['fontSize']['value'])<1e-8
  assert abs(float(t['cssDeclarations']['line-height'][:-3])*100-s['lineHeight']['value'])<1e-8
- assert 'GJType' not in t['cssDeclarations']['font-family']
+ assert 'GJTypeDisplay' not in t['cssDeclarations']['font-family']
 for s in read('styles.json')['effectStyles']:assert p['effect'][s['name']]['effects']==s['effects']
 for s in read('styles.json')['paintStyles']:
  t=p['gradient'][s['name']]; assert t['paints']==s['paints']
@@ -62,9 +62,9 @@ for s in read('styles.json')['paintStyles']:
   assert abs(a*x+c*y+e-u)<1e-8 and abs(b*x+d*y+f-v)<1e-8
  assert len(gradient)==len(s['paints'][0]['gradientStops'])
 assert 'PingFang' not in css
-# 仅允许 GJType 数字字体的 400/500/700 三条 @font-face，且字体文件必须存在
+# 仅允许 GJTypeDisplay 数字字体的 400/500/700 三条 @font-face，且字体文件必须存在
 faces=re.findall(r'@font-face \{(.*?)\}',css,re.S)
-assert len(faces)==3 and all('font-family: "GJType"' in f for f in faces)
+assert len(faces)==3 and all('font-family: "GJTypeDisplay"' in f for f in faces)
 assert sorted(int(re.search(r'font-weight: (\d+)',f).group(1)) for f in faces)==[400,500,700]
 for f in faces: assert (ROOT/'assets/styles'/re.search(r'url\("([^"]+)"\)',f).group(1)).resolve().is_file()
 names=re.findall(r'^  (--[\w-]+):',css,re.M);assert len(names)==len(set(names))

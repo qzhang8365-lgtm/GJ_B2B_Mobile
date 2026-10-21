@@ -15,7 +15,7 @@
       "references/tokens/colors.json": "95f9f91862fdeb1433743ba5fa8d7bb11e3092fda1cd911e92336e0d56d6e85a",
       "references/tokens/dimensions.json": "03c203205a948270d3c507367a520a4b422655ec4e76647072e357250b5b8324",
       "references/tokens/controls.json": "f7b7b8ba58679a24b8aa67b3379bbe1ab20824d775c6aec1829832840bba5bed",
-      "references/tokens/typography.json": "9ad8f6e36f566d5fe3c0240da40cc3b1ef1c20e228593e0616934c5d75018832",
+      "references/tokens/typography.json": "29633f7da2da4c6169c7a970000ec5559fa8a5c7de7404fc7cd39ea767e7dea9",
       "references/tokens/styles.json": "2e05baf2349f083a263d3d79bea3695fe9aafe6dadd212ed5fb70347a028fc40",
       "references/tokens/spacing-semantic.json": "e7eff8f483dc9b8d9e0937d2b9f07fc16e02e40f14c652e1e7910f3b58946ea0"
     },
@@ -9199,7 +9199,7 @@
         "name": "N1_NUM-S",
         "figmaId": "S:2ae66282206fc20a9c420394accd1eeb516c6af5,",
         "figmaKey": "2ae66282206fc20a9c420394accd1eeb516c6af5",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Bold",
         "fontSize": {
           "value": 36,
@@ -9233,6 +9233,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n1-num-s",
         "cssVariables": {
           "font-family": "--ds-type-n1-num-s-font-family",
@@ -9257,13 +9258,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n1-num-s-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N2_NUM-S": {
         "name": "N2_NUM-S",
         "figmaId": "S:0225525a76c001805aa6e9c34b9cf785bfc5351a,",
         "figmaKey": "0225525a76c001805aa6e9c34b9cf785bfc5351a",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Bold",
         "fontSize": {
           "value": 32,
@@ -9297,6 +9298,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n2-num-s",
         "cssVariables": {
           "font-family": "--ds-type-n2-num-s-font-family",
@@ -9321,13 +9323,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n2-num-s-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N3_NUM-S": {
         "name": "N3_NUM-S",
         "figmaId": "S:cdc2105558bed9d0cd25e73d4aa7d09228352833,",
         "figmaKey": "cdc2105558bed9d0cd25e73d4aa7d09228352833",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Bold",
         "fontSize": {
           "value": 24,
@@ -9361,6 +9363,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n3-num-s",
         "cssVariables": {
           "font-family": "--ds-type-n3-num-s-font-family",
@@ -9385,13 +9388,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n3-num-s-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N4_NUM-S": {
         "name": "N4_NUM-S",
         "figmaId": "S:60facc866d2e639bc5556fcac32d7a74738ac2fb,",
         "figmaKey": "60facc866d2e639bc5556fcac32d7a74738ac2fb",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Bold",
         "fontSize": {
           "value": 20,
@@ -9425,6 +9428,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n4-num-s",
         "cssVariables": {
           "font-family": "--ds-type-n4-num-s-font-family",
@@ -9449,13 +9453,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n4-num-s-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N5_NUM-S": {
         "name": "N5_NUM-S",
         "figmaId": "S:149fe784b238eb51efa009421863a70a0adc4055,",
         "figmaKey": "149fe784b238eb51efa009421863a70a0adc4055",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Bold",
         "fontSize": {
           "value": 18,
@@ -9489,6 +9493,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n5-num-s",
         "cssVariables": {
           "font-family": "--ds-type-n5-num-s-font-family",
@@ -9513,13 +9518,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n5-num-s-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N6_NUM-S": {
         "name": "N6_NUM-S",
         "figmaId": "S:18ebfcbc1b1fc1c9e3a0226420a980c53413d256,",
         "figmaKey": "18ebfcbc1b1fc1c9e3a0226420a980c53413d256",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Bold",
         "fontSize": {
           "value": 16,
@@ -9553,6 +9558,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n6-num-s",
         "cssVariables": {
           "font-family": "--ds-type-n6-num-s-font-family",
@@ -9577,13 +9583,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n6-num-s-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N8_NUM-S": {
         "name": "N8_NUM-S",
         "figmaId": "S:393f62491edf2e4593f1e5898bd30161a2393fc7,",
         "figmaKey": "393f62491edf2e4593f1e5898bd30161a2393fc7",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Bold",
         "fontSize": {
           "value": 12,
@@ -9617,6 +9623,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n8-num-s",
         "cssVariables": {
           "font-family": "--ds-type-n8-num-s-font-family",
@@ -9641,13 +9648,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n8-num-s-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N7_NUM-S": {
         "name": "N7_NUM-S",
         "figmaId": "S:f91048a7844d0bf5ae5f075bd9a8e4c7d6ca2949,",
         "figmaKey": "f91048a7844d0bf5ae5f075bd9a8e4c7d6ca2949",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Bold",
         "fontSize": {
           "value": 14,
@@ -9681,6 +9688,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n7-num-s",
         "cssVariables": {
           "font-family": "--ds-type-n7-num-s-font-family",
@@ -9705,13 +9713,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n7-num-s-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N1_NUM-M": {
         "name": "N1_NUM-M",
         "figmaId": "S:927735b84ded7f3bc43265560e00b25bf7dab946,",
         "figmaKey": "927735b84ded7f3bc43265560e00b25bf7dab946",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Medium",
         "fontSize": {
           "value": 36,
@@ -9745,6 +9753,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n1-num-m",
         "cssVariables": {
           "font-family": "--ds-type-n1-num-m-font-family",
@@ -9769,13 +9778,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n1-num-m-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N2_NUM-M": {
         "name": "N2_NUM-M",
         "figmaId": "S:74181f33d4cdcb0f345ec1fba07f4646d3137d6c,",
         "figmaKey": "74181f33d4cdcb0f345ec1fba07f4646d3137d6c",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Medium",
         "fontSize": {
           "value": 32,
@@ -9809,6 +9818,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n2-num-m",
         "cssVariables": {
           "font-family": "--ds-type-n2-num-m-font-family",
@@ -9833,13 +9843,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n2-num-m-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N3_NUM-M": {
         "name": "N3_NUM-M",
         "figmaId": "S:9cc143c920bf85345763f652e9138a2d07fe133e,",
         "figmaKey": "9cc143c920bf85345763f652e9138a2d07fe133e",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Medium",
         "fontSize": {
           "value": 24,
@@ -9873,6 +9883,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n3-num-m",
         "cssVariables": {
           "font-family": "--ds-type-n3-num-m-font-family",
@@ -9897,13 +9908,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n3-num-m-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N4_NUM-M": {
         "name": "N4_NUM-M",
         "figmaId": "S:cda22cb40f4a3b917ad7f8c9543539eb0f2cc4f7,",
         "figmaKey": "cda22cb40f4a3b917ad7f8c9543539eb0f2cc4f7",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Medium",
         "fontSize": {
           "value": 20,
@@ -9937,6 +9948,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n4-num-m",
         "cssVariables": {
           "font-family": "--ds-type-n4-num-m-font-family",
@@ -9961,13 +9973,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n4-num-m-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N5_NUM-M": {
         "name": "N5_NUM-M",
         "figmaId": "S:c659777052d5ce54fedb2bf759417ff7ea72345c,",
         "figmaKey": "c659777052d5ce54fedb2bf759417ff7ea72345c",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Medium",
         "fontSize": {
           "value": 18,
@@ -10001,6 +10013,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n5-num-m",
         "cssVariables": {
           "font-family": "--ds-type-n5-num-m-font-family",
@@ -10025,13 +10038,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n5-num-m-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N6_NUM-M": {
         "name": "N6_NUM-M",
         "figmaId": "S:19fb48d86312f094e369605bd5174f93e2009436,",
         "figmaKey": "19fb48d86312f094e369605bd5174f93e2009436",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Medium",
         "fontSize": {
           "value": 16,
@@ -10065,6 +10078,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n6-num-m",
         "cssVariables": {
           "font-family": "--ds-type-n6-num-m-font-family",
@@ -10089,13 +10103,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n6-num-m-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N7_NUM-M": {
         "name": "N7_NUM-M",
         "figmaId": "S:fc235ce1d729c638e3fe21a21561eb152045c9a8,",
         "figmaKey": "fc235ce1d729c638e3fe21a21561eb152045c9a8",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Medium",
         "fontSize": {
           "value": 14,
@@ -10129,6 +10143,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n7-num-m",
         "cssVariables": {
           "font-family": "--ds-type-n7-num-m-font-family",
@@ -10153,13 +10168,13 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n7-num-m-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       },
       "N8_NUM-M": {
         "name": "N8_NUM-M",
         "figmaId": "S:47a9b205d5211c6293731f5cfce2958e2bf504fb,",
         "figmaKey": "47a9b205d5211c6293731f5cfce2958e2bf504fb",
-        "fontFamily": "GJType",
+        "fontFamily": "GJTypeDisplay",
         "fontWeightName": "Medium",
         "fontSize": {
           "value": 12,
@@ -10193,6 +10208,7 @@
           "referencePage": "181:1092"
         },
         "publication": "not verified",
+        "figmaExtractedFontFamily": "GJType",
         "cssClass": "gj-mobile-type-n8-num-m",
         "cssVariables": {
           "font-family": "--ds-type-n8-num-m-font-family",
@@ -10217,12 +10233,12 @@
           "font-variant-numeric": "tabular-nums"
         },
         "paragraphSpacingCssVariable": "--ds-type-n8-num-m-paragraph-spacing",
-        "numericFontStatus": "GJType webfont (assets/fonts, from PC skill) with system fallback"
+        "numericFontStatus": "GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback"
       }
     },
     "policy": {
       "ui": "system-ui, sans-serif",
-      "numeric": "GJType, var(--ds-font-family-ui) (assets/fonts/GJType-*.ttf)",
+      "numeric": "GJTypeDisplay, var(--ds-font-family-ui) (assets/fonts/GJTypeDisplay-*.ttf)",
       "numericFeature": "tabular-nums"
     }
   },

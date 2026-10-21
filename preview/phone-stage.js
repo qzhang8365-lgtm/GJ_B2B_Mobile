@@ -22,7 +22,7 @@
   // phone-stage.js 位于 <skill>/preview/，资源根目录是 <skill>/
   const ROOT = new URL('../', script ? script.src : location.href).href;
   const STYLES = [
-    'assets/styles/gj-b2b-mobile-tokens.css?v=20261014-num1',
+    'assets/styles/gj-b2b-mobile-tokens.css?v=20261020-display',
     'assets/styles/gj-b2b-mobile-components.css?v=20261020-src1'  // 更新基座后同步改版本号，避免浏览器沿用旧样式
   ];
   const DEFAULT_WIDTHS = [320, 375, 450, 600, 960];

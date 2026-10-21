@@ -70,7 +70,7 @@
     "info": "信息图标按钮 aria-label，热区 44"
   },
   "composition": {
-    "numbers": "金融数字用 GJType 等宽数字；同组单位、精度、口径一致；缺失值“--”",
+    "numbers": "金融数字用 GJTypeDisplay 等宽数字；同组单位、精度、口径一致；缺失值“--”",
     "tone": "涨跌色只用于有方向的数据",
     "tiles": "绩效卡两列 .gj-m-metric-tiles；灰底指标 .gj-m-metric-tile-gray 放在指标卡内"
   },

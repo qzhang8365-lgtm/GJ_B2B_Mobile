@@ -135,6 +135,6 @@
     "multi": "行高 22，名称 P5 在左、数值 14/22 + 单位 P5 在右，间距 12",
     "mark": "8 圆点 系列色",
     "position": "贴绘图区顶，竖线右侧 8；> 55% 时放左侧",
-    "numberFont": "普通 UI 字体 Regular（Figma 为 GJType Medium，按用户规则改）"
+    "numberFont": "普通 UI 字体 Regular（Figma 为 GJTypeDisplay Medium，按用户规则改）"
   }
 }

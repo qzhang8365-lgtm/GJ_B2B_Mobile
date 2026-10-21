@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>国金移动端设计规范 · 字体 Typography</title>
-  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css?v=20261014-num1">
+  <link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css?v=20261020-display">
   <link rel="stylesheet" href="../site.css">
   <style>
     :root{--font:var(--ds-font-family-ui);--num:var(--ds-font-family-numeric);--tertiary:var(--ds-text-tiatery);--mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
@@ -45,16 +45,16 @@
     @media(max-width:760px){.shell{padding:var(--docs-page-padding-compact)}.section{padding:20px}.intro h1{font-size:28px}.title-group{display:block}.section-heading{align-items:flex-start}.section-heading h2{font-size:22px}.weight-item{grid-template-columns:60px 1fr}.weight-rule{grid-column:1 / -1}.copyright{display:block}.num-scenarios{grid-template-columns:1fr}}
     .ty-dl{display:inline-flex;align-items:center;gap:8px;margin-top:20px;min-height:48px;padding:12px 28px;border-radius:10px;background:var(--ds-brand-gj-blue);color:#fff;text-decoration:none;font:600 16px/24px var(--ds-font-family-ui);box-shadow:0 6px 16px rgba(23,92,255,.25)}.ty-dl:hover{opacity:.92}.ty-dl .ic{width:20px;height:20px;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
   </style>
-<script src="../_data/tokens.js?v=20261020-data1"></script></head>
+<script src="../_data/tokens.js?v=20261020-display"></script></head>
 <body><main class="shell">
-  <header class="intro"><div class="eyebrow">基础规范 · Foundations</div><h1>字体 Typography</h1><p>H5 中西文跟随运行设备的系统字体，数字样式使用 GJType。文字样式按整套使用，字号、行高、字重与字间距不拆开套用。示例按 375 基准显示（1rem = 100px），点击样式名或类名可复制。</p><a class="ty-dl" href="https://gjzq-ux-team.netlify.app/reports/font-downloads.html" target="_blank" rel="noopener"><span class="ic" style="--i:url('../../assets/icons/iconfont/icf_file_download.svg')" aria-hidden="true"></span>下载国金字体</a></header>
+  <header class="intro"><div class="eyebrow">基础规范 · Foundations</div><h1>字体 Typography</h1><p>H5 中西文跟随运行设备的系统字体，数字样式使用 GJTypeDisplay。文字样式按整套使用，字号、行高、字重与字间距不拆开套用。示例按 375 基准显示（1rem = 100px），点击样式名或类名可复制。</p><a class="ty-dl" href="https://gjzq-ux-team.netlify.app/reports/font-downloads.html" target="_blank" rel="noopener"><span class="ic" style="--i:url('../../assets/icons/iconfont/icf_file_download.svg')" aria-hidden="true"></span>下载国金字体</a></header>
 
   <section class="section"><div class="section-heading"><div class="title-group"><h2>字体家族</h2><span class="sub">Font families</span></div></div>
     <div class="policy-note"><b>字体策略</b>H5 字体栈不写死 PingFang SC、Arial 等具体字体名，使用 <code>system-ui</code> 跟随设备系统字体。Figma 文字样式中的 PingFang SC 仅作为视觉参考。</div>
     <div class="family-grid">
       <article class="family-card"><div class="family-title"><h3>中西文 · 系统字体</h3><span class="system-badge">SYSTEM</span></div><div class="family-sample" style="font-family:var(--ds-font-family-ui)">国金证券 AaBbCc 证券交易</div><div class="family-meta">--ds-font-family-ui: system-ui → sans-serif</div></article>
       <article class="family-card"><div class="family-title"><h3>设计稿参考 · 苹方</h3><span class="system-badge">FIGMA</span></div><div class="family-sample" style="font-family:'PingFang SC',var(--ds-font-family-ui)">国金证券 AaBbCc 证券交易</div><div class="family-meta">PingFang SC（Figma Text Style 记录值，不写入 H5 字体栈）</div></article>
-      <article class="family-card"><div class="family-title"><h3>数字 · GJType</h3><span class="system-badge">NUMERIC</span></div><div class="family-sample" style="font-family:var(--ds-font-family-numeric);font-variant-numeric:tabular-nums">0123456789 88,888.88</div><div class="family-meta">GJType → system-ui（assets/fonts，加载失败回退）</div></article>
+      <article class="family-card"><div class="family-title"><h3>数字 · GJTypeDisplay</h3><span class="system-badge">NUMERIC</span></div><div class="family-sample" style="font-family:var(--ds-font-family-numeric);font-variant-numeric:tabular-nums">0123456789 88,888.88</div><div class="family-meta">GJTypeDisplay → system-ui（assets/fonts，加载失败回退）</div></article>
     </div>
   </section>
 
@@ -67,8 +67,8 @@
     <div class="type-table"><div class="type-head"><span>等级</span><span>字号</span><span>行高 / 字重</span><span>示例</span><span>使用场景</span></div><div id="cnRows"></div></div>
   </section>
 
-  <section class="section numeric"><div class="section-heading"><div class="title-group"><h2>数字字体 GJType</h2><span class="sub">Financial numerals</span></div><span class="count" id="numCount"></span></div>
-    <p class="nu-meta"><span class="nu-badge">国金版权字体</span>GJType 随设计系统提供，可随 Skill 包使用。数字样式分 S（Bold）与 M（Medium）两套，同一等级字号与行高相同。</p>
+  <section class="section numeric"><div class="section-heading"><div class="title-group"><h2>数字字体 GJTypeDisplay</h2><span class="sub">Financial numerals</span></div><span class="count" id="numCount"></span></div>
+    <p class="nu-meta"><span class="nu-badge">国金版权字体</span>GJTypeDisplay 随设计系统提供，可随 Skill 包使用。数字样式分 S（Bold）与 M（Medium）两套，同一等级字号与行高相同。</p>
     <div class="nu-usage">
       <div class="nu-col is-yes"><h3><span class="nu-ic" style="--i:url('../../assets/icons/iconfont/icf_system_check-circle-fill.svg')" aria-hidden="true"></span>用数字字体</h3><p>代码与独立呈现的重要数据</p>
         <div class="nu-eg num"><span>300750</span><span>¥1,244.56</span><span class="up">+3.12%</span><span>86.5%</span></div>
@@ -114,7 +114,7 @@
         (P.length?weightItem(fw(P[0]),wName(P),`常规 ${wName(P)}`,`正文样式 ${range(P)} 使用 ${wName(P)}。`):'')+
         (H.length?weightItem(fw(H[0]),wName(H),`强调 ${wName(H)}`,`标题样式 ${range(H)} 使用 ${wName(H)}。`):'')+
       `</div></article>`+
-      `<article class="weight-group number-weight"><header class="weight-group-head"><h3>数字字重</h3><span class="weight-family">GJType</span></header><div class="weight-list">`+
+      `<article class="weight-group number-weight"><header class="weight-group-head"><h3>数字字重</h3><span class="weight-family">GJTypeDisplay</span></header><div class="weight-list">`+
         (NM.length?weightItem(fw(NM[0]),wName(NM),'88,888.88',`M 套 ${range(NM)} 使用 ${wName(NM)}。`):'')+
         (NS.length?weightItem(fw(NS[0]),wName(NS),'88,888.88',`S 套 ${range(NS)} 使用 ${wName(NS)}。`):'')+
       `</div></article>`;

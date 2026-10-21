@@ -32,7 +32,7 @@ description: 为国金内部员工使用的 B 端移动端产品生成或检查�
 2. **选页面模式**：读 `references/patterns/page-pattern-metadata.json`，按 `match` 关键词与 `notFor` 选模式（多页应用可组合多个模式，按 `howToMatch` 的说明组织一级页与二级页；容器、适配与文案的通用约定见 `common`）；再读选中模式的 `.md` 取骨架、状态与已确认取值。没有匹配的模式时，按页面生成规则与组件规则组合，并在交付中说明。
 3. **查页面生成规则**：读 `references/page-rules.md`（设计方审查沉淀，优先于组件 rules.md），重点核对选中模式与组件涉及的条目。
 4. **查组件写法**：按 `references/components/inventory.json` 的 `scenes`（需求关键词）与 `notFor`（不适用时改用什么）定位组件，读该组件的 `mapping.json`：`markup` 取可复制写法，`composition` / `pageRules` 定用法，`accessibility` 定可访问属性，`pending` 列出需标注的待确认项。只有用法存疑时再读 `rules.md`，需要完整尺寸或状态矩阵时再读 `schema.json`。字段说明见 `references/components/MAPPING.md`（含页面基础写法）。
-5. **生成**：按 MAPPING.md 的页面基础写法引入 Token 与基座样式；尺寸、间距、圆角与字号下限按 `references/quick-reference.md`，页面级间距用语义间距变量；图标只用图标库资源。示意实现明确标为原型。生成完成后运行 `node scripts/embed-icons.cjs <页面>`：把页面用到的图标 SVG 与图片（文件图标、空状态、头像、Logo 等）写进页面本身，打开后图标由 CSS 遮罩换成内嵌 SVG、图片换成页面内数据、内阴影描边换成等宽 border（视觉不变；Figma「网页导入」不支持 CSS 遮罩与内阴影描边、读不到本地图片，不做这步图标、文件图标和组件描边会丢失）。验证页、原型页默认在顶部加手机状态栏示意（9:41、信号、电池，吸顶、背景跟随顶部导航，页面里吸顶的导航与页签下移到状态栏下方）；交付真实 H5 代码时加 `--no-statusbar` 去掉（系统自带状态栏）。数字字体 GJType 需在使用 Figma 的电脑上安装（`assets/fonts/`），否则导入后数字回退为其他字体。直接改写同一份文件，页面改动后重新运行。
+5. **生成**：按 MAPPING.md 的页面基础写法引入 Token 与基座样式；尺寸、间距、圆角与字号下限按 `references/quick-reference.md`，页面级间距用语义间距变量；图标只用图标库资源。示意实现明确标为原型。生成完成后运行 `node scripts/embed-icons.cjs <页面>`：把页面用到的图标 SVG 与图片（文件图标、空状态、头像、Logo 等）写进页面本身，打开后图标由 CSS 遮罩换成内嵌 SVG、图片换成页面内数据、内阴影描边换成等宽 border（视觉不变；Figma「网页导入」不支持 CSS 遮罩与内阴影描边、读不到本地图片，不做这步图标、文件图标和组件描边会丢失）。验证页、原型页默认在顶部加手机状态栏示意（9:41、信号、电池，吸顶、背景跟随顶部导航，页面里吸顶的导航与页签下移到状态栏下方）；交付真实 H5 代码时加 `--no-statusbar` 去掉（系统自带状态栏）。数字字体 GJTypeDisplay 需在使用 Figma 的电脑上安装（`assets/fonts/`），否则导入后数字回退为其他字体。直接改写同一份文件，页面改动后重新运行。
 6. **验收**：按 `references/generation-verification.md` 执行：运行 `node scripts/verify-page.cjs <页面>` 直到阻断项为 0，逐个触发交互并在各状态下复查，逐条人工核对页面生成规则，按模板写交付报告。
 
 设计方对产出的修改意见：先改页面；判断是否适用于同类场景，适用的写入 `page-rules.md`（新编号），涉及组件的同步更新组件 `rules.md`、`mapping.json` 与基座。
@@ -61,11 +61,11 @@ description: 为国金内部员工使用的 B 端移动端产品生成或检查�
 
 H5 实现以 `references/quick-reference.md` 为起点，细节以 `references/h5-sizing-and-adaptation.md` 为准；Token JSON 中的 px 是 Figma 原始数值。页面级间距使用该文档的九档阶梯；页面、卡片层级与元素间距优先使用其中“语义间距”的 `--space-<token>` 变量（源数据 `references/tokens/spacing-semantic.json`）并按校验规则自查；多列排布参考该文档的“栅格”（`--ds-grid-*`），组件内部尺寸按 Figma 实例还原。控件高度依 `references/h5-control-sizing.md` 选档，已绑定 `control-*` 的节点使用同名 CSS 变量；除不缩放项外，其他设计尺寸写入页面代码前按设计值 ÷ 100 换算为 rem。不要把 MCP 返回的示意 px 样式直接交付。
 
-H5 中西文跟随系统字体，不把 Figma Text Style 中记录的具体字体家族直接写入字体栈；保留样式的字重、字号、行高和字间距。数字样式使用 GJType（`assets/fonts/`，已由 Token CSS 的 `@font-face` 加载，失败时回退系统字体）；授权已确认，可随包分发、无使用限制（2026-10-20）。
+H5 中西文跟随系统字体，不把 Figma Text Style 中记录的具体字体家族直接写入字体栈；保留样式的字重、字号、行高和字间距。数字样式使用 GJTypeDisplay（`assets/fonts/`，已由 Token CSS 的 `@font-face` 加载，失败时回退系统字体）；授权已确认，可随包分发、无使用限制（2026-10-20）。
 
 ## 数字字体的场景选择
 
-先读 `references/tokens/numeric-font-usage.md`。组件已规定是否使用数字字体时，以组件规则为优先。其它场景：股票代码、基金代码、金融产品代码，以及独立呈现的重要数据、金额、价格、百分比、涨跌幅等字段优先使用 GJType；文章、卡片标题、摘要、标签、“为您找到 x 条信息”等文本内数字及日期不优先使用数字字体，随所在文本使用系统字体，不拆出数字单独套用。
+先读 `references/tokens/numeric-font-usage.md`。组件已规定是否使用数字字体时，以组件规则为优先。其它场景：股票代码、基金代码、金融产品代码，以及独立呈现的重要数据、金额、价格、百分比、涨跌幅等字段优先使用 GJTypeDisplay；文章、卡片标题、摘要、标签、“为您找到 x 条信息”等文本内数字及日期不优先使用数字字体，随所在文本使用系统字体，不拆出数字单独套用。
 
 ## 生成后自检
 

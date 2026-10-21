@@ -49,10 +49,10 @@ def build():
   else:
    semantic_spacing[t['name']]={**t,'cssVariable':emit('--space-'+t['name'],alias(t['aliasOf'],t['value']))}
  emit('--ds-font-family-ui','system-ui, sans-serif')
- emit('--ds-font-family-numeric','GJType, var(--ds-font-family-ui)')
+ emit('--ds-font-family-numeric','GJTypeDisplay, var(--ds-font-family-ui)')
  types={}
  for name,s in index(data['typography']['textStyles']).items():
-  numeric=s['fontFamily']=='GJType'; base='--ds-type-'+slug(name)
+  numeric=s['fontFamily']=='GJTypeDisplay'; base='--ds-type-'+slug(name)
   assert s['fontSize']['unit']=='px' and s['lineHeight']['unit']=='PIXELS'
   ls=s['letterSpacing']; spacing=number(ls['value']/100)+'em' if ls['unit']=='PERCENT' else rem(ls['value'])
   vals={'font-family':'var(--ds-font-family-numeric)' if numeric else 'var(--ds-font-family-ui)','font-size':rem(s['fontSize']['value']),'font-weight':str({'Regular':400,'Medium':500,'Semibold':600,'Bold':700}[s['fontWeightName']]),'line-height':rem(s['lineHeight']['value']),'letter-spacing':spacing,'text-indent':rem(s['paragraphIndent']['value']),'text-transform':{'ORIGINAL':'none','UPPER':'uppercase','LOWER':'lowercase','TITLE':'capitalize'}[s['textCase']],'text-decoration':{'NONE':'none','UNDERLINE':'underline','STRIKETHROUGH':'line-through'}[s['textDecoration']]}
@@ -63,7 +63,7 @@ def build():
   body=[f'  {p}: var({v});' for p,v in cssvars.items()]
   if s['fontSize']['value']<=11: body.append(f'  font-size: max(var({base}-font-size), 10px);')
   classes.append('.'+cls+' {\n'+'\n'.join(body)+'\n}')
-  types[name]={**s,'cssClass':cls,'cssVariables':cssvars,'cssDeclarations':vals,'paragraphSpacingCssVariable':base+'-paragraph-spacing','numericFontStatus':'GJType webfont (assets/fonts, from PC skill) with system fallback' if numeric else 'system font'}
+  types[name]={**s,'cssClass':cls,'cssVariables':cssvars,'cssDeclarations':vals,'paragraphSpacingCssVariable':base+'-paragraph-spacing','numericFontStatus':'GJTypeDisplay webfont (assets/fonts, updated by design owner 2026-10-20) with system fallback' if numeric else 'system font'}
   size=s['fontSize']['value']
   floor=20 if numeric and size>=24 else 12 if name.startswith('P') and 12<=size<=14 else None
   if floor: classes.append(f'@media (max-width: 359px) {{ .{cls} {{ font-size: var({base}-font-size); font-size: max(var({base}-font-size), {floor}px); }} }}')
@@ -104,8 +104,8 @@ def build():
   assert len(g)==1 and g[0]['pattern']=='COLUMNS' and g[0]['alignment']=='STRETCH',name
   g=g[0]; base='--ds-'+slug(name)
   grids[name]={**s,'cssVariables':{'count':emit(base+'-count',str(g['count'])),'gutter':emit(base+'-gutter',rem(g['gutterSize'])),'offset':emit(base+'-offset',rem(g['offset']))}}
- package={'$schema':'gj-design-skill/mobile-unified-tokens/v1','meta':{'name':'GJ B2B Mobile Design Tokens','mode':'Mobile','sourceFiles':FILES,'sourceHashes':{p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in FILES.values()},'sourcePolicy':'Generated from mobile extraction; do not hand-edit. H5 rules: references/h5-sizing-and-adaptation.md and h5-small-screen.md.','counts':{'primitiveColors':len(color['primitive']),'semanticColors':len(color['semantic']),'dimensions':len(dimension),'typographyStyles':len(types),'effects':len(effects),'gradients':len(gradients),'semanticSpacing':len(semantic_spacing),'gridStyles':len(grids)}},'color':color,'dimension':dimension,'spacing':{'semantic':semantic_spacing,'rules':data['spacingSemantic']['rules'],'source':data['spacingSemantic']['source']},'grid':grids,'typography':{'styles':types,'policy':{'ui':'system-ui, sans-serif','numeric':'GJType, var(--ds-font-family-ui) (assets/fonts/GJType-*.ttf)','numericFeature':'tabular-nums'}},'effect':effects,'gradient':gradients}
- FONT_FACES=''.join(f'@font-face {{\n  font-family: "GJType";\n  src: url("../fonts/GJType-{n}.ttf") format("truetype");\n  font-style: normal;\n  font-weight: {w};\n  font-display: swap;\n}}\n\n' for n,w in (('Regular',400),('Medium',500),('Bold',700)))
+ package={'$schema':'gj-design-skill/mobile-unified-tokens/v1','meta':{'name':'GJ B2B Mobile Design Tokens','mode':'Mobile','sourceFiles':FILES,'sourceHashes':{p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in FILES.values()},'sourcePolicy':'Generated from mobile extraction; do not hand-edit. H5 rules: references/h5-sizing-and-adaptation.md and h5-small-screen.md.','counts':{'primitiveColors':len(color['primitive']),'semanticColors':len(color['semantic']),'dimensions':len(dimension),'typographyStyles':len(types),'effects':len(effects),'gradients':len(gradients),'semanticSpacing':len(semantic_spacing),'gridStyles':len(grids)}},'color':color,'dimension':dimension,'spacing':{'semantic':semantic_spacing,'rules':data['spacingSemantic']['rules'],'source':data['spacingSemantic']['source']},'grid':grids,'typography':{'styles':types,'policy':{'ui':'system-ui, sans-serif','numeric':'GJTypeDisplay, var(--ds-font-family-ui) (assets/fonts/GJTypeDisplay-*.ttf)','numericFeature':'tabular-nums'}},'effect':effects,'gradient':gradients}
+ FONT_FACES=''.join(f'@font-face {{\n  font-family: "GJTypeDisplay";\n  src: url("../fonts/GJTypeDisplay-{n}.ttf") format("truetype");\n  font-style: normal;\n  font-weight: {w};\n  font-display: swap;\n}}\n\n' for n,w in (('Regular',400),('Medium',500),('Bold',700)))
  css='/* Generated by scripts/build-tokens.py. Mobile source only. See token-contract.md. */\n'+FONT_FACES+':root {\n'+'\n'.join(f'  {k}: {v};' for k,v in variables.items())+'\n}\n\n'+'\n\n'.join(classes)+'\n'
  # Fail on dangling references, including CSS aliases.
  refs=set(re.findall(r'var\((--[\w-]+)',css)); assert refs<=variables.keys(),refs-variables.keys()

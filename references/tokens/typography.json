@@ -3,7 +3,30 @@
     "fileKey": "KCpwE2Lh1yCGQ86y8ckYFN",
     "referencePage": "181:1092",
     "publication": "not verified",
-    "numericUpdatedAt": "2026-10-14（N1–N8 字号 / 行高按 Figma 最新 Text Style 更新）"
+    "numericUpdatedAt": "2026-10-14（N1–N8 字号 / 行高按 Figma 最新 Text Style 更新）",
+    "numericFontOverride": {
+      "date": "2026-10-20",
+      "authority": "设计方确认替换为 GJTypeDisplay 三款；未重新读取 Figma",
+      "previousFamily": "GJType",
+      "family": "GJTypeDisplay",
+      "files": [
+        {
+          "file": "GJTypeDisplay-Regular.ttf",
+          "weight": 400,
+          "sha256": "2bbb0d61505da09c51a812b9daa195a8d98aeb660b1a4c51e214da658929a8c3"
+        },
+        {
+          "file": "GJTypeDisplay-Medium.ttf",
+          "weight": 500,
+          "sha256": "916953339f3d63d241a2f16c7572b408b671078bd58fb2e47fc68f5e3f59293a"
+        },
+        {
+          "file": "GJTypeDisplay-Bold.ttf",
+          "weight": 700,
+          "sha256": "6d5122593d91d4c89c5d69a1f193804e301a45b95953d342ef7fcad2288a9c08"
+        }
+      ]
+    }
   },
   "textStyles": [
     {
@@ -555,7 +578,7 @@
       "name": "N1_NUM-S",
       "figmaId": "S:2ae66282206fc20a9c420394accd1eeb516c6af5,",
       "figmaKey": "2ae66282206fc20a9c420394accd1eeb516c6af5",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Bold",
       "fontSize": {
         "value": 36,
@@ -588,13 +611,14 @@
         "styleId": "S:2ae66282206fc20a9c420394accd1eeb516c6af5,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N2_NUM-S",
       "figmaId": "S:0225525a76c001805aa6e9c34b9cf785bfc5351a,",
       "figmaKey": "0225525a76c001805aa6e9c34b9cf785bfc5351a",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Bold",
       "fontSize": {
         "value": 32,
@@ -627,13 +651,14 @@
         "styleId": "S:0225525a76c001805aa6e9c34b9cf785bfc5351a,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N3_NUM-S",
       "figmaId": "S:cdc2105558bed9d0cd25e73d4aa7d09228352833,",
       "figmaKey": "cdc2105558bed9d0cd25e73d4aa7d09228352833",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Bold",
       "fontSize": {
         "value": 24,
@@ -666,13 +691,14 @@
         "styleId": "S:cdc2105558bed9d0cd25e73d4aa7d09228352833,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N4_NUM-S",
       "figmaId": "S:60facc866d2e639bc5556fcac32d7a74738ac2fb,",
       "figmaKey": "60facc866d2e639bc5556fcac32d7a74738ac2fb",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Bold",
       "fontSize": {
         "value": 20,
@@ -705,13 +731,14 @@
         "styleId": "S:60facc866d2e639bc5556fcac32d7a74738ac2fb,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N5_NUM-S",
       "figmaId": "S:149fe784b238eb51efa009421863a70a0adc4055,",
       "figmaKey": "149fe784b238eb51efa009421863a70a0adc4055",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Bold",
       "fontSize": {
         "value": 18,
@@ -744,13 +771,14 @@
         "styleId": "S:149fe784b238eb51efa009421863a70a0adc4055,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N6_NUM-S",
       "figmaId": "S:18ebfcbc1b1fc1c9e3a0226420a980c53413d256,",
       "figmaKey": "18ebfcbc1b1fc1c9e3a0226420a980c53413d256",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Bold",
       "fontSize": {
         "value": 16,
@@ -783,13 +811,14 @@
         "styleId": "S:18ebfcbc1b1fc1c9e3a0226420a980c53413d256,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N8_NUM-S",
       "figmaId": "S:393f62491edf2e4593f1e5898bd30161a2393fc7,",
       "figmaKey": "393f62491edf2e4593f1e5898bd30161a2393fc7",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Bold",
       "fontSize": {
         "value": 12,
@@ -822,13 +851,14 @@
         "styleId": "S:393f62491edf2e4593f1e5898bd30161a2393fc7,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N7_NUM-S",
       "figmaId": "S:f91048a7844d0bf5ae5f075bd9a8e4c7d6ca2949,",
       "figmaKey": "f91048a7844d0bf5ae5f075bd9a8e4c7d6ca2949",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Bold",
       "fontSize": {
         "value": 14,
@@ -861,13 +891,14 @@
         "styleId": "S:f91048a7844d0bf5ae5f075bd9a8e4c7d6ca2949,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N1_NUM-M",
       "figmaId": "S:927735b84ded7f3bc43265560e00b25bf7dab946,",
       "figmaKey": "927735b84ded7f3bc43265560e00b25bf7dab946",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Medium",
       "fontSize": {
         "value": 36,
@@ -900,13 +931,14 @@
         "styleId": "S:927735b84ded7f3bc43265560e00b25bf7dab946,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N2_NUM-M",
       "figmaId": "S:74181f33d4cdcb0f345ec1fba07f4646d3137d6c,",
       "figmaKey": "74181f33d4cdcb0f345ec1fba07f4646d3137d6c",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Medium",
       "fontSize": {
         "value": 32,
@@ -939,13 +971,14 @@
         "styleId": "S:74181f33d4cdcb0f345ec1fba07f4646d3137d6c,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N3_NUM-M",
       "figmaId": "S:9cc143c920bf85345763f652e9138a2d07fe133e,",
       "figmaKey": "9cc143c920bf85345763f652e9138a2d07fe133e",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Medium",
       "fontSize": {
         "value": 24,
@@ -978,13 +1011,14 @@
         "styleId": "S:9cc143c920bf85345763f652e9138a2d07fe133e,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N4_NUM-M",
       "figmaId": "S:cda22cb40f4a3b917ad7f8c9543539eb0f2cc4f7,",
       "figmaKey": "cda22cb40f4a3b917ad7f8c9543539eb0f2cc4f7",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Medium",
       "fontSize": {
         "value": 20,
@@ -1017,13 +1051,14 @@
         "styleId": "S:cda22cb40f4a3b917ad7f8c9543539eb0f2cc4f7,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N5_NUM-M",
       "figmaId": "S:c659777052d5ce54fedb2bf759417ff7ea72345c,",
       "figmaKey": "c659777052d5ce54fedb2bf759417ff7ea72345c",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Medium",
       "fontSize": {
         "value": 18,
@@ -1056,13 +1091,14 @@
         "styleId": "S:c659777052d5ce54fedb2bf759417ff7ea72345c,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N6_NUM-M",
       "figmaId": "S:19fb48d86312f094e369605bd5174f93e2009436,",
       "figmaKey": "19fb48d86312f094e369605bd5174f93e2009436",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Medium",
       "fontSize": {
         "value": 16,
@@ -1095,13 +1131,14 @@
         "styleId": "S:19fb48d86312f094e369605bd5174f93e2009436,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N7_NUM-M",
       "figmaId": "S:fc235ce1d729c638e3fe21a21561eb152045c9a8,",
       "figmaKey": "fc235ce1d729c638e3fe21a21561eb152045c9a8",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Medium",
       "fontSize": {
         "value": 14,
@@ -1134,13 +1171,14 @@
         "styleId": "S:fc235ce1d729c638e3fe21a21561eb152045c9a8,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     },
     {
       "name": "N8_NUM-M",
       "figmaId": "S:47a9b205d5211c6293731f5cfce2958e2bf504fb,",
       "figmaKey": "47a9b205d5211c6293731f5cfce2958e2bf504fb",
-      "fontFamily": "GJType",
+      "fontFamily": "GJTypeDisplay",
       "fontWeightName": "Medium",
       "fontSize": {
         "value": 12,
@@ -1173,7 +1211,8 @@
         "styleId": "S:47a9b205d5211c6293731f5cfce2958e2bf504fb,",
         "referencePage": "181:1092"
       },
-      "publication": "not verified"
+      "publication": "not verified",
+      "figmaExtractedFontFamily": "GJType"
     }
   ]
 }

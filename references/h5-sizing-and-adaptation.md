@@ -25,7 +25,7 @@ html { font-size: min(calc(100vw / 3.75), 120px); }
 
 375px 宽时 `1rem = 设计稿 100px`；屏宽达到 450px 时根字号封顶为 120px，字号、间距、圆角和组件高度不再放大，页面宽度仍可流式增长。仅 ≥960px 时内容区限制为 960px 并居中。内容区尺寸、间距、字号、圆角以及图片显示尺寸均用 `rem = 375 基准设计稿 px ÷ 100`。例如 16px → `0.16rem`，8px → `0.08rem`。设计正文通常为 14–16px；小屏实际字号下限按 [`h5-small-screen.md`](h5-small-screen.md) 分类执行，输入框须至少 16px。所有 `max()` 字号声明前先写纯 rem 降级值。
 
-H5 中西文跟随运行设备的系统字体；字体栈不写死 PingFang SC、Arial 等具体字体名。可继承容器字体或使用 `system-ui` 通用族。Figma Text Style 的字体家族留在源数据中用于追溯，代码实现仍需保留相应字重、字号、行高与字间距。数字样式使用 GJType（`assets/fonts/`，`@font-face` 已在 Token CSS 中声明），加载失败回退系统字体；H5 场景授权范围待确认。
+H5 中西文跟随运行设备的系统字体；字体栈不写死 PingFang SC、Arial 等具体字体名。可继承容器字体或使用 `system-ui` 通用族。Figma Text Style 的字体家族留在源数据中用于追溯，代码实现仍需保留相应字重、字号、行高与字间距。数字样式使用 GJTypeDisplay（`assets/fonts/`，`@font-face` 已在 Token CSS 中声明），加载失败回退系统字体；H5 场景授权范围待确认。
 
 下列内容以设计稿数值直接使用 `px`，不参与缩放：
 
