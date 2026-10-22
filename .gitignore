@@ -16,3 +16,6 @@ planning/**/*.jpg
 planning/**/*-shots/
 # 过程文档
 planning/日报-*.md
+
+# 自动升级检查时间戳
+.update-check

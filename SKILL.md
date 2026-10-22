@@ -22,6 +22,14 @@ description: 为国金内部员工使用的 B 端移动端产品生成或检查�
 
 来源冲突时，先核对平台、版本、节点和适用场景；仍无法判定则标记“待确认”并列出冲突证据。Figma 不证明代码 API，后续实现代码也不自动成为设计规范。不要以 PC 端规则、相似组件或单张截图填补缺口。
 
+## 第 0 步：升级自检
+
+正式工作前，在本 Skill 根目录默认执行 `bash scripts/check-update.sh`。无 Bash、断网或失败均继续任务；含 `.git` 的开发仓库直接跳过。12 小时内只检查一次，可用 `--force` 强制检查、`--check-only` 仅提示（会记录检查时间）。
+
+输出“已更新到”后，重新读取更新后的 `SKILL.md` 与当前任务所需资料并继续当前任务，不重复第 0 步。输出“发现新版本但未自动升级”时，只需简短告知用户，不中断任务。
+
+本地版本只读 `package.json`；最新版取移动端 GitHub Releases latest。更新前核验 ZIP 内版本与 Tag，整目录替换并保留 `node_modules`，旧版备份至 `~/.cache/gj-b2b-mobile-design-skill/`。
+
 ## 页面生成流程
 
 按顺序执行；每一步只读该步需要的资料。全部资料的用途与读取顺序见 `references/library-index.json`。
@@ -84,6 +92,8 @@ H5 中西文跟随系统字体，不把 Figma Text Style 中记录的具体字�
 后续获得真实组件规则和页面模式后，再按实际内容存入 `references/` 的聚焦文件，并在本入口补充按需读取入口。新增文件要记录来源、适用平台、确认状态及与实现代码的关系；不创建空白目录、索引或占位文件。
 
 ## 维护基座、模板与预览站（所有维护者共用）
+
+- **移动端发版约定**：`package.json` 的 `version` 是唯一版本号来源。版本使用 `X.Y.Z`，移动端仓库为 `https://github.com/qzhang8365-lgtm/GJ_B2B_Mobile`；Release Tag 为 `vX.Y.Z`，ZIP 为 `gj-b2b-mobile-design-skill-vX.Y.Z.zip`，包内顶层目录同名（去掉 `.zip`）。Tag、文件名、包内 `package.json` 的版本必须一致。包内必须含 `SKILL.md`、`package.json`、`scripts/check-update.sh`，不含 `.git`、`node_modules`、`.update-check`。经确认后执行既有发布流程，上传对应 ZIP 并将 Release 设为 Latest；更新脚本不读取 `preview/downloads`。
 
 改基座 CSS、组件模板、Token，或新增 / 修改组件页、模式页、端到端示例时，统一按以下规矩，不另起写法：
 - **同一来源**（page-rules PR-025）：组件外观只来自基座与 mapping 模板；页面只写布局、组合与 Token 文字样式。缺的能力补进基座 + mapping + rules，不在页面改写 `.gj-m-*`，不自己画卡片、标签、按钮、导航栏、列表行。

@@ -99,10 +99,11 @@ python3 -m http.server 8000
 4. GitHub 上新建 Release，标签 `v<版本>`，上传 `dist/` 里的 zip。附件名必须与 `release.json` 的 `file` 一致，下载地址为 `https://github.com/qzhang8365-lgtm/GJ_B2B_Mobile/releases/download/v<版本>/<file>`。
 5. 规范网站由 Netlify 从仓库部署（发布目录为根目录、无构建命令）；根目录 `index.html` 跳转到 `preview/index.html`。不要改用 `_redirects` 的 200 重写：规范站用相对路径，地址停在根路径时样式与图标会加载失败。
 
-发布包内容：SKILL.md、README.md、references、assets、preview、scripts；不带端到端示例与过程文档（`planning/`）、截图与核对记录。包内规范站的「页面模式」页会隐藏端到端示例区块并说明去处。
+发布包内容：SKILL.md、package.json、README.md、references、assets、preview、scripts；不带端到端示例与过程文档（`planning/`）、截图与核对记录。包内规范站的「页面模式」页会隐藏端到端示例区块并说明去处。
 
 ## 版本
 
 | 版本 | 日期 | 说明 |
 | --- | --- | --- |
+| v1.0.1 | 2026-10-22 | 增加升级自检与自动更新；发布包补齐 package.json、校验版本一致性，保留用户依赖并将备份放入 ~/.cache。 |
 | v1.0.0 | 2026-10-20 | 首个发布包：48 个组件、7 个页面模式、页面生成规则 PR-001～PR-035、规范站；生成页面后用 `embed-icons.cjs` 内嵌图标、图片、描边并加手机状态栏（支持 Figma 网页导入）；端到端示例只在仓库与规范网站。 |

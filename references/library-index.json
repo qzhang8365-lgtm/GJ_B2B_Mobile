@@ -6,7 +6,7 @@
   "audiencePolicy": {
     "ai-readable": "AI 选模式、规则、组件、Token 与图标时按需读取",
     "output-asset": "生成原型时加载或复用的样式、图标、字体与图片；不是指令文档，也不是真实前端组件库 API",
-    "maintenance-script": "只在源数据更新、校验、验收或发布时运行，不作为规则来源",
+    "maintenance-script": "只在源数据更新、校验、验收或发布时运行，不作为规则来源；check-update.sh 为任务前非阻断自检例外",
     "human-preview-only": "规范站与示例页，供人工浏览与验收；不是设计真值，也不是 AI 默认参考入口"
   },
   "aiWorkflow": {
@@ -58,7 +58,8 @@
         "references/icons/motion-manifest.json"
       ],
       "naming": "references/figma-naming.md"
-    }
+    },
+    "preflight": "scripts/check-update.sh"
   },
   "outputAssets": {
     "styles": [
@@ -82,7 +83,8 @@
     "buildRelease": "python3 scripts/build-release.py <版本>",
     "checkMapping": "node scripts/check-mapping.cjs [--verbose]（组件写法一致性：mapping 为唯一来源）",
     "buildMarkup": "node scripts/build-markup.cjs [--check]（由 mapping templates 生成 markup 与 assets/scripts/gj-m-templates.js）",
-    "embedIcons": "node scripts/embed-icons.cjs <页面>：生成页面后把图标 SVG 内嵌进页面（Figma 网页导入保留图标）；--check 只检查"
+    "embedIcons": "node scripts/embed-icons.cjs <页面>：生成页面后把图标 SVG 内嵌进页面（Figma 网页导入保留图标）；--check 只检查",
+    "checkUpdate": "bash scripts/check-update.sh [--force] [--check-only]（任务前非阻断升级自检；开发仓库跳过）"
   },
   "humanPreviewOnly": {
     "site": "preview/index.html",

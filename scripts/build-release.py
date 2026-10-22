@@ -5,7 +5,7 @@
 输出：dist/gj-b2b-mobile-design-skill-v<版本>.zip 与 dist/release.json
 
 发布包只保留 AI 执行与人工验收所需的正式资产：
-SKILL.md、README.md、references/、assets/、preview/、scripts/。
+SKILL.md、package.json、README.md、references/、assets/、preview/、scripts/。
 不包含端到端示例与过程文档（planning/ 全部，留在仓库与规范网站上）、临时目录（_to_delete）、dist 自身与系统文件，
 以及核对截图：references/ 下的 *.png（如 tokens/browser-validation/、组件 preview.png）和 planning/ 下的截图（*.png / *.jpg 等，如 e2e/*-shots/）。
 它们是验证记录，仓库保留、发布包不带。
@@ -14,11 +14,11 @@ SKILL.md、README.md、references/、assets/、preview/、scripts/。
 import json, os, sys, zipfile, datetime, subprocess
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-INCLUDE = ['SKILL.md', 'README.md', 'references', 'assets', 'preview', 'scripts']
+INCLUDE = ['SKILL.md', 'package.json', 'README.md', 'references', 'assets', 'preview', 'scripts']
 # 发布方式（与 PC 端一致）：仓库推到 GitHub，发布包手动上传为 Release 附件（标签 v<版本>），规范网站的下载按钮链到 Release 地址
 REPO = 'qzhang8365-lgtm/GJ_B2B_Mobile'
 PACKAGE_JS = os.path.join('preview', '_data', 'package.js')  # 仓库里为 e2e:true；发布包里替换为 e2e:false（包内不带端到端示例）
-SKIP_NAMES = {'.DS_Store', '__pycache__', 'Thumbs.db'}
+SKIP_NAMES = {'.DS_Store', '__pycache__', 'Thumbs.db', 'node_modules', '.git', '.update-check'}
 NAME = 'gj-b2b-mobile-design-skill'
 
 
@@ -72,6 +72,13 @@ def main():
     if len(sys.argv) != 2:
         sys.exit('用法：python3 scripts/build-release.py <版本号，如 1.0.0>')
     ver = sys.argv[1].lstrip('v')
+    with open(os.path.join(ROOT, 'package.json'), encoding='utf-8') as f:
+        package_version = json.load(f)['version']
+    import re
+    if not re.fullmatch(r'(0|[1-9][0-9]{0,8})\.(0|[1-9][0-9]{0,8})\.(0|[1-9][0-9]{0,8})', ver) or ver != package_version:
+        sys.exit('发布版本必须与 package.json 的 version 一致（X.Y.Z）')
+    if not os.path.isfile(os.path.join(ROOT, 'scripts', 'check-update.sh')):
+        sys.exit('缺少 scripts/check-update.sh')
     dist = os.path.join(ROOT, 'dist')
     os.makedirs(dist, exist_ok=True)
     zname = f'{NAME}-v{ver}.zip'

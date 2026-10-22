@@ -1,0 +1,105 @@
+{
+  "bash": "GNU bash, version 3.2.57(1)-release (arm64-apple-darwin25)",
+  "transport": "localhost Release HTTP fixture through real curl; failure injection via PATH wrappers",
+  "productionScriptSHA256": "82506f9eec7780073c900a2800ded03b297253ff04a14e199765e3402c4f52e0",
+  "results": [
+    {
+      "scenario": "旧版本升级到 fixture latest 1.0.0；node_modules保留；旧文件移除；缓存备份",
+      "result": "PASS",
+      "seconds": 1.032,
+      "output": "已更新到 V1.0.0（原 V0.9.0 已备份到 /Users/gjzq_imac/.cache/gj-b2b-mobile-design-skill/backup-v0.9.0-AAtaIe）"
+    },
+    {
+      "scenario": "12小时内重复检查无网络请求",
+      "result": "PASS",
+      "seconds": 0.015,
+      "output": "12 小时内已检查，跳过。"
+    },
+    {
+      "scenario": "--force越过时间戳并确认最新版",
+      "result": "PASS",
+      "seconds": 0.052,
+      "output": "已是最新版本 V1.0.0。"
+    },
+    {
+      "scenario": "已是最新版",
+      "result": "PASS",
+      "seconds": 0.051,
+      "output": "已是最新版本 V1.0.0。"
+    },
+    {
+      "scenario": "--check-only不下载不更新",
+      "result": "PASS",
+      "seconds": 0.052,
+      "output": "发现新版本但未自动升级：V1.0.0（--check-only，仅检查）。继续当前任务。"
+    },
+    {
+      "scenario": "DNS/不可达注入快速放行",
+      "result": "PASS",
+      "seconds": 0.038,
+      "output": "GitHub latest 不可达或版本无效，跳过升级检查。"
+    },
+    {
+      "scenario": "断网检查也遵守12小时间隔",
+      "result": "PASS",
+      "seconds": 0.014,
+      "output": "12 小时内已检查，跳过。"
+    },
+    {
+      "scenario": ".git directory跳过",
+      "result": "PASS",
+      "seconds": 0.006,
+      "output": "开发仓库含 .git，跳过升级自检。"
+    },
+    {
+      "scenario": ".git file跳过",
+      "result": "PASS",
+      "seconds": 0.005,
+      "output": "开发仓库含 .git，跳过升级自检。"
+    },
+    {
+      "scenario": "ZIP版本与Tag不一致拒绝覆盖",
+      "result": "PASS",
+      "seconds": 0.108,
+      "output": "发现新版本但未自动升级：V1.0.0（ZIP 包内版本或结构与 Release Tag 不一致）。继续当前任务。"
+    },
+    {
+      "scenario": "真实GitHub v1.0.0附件缺package与updater：正确拒绝覆盖",
+      "result": "PASS",
+      "seconds": 0.58,
+      "output": "发现新版本但未自动升级：V1.0.0（ZIP 包内版本或结构与 Release Tag 不一致）。继续当前任务。"
+    },
+    {
+      "scenario": "下载失败放行",
+      "result": "PASS",
+      "seconds": 0.086,
+      "output": "发现新版本但未自动升级：V1.0.0（下载失败）。继续当前任务。"
+    },
+    {
+      "scenario": "安装目录不可写放行",
+      "result": "PASS",
+      "seconds": 0.053,
+      "output": "发现新版本但未自动升级：V1.0.0（安装目录或父目录不可写）。继续当前任务。"
+    },
+    {
+      "scenario": "安装rename失败恢复旧版",
+      "result": "PASS",
+      "seconds": 0.613,
+      "output": "发现新版本但未自动升级：V1.0.0（安装失败，已恢复旧版本）。继续当前任务。"
+    },
+    {
+      "scenario": "真实curl通过不可用本地代理测试GitHub不可达",
+      "result": "PASS",
+      "seconds": 0.032,
+      "output": "GitHub latest 不可达或版本无效，跳过升级检查。"
+    }
+  ],
+  "backupParent": "/Users/gjzq_imac/.cache/gj-b2b-mobile-design-skill",
+  "releaseCreated": false,
+  "liveRelease": {
+    "tag": "v1.0.0",
+    "url": "https://github.com/qzhang8365-lgtm/GJ_B2B_Mobile/releases/latest",
+    "zipSha256": "d467ed41832c9df9a6a9b32e97206d796b902df7061fc18f357145aad2c8a44a",
+    "result": "附件缺package.json及check-update.sh，拒绝覆盖；无法完成真实线上包成功升级测试"
+  }
+}
