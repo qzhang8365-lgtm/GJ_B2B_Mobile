@@ -6,3 +6,12 @@
 .hero-img .action:not(.primary){background:rgba(255,255,255,.85)}
 /* 标题行右侧说明尽量一行：不限制宽度，标题不被压缩；窄屏仍换行 */
 .sec-head>div{flex:none}.sec-head .desc{flex:1 1 auto;max-width:none}
+
+/* 版本更新记录：版本标签 / 更新简介 / 日期。 */
+.release-log{overflow:hidden;border:1px solid var(--ds-border-default);border-radius:8px;background:var(--ds-background-background)}
+.release-row{display:grid;grid-template-columns:112px minmax(0,1fr) 104px;align-items:center;gap:24px;padding:20px}
+.release-row+.release-row{border-top:1px solid var(--ds-border-default)}
+.release-version{justify-self:start;padding:3px 12px;border-radius:999px;background:var(--ds-background-bt-b8);color:var(--ds-text-blue);font:600 13px/22px ui-monospace,monospace;white-space:nowrap}
+.release-row p{margin:0;color:var(--ds-text-secondary);font-size:14px;line-height:24px}
+.release-row time{justify-self:end;color:var(--ds-text-tiatery);font-size:12px;line-height:22px;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(max-width:720px){.release-row{grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:16px}.release-row p{grid-column:1/-1;grid-row:2}.release-row time{grid-column:2;grid-row:1}}
