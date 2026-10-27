@@ -1,0 +1,44 @@
+{
+  "summary": "382 个图标 · 13 个分类 · line 240 / fill 142",
+  "cards": 382,
+  "styles": {
+    "line": 240,
+    "fill": 142
+  },
+  "fonts": [
+    {
+      "family": "GJType",
+      "status": "unloaded"
+    },
+    {
+      "family": "GJType",
+      "status": "unloaded"
+    },
+    {
+      "family": "GJType",
+      "status": "unloaded"
+    },
+    {
+      "family": "GJB2B_general_line",
+      "status": "loaded"
+    },
+    {
+      "family": "GJB2B_general_fill",
+      "status": "loaded"
+    }
+  ],
+  "fontRequests": [
+    {
+      "url": "http://127.0.0.1:8765/assets/icons/iconfont/font/line/GJB2B_general_line.woff2?v=978895479dad",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:8765/assets/icons/iconfont/font/fill/GJB2B_general_fill.woff2?v=93e6565708d1",
+      "status": 200
+    }
+  ],
+  "wrongCodepoints": [],
+  "emptyGlyphs": [],
+  "failedResources": [],
+  "checks": 382
+}

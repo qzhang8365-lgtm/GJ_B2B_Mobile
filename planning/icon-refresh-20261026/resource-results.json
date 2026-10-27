@@ -1,0 +1,32 @@
+[
+  {
+    "platform": "国金B端设计skill（移动端）",
+    "icons": 382,
+    "line": 240,
+    "fill": 142,
+    "existingMappingEntriesPreserved": 382,
+    "fontFormatsChecked": 8,
+    "F080": {
+      "svg": "byte-identical to HEAD",
+      "glyphAndColorLayers": "same outlines in all four formats"
+    },
+    "sourceMirrors": 117,
+    "cacheMatchesCanonical": true,
+    "compatibilityAliasesPreserved": true
+  },
+  {
+    "platform": "国金B端设计skill（PC）",
+    "icons": 382,
+    "line": 240,
+    "fill": 142,
+    "existingMappingEntriesPreserved": 382,
+    "fontFormatsChecked": 8,
+    "F080": {
+      "svg": "byte-identical to HEAD",
+      "glyphAndColorLayers": "same outlines in all four formats"
+    },
+    "sourceMirrors": 117,
+    "cacheMatchesCanonical": true,
+    "compatibilityAliasesPreserved": true
+  }
+]

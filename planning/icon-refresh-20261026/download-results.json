@@ -1,0 +1,20 @@
+{
+  "mobile": {
+    "svgPath": "/Users/gjzq_imac/Downloads/icf_file_file-zip-line-1 (1).svg",
+    "svgMatchesCanonical": true,
+    "pngPath": "/Users/gjzq_imac/Downloads/icf_file_file-zip-line-1 (1).png",
+    "pngSize": [
+      96,
+      96
+    ]
+  },
+  "pc": {
+    "svgPath": "/Users/gjzq_imac/Downloads/icf_file_file-zip-fill-1.svg",
+    "pngPath": "/Users/gjzq_imac/Downloads/icf_file_file-zip-fill-1.png",
+    "svgMatchesCanonical": true,
+    "pngSize": [
+      96,
+      96
+    ]
+  }
+}

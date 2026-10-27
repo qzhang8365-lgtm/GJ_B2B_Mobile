@@ -1,0 +1,32 @@
+[
+  {
+    "platform": "mobile",
+    "lineCount": "240 / 382 icons",
+    "fillCount": "142 / 382 icons",
+    "mediaCount": "23 / 382 icons",
+    "search": {
+      "静音": 2,
+      "volume": 4,
+      "icf_system_delete_back-fill": 1,
+      "U+F080": 2,
+      "gj-fill-icf-file-file-zip-fill-1": 1
+    },
+    "F080details": "fill · U+F080 · gj-fill-icf-system-delete-fill",
+    "F080copyMatchesSource": true
+  },
+  {
+    "platform": "pc",
+    "lineCount": "240 / 382 icons",
+    "fillCount": "142 / 382 icons",
+    "mediaCount": "23 / 382 icons",
+    "search": {
+      "静音": 2,
+      "volume": 4,
+      "icf_system_delete_back-fill": 1,
+      "U+F080": 2,
+      "gj-fill-icf-file-file-zip-fill-1": 1
+    },
+    "F080details": "fill · U+F080 · gj-fill-icf-system-delete-fill",
+    "F080copyMatchesSource": true
+  }
+]

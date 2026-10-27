@@ -14,8 +14,8 @@ def emit(path,text):
  if args.check:assert dst.exists() and dst.read_text()==text,'Stale: '+str(path)
  elif not dst.exists() or dst.read_text()!=text:dst.parent.mkdir(parents=True,exist_ok=True);dst.write_text(text)
 manifest=json.loads((root/'references/icons/manifest.json').read_text());icons=manifest['icons'];font=readjs('assets/icons/iconfont/font/iconfont-map.js','ICONFONT_MAP')
-assert len(icons)==manifest['count']==382
-assert collections.Counter(x['style'] for x in icons)=={'line':240,'fill':142}
+assert len(icons)==manifest['count']
+assert collections.Counter(x['style'] for x in icons)=={style:len(entries) for style,entries in font.items()}
 assert len({i['name'] for i in icons})==len(icons)
 for i in icons:
  assert i['name'] in font[i['style']],i['name']
