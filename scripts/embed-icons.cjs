@@ -6,13 +6,15 @@
  * 用法：node scripts/embed-icons.cjs <页面.html> [更多页面...]        直接改写页面（同一份文件，不另存）
  *       node scripts/embed-icons.cjs <页面.html> --check              只检查：未内嵌或图标数据过期时退出码 1
  *       node scripts/embed-icons.cjs <页面.html> --no-statusbar       不加手机状态栏（交付真实 H5 代码时；验证页、原型默认加）
- * 收集范围：页面与它引用的本地脚本中出现的图标名（icf_*），加上基座 CSS 与组件模板里用到的全部图标。
+ * 收集范围：页面与它引用的本地脚本中出现的图标名（icf_*，以及 business/<目录>/<名称> 业务图标），加上基座 CSS 与组件模板里用到的全部图标。
  * 可重复运行：页面里 <!-- gj-m-icons:start --> … <!-- gj-m-icons:end --> 之间的内容整体替换。
  */
 const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const ICON_DIR = path.join(ROOT, 'assets/icons/iconfont');
-const NAME = /icf_[A-Za-z0-9_.-]+?(?=\.svg|['"`\s),;}\]])/g;
+/* 图标名：图标库 icf_*；或图标库没有、取自 Figma 的业务图标 business/<目录>/<名称>（assets/icons/business/ 下，如 AI 输入框发送 icon_send） */
+const NAME = /(?:icf_[A-Za-z0-9_.-]+?|business\/[A-Za-z0-9_-]+\/[A-Za-z0-9_.-]+?)(?=\.svg|['"`\s),;}\]])/g;
+const fileOf = n => n.startsWith('business/') ? path.join(ROOT, 'assets/icons', n + '.svg') : path.join(ICON_DIR, n + '.svg');
 const START = '<!-- gj-m-icons:start -->', END = '<!-- gj-m-icons:end -->';
 const check = process.argv.includes('--check');
 const noBar = process.argv.includes('--no-statusbar');
@@ -23,7 +25,7 @@ const RUNTIME = fs.readFileSync(path.join(ROOT, 'assets/scripts/gj-m-inline-icon
 const pages = process.argv.slice(2).filter(a => !a.startsWith('--'));
 if (!pages.length) { console.error('用法：node scripts/embed-icons.cjs <页面.html> [--check]'); process.exit(2); }
 
-const exists = n => fs.existsSync(path.join(ICON_DIR, n + '.svg'));
+const exists = n => fs.existsSync(fileOf(n));
 const namesIn = text => (text.match(NAME) || []).map(n => n.replace(/\.$/, '')).filter(exists);
 /* 基座与模板里的图标：任何页面都可能通过组件用到 */
 const common = new Set([
@@ -31,7 +33,7 @@ const common = new Set([
   ...namesIn(fs.readFileSync(path.join(ROOT, 'assets/scripts/gj-m-templates.js'), 'utf8')),
 ]);
 /* SVG 精简：颜色改为 currentColor（跟随文字色），尺寸交给容器 */
-const clean = n => fs.readFileSync(path.join(ICON_DIR, n + '.svg'), 'utf8')
+const clean = n => fs.readFileSync(fileOf(n), 'utf8')
   .replace(/<\?xml[^>]*>/, '').replace(/\s+/g, ' ').trim()
   .replace(/^<svg\b([^>]*)>/, (m, a) => '<svg' + a.replace(/\s(width|height)="[^"]*"/g, '') + ' aria-hidden="true" focusable="false">')
   .replace(/(fill|stroke)="#(?:101828|10161F)"/gi, '$1="currentColor"');

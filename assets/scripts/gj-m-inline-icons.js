@@ -12,7 +12,7 @@
 (function () {
   var I = window.GJ_M_ICONS;
   if (!I || typeof document === 'undefined') return;
-  var NAME = /(icf_[\w.-]+?)\.svg/;
+  var NAME = /(icf_[\w.-]+?|business\/[\w-]+\/[\w.-]+?)\.svg/; // 图标库图标与 assets/icons/business 下的业务图标
   var nameOf = function (v) { var m = NAME.exec(v || ''); return m && I[m[1]] ? m[1] : null; };
   var base = document.createElement('style');
   base.textContent = '.gj-inline-icon{background:none!important;-webkit-mask:none!important;mask:none!important}' +

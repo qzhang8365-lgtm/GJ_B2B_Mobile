@@ -55,3 +55,14 @@
 
 ## 2026-10-16 设计决策
 - 推荐问题图标用 icf_contact_chat1-fill。
+
+## 2026-10-29 底部输入框（Chat_Input 2080:4405 / AIchat_sendbutton 2080:4400）
+
+- 结构：`.gj-m-ai-input` > `.gj-m-ai-input-field`（input 或 textarea）+ `.gj-m-ai-send`。单行高 52，内边距 12，圆角 16，Background/Container + 1px Border/default，元素间距 4；固定在对话页底部，左右 16，底部留安全区。
+- 文字 P2_CN-R 16/24 Text/Primary，占位“有什么问题尽管问我”Text/disable。
+- 发送：28 圆形 Brand/GJ_Blue，16 白色上箭头；无内容、录音中、识别中 disabled（40%）。展开态用 `.gj-m-ai-send-lg`（32，箭头可见尺寸 15）。热区 44。
+- 模式：`.gj-m-ai-input-mode`（28，圆角 8，Background/BG_blue，16 图标）放在输入文字前。
+- 展开态 `.is-expanded`：输入区在上，`.gj-m-ai-input-bar` 右对齐、间距 12：添加 `icf_system_add-circle`、语音 `icf_media_mic`（`.gj-m-ai-input-tool`，28 Text/Secondary），再接发送。
+- 录音中：`.gj-m-ai-wave` > `.gj-m-ai-wave-track` 滚动波形（条宽 2（圆端点）、间距 2——Figma 标 4 偏松，2026-10-29 设计确认收紧；录音时整体匀速向左移动，新采样从右侧进入；识别到声音的条 `.is-on` 为 Text/Secondary、高度随音量 2–12，静音为 Text/disable 的 2 点；位移由运行时按采样驱动，prefers-reduced-motion 时停止滚动）；底部 `.gj-m-ai-input-status` 含 `.gj-m-ai-rec-dot`（6 的 Brand/GJ_red）+“录制中...”；添加、发送 disabled，语音换成停止 `icf_media_stop-fill`（`.is-stop`，Text/blue）。
+- 识别中：输入区显示已识别文字；状态为 16 的 `icf_system_loading`（Text/blue 角度渐变：0–30% 实色、82% 5%、100% 透明，旋转）+“识别中...”；添加、语音（`icf_media_mic`）、发送都 disabled，不显示停止（Figma 2089:4888，2026-10-29 修正）。
+- 发送图标 `icon_send`（Figma 2.图标icon，加粗上箭头）图标库没有，已取自 Figma 存于 `assets/icons/business/ai-chat/icon_send.svg`，基座通过 `.gj-m-ai-send .gj-icon` 引用；展开态 32 按钮同用此图标（Figma 为同形的 system/arrow2-up）。

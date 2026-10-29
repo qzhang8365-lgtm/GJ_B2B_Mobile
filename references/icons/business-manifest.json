@@ -1,0 +1,217 @@
+{
+  "$schema": "gj-design-skill/business-icon-manifest/v1",
+  "note": "业务专用图标：图标库（iconfont）没有、从 Figma 导出的业务图标。只在对应业务场景使用；通用功能仍用图标库。colored=true 为颜色内置的彩色图标，用 <img> 引用、不改色；colored=false 为单色图标，用 gj-icon + --gj-icon 遮罩，颜色跟随文字。",
+  "scopes": {
+    "ai-chat": "AI 对话流专用",
+    "220": "220 员工端专用（只在 220 员工端页面使用）",
+    "share": "分享面板（220 员工端·增值服务）"
+  },
+  "count": 34,
+  "icons": [
+    {
+      "name": "action-required",
+      "scope": "220",
+      "file": "business/220/action-required.svg",
+      "colored": true
+    },
+    {
+      "name": "ai-news",
+      "scope": "220",
+      "file": "business/220/ai-news.svg",
+      "colored": true
+    },
+    {
+      "name": "comment-ai",
+      "scope": "220",
+      "file": "business/220/comment-ai.svg",
+      "colored": true
+    },
+    {
+      "name": "fengxianpinggu",
+      "scope": "220",
+      "file": "business/220/fengxianpinggu.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_30sclients",
+      "scope": "220",
+      "file": "business/220/icon_30sclients.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_AIeveryday",
+      "scope": "220",
+      "file": "business/220/icon_AIeveryday.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_AIfinished",
+      "scope": "220",
+      "file": "business/220/icon_AIfinished.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_ai",
+      "scope": "220",
+      "file": "business/220/icon_ai.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_aibook",
+      "scope": "220",
+      "file": "business/220/icon_aibook.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_aichat",
+      "scope": "220",
+      "file": "business/220/icon_aichat.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_bikengzhinan",
+      "scope": "220",
+      "file": "business/220/icon_bikengzhinan.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_hexinzhuangtai",
+      "scope": "220",
+      "file": "business/220/icon_hexinzhuangtai.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_jinrongjineng",
+      "scope": "220",
+      "file": "business/220/icon_jinrongjineng.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_kehuhuaxiang",
+      "scope": "220",
+      "file": "business/220/icon_kehuhuaxiang.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_more",
+      "scope": "220",
+      "file": "business/220/icon_more.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_phone",
+      "scope": "220",
+      "file": "business/220/icon_phone.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_recommand",
+      "scope": "220",
+      "file": "business/220/icon_recommand.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_recommand_red",
+      "scope": "220",
+      "file": "business/220/icon_recommand_red.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_shendusikao",
+      "scope": "220",
+      "file": "business/220/icon_shendusikao.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_wodedaiban",
+      "scope": "220",
+      "file": "business/220/icon_wodedaiban.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_xingdong",
+      "scope": "220",
+      "file": "business/220/icon_xingdong.svg",
+      "colored": true
+    },
+    {
+      "name": "icon_zuijinjiaoliu",
+      "scope": "220",
+      "file": "business/220/icon_zuijinjiaoliu.svg",
+      "colored": true
+    },
+    {
+      "name": "qingxu",
+      "scope": "220",
+      "file": "business/220/qingxu.svg",
+      "colored": true
+    },
+    {
+      "name": "user-business",
+      "scope": "220",
+      "file": "business/220/user-business.svg",
+      "colored": true
+    },
+    {
+      "name": "xiaobao",
+      "scope": "220",
+      "file": "business/220/xiaobao.png",
+      "colored": true
+    },
+    {
+      "name": "icon_send",
+      "scope": "ai-chat",
+      "file": "business/ai-chat/icon_send.svg",
+      "colored": false
+    },
+    {
+      "name": "share_mass-send",
+      "scope": "share",
+      "file": "business/share/share_mass-send.svg",
+      "colored": false
+    },
+    {
+      "name": "share_moments",
+      "scope": "share",
+      "file": "business/share/share_moments.svg",
+      "colored": true
+    },
+    {
+      "name": "share_pdf",
+      "scope": "share",
+      "file": "business/share/share_pdf.svg",
+      "colored": false
+    },
+    {
+      "name": "share_qq",
+      "scope": "share",
+      "file": "business/share/share_qq.svg",
+      "colored": true
+    },
+    {
+      "name": "share_save-image",
+      "scope": "share",
+      "file": "business/share/share_save-image.svg",
+      "colored": false
+    },
+    {
+      "name": "share_save-longimage",
+      "scope": "share",
+      "file": "business/share/share_save-longimage.svg",
+      "colored": false
+    },
+    {
+      "name": "share_wechat",
+      "scope": "share",
+      "file": "business/share/share_wechat.svg",
+      "colored": true
+    },
+    {
+      "name": "share_wecom",
+      "scope": "share",
+      "file": "business/share/share_wecom.svg",
+      "colored": true
+    }
+  ],
+  "assetRoot": "assets/icons/"
+}

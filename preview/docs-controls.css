@@ -683,6 +683,20 @@
 .playground .controls .gj-m-list-item.is-disabled .gj-m-switch {pointer-events:none}
 .playground .controls .gj-m-button.gj-m-button-option {height:auto;min-height:0;flex-direction:column;align-items:flex-start;gap:4px;padding:12px;white-space:normal;text-align:left}
 .playground .controls .gj-m-button-option small {font-size:var(--ds-type-p4-cn-r-font-size);line-height:var(--ds-type-p4-cn-r-line-height)}
+.playground .controls .gj-m-ai-input-mode>.gj-icon {width:16px;height:16px}
+.playground .controls .gj-m-ai-send .gj-icon {width:16px;height:16px}
+.playground .controls .gj-m-ai-send-lg .gj-icon {width:17px;height:17px}
+.playground .controls .gj-m-ai-input-tool .gj-icon {width:28px;height:28px}
+.playground .controls .gj-m-ai-input-status .gj-icon {flex:none;width:16px;height:16px;color:var(--ds-text-blue);background:conic-gradient(var(--ds-text-blue) 0 30%,color-mix(in srgb,var(--ds-text-blue) 5%,transparent) 82%,transparent 100%);animation:gj-m-ai-spin 1s linear infinite}
+@media (prefers-reduced-motion:reduce) {
+.playground .controls .gj-m-ai-input-status .gj-icon {animation:none}
+}
+.playground .controls .gj-m-ai-send .gj-icon {--gj-icon:url('../assets/icons/business/ai-chat/icon_send.svg')}
+.playground .controls .gj-m-todo-item>.gj-icon {flex:none;width:20px;height:20px;color:var(--ds-text-tiatery);--gj-icon:url('../assets/icons/iconfont/icf_Arrow_right.svg')}
+.playground .controls .gj-m-reach-card-foot>.gj-m-button {flex:none}
+.playground .controls .gj-m-reach-card.is-advisor .gj-m-reach-card-foot>.gj-m-button-primary {background:var(--ds-brand-gj-red);border-radius:var(--Radius-full)}
+.playground .controls .gj-m-task-step-name .gj-icon {width:16px;height:16px;color:var(--ds-text-blue);--gj-icon:url('../assets/icons/iconfont/icf_Arrow_arrow-down-large.svg')}
+.playground .controls .gj-m-share-icon.is-func>.gj-icon {width:28px;height:28px}
 
 /* —— 文档页适配（手写，生成脚本原样附加）—— */
 .playground .controls .docs-ctl-select { position: relative; display: block; min-width: 0; }

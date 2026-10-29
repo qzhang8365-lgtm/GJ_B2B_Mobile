@@ -47,7 +47,7 @@ description: 为国金内部员工使用的 B 端移动端产品生成或检查�
 
 ## 图标
 
-图标库与 PC 端完全一致，资源在 `assets/icons/`。图标清单唯一入口为 `references/icons/index.json`；普通图标的分类与 line/fill 风格按 manifest 和字体映射判断，不按名称后缀猜测。保留文件名、调用名、Unicode、CSS 类与兼容别名。查找时先读 `references/icons/index.json` 判断类型（General / Effect / File / Motion），再打开对应 manifest 解析资源路径；不得使用 Emoji、临时 Unicode、CSS 手绘或未登记名称。General Icon 用 `.gj-icon` + `--gj-icon`（`assets/styles/gj-b2b-mobile-components.css`，尺寸类以 rem 书写），颜色继承文字色；其余类型按原文件引用。小屏功能图标下限见 `references/h5-small-screen.md`。
+图标库与 PC 端完全一致，资源在 `assets/icons/`。图标清单唯一入口为 `references/icons/index.json`；普通图标的分类与 line/fill 风格按 manifest 和字体映射判断，不按名称后缀猜测。保留文件名、调用名、Unicode、CSS 类与兼容别名。查找时先读 `references/icons/index.json` 判断类型（General / Effect / File / Motion / Business），再打开对应 manifest 解析资源路径；不得使用 Emoji、临时 Unicode、CSS 手绘或未登记名称。General Icon 用 `.gj-icon` + `--gj-icon`（`assets/styles/gj-b2b-mobile-components.css`，尺寸类以 rem 书写），颜色继承文字色；其余类型按原文件引用；Business 为图标库没有的业务专用图标（AI 对话发送、220 员工端、分享渠道），只在对应业务场景使用，按 `references/icons/business-manifest.json` 的 `colored` 区分：彩色用 `<img>`，单色用 `.gj-icon` 遮罩。小屏功能图标下限见 `references/h5-small-screen.md`。
 
 毛玻璃 / Effect Icon 必须优先使用 `assets/icons/glassicon/png/` 下已渲染完成的高清 PNG，按 `references/icons/glass-manifest.json` 的 `png` 字段查找。网页展示、宫格入口及后续页面生成均遵循此规则；保留完整透明画布与留白，按组件尺寸等比显示，不裁切、不改色。SVG 仅作源资产，旧版根目录 PNG 不再用于页面展示。
 

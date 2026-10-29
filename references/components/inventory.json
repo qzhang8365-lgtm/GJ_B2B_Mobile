@@ -1245,14 +1245,14 @@
       "category": "业务组件",
       "dir": "ai-chat/",
       "preview": "preview/ai-chat/index.html",
-      "foundationClass": ".gj-m-ai-markdown",
+      "foundationClass": ".gj-m-ai-markdown / .gj-m-ai-input",
       "sourceNode": "955:474",
       "status": {
         "extracted": true,
         "foundation": true,
         "published": true,
         "prototypeOnly": true,
-        "partial": "Markdown 默认样式与气泡，非完整聊天服务",
+        "partial": "Markdown 默认样式、气泡与底部输入框（含语音录入状态），非完整聊天服务；波形滚动需运行时按录音采样驱动",
         "pending": [
           "AI-M-006（暂不处理）：操作栏“朗读”使用 icf_system_sound-on，图标库中没有该图标。"
         ],
@@ -1263,9 +1263,50 @@
         "AI 对话",
         "智能助手",
         "问答",
-        "对话气泡"
+        "对话气泡",
+        "AI 输入框",
+        "语音输入"
       ],
       "notFor": "普通文章 → markdown"
+    },
+    {
+      "id": "biz-220",
+      "name": "220 员工端业务组件",
+      "category": "业务组件",
+      "dir": "biz-220/",
+      "preview": "preview/biz-220/index.html",
+      "foundationClass": ".gj-m-section-title / .gj-m-client-label / .gj-m-todo-item / .gj-m-dynamic-card / .gj-m-reach-card / .gj-m-task-steps / .gj-m-share-row",
+      "sourceNode": "192:8827 / 1483:1143 / 2080:3502",
+      "status": {
+        "extracted": true,
+        "foundation": true,
+        "published": true,
+        "prototypeOnly": true,
+        "previewVerified": true,
+        "pending": [
+          "BZ-001：待办“必做”标签 Figma 选 purple 变体但填色为蓝，按蓝实现",
+          "BZ-002：步骤条末段 0% 未绑定 #EEEEEF，统一为 Background/Secondary",
+          "BZ-003：APP 触达卡片标题未绑定 #000，按 Text/Primary"
+        ]
+      },
+      "scenes": [
+        "220 员工端",
+        "员工工作台",
+        "客户画像",
+        "客户标签",
+        "资金状况",
+        "待办",
+        "通知汇总",
+        "客户动态",
+        "APP 触达",
+        "顾问分享",
+        "任务进度",
+        "阶段步骤条",
+        "分享面板",
+        "分享到微信"
+      ],
+      "notFor": "通用步骤条（流程节点）→ steps；通用卡片容器 → card；通用底部弹层 → dialog",
+      "pageRules": []
     }
   ],
   "syncedAt": "2026-10-16（pending 由各组件 audit.md 未关闭项自动生成）"

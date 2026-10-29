@@ -1,0 +1,90 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>220 员工端组件</title><link rel="stylesheet" href="../../assets/styles/gj-b2b-mobile-tokens.css?v=20261020-display"><link rel="stylesheet" href="../site.css"><link rel="stylesheet" href="../docs.css"><style>
+body{background:var(--ds-background-background)}
+.examples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.examples.two{grid-template-columns:repeat(2,minmax(0,1fr))}.examples.one{grid-template-columns:minmax(0,1fr)}
+.panel{min-width:0;display:flex;flex-direction:column;padding:20px;background:var(--ds-background-background);border-radius:12px}
+.stage{display:flex;align-items:center;justify-content:center;flex:1;min-width:0}.stage>div{width:100%}.phone-stage{padding:0;background:transparent}.phone-frame{box-shadow:none;border-radius:0}
+.spec{width:100%;border-collapse:collapse;font-size:14px;line-height:22px}.spec th,.spec td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--ds-border-default);vertical-align:top}.spec th{color:var(--ds-text-tiatery);font-weight:500;white-space:nowrap}.spec code{font:12px/20px ui-monospace,monospace;color:var(--ds-text-blue)}
+.rules{margin:0;padding-left:20px;color:var(--ds-text-secondary);font-size:14px;line-height:24px}.rules li+li{margin-top:6px}
+.ic-group+.ic-group{margin-top:20px}.ic-group h3{margin:0 0 10px;font-size:14px;line-height:22px;font-weight:600;color:var(--ds-text-primary)}.ic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:8px}.ic-cell{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 8px 12px;border-radius:10px;background:var(--ds-background-background);min-width:0}.ic-cell img{width:24px;height:24px}.ic-cell code{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:11px/16px ui-monospace,monospace;color:var(--ds-text-secondary)}.ic-cell span{font-size:11px;line-height:16px;color:var(--ds-text-tiatery)}.ic-cell-lg img{width:64px;height:64px}
+.docs-sheet+.docs-sheet{margin-top:28px}.examples+.spec{margin-top:16px}
+@media(max-width:1100px){.examples{grid-template-columns:1fr}.examples.two{grid-template-columns:1fr}}
+</style></head><body><main class="docs-shell"><header class="docs-page-head"><div class="docs-eyebrow">业务组件 · Business</div><h1>220 员工端组件</h1><p>归类在 220 员工端的图标与业务组件；其它业务可直接复用，或参考做变体。</p></header><article class="docs-sheet">
+<section class="docs-section" id="icons"><header class="docs-section-head"><div><h2>图标 Icon</h2><p>220 员工端专用图标，颜色已内置，使用时不改色；通用功能仍用图标库。</p></div></header>
+<div class="ic-group"><h3>线性图标</h3><div class="ic-grid" data-icons="icon_kehuhuaxiang icon_hexinzhuangtai icon_xingdong icon_zuijinjiaoliu icon_bikengzhinan icon_AIeveryday icon_jinrongjineng icon_aibook icon_shendusikao action-required ai-news comment-ai qingxu user-business fengxianpinggu"></div></div>
+<div class="ic-group"><h3>面性 / 渐变图标</h3><div class="ic-grid" data-icons="icon_30sclients icon_wodedaiban icon_phone icon_more icon_AIfinished"></div></div>
+<div class="ic-group"><h3>标识图标</h3><div class="ic-grid" data-icons="icon_recommand icon_recommand_red icon_ai icon_aichat"></div></div>
+<div class="ic-group"><h3>助手形象 · 小宝</h3><div class="ic-grid"><div class="ic-cell ic-cell-lg"><img src="../../assets/icons/business/220/xiaobao.png" width="64" height="64" alt="小宝"><code>xiaobao.png</code><span>64 × 64</span></div></div></div>
+</section>
+</article>
+<article class="docs-sheet">
+<section class="docs-section" id="client-label"><header class="docs-section-head"><div><h2>客户标签 Client Label</h2><p>展示客户关键数据，可带 AI 标识；放在章节标题下横向排列。</p></div></header>
+<div class="examples one"><div class="panel"><span class="docs-stage-label">章节标题 + 客户标签</span><div class="stage"><div id="labelDemo"></div></div></div></div></section>
+</article>
+<article class="docs-sheet">
+<section class="docs-section" id="todo"><header class="docs-section-head"><div><h2>待办事项 To-do</h2><p>通知汇总按任务 / 消息 / 机会显示数量；待办列表右侧可带紧急、必做标签或“必读消息”。</p></div></header>
+<div class="examples one"><div class="panel"><span class="docs-stage-label">通知汇总 + 通知列表</span><div class="stage"><div id="todoDemo"></div></div></div></div></section>
+</article>
+<article class="docs-sheet">
+<section class="docs-section" id="biz-card"><header class="docs-section-head"><div><h2>卡片 Card</h2><p>客户动态卡片用左上角标签区分客户行为与平台推送；APP 触达卡片用于顾问向客户分享内容。</p></div></header>
+<div class="examples two"><div class="panel"><span class="docs-stage-label">客户动态卡片</span><div class="stage"><div id="dynDemo"></div></div></div><div class="panel"><span class="docs-stage-label">APP 触达卡片</span><div class="stage"><div id="reachDemo"></div></div></div></div></section>
+</article>
+<article class="docs-sheet">
+<section class="docs-section" id="task-steps"><header class="docs-section-head"><div><h2>步骤条 Task Steps</h2><p>按阶段显示任务进度，当前阶段加粗并带下箭头。</p></div></header>
+<div class="examples two"><div class="panel"><span class="docs-stage-label">步骤条（6 段，第 1 段为当前）</span><div class="stage"><div id="stepDemo"></div></div></div><div class="panel"><span class="docs-stage-label">段状态</span><div class="stage"><div id="stepStates"></div></div></div></div></section>
+</article>
+<article class="docs-sheet">
+<section class="docs-section" id="share"><header class="docs-section-head"><div><h2>分享面板 Share</h2><p>底部弹层承载分享项：4 项以内等分一行；渠道与功能同时出现时分两行，超出横向滑动。</p></div></header>
+<div class="examples"><div class="panel"><span class="docs-stage-label">精简：3 项等分 + 底部说明</span><div class="stage"><div id="sheetA"></div></div></div><div class="panel"><span class="docs-stage-label">仅分享渠道：4 项等分</span><div class="stage"><div id="sheetB"></div></div></div><div class="panel"><span class="docs-stage-label">渠道 + 功能：两行，超出横向滑动</span><div class="stage"><div id="sheetC"></div></div></div></div></section>
+
+<section class="docs-section" id="share-items"><header class="docs-section-head"><div><h2>分享项</h2><p>分享渠道用品牌图标，功能操作用浅灰底线性图标。</p></div></header>
+<div class="examples two"><div class="panel"><span class="docs-stage-label">分享渠道（品牌图标）</span><div class="stage"><div id="channels"></div></div></div><div class="panel"><span class="docs-stage-label">功能操作</span><div class="stage"><div id="actions"></div></div></div></div></section>
+
+<section class="docs-section"><header class="docs-section-head"><div><h2>使用规则</h2></div></header>
+<ul class="rules">
+<li>分享渠道在前、功能操作在后；渠道顺序固定为微信好友、微信朋友圈、QQ、企业微信，按业务开放的渠道取子集，不调换顺序。</li>
+<li>品牌图标只用于对应渠道，不改色、不加描边；功能操作统一使用浅灰底线性图标。</li>
+<li>只需要 3–4 项时用等分单行；同时提供渠道与功能时用两行，第二行可横向滑动露出半个项提示可滑动。</li>
+<li>弹层标题写明分享的内容或动作（如“生成AI+换签链接”），说明文字只用于补充分享后的结果。</li>
+</ul></section>
+
+</article></main>
+<script src="../phone-stage.js?v=20261029-biz1"></script>
+<script>
+(function(){
+document.querySelectorAll('.ic-grid[data-icons]').forEach(g=>{g.innerHTML=g.dataset.icons.split(' ').map(n=>'<div class="ic-cell"><img src="../../assets/icons/business/220/'+n+'.svg" alt=""><code>'+n+'</code></div>').join('')});
+const B='assets/icons/business/220/',S='assets/icons/business/share/';
+const ic=n=>`<span class="gj-icon" style="--gj-icon:url('../icons/iconfont/${n}.svg')" aria-hidden="true"></span>`;
+const icb=n=>`<span class="gj-icon" style="--gj-icon:url('../icons/business/share/${n}.svg')" aria-hidden="true"></span>`;
+const css=`.dm-page{padding:.16rem;background:var(--ds-background-container)}.dm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.16rem .08rem}.dm-mask{display:flex;flex-direction:column;justify-content:flex-end;min-height:3.2rem;background:var(--ds-background-mk-60)}.dm-wrap{display:flex;flex-wrap:wrap;gap:.16rem .08rem;padding:.16rem;background:var(--ds-background-container)}`;
+const o={css,widths:[],height:'auto',background:'var(--ds-background-background)'};
+const M=(id,html)=>GJPhone.mount(document.getElementById(id),{...o,html});
+const page=h=>`<div class="dm-page">${h}</div>`;
+// 客户标签
+const label=(v,t)=>`<div class="gj-m-client-label"><span class="gj-m-client-label-value">${v}</span><span class="gj-m-client-label-text">${t}</span><img class="gj-m-client-label-ai" src="${B}icon_ai.svg" alt="AI 生成"></div>`;
+M('labelDemo',page(`<h3 class="gj-m-section-title">资金状况</h3><div class="gj-m-client-labels">${label('64.4万','账内资金')}${label('约200万','账外资金')}${label('6月下旬','资金最早到账时间')}</div>`));
+// 待办
+const tag=(t,c)=>`<span class="gj-m-tag gj-m-tag-small gj-m-tag-filled gj-m-tag-${c}">${t}</span>`;
+const todo=(t,right='')=>`<a class="gj-m-todo-item" href="#"><span class="gj-m-todo-dot"></span><span class="gj-m-todo-title">${t}</span>${right}<span class="gj-icon" aria-hidden="true"></span></a>`;
+const sum=(c,t,n)=>`<span class="gj-m-todo-summary-item"><i class="gj-m-todo-dot ${c}"></i>${t}<b>${n}</b></span>`;
+M('todoDemo',page(`<div class="gj-m-todo-summary">${sum('is-task','任务',1)}${sum('is-message','消息',2)}${sum('is-chance','机会',1)}</div>${todo('SOP-AI股票解套跟投亏损客户回访',`<span class="gj-m-todo-tags">${tag('紧急','red')}${tag('必做','blue')}</span>`)}${todo('影子账户签约提醒',`<span class="gj-m-todo-tags">${tag('必做','blue')}</span>`)}${todo('影子账户签约提醒','<span class="gj-m-todo-note">必读消息</span>')}${todo('AI股票解套-近7天无信号客户')}`));
+// 卡片
+M('dynDemo',page(`<div class="gj-m-dynamic-card"><span class="gj-m-dynamic-card-tag">客户行为</span><div class="gj-m-dynamic-card-head"><b>13:32</b><b>产品查看</b><span>增值产品</span></div><p class="gj-m-dynamic-card-desc">客户（8880008800）当天存在波段大师访问记录，最早访问时间13点32分</p></div><div class="gj-m-dynamic-card is-push"><span class="gj-m-dynamic-card-tag">平台推送</span><div class="gj-m-dynamic-card-head"><b>13:20</b><b>信号跟随提醒</b><span>增值产品</span></div><p class="gj-m-dynamic-card-desc">客户（8880008800）跟随波段大师参数创建波段步步赢条件单已触发止损，请关注并跟进服务</p></div>`));
+M('reachDemo',page(`<div class="gj-m-reach-card"><span class="gj-m-reach-card-ribbon">业务办理</span><div class="gj-m-reach-card-from"><img src="${B}icon_recommand.svg" alt=""><b>李林</b>给您分享</div><h3 class="gj-m-reach-card-title">科创板成长层开通</h3><div class="gj-m-reach-card-foot"><span class="gj-m-tag gj-m-tag-blue">这里是介绍/标签/日期</span><button type="button" class="gj-m-button gj-m-button-primary">发送</button></div></div><div class="gj-m-reach-card is-advisor"><div class="gj-m-reach-card-from"><img src="${B}icon_recommand_red.svg" alt="">专属顾问<b>李林</b>给您分享</div><h3 class="gj-m-reach-card-title">影子账户</h3><div class="gj-m-reach-card-foot"><span class="gj-m-tag gj-m-tag-orange">这里是介绍/标签/日期</span><button type="button" class="gj-m-button gj-m-button-primary">立刻查看</button></div></div>`));
+// 步骤条
+const st=(name,pct,active)=>`<div class="gj-m-task-step${pct>=100?' is-done':pct>0?' is-partial':''}${active?' is-active':''}"><div class="gj-m-task-step-name">${name}${active?'<span class="gj-icon" aria-hidden="true"></span>':''}</div><i class="gj-m-task-step-bar" aria-hidden="true"></i><div class="gj-m-task-step-pct">${pct}%</div></div>`;
+M('stepDemo',page(`<div class="gj-m-task-steps">${['开户','入金','交易','签约','活跃','留存'].map((n,i)=>st(n,i===0?100:0,i===0)).join('')}</div>`));
+M('stepStates',page(`<div class="dm-grid">${[[100,true],[50,true],[0,false],[50,false]].map(([v,a])=>`<div class="gj-m-task-steps" style="grid-column:1/-1">${[0,1,2].map(()=>st(a?'选中状态':'未选状态',v,a)).join('')}</div>`).join('')}</div>`));
+// 分享
+const ch={wechat:['微信好友','share_wechat'],moments:['微信朋友圈','share_moments'],qq:['QQ','share_qq'],wecom:['企业微信','share_wecom']};
+const fn={longimage:['保存长图',icb('share_save-longimage')],image:['保存图片',icb('share_save-image')],pdf:['生成PDF',icb('share_pdf')],link:['复制链接',ic('icf_file_link-line')],forward:['转发',ic('icf_system_share')],mass:['群发',icb('share_mass-send')]};
+const item=k=>ch[k]?`<button type="button" class="gj-m-share-item"><img class="gj-m-share-icon" src="${S}${ch[k][1]}.svg" alt=""><span class="gj-m-share-label">${ch[k][0]}</span></button>`:`<button type="button" class="gj-m-share-item"><span class="gj-m-share-icon is-func">${fn[k][1]}</span><span class="gj-m-share-label">${fn[k][0]}</span></button>`;
+const row=(ks,c='')=>`<div class="gj-m-share-row${c?' '+c:''}">${ks.map(item).join('')}</div>`;
+const sheet=b=>`<div class="dm-mask"><section class="gj-m-popup-panel gj-m-popup-dialog" role="dialog" aria-label="生成AI+换签链接"><header class="gj-m-popup-header"><div class="gj-m-popup-header-row"><span class="gj-m-popup-title">生成AI+换签链接</span><button type="button" class="gj-m-popup-close" aria-label="关闭"><span class="gj-icon" aria-hidden="true"></span></button></div></header><div class="gj-m-popup-body gj-m-share-body">${b}</div></section></div>`;
+M('sheetA',sheet(row(['wechat','wecom','link'],'is-even')+'<p class="gj-m-share-hint">选择后可直接分享给客户</p>'));
+M('sheetB',sheet(row(['wechat','moments','qq','wecom'],'is-even')));
+M('sheetC',sheet(row(['wechat','moments','qq','wecom'])+row(['longimage','image','pdf','link','forward','mass'])));
+M('channels',`<div class="dm-wrap">${Object.keys(ch).map(item).join('')}</div>`);
+M('actions',`<div class="dm-wrap">${Object.keys(fn).map(item).join('')}</div>`);
+})();
+</script>
+</body></html>

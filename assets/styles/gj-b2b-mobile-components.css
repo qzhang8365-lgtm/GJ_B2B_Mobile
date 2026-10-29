@@ -2812,3 +2812,111 @@ a.gj-m-card{color:inherit;text-decoration:none}
 
 /* 分区边界遵循当前内容边距，不照搬旧截图通栏线。 */
 .gj-m-card-section-divider{padding-inline:var(--space-16)}
+
+/* AI 对话底部输入框 — Figma Chat_Input 2080:4405 / AIchat_sendbutton 2080:4400（2026-10-29）。原型基座，非真实组件库 API。
+ * .gj-m-ai-input：高 52（单行），内边距 12，圆角 16，Background/Container + 1px Border/default；元素间距 4。
+ * 输入文字 P2_CN-R 16/24 Text/Primary，占位 Text/disable，左右再缩进 4。
+ * 发送 .gj-m-ai-send：28 圆形 Brand/GJ_Blue，图标 16 白色（icon_send，图标库暂无，取自 Figma 2.图标icon，存于 assets/icons/business/ai-chat/）；无内容时 disabled（不透明度 40%）。展开态用 .gj-m-ai-send-lg（32，箭头可见尺寸 15）。
+ * 模式 .gj-m-ai-input-mode：28、圆角 8、Background/BG_blue，内放 16 的模式图标（如深度思考）。
+ * 展开态 .is-expanded：纵向，输入区在上，底部工具行 .gj-m-ai-input-bar 右对齐、间距 12、高 32；工具按钮 28 Text/Secondary，热区 44。
+ * 录音 .gj-m-ai-wave：波形条宽 2、间距 2（Figma 标注 4 偏松，2026-10-29 设计确认收紧），录音时整体匀速左移、新声音从右侧进入（滚动波形，.gj-m-ai-wave-track），已录 Text/Secondary、未录 Text/disable；状态文字 14/22 Text/Secondary，录制中前置 6 的 Brand/GJ_red 圆点，识别中前置 16 的 icf_system_loading（Text/blue 角度渐变，旋转）。录音中：添加、发送置灰，语音换成停止 icf_media_stop-fill（Text/blue）；识别中：添加、语音、发送都置灰（Figma 2089:4888）。 */
+.gj-m-ai-input{display:flex;align-items:center;gap:var(--space-4);box-sizing:border-box;width:100%;min-height:.52rem;padding:var(--space-12);border-radius:var(--Radius-XL);background:var(--ds-background-container);box-shadow:inset 0 0 0 1px var(--ds-border-default);font-family:var(--ds-font-family-ui)}
+.gj-m-ai-input-field{flex:1 1 auto;min-width:0;box-sizing:border-box;margin:0;padding:0 var(--space-4);border:0;outline:0;background:none;resize:none;color:var(--ds-text-primary);font:inherit;font-size:var(--ds-type-p2-cn-r-font-size);line-height:var(--ds-type-p2-cn-r-line-height);font-weight:var(--ds-type-p2-cn-r-font-weight)}
+.gj-m-ai-input-field::placeholder{color:var(--ds-text-disable)}
+textarea.gj-m-ai-input-field{display:block;min-height:.24rem;max-height:1.2rem;overflow-y:auto}
+.gj-m-ai-input-mode{flex:none;display:flex;align-items:center;justify-content:center;width:.28rem;height:.28rem;border-radius:var(--Radius-MD);background:var(--ds-background-bg-blue);box-shadow:0 0 .04rem rgba(69,85,129,.05)}
+.gj-m-ai-input-mode>img,.gj-m-ai-input-mode>.gj-icon{width:.16rem;height:.16rem}
+.gj-m-ai-send{position:relative;flex:none;display:flex;align-items:center;justify-content:center;width:.28rem;height:.28rem;margin:0;padding:0;border:0;border-radius:50%;background:var(--ds-brand-gj-blue);color:var(--ds-text-reversal);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.gj-m-ai-send::after,.gj-m-ai-input-tool::after{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;transform:translate(-50%,-50%)}
+.gj-m-ai-send .gj-icon{width:.16rem;height:.16rem}
+.gj-m-ai-send-lg{width:.32rem;height:.32rem}.gj-m-ai-send-lg .gj-icon{width:.17rem;height:.17rem} /* Figma arrow2-up 22 框内箭头实际 15；icon_send 箭头占 24 框的 21，故按 17 显示得到 15 */
+.gj-m-ai-send:disabled,.gj-m-ai-send.is-disabled,.gj-m-ai-input-tool:disabled,.gj-m-ai-input-tool.is-disabled{opacity:.4;cursor:default}
+.gj-m-ai-input.is-expanded{flex-direction:column;align-items:stretch}
+.gj-m-ai-input-bar{display:flex;align-items:center;justify-content:flex-end;gap:var(--space-12);min-height:.32rem}
+.gj-m-ai-input-tool{position:relative;flex:none;display:flex;align-items:center;justify-content:center;width:.28rem;height:.28rem;margin:0;padding:0;border:0;background:none;color:var(--ds-text-secondary);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.gj-m-ai-input-tool .gj-icon{width:.28rem;height:.28rem}
+.gj-m-ai-input-tool.is-stop{color:var(--ds-text-blue)}
+.gj-m-ai-input-status{flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:var(--space-4);overflow:hidden;color:var(--ds-text-secondary);font-size:var(--ds-type-p3-cn-r-font-size);line-height:var(--ds-type-p3-cn-r-line-height);white-space:nowrap}
+.gj-m-ai-input-status .gj-m-ai-rec-dot{flex:none;display:flex;align-items:center;justify-content:center;width:.16rem;height:.16rem}
+.gj-m-ai-input-status .gj-m-ai-rec-dot::before{content:"";width:.06rem;height:.06rem;border-radius:50%;background:var(--ds-brand-gj-red)}
+.gj-m-ai-input-status .gj-icon{flex:none;width:.16rem;height:.16rem;color:var(--ds-text-blue);background:conic-gradient(var(--ds-text-blue) 0 30%,color-mix(in srgb,var(--ds-text-blue) 5%,transparent) 82%,transparent 100%);animation:gj-m-ai-spin 1s linear infinite} /* Figma 角度渐变：Text/blue 0–30% 实色，渐隐到 82% 5%、100% 透明 */
+@keyframes gj-m-ai-spin{to{transform:rotate(360deg)}}
+.gj-m-ai-wave{display:flex;align-items:center;justify-content:center;gap:2px;height:.22rem;padding:0 var(--space-4);overflow:hidden}
+.gj-m-ai-wave i{flex:none;width:2px;height:var(--h,2px);border-radius:999px;background:var(--ds-text-disable)}
+.gj-m-ai-wave i.is-on{background:var(--ds-text-secondary)}
+/* 录音中动态（滚动波形）：波形条放在 .gj-m-ai-wave-track 里整体匀速左移，新采样从右侧进入；深色 .is-on 表示识别到声音（高度随音量 2–12），静音为灰色 2 的点。
+ * 位移由运行时按采样驱动（示例：每 4px = 条宽 2 + 间距 2 进入一个新采样，约 40px/s），基座只提供结构与样式；减少动态时停止滚动。 */
+.gj-m-ai-wave{justify-content:flex-end}
+.gj-m-ai-wave-track{flex:none;display:flex;align-items:center;gap:2px;will-change:transform}
+@media (prefers-reduced-motion:reduce){.gj-m-ai-input-status .gj-icon{animation:none}}
+.gj-m-ai-send .gj-icon{--gj-icon:url('../icons/business/ai-chat/icon_send.svg')}
+
+/* 业务组件 · 220 员工端（2026-10-29）。归类在 220 员工端，其它业务可直接复用、参考或做变体。原型基座，非真实组件库 API。规则见 references/components/biz-220/rules.md。 */
+/* 章节标题：3×16 竖条（圆角 2，Brand/GJ_Blue）+ H4_CN-S 16/24，间距 8 */
+.gj-m-section-title{display:flex;align-items:center;gap:var(--space-8);margin:0;color:var(--ds-text-primary);font-size:var(--ds-type-h4-cn-s-font-size);line-height:var(--ds-type-h4-cn-s-line-height);font-weight:var(--ds-type-h4-cn-s-font-weight)}
+.gj-m-section-title::before{content:"";flex:none;width:.03rem;height:.16rem;border-radius:.02rem;background:var(--ds-brand-gj-blue)}
+.gj-m-section-title+.gj-m-client-labels{margin-top:var(--space-12)}
+/* 客户标签：宽 100，内边距 7/10，圆角 6，Background/Background；数值 H5_CN-S Text/blue，说明 P5_CN-R Text/Secondary；可选 AI 标识 16 右上 4/4；横向间距 8 */
+.gj-m-client-labels{display:flex;gap:var(--space-8)}
+.gj-m-client-label{position:relative;box-sizing:border-box;width:1rem;min-width:0;display:flex;flex-direction:column;gap:.02rem;padding:.07rem .10rem;border-radius:.06rem;background:var(--ds-background-background)}
+.gj-m-client-label-value{color:var(--ds-text-blue);font-size:var(--ds-type-h5-cn-s-font-size);line-height:var(--ds-type-h5-cn-s-line-height);font-weight:var(--ds-type-h5-cn-s-font-weight)}
+.gj-m-client-label-text{overflow:hidden;color:var(--ds-text-secondary);font-size:var(--ds-type-p5-cn-r-font-size);line-height:var(--ds-type-p5-cn-r-line-height);white-space:nowrap;text-overflow:ellipsis}
+.gj-m-client-label-ai{position:absolute;top:var(--space-4);right:var(--space-4);width:.16rem;height:.16rem}
+/* 待办：通知汇总（圆点 6 + 类型 14 Medium Text/Secondary + 数量 H4_CN-S，项内间距 8、项间 24）；列表行高 46，上下 12，间距 8，底线 Border/default */
+.gj-m-todo-summary{display:flex;gap:var(--space-24);padding:var(--space-4) 0}
+.gj-m-todo-summary-item{display:flex;align-items:center;gap:var(--space-8);color:var(--ds-text-secondary);font-size:.14rem;line-height:.20rem;font-weight:500}
+.gj-m-todo-summary-item b{color:var(--ds-text-primary);font-size:var(--ds-type-h4-cn-s-font-size);line-height:var(--ds-type-h4-cn-s-line-height);font-weight:var(--ds-type-h4-cn-s-font-weight)}
+.gj-m-todo-dot{flex:none;width:.06rem;height:.06rem;border-radius:50%;background:var(--ds-feedback-error-rise)}
+.gj-m-todo-dot.is-task{background:var(--ds-chart-ch01)}.gj-m-todo-dot.is-message{background:var(--ds-chart-ch02)}.gj-m-todo-dot.is-chance{background:var(--ds-chart-ch03)}
+.gj-m-todo-item{display:flex;align-items:center;gap:var(--space-8);box-sizing:border-box;min-height:.46rem;padding:var(--space-12) 0;box-shadow:inset 0 -1px 0 var(--ds-border-default);color:inherit;text-decoration:none}
+.gj-m-todo-title{flex:1 1 auto;min-width:0;overflow:hidden;color:var(--ds-text-primary);font-size:var(--ds-type-h5-cn-s-font-size);line-height:var(--ds-type-h5-cn-s-line-height);font-weight:var(--ds-type-h5-cn-s-font-weight);white-space:nowrap;text-overflow:ellipsis}
+.gj-m-todo-tags{flex:none;display:flex;gap:var(--space-8)}
+.gj-m-todo-note{flex:none;color:var(--ds-text-tiatery);font-size:var(--ds-type-p5-cn-r-font-size);line-height:var(--ds-type-p5-cn-r-line-height)}
+.gj-m-todo-item>.gj-icon{flex:none;width:.20rem;height:.20rem;color:var(--ds-text-tiatery);--gj-icon:url('../icons/iconfont/icf_Arrow_right.svg')}
+/* 客户动态卡片：圆角 8，内边距 30/12/10/12，间距 4；客户行为 Background/BT_B10、平台推送 .is-push Background/BT_O10；左上角标签高 24、圆角 8/0/8/0、渐变底白字 12/18 */
+.gj-m-dynamic-card{position:relative;display:flex;flex-direction:column;gap:var(--space-4);padding:.30rem var(--space-12) .10rem;border-radius:var(--Radius-MD);background:var(--ds-background-bt-b10);color:var(--ds-text-primary);font-size:var(--ds-type-p3-cn-r-font-size);line-height:var(--ds-type-p3-cn-r-line-height)}
+.gj-m-dynamic-card+.gj-m-dynamic-card{margin-top:var(--space-12)}
+.gj-m-dynamic-card.is-push{background:var(--ds-background-bt-o10)}
+.gj-m-dynamic-card-tag{position:absolute;left:0;top:0;padding:.03rem .06rem;border-radius:var(--Radius-MD) 0 var(--Radius-MD) 0;background:linear-gradient(90deg,#0085FF,#205FFF);color:var(--ds-text-reversal);font-size:var(--ds-type-p5-cn-r-font-size);line-height:var(--ds-type-p5-cn-r-line-height)}
+.gj-m-dynamic-card.is-push>.gj-m-dynamic-card-tag{background:linear-gradient(90deg,#FF7D00,#FF9B3B)}
+.gj-m-dynamic-card-head{display:flex;gap:.11rem}.gj-m-dynamic-card-head b{font-weight:var(--ds-type-h5-cn-s-font-weight)}
+.gj-m-dynamic-card-desc{margin:0}
+/* APP 触达卡片：圆角 8，内边距 16，间距 10；蓝色（业务办理）#EDF6FF→白 + 1px BT_B15；橙色 .is-advisor（专属顾问）#FFF7EF→白 + 1px BT_O15 */
+.gj-m-reach-card{position:relative;display:flex;flex-direction:column;gap:.10rem;padding:var(--space-16);border-radius:var(--Radius-MD);background:linear-gradient(180deg,#EDF6FF,#fff);box-shadow:inset 0 0 0 1px var(--ds-background-bt-b15);overflow:hidden}
+.gj-m-reach-card+.gj-m-reach-card{margin-top:var(--space-12)}
+.gj-m-reach-card.is-advisor{background:linear-gradient(180deg,#FFF7EF,#fff);box-shadow:inset 0 0 0 1px var(--ds-background-bt-o15)}
+.gj-m-reach-card-from{display:flex;align-items:center;gap:var(--space-4);color:var(--ds-primitive-deepblue-db08);font-size:.14rem;line-height:.22rem}
+.gj-m-reach-card.is-advisor .gj-m-reach-card-from{color:var(--ds-primitive-orange-o09)}
+.gj-m-reach-card-from>img{flex:none;width:.24rem;height:.24rem}
+.gj-m-reach-card-title{margin:0;color:var(--ds-text-primary);font-size:var(--ds-type-h3-cn-s-font-size);line-height:var(--ds-type-h3-cn-s-line-height);font-weight:var(--ds-type-h3-cn-s-font-weight)}
+.gj-m-reach-card-foot{display:flex;align-items:center;justify-content:space-between;gap:.10rem}
+.gj-m-reach-card-foot>.gj-m-tag{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gj-m-reach-card-foot>.gj-m-button{flex:none}
+.gj-m-reach-card.is-advisor .gj-m-reach-card-foot>.gj-m-button-primary{background:var(--ds-brand-gj-red);border-radius:var(--Radius-full)}
+.gj-m-reach-card-ribbon{position:absolute;top:0;right:0;display:flex;justify-content:flex-end;box-sizing:border-box;width:.82rem;height:.31rem;padding:var(--space-4) .10rem 0 0;border-radius:0 var(--Radius-MD) 0 .24rem;background:var(--ds-background-bt-b10);color:var(--ds-brand-gj-blue);font-size:var(--ds-type-h7-cn-s-font-size);line-height:var(--ds-type-h7-cn-s-line-height);font-weight:var(--ds-type-h7-cn-s-font-weight)}
+/* 任务步骤条：段高 12，首段左圆角 4、末段右圆角 4，中间为箭头（深度约 4.3，不随宽度拉伸）；0% Background/Secondary，1–99% .is-partial Primitive/Blue/B04，100% .is-done Primitive/Blue/B06；当前段 .is-active 阶段名与百分比 H4_CN-S（百分比 Text/blue）+ 下箭头 icf_Arrow_arrow-down-large 16 */
+.gj-m-task-steps{display:flex}
+.gj-m-task-step{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center}
+.gj-m-task-step-name{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:.34rem;color:var(--ds-text-tiatery);font-size:var(--ds-type-p5-cn-r-font-size);line-height:var(--ds-type-p5-cn-r-line-height);white-space:nowrap}
+.gj-m-task-step-name .gj-icon{width:.16rem;height:.16rem;color:var(--ds-text-blue);--gj-icon:url('../icons/iconfont/icf_Arrow_arrow-down-large.svg')}
+.gj-m-task-step-bar{display:block;width:100%;height:.12rem;background:var(--ds-background-secondary);clip-path:polygon(0 0,calc(100% - .0435rem) 0,100% 50%,calc(100% - .0435rem) 100%,0 100%,.0434rem 50%)}
+.gj-m-task-step:first-child .gj-m-task-step-bar{border-radius:.04rem 0 0 .04rem;clip-path:polygon(0 0,calc(100% - .0435rem) 0,100% 50%,calc(100% - .0435rem) 100%,0 100%)}
+.gj-m-task-step:last-child .gj-m-task-step-bar{border-radius:0 .04rem .04rem 0;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,.0408rem 50%)}
+.gj-m-task-step:only-child .gj-m-task-step-bar{border-radius:.04rem;clip-path:none}
+.gj-m-task-step.is-partial .gj-m-task-step-bar{background:var(--ds-primitive-blue-b04)}
+.gj-m-task-step.is-done .gj-m-task-step-bar{background:var(--ds-primitive-blue-b06)}
+.gj-m-task-step-pct{height:.24rem;color:var(--ds-text-tiatery);font-size:var(--ds-type-p5-cn-r-font-size);line-height:.24rem}
+.gj-m-task-step.is-active .gj-m-task-step-name{padding:var(--space-4) 0;color:var(--ds-text-primary);font-size:var(--ds-type-h4-cn-s-font-size);line-height:var(--ds-type-h4-cn-s-line-height);font-weight:var(--ds-type-h4-cn-s-font-weight)}
+.gj-m-task-step.is-active .gj-m-task-step-pct{color:var(--ds-text-blue);font-size:var(--ds-type-h4-cn-s-font-size);font-weight:var(--ds-type-h4-cn-s-font-weight)}
+/* 分享面板：放在底部弹层 .gj-m-popup-panel.gj-m-popup-dialog 的 .gj-m-popup-body.gj-m-share-body 内；分享项宽 70（图标 44 + 名称 P3 14/22，间距 4）；≤4 项 .is-even 等分（间距 24），两行时项间 8、行间 20、超出横滑；功能项浅灰底 Background/Background + 28 图标 Text/Secondary */
+.gj-m-popup-header+.gj-m-popup-body.gj-m-share-body{padding:var(--space-8) 0 .24rem}
+.gj-m-share-row{display:flex;gap:var(--space-8);padding:0 var(--space-16);overflow-x:auto;scrollbar-width:none}
+.gj-m-share-row::-webkit-scrollbar{display:none}
+.gj-m-share-row+.gj-m-share-row{margin-top:.20rem}
+.gj-m-share-row.is-even{gap:.24rem}.gj-m-share-row.is-even>.gj-m-share-item{flex:1 1 0;width:auto}
+.gj-m-share-item{flex:none;width:.70rem;display:flex;flex-direction:column;align-items:center;gap:var(--space-4);margin:0;padding:0;border:0;background:none;font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.gj-m-share-icon{display:flex;align-items:center;justify-content:center;width:.44rem;height:.44rem;border-radius:50%}
+.gj-m-share-icon.is-func{background:var(--ds-background-background);color:var(--ds-text-secondary)}
+.gj-m-share-icon.is-func>.gj-icon{width:.28rem;height:.28rem}
+.gj-m-share-label{color:var(--ds-text-primary);font-size:var(--ds-type-p3-cn-r-font-size);line-height:var(--ds-type-p3-cn-r-line-height);font-weight:var(--ds-type-p3-cn-r-font-weight);white-space:nowrap}
+.gj-m-share-hint{margin:.20rem var(--space-16) 0;color:var(--ds-text-tiatery);font-size:var(--ds-type-p3-cn-r-font-size);line-height:var(--ds-type-p3-cn-r-line-height);text-align:center}

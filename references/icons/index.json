@@ -33,6 +33,13 @@
       "count": 4,
       "when": "加载、更多等 Lottie 动效图标。",
       "catalog": "assets/icons/animation/motion-icons.js"
+    },
+    {
+      "id": "business",
+      "kind": "business",
+      "manifest": "business-manifest.json",
+      "count": 34,
+      "when": "业务专用图标（AI 对话发送、220 员工端、分享渠道等），图标库没有时才用；只在对应业务场景使用。彩色图标用 <img>，单色用 gj-icon 遮罩。"
     }
   ],
   "lookup": "先读本文件判断类型，再打开对应 manifest。资源路径为 assets/icons/ + file 或 png。不得使用 Emoji、临时 Unicode、CSS 手绘或未登记名称。",

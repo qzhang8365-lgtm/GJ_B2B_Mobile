@@ -23,7 +23,7 @@
   const ROOT = new URL('../', script ? script.src : location.href).href;
   const STYLES = [
     'assets/styles/gj-b2b-mobile-tokens.css?v=20261020-display',
-    'assets/styles/gj-b2b-mobile-components.css?v=20261020-src1'  // 更新基座后同步改版本号，避免浏览器沿用旧样式
+    'assets/styles/gj-b2b-mobile-components.css?v=20261029-biz1'  // 更新基座后同步改版本号，避免浏览器沿用旧样式
   ];
   const DEFAULT_WIDTHS = [320, 375, 450, 600, 960];
 
@@ -198,7 +198,7 @@
 
   /* 文档页属性控制面板：把原生选择器 / 多选框 / 单选框 / 滑块 / 输入框 / 按钮套上基座组件样式（px 换算版 preview/docs-controls.css）。
    * 只改外观与结构包裹，保留原控件元素、id 和事件，页面脚本无需改动。 */
-  const CTL_CSS = 'preview/docs-controls.css?v=20261020-src1';
+  const CTL_CSS = 'preview/docs-controls.css?v=20261029-r102';
   function upgradeControls(scope) {
     scope.querySelectorAll('.playground .controls').forEach(panel => {
       panel.querySelectorAll('select:not([data-gj-ctl])').forEach(sel => {
